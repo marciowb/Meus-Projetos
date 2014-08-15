@@ -1,0 +1,1 @@
+The EurekaLog Viewer sources compilation required the 3th party "DevExpress Quantum Grid Suite 6" component (http://www.devexpress.com).

@@ -1,0 +1,64 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{a4cf617e-bbd8-46b9-af42-903d39ff62fa}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="FIBDBMidas_CB2007.cbproj" />
+    <Projects Include="FIBPlusEditors_CB2007.cbproj" />
+    <Projects Include="FIBPlus_CB2007.cbproj" />
+    <Projects Include="Tools\pFIBPlusTools_CB2007.cbproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="FIBPlus_CB2007">
+    <MSBuild Projects="FIBPlus_CB2007.cbproj" Targets="" />
+  </Target>
+  <Target Name="FIBPlus_CB2007:Clean">
+    <MSBuild Projects="FIBPlus_CB2007.cbproj" Targets="Clean" />
+  </Target>
+  <Target Name="FIBPlus_CB2007:Make">
+    <MSBuild Projects="FIBPlus_CB2007.cbproj" Targets="Make" />
+  </Target>
+  <Target Name="FIBDBMidas_CB2007">
+    <MSBuild Projects="FIBDBMidas_CB2007.cbproj" Targets="" />
+  </Target>
+  <Target Name="FIBDBMidas_CB2007:Clean">
+    <MSBuild Projects="FIBDBMidas_CB2007.cbproj" Targets="Clean" />
+  </Target>
+  <Target Name="FIBDBMidas_CB2007:Make">
+    <MSBuild Projects="FIBDBMidas_CB2007.cbproj" Targets="Make" />
+  </Target>
+  <Target Name="FIBPlusEditors_CB2007">
+    <MSBuild Projects="FIBPlusEditors_CB2007.cbproj" Targets="" />
+  </Target>
+  <Target Name="FIBPlusEditors_CB2007:Clean">
+    <MSBuild Projects="FIBPlusEditors_CB2007.cbproj" Targets="Clean" />
+  </Target>
+  <Target Name="FIBPlusEditors_CB2007:Make">
+    <MSBuild Projects="FIBPlusEditors_CB2007.cbproj" Targets="Make" />
+  </Target>
+  <Target Name="pFIBPlusTools_CB2007">
+    <MSBuild Projects="Tools\pFIBPlusTools_CB2007.cbproj" Targets="" />
+  </Target>
+  <Target Name="pFIBPlusTools_CB2007:Clean">
+    <MSBuild Projects="Tools\pFIBPlusTools_CB2007.cbproj" Targets="Clean" />
+  </Target>
+  <Target Name="pFIBPlusTools_CB2007:Make">
+    <MSBuild Projects="Tools\pFIBPlusTools_CB2007.cbproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="FIBPlus_CB2007;FIBDBMidas_CB2007;FIBPlusEditors_CB2007;pFIBPlusTools_CB2007" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="FIBPlus_CB2007:Clean;FIBDBMidas_CB2007:Clean;FIBPlusEditors_CB2007:Clean;pFIBPlusTools_CB2007:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="FIBPlus_CB2007:Make;FIBDBMidas_CB2007:Make;FIBPlusEditors_CB2007:Make;pFIBPlusTools_CB2007:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

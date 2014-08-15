@@ -1,0 +1,65 @@
+object ppReport1: TppReport
+  AutoStop = False
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'Letter'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  PrinterSetup.PaperSize = 1
+  SaveAsTemplate = True
+  Template.DatabaseSettings.DataPipeline = plItem
+  Template.DatabaseSettings.Name = 'New Report'
+  Template.DatabaseSettings.NameField = 'Name'
+  Template.DatabaseSettings.TemplateField = 'Template'
+  Template.FileName = 
+    'E:\Development\Demo\3. EndUser\5. Dynamic Subreport Loading\myFo' +
+    'oterTemplate.rtm'
+  Template.Format = ftASCII
+  DeviceType = 'Screen'
+  Left = 289
+  Top = 326
+  Version = '5.5'
+  mmColumnWidth = 0
+  object ppDetailBand1: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 7144
+    mmPrintPosition = 0
+    object ppLabel1: TppLabel
+      UserName = 'Label1'
+      Caption = 'Marine Adventures & Sunken Treasures Co.'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 9
+      Font.Style = [fsBold, fsItalic]
+      TextAlignment = taCentered
+      Transparent = True
+      mmHeight = 3704
+      mmLeft = 0
+      mmTop = 3175
+      mmWidth = 66411
+      BandType = 4
+    end
+    object varPageNo: TppVariable
+      UserName = 'varPageNo'
+      CalcOrder = 0
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 9
+      Font.Style = [fsItalic]
+      TextAlignment = taCentered
+      Transparent = True
+      mmHeight = 3704
+      mmLeft = 93663
+      mmTop = 0
+      mmWidth = 15875
+      BandType = 4
+    end
+  end
+end

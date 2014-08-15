@@ -1,0 +1,23 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dxSpellCheckerD11.bpl dcldxSpellCheckerD11.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dxSpellCheckerD11.bpl: ..\..\ExpressSpellChecker 2\Packages\dxSpellCheckerD11.dpk
+  $(DCC)
+
+dcldxSpellCheckerD11.bpl: ..\..\ExpressSpellChecker 2\Packages\dcldxSpellCheckerD11.dpk
+  $(DCC)
+
+

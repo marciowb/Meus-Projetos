@@ -1,0 +1,181 @@
+Installing the TMS Security System
+----------------------------------
+
+Delphi 6:
+
+- Unzip tssd6.zip into a separate directory
+- Choose File, Open and browse for TSSCoreD6.dpk
+- From the package editor, press Compile
+- Choose File, Open and browse for TSSUID6.dpk
+- From the package editor, press Install
+- The components are now installed in the component palette under TMS Security
+
+Delphi 7:
+
+- Unzip tssd7.zip into a separate directory
+- Choose File, Open and browse for TSSCoreD7.dpk
+- From the package editor, press Compile
+- Choose File, Open and browse for TSSUID7.dpk
+- From the package editor, press Install
+- The components are now installed in the component palette under TMS Security
+
+Delphi 2005:
+
+- Unzip tssd2005.zip into a separate directory
+- Choose File, Open and browse for TSSCoreD2005.bdsproj
+- From the project manager, right click the project & press Compile
+- Choose File, Open and browse for TSSUID2005.bdproj
+- From the project manager, right click the project & press Install
+- The components are now installed in the component palette under TMS Security
+
+Delphi 2006:
+- Choose File, Open and browse for TSSCoreD2006.bdsproj
+- From the project manager, right click the project & press Compile
+- Choose File, Open and browse for TSSUID2006.bdsproj
+- From the project manager, right click the project & press Install
+- The components are now installed in the component palette under TMS Security
+
+Delphi 2007:
+- Choose File, Open and browse for TSSCoreD2007.dproj
+- From the project manager, right click the project & press Compile
+- Choose File, Open and browse for TSSUID2007.dproj
+- From the project manager, right click the project & press Install
+- The components are now installed in the component palette under TMS Security
+
+Delphi 2009:
+- Choose File, Open and browse for TSSCoreD2009.dproj
+- From the project manager, right click the project & press Compile
+- Choose File, Open and browse for TSSUID2009.dproj
+- From the project manager, right click the project & press Install
+- The components are now installed in the component palette under TMS Security
+
+Delphi 2010:
+- Choose File, Open and browse for TSSCoreD2010.dproj
+- From the project manager, right click the project & press Compile
+- Choose File, Open and browse for TSSUID2010.dproj
+- From the project manager, right click the project & press Install
+- The components are now installed in the component palette under TMS Security
+
+Delphi XE:
+- Choose File, Open and browse for TSSCoreD2011.dproj
+- From the project manager, right click the project & press Compile
+- Choose File, Open and browse for TSSUID2011.dproj
+- From the project manager, right click the project & press Install
+- The components are now installed in the component palette under TMS Security
+
+C++Builder 6:
+- Unzip tssc6.zip into a separate directory
+- Choose File, Open and browse for TSSCoreC6.bpk
+- From the package editor, press Compile
+- Choose File, Open and browse for TSSUIC6.bpk
+- From the package editor, press Install
+- The components are now installed in the component palette under TMS Security
+
+C++Builder 2006:
+- Choose File, Open and browse for TSSCoreC2006.bdsproj
+- From the project manager, right click the project & press Compile
+- Choose File, Open and browse for TSSUIC2006.bdsproj
+- From the project manager, right click the project & press Install
+- The components are now installed in the component palette under TMS Security
+
+C++Builder 2007:
+- Choose File, Open and browse for TSSCoreC2007.cbproj
+- From the project manager, right click the project & press Compile
+- Choose File, Open and browse for TSSUIC2007.cbproj
+- From the project manager, right click the project & press Install
+- The components are now installed in the component palette under TMS Security
+
+C++Builder 2009:
+- Choose File, Open and browse for TSSCoreC2009.cbproj
+- From the project manager, right click the project & press Compile
+- Choose File, Open and browse for TSSUIC2009.cbproj
+- From the project manager, right click the project & press Install
+- The components are now installed in the component palette under TMS Security
+
+C++Builder 2010:
+- Choose File, Open and browse for TSSCoreC2010.cbproj
+- From the project manager, right click the project & press Compile
+- Choose File, Open and browse for TSSUIC2010.cbproj
+- From the project manager, right click the project & press Install
+- The components are now installed in the component palette under TMS Security
+
+C++Builder 2011:
+- Choose File, Open and browse for TSSCoreC2011.cbproj
+- From the project manager, right click the project & press Compile
+- Choose File, Open and browse for TSSUIC2011.cbproj
+- From the project manager, right click the project & press Install
+- The components are now installed in the component palette under TMS Security
+
+
+Installing the TMS Security System help
+---------------------------------------
+
+Delphi 6
+- Copy SecuritySystemD6.* files in {$DELPHI}\Help folder
+- Under Help, Customize, Index tab add SecuritySystemD6.hlp
+
+Delphi 7
+- Copy SecuritySystemD7.* files in {$DELPHI}\Help folder
+- Under Help, Customize, Index tab add SecuritySystemD7.hlp
+
+Delphi 2005
+- Close the IDE
+- Execute RegHelp2 /i SecuritySystemDBDS3W.hxx
+- Restart the IDE
+
+Delphi 2006
+- Close the IDE
+- Execute RegHelp2 /i SecuritySystemDBDS4W.hxx
+- Restart the IDE
+
+Delphi 2007
+- Close the IDE
+- Execute RegHelp2 /i SecuritySystemDBDS5W.hxx
+- Restart the IDE
+
+Delphi 2009
+- Close the IDE
+- Execute RegHelp2 /i SecuritySystemDRS2009W.hxx
+- Restart the IDE
+
+Delphi 2010
+- Close the IDE
+- Execute RegHelp2 /i SecuritySystemDRS2010W.hxx
+- Restart the IDE
+
+Delphi XE
+- Close the IDE
+- Execute RegHelp2 /i SecuritySystemDRSXE.hxx
+- Restart the IDE
+
+C++Builder 6
+- Copy SecuritySystemB6.* files in {$DELPHI}\Help folder
+- Under Help, Customize, Index tab add SecuritySystemB6.hlp
+
+C++Builder 2006
+- Close the IDE
+- Execute RegHelp2 /i SecuritySystemBBDS4W.hxx
+- Restart the IDE
+
+C++Builder 2007
+- Close the IDE
+- Execute RegHelp2 /i SecuritySystemBBDS5W.hxx
+- Restart the IDE
+
+C++Builder 2009
+- Close the IDE
+- Execute RegHelp2 /i SecuritySystemBRS2009W.hxx
+- Restart the IDE
+
+C++Builder 2010
+- Close the IDE
+- Execute RegHelp2 /i SecuritySystemBRS2010W.hxx
+- Restart the IDE
+
+C++Builder XE
+- Close the IDE
+- Execute RegHelp2 /i SecuritySystemBRSXE.hxx
+- Restart the IDE
+
+
+

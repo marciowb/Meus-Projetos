@@ -1,0 +1,582 @@
+object TppReport
+  AutoStop = False
+  DataPipeline = plCustomer
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.Orientation = poLandscape
+  PrinterSetup.PaperName = 'Letter 8 ½ x 11 in'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 215900
+  PrinterSetup.mmPaperWidth = 279401
+  SaveAsTemplate = True
+  Template.FileName = 'E:\Development\RBDemos\0. Rap\1. CodeSite\rap0002.rtm'
+  Template.Format = ftASCII
+  UserName = 'Report'
+  DeviceType = 'Screen'
+  Language = lgEnglish
+  Version = '4.24 Pro'
+  mmColumnWidth = 0
+  object ppTitleBand1: TppTitleBand
+    NewPage = True
+    mmBottomOffset = 0
+    mmHeight = 43127
+    mmPrintPosition = 0
+    object ppRichText1: TppRichText
+      UserName = 'RichText1'
+      Caption = 'RichText1'
+      RichText = 
+        '{\rtf1\ansi\deff0\deflang1033{\fonttbl{\f0\fswiss Arial;}}'#13#10'{\co' +
+        'lortbl ;\red0\green0\blue0;}'#13#10'\viewkind4\uc1\pard\f0\fs20 This r' +
+        'eport contains calls to the following CodeSite methods:\par'#13#10'\pa' +
+        'r'#13#10'\cf1 AddSeparator\par'#13#10'EnterMethod\par'#13#10'SendString\par'#13#10'SendW' +
+        'arning\par'#13#10'ExitMethod\par'#13#10'\cf0\par'#13#10'Move forward to the next p' +
+        'age to view the report and the calls.\par'#13#10'}'#13#10
+      mmHeight = 38629
+      mmLeft = 3175
+      mmTop = 2117
+      mmWidth = 252942
+      BandType = 1
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+    end
+  end
+  object ppHeaderBand1: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+    object ppShape1: TppShape
+      UserName = 'Shape1'
+      Brush.Color = clSilver
+      ParentHeight = True
+      ParentWidth = True
+      mmHeight = 13229
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 266701
+      BandType = 0
+    end
+    object ppLabel1: TppLabel
+      UserName = 'Label1'
+      AutoSize = False
+      Caption = 'Company'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Tahoma'
+      Font.Size = 10
+      Font.Style = [fsBold, fsUnderline]
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 1852
+      mmTop = 8467
+      mmWidth = 70644
+      BandType = 0
+    end
+    object ppLabel2: TppLabel
+      UserName = 'Label2'
+      AutoSize = False
+      Caption = 'Addr1'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Tahoma'
+      Font.Size = 10
+      Font.Style = [fsBold, fsUnderline]
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 74083
+      mmTop = 8467
+      mmWidth = 71967
+      BandType = 0
+    end
+    object ppLabel3: TppLabel
+      UserName = 'Label3'
+      AutoSize = False
+      Caption = 'Addr2'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Tahoma'
+      Font.Size = 10
+      Font.Style = [fsBold, fsUnderline]
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 147109
+      mmTop = 8467
+      mmWidth = 21960
+      BandType = 0
+    end
+    object ppLabel4: TppLabel
+      UserName = 'Label4'
+      AutoSize = False
+      Caption = 'City'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Tahoma'
+      Font.Size = 10
+      Font.Style = [fsBold, fsUnderline]
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 170127
+      mmTop = 8202
+      mmWidth = 36777
+      BandType = 0
+    end
+    object ppLabel5: TppLabel
+      UserName = 'Label5'
+      AutoSize = False
+      Caption = 'State'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Tahoma'
+      Font.Size = 10
+      Font.Style = [fsBold, fsUnderline]
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 207963
+      mmTop = 8202
+      mmWidth = 48683
+      BandType = 0
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 5027
+    mmPrintPosition = 0
+    object ppShape6: TppShape
+      UserName = 'Shape6'
+      Brush.Style = bsClear
+      ParentHeight = True
+      mmHeight = 5027
+      mmLeft = 207434
+      mmTop = 0
+      mmWidth = 49742
+      BandType = 4
+    end
+    object ppShape5: TppShape
+      UserName = 'Shape5'
+      Brush.Style = bsClear
+      ParentHeight = True
+      mmHeight = 5027
+      mmLeft = 169598
+      mmTop = 0
+      mmWidth = 37835
+      BandType = 4
+    end
+    object ppShape4: TppShape
+      UserName = 'Shape4'
+      Brush.Style = bsClear
+      ParentHeight = True
+      mmHeight = 5027
+      mmLeft = 146579
+      mmTop = 0
+      mmWidth = 23019
+      BandType = 4
+    end
+    object ppShape3: TppShape
+      UserName = 'Shape3'
+      Brush.Style = bsClear
+      ParentHeight = True
+      mmHeight = 5027
+      mmLeft = 73025
+      mmTop = 0
+      mmWidth = 73554
+      BandType = 4
+    end
+    object ppShape2: TppShape
+      UserName = 'Shape2'
+      Brush.Style = bsClear
+      ParentHeight = True
+      mmHeight = 5027
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 73554
+      BandType = 4
+    end
+    object ppDBText1: TppDBText
+      UserName = 'DBText1'
+      DataField = 'Company'
+      DataPipeline = plCustomer
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Tahoma'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 1852
+      mmTop = 0
+      mmWidth = 70644
+      BandType = 4
+    end
+    object ppDBText2: TppDBText
+      UserName = 'DBText2'
+      DataField = 'Addr1'
+      DataPipeline = plCustomer
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Tahoma'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 74348
+      mmTop = 0
+      mmWidth = 71702
+      BandType = 4
+    end
+    object ppDBText3: TppDBText
+      UserName = 'DBText3'
+      DataField = 'Addr2'
+      DataPipeline = plCustomer
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Tahoma'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 147109
+      mmTop = 0
+      mmWidth = 21960
+      BandType = 4
+    end
+    object ppDBText4: TppDBText
+      UserName = 'DBText4'
+      DataField = 'City'
+      DataPipeline = plCustomer
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Tahoma'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 170127
+      mmTop = 529
+      mmWidth = 36777
+      BandType = 4
+    end
+    object ppDBText5: TppDBText
+      UserName = 'DBText5'
+      DataField = 'State'
+      DataPipeline = plCustomer
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Tahoma'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 207963
+      mmTop = 529
+      mmWidth = 48683
+      BandType = 4
+    end
+  end
+  object ppFooterBand1: TppFooterBand
+    PrintOnFirstPage = False
+    mmBottomOffset = 0
+    mmHeight = 0
+    mmPrintPosition = 0
+  end
+  object TraCodeModule
+    ProgramStream = {
+      01060F5472614576656E7448616E646C65720B50726F6772616D4E616D650611
+      44657461696C4265666F72655072696E740B50726F6772616D54797065070B74
+      7450726F63656475726506536F757263650C6701000070726F63656475726520
+      44657461696C4265666F72655072696E743B0D0A7661720D0A20206C73436F6D
+      70616E794E616D653A20537472696E673B0D0A626567696E0D0A202063734164
+      64536570617261746F723B0D0A20206373456E7465724D6574686F6428274465
+      7461696C2E4265666F72655072696E7427293B0D0A20206C73436F6D70616E79
+      4E616D65203A3D20706C437573746F6D65725B27436F6D70616E79275D3B0D0A
+      2020637353656E64537472696E672827436F6D70616E79204E616D65272C206C
+      73436F6D70616E794E616D65293B0D0A2020696620506F73282744697665272C
+      206C73436F6D70616E794E616D6529203C3E2030207468656E0D0A2020202063
+      7353656E645761726E696E672827436F6E7461696E732074686520776F726420
+      22446976652227293B20202020200D0A20206373457869744D6574686F642827
+      44657461696C2E4265666F72655072696E7427293B0D0A656E643B0D0A0D436F
+      6D706F6E656E744E616D65060644657461696C094576656E744E616D65060B42
+      65666F72655072696E74074576656E74494402180001060F5472614576656E74
+      48616E646C65720B50726F6772616D4E616D6506104865616465724166746572
+      5072696E740B50726F6772616D54797065070B747450726F6365647572650653
+      6F75726365064D70726F6365647572652048656164657241667465725072696E
+      743B0D0A626567696E0D0A20206373456E7465724D6574686F6428275265706F
+      72742048656164657227293B0D0A656E643B0D0A0D436F6D706F6E656E744E61
+      6D650606486561646572094576656E744E616D65060A41667465725072696E74
+      074576656E74494402170001060F5472614576656E7448616E646C65720B5072
+      6F6772616D4E616D650610466F6F74657241667465725072696E740B50726F67
+      72616D54797065070B747450726F63656475726506536F75726365064C70726F
+      63656475726520466F6F74657241667465725072696E743B0D0A626567696E0D
+      0A20206373457869744D6574686F6428275265706F727420466F6F7465722729
+      3B0D0A656E643B0D0A0D436F6D706F6E656E744E616D650606466F6F74657209
+      4576656E744E616D65060A41667465725072696E74074576656E744944021700
+      00}
+  end
+  object TdaDataModule
+    object TdaBDEQueryDataView
+      Left = 10
+      Top = 10
+      Width = 242
+      Height = 305
+      UserName = 'Query_Customer'
+      AutoSearchTabOrder = 0
+      object plCustomer: TppChildBDEPipeline
+        AutoCreateFields = False
+        UserName = 'plCustomer'
+        object TppField
+          FieldAlias = 'Custno'
+          FieldName = 'CustNo'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 0
+          TableName = 'customer.db'
+        end
+        object TppField
+          FieldAlias = 'Company'
+          FieldName = 'Company'
+          FieldLength = 30
+          DisplayWidth = 30
+          Position = 1
+          TableName = 'customer.db'
+        end
+        object TppField
+          FieldAlias = 'Addr1'
+          FieldName = 'Addr1'
+          FieldLength = 30
+          DisplayWidth = 30
+          Position = 2
+          TableName = 'customer.db'
+        end
+        object TppField
+          FieldAlias = 'Addr2'
+          FieldName = 'Addr2'
+          FieldLength = 30
+          DisplayWidth = 30
+          Position = 3
+          TableName = 'customer.db'
+        end
+        object TppField
+          FieldAlias = 'City'
+          FieldName = 'City'
+          FieldLength = 15
+          DisplayWidth = 15
+          Position = 4
+          TableName = 'customer.db'
+        end
+        object TppField
+          FieldAlias = 'State'
+          FieldName = 'State'
+          FieldLength = 20
+          DisplayWidth = 20
+          Position = 5
+          TableName = 'customer.db'
+        end
+        object TppField
+          FieldAlias = 'Zip'
+          FieldName = 'Zip'
+          FieldLength = 10
+          DisplayWidth = 10
+          Position = 6
+          TableName = 'customer.db'
+        end
+        object TppField
+          FieldAlias = 'Country'
+          FieldName = 'Country'
+          FieldLength = 20
+          DisplayWidth = 20
+          Position = 7
+          TableName = 'customer.db'
+        end
+        object TppField
+          FieldAlias = 'Phone'
+          FieldName = 'Phone'
+          FieldLength = 15
+          DisplayWidth = 15
+          Position = 8
+          TableName = 'customer.db'
+        end
+        object TppField
+          FieldAlias = 'Fax'
+          FieldName = 'FAX'
+          FieldLength = 15
+          DisplayWidth = 15
+          Position = 9
+          TableName = 'customer.db'
+        end
+        object TppField
+          FieldAlias = 'Taxrate'
+          FieldName = 'TaxRate'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 10
+          TableName = 'customer.db'
+        end
+        object TppField
+          FieldAlias = 'Contact'
+          FieldName = 'Contact'
+          FieldLength = 20
+          DisplayWidth = 20
+          Position = 11
+          TableName = 'customer.db'
+        end
+        object TppField
+          FieldAlias = 'Lastinvoicedate'
+          FieldName = 'LastInvoiceDate'
+          FieldLength = 0
+          DataType = dtDateTime
+          DisplayWidth = 18
+          Position = 12
+          TableName = 'customer.db'
+        end
+      end
+      object TdaSQL
+        DatabaseName = 'DBDEMOS'
+        DatabaseType = dtParadox
+        DataPipelineName = 'plCustomer'
+        Description = 'Customer'
+        SQLText.Strings = (
+          'SELECT customer.CustNo, customer.Company, '
+          '       customer.Addr1, customer.Addr2, '
+          '       customer.City, customer.State, '
+          '       customer.Zip, customer.Country, '
+          '       customer.Phone, customer.FAX, '
+          '       customer.TaxRate, customer.Contact, '
+          '       customer.LastInvoiceDate'
+          'FROM "customer.db" customer')
+        object TdaField
+          Alias = 'Custno'
+          DataType = dtDouble
+          FieldAlias = 'Custno'
+          FieldName = 'CustNo'
+          TableName = 'customer.db'
+          SQLFieldName = 'CustNo'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Company'
+          FieldAlias = 'Company'
+          FieldName = 'Company'
+          TableName = 'customer.db'
+          SQLFieldName = 'Company'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Addr1'
+          FieldAlias = 'Addr1'
+          FieldName = 'Addr1'
+          TableName = 'customer.db'
+          SQLFieldName = 'Addr1'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Addr2'
+          FieldAlias = 'Addr2'
+          FieldName = 'Addr2'
+          TableName = 'customer.db'
+          SQLFieldName = 'Addr2'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'City'
+          FieldAlias = 'City'
+          FieldName = 'City'
+          TableName = 'customer.db'
+          SQLFieldName = 'City'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'State'
+          FieldAlias = 'State'
+          FieldName = 'State'
+          TableName = 'customer.db'
+          SQLFieldName = 'State'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Zip'
+          FieldAlias = 'Zip'
+          FieldName = 'Zip'
+          TableName = 'customer.db'
+          SQLFieldName = 'Zip'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Country'
+          FieldAlias = 'Country'
+          FieldName = 'Country'
+          TableName = 'customer.db'
+          SQLFieldName = 'Country'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Phone'
+          FieldAlias = 'Phone'
+          FieldName = 'Phone'
+          TableName = 'customer.db'
+          SQLFieldName = 'Phone'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Fax'
+          FieldAlias = 'Fax'
+          FieldName = 'FAX'
+          TableName = 'customer.db'
+          SQLFieldName = 'FAX'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Taxrate'
+          DataType = dtDouble
+          FieldAlias = 'Taxrate'
+          FieldName = 'TaxRate'
+          TableName = 'customer.db'
+          SQLFieldName = 'TaxRate'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Contact'
+          FieldAlias = 'Contact'
+          FieldName = 'Contact'
+          TableName = 'customer.db'
+          SQLFieldName = 'Contact'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Lastinvoicedate'
+          DataType = dtDateTime
+          FieldAlias = 'Lastinvoicedate'
+          FieldName = 'LastInvoiceDate'
+          TableName = 'customer.db'
+          SQLFieldName = 'LastInvoiceDate'
+          TableAlias = 'Customer'
+          TableSQLAlias = 'customer'
+        end
+        object TdaTable
+          ChildType = 5
+          Alias = 'Customer'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          SQLAlias = 'customer'
+          JoinType = dajtNone
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <PersonalityInfo>
+    <Option>
+      <Option Name="Personality">Default.Personality</Option>
+      <Option Name="ProjectType"></Option>
+      <Option Name="Version">1.0</Option>
+      <Option Name="GUID">{24874E1A-0AB3-41C4-A581-FFC3D9EE832B}</Option>
+    </Option>
+  </PersonalityInfo>
+  <Default.Personality>
+    
+    
+    <Projects>
+      <Projects Name="gtAdvGridExpBDS2006.bpl">TMS\gtAdvGridExpBDS2006.bdsproj</Projects>
+      <Projects Name="DCLgtAdvGridExpBDS2006.bpl">TMS\DCLgtAdvGridExpBDS2006.bdsproj</Projects>
+      <Projects Name="Targets">gtAdvGridExpBDS2006.bpl DCLgtAdvGridExpBDS2006.bpl</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

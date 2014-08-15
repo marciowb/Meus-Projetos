@@ -1,0 +1,543 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{9519f047-0fb5-41aa-94fa-672547271ef4}</ProjectGuid>
+			<ProjectType>CppPackage</ProjectType>
+			<MainSource>aqueryc2011.cpp</MainSource>
+			<Config Condition="'$(Config)'==''">Debug Build</Config>
+			<ProjectVersion>12.0</ProjectVersion>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug Build' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release Build' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<LinkPackageStatics>vcldb.lib;adortl.lib;bdertl.lib;vcldbx.lib;ibxpress.lib;dsnap.lib;dsnapcon.lib;teeui.lib;teedb.lib;tee.lib;inetdbbde.lib;inetdbxpress.lib;dbexpress.lib;soaprtl.lib;dbxcds.lib;indycore.lib;indysystem.lib;dbrtl.lib;inet.lib;inetdb.lib</LinkPackageStatics>
+			<LinkPackageImports>rtl.bpi;bcbsmp.bpi;bcbie.bpi;xmlrtl.bpi</LinkPackageImports>
+			<OutputExt>bpl</OutputExt>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<DynamicRTL>true</DynamicRTL>
+			<ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
+			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+			<ILINK_AppType>Windows</ILINK_AppType>
+			<BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+			<ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+			<ILINK_ObjectSearchPath>..\..\query\source;..\..\diagram\source</ILINK_ObjectSearchPath>
+			<UsePackages>true</UsePackages>
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<BCC_ZeroLengthEmptyMemberFuncs>true</BCC_ZeroLengthEmptyMemberFuncs>
+			<FinalOutputDir>.</FinalOutputDir>
+			<PackageImports>rtl.bpi;vcl.bpi;designide.bpi;vclx.bpi;bcbsmp.bpi;bcbie.bpi;xmlrtl.bpi</PackageImports>
+			<TASM_AdditionalSwitches> /w2</TASM_AdditionalSwitches>
+			<DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj</DCC_UnitSearchPath>
+			<ILINK_Description>Query Studio Components</ILINK_Description>
+			<BRCC_UserSuppliedOptions> -I$(BDS)\DS\source;$(BDS)\Projects;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_UserSuppliedOptions>
+			<ILINK_WinAppType>Package</ILINK_WinAppType>
+			<BCC_StackFrames>true</BCC_StackFrames>
+			<BCC_GenerateMultithreaded>true</BCC_GenerateMultithreaded>
+			<IncludePath>..\..\query\source;..\..\diagram\source</IncludePath>
+			<DCC_UsePackage>designide</DCC_UsePackage>
+			<BCC_PCHCache>true</BCC_PCHCache>
+			<BCC_IntegerSizedEnums>false</BCC_IntegerSizedEnums>
+			<DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj</DCC_IncludePath>
+			<BRCC_IncludePath>$(BDS)\DS\source;$(BDS)\Projects;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_IncludePath>
+			<AllPackageLibs>rtl.lib;vcldb.lib;adortl.lib;bdertl.lib;vcldbx.lib;ibxpress.lib;dsnap.lib;dsnapcon.lib;teeui.lib;teedb.lib;tee.lib;dsnapcon.lib;bcbsmp.lib;inetdbbde.lib;inetdbxpress.lib;dbexpress.lib;bcbie.lib;soaprtl.lib;dbxcds.lib;indycore.lib;indysystem.lib;dbrtl.lib;dsnap.lib;xmlrtl.lib;inet.lib;inetdb.lib</AllPackageLibs>
+			<TASM_IncludePath>$(BDS)\DS\source;$(BDS)\Projects;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</TASM_IncludePath>
+			<BCC_IncludePath>$(BDS)\DS\source;$(BDS)\Projects;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BCC_IncludePath>
+			<ILINK_LibraryPath>C:\Program Files\IntraWeb for CBuilder\LibCB6;C:\Program Files\IntraWeb\CBuilder\LibCB6;$(BDS)\DS\source;$(BDS)\Projects\Lib;$(BDS)\Projects;$(BDS)\lib\obj;$(BDS)\lib;..\..\query\source;..\..\diagram\source</ILINK_LibraryPath>
+			<BCC_ZeroLengthEmptyBaseClass>true</BCC_ZeroLengthEmptyBaseClass>
+			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+			<Multithreaded>true</Multithreaded>
+			<TASM_Defines>_DEBUG</TASM_Defines>
+			<BRCC_Defines>_DEBUG</BRCC_Defines>
+			<BCC_Defines>NO_STRICT</BCC_Defines>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+			<DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+			<IntermediateOutputDir>Debug_Build</IntermediateOutputDir>
+			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+			<ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<BCC_Defines>_DEBUG;$(BCC_Defines)</BCC_Defines>
+			<TASM_Debugging>Full</TASM_Debugging>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Optimize>true</DCC_Optimize>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
+			<BCC_UseRegisterVariables>Always</BCC_UseRegisterVariables>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+			<IntermediateOutputDir>Release_Build</IntermediateOutputDir>
+			<BCC_StackFrames>false</BCC_StackFrames>
+			<ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<BCC_Defines>NDEBUG;$(BCC_Defines)</BCC_Defines>
+			<TASM_Debugging>None</TASM_Debugging>
+		</PropertyGroup>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppPackage</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">2067</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Debugging>
+						<Debugging Name="DebugSourceDirs">$(BCB)\source\vcl</Debugging>
+					</Debugging>
+					<Parameters>
+						<Parameters Name="RunParams"/>
+						<Parameters Name="Launcher"/>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="DebugCWD"/>
+						<Parameters Name="HostApplication"/>
+						<Parameters Name="RemoteHost"/>
+						<Parameters Name="RemotePath"/>
+						<Parameters Name="RemoteParams"/>
+						<Parameters Name="RemoteLauncher"/>
+						<Parameters Name="UseRemoteLauncher">False</Parameters>
+						<Parameters Name="RemoteCWD"/>
+						<Parameters Name="RemoteDebug">False</Parameters>
+						<Parameters Name="Debug Symbols Search Path"/>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<Linker>
+						<Linker Name="LibPrefix"/>
+						<Linker Name="LibSuffix"/>
+						<Linker Name="LibVersion"/>
+					</Linker>
+					<Source>
+						<Source Name="MainSource">aqueryc2011.cpp</Source>
+					</Source>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+					<HistoryLists_hlIncludePath>
+						<HistoryLists_hlIncludePath Name="Count">1</HistoryLists_hlIncludePath>
+						<HistoryLists_hlIncludePath Name="Item0">..\..\query\source;..\..\diagram\source</HistoryLists_hlIncludePath>
+					</HistoryLists_hlIncludePath>
+					<HistoryLists_hlFinalOutputDir>
+						<HistoryLists_hlFinalOutputDir Name="Count">1</HistoryLists_hlFinalOutputDir>
+						<HistoryLists_hlFinalOutputDir Name="Item0">.</HistoryLists_hlFinalOutputDir>
+					</HistoryLists_hlFinalOutputDir>
+					<HistoryLists_hlILINK_LibraryPath>
+						<HistoryLists_hlILINK_LibraryPath Name="Count">1</HistoryLists_hlILINK_LibraryPath>
+						<HistoryLists_hlILINK_LibraryPath Name="Item0">$(BDS)\lib\debug;C:\Program Files\IntraWeb for CBuilder\LibCB6;C:\Program Files\IntraWeb\CBuilder\LibCB6;$(BDS)\DS\source;$(BDS)\Projects\Lib;$(BDS)\Projects;$(BDS)\lib\obj;$(BDS)\lib;..\..\query\source;..\..\diagram\source</HistoryLists_hlILINK_LibraryPath>
+					</HistoryLists_hlILINK_LibraryPath>
+					<HistoryLists_hlIntermediateOutputDir>
+						<HistoryLists_hlIntermediateOutputDir Name="Count">1</HistoryLists_hlIntermediateOutputDir>
+						<HistoryLists_hlIntermediateOutputDir Name="Item0">Debug_Build</HistoryLists_hlIntermediateOutputDir>
+					</HistoryLists_hlIntermediateOutputDir>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcboffice2k100.bpl">CodeGear C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcbofficexp100.bpl">CodeGear C++Builder Office XP Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k100.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp100.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+					<HistoryLists_hlBCC_MaxIdentifierLength>
+						<HistoryLists_hlBCC_MaxIdentifierLength Name="Count">1</HistoryLists_hlBCC_MaxIdentifierLength>
+						<HistoryLists_hlBCC_MaxIdentifierLength Name="Item0">250</HistoryLists_hlBCC_MaxIdentifierLength>
+					</HistoryLists_hlBCC_MaxIdentifierLength>
+					<HistoryLists_hlBCC_IncludePath>
+						<HistoryLists_hlBCC_IncludePath Name="Count">1</HistoryLists_hlBCC_IncludePath>
+						<HistoryLists_hlBCC_IncludePath Name="Item0">$(BDS)\DS\source;$(BDS)\Projects;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</HistoryLists_hlBCC_IncludePath>
+					</HistoryLists_hlBCC_IncludePath>
+					<HistoryLists_hlBCC_Defines>
+						<HistoryLists_hlBCC_Defines Name="Count">1</HistoryLists_hlBCC_Defines>
+						<HistoryLists_hlBCC_Defines Name="Item0">_DEBUG;NO_STRICT</HistoryLists_hlBCC_Defines>
+					</HistoryLists_hlBCC_Defines>
+					<HistoryLists_hlILINK_MaxErrors>
+						<HistoryLists_hlILINK_MaxErrors Name="Count">1</HistoryLists_hlILINK_MaxErrors>
+						<HistoryLists_hlILINK_MaxErrors Name="Item0">0</HistoryLists_hlILINK_MaxErrors>
+					</HistoryLists_hlILINK_MaxErrors>
+					<HistoryLists_hlILINK_FileAlignment>
+						<HistoryLists_hlILINK_FileAlignment Name="Count">1</HistoryLists_hlILINK_FileAlignment>
+						<HistoryLists_hlILINK_FileAlignment Name="Item0">0x200</HistoryLists_hlILINK_FileAlignment>
+					</HistoryLists_hlILINK_FileAlignment>
+					<HistoryLists_hlILINK_ObjectAlignment>
+						<HistoryLists_hlILINK_ObjectAlignment Name="Count">1</HistoryLists_hlILINK_ObjectAlignment>
+						<HistoryLists_hlILINK_ObjectAlignment Name="Item0">4096</HistoryLists_hlILINK_ObjectAlignment>
+					</HistoryLists_hlILINK_ObjectAlignment>
+					<HistoryLists_hlILINK_BaseAddress>
+						<HistoryLists_hlILINK_BaseAddress Name="Count">1</HistoryLists_hlILINK_BaseAddress>
+						<HistoryLists_hlILINK_BaseAddress Name="Item0">0x00400000</HistoryLists_hlILINK_BaseAddress>
+					</HistoryLists_hlILINK_BaseAddress>
+					<HistoryLists_hlILINK_HeapCommitSize>
+						<HistoryLists_hlILINK_HeapCommitSize Name="Count">1</HistoryLists_hlILINK_HeapCommitSize>
+						<HistoryLists_hlILINK_HeapCommitSize Name="Item0">0x00001000</HistoryLists_hlILINK_HeapCommitSize>
+					</HistoryLists_hlILINK_HeapCommitSize>
+					<HistoryLists_hlILINK_HeapReserveSize>
+						<HistoryLists_hlILINK_HeapReserveSize Name="Count">1</HistoryLists_hlILINK_HeapReserveSize>
+						<HistoryLists_hlILINK_HeapReserveSize Name="Item0">0x00100000</HistoryLists_hlILINK_HeapReserveSize>
+					</HistoryLists_hlILINK_HeapReserveSize>
+					<HistoryLists_hlILINK_StackCommitSize>
+						<HistoryLists_hlILINK_StackCommitSize Name="Count">1</HistoryLists_hlILINK_StackCommitSize>
+						<HistoryLists_hlILINK_StackCommitSize Name="Item0">0x00002000</HistoryLists_hlILINK_StackCommitSize>
+					</HistoryLists_hlILINK_StackCommitSize>
+					<HistoryLists_hlILINK_StackReserveSize>
+						<HistoryLists_hlILINK_StackReserveSize Name="Count">1</HistoryLists_hlILINK_StackReserveSize>
+						<HistoryLists_hlILINK_StackReserveSize Name="Item0">0x00100000</HistoryLists_hlILINK_StackReserveSize>
+					</HistoryLists_hlILINK_StackReserveSize>
+					<HistoryLists_hlDCC_IncludePath>
+						<HistoryLists_hlDCC_IncludePath Name="Count">1</HistoryLists_hlDCC_IncludePath>
+						<HistoryLists_hlDCC_IncludePath Name="Item0">.\;$(BDS)\lib;$(BDS)\lib\obj</HistoryLists_hlDCC_IncludePath>
+					</HistoryLists_hlDCC_IncludePath>
+					<HistoryLists_hlDCC_Define>
+						<HistoryLists_hlDCC_Define Name="Count">1</HistoryLists_hlDCC_Define>
+						<HistoryLists_hlDCC_Define Name="Item0">DEBUG</HistoryLists_hlDCC_Define>
+					</HistoryLists_hlDCC_Define>
+					<HistoryLists_hlDCC_CodePage>
+						<HistoryLists_hlDCC_CodePage Name="Count">1</HistoryLists_hlDCC_CodePage>
+						<HistoryLists_hlDCC_CodePage Name="Item0">0</HistoryLists_hlDCC_CodePage>
+					</HistoryLists_hlDCC_CodePage>
+					<HistoryLists_hlDCC_UsePackage>
+						<HistoryLists_hlDCC_UsePackage Name="Count">1</HistoryLists_hlDCC_UsePackage>
+						<HistoryLists_hlDCC_UsePackage Name="Item0">designide</HistoryLists_hlDCC_UsePackage>
+					</HistoryLists_hlDCC_UsePackage>
+					<HistoryLists_hlBRCC_IncludePath>
+						<HistoryLists_hlBRCC_IncludePath Name="Count">1</HistoryLists_hlBRCC_IncludePath>
+						<HistoryLists_hlBRCC_IncludePath Name="Item0">$(BDS)\DS\source;$(BDS)\Projects;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</HistoryLists_hlBRCC_IncludePath>
+					</HistoryLists_hlBRCC_IncludePath>
+					<HistoryLists_hlBRCC_Defines>
+						<HistoryLists_hlBRCC_Defines Name="Count">1</HistoryLists_hlBRCC_Defines>
+						<HistoryLists_hlBRCC_Defines Name="Item0">_DEBUG</HistoryLists_hlBRCC_Defines>
+					</HistoryLists_hlBRCC_Defines>
+					<HistoryLists_hlTASM_IncludePath>
+						<HistoryLists_hlTASM_IncludePath Name="Count">1</HistoryLists_hlTASM_IncludePath>
+						<HistoryLists_hlTASM_IncludePath Name="Item0">$(BDS)\DS\source;$(BDS)\Projects;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</HistoryLists_hlTASM_IncludePath>
+					</HistoryLists_hlTASM_IncludePath>
+					<HistoryLists_hlTASM_Defines>
+						<HistoryLists_hlTASM_Defines Name="Count">1</HistoryLists_hlTASM_Defines>
+						<HistoryLists_hlTASM_Defines Name="Item0">_DEBUG</HistoryLists_hlTASM_Defines>
+					</HistoryLists_hlTASM_Defines>
+					<HistoryLists_hlTASM_HashTableCapacity>
+						<HistoryLists_hlTASM_HashTableCapacity Name="Count">1</HistoryLists_hlTASM_HashTableCapacity>
+						<HistoryLists_hlTASM_HashTableCapacity Name="Item0">8192</HistoryLists_hlTASM_HashTableCapacity>
+					</HistoryLists_hlTASM_HashTableCapacity>
+					<HistoryLists_hlTASM_MaxSymbolLength>
+						<HistoryLists_hlTASM_MaxSymbolLength Name="Count">1</HistoryLists_hlTASM_MaxSymbolLength>
+						<HistoryLists_hlTASM_MaxSymbolLength Name="Item0">12</HistoryLists_hlTASM_MaxSymbolLength>
+					</HistoryLists_hlTASM_MaxSymbolLength>
+					<HistoryLists_hlTASM_Passes>
+						<HistoryLists_hlTASM_Passes Name="Count">1</HistoryLists_hlTASM_Passes>
+						<HistoryLists_hlTASM_Passes Name="Item0">1</HistoryLists_hlTASM_Passes>
+					</HistoryLists_hlTASM_Passes>
+					<HistoryLists_hlTASM_VersionId>
+						<HistoryLists_hlTASM_VersionId Name="Count">1</HistoryLists_hlTASM_VersionId>
+						<HistoryLists_hlTASM_VersionId Name="Item0">0</HistoryLists_hlTASM_VersionId>
+					</HistoryLists_hlTASM_VersionId>
+				</CPlusPlusBuilder.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<ItemGroup>
+			<PackageImport Include="bdertl.bpi">
+				<BuildOrder>0</BuildOrder>
+			</PackageImport>
+			<PackageImport Include="dbrtl.bpi">
+				<BuildOrder>1</BuildOrder>
+			</PackageImport>
+			<PackageImport Include="designide.bpi">
+				<BuildOrder>2</BuildOrder>
+			</PackageImport>
+			<PackageImport Include="rtl.bpi">
+				<BuildOrder>3</BuildOrder>
+			</PackageImport>
+			<PackageImport Include="vcl.bpi">
+				<BuildOrder>4</BuildOrder>
+			</PackageImport>
+			<PackageImport Include="vcldb.bpi">
+				<BuildOrder>5</BuildOrder>
+			</PackageImport>
+			<PackageImport Include="VclSmp.bpi">
+				<BuildOrder>6</BuildOrder>
+			</PackageImport>
+			<PackageImport Include="vclx.bpi">
+				<BuildOrder>7</BuildOrder>
+			</PackageImport>
+			<CppCompile Include="aqueryc2011.cpp">
+				<BuildOrder>8</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="aqueryc2011.res">
+				<BuildOrder>9</BuildOrder>
+			</ResFiles>
+			<None Include="atDBReg.dcr">
+				<BuildOrder>11</BuildOrder>
+			</None>
+			<DelphiCompile Include="atBaseParser.pas">
+				<BuildOrder>31</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atBdeDatabase.pas">
+				<BuildOrder>32</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atCheckListEdit.pas">
+				<BuildOrder>32</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atCustomDatabase.pas">
+				<BuildOrder>33</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atDatabase.pas">
+				<BuildOrder>33</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atDBReg.pas">
+				<BuildOrder>34</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atImportSQLForm.pas">
+				<Form>fmImportSQL</Form>
+				<BuildOrder>35</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atListBoxDlg.pas">
+				<BuildOrder>36</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQL.pas">
+				<BuildOrder>36</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQLAbstractEditor.pas">
+				<Form>fmMetaSQLAbstractEditor</Form>
+				<DesignClass>TFrame</DesignClass>
+				<BuildOrder>37</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQLConditionEditor.pas">
+				<BuildOrder>38</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQLConditionForm.pas">
+				<Form>fmMetaSQLConditionForm</Form>
+				<BuildOrder>39</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atmetasqlcustomeditor.pas">
+				<BuildOrder>40</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQLDataResult.pas">
+				<Form>fmMetaSQLDataResult</Form>
+				<DesignClass>TFrame</DesignClass>
+				<BuildOrder>41</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQLEditor.pas">
+				<BuildOrder>42</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQLFieldEditor.pas">
+				<BuildOrder>43</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQLForm.pas">
+				<Form>fmMetaSQLEditor</Form>
+				<BuildOrder>44</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQLGroupEditor.pas">
+				<BuildOrder>45</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atmetasqljoineditor.pas">
+				<BuildOrder>46</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQLMemo.pas">
+				<Form>fmMetaSQLMemo</Form>
+				<DesignClass>TFrame</DesignClass>
+				<BuildOrder>47</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQLOrderEditor.pas">
+				<BuildOrder>48</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQLReg.pas">
+				<BuildOrder>48</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMetaSQLTableEditor.pas">
+				<BuildOrder>49</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atPanel.pas">
+				<BuildOrder>50</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atparamtreeview.pas">
+				<BuildOrder>50</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atParHTML.pas">
+				<BuildOrder>51</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atParXPVS.pas">
+				<BuildOrder>52</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atPictureContainer.pas">
+				<BuildOrder>53</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atQueryCombo.pas">
+				<BuildOrder>53</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atSQLParser.pas">
+				<BuildOrder>53</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atVisualQuery.pas">
+				<BuildOrder>53</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atVisualQueryEditor.pas">
+				<BuildOrder>54</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fCheckListParamEditor.pas">
+				<BuildOrder>57</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fChooseListParamEditor.pas">
+				<BuildOrder>58</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fCompareConditionEditor.pas">
+				<Form>fmCompareConditionEditor</Form>
+				<BuildOrder>59</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fCustomConditionEditor.pas">
+				<Form>fmCustomConditionEditor</Form>
+				<BuildOrder>59</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fcustomeditor.pas">
+				<Form>fmCustomEditor</Form>
+				<BuildOrder>59</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fCustomFieldEditor.pas">
+				<Form>fmCustomFieldEditor</Form>
+				<BuildOrder>59</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fCustomGroupEditor.pas">
+				<Form>fmCustomGroupEditor</Form>
+				<BuildOrder>59</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fCustomListParamEditor.pas">
+				<Form>fmCustomListParamEditor</Form>
+				<BuildOrder>59</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fCustomOrderEditor.pas">
+				<Form>fmCustomOrderEditor</Form>
+				<BuildOrder>59</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fCustomParamEditor.pas">
+				<Form>fmCustomParamEditor</Form>
+				<BuildOrder>59</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fCustomTableEditor.pas">
+				<Form>fmCustomTableEditor</Form>
+				<BuildOrder>59</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fDistinctListParamEditor.pas">
+				<Form>fmDistinctListParamEditor</Form>
+				<BuildOrder>60</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fExpressionConditionEditor.pas">
+				<Form>fmExpressionConditionEditor</Form>
+				<BuildOrder>61</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fExpressionFieldEditor.pas">
+				<Form>fmExpressionFieldEditor</Form>
+				<BuildOrder>62</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fFreeEditParamEditor.pas">
+				<Form>fmFreeEditParamEditor</Form>
+				<BuildOrder>63</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fQueryEditor.pas">
+				<BuildOrder>64</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fQueryListParamEditor.pas">
+				<Form>fmQueryListParamEditor</Form>
+				<BuildOrder>65</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fSingleFieldEditor.pas">
+				<Form>fmSingleFieldEditor</Form>
+				<BuildOrder>65</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fSubconditionsEditor.pas">
+				<Form>fmSubconditionsEditor</Form>
+				<BuildOrder>66</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="ListForm.pas">
+				<Form>fmListForm</Form>
+				<BuildOrder>67</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="paramtreeview.pas">
+				<BuildOrder>68</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="ParHTML.pas">
+				<BuildOrder>69</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="ParXPVS.pas">
+				<BuildOrder>70</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="PictureContainer.pas">
+				<BuildOrder>71</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="ShowSQLForm.pas">
+				<Form>fmShowSQL</Form>
+				<BuildOrder>72</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="uDBUtil.pas">
+				<BuildOrder>72</BuildOrder>
+			</DelphiCompile>
+			<FormResources Include="atImportSQLForm.dfm"/>
+			<FormResources Include="atMetaSQLAbstractEditor.dfm"/>
+			<FormResources Include="atMetaSQLConditionForm.dfm"/>
+			<FormResources Include="atMetaSQLDataResult.dfm"/>
+			<FormResources Include="atMetaSQLForm.dfm"/>
+			<FormResources Include="atMetaSQLMemo.dfm"/>
+			<FormResources Include="fCompareConditionEditor.dfm"/>
+			<FormResources Include="fCustomConditionEditor.dfm"/>
+			<FormResources Include="fcustomeditor.dfm"/>
+			<FormResources Include="fCustomFieldEditor.dfm"/>
+			<FormResources Include="fCustomGroupEditor.dfm"/>
+			<FormResources Include="fCustomListParamEditor.dfm"/>
+			<FormResources Include="fCustomOrderEditor.dfm"/>
+			<FormResources Include="fCustomParamEditor.dfm"/>
+			<FormResources Include="fCustomTableEditor.dfm"/>
+			<FormResources Include="fDistinctListParamEditor.dfm"/>
+			<FormResources Include="fExpressionConditionEditor.dfm"/>
+			<FormResources Include="fExpressionFieldEditor.dfm"/>
+			<FormResources Include="fFreeEditParamEditor.dfm"/>
+			<FormResources Include="fQueryListParamEditor.dfm"/>
+			<FormResources Include="fSingleFieldEditor.dfm"/>
+			<FormResources Include="fSubconditionsEditor.dfm"/>
+			<FormResources Include="ListForm.dfm"/>
+			<FormResources Include="ShowSQLForm.dfm"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release Build">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug Build">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+	</Project>

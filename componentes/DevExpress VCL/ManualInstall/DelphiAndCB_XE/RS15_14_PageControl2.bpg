@@ -1,0 +1,23 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = cxPageControlRS15.bpl dclcxPageControlRS15.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+cxPageControlRS15.bpl: ..\..\ExpressPageControl 2\Packages\cxPageControlRS15.dpk
+  $(DCC)
+
+dclcxPageControlRS15.bpl: ..\..\ExpressPageControl 2\Packages\dclcxPageControlRS15.dpk
+  $(DCC)
+
+

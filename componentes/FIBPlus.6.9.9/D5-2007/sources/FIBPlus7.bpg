@@ -1,0 +1,30 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = FIBPlus7.bpl FIBDBMidas7.bpl FIBPlusEditors7.bpl pFIBPlusTools7.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+
+FIBPlus7.bpl: FIBPlus7.dpk
+  $(DCC)
+
+FIBDBMidas7.bpl: FIBDBMidas7.dpk
+  $(DCC)
+
+FIBPlusEditors7.bpl: FIBPlusEditors7.dpk
+  $(DCC)
+
+pFIBPlusTools7.bpl: Tools\pFIBPlusTools7.dpk
+  $(DCC)
+
+

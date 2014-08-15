@@ -1,0 +1,21 @@
+; This file was created by GenHelpPro.
+; This file is maintained by HCW. Do not modify this file directly.
+[OPTIONS]
+COMPRESS=12 Hall Zeck
+ERRORLOG=ascriptprod5.log
+LCID=0x809 0x0 0x0
+CHARSET=0
+REPORT=Yes
+TITLE=TMS Scripter Studio Pro
+COPYRIGHT=Copyright C 1998 - 2010 tmssoftware.com
+HLP=ascriptprod5.hlp
+[WINDOWS]
+Main="TMS Scripter Studio Pro",(425,350,580,615),27904,,,f2
+Pme="TMS Scripter Studio Pro",(210,350,210,600),4,(r14811135),(r12632256)
+Example="TMS Scripter Studio Pro",(425,100,580,845),12292,,(r12632256)
+[FILES]
+ascriptprod5.rtf
+[MAP]
+[CONFIG]
+BrowseButtons()
+CreateButton(btn_history,History,History())

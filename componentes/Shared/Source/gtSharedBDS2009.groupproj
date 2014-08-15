@@ -1,0 +1,84 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{509E76C3-A958-494A-B8DE-8DE624DFFA7B}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="Rtl\gtRtlBDS2009.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Compression\gtCompressionBDS2009.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Filters\gtFiltersBDS2009.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="PDFFontProcessor\gtFontBDS2009.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="PDFCrypt\gtCryptBDS2009.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="gtRtlBDS2009">
+			<MSBuild Projects="Rtl\gtRtlBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtRtlBDS2009:Clean">
+			<MSBuild Targets="Clean" Projects="Rtl\gtRtlBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtRtlBDS2009:Make">
+			<MSBuild Targets="Make" Projects="Rtl\gtRtlBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtCompressionBDS2009">
+			<MSBuild Projects="Compression\gtCompressionBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtCompressionBDS2009:Clean">
+			<MSBuild Targets="Clean" Projects="Compression\gtCompressionBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtCompressionBDS2009:Make">
+			<MSBuild Targets="Make" Projects="Compression\gtCompressionBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtFiltersBDS2009">
+			<MSBuild Projects="Filters\gtFiltersBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtFiltersBDS2009:Clean">
+			<MSBuild Targets="Clean" Projects="Filters\gtFiltersBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtFiltersBDS2009:Make">
+			<MSBuild Targets="Make" Projects="Filters\gtFiltersBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtFontBDS2009">
+			<MSBuild Projects="PDFFontProcessor\gtFontBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtFontBDS2009:Clean">
+			<MSBuild Targets="Clean" Projects="PDFFontProcessor\gtFontBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtFontBDS2009:Make">
+			<MSBuild Targets="Make" Projects="PDFFontProcessor\gtFontBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtCryptBDS2009">
+			<MSBuild Projects="PDFCrypt\gtCryptBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtCryptBDS2009:Clean">
+			<MSBuild Targets="Clean" Projects="PDFCrypt\gtCryptBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtCryptBDS2009:Make">
+			<MSBuild Targets="Make" Projects="PDFCrypt\gtCryptBDS2009.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="gtRtlBDS2009;gtCompressionBDS2009;gtFiltersBDS2009;gtFontBDS2009;gtCryptBDS2009"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="gtRtlBDS2009:Clean;gtCompressionBDS2009:Clean;gtFiltersBDS2009:Clean;gtFontBDS2009:Clean;gtCryptBDS2009:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="gtRtlBDS2009:Make;gtCompressionBDS2009:Make;gtFiltersBDS2009:Make;gtFontBDS2009:Make;gtCryptBDS2009:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

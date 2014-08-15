@@ -1,0 +1,65 @@
+package cxSchedulerD9;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressScheduler by Developer Express Inc.'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  cxDataD9,
+  cxEditorsD9,
+  cxExtEditorsD9,
+  cxExportD9,
+  cxLibraryD9,
+  dxThemeD9;
+
+contains
+  cxScheduler,
+  cxSchedulerCustomControls,
+  cxSchedulerCustomResourceView,
+  cxSchedulerDateNavigator,
+  cxSchedulerDayView,
+  cxSchedulerDBStorage,
+  cxSchedulerDialogs,
+  cxSchedulerEventEditor,
+  cxSchedulerGoToDateDialog,
+  cxSchedulerRecurrenceEditor,
+  cxSchedulerRecurrenceSelectionDialog,
+  cxSchedulerResourcesLayoutEditor,
+  cxSchedulerStorage,
+  cxSchedulerStrs,
+  cxSchedulerUtils,
+  cxExportSchedulerLink,
+  cxSchedulerOutlookExchange,
+  cxDateNavigator,
+  cxSchedulerWeekView;
+
+end.

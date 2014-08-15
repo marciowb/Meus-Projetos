@@ -1,0 +1,173 @@
+
+      ////////////////////////////////////////////////// 
+      //   I M P O R T A N T    R E M A R K  !!!!!    //
+      //                                              //  
+      //  For a succesful install of the components,  //
+      //       follow  A L L  steps below             //
+      //                                              //   
+      //////////////////////////////////////////////////
+
+
+IMPORTANT NOTE:
+---------------
+! 1) ==> Before installing components or running demos, copy the included d3dx9_33.dll in the \Windows\system32 folder
+! 2) ==> Run dxdiag and make sure direct3d is enabled and working.
+! 3) ==> Install the latest drivers of your 3D graphical video card.
+! 4) ==> Make sure the latest directx runtime is installed.
+
+There are four demos included and can be used if the following prerequisites are present.
+
+Demo 1 : TMS Guimotions Chart Demo : 
+	- Chart must be installed to run demo (http://www.tmssoftware.com/site/advchart.asp)
+	- d3dx9_33.dll must be present in the \Windows\System32 folder
+
+Demo 2 : TMS Guimotions Images Demo :
+	- d3dx9_33.dll must be present in the \Windows\System32 folder
+
+Demo 3 : TMS Guimotions Explorer Demo :
+	- Library PngImage must be present and Delphi library path must be updated (http://www.torry.net/vcl/graphics/otherformats/pngimage.zip)
+	- d3dx9_33.dll must be present in the \Windows\System32 folder
+
+Demo 4 : TMS Guimotions Grid Demo : 
+	- AdvStringGrid must be installed to run demo (http://www.tmssoftware.com/site/advgrid2.asp)
+	- d3dx9_33.dll must be present in the \Windows\System32 folder
+Installation :
+--------------
+
+ Unzipping files
+ _______________
+
+ For Delphi 5,6,7,2005,2006,2007 & C++Builder 5,6,2006,2007
+ ----------------------------------------------------------
+
+ Unzip the registered version distribution file for your IDE into a separate directory,
+ further referred to as {$TMSDIR} 
+
+
+ Setting library paths
+ _____________________
+
+ For Delphi 5,6,7,2005,2006,2007
+ -------------------------------
+ Under Tools, Environment Options, Library, add the directory where
+ the TMS components have been installed {$TMSDIR} to the library path.
+
+ For C++Builder 5,6,2006,2007
+ ----------------------------
+ Under Tools, Environment Options, Library, add the directory where
+ the TMS components have been installed {$TMSDIR} to the library & 
+ include path.
+
+
+
+
+ Installing components
+ _____________________
+
+ In Delphi or C++Builder, select File, Open
+ and browse for the appropriate package file.
+
+  Delphi 5  : GuimotionsPkgD5.DPK
+  Delphi 6  : GuimotionsPkgD6.DPK 
+  Delphi 7  : GuimotionsPkgD7.DPK 
+
+  C++Builder 5 : GuimotionsPkgC5.BPK
+  C++Builder 6 : GuimotionsPkgC6.BPK 
+
+  After opening the package file, choose Compile and after
+  compilation, select Install
+
+
+  For Delphi 2005
+  ---------------
+
+  In the IDE, select File, Open
+  browse for GuimotionsPkgD2005.bdsproj
+  From the project manager, right click on the GuimotionsPkgD2005.bdsproj project and from the menu, choose
+  Install VCL package
+
+
+  For Delphi 2006
+  ---------------
+
+  In the IDE, select File, Open
+  browse for GuimotionsPkgD2006.bdsproj
+  From the project manager, right click on the GuimotionsPkgD2006.bdsproj project and from the menu, choose
+  Install VCL package
+
+
+  For Delphi 2007
+  ---------------
+
+  In the IDE, select File, Open
+  browse for GuimotionsPkgD2007.dproj
+  From the project manager, right click on the GuimotionsPkgD2007.dproj project and from the menu, choose
+  Install VCL package
+
+
+  For C++Builder 2006
+  -------------------
+
+  In the IDE, select File, Open
+  browse for GuimotionsPkgC2006.bdsproj
+  From the project manager, right click on the GuimotionsPkgC2006.bdsproj project and from the menu, choose
+  Install VCL package
+
+
+  For C++Builder 2007
+  -------------------
+
+  In the IDE, select File, Open
+  browse for GuimotionsPkgC2007.cbproj
+  From the project manager, right click on the GuimotionsPkgC2006.cbproj project and from the menu, choose
+  Install VCL package
+
+
+
+
+
+Tips:
+-----
+1) Installing component updates
+-------------------------------
+
+Before installing component updates, make sure to remove FIRST ALL previous version files.
+
+This includes:
+
+for Delphi:
+all related .DCU, .DCP, .BPL files 
+
+for C++Builder:
+all related .DCU, .HPP, .OBJ, .BPI, .DCP, .TDS, .LIB files 
+
+Note that Delphi or C++Builder could have generated files in the 
+{$DELPHI}\Projects\Lib folder or \Windows\System32 folder.
+
+
+
+2) Installing multiple binary distributed trial versions
+--------------------------------------------------------
+
+As Delphi & C++Builder perform strict binary compatibility checks on binary distributed units such as trial versions of the components, this can cause a problem when using multiple different binary component distributions that have a shared unit (for example: PictureContainer.DCU unit, AdvEdit.DCU unit ...) This will prevent the installation of multiple binary trial distributions at the same time in Delphi or C++Builder. The only workaround to use these different trial distribution is to install these in different folders and use the different component packages alternatingly. This binary compatibility issue is of course not present when using the full source based registered version distributions.
+
+
+3) IDE versions
+---------------
+TMS software generates binary trial versions with the latest service pack levels for Borland IDEs. Make sure that you have the latest Borland update packs installed. 
+For Delphi 6, make sure that the RTL3 update is also installed. If this is not the case, this can for some components result in the error : "Unit XXXXX was compiled with a different version of VarUtils.VarDateFromStr". 
+
+
+4) Property errors after component updates
+------------------------------------------
+If a property error occurs after installing a component update upon opening an existing form file in your applications, ignore this error, save the form file and reopen. The problem should have disappeared.
+
+
+5) Components disappearing from the palette after installing a component update
+-------------------------------------------------------------------------------
+Delphi or C++Builder has most likely moved the component to hidden components because of the uninstall. Go to the Configure Palette menu and unhide the component and these should reappear correct on the component palette.
+
+
+6) Latest information
+---------------------
+Check http://www.tmssoftware.com/tips.htm

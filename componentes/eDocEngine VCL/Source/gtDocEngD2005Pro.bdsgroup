@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <PersonalityInfo>
+    <Option>
+      <Option Name="Personality">Default.Personality</Option>
+      <Option Name="ProjectType"></Option>
+      <Option Name="Version">1.0</Option>
+      <Option Name="GUID">{8E258DB1-5E34-4AC0-B927-9F97EE604F51}</Option>
+    </Option>
+  </PersonalityInfo>
+  <Default.Personality>
+    
+    
+    <Projects>
+      <Projects Name="gtDocEngD2005.bpl">gtDocEngD2005.bdsproj</Projects>
+      <Projects Name="gtDocEngD2005Pro.bpl">gtDocEngD2005Pro.bdsproj</Projects>
+      <Projects Name="DCLgtDocEngD2005Pro.bpl">DCLgtDocEngD2005Pro.bdsproj</Projects>
+      <Projects Name="Targets">gtDocEngD2005.bpl gtDocEngD2005Pro.bpl DCLgtDocEngD2005Pro.bpl</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

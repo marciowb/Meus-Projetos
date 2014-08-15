@@ -1,0 +1,95 @@
+{\rtf1\ansi\ansicpg1251\deff0\deftab708{\fonttbl{\f0\froman\fprq2\fcharset128 Times New Roman;}{\f1\froman\fprq2\fcharset0 Times New Roman;}{\f2\fmodern\fprq6\fcharset136 PMingLiU;}}
+{\*\generator Msftedit 5.41.15.1515;}\viewkind4\uc1\pard\lang1049\ul\b\f0\fs20 WELCOME TO DEVRACE FIBPLUS 6.\lang1033 9.9 for RAD Studio 2009-2010\lang1049\ulnone\b0\par
+\lang1033\fs24\par
+\lang1049\fs20  FIBPlus 6.\lang1033 9.\f1 9\lang1049\f0  installation notes and issues for \lang1033 RAD Studio\lang1049  2009\lang1033 -2010\lang1049\par
+\lang1033\fs24\par
+\lang1049\b\fs20 INSTALLING FIBPlus 6.\lang1033 9.9 for RAD Studio 2009-2010\lang1049\b0\par
+\lang1033\fs24\par
+\lang1049 The first step in using FIBPlus is to install it in \lang1033 RAD Studio\lang1049 . However, before using FIBPlus be sure to read over the License Agreement. \par
+\pard\qr\lang1033\par
+\pard\fi-360\li720\tx0\tx0\fs20 1.\tab\fs24 Downloading FIBPlus\par
+\lang1049\fs20 2.\tab\fs24 Remove the previous FIBPlus versions.\par
+\fs20 3.\tab\lang1033 RAD Studio\lang1049   200\lang1033 9\lang1049  installation / upgrade.\par
+\pard\fi-360\li720\tx0 4.\tab\lang1033 RAD Studio\lang1049   20\lang1033 10\lang1049  installation / upgrade.\par
+\pard\li360\lang1033\fs24\par
+\pard\ul\b 1. Downloading FIBPlus 6.9.9 for RAD Studio 2009-2010\par
+\lang1049\ulnone\b0\fs20\par
+\lang1033\fs24 Full sources of FIBPlus 6.9.9 for RAD Studio 2009-2010 are in online Devrace Customer\rquote s Center:\par
+\ul\i http://www.devrace.com/cgi-bin/user/user.pl\par
+\ulnone\i0\par
+After FIBPlus order processing our system sends the login and password to every customer. In order to get a full version the customer should visit the link and register the login and password. There will be a list of full FIBPlus versions there.\par
+\lang1049\fs20\par
+\lang1033\fs24  To install FIBPlus 6.9.9 it\rquote s necessary to download \b Basic FIBPlus sources (fibplus_6_9_9_for_2009_basic.zip)\b0 , and also files \b FIBDatabase.pas\b0 , \b FIBDataset.pas\b0 , \b FIBQuery.pas\b0  and \b FIBSQLMonitor.pas\b0 .\par
+\lang1049\fs20\par
+\lang1033\b Important\b0\fs24  : Before installing FIBPlus 6.9.9 for RAD Studio 2009-2010 please be sure that you removed all previous FIBPlus versions (or FIBPlus 6.9.9 Trial) from your system:\par
+\ul\b\par
+2\lang1049 . Remove the previous FIBPlus version.\par
+\lang1033\ulnone\par
+\pard\tx0\b0 1. If you used install.exe from the previous FIBPlus version (or FIBPlus 6.9.9 Trial), go to Control Panel -> Add or Remove Programs and uninstall FIBPlus.\par
+\pard 2. Remove the directory, in which the previous FIBPlus version was installed.\par
+3. Delete the path to the old FIBPlus version in your Delphi (C++ Builder) Environment options. Select "Tools" | "Environment Options..." on the menu bar. Go to "Library" tab and remove the full path of your old FIBPlus Sources directory from the Library Path.\lang1049\fs20\par
+\lang1033\fs24 4. If you are not sure, you can search for any previous FIBPlus versions on your computer. For example, try to find FIBPlus.inc file on your hard drive. If you have found it, please, remove this FIBPlus version as it can cause further installation problems\par
+\par
+\ul\b\fs20 3\lang1049 . \lang1033 RAD Studio\lang1049  200\lang1033 9\lang1049  installation / upgrade.\ulnone\b0\par
+\lang1033\fs24\par
+a) Unzip \b fibplus_6_9_9_for_2009_basic.zip \b0 to your FIBPlus Sources directory (for example, \ldblquote\i c:\f1\\\f0 fibplus\i0\rdblquote ).\lang1049\par
+\lang1033\par
+b) Place downloaded FIBDatabase.pas, FIBDataset.pas, FIBQuery.pas and FIBSQLMonitor.pas to \ldblquote\f1\\\f0 sources\rdblquote  sub-directory (for example, \ldblquote\i c:\f1\\\f0 Documents and Settings\f1\\\f0 User\f1\\\f0 My Documents\f1\\\f0 Borland Studio Projects\f1\\\f0 FIBPlus\f1\\\i0\f0\rdblquote ).\lang1049\par
+\lang1033\par
+c) Select "Tools" | "Options\'81\'63" | "Environment Options" | "Delphi Options" on the menu bar. Go to "Library \f2\endash\f0  Win 32" \lang0 menu item\lang1033  and add the full path of your FIBPlus Sources directory to the Library Path if you have not already done so. The Library Path field should then look similar to this:\lang1049\par
+\lang1033\par
+\pard\fi708\i $(BDS)\f1\\\f0 Lib; c:\f1\\\f0 Documents and Settings\f1\\\f0 User\f1\\\f0 My Documents\f1\\\f0 Borland Studio Projects\f1\\\f0 fibplus\f1\\\f0 sources; c:\f1\\\f0 Documents and Settings\f1\\\f0 User\f1\\\f0 My Documents\f1\\\f0 Borland Studio Projects\f1\\\f0 fibplus\f1\\\f0 sources\f1\\\f0 Editors\i0\par
+\pard\par
+Click OK.\par
+\lang1049\fs20\par
+\lang1033\fs24 d) Select "File" | "Open..." on the menu bar. Set "Type of files" to Delphi package source, locate and select the \i FIBPlus2009.dpk\i0  package source file in your FIBPlus Sources directory, and click "Open".\par
+\lang1049\fs20\par
+\lang1033\fs24 e) A package editor window will appear. Click "Compile", then click "Install".\par
+\lang1049\fs20\par
+\pard\tx0\lang1033\fs24 f) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\pard\par
+j) Repeat steps d) through f) with the \i\fs20 FIBPlusEditors2009.dpk\i0\fs24  package.\par
+\lang1049\fs20\par
+\lang1033\fs24 h) Repeat steps d) through f) with the \i\fs20 FIBDBMidas2009.dpk\i0\fs24  package.\par
+\lang1049\fs20\par
+\lang1033\b\fs24 NOTE:\b0   The order in which you install the three packages is important; if you install them in the wrong order, Delphi will probably complain about not being able to find \i FIBPlus2009.bpl\i0  the next time it is started. To fix this, select "Component" | "Install Packages", remove the three packages, and reinstall them by repeating the above steps.\par
+\lang1049\par
+\lang1033\ul\b Installation in C++ 2009\par
+\ulnone\b0\par
+\pard\fi-360\li360 1.\tab Remove FIBPlus packages from Delphi IDE if you installed FIBPlus in Delphi environment.\par
+2.\tab Select "Tools" | "Options\'81\'63" | "Environment Options" | "C++ Options" | "Path and Directories" on the menu bar. Add the full path of your FIBPlus Sources directory to the \ldblquote Search Path\rdblquote  if you have not already done so.\lang1049\fs20\par
+\lang1033\fs24 3.\tab Open FIBPlus_CB2009.groupproj and click Install on every package in this group.\lang1049\fs20\par
+\pard\lang1033\fs24\par
+\ul\b\fs20 3\lang1049 . \lang1033 RAD Studio\lang1049  20\lang1033 10\lang1049  installation / upgrade.\ulnone\b0\par
+\lang1033\fs24\par
+a) Unzip \b fibplus_6_9_9_for_2009_basic.zip \b0 to your FIBPlus Sources directory (for example, \ldblquote\i c:\f1\\\f0 fibplus\i0\rdblquote ).\lang1049\par
+\lang1033\par
+b) Place downloaded FIBDatabase.pas, FIBDataset.pas, FIBQuery.pas and FIBSQLMonitor.pas to \ldblquote\f1\\\f0 sources\rdblquote  sub-directory (for example, \ldblquote\i c:\f1\\\f0 Documents and Settings\f1\\\f0 User\f1\\\f0 My Documents\f1\\\f0 Borland Studio Projects\f1\\\f0 FIBPlus\f1\\\i0\f0\rdblquote ).\lang1049\par
+\lang1033\par
+c) Select "Tools" | "Options\'81\'63" | "Environment Options" | "Delphi Options" on the menu bar. Go to "Library \f2\endash\f0  Win 32" \lang0 menu item\lang1033  and add the full path of your FIBPlus Sources directory to the Library Path if you have not already done so. The Library Path field should then look similar to this:\lang1049\par
+\lang1033\par
+\pard\fi708\i $(BDS)\f1\\\f0 Lib; c:\f1\\\f0 Documents and Settings\f1\\\f0 User\f1\\\f0 My Documents\f1\\\f0 Borland Studio Projects\f1\\\f0 fibplus\f1\\\f0 sources; c:\f1\\\f0 Documents and Settings\f1\\\f0 User\f1\\\f0 My Documents\f1\\\f0 Borland Studio Projects\f1\\\f0 fibplus\f1\\\f0 sources\f1\\\f0 Editors\i0\par
+\pard\par
+Click OK.\par
+\lang1049\fs20\par
+\lang1033\fs24 d) Select "File" | "Open..." on the menu bar. Set "Type of files" to Delphi package source, locate and select the \i FIBPlus2010.dpk\i0  package source file in your FIBPlus Sources directory, and click "Open".\par
+\lang1049\fs20\par
+\lang1033\fs24 e) A package editor window will appear. Click "Compile", then click "Install".\par
+\lang1049\fs20\par
+\pard\tx0\lang1033\fs24 f) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\pard\par
+j) Repeat steps d) through f) with the \i\fs20 FIBPlusEditors2010.dpk\i0\fs24  package.\par
+\lang1049\fs20\par
+\lang1033\fs24 h) Repeat steps d) through f) with the \i\fs20 FIBDBMidas2010.dpk\i0\fs24  package.\par
+\lang1049\fs20\par
+\lang1033\b\fs24 NOTE:\b0   The order in which you install the three packages is important; if you install them in the wrong order, Delphi will probably complain about not being able to find \i FIBPlus2010.bpl\i0  the next time it is started. To fix this, select "Component" | "Install Packages", remove the three packages, and reinstall them by repeating the above steps.\par
+\lang1049\par
+\lang1033\ul\b Installation in C++ 2010\par
+\ulnone\b0\par
+\pard\fi-360\li360 4.\tab Remove FIBPlus packages from Delphi IDE if you installed FIBPlus in Delphi environment.\par
+5.\tab Select "Tools" | "Options\'81\'63" | "Environment Options" | "C++ Options" | "Path and Directories" on the menu bar. Add the full path of your FIBPlus Sources directory to the \ldblquote Search Path\rdblquote  if you have not already done so.\lang1049\fs20\par
+\lang1033\fs24 6.\tab Open FIBPlus_CB2010.groupproj and click Install on every package in this group.\lang1049\fs20\par
+\pard\fs24 _______________________________\par
+Copyright (c) 200\lang1033 9\lang1049  Devrace Company \lang1033 / \lang1049 All rights reserved.\par
+}
+ 

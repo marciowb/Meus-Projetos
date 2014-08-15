@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2005/10/25 20:51:32.439.bdsproj,C:\Documents and Settings\testmac\My Documents\Borland Studio Projects\Package1.bdsproj=E:\Work\Shruthi\eDocEngine\Source\Rave\DCLgtRaveExpD2006.bdsproj</Transaction>
+    <Transaction>2006/01/02 14:04:48.147.txaPackage,E:\work\Shameer\Build 2006\Source\Pro\Rave\ModelSupport_DCLgtRaveExpD2006\default.txaPackage=</Transaction>
+    <Transaction>2006/01/02 14:04:48.241.bdsproj,E:\work\Shameer\Build 2006\Source\Pro\Rave\DCLgtRaveExpD2006.bdsproj=E:\work\Shameer\Build 2006\Source\Pro\Rave\DCLgtRaveExpBDS2006.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>

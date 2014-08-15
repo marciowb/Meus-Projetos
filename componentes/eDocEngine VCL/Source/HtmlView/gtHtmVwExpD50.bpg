@@ -1,0 +1,26 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = gtHtmVwExpD50.bpl gtHtmVwExpD50.bat DCLgtHtmVwExpD50.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+gtHtmVwExpD50.bpl: gtHtmVwExpD50.dpk
+  $(DCC)
+
+gtHtmVwExpD50.bat: gtHtmVwExpD50.bat
+  call $**
+
+DCLgtHtmVwExpD50.bpl: DCLgtHtmVwExpD50.dpk
+  $(DCC)
+
+

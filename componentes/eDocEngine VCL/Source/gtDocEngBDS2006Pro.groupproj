@@ -1,0 +1,54 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{6fbc09ff-e46c-415a-a793-e5bd62ae2683}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="DCLgtDocEngBDS2006Pro.dproj" />
+    <Projects Include="gtDocEngBDS2006.dproj" />
+    <Projects Include="gtDocEngBDS2006Pro.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="gtDocEngBDS2006">
+    <MSBuild Projects="gtDocEngBDS2006.dproj" Targets="" />
+  </Target>
+  <Target Name="gtDocEngBDS2006:Clean">
+    <MSBuild Projects="gtDocEngBDS2006.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="gtDocEngBDS2006:Make">
+    <MSBuild Projects="gtDocEngBDS2006.dproj" Targets="Make" />
+  </Target>
+  <Target Name="gtDocEngBDS2006Pro">
+    <MSBuild Projects="gtDocEngBDS2006Pro.dproj" Targets="" />
+  </Target>
+  <Target Name="gtDocEngBDS2006Pro:Clean">
+    <MSBuild Projects="gtDocEngBDS2006Pro.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="gtDocEngBDS2006Pro:Make">
+    <MSBuild Projects="gtDocEngBDS2006Pro.dproj" Targets="Make" />
+  </Target>
+  <Target Name="DCLgtDocEngBDS2006Pro">
+    <MSBuild Projects="DCLgtDocEngBDS2006Pro.dproj" Targets="" />
+  </Target>
+  <Target Name="DCLgtDocEngBDS2006Pro:Clean">
+    <MSBuild Projects="DCLgtDocEngBDS2006Pro.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="DCLgtDocEngBDS2006Pro:Make">
+    <MSBuild Projects="DCLgtDocEngBDS2006Pro.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="gtDocEngBDS2006;gtDocEngBDS2006Pro;DCLgtDocEngBDS2006Pro" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="gtDocEngBDS2006:Clean;gtDocEngBDS2006Pro:Clean;DCLgtDocEngBDS2006Pro:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="gtDocEngBDS2006:Make;gtDocEngBDS2006Pro:Make;DCLgtDocEngBDS2006Pro:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

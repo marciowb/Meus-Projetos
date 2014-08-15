@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{CB708CAD-C16B-425F-A2AA-0B90E9E0AAB3}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="gtFRExpBDS2009.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="DCLgtFRExpBDS2009.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="gtFRExpBDS2009">
+			<MSBuild Projects="gtFRExpBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtFRExpBDS2009:Clean">
+			<MSBuild Targets="Clean" Projects="gtFRExpBDS2009.dproj"/>
+		</Target>
+		<Target Name="gtFRExpBDS2009:Make">
+			<MSBuild Targets="Make" Projects="gtFRExpBDS2009.dproj"/>
+		</Target>
+		<Target Name="DCLgtFRExpBDS2009">
+			<MSBuild Projects="DCLgtFRExpBDS2009.dproj"/>
+		</Target>
+		<Target Name="DCLgtFRExpBDS2009:Clean">
+			<MSBuild Targets="Clean" Projects="DCLgtFRExpBDS2009.dproj"/>
+		</Target>
+		<Target Name="DCLgtFRExpBDS2009:Make">
+			<MSBuild Targets="Make" Projects="DCLgtFRExpBDS2009.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="gtFRExpBDS2009;DCLgtFRExpBDS2009"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="gtFRExpBDS2009:Clean;DCLgtFRExpBDS2009:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="gtFRExpBDS2009:Make;DCLgtFRExpBDS2009:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

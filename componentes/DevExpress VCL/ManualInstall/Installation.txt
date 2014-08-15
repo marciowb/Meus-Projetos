@@ -1,0 +1,286 @@
+MANUAL INSTALLATION
+
+Add to the Library Path the following folders:
+
+\ExpressBars 6\Sources
+\ExpressCommon Library\Sources
+\ExpressCore Library\Sources
+\ExpressDataController\Sources
+\ExpressDBTree Suite\Sources
+\ExpressDocking Library\Sources
+\ExpressEditors Library 3\Sources
+\ExpressEditors Library 5\Sources
+\ExpressExport Library\Sources
+\ExpressFlowChart\Sources
+\ExpressGDI+ Library\Sources
+\ExpressLayout Control 2\Sources
+\ExpressLibrary\Sources
+\ExpressMasterView\Sources		// Supported till 2007
+\ExpressMemData\Sources
+\ExpressNavBar 2\Sources
+\ExpressOrgChart\Sources
+\ExpressPageControl 2\Sources
+\ExpressPivotGrid 2\Sources
+\ExpressPrinting System 4\Sources
+\ExpressQuantumGrid 6\Sources
+\ExpressQuantumTreeList 5\Sources
+\ExpressScheduler 3\Sources
+\ExpressSideBar\Sources
+\ExpressSkins Library\Sources
+\ExpressSpellChecker 2\Sources		
+\ExpressSpreadSheet\Sources		
+\ExpressVerticalGrid\Sources
+\XP Theme Manager\Sources
+
+
+Install packages in the following order to avoid dependency errors.
+If a package begins with "dcl" is a DesignTime Package then Install it, otherwhise Compile it.
+Replace * with your IDE version (D11.dpk = Delphi 2007, C12.bpk = C++ Builder 2009, RS14.dpk = Delphi and C++ Builder 2010).
+
+
+\ExpressCore Library\Packages
+dxCore*
+dcldxCore*
+
+
+\ExpressGDI+ Library\Packages
+dxGDIPlus*
+
+
+\XP Theme Manager\Packages
+dxTheme*
+
+
+\ExpressCommon Library\Packages
+dxComn*
+
+
+\ExpressDataController\Packages
+cxData*
+cxADOAdapters*
+cxBDEAdapters*
+cxIBXAdapters*
+
+
+\ExpressLibrary\Packages
+cxLibrary*
+dclcxLibrary*
+
+
+\ExpressEditors Library 5\Packages
+cxEditors*
+cxExtEditors*
+dclcxEditors*
+dclcxExtEditors*
+
+
+\ExpressMemData\Packages
+dxmds*
+dcldxmds*
+
+
+\ExpressExport Library\Packages
+cxExport*
+
+
+\ExpressBars 6\Packages
+dxBar*
+dxBarDBNav*
+dxBarExtDBItems*
+dxBarExtItems*
+dxRibbon*
+cxBarEditItem*
+dcldxBar*
+dcldxBarDBNav*
+dcldxBarExtDBItems*
+dcldxBarExtItems*
+dcldxRibbon*
+dclcxBarEditItem*
+
+
+\ExpressDBTree Suite\Packages
+dxdbtr*
+dxtrmd*
+dcldxdbtr*
+dcldxtrmd*
+
+
+\ExpressDocking Library\Packages
+dxDocking*
+dcldxDocking*
+
+
+\ExpressFlowChart\Packages
+dxFlowChart*
+dcldxFlowChart*
+
+
+\ExpressPageControl 2\Packages
+cxPageControl*
+dclcxPageControl*
+
+
+\ExpressLayout Control 2\Packages
+dxLayoutControl*
+dcldxLayoutControl*
+
+
+\ExpressMasterView\Packages				// Supported till 2007
+dxMasterView*
+dcldxMasterView*
+
+
+\ExpressNavBar 2\Packages
+dxNavBar*
+dcldxNavBar*
+
+
+\ExpressOrgChart\Packages
+dxorgc*
+dxdbor*
+dxOrgChartAdvancedCustomizeForm*
+dcldxorgc*
+dcldxdbor*
+
+
+\ExpressQuantumGrid 6\Packages
+cxGrid*
+dclcxGrid*
+
+
+\ExpressPivotGrid 2\Packages
+cxPivotGrid*
+cxPivotGridChart*
+cxPivotGridOLAP*
+dclcxPivotGrid*
+dclcxPivotGridChart*
+dclcxPivotGridOLAP*
+
+
+\ExpressQuantumTreeList 5\Packages
+cxTreeList*
+cxTreeListdxBarPopupMenu*
+dclcxTreeList*
+dclcxTreeListdxBarPopupMenu*
+
+
+\ExpressScheduler 3\Packages
+cxScheduler*
+cxSchedulerGrid*
+dclcxScheduler*
+dclcxSchedulerGrid*
+
+
+\ExpressSideBar\Packages
+dxsb*
+dcldxsb*
+
+
+\ExpressSkins Library\Packages
+dxSkinsCore*
+dxSkinBlack*
+dxSkinBlue*
+dxSkinCaramel*
+dxSkinCoffee*
+dxSkinDarkRoom*
+dxSkinDarkSide*
+dxSkinFoggy*
+dxSkinGlassOceans*
+dxSkiniMaginary*
+dxSkinLilian*
+dxSkinLiquidSky*
+dxSkinLondonLiquidSky*
+dxSkinMcSkin*
+dxSkinMoneyTwins*
+dxSkinOffice2007Black*
+dxSkinOffice2007Blue*
+dxSkinOffice2007Green*
+dxSkinOffice2007Pink*
+dxSkinOffice2007Silver*
+dxSkinPumpkin*
+dxSkinscxPCPainter*
+dxSkinscxScheduler3Painter*
+dxSkinsdxBarPainter*
+dxSkinsdxBarSkinnedCustomizationForm*
+dxSkinsdxDLPainter*
+dxSkinsdxLCPainter*					// Compatible only with LayoutContol v1
+dxSkinsdxNavBar2Painter*
+dxSkinsdxRibbonPainter*
+dxSkinSeven*
+dxSkinSharp*
+dxSkinSilver*
+dxSkinSpringTime*
+dxSkinStardust*
+dxSkinSummer2008*
+dxSkinValentine*
+dxSkinXmas2008Blue*
+dcldxSkinsCore*
+dcldxSkinsDesignHelper*
+dcldxSkinscxPCPainter*
+dcldxSkinscxScheduler3Painter*
+dcldxSkinsdxBarsPainters*
+dcldxSkinsdxLCPainter*					// Compatible only with LayoutContol v1
+dcldxSkinsdxNavBar2Painter*
+
+
+\ExpressSpellChecker 2\Packages
+dxSpellChecker*
+dcldxSpellChecker*
+
+
+\ExpressSpreadSheet\Packages
+cxSpreadSheet*
+dclcxSpreadSheet*
+
+
+\ExpressVerticalGrid\Packages
+cxVerticalGrid*
+dclcxVerticalGrid*
+
+
+\ExpressPrinting System 4\Packages
+dxPSCore*
+dxPSLnks*
+dxPScxCommon*
+dxPScxExtCommon*
+dxPScxGrid6Lnk*
+dxPScxPCProd*
+dxPScxPivotGrid2Lnk*
+dxPScxScheduler3Lnk*
+dxPScxSSLnk*
+dxPScxTL5Lnk*
+dxPScxVGridLnk*
+dxPSTeeChart*
+dxPSDBTeeChart*
+dxPSdxOCLnk*
+dxPSdxDBOCLnk*
+dxPSdxDBTVLnk*
+dxPSdxFCLnk*
+dxPSdxLC2Lnk*
+dxPSdxMVLnk*						// Supported till 2007
+dxPSPrVwAdv*
+dxPSPrVwRibbon*
+dcldxPSCore*
+dcldxPSLnks*
+dcldxPScxCommon*
+dcldxPScxExtCommon*
+dcldxPScxGrid6Lnk*
+dcldxPScxPivotGrid2Lnk*
+dcldxPScxScheduler3Lnk*
+dcldxPScxSSLnk*
+dcldxPscxTL5Lnk*
+dcldxPScxVGridLnk*
+dcldxPSTeeChart*
+dcldxPSDBTeeChart*
+dcldxPSdxOCLnk*
+dcldxPSdxDBOCLnk*
+dcldxPSdxDBTVLnk*
+dcldxPSdxFCLnk*
+dcldxPSdxLC2Lnk*
+dcldxPSdxMVLnk*						// Supported till 2007
+dcldxPSPrVwAdv*
+dcldxPSPrVwRibbon*
+
+
+
+\\ DarkRapt0r

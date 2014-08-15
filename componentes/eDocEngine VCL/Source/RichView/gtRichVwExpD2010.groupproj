@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{2DB5A00F-4B96-408F-AE01-6C11E1C889B7}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="gtRichVwExpD2010.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="DCLgtRichVwExpD2010.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="gtRichVwExpD2010">
+			<MSBuild Projects="gtRichVwExpD2010.dproj"/>
+		</Target>
+		<Target Name="gtRichVwExpD2010:Clean">
+			<MSBuild Targets="Clean" Projects="gtRichVwExpD2010.dproj"/>
+		</Target>
+		<Target Name="gtRichVwExpD2010:Make">
+			<MSBuild Targets="Make" Projects="gtRichVwExpD2010.dproj"/>
+		</Target>
+		<Target Name="DCLgtRichVwExpD2010">
+			<MSBuild Projects="DCLgtRichVwExpD2010.dproj"/>
+		</Target>
+		<Target Name="DCLgtRichVwExpD2010:Clean">
+			<MSBuild Targets="Clean" Projects="DCLgtRichVwExpD2010.dproj"/>
+		</Target>
+		<Target Name="DCLgtRichVwExpD2010:Make">
+			<MSBuild Targets="Make" Projects="DCLgtRichVwExpD2010.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="gtRichVwExpD2010;DCLgtRichVwExpD2010"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="gtRichVwExpD2010:Clean;DCLgtRichVwExpD2010:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="gtRichVwExpD2010:Make;DCLgtRichVwExpD2010:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

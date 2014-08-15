@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.10"/>
+    <PROJECT value="bplFIBPlus_CLX_BCB.so"/>
+    <OBJFILES value="RegFIBPlus.o"/>
+    <RESFILES value="FIBPlus_CLX_BCB.res"/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.a dataclx.a visualclx.a"/>
+    <PACKAGES value="rtl.bpi vcl.bpi visualclx.bpi dataclx.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)/lib/debug"/>
+    <RELEASELIBPATH value="$(BCB)/lib/release"/>
+    <LINKER value="ilink"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="USEPACKAGES:_RTLDLL"/>
+    <MAINSOURCE value="FIBPlus_CLX_BCB.bpf"/>
+    <INCLUDEPATH value="$(BCB)/include/stlport:$(BCB)/include:$(BCB)/include/vcl:/usr/include"/>
+    <LIBPATH value="$(BCB)/lib/obj:$(BCB)/lib:/usr/lib:/lib:/usr/X11R6/lib:$(BCB)/bin"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <CFLAG1 value="-tP -VP -Od -H=$(HOME)/.borland/clx69.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k 
+      -y -v -vi- -c"/>
+    <PFLAGS value="-P -$YD -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-GB&quot;FIBPlus_CLX_BCB&quot; -N&quot;&quot; -D&quot;&quot; -aa -Tpp -Gpd -x -Gn -Gl -Gi -v"/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="borinitpkg.o $(PACKAGES) $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="rtle_pic.a $(LIBFILES) $(LIBRARIES) libborcrtl.so libborstl.so 
+      libborunwind.so libpthread.so libX11.so libc.so libm.so libdl.so"/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="FIBPlus_CLX_BCB.res" FORMNAME="" UNITNAME="FIBPlus_CLX_BCB.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FIBPlus_CLX_BCB.bpf" FORMNAME="" UNITNAME="FIBPlus_CLX_BCB" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../../lib/release/rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../../lib/release/vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../../lib/release/visualclx.bpi" FORMNAME="" UNITNAME="visualclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../../lib/release/dataclx.bpi" FORMNAME="" UNITNAME="dataclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="RegFIBPlus.pas" FORMNAME="" UNITNAME="RegFIBPlus" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[HistoryLists\hlIncludePath]
+Count=1
+Item0=$(BCB)/include/stlport:$(BCB)/include:$(BCB)/include/vcl:/usr/include
+
+[HistoryLists\hlLibraryPath]
+Count=1
+Item0=$(BCB)/lib/obj:$(BCB)/lib:/usr/lib:/lib:/usr/X11R6/lib:$(BCB)/bin
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[Debugging]
+DebugSourceDirs=
+
+[Parameters]
+RunParams=
+Launcher=/usr/X11R6/bin/xterm -T KylixDebuggerOutput -e bash -i -c %debuggee%
+UseLauncher=0
+DebugCWD=
+HostApplication=
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+
+[Linker]
+LibPrefix=
+LibPrefixDefined=0
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

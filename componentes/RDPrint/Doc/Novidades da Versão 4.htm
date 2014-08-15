@@ -1,0 +1,284 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>JJ</title>
+</head>
+
+<body>
+
+      <p align="center"><i><b><font face="Arial" color="#0000FF" size="6">O que 
+      tem de NOVO ?</font></b></i></p>
+
+      <table border="1" cellpadding="5" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+        <tr>
+          <td width="100%" bgcolor="#CCFFCC">
+          <p align="center">
+
+      <b><font color="#000080" size="5" face="Tahoma">RDprint 4.0<br>
+          </font></b>
+        <font color="#000080" face="Tahoma">Procedimento para Atualização (3.0h -&gt; 4.0) </font>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" bgcolor="#CCCCCC"><font face="Tahoma" size="2"><font color="#ff0000">
+          <br>
+          1)</font> Abrir TODOS 
+        os form que possuem o componente RDprint</font><p>
+          <font face="Tahoma" size="2"><font color="#ff0000">2) </font>Ao aparecer a mensagem
+        <font color="#ff0000">&quot;the property ????? does not exist&quot;</font> Click em &quot;<strong>Ignore</strong>&quot; 
+        ou &quot;<strong>Ignore All</strong>&quot; </font></p>
+          <p><font face="Tahoma" size="2"><font color="#ff0000">3)</font> Com o 
+          form já aberto, dê 2 Clicks no componente RDprint para abrir o Editor 
+          de Propriedades,&nbsp; click em OK, este processo 
+        atualizará automaticamente os novos valores e propriedades, eliminando 
+        as que foram excluídas. <br>
+          <font color="#FF0000">(faça isso para cada componente RDprint 
+        existente no Form) </font></font></p>
+          <p><font face="Tahoma" size="2"><font color="#ff0000">4)</font> Salve a unit 
+        e Form (Tenha certeza de que o form foi realmente alterado e salvo)
+          </font></p>
+          <p><font face="Tahoma" size="2"><font color="#ff0000">5)</font> recompile o 
+        projeto Se o problema persistir, repita o processo, 
+        pode ser que o formulário não foi corretamente atualizado e/ou salvo.
+          <br>
+&nbsp;</font></td>
+        </tr>
+      </table>
+
+      <p align="center">&nbsp;</p>
+      <table border="1" cellspacing="1" width="100%" id="AutoNumber1">
+        <tr>
+          <td width="100%" bgcolor="#CCFFCC">
+          <p align="center">
+
+      <b><font color="#000080" size="5" face="Tahoma">RDprint 4.0</font><font face="Tahoma" size="2" color="#0000FF"><br>
+          </font>
+      <font face="Tahoma" color="#0000FF">Componente de Impressão para Matriciais</font><font face="Tahoma">
+          </font></b></td>
+        </tr>
+        <tr>
+          <td width="100%" bgcolor="#EEEEEE">
+          <p class="MsoNormal" align="center" style="text-align:center"><b>
+          <font size="2"><span style="font-family: Tahoma; color: red"><br>
+          </span></font><font color="#339966"><span style="font-family: Tahoma">
+          *** NOVOS RECURSOS *** </span></font></b></p>
+          <p class="MsoNormal"><span style="font-family: Tahoma"><font size="2">&nbsp;a) 
+          Ajuste na impressão em modo Gráfico descontando as <b>Margens</b> 
+          definidas</font></span></p>
+          <p class="MsoNormal"><span style="font-family: Tahoma"><font size="2">&nbsp;b) 
+          Mapeamento dos modelos de impressoras</font></span></p>
+          <p class="MsoNormal"><span style="font-family: Tahoma"><font size="2">&nbsp;c) 
+          Opção para mostrar ou não a <b>BARRA DE PROGRESSO</b> na impressão.</font></span></p>
+          <p class="MsoNormal"><span style="font-family: Tahoma"><font size="2">&nbsp;d)
+          <b>Variáveis</b> de impressão, para substituição na impressão: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - “<b>&amp;PAGE&amp;</b>” = Total de Páginas do 
+          Relatório (Mascara ‘#,##0’)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - “<b>&amp;HORA&amp;</b>” = Hora da impressão no 
+          formato HH:MM<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - “<b>&amp;DATA&amp;</b>” = Data da impressão no 
+          formato DD/MM/AAAA<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - “<b>&amp;TITULO&amp;</b>” = Título do Relatório</font></span></p>
+          <p class="MsoNormal"><font size="2">
+          <span style="font-family: Tahoma; color: green">&nbsp;</span><span style="font-family: Tahoma">e)
+          </span></font><span style="font-family: Tahoma"><font size="2">Opção 
+          para especificar a COR DA FONTE para <b>impressão colorida</b> no 
+          Preview e em Impressoras Jato deTinta:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Total compatibilidade com todas as 
+          funções IMP, IMPF, IMPC etc<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Não é necessário alterar a programação, apenas acrescente a 
+          cor quando desejar</font></span></p>
+          <p class="MsoNormal"><span style="font-family: Tahoma"><font size="2">
+          &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <font color="#FF0000">Exemplo</font>: <b>&nbsp;</b><font color="#0000FF">Rdprint1.IMP(10, 
+          5,’</font><font color="#FF0000">Rdprint é o Melhor</font><font color="#0000FF">’);</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+          <font color="#0000FF">Rdprint1.IMP(10, 6,’</font><font color="#FF0000">Rdprint 
+          é o Melhor, agora com cor</font><font color="#0000FF">’,<b>clblue</b>);</font></font></span></p>
+          <p class="MsoNormal"><span style="font-family: Tahoma; color: green">
+          <font size="2">&nbsp;</font></span><span style="font-family: Tahoma"><font size="2">f)&nbsp;
+          <b>Novo Form de SETUP:</b></font></span></p>
+          <p class="MsoNormal" align="center">
+          <img border="0" src="SETUP.gif" width="528" height="314"></p>
+          <p class="MsoNormal" align="left"><span style="font-family: Tahoma"><font size="2">
+          <b><br>
+          </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Novo sistema de ajuste automático do modelo usando o <b>
+          Mapeamento de impressoras</b>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Impede que o SETUP seja fechado com ALT 
+          F4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Botão CANCELAR&nbsp; ajustado na posição 
+          padrão do Windows<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Novas opções para <b>seleção de páginas</b> 
+          para impressão:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Todas, 
+          Atual e Selecionadas: informando a páginas e intervalo desejado.(= 
+          Word)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Opção para 
+          imprimir somente páginas Pares ou Impares<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Opção para 
+          Agrupar páginas de acordo com o número de páginas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Opção para 
+          inverter a ordem das páginas na impressão </font></span></p>
+          <p class="MsoNormal"><span style="font-family: Tahoma"><font size="2">
+          &nbsp;g)<b> Novo Form de PREVIEW:</b></font></span></p>
+          <p class="MsoNormal" align="center">
+          <img border="0" src="preview.gif" width="646" height="416"></p>
+          <p class="MsoNormal"><span style="font-family: Tahoma"><font size="2">
+          <b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>- Nova função para <b>PROCURA DE TEXTO</b> 
+          no relatório:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Busca pra frente e para trás<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Ignora acentuação (José = Jose)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Opção para CaseSensitive<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Destaque do TEXTO no preview para facilitar a 
+          localização<br>
+          <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Nova função de <b>ROLAGEM</b> com salto 
+          automático de página. (scroll do mouse)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Nova função para <b>ARRASTO</b> da imagem 
+          de preview com o mouse.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <b>StatusBar</b> no rodapé com 
+          informações de página,zoom, impressora e modelo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Nova opção de <b>ZOOM</b> com menu 
+          suspenso (botão direito do mouse)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <b>Novos ícones</b> padronizados </font></span></p>
+          <hr>
+          <p class="MsoNormal" align="center"><b>
+          <span style="font-family: Tahoma"><font color="#FF0000">&nbsp;*** 
+          FUNÇÕES E PROPRIEDADES REMOVIDAS ***</font></span></b></p>
+          <p class="MsoNormal"><b><span style="font-family: Tahoma">
+          <font size="2">&nbsp; Funções: <br>
+&nbsp; Online e&nbsp; TestarPorta : </font></span></b>
+          <span style="font-family: Tahoma"><font size="2">Obsoleta sem função 
+          no Rdprint</font></span></p>
+          <p class="MsoNormal"><font size="2">
+          <span style="font-family: Tahoma; font-weight: 700">&nbsp; 
+          propriedades:<br>
+          </span><span style="font-family: Tahoma; color: green">&nbsp; </span>
+          <span style="font-family: Tahoma">property <b>NumeroPaginaInicial </b>
+          -&gt; Não utilizada / Causava mal funcionamento.<br>
+&nbsp; property <b>PaginaInicial</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+          <span lang="EN-US" style="font-family: Tahoma">à</span><span style="font-family: Tahoma"> 
+          Substituída por nova opção de seleção de paginas<br>
+&nbsp; property <b>PaginaFinal</b>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; </span>
+          <span lang="EN-US" style="font-family: Tahoma">à</span><span style="font-family: Tahoma"> 
+          Substituída por nova opção de seleção de paginas</span><span style="font-family: Tahoma; color: green"><br>
+&nbsp;</span></font></p>
+          <hr>
+          <p class="MsoNormal" align="center"><b>
+          <span style="font-family: Tahoma"><font color="#0000FF">&nbsp;*** 
+          NOVAS PROPRIEDADES E CLASSES ***</font></span></b></p>
+          <p class="MsoNormal"><span style="font-family: Tahoma"><font size="2">
+          &nbsp;</font></span><span style="font-family: Tahoma; color: red"><font size="2">TMargens 
+          = Class(TPersistent)</font></span><span style="font-family: Tahoma"><font size="2"><br>
+&nbsp;private&nbsp; <br>
+&nbsp;&nbsp; FLeft,&nbsp; <br>
+&nbsp;&nbsp; FRight,&nbsp; <br>
+&nbsp;&nbsp; FBottom,<br>
+&nbsp; &nbsp;FTop&nbsp;&nbsp;&nbsp; : integer;</font></span></p>
+          <p class="MsoNormal"><span style="font-family: Tahoma"><font size="2">
+          &nbsp;</font></span><span lang="EN-US" style="font-family: Tahoma; color: red"><font size="2">Property</font></span><font size="2"><span lang="EN-US" style="font-family: Tahoma"> 
+          Margens&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Tahoma">&nbsp;&nbsp;&nbsp;
+          </span><span lang="EN-US" style="font-family: Tahoma">: TMargens &nbsp;&nbsp; &nbsp;&nbsp;<span style="color:red">Read</span> 
+          FMyMargens </span><span style="font-family: Tahoma">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma">&nbsp;<span style="color:red">Write</span> 
+          FmyMargens;<br>
+          </span><span style="font-family: Tahoma; color: red">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma; color: red">Property</span><span lang="EN-US" style="font-family: Tahoma"> 
+          MostrarProgresso :</span><span style="font-family: Tahoma"> </span>
+          <span lang="EN-US" style="font-family: Tahoma">&nbsp;boolean&nbsp;&nbsp;</span><span style="font-family: Tahoma">&nbsp;
+          </span><span lang="EN-US" style="font-family: Tahoma">&nbsp; &nbsp;&nbsp;<span style="color:red">Read</span> 
+          FShowProg&nbsp; </span><span style="font-family: Tahoma">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma">&nbsp;</span><span style="color:red"><span style="font-family: Tahoma">
+          </span><span lang="EN-US" style="font-family: Tahoma">Write</span></span><span lang="EN-US" style="font-family: Tahoma"> 
+          FShowProg;<br>
+          </span><span style="font-family: Tahoma; color: red">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma; color: red">Property</span><span lang="EN-US" style="font-family: Tahoma"> 
+          Mapeamento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Tahoma">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma">: 
+          Tstringlist&nbsp;&nbsp;</span><span style="font-family: Tahoma">&nbsp;&nbsp;
+          </span><span lang="EN-US" style="font-family: Tahoma">&nbsp;<span style="color:red">Read</span> 
+          Fmapeamento <span style="color:red">Write</span> SetMapeamento;<br>
+          <br>
+          </span><b><span style="font-family: Tahoma">&nbsp;Mapeamento padrão 
+          (Exemplo):</span></b></font><span lang="EN-US" style="font-family: Tahoma"><font size="2"><b><br>
+          </b><font color="#0000FF">&nbsp;</font></font></span><span style="font-family: Tahoma"><font size="2"><font color="#0000FF">//--- 
+          Grafico Compativel com Windows/USB ---////</font><br>
+&nbsp;GRAFICO=GRAFICO<br>
+&nbsp;HP=GRAFICO<br>
+&nbsp;DESKJET=GRAFICO<br>
+&nbsp;LASERJET=GRAFICO<br>
+&nbsp;INKJET=GRAFICO<br>
+&nbsp;STYLUS=GRAFICO<br>
+&nbsp;EPL=GRAFICO<br>
+&nbsp;USB=GRAFICO<br>
+&nbsp;<font color="#0000FF">//--- Linha Epson Matricial 9 e 24 agulhas ---//<br>
+          </font></font></span><font size="2"><span style="font-family: Tahoma">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma">EPSON=EPSON<br>
+          </span><span style="font-family: Tahoma">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma">GENERICO=EPSON<br>
+          </span><span style="font-family: Tahoma">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma">LX-300=EPSON<br>
+          </span><span style="font-family: Tahoma">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma">LX-810=EPSON<br>
+          </span><span style="font-family: Tahoma">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma">FX-2170=EPSON<br>
+          </span><span style="font-family: Tahoma">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma">FX-1170=EPSON<br>
+          </span><span style="font-family: Tahoma">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma">LQ-1170=EPSON<br>
+          </span><span style="font-family: Tahoma">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma">LQ-2170=EPSON<br>
+          </span><span style="font-family: Tahoma">&nbsp;</span><span lang="EN-US" style="font-family: Tahoma">OKIDATA=EPSON</span></font><span style="font-family: Tahoma"><font size="2"><br>
+          <font color="#0000FF">&nbsp;//--- Rima e Emilia ---//<br>
+          </font>&nbsp;RIMA=RIMA<br>
+&nbsp;EMILIA=RIMA<br>
+&nbsp;<font color="#0000FF">//--- Linha HP/Xerox padrão PCL ---//<br>
+&nbsp;</font>PCL=HP<br>
+&nbsp;<font color="#0000FF">//--- Impressoras 40 Colunas ---//<br>
+          </font>&nbsp;DARUMA=BOBINA<br>
+&nbsp;SIGTRON=BOBINA<br>
+&nbsp;SWEDA=BOBINA<br>
+&nbsp;BEMATECH=BOBINA&nbsp;</font></span></p>
+          <hr>
+          <p class="MsoNormal" align="center"><b>
+          <span style="font-family: Tahoma; color: red">*** ALGUNS PROBLEMAS 
+          RESOLVIDOS&nbsp; *** </span></b></p>
+          <p class="MsoNormal"><b>
+          <span style="font-family: Tahoma; color: blue"><font size="2">&nbsp; 
+          PREVIEW:</font></span></b><font size="2"><span style="font-family: Tahoma; color: green"><br>
+          </span><span style="font-family: Tahoma">&nbsp; - Se abrir e fechar 
+          sem imprimir NADA gera 9999 páginas em branco no preview.<br>
+&nbsp; - Retirado TSPIN do Preview evitando conflitos com componentes de 
+          terceiros.<br>
+&nbsp; - Alguns modelos de relatórios, dependendo da impressora,”come” 2 
+          caracteres no final da linha. <br>
+&nbsp; - Régua Matriz – Ajuste para correta impressão da régua.<br>
+&nbsp; - Geração de&nbsp; arquivo TXT só funcionava no modelo EPSON.</span></font></p>
+          <p class="MsoNormal" align="center">
+          <span style="font-family: Tahoma; color: #339966">&nbsp;</span><b><span style="font-family: Tahoma; color: red">*** 
+          MELHORIAS NOS RECURSOS EXISTENTES ***</span></b></p>
+          <p class="MsoNormal"><b>
+          <span style="font-family: Tahoma; color: blue"><font size="2">&nbsp; 
+          IMPRESSÃO EM GERAL:</font></span></b><font size="2"><span style="font-family: Tahoma; color: green"><br>
+&nbsp; </span><span style="font-family: Tahoma">- AJuste na Lista de Modelos de 
+          Impressora no Editor de Propriedades <br>
+&nbsp; - AJuste no preview quando a fonte padrão é 5CPP<br>
+&nbsp; - Impressão em Negrito: Comando&nbsp; “Enfatizado” para “Passada DUPLA”,&nbsp; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (assim funciona negrito + 17cpp e tem maior compatibilidade).<br>
+&nbsp; - Ajustes no valor DEFAULT das Propriedades:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UsaGerenciadorImp = True;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PortaComunicação&nbsp;&nbsp;= ''<br>
+&nbsp; - Criação do arquivo RDtools centralizando funções e rotina externas do 
+          RDprint</span></font></td>
+        </tr>
+</table>
+
+      <table border="0" width="100%" cellspacing="0">
+        <tr>
+          <td width="100%" height="20">
+            <p align="center"></td>
+        </tr>
+        <tr>
+          <td width="100%" height="80">
+        <p align="center"><font face="Tahoma" size="2"><b><u><font color="#808080">Deltress
+        Informática Ltda<br>
+        </font></u></b><font color="#808080">Av. República, 948&nbsp;&nbsp;
+        -&nbsp;&nbsp; Centro<br>
+        17509-031 - Marília - SP&nbsp; -&nbsp;&nbsp; Fone/Fax (14) 3454-7880<br>
+        <a href="http://www.deltress.com.br" target="_blank">www.deltress.com.br</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="mailto:deltress@deltress.com.br">deltress@deltress.com.br</a></font></font></td>
+        </tr>
+      </table>
+
+</body>
+
+</html>

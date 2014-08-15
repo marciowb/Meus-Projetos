@@ -1,0 +1,107 @@
+package FlexCel2005;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'FlexCel Studio for VCL - Runtime Package'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  vcljpg,
+  vcl;
+
+contains
+  UExcelAdapter in 'UExcelAdapter.pas',
+  UFlxMessages in 'UFlxMessages.pas',
+  UFlxRowComments in 'UFlxRowComments.pas',
+  UFlxFullDataSets in 'UFlxFullDataSets.pas',
+  UFlexCelImport in 'UFlexCelImport.pas',
+  UFlexCelReport in 'UFlexCelReport.pas',
+  UXlsDB in 'UXlsDB.pas',
+  UCustomFlexCelReport in 'UCustomFlexCelReport.pas',
+  UXlsTDataSet in 'UXlsTDataSet.pas',
+  UFlxMemTable in 'UFlxMemTable.pas',
+  UFlexCelReportNoDB in 'UFlexCelReportNoDB.pas',
+  UFlxFormats in 'UFlxFormats.pas',
+  UFlexCelGrid in 'UFlexCelGrid.pas',
+  UFlxNumberFormat in 'UFlxNumberFormat.pas',
+  TemplateStore in 'TemplateStore.pas',
+  XlsMessages in 'XlsMessages.pas',
+  XLSAdapter in 'XLSAdapter.pas',
+  UBreakList in 'UBreakList.pas',
+  UEscherGraphToBSE in 'UEscherGraphToBSE.pas',
+  UEscherOtherRecords in 'UEscherOtherRecords.pas',
+  UEscherRecords in 'UEscherRecords.pas',
+  UExcelRecords in 'UExcelRecords.pas',
+  UXlsMD5 in 'UXlsMD5.pas',
+  USheetNameList in 'USheetNameList.pas',
+  UXlsBaseClientData in 'UXlsBaseClientData.pas',
+  UXlsBaseList in 'UXlsBaseList.pas',
+  UXlsBaseRecordLists in 'UXlsBaseRecordLists.pas',
+  UXlsBaseRecords in 'UXlsBaseRecords.pas',
+  UXlsChart in 'UXlsChart.pas',
+  UXlsClientData in 'UXlsClientData.pas',
+  UXlsCondFmt in 'UXlsCondFmt.pas',
+  UXlsEscher in 'UXlsEscher.pas',
+  UXlsFormula in 'UXlsFormula.pas',
+  UXlsNotes in 'UXlsNotes.pas',
+  UXlsOtherRecords in 'UXlsOtherRecords.pas',
+  UXlsRangeRecords in 'UXlsRangeRecords.pas',
+  UXlsReferences in 'UXlsReferences.pas',
+  UXlsRowColEntries in 'UXlsRowColEntries.pas',
+  UXlsSections in 'UXlsSections.pas',
+  UXlsSheet in 'UXlsSheet.pas',
+  UXlsStrings in 'UXlsStrings.pas',
+  UXlsTokenArray in 'UXlsTokenArray.pas',
+  UXlsWorkbookGlobals in 'UXlsWorkbookGlobals.pas',
+  UXlsCellRecords in 'UXlsCellRecords.pas',
+  XlsBaseTemplateStore in 'XlsBaseTemplateStore.pas',
+  UXlsPageBreaks in 'UXlsPageBreaks.pas',
+  UXlsColInfo in 'UXlsColInfo.pas',
+  UXlsXF in 'UXlsXF.pas',
+  UXlsPalette in 'UXlsPalette.pas',
+  UXlsTIBODataSet in 'UXlsTIBODataSet.pas',
+  UIBOFlexCelReport in 'UIBOFlexCelReport.pas',
+  UXlsTDOADataSet in 'UXlsTDOADataSet.pas',
+  UDOAFlexCelReport in 'UDOAFlexCelReport.pas',
+  UXlsSST in 'UXlsSST.pas',
+  UTextDelim in 'UTextDelim.pas',
+  UFlexCelPreview in 'UFlexCelPreview.pas',
+  UXlsFormulaParser in 'UXlsFormulaParser.pas',
+  UFlxStack in 'UFlxStack.pas',
+  XlsFormulaMessages in 'XlsFormulaMessages.pas',
+  UXlsEncodeFormula in 'UXlsEncodeFormula.pas',
+  UXlsPictures in 'UXlsPictures.pas',
+  AdvGridExcel in 'AdvGridExcel.pas',
+  UFlxUtils in 'UFlxUtils.pas',
+  UXlsHyperLink in 'UXlsHyperLink.pas',
+  UFlexCelBands in 'UFlexCelBands.pas',
+  UOle2Impl in 'UOle2Impl.pas',
+  UXlsProtect in 'UXlsProtect.pas',
+  UWaitCursor in 'UWaitCursor.pas',
+  flxpngimage in 'flxpngimage.pas',
+  flxzlibpas in 'flxzlibpas.pas',
+  flxpnglang in 'flxpnglang.pas';
+
+end.

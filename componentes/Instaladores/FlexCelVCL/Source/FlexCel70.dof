@@ -1,0 +1,39 @@
+[FileVersion]
+Version=7.0
+[Compiler]
+UnsafeType=0
+UnsafeCode=0
+UnsafeCast=0
+[Linker]
+ExeDescription=FlexCel Studio for VCL - Runtime Package
+[Directories]
+OutputDir=..\dcu\70
+UnitOutputDir=..\dcu\70
+PackageDLLOutputDir=..\dcu\bpl
+PackageDCPOutputDir=..\dcu\70
+SearchPath=..\dcu\70
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=3
+MinorVer=4
+Release=0
+Build=00
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+[Version Info Keys]
+CompanyName=TMS Software
+FileDescription=Suite of Components for manipulating Excel files.
+FileVersion=3.4.0.0
+InternalName=
+LegalCopyright=(c) 2002-2011 TMS Software
+LegalTrademarks=
+OriginalFilename=
+ProductName=FlexCel Studio for VCL/LCL
+ProductVersion=3.4.0.0
+Comments=

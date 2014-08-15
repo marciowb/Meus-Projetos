@@ -1,0 +1,1885 @@
+object TppReport
+  AutoStop = False
+  DataPipeline = BDEQueryDataView1.plInvoice
+  PrinterSetup.BinName = 'Auto Select'
+  PrinterSetup.DocumentName = 'ppInvoice'
+  PrinterSetup.PaperName = 'Letter 8 ½ x 11 in'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  PrinterSetup.PaperSize = 1
+  SaveAsTemplate = True
+  Template.FileName = 
+    'C:\Program Files\Borland\Delphi5\RBuilder\Demos\0. RAP\3. Tutori' +
+    'als\raTutor0005.rtm'
+  Template.Format = ftASCII
+  DeviceType = 'Screen'
+  Version = '6.03'
+  mmColumnWidth = 0
+  DataPipelineName = 'plInvoice'
+  object ppHeaderBand2: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 89429
+    mmPrintPosition = 0
+    object ppInvoiceShape2: TppShape
+      UserName = 'ppInvoiceShape2'
+      Brush.Color = clNavy
+      Pen.Color = clWhite
+      Pen.Width = 2
+      Shape = stRoundRect
+      mmHeight = 25665
+      mmLeft = 106627
+      mmTop = 49742
+      mmWidth = 80433
+      BandType = 0
+    end
+    object ppInvoiceShape1: TppShape
+      UserName = 'ppInvoiceShape1'
+      Brush.Color = clNavy
+      Pen.Color = clWhite
+      Pen.Width = 2
+      Shape = stRoundRect
+      mmHeight = 25665
+      mmLeft = 1852
+      mmTop = 49742
+      mmWidth = 80433
+      BandType = 0
+    end
+    object ppLabel3: TppLabel
+      UserName = 'ppLabel3'
+      Caption = 'Marine Adventures & Sunken Treasures Co.'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Algerian'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      mmHeight = 5556
+      mmLeft = 38894
+      mmTop = 0
+      mmWidth = 125148
+      BandType = 0
+    end
+    object ppDBText2: TppDBText
+      UserName = 'ppDBText2'
+      DataField = 'OrderNo'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsBold, fsItalic]
+      DataPipelineName = 'plInvoice'
+      mmHeight = 5027
+      mmLeft = 26988
+      mmTop = 14023
+      mmWidth = 29104
+      BandType = 0
+    end
+    object ppLabel5: TppLabel
+      UserName = 'ppLabel5'
+      Caption = 'Order No.'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsItalic]
+      mmHeight = 5027
+      mmLeft = 1852
+      mmTop = 14023
+      mmWidth = 17198
+      BandType = 0
+    end
+    object ppLabel6: TppLabel
+      UserName = 'ppLabel6'
+      Caption = 'Invoice'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsBold, fsItalic]
+      mmHeight = 5027
+      mmLeft = 3175
+      mmTop = 0
+      mmWidth = 12965
+      BandType = 0
+    end
+    object ppInvoiceLabel1: TppLabel
+      UserName = 'ppInvoiceLabel1'
+      Caption = 'Bill To'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsItalic]
+      mmHeight = 5027
+      mmLeft = 6879
+      mmTop = 43656
+      mmWidth = 11113
+      BandType = 0
+    end
+    object ppInvoiceLabel2: TppLabel
+      UserName = 'ppInvoiceLabel2'
+      Caption = 'ShipTo'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsItalic]
+      mmHeight = 5027
+      mmLeft = 109538
+      mmTop = 43656
+      mmWidth = 11906
+      BandType = 0
+    end
+    object ppInvoiceDBText4: TppDBText
+      UserName = 'ppInvoiceDBText4'
+      Color = clNavy
+      DataField = 'State'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsItalic]
+      DataPipelineName = 'plInvoice'
+      mmHeight = 5027
+      mmLeft = 44715
+      mmTop = 67204
+      mmWidth = 29633
+      BandType = 0
+    end
+    object ppInvoiceDBText3: TppDBText
+      UserName = 'ppInvoiceDBText3'
+      Color = clNavy
+      DataField = 'City'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsItalic]
+      DataPipelineName = 'plInvoice'
+      mmHeight = 5027
+      mmLeft = 3704
+      mmTop = 66940
+      mmWidth = 33602
+      BandType = 0
+    end
+    object ppInvoiceDBText2: TppDBText
+      UserName = 'ppInvoiceDBText2'
+      Color = clNavy
+      DataField = 'Addr1'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsItalic]
+      DataPipelineName = 'plInvoice'
+      mmHeight = 5027
+      mmLeft = 3704
+      mmTop = 58473
+      mmWidth = 66146
+      BandType = 0
+    end
+    object ppInvoiceDBText1: TppDBText
+      UserName = 'ppInvoiceDBText1'
+      Color = clNavy
+      DataField = 'Company'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsItalic]
+      DataPipelineName = 'plInvoice'
+      mmHeight = 5027
+      mmLeft = 3704
+      mmTop = 51065
+      mmWidth = 74348
+      BandType = 0
+    end
+    object ppInvoiceLine1: TppLine
+      UserName = 'ppInvoiceLine1'
+      Pen.Color = clWhite
+      Weight = 0.75
+      mmHeight = 3175
+      mmLeft = 2381
+      mmTop = 57415
+      mmWidth = 79375
+      BandType = 0
+    end
+    object ppInvoiceLine2: TppLine
+      UserName = 'ppInvoiceLine2'
+      Pen.Color = clWhite
+      Weight = 0.75
+      mmHeight = 3175
+      mmLeft = 2646
+      mmTop = 65352
+      mmWidth = 78846
+      BandType = 0
+    end
+    object ppInvoiceLine3: TppLine
+      UserName = 'ppInvoiceLine3'
+      Pen.Color = clWhite
+      Position = lpLeft
+      Weight = 0.75
+      mmHeight = 8731
+      mmLeft = 40217
+      mmTop = 65881
+      mmWidth = 4233
+      BandType = 0
+    end
+    object ppInvoiceDBText5: TppDBText
+      UserName = 'ppInvoiceDBText5'
+      AutoSize = True
+      Color = clNavy
+      DataField = 'ShipToState'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsItalic]
+      DataPipelineName = 'plInvoice'
+      mmHeight = 4995
+      mmLeft = 149490
+      mmTop = 66940
+      mmWidth = 24130
+      BandType = 0
+    end
+    object ppInvoiceDBText6: TppDBText
+      UserName = 'ppInvoiceDBText6'
+      Color = clNavy
+      DataField = 'ShipToCity'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsItalic]
+      DataPipelineName = 'plInvoice'
+      mmHeight = 5027
+      mmLeft = 108479
+      mmTop = 66940
+      mmWidth = 35190
+      BandType = 0
+    end
+    object ppInvoiceDBText7: TppDBText
+      UserName = 'ppInvoiceDBText7'
+      Color = clNavy
+      DataField = 'ShipToAddr1'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsItalic]
+      DataPipelineName = 'plInvoice'
+      mmHeight = 5027
+      mmLeft = 108479
+      mmTop = 58473
+      mmWidth = 76465
+      BandType = 0
+    end
+    object ppInvoiceDBText8: TppDBText
+      UserName = 'ppInvoiceDBText8'
+      Color = clNavy
+      DataField = 'Company'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsItalic]
+      DataPipelineName = 'plInvoice'
+      mmHeight = 5027
+      mmLeft = 108479
+      mmTop = 51065
+      mmWidth = 74877
+      BandType = 0
+    end
+    object ppInvoiceLine4: TppLine
+      UserName = 'ppInvoiceLine4'
+      Pen.Color = clWhite
+      Weight = 0.75
+      mmHeight = 3175
+      mmLeft = 106892
+      mmTop = 57415
+      mmWidth = 79375
+      BandType = 0
+    end
+    object ppInvoiceLine5: TppLine
+      UserName = 'ppInvoiceLine5'
+      Pen.Color = clWhite
+      Weight = 0.75
+      mmHeight = 3175
+      mmLeft = 107421
+      mmTop = 65352
+      mmWidth = 78846
+      BandType = 0
+    end
+    object ppInvoiceLine6: TppLine
+      UserName = 'ppInvoiceLine6'
+      Pen.Color = clWhite
+      Position = lpLeft
+      Weight = 0.75
+      mmHeight = 8996
+      mmLeft = 144992
+      mmTop = 65881
+      mmWidth = 4233
+      BandType = 0
+    end
+    object ppVariable1: TppVariable
+      UserName = 'Variable1'
+      CalcOrder = 0
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 10583
+      mmTop = 24342
+      mmWidth = 14288
+      BandType = 0
+    end
+    object ppVariable2: TppVariable
+      UserName = 'Variable2'
+      CalcOrder = 1
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 10583
+      mmTop = 29633
+      mmWidth = 14288
+      BandType = 0
+    end
+  end
+  object ppDetailBand2: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 6085
+    mmPrintPosition = 0
+    object ppDBText5: TppDBText
+      UserName = 'ppDBText5'
+      DataField = 'Description'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      DataPipelineName = 'plInvoice'
+      mmHeight = 3969
+      mmLeft = 25665
+      mmTop = 1323
+      mmWidth = 58738
+      BandType = 4
+    end
+    object ppDBText6: TppDBText
+      UserName = 'ppDBText6'
+      DataField = 'PartNo'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      DataPipelineName = 'plInvoice'
+      mmHeight = 3969
+      mmLeft = 2117
+      mmTop = 1323
+      mmWidth = 17463
+      BandType = 4
+    end
+    object ppDBText7: TppDBText
+      UserName = 'ppDBText7'
+      DataField = 'Qty'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      TextAlignment = taRightJustified
+      DataPipelineName = 'plInvoice'
+      mmHeight = 3969
+      mmLeft = 87313
+      mmTop = 1588
+      mmWidth = 10319
+      BandType = 4
+    end
+    object ppDBText9: TppDBText
+      UserName = 'ppDBText9'
+      DataField = 'ListPrice'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      DisplayFormat = '$ #,#0.00'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      TextAlignment = taRightJustified
+      DataPipelineName = 'plInvoice'
+      mmHeight = 3969
+      mmLeft = 119856
+      mmTop = 1323
+      mmWidth = 27517
+      BandType = 4
+    end
+    object ppInvoiceDBText9: TppDBText
+      UserName = 'ppInvoiceDBText9'
+      DataField = 'ItemsTotal'
+      DataPipeline = BDEQueryDataView1.plInvoice
+      DisplayFormat = '$#,0.00;($#,0.00)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      SuppressRepeatedValues = True
+      TextAlignment = taRightJustified
+      DataPipelineName = 'plInvoice'
+      mmHeight = 3969
+      mmLeft = 160602
+      mmTop = 1588
+      mmWidth = 35454
+      BandType = 4
+    end
+  end
+  object ppFooterBand2: TppFooterBand
+    mmBottomOffset = 0
+    mmHeight = 11642
+    mmPrintPosition = 0
+    object ppCalc1: TppSystemVariable
+      UserName = 'Calc1'
+      VarType = vtPrintDateTime
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      mmHeight = 3969
+      mmLeft = 529
+      mmTop = 6085
+      mmWidth = 26194
+      BandType = 8
+    end
+    object ppCalc2: TppSystemVariable
+      UserName = 'Calc2'
+      VarType = vtPageSetDesc
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      TextAlignment = taRightJustified
+      mmHeight = 3969
+      mmLeft = 186796
+      mmTop = 5556
+      mmWidth = 15346
+      BandType = 8
+    end
+  end
+  object ppGroup1: TppGroup
+    BreakName = 'OrderNo'
+    DataPipeline = BDEQueryDataView1.plInvoice
+    NewPage = True
+    ResetPageNo = True
+    UserName = 'Group1'
+    mmNewColumnThreshold = 0
+    mmNewPageThreshold = 0
+    DataPipelineName = 'plInvoice'
+    object ppGroupHeaderBand1: TppGroupHeaderBand
+      mmBottomOffset = 0
+      mmHeight = 12171
+      mmPrintPosition = 0
+      object ppShape2: TppShape
+        UserName = 'ppShape2'
+        Brush.Color = clNavy
+        Pen.Color = clNavy
+        Shape = stRoundRect
+        mmHeight = 12171
+        mmLeft = 0
+        mmTop = 0
+        mmWidth = 202936
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppInvoiceLine8: TppLine
+        UserName = 'ppInvoiceLine8'
+        Pen.Color = clWhite
+        Pen.Width = 2
+        Weight = 1.5
+        mmHeight = 6085
+        mmLeft = 131498
+        mmTop = 4233
+        mmWidth = 64558
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppInvoiceLine7: TppLine
+        UserName = 'ppInvoiceLine7'
+        Pen.Color = clWhite
+        Pen.Width = 2
+        Weight = 1.5
+        mmHeight = 5292
+        mmLeft = 1323
+        mmTop = 4233
+        mmWidth = 98690
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel7: TppLabel
+        UserName = 'ppLabel7'
+        Caption = 'Description'
+        Color = clNavy
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Times New Roman'
+        Font.Size = 12
+        Font.Style = []
+        mmHeight = 5027
+        mmLeft = 25665
+        mmTop = 6085
+        mmWidth = 18256
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel8: TppLabel
+        UserName = 'ppLabel8'
+        Caption = 'Number'
+        Color = clNavy
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Times New Roman'
+        Font.Size = 12
+        Font.Style = []
+        mmHeight = 5027
+        mmLeft = 2117
+        mmTop = 6085
+        mmWidth = 13229
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel9: TppLabel
+        UserName = 'ppLabel9'
+        AutoSize = False
+        Caption = 'Item'
+        Color = clNavy
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Times New Roman'
+        Font.Size = 12
+        Font.Style = []
+        TextAlignment = taCentered
+        mmHeight = 5027
+        mmLeft = 42333
+        mmTop = 1323
+        mmWidth = 16404
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel10: TppLabel
+        UserName = 'ppLabel10'
+        Caption = 'Qty'
+        Color = clNavy
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Times New Roman'
+        Font.Size = 12
+        Font.Style = []
+        mmHeight = 5027
+        mmLeft = 91546
+        mmTop = 6085
+        mmWidth = 6085
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel14: TppLabel
+        UserName = 'ppLabel14'
+        Caption = 'Per Unit'
+        Color = clNavy
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Times New Roman'
+        Font.Size = 12
+        Font.Style = []
+        mmHeight = 5027
+        mmLeft = 134144
+        mmTop = 6085
+        mmWidth = 13229
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel15: TppLabel
+        UserName = 'ppLabel15'
+        Caption = 'Item Total'
+        Color = clNavy
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Times New Roman'
+        Font.Size = 12
+        Font.Style = []
+        mmHeight = 5027
+        mmLeft = 180182
+        mmTop = 6085
+        mmWidth = 16404
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel13: TppLabel
+        UserName = 'ppLabel13'
+        AutoSize = False
+        Caption = 'Amount'
+        Color = clNavy
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Times New Roman'
+        Font.Size = 12
+        Font.Style = []
+        TextAlignment = taCentered
+        mmHeight = 5027
+        mmLeft = 154252
+        mmTop = 1323
+        mmWidth = 19315
+        BandType = 3
+        GroupNo = 0
+      end
+    end
+    object ppGroupFooterBand1: TppGroupFooterBand
+      mmBottomOffset = 0
+      mmHeight = 9790
+      mmPrintPosition = 0
+      object ppLine1: TppLine
+        UserName = 'ppLine1'
+        Position = lpBottom
+        Style = lsDouble
+        Weight = 0.75
+        mmHeight = 6085
+        mmLeft = 160602
+        mmTop = 2117
+        mmWidth = 35454
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppInvoiceLine9: TppLine
+        UserName = 'ppInvoiceLine9'
+        Weight = 0.75
+        mmHeight = 5821
+        mmLeft = 160602
+        mmTop = 794
+        mmWidth = 35983
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppLabel16: TppLabel
+        UserName = 'ppLabel16'
+        Caption = 'Total'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Times New Roman'
+        Font.Size = 10
+        Font.Style = []
+        TextAlignment = taRightJustified
+        mmHeight = 3969
+        mmLeft = 149754
+        mmTop = 2910
+        mmWidth = 7408
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppDBText11: TppDBText
+        UserName = 'ppDBText11'
+        DataField = 'Company'
+        DataPipeline = BDEQueryDataView1.plInvoice
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Times New Roman'
+        Font.Size = 10
+        Font.Style = []
+        TextAlignment = taRightJustified
+        DataPipelineName = 'plInvoice'
+        mmHeight = 3969
+        mmLeft = 78846
+        mmTop = 2910
+        mmWidth = 68792
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppInvoiceDBCalc1: TppDBCalc
+        UserName = 'ppInvoiceDBCalc1'
+        DataField = 'ItemsTotal'
+        DataPipeline = BDEQueryDataView1.plInvoice
+        DisplayFormat = '$#,0.00;($#,0.00)'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Times New Roman'
+        Font.Size = 10
+        Font.Style = []
+        ResetGroup = ppGroup1
+        TextAlignment = taRightJustified
+        DBCalcType = dcAverage
+        DataPipelineName = 'plInvoice'
+        mmHeight = 3969
+        mmLeft = 160338
+        mmTop = 2910
+        mmWidth = 35454
+        BandType = 5
+        GroupNo = 0
+      end
+    end
+  end
+  object daDataModule1: TdaDataModule
+    object BDEQueryDataView1: TdaBDEQueryDataView
+      UserName = 'Query_Invoice'
+      Height = 298
+      Left = 10
+      NameColumnWidth = 105
+      SizeColumnWidth = 35
+      SortMode = 0
+      Top = 10
+      TypeColumnWidth = 52
+      Width = 220
+      AutoSearchTabOrder = 0
+      object plInvoice: TppChildBDEPipeline
+        AutoCreateFields = False
+        UserName = 'plInvoice'
+        object ppField1: TppField
+          FieldAlias = 'Customer No.'
+          FieldName = 'CustNo'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 0
+          TableName = 'customer'
+        end
+        object ppField2: TppField
+          FieldAlias = 'Company'
+          FieldName = 'Company'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 1
+          TableName = 'customer'
+        end
+        object ppField3: TppField
+          FieldAlias = 'Address Line 1'
+          FieldName = 'Addr1'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 2
+          TableName = 'customer'
+        end
+        object ppField4: TppField
+          FieldAlias = 'Address Line 2'
+          FieldName = 'Addr2'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 3
+          TableName = 'customer'
+        end
+        object ppField5: TppField
+          FieldAlias = 'City'
+          FieldName = 'City'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 4
+          TableName = 'customer'
+        end
+        object ppField6: TppField
+          FieldAlias = 'State'
+          FieldName = 'State'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 5
+          TableName = 'customer'
+        end
+        object ppField7: TppField
+          FieldAlias = 'Zip Code'
+          FieldName = 'Zip'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 6
+          TableName = 'customer'
+        end
+        object ppField8: TppField
+          FieldAlias = 'Country'
+          FieldName = 'Country'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 7
+          TableName = 'customer'
+        end
+        object ppField9: TppField
+          FieldAlias = 'Phone No.'
+          FieldName = 'Phone'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 8
+          TableName = 'customer'
+        end
+        object ppField10: TppField
+          FieldAlias = 'Fax No.'
+          FieldName = 'FAX'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 9
+          TableName = 'customer'
+        end
+        object ppField11: TppField
+          FieldAlias = 'Tax Rate'
+          FieldName = 'TaxRate'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 10
+          TableName = 'customer'
+        end
+        object ppField12: TppField
+          FieldAlias = 'Contact Name'
+          FieldName = 'Contact'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 11
+          TableName = 'customer'
+        end
+        object ppField13: TppField
+          FieldAlias = 'Last Invoice Date'
+          FieldName = 'LastInvoiceDate'
+          FieldLength = 0
+          DataType = dtDateTime
+          DisplayWidth = 0
+          Position = 12
+          TableName = 'customer'
+        end
+        object ppField14: TppField
+          FieldAlias = 'Order No.'
+          FieldName = 'OrderNo'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 13
+          TableName = 'orders'
+        end
+        object ppField15: TppField
+          FieldAlias = 'Customer No. (2)'
+          FieldName = 'CustNo_2'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 14
+          TableName = 'orders'
+        end
+        object ppField16: TppField
+          FieldAlias = 'Sale Date'
+          FieldName = 'SaleDate'
+          FieldLength = 0
+          DataType = dtDateTime
+          DisplayWidth = 0
+          Position = 15
+          TableName = 'orders'
+        end
+        object ppField17: TppField
+          FieldAlias = 'Ship Date'
+          FieldName = 'ShipDate'
+          FieldLength = 0
+          DataType = dtDateTime
+          DisplayWidth = 0
+          Position = 16
+          TableName = 'orders'
+        end
+        object ppField18: TppField
+          FieldAlias = 'Employee No.'
+          FieldName = 'EmpNo'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 0
+          Position = 17
+          TableName = 'orders'
+        end
+        object ppField19: TppField
+          FieldAlias = 'Ship To: Contact'
+          FieldName = 'ShipToContact'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 18
+          TableName = 'orders'
+        end
+        object ppField20: TppField
+          FieldAlias = 'Ship To: Address 1'
+          FieldName = 'ShipToAddr1'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 19
+          TableName = 'orders'
+        end
+        object ppField21: TppField
+          FieldAlias = 'Ship To: Address 2'
+          FieldName = 'ShipToAddr2'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 20
+          TableName = 'orders'
+        end
+        object ppField22: TppField
+          FieldAlias = 'Ship To: City'
+          FieldName = 'ShipToCity'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 21
+          TableName = 'orders'
+        end
+        object ppField23: TppField
+          FieldAlias = 'Ship To: State'
+          FieldName = 'ShipToState'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 22
+          TableName = 'orders'
+        end
+        object ppField24: TppField
+          FieldAlias = 'Ship To: Zip'
+          FieldName = 'ShipToZip'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 23
+          TableName = 'orders'
+        end
+        object ppField25: TppField
+          FieldAlias = 'Ship To: Country'
+          FieldName = 'ShipToCountry'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 24
+          TableName = 'orders'
+        end
+        object ppField26: TppField
+          FieldAlias = 'Ship To: Phone'
+          FieldName = 'ShipToPhone'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 25
+          TableName = 'orders'
+        end
+        object ppField27: TppField
+          FieldAlias = 'Ship Via'
+          FieldName = 'ShipVIA'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 26
+          TableName = 'orders'
+        end
+        object ppField28: TppField
+          FieldAlias = 'PO'
+          FieldName = 'PO'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 27
+          TableName = 'orders'
+        end
+        object ppField29: TppField
+          FieldAlias = 'Terms'
+          FieldName = 'Terms'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 28
+          TableName = 'orders'
+        end
+        object ppField30: TppField
+          FieldAlias = 'Payment Method'
+          FieldName = 'PaymentMethod'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 29
+          TableName = 'orders'
+        end
+        object ppField31: TppField
+          FieldAlias = 'Items Total'
+          FieldName = 'ItemsTotal'
+          FieldLength = 0
+          DataType = dtCurrency
+          DisplayWidth = 0
+          Position = 30
+          TableName = 'orders'
+        end
+        object ppField32: TppField
+          FieldAlias = 'Tax Rate (2)'
+          FieldName = 'TaxRate_2'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 31
+          TableName = 'orders'
+        end
+        object ppField33: TppField
+          FieldAlias = 'Freight'
+          FieldName = 'Freight'
+          FieldLength = 0
+          DataType = dtCurrency
+          DisplayWidth = 0
+          Position = 32
+          TableName = 'orders'
+        end
+        object ppField34: TppField
+          FieldAlias = 'Amount Paid'
+          FieldName = 'AmountPaid'
+          FieldLength = 0
+          DataType = dtCurrency
+          DisplayWidth = 0
+          Position = 33
+          TableName = 'orders'
+        end
+        object ppField35: TppField
+          FieldAlias = 'Order No. (2)'
+          FieldName = 'OrderNo_2'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 34
+          TableName = 'items'
+        end
+        object ppField36: TppField
+          FieldAlias = 'Item No.'
+          FieldName = 'ItemNo'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 35
+          TableName = 'items'
+        end
+        object ppField37: TppField
+          FieldAlias = 'Part No.'
+          FieldName = 'PartNo'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 36
+          TableName = 'items'
+        end
+        object ppField38: TppField
+          FieldAlias = 'Quantity'
+          FieldName = 'Qty'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 0
+          Position = 37
+          TableName = 'items'
+        end
+        object ppField39: TppField
+          FieldAlias = 'Discount'
+          FieldName = 'Discount'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 38
+          TableName = 'items'
+        end
+        object ppField40: TppField
+          FieldAlias = 'Partno'
+          FieldName = 'PartNo_2'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 39
+          TableName = 'parts'
+        end
+        object ppField41: TppField
+          FieldAlias = 'Vendor No.'
+          FieldName = 'VendorNo'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 40
+          TableName = 'parts'
+        end
+        object ppField42: TppField
+          FieldAlias = 'Description'
+          FieldName = 'Description'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 41
+          TableName = 'parts'
+        end
+        object ppField43: TppField
+          FieldAlias = 'On Hand'
+          FieldName = 'OnHand'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 42
+          TableName = 'parts'
+        end
+        object ppField44: TppField
+          FieldAlias = 'On Order'
+          FieldName = 'OnOrder'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 43
+          TableName = 'parts'
+        end
+        object ppField45: TppField
+          FieldAlias = 'Cost'
+          FieldName = 'Cost'
+          FieldLength = 0
+          DataType = dtCurrency
+          DisplayWidth = 0
+          Position = 44
+          TableName = 'parts'
+        end
+        object ppField46: TppField
+          FieldAlias = 'List Price'
+          FieldName = 'ListPrice'
+          FieldLength = 0
+          DataType = dtCurrency
+          DisplayWidth = 0
+          Position = 45
+          TableName = 'parts'
+        end
+      end
+      object daSQL1: TdaSQL
+        DatabaseName = 'DBDEMOS'
+        DatabaseType = dtParadox
+        DataPipelineName = 'plInvoice'
+        LinkColor = clBlack
+        MaxSQLFieldAliasLength = 25
+        SQLText.Strings = (
+          'SELECT customer.CustNo, customer.Company, '
+          '       customer.Addr1, customer.Addr2, '
+          '       customer.City, customer.State, '
+          '       customer.Zip, customer.Country, '
+          '       customer.Phone, customer.FAX, '
+          '       customer.TaxRate, customer.Contact, '
+          '       customer.LastInvoiceDate, orders.OrderNo, '
+          '       orders.CustNo CustNo_2, orders.SaleDate, '
+          '       orders.ShipDate, orders.EmpNo, '
+          '       orders.ShipToContact, orders.ShipToAddr1, '
+          '       orders.ShipToAddr2, orders.ShipToCity, '
+          '       orders.ShipToState, orders.ShipToZip, '
+          '       orders.ShipToCountry, orders.ShipToPhone, '
+          '       orders.ShipVIA, orders.PO, orders.Terms, '
+          '       orders.PaymentMethod, orders.ItemsTotal, '
+          '       orders.TaxRate TaxRate_2, orders.Freight, '
+          '       orders.AmountPaid, '
+          '       items.OrderNo OrderNo_2, items.ItemNo, '
+          '       items.PartNo, items.Qty, items.Discount, '
+          '       parts.PartNo PartNo_2, parts.VendorNo, '
+          '       parts.Description, parts.OnHand, '
+          '       parts.OnOrder, parts.Cost, parts.ListPrice'
+          'FROM "customer.db" customer, "orders.db" orders'
+          '     , "items.db" items, "parts.db" parts'
+          'WHERE (orders.CustNo = customer.CustNo) AND '
+          '      (items.OrderNo = orders.OrderNo) AND '
+          '      (parts.PartNo = items.PartNo)'
+          'ORDER BY customer.CustNo, orders.OrderNo')
+        SQLType = sqSQL1
+        object TdaField
+          Alias = 'Customer No.'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Customer No.'
+          FieldLength = 0
+          FieldName = 'CustNo'
+          SQLFieldName = 'CustNo'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Company'
+          DisplayWidth = 0
+          FieldAlias = 'Company'
+          FieldLength = 0
+          FieldName = 'Company'
+          SQLFieldName = 'Company'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Address Line 1'
+          DisplayWidth = 0
+          FieldAlias = 'Address Line 1'
+          FieldLength = 0
+          FieldName = 'Addr1'
+          SQLFieldName = 'Addr1'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Address Line 2'
+          DisplayWidth = 0
+          FieldAlias = 'Address Line 2'
+          FieldLength = 0
+          FieldName = 'Addr2'
+          SQLFieldName = 'Addr2'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'City'
+          DisplayWidth = 0
+          FieldAlias = 'City'
+          FieldLength = 0
+          FieldName = 'City'
+          SQLFieldName = 'City'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'State'
+          DisplayWidth = 0
+          FieldAlias = 'State'
+          FieldLength = 0
+          FieldName = 'State'
+          SQLFieldName = 'State'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Zip Code'
+          DisplayWidth = 0
+          FieldAlias = 'Zip Code'
+          FieldLength = 0
+          FieldName = 'Zip'
+          SQLFieldName = 'Zip'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Country'
+          DisplayWidth = 0
+          FieldAlias = 'Country'
+          FieldLength = 0
+          FieldName = 'Country'
+          SQLFieldName = 'Country'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Phone No.'
+          DisplayWidth = 0
+          FieldAlias = 'Phone No.'
+          FieldLength = 0
+          FieldName = 'Phone'
+          SQLFieldName = 'Phone'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Fax No.'
+          DisplayWidth = 0
+          FieldAlias = 'Fax No.'
+          FieldLength = 0
+          FieldName = 'FAX'
+          SQLFieldName = 'FAX'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Tax Rate'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Tax Rate'
+          FieldLength = 0
+          FieldName = 'TaxRate'
+          SQLFieldName = 'TaxRate'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Contact Name'
+          DisplayWidth = 0
+          FieldAlias = 'Contact Name'
+          FieldLength = 0
+          FieldName = 'Contact'
+          SQLFieldName = 'Contact'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Last Invoice Date'
+          DataType = dtDateTime
+          DisplayWidth = 0
+          FieldAlias = 'Last Invoice Date'
+          FieldLength = 0
+          FieldName = 'LastInvoiceDate'
+          SQLFieldName = 'LastInvoiceDate'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Order No.'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Order No.'
+          FieldLength = 0
+          FieldName = 'OrderNo'
+          SQLFieldName = 'OrderNo'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Customer No. (2)'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Customer No.'
+          FieldLength = 0
+          FieldName = 'CustNo'
+          SQLFieldName = 'CustNo_2'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Sale Date'
+          DataType = dtDateTime
+          DisplayWidth = 0
+          FieldAlias = 'Sale Date'
+          FieldLength = 0
+          FieldName = 'SaleDate'
+          SQLFieldName = 'SaleDate'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Ship Date'
+          DataType = dtDateTime
+          DisplayWidth = 0
+          FieldAlias = 'Ship Date'
+          FieldLength = 0
+          FieldName = 'ShipDate'
+          SQLFieldName = 'ShipDate'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Employee No.'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Employee No.'
+          FieldLength = 0
+          FieldName = 'EmpNo'
+          SQLFieldName = 'EmpNo'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Ship To: Contact'
+          DisplayWidth = 0
+          FieldAlias = 'Ship To: Contact'
+          FieldLength = 0
+          FieldName = 'ShipToContact'
+          SQLFieldName = 'ShipToContact'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Ship To: Address 1'
+          DisplayWidth = 0
+          FieldAlias = 'Ship To: Address 1'
+          FieldLength = 0
+          FieldName = 'ShipToAddr1'
+          SQLFieldName = 'ShipToAddr1'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Ship To: Address 2'
+          DisplayWidth = 0
+          FieldAlias = 'Ship To: Address 2'
+          FieldLength = 0
+          FieldName = 'ShipToAddr2'
+          SQLFieldName = 'ShipToAddr2'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Ship To: City'
+          DisplayWidth = 0
+          FieldAlias = 'Ship To: City'
+          FieldLength = 0
+          FieldName = 'ShipToCity'
+          SQLFieldName = 'ShipToCity'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Ship To: State'
+          DisplayWidth = 0
+          FieldAlias = 'Ship To: State'
+          FieldLength = 0
+          FieldName = 'ShipToState'
+          SQLFieldName = 'ShipToState'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Ship To: Zip'
+          DisplayWidth = 0
+          FieldAlias = 'Ship To: Zip'
+          FieldLength = 0
+          FieldName = 'ShipToZip'
+          SQLFieldName = 'ShipToZip'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Ship To: Country'
+          DisplayWidth = 0
+          FieldAlias = 'Ship To: Country'
+          FieldLength = 0
+          FieldName = 'ShipToCountry'
+          SQLFieldName = 'ShipToCountry'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Ship To: Phone'
+          DisplayWidth = 0
+          FieldAlias = 'Ship To: Phone'
+          FieldLength = 0
+          FieldName = 'ShipToPhone'
+          SQLFieldName = 'ShipToPhone'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Ship Via'
+          DisplayWidth = 0
+          FieldAlias = 'Ship Via'
+          FieldLength = 0
+          FieldName = 'ShipVIA'
+          SQLFieldName = 'ShipVIA'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'PO'
+          DisplayWidth = 0
+          FieldAlias = 'PO'
+          FieldLength = 0
+          FieldName = 'PO'
+          SQLFieldName = 'PO'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Terms'
+          DisplayWidth = 0
+          FieldAlias = 'Terms'
+          FieldLength = 0
+          FieldName = 'Terms'
+          SQLFieldName = 'Terms'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Payment Method'
+          DisplayWidth = 0
+          FieldAlias = 'Payment Method'
+          FieldLength = 0
+          FieldName = 'PaymentMethod'
+          SQLFieldName = 'PaymentMethod'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Items Total'
+          DataType = dtCurrency
+          DisplayWidth = 0
+          FieldAlias = 'Items Total'
+          FieldLength = 0
+          FieldName = 'ItemsTotal'
+          SQLFieldName = 'ItemsTotal'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Tax Rate (2)'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Tax Rate'
+          FieldLength = 0
+          FieldName = 'TaxRate'
+          SQLFieldName = 'TaxRate_2'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Freight'
+          DataType = dtCurrency
+          DisplayWidth = 0
+          FieldAlias = 'Freight'
+          FieldLength = 0
+          FieldName = 'Freight'
+          SQLFieldName = 'Freight'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Amount Paid'
+          DataType = dtCurrency
+          DisplayWidth = 0
+          FieldAlias = 'Amount Paid'
+          FieldLength = 0
+          FieldName = 'AmountPaid'
+          SQLFieldName = 'AmountPaid'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaField
+          Alias = 'Order No. (2)'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Order No.'
+          FieldLength = 0
+          FieldName = 'OrderNo'
+          SQLFieldName = 'OrderNo_2'
+          TableAlias = 'Order Item'
+          TableName = 'items.db'
+          TableSQLAlias = 'items'
+        end
+        object TdaField
+          Alias = 'Item No.'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Item No.'
+          FieldLength = 0
+          FieldName = 'ItemNo'
+          SQLFieldName = 'ItemNo'
+          TableAlias = 'Order Item'
+          TableName = 'items.db'
+          TableSQLAlias = 'items'
+        end
+        object TdaField
+          Alias = 'Part No.'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Part No.'
+          FieldLength = 0
+          FieldName = 'PartNo'
+          SQLFieldName = 'PartNo'
+          TableAlias = 'Order Item'
+          TableName = 'items.db'
+          TableSQLAlias = 'items'
+        end
+        object TdaField
+          Alias = 'Quantity'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Quantity'
+          FieldLength = 0
+          FieldName = 'Qty'
+          SQLFieldName = 'Qty'
+          TableAlias = 'Order Item'
+          TableName = 'items.db'
+          TableSQLAlias = 'items'
+        end
+        object TdaField
+          Alias = 'Discount'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Discount'
+          FieldLength = 0
+          FieldName = 'Discount'
+          SQLFieldName = 'Discount'
+          TableAlias = 'Order Item'
+          TableName = 'items.db'
+          TableSQLAlias = 'items'
+        end
+        object TdaField
+          Alias = 'Partno'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Partno'
+          FieldLength = 0
+          FieldName = 'PartNo'
+          SQLFieldName = 'PartNo_2'
+          TableAlias = 'Part'
+          TableName = 'parts.db'
+          TableSQLAlias = 'parts'
+        end
+        object TdaField
+          Alias = 'Vendor No.'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Vendor No.'
+          FieldLength = 0
+          FieldName = 'VendorNo'
+          SQLFieldName = 'VendorNo'
+          TableAlias = 'Part'
+          TableName = 'parts.db'
+          TableSQLAlias = 'parts'
+        end
+        object TdaField
+          Alias = 'Description'
+          DisplayWidth = 0
+          FieldAlias = 'Description'
+          FieldLength = 0
+          FieldName = 'Description'
+          SQLFieldName = 'Description'
+          TableAlias = 'Part'
+          TableName = 'parts.db'
+          TableSQLAlias = 'parts'
+        end
+        object TdaField
+          Alias = 'On Hand'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'On Hand'
+          FieldLength = 0
+          FieldName = 'OnHand'
+          SQLFieldName = 'OnHand'
+          TableAlias = 'Part'
+          TableName = 'parts.db'
+          TableSQLAlias = 'parts'
+        end
+        object TdaField
+          Alias = 'On Order'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'On Order'
+          FieldLength = 0
+          FieldName = 'OnOrder'
+          SQLFieldName = 'OnOrder'
+          TableAlias = 'Part'
+          TableName = 'parts.db'
+          TableSQLAlias = 'parts'
+        end
+        object TdaField
+          Alias = 'Cost'
+          DataType = dtCurrency
+          DisplayWidth = 0
+          FieldAlias = 'Cost'
+          FieldLength = 0
+          FieldName = 'Cost'
+          SQLFieldName = 'Cost'
+          TableAlias = 'Part'
+          TableName = 'parts.db'
+          TableSQLAlias = 'parts'
+        end
+        object TdaField
+          Alias = 'List Price'
+          DataType = dtCurrency
+          DisplayWidth = 0
+          FieldAlias = 'List Price'
+          FieldLength = 0
+          FieldName = 'ListPrice'
+          SQLFieldName = 'ListPrice'
+          TableAlias = 'Part'
+          TableName = 'parts.db'
+          TableSQLAlias = 'parts'
+        end
+        object TdaField
+          ChildType = 2
+          Alias = 'Customer No.'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Customer No.'
+          FieldLength = 0
+          FieldName = 'CustNo'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          ChildType = 2
+          Alias = 'Order No.'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Order No.'
+          FieldLength = 0
+          FieldName = 'OrderNo'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object TdaTable
+          ChildType = 5
+          Alias = 'Customer'
+          JoinType = dajtNone
+          SQLAlias = 'customer'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+        end
+        object TdaTable
+          ChildType = 5
+          Alias = 'Order'
+          SQLAlias = 'orders'
+          TableAlias = 'Order'
+          TableName = 'orders.db'
+          object TdaTableJoin
+            ChildType = 6
+            object TdaField
+              ChildType = 3
+              Alias = 'Customer No.'
+              DataType = dtDouble
+              DisplayWidth = 0
+              FieldAlias = 'Customer No.'
+              FieldLength = 0
+              FieldName = 'CustNo'
+              TableAlias = 'Order'
+              TableName = 'orders.db'
+              TableSQLAlias = 'orders'
+            end
+            object TdaField
+              ChildType = 4
+              Alias = 'Customer No.'
+              DataType = dtDouble
+              DisplayWidth = 0
+              FieldAlias = 'Customer No.'
+              FieldLength = 0
+              FieldName = 'CustNo'
+              TableAlias = 'Customer'
+              TableName = 'customer.db'
+              TableSQLAlias = 'customer'
+            end
+          end
+        end
+        object TdaTable
+          ChildType = 5
+          Alias = 'Order Item'
+          SQLAlias = 'items'
+          TableAlias = 'Order Item'
+          TableName = 'items.db'
+          object TdaTableJoin
+            ChildType = 6
+            object TdaField
+              ChildType = 3
+              Alias = 'Order No.'
+              DataType = dtDouble
+              DisplayWidth = 0
+              FieldAlias = 'Order No.'
+              FieldLength = 0
+              FieldName = 'OrderNo'
+              TableAlias = 'Order Item'
+              TableName = 'items.db'
+              TableSQLAlias = 'items'
+            end
+            object TdaField
+              ChildType = 4
+              Alias = 'Order No.'
+              DataType = dtDouble
+              DisplayWidth = 0
+              FieldAlias = 'Order No.'
+              FieldLength = 0
+              FieldName = 'OrderNo'
+              TableAlias = 'Order'
+              TableName = 'orders.db'
+              TableSQLAlias = 'orders'
+            end
+          end
+        end
+        object TdaTable
+          ChildType = 5
+          Alias = 'Part'
+          SQLAlias = 'parts'
+          TableAlias = 'Part'
+          TableName = 'parts.db'
+          object TdaTableJoin
+            ChildType = 6
+            object TdaField
+              ChildType = 3
+              Alias = 'Partno'
+              DataType = dtDouble
+              DisplayWidth = 0
+              FieldAlias = 'Partno'
+              FieldLength = 0
+              FieldName = 'PartNo'
+              TableAlias = 'Part'
+              TableName = 'parts.db'
+              TableSQLAlias = 'parts'
+            end
+            object TdaField
+              ChildType = 4
+              Alias = 'Part No.'
+              DataType = dtDouble
+              DisplayWidth = 0
+              FieldAlias = 'Part No.'
+              FieldLength = 0
+              FieldName = 'PartNo'
+              TableAlias = 'Order Item'
+              TableName = 'items.db'
+              TableSQLAlias = 'items'
+            end
+          end
+        end
+      end
+    end
+  end
+  object raCodeModule1: TraCodeModule
+    ProgramStream = {
+      01060D54726156617250726F6772616D094368696C645479706502110B50726F
+      6772616D4E616D6506095661726961626C65730B50726F6772616D5479706507
+      0B747450726F63656475726506536F75726365065E70726F6365647572652056
+      61726961626C65733B0D0A7661720D0A2020206744617461426173653A205444
+      617461426173653B0D0A202020676256616C69644E616D653A20426F6F6C6561
+      6E3B0D0A626567696E0D0A0D0A656E643B0D0A0001060A54726150726F677261
+      6D094368696C645479706502130B50726F6772616D4E616D65060E476C6F6261
+      6C4F6E4372656174650B50726F6772616D54797065070B747450726F63656475
+      726506536F7572636506D170726F63656475726520476C6F62616C4F6E437265
+      6174653B0D0A626567696E0D0A0D0A2020674461746142617365203A3D205444
+      617461426173652847657444656C706869436F6D706F6E656E74282764624D61
+      696E2729293B0D0A202069662028674461746142617365203C3E206E696C2920
+      7468656E0D0A20202020626567696E0D0A202020202020676256616C69644E61
+      6D65203A3D206744617461426173652E56616C69646174654E616D6528274442
+      44454D4F5327293B0D0A20202020656E643B0D0A0D0A656E643B0D0A0001060F
+      5472614576656E7448616E646C65720B50726F6772616D4E616D65060F566172
+      6961626C65314F6E43616C630B50726F6772616D54797065070B747450726F63
+      656475726506536F75726365066270726F636564757265205661726961626C65
+      314F6E43616C63287661722056616C75653A2056617269616E74293B0D0A6265
+      67696E0D0A0D0A202056616C7565203A3D206744617461426173652E44697265
+      63746F72793B0D0A0D0A656E643B0D0A0D436F6D706F6E656E744E616D650609
+      5661726961626C6531094576656E744E616D6506064F6E43616C63074576656E
+      74494402210001060F5472614576656E7448616E646C65720B50726F6772616D
+      4E616D65060F5661726961626C65324F6E43616C630B50726F6772616D547970
+      65070B747450726F63656475726506536F75726365068C70726F636564757265
+      205661726961626C65324F6E43616C63287661722056616C75653A2056617269
+      616E74293B0D0A626567696E0D0A0D0A2020696620676256616C69644E616D65
+      207468656E0D0A2020202056616C7565203A3D202754727565270D0A2020656C
+      73650D0A2020202056616C7565203A3D202746616C7365273B0D0A0D0A656E64
+      3B0D0A0D436F6D706F6E656E744E616D6506095661726961626C653209457665
+      6E744E616D6506064F6E43616C63074576656E74494402210000}
+  end
+end

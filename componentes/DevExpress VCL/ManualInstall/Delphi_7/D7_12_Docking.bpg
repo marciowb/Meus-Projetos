@@ -1,0 +1,23 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dxDockingD7.bpl dcldxDockingD7.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dxDockingD7.bpl: ..\..\ExpressDocking Library\Packages\dxDockingD7.dpk
+  $(DCC)
+
+dcldxDockingD7.bpl: ..\..\ExpressDocking Library\Packages\dcldxDockingD7.dpk
+  $(DCC)
+
+

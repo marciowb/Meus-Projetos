@@ -1,0 +1,72 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{883FBCEB-7E3B-48A7-B4A1-4B0BC1F27030}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="FIBPlus2009.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="FIBDBMidas2009.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="FIBPlusEditors2009.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Tools\pFIBPlusTools2009.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="FIBPlus2009">
+			<MSBuild Projects="FIBPlus2009.dproj"/>
+		</Target>
+		<Target Name="FIBPlus2009:Clean">
+			<MSBuild Targets="Clean" Projects="FIBPlus2009.dproj"/>
+		</Target>
+		<Target Name="FIBPlus2009:Make">
+			<MSBuild Targets="Make" Projects="FIBPlus2009.dproj"/>
+		</Target>
+		<Target Name="FIBDBMidas2009">
+			<MSBuild Projects="FIBDBMidas2009.dproj"/>
+		</Target>
+		<Target Name="FIBDBMidas2009:Clean">
+			<MSBuild Targets="Clean" Projects="FIBDBMidas2009.dproj"/>
+		</Target>
+		<Target Name="FIBDBMidas2009:Make">
+			<MSBuild Targets="Make" Projects="FIBDBMidas2009.dproj"/>
+		</Target>
+		<Target Name="FIBPlusEditors2009">
+			<MSBuild Projects="FIBPlusEditors2009.dproj"/>
+		</Target>
+		<Target Name="FIBPlusEditors2009:Clean">
+			<MSBuild Targets="Clean" Projects="FIBPlusEditors2009.dproj"/>
+		</Target>
+		<Target Name="FIBPlusEditors2009:Make">
+			<MSBuild Targets="Make" Projects="FIBPlusEditors2009.dproj"/>
+		</Target>
+		<Target Name="pFIBPlusTools2009">
+			<MSBuild Projects="Tools\pFIBPlusTools2009.dproj"/>
+		</Target>
+		<Target Name="pFIBPlusTools2009:Clean">
+			<MSBuild Targets="Clean" Projects="Tools\pFIBPlusTools2009.dproj"/>
+		</Target>
+		<Target Name="pFIBPlusTools2009:Make">
+			<MSBuild Targets="Make" Projects="Tools\pFIBPlusTools2009.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="FIBPlus2009;FIBDBMidas2009;FIBPlusEditors2009;pFIBPlusTools2009"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="FIBPlus2009:Clean;FIBDBMidas2009:Clean;FIBPlusEditors2009:Clean;pFIBPlusTools2009:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="FIBPlus2009:Make;FIBDBMidas2009:Make;FIBPlusEditors2009:Make;pFIBPlusTools2009:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

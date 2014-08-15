@@ -1,0 +1,26 @@
+/*
+   dxTLStr.rc
+   Developer Express Visual Component Library
+   Express grid string resource
+*/
+
+STRINGTABLE
+{
+// dxTreeList & dxDBgrid strings
+  38801, "Invalid Owner TdxTreeListNode"
+  38802, "Customize"
+  38803, "Confirm";
+  38804, "Delete record?"
+  38805, "Delete all selected records?"
+  38806, "%s: Column by Field ''%s'' not found"
+  38807, "Drag a column header here to group by that column"
+  38808, "Dataset in edit or insert mode"
+
+  38809, "    Bands    "
+  38810, "   Headers   "
+  38811, "DefaultFields property should be set to False"
+  38812, "Invalidate group name!"
+  38813, "Invalidate group name: duplicate!"
+}
+
+

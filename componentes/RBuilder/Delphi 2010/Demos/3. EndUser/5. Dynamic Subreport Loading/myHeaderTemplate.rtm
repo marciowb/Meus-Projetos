@@ -1,0 +1,65 @@
+object ppReport1: TppReport
+  AutoStop = False
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'Letter'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  PrinterSetup.PaperSize = 1
+  SaveAsTemplate = True
+  Template.DatabaseSettings.DataPipeline = plItem
+  Template.DatabaseSettings.Name = 'New Report'
+  Template.DatabaseSettings.NameField = 'Name'
+  Template.DatabaseSettings.TemplateField = 'Template'
+  Template.FileName = 
+    'E:\Development\Demo\3. EndUser\5. Dynamic Subreport Loading\myHe' +
+    'aderTemplate.rtm'
+  Template.Format = ftASCII
+  DeviceType = 'Screen'
+  Left = 289
+  Top = 326
+  Version = '5.5'
+  mmColumnWidth = 0
+  object ppDetailBand1: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 10054
+    mmPrintPosition = 0
+    object ppSystemVariable1: TppSystemVariable
+      UserName = 'SystemVariable1'
+      VarType = vtDocumentName
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      TextAlignment = taCentered
+      Transparent = True
+      mmHeight = 5027
+      mmLeft = 94721
+      mmTop = 1058
+      mmWidth = 13758
+      BandType = 4
+    end
+    object ppSystemVariable2: TppSystemVariable
+      UserName = 'SystemVariable2'
+      VarType = vtPrintDateTime
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      TextAlignment = taRightJustified
+      Transparent = True
+      mmHeight = 3440
+      mmLeft = 177800
+      mmTop = 5292
+      mmWidth = 24606
+      BandType = 4
+    end
+  end
+end

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{cf2369c9-1641-4e71-90b9-f77a38d27bb2}</ProjectGuid>
+			<MainSource>FlexCel2007_DESIGN.dpk</MainSource>
+			<ProjectVersion>11.0</ProjectVersion>
+			<Config Condition="'$(Config)'==''">Release</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+			<DCC_DependencyCheckOutputName>FlexCel2007_DESIGN.bpl</DCC_DependencyCheckOutputName>
+			<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		</PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == '|AnyCPU' ">
+      <Version>7.0</Version>
+      <DCC_WriteableConstants>True</DCC_WriteableConstants>
+      <DCC_OutputXMLDocumentation>False</DCC_OutputXMLDocumentation>
+      <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_DebugInformation>False</DCC_DebugInformation>
+			<DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_Description>FlexCel Studio for VCL - Design Package</DCC_Description>
+			<GenDll>true</GenDll>
+			<GenPackage>true</GenPackage>
+			<DCC_DcuOutput>..\dcu\2007</DCC_DcuOutput>
+			<DCC_ObjOutput>..\dcu\2007</DCC_ObjOutput>
+			<DCC_HppOutput>..\dcu\2007</DCC_HppOutput>
+			<DCC_BplOutput>..\dcu\bpl</DCC_BplOutput>
+			<DCC_DcpOutput>..\dcu\2007</DCC_DcpOutput>
+			<DCC_BpiOutput>..\dcu\2007</DCC_BpiOutput>
+    </PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="FlexCel2007_DESIGN.dpk">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="dbrtl.dcp"/>
+        <DCCReference Include="vcljpg.dcp"/>
+        <DCCReference Include="vcl.dcp"/>
+        <DCCReference Include="FlexCel2007.dcp"/>
+        <DCCReference Include="designide.dcp"/>
+        <DCCReference Include="vclx.dcp"/>
+        <DCCReference Include="UFlexCelReg.pas"/>
+        <DCCReference Include="UTemplateEdit.pas"/>
+        <DCCReference Include="DFlexCelReportEditor.pas"/>
+        <DCCReference Include="UCheckTemplate.pas"/>
+        <DCCReference Include="UExcelEdit.pas">
+          <Form>ExcelEdit</Form>
+        </DCCReference>
+        <DCCReference Include="UFlexCelDbMemEditor.pas"/>
+        <DCCReference Include="UFlexCelTemplateEditor.pas"/>
+        <DCCReference Include="UFlxDesignHelp.pas"/>
+        <DCCReference Include="UOleDrag.pas"/>
+		</ItemGroup>
+		<Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality</Borland.Personality>
+			<Borland.ProjectType>Package</Borland.ProjectType>
+			<BorlandProject>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">FlexCel2007_DESIGN.dpk</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<Package_Options>
+					  <Package_Options Name="ImplicitBuild">True</Package_Options>
+					  <Package_Options Name="DesigntimeOnly">true</Package_Options>
+					  <Package_Options Name="RuntimeOnly">false</Package_Options>
+					</Package_Options>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">3</VersionInfo>
+						<VersionInfo Name="MinorVer">4</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+            <VersionInfo Name="Locale">1033</VersionInfo>
+            <VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">TMS Software</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">Suite of Components for manipulating Excel files.</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">3.4.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">(c) 2002-2011 TMS Software</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">FlexCel Studio for VCL/LCL</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">3.4.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+				</Delphi.Personality>
+			</BorlandProject>
+			</BorlandProject>
+		</ProjectExtensions>
+	</Project>

@@ -1,0 +1,68 @@
+package dxPScxPivotGridLnkRS10;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressPrinting System ReportLink for ExpressPivotGrid by Developer Express Inc.'}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  designide,
+  rtl,
+  vcl,
+  vcldb,
+  vcljpg,
+  vclx,
+  dxComnRS10,
+  dxCoreRS10,
+  dxThemeRS10,
+  cxDataRS10,
+  dxGDIPlusRS10,
+  cxLibraryRS10,
+  cxEditorsRS10,
+  cxExportRS10,
+  dxPSCoreRS10,
+  cxExtEditorsRS10,
+  dxPSLnksRS10,
+  cxPivotGridRS10,
+  dxPScxCommonRS10,
+  dcldb,
+  dclstd,
+  dcldxCoreRS10,
+  dclcxLibraryRS10,
+  dclcxEditorsRS10,
+  dcldxPSCoreRS10,
+  dclcxPivotGridRS10;
+
+contains
+  dxPScxPivotGridLnk,
+  dxPScxPivotGridLnkReg;
+
+end.

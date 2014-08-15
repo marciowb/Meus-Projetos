@@ -1,0 +1,23 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dxFlowChartRS11.bpl dcldxFlowChartRS11.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dxFlowChartRS11.bpl: ..\..\ExpressFlowChart\Packages\dxFlowChartRS11.dpk
+  $(DCC)
+
+dcldxFlowChartRS11.bpl: ..\..\ExpressFlowChart\Packages\dcldxFlowChartRS11.dpk
+  $(DCC)
+
+

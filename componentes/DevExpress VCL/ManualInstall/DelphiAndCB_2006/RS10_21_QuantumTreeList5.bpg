@@ -1,0 +1,30 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = cxTreeListRS10.bpl cxTreeListdxBarPopupMenuRS10.bpl dclcxTreeListRS10.bpl \
+  dclcxTreeListdxBarPopupMenuRS10.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+cxTreeListRS10.bpl: ..\..\ExpressQuantumTreeList 5\Packages\cxTreeListRS10.dpk
+  $(DCC)
+
+cxTreeListdxBarPopupMenuRS10.bpl: ..\..\ExpressQuantumTreeList 5\Packages\cxTreeListdxBarPopupMenuRS10.dpk
+  $(DCC)
+
+dclcxTreeListRS10.bpl: ..\..\ExpressQuantumTreeList 5\Packages\dclcxTreeListRS10.dpk
+  $(DCC)
+
+dclcxTreeListdxBarPopupMenuRS10.bpl: ..\..\ExpressQuantumTreeList 5\Packages\dclcxTreeListdxBarPopupMenuRS10.dpk
+  $(DCC)
+
+

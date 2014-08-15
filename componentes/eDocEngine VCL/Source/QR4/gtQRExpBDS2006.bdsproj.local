@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2005/10/25 20:21:58.885.bdsproj,C:\Documents and Settings\testmac\My Documents\Borland Studio Projects\Package1.bdsproj=E:\Work\Shruthi\eDocEngine\Source\QR4\gtQRExpD2006.bdsproj</Transaction>
+    <Transaction>2006/01/02 14:02:12.065.txaPackage,E:\work\Shameer\Build 2006\Source\Pro\QR4\ModelSupport_gtQRExpD2006\default.txaPackage=</Transaction>
+    <Transaction>2006/01/02 14:02:12.127.bdsproj,E:\work\Shameer\Build 2006\Source\Pro\QR4\gtQRExpD2006.bdsproj=E:\work\Shameer\Build 2006\Source\Pro\QR4\gtQRExpBDS2006.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>

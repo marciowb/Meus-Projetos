@@ -1,0 +1,111 @@
+package dxPSCoreRS11;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressPrinting System by Developer Express Inc.'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  rtl,
+  vcl,
+  vcljpg,
+  vclx,
+  dxComnRS11,
+  dxCoreRS11,
+  dxThemeRS11,
+  dxGDIPlusRS11,
+  cxLibraryRS11;
+
+contains
+  dxWrap,
+  dxBkGnd,
+  dxBrhDlg,
+  dxExtCtrls,
+  dxExtCtrlsStrs,
+  dxFEFDlg,
+  dxfmChFN,
+  dxfmClr,
+  dxfmDfnStl,
+  dxfmDTFmt,
+  dxfmMnPg,
+  dxfmPNFmt,
+  dxfmZoom,
+  dxPcPrVw,
+  dxPgsDlg,
+  dxPpAttr,
+  dxPreVw,
+  dxPrnDev,
+  dxPrnDlg,
+  dxPrnPg,
+  dxPSAutoHFTextMnuBld,
+  dxPSCompsProvider,
+  dxPSCore,
+  dxPSCPDsg,
+  dxPSEdgePatterns,
+  dxPSEngn,
+  dxPSESys,
+  dxPSEvnt,
+  dxPSExcelEdgePatterns,
+  dxPSExcelFillPatterns,
+  dxPSFillPatterns,
+  dxPSfmAutoHFTextFmt,
+  dxPSfmCompositionAdd,
+  dxPSfmCompositionDsg,
+  dxPSfmEditDesc,
+  dxPSfmLnkAdd,
+  dxPSfmTtl,
+  dxPSForm,
+  dxPSGlbl,
+  dxPSGraphicLnk,
+  dxPSHFToolBarBld,
+  dxPSImgs,
+  dxPSPgsMnuBld,
+  dxPSPopupMan,
+  dxPSPrVw,
+  dxPSPrVwOpt,
+  dxPSPrVwStd,
+  dxPSRes,
+  dxPSSngltn,
+  dxPSUtl,
+  dxBase,
+  dxPSBaseGridLnk,
+  dxPSContainerLnk,
+  dxPSDBBasedXplorer,
+  dxPSExtDlgs,
+  dxPSFileBasedXplorer,
+  dxPSfmReportProperties,
+  dxPSShapes,
+  dxPSTextLnk,
+  dxPSStandardFillPatterns,
+  dxPSXplorerTreeView;
+
+end.

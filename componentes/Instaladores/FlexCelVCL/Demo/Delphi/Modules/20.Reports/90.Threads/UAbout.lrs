@@ -1,0 +1,30 @@
+LazarusResources.Add('TAbout','FORMDATA',[
+  'TPF0'#6'TAbout'#5'About'#4'Left'#3#191#0#3'Top'#2'h'#7'Caption'#6#4'Help'#12
+  +'ClientHeight'#3#192#1#11'ClientWidth'#3#188#1#5'Color'#7#9'clBtnFace'#12'Fo'
+  +'nt.Charset'#7#15'DEFAULT_CHARSET'#10'Font.Color'#7#12'clWindowText'#11'Font'
+  +'.Height'#2#245#9'Font.Name'#6#13'MS Sans Serif'#10'Font.Style'#11#0#14'OldC'
+  +'reateOrder'#8#13'PixelsPerInch'#2'`'#10'TextHeight'#2#13#0#6'TPanel'#12'Pan'
+  +'elCommand'#4'Left'#2#0#3'Top'#2#0#5'Width'#3#188#1#6'Height'#2#25#5'Align'#7
+  +#5'alTop'#10'BevelOuter'#7#9'bvLowered'#7'Caption'#6#21'About the Thread Dem'
+  +'o'#5'Color'#7#6'clGray'#12'Font.Charset'#7#12'ANSI_CHARSET'#10'Font.Color'#7
+  +#7'clWhite'#11'Font.Height'#2#243#9'Font.Name'#6#5'Arial'#10'Font.Style'#11#6
+  +'fsBold'#0#10'ParentFont'#8#8'TabOrder'#2#0#13'ExplicitWidth'#3#190#1#0#0#5
+  +'TMemo'#5'Memo1'#4'Left'#2#0#3'Top'#2#25#5'Width'#3#188#1#6'Height'#3#167#1#5
+  +'Align'#7#8'alClient'#12'Font.Charset'#7#12'ANSI_CHARSET'#10'Font.Color'#7#12
+  +'clWindowText'#11'Font.Height'#2#243#9'Font.Name'#6#5'Arial'#10'Font.Style'
+  +#11#6'fsBold'#0#13'Lines.Strings'#1#6#0#6'7This demo shows how to run FlexCe'
+  +'l in separate threads.'#6#0#6'=Each time you press the "New Report" button,'
+  +' a new report is '#6#28'generated, and added to the '#6'Dreport list. You c'
+  +'an cancel a running report by clicking on "Cancel"'#6#0#6'?Reports are crea'
+  +'ted so they are big and they take some time to '#6#25'process, they don''t '
+  +'make '#6'@any sense. They are automatically deleted after being generated.'
+  +#6#0#6'ASometimes you can get a "Share violation" error, this is because '#6
+  +#24'the file already exists.'#6#0#6'ANote that we can''t really use BDE for '
+  +'multithreading, as it will '#6#9'complain '#6'Babout being "out of memory" '
+  +'as soon as you start having more than '#6'Ea couple of threads in parallel.'
+  +' For this reason, we copy the data to'#6'>memory tables, and then use those'
+  +' memory tables to create the '#6#8'reports.'#6':THIS IS NOT something you w'
+  +'ould normally have to do, most '#6#8'database'#6'0engines work fine in mult'
+  +'ithreaded environments.'#0#10'ParentFont'#8#8'ReadOnly'#9#8'TabOrder'#2#1#13
+  +'ExplicitWidth'#3#190#1#14'ExplicitHeight'#3#173#1#0#0#0
+]);

@@ -1,0 +1,164 @@
+object TppReport
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'Letter 8 ½ x 11 in'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  SaveAsTemplate = True
+  Template.FileName = 'E:\Development\RBDemos\0. Rap\1. CodeSite\rap0001.rtm'
+  Template.Format = ftASCII
+  UserName = 'Report'
+  DeviceType = 'Screen'
+  Language = lgEnglish
+  Version = '4.24 Pro'
+  mmColumnWidth = 0
+  object ppTitleBand1: TppTitleBand
+    PrintHeight = phDynamic
+    mmBottomOffset = 0
+    mmHeight = 22754
+    mmPrintPosition = 0
+    object ppLabel1: TppLabel
+      UserName = 'Label1'
+      Caption = 'CodeSite Support'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5821
+      mmLeft = 79111
+      mmTop = 1852
+      mmWidth = 43392
+      BandType = 1
+    end
+    object ppRichText1: TppRichText
+      UserName = 'RichText1'
+      Caption = 'RichText1'
+      RichText = 
+        '{\rtf1\ansi\deff0\deflang1033{\fonttbl{\f0\fswiss Arial;}{\f1\fm' +
+        'odern Courier New;}}'#13#10'{\colortbl ;\red0\green128\blue0;\red0\gre' +
+        'en0\blue0;}'#13#10'\viewkind4\uc1\pard\f0\fs16 You can debug your \b R' +
+        'AP\b0  programs by adding support for \i Raize Software Solution' +
+        's\i0  tool, \b CodeSite\b0 .\par'#13#10'To do this, add the raCSFuncs ' +
+        'unit to the uses clause of your project. A new set of procedures' +
+        ' will appear in your Code Toolbox under Language|Functions|Codes' +
+        'ite. You can add these procedures to your RAP code to make calls' +
+        ' to the CodeSite viewer. \par'#13#10'\par'#13#10'By adding or removing the "' +
+        'x" from the following line in the raCSFuncs unit you can turn on' +
+        ' or off CodeSite calls:\par'#13#10'\par'#13#10'\cf1\i\f1\{x$DEFINE CODESITE\' +
+        '}            \{remove the '#39'x'#39' to enable CodeSite support\}\par'#13#10 +
+        '\cf2\i0\f0\par'#13#10'By adding the x at the beginning of this line, y' +
+        'ou can leave the calls to CodeSite in your RAP code, but nothing' +
+        ' will happen.\par'#13#10'\par'#13#10'The following CodeSite methods are supp' +
+        'orted:\par'#13#10'\par'#13#10'AddCheckPoint\par'#13#10'AddSeparator\par'#13#10'Clear\par' +
+        #13#10'Enable\par'#13#10'EnterMethod\par'#13#10'ExitMethod\par'#13#10'ScratchPad\par'#13#10'S' +
+        'endAssignedEx\par'#13#10'SendAssigned\par'#13#10'SendBooleanEx\par'#13#10'SendBool' +
+        'ean\par'#13#10'SendColorEx\par'#13#10'SendColor\par'#13#10'SendCurrencyEx\par'#13#10'Sen' +
+        'dCurrency\par'#13#10'SendError\par'#13#10'SendFloatEx\par'#13#10'SendFloat\par'#13#10'Se' +
+        'ndIntegerEx\par'#13#10'SendInteger\par'#13#10'SendMsgEx\par'#13#10'SendMsg\par'#13#10'Se' +
+        'ndNote\par'#13#10'SendObject\par'#13#10'SendPointEx\par'#13#10'SendPoint\par'#13#10'Send' +
+        'Property\par'#13#10'SendRectEx\par'#13#10'SendRect\par'#13#10'SendStream\par'#13#10'Send' +
+        'StringEx\par'#13#10'SendString\par'#13#10'SendStringList\par'#13#10'SendWarning\pa' +
+        'r'#13#10'\par'#13#10'Note that not all of these calls have the same signatur' +
+        'e as their Delphi conterparts - some changes had to be made to s' +
+        'upport RAP'#39's particular subset of Objecct Pascal.\par'#13#10'}'#13#10
+      Stretch = True
+      mmHeight = 8996
+      mmLeft = 1058
+      mmTop = 10583
+      mmWidth = 197909
+      BandType = 1
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+  end
+  object ppFooterBand1: TppFooterBand
+    PrintOnLastPage = False
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+    object ppLabel2: TppLabel
+      UserName = 'Label2'
+      Caption = 
+        'In order to see a call to CodeSite, go to the next page of the r' +
+        'eport preview...'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 2117
+      mmTop = 1588
+      mmWidth = 116681
+      BandType = 8
+    end
+  end
+  object ppSummaryBand1: TppSummaryBand
+    NewPage = True
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+    object ppLabel3: TppLabel
+      UserName = 'Label3'
+      Caption = 'This label'#39's events make two calls to Codesite.'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 2117
+      mmTop = 1058
+      mmWidth = 71438
+      BandType = 7
+    end
+  end
+  object TraCodeModule
+    ProgramStream = {
+      01060D54726156617250726F6772616D094368696C645479706502110B50726F
+      6772616D4E616D6506095661726961626C65730B50726F6772616D5479706507
+      0B747450726F63656475726506536F75726365066370726F6365647572652056
+      61726961626C65733B0D0A7661720D0A2020624F6E5072696E7446697265643A
+      20426F6F6C65616E3B0D0A2020624F6E4765745465787446697265643A20426F
+      6F6C65616E3B200D0A626567696E0D0A0D0A656E643B0D0A0001060A54726150
+      726F6772616D094368696C645479706502130B50726F6772616D4E616D65060E
+      476C6F62616C4F6E4372656174650B50726F6772616D54797065070B74745072
+      6F63656475726506536F75726365066170726F63656475726520476C6F62616C
+      4F6E4372656174653B0D0A626567696E0D0A2020624F6E5072696E7446697265
+      64203A3D2046616C73653B0D0A2020624F6E476574546578744669726564203A
+      3D2046616C73653B200D0A656E643B0D0A0001060F5472614576656E7448616E
+      646C65720B50726F6772616D4E616D65060F4C6162656C334F6E476574546578
+      740B50726F6772616D54797065070B747450726F63656475726506536F757263
+      6506B270726F636564757265204C6162656C334F6E4765745465787428766172
+      20546578743A20537472696E67293B0D0A626567696E0D0A2020696620286E6F
+      7420624F6E47657454657874466972656429207468656E200D0A202020206373
+      53656E64537472696E67457828636D744E6F74652C20274C6162656C332E4F6E
+      47657454657874272C2054657874293B0D0A2020624F6E476574546578744669
+      726564203A3D20547275653B200D0A656E643B0D0A0D436F6D706F6E656E744E
+      616D6506064C6162656C33094576656E744E616D6506094F6E47657454657874
+      074576656E74494402350001060F5472614576656E7448616E646C65720B5072
+      6F6772616D4E616D65060D4C6162656C334F6E5072696E740B50726F6772616D
+      54797065070B747450726F63656475726506536F75726365068270726F636564
+      757265204C6162656C334F6E5072696E743B0D0A626567696E0D0A2020696620
+      286E6F7420624F6E5072696E74466972656429207468656E0D0A202020206373
+      53656E644D736728274C6162656C332E4F6E5072696E7427293B0D0A2020624F
+      6E5072696E744669726564203A3D20547275653B0D0A656E643B0D0A0D436F6D
+      706F6E656E744E616D6506064C6162656C33094576656E744E616D6506074F6E
+      5072696E74074576656E74494402200000}
+  end
+end

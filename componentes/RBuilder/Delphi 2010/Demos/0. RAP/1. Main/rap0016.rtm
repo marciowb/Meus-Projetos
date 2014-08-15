@@ -1,0 +1,292 @@
+object TppReport
+  PrinterSetup.BinName = 'Auto Select'
+  PrinterSetup.DocumentName = 'ppReport1'
+  PrinterSetup.PaperName = 'Letter 8 ½ x 11 in'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  SaveAsTemplate = True
+  Template.FileName = 'E:\Development\Demos\0. Rap\1. Main\rap0016.rtm'
+  Template.Format = ftASCII
+  UserName = 'Report'
+  CachePages = True
+  DeviceType = 'Screen'
+  Language = lgEnglish
+  Version = '5.0 Pro'
+  mmColumnWidth = 0
+  object ppTitleBand1: TppTitleBand
+    PrintHeight = phDynamic
+    mmBottomOffset = 0
+    mmHeight = 129646
+    mmPrintPosition = 0
+    object ppLabel4: TppLabel
+      UserName = 'Label4'
+      Caption = 'RAP Demo - Setting Font Styles'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold, fsItalic]
+      Transparent = True
+      mmHeight = 4763
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 63500
+      BandType = 1
+    end
+    object ppRichText1: TppRichText
+      UserName = 'RichText1'
+      Caption = 'RichText1'
+      RichText = 
+        '{\rtf1\ansi\deff0\deflang1033{\fonttbl{\f0\fswiss Arial;}{\f1\fm' +
+        'odern Courier New;}}'#13#10'\viewkind4\uc1\pard\f0\fs20 This report co' +
+        'ntains code to set a font style in code. This is noteworthy sinc' +
+        'e RAP does not support Set types and TFont.Style is a Set type.\' +
+        'par'#13#10' \par'#13#10'In order to set a font to bold, in RAP, you would no' +
+        't say\par'#13#10'\par'#13#10'\f1   include(MyFont.Style, fsBold);\par'#13#10'\f0\p' +
+        'ar'#13#10'as you would in Delphi. Instead, the font styles have been s' +
+        'urfaced as boolean properties of TFont. Thus to set a font to bo' +
+        'ld, you would say\par'#13#10'\par'#13#10'\f1   MyFont.Bold := True;\par'#13#10'\f0' +
+        '\par'#13#10'To View the RAP code for this example\par'#13#10'\par'#13#10'1. Select' +
+        ' the Calc tab\par'#13#10'2. Select the View | Events menu option\par'#13#10 +
+        '\fs24\par'#13#10'}'#13#10
+      Stretch = True
+      mmHeight = 57415
+      mmLeft = 1058
+      mmTop = 6350
+      mmWidth = 192088
+      BandType = 1
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+    end
+    object ppRegion1: TppRegion
+      UserName = 'Region1'
+      Caption = 'Region1'
+      ParentWidth = False
+      Pen.Style = psClear
+      ShiftRelativeTo = ppRichText1
+      mmHeight = 58473
+      mmLeft = 0
+      mmTop = 69850
+      mmWidth = 203200
+      BandType = 1
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      object ppLabel1: TppLabel
+        UserName = 'Label1'
+        Caption = 'Bold'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = []
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 2116
+        mmTop = 83608
+        mmWidth = 6879
+        BandType = 1
+      end
+      object ppLabel2: TppLabel
+        UserName = 'Label2'
+        Caption = 'Italic'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = []
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 2116
+        mmTop = 88635
+        mmWidth = 7144
+        BandType = 1
+      end
+      object ppLabel3: TppLabel
+        UserName = 'Label3'
+        Caption = 'Underline'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = []
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 2116
+        mmTop = 93927
+        mmWidth = 14288
+        BandType = 1
+      end
+      object ppLabel5: TppLabel
+        UserName = 'Label5'
+        Caption = 'Stikeout'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = []
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 2116
+        mmTop = 99219
+        mmWidth = 12700
+        BandType = 1
+      end
+      object ppLabel6: TppLabel
+        UserName = 'Label6'
+        Caption = 'Bold Italic'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = []
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 2116
+        mmTop = 104510
+        mmWidth = 15081
+        BandType = 1
+      end
+      object ppLabel7: TppLabel
+        UserName = 'Label7'
+        Caption = 'Italic Strikeout'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = []
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 2116
+        mmTop = 109802
+        mmWidth = 21960
+        BandType = 1
+      end
+      object ppLabel8: TppLabel
+        UserName = 'Label8'
+        Caption = 'Normal'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold, fsItalic, fsUnderline]
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 2116
+        mmTop = 115094
+        mmWidth = 11906
+        BandType = 1
+      end
+      object ppLabel9: TppLabel
+        UserName = 'Label9'
+        Caption = 'This font assigned from above.'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = []
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 2116
+        mmTop = 120385
+        mmWidth = 46302
+        BandType = 1
+      end
+      object ppLabel10: TppLabel
+        UserName = 'Label10'
+        Caption = 'The following font styles have been set in code:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = []
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 2116
+        mmTop = 75141
+        mmWidth = 71967
+        BandType = 1
+      end
+      object ppLine1: TppLine
+        UserName = 'Line1'
+        ParentWidth = True
+        ShiftWithParent = True
+        Weight = 0.75
+        mmHeight = 3440
+        mmLeft = 0
+        mmTop = 74083
+        mmWidth = 203200
+        BandType = 1
+      end
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    PrintHeight = phDynamic
+    mmBottomOffset = 0
+    mmHeight = 0
+    mmPrintPosition = 0
+  end
+  object TraCodeModule
+    ProgramStream = {
+      01060F5472614576656E7448616E646C65720B50726F6772616D4E616D65060D
+      4C6162656C314F6E5072696E740B50726F6772616D54797065070B747450726F
+      63656475726506536F75726365064470726F636564757265204C6162656C314F
+      6E5072696E743B0D0A626567696E0D0A20204C6162656C312E466F6E742E426F
+      6C64203A3D20547275653B0D0A656E643B0D0A0D436F6D706F6E656E744E616D
+      6506064C6162656C31094576656E744E616D6506074F6E5072696E7407457665
+      6E74494402200001060F5472614576656E7448616E646C65720B50726F677261
+      6D4E616D65060D4C6162656C324F6E5072696E740B50726F6772616D54797065
+      070B747450726F63656475726506536F75726365064670726F63656475726520
+      4C6162656C324F6E5072696E743B0D0A626567696E0D0A20206C6162656C322E
+      466F6E742E4974616C6963203A3D20547275653B0D0A656E643B0D0A0D436F6D
+      706F6E656E744E616D6506064C6162656C32094576656E744E616D6506074F6E
+      5072696E74074576656E74494402200001060F5472614576656E7448616E646C
+      65720B50726F6772616D4E616D65060D4C6162656C334F6E5072696E740B5072
+      6F6772616D54797065070B747450726F63656475726506536F75726365064970
+      726F636564757265204C6162656C334F6E5072696E743B0D0A626567696E0D0A
+      20204C6162656C332E466F6E742E556E6465726C696E65203A3D20547275653B
+      0D0A656E643B0D0A0D436F6D706F6E656E744E616D6506064C6162656C330945
+      76656E744E616D6506074F6E5072696E74074576656E74494402200001060F54
+      72614576656E7448616E646C65720B50726F6772616D4E616D65060D4C616265
+      6C354F6E5072696E740B50726F6772616D54797065070B747450726F63656475
+      726506536F75726365064970726F636564757265204C6162656C354F6E507269
+      6E743B0D0A626567696E0D0A20204C6162656C352E466F6E742E537472696B65
+      6F7574203A3D20547275653B0D0A656E643B0D0A0D436F6D706F6E656E744E61
+      6D6506064C6162656C35094576656E744E616D6506074F6E5072696E74074576
+      656E74494402200001060F5472614576656E7448616E646C65720B50726F6772
+      616D4E616D65060D4C6162656C364F6E5072696E740B50726F6772616D547970
+      65070B747450726F63656475726506536F75726365066770726F636564757265
+      204C6162656C364F6E5072696E743B0D0A626567696E0D0A0D0A20204C616265
+      6C362E466F6E742E426F6C64203A3D20547275653B0D0A20204C6162656C362E
+      466F6E742E4974616C6963203A3D20547275653B0D0A0D0A656E643B0D0A0D43
+      6F6D706F6E656E744E616D6506064C6162656C36094576656E744E616D650607
+      4F6E5072696E74074576656E74494402200001060F5472614576656E7448616E
+      646C65720B50726F6772616D4E616D65060D4C6162656C374F6E5072696E740B
+      50726F6772616D54797065070B747450726F63656475726506536F7572636506
+      6C70726F636564757265204C6162656C374F6E5072696E743B0D0A626567696E
+      0D0A0D0A20204C6162656C372E466F6E742E4974616C6963203A3D2054727565
+      3B0D0A20204C6162656C372E466F6E742E537472696B656F7574203A3D205472
+      75653B0D0A0D0A656E643B0D0A0D436F6D706F6E656E744E616D6506064C6162
+      656C37094576656E744E616D6506074F6E5072696E74074576656E7449440220
+      0001060F5472614576656E7448616E646C65720B50726F6772616D4E616D6506
+      0D4C6162656C384F6E5072696E740B50726F6772616D54797065070B74745072
+      6F63656475726506536F75726365064A70726F636564757265204C6162656C38
+      4F6E5072696E743B0D0A626567696E0D0A0D0A20204C6162656C382E466F6E74
+      2E4E6F726D616C203A3D20547275653B0D0A0D0A656E643B0D0A0D436F6D706F
+      6E656E744E616D6506064C6162656C38094576656E744E616D6506074F6E5072
+      696E74074576656E74494402200001060F5472614576656E7448616E646C6572
+      0B50726F6772616D4E616D65060D4C6162656C394F6E5072696E740B50726F67
+      72616D54797065070B747450726F63656475726506536F75726365064F70726F
+      636564757265204C6162656C394F6E5072696E743B0D0A626567696E0D0A0D0A
+      20204C6162656C392E466F6E742E41737369676E284C6162656C342E466F6E74
+      293B0D0A0D0A656E643B0D0A0D436F6D706F6E656E744E616D6506064C616265
+      6C39094576656E744E616D6506074F6E5072696E74074576656E744944022000
+      00}
+  end
+end

@@ -1,0 +1,64 @@
+package dcldxPSdxLC3LnkRS10;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressPrinting System 4 ReportLink for ExpressLayoutControl 3 by Developer Express Inc.'}
+{$IMPLICITBUILD OFF}
+{$DESIGNONLY}
+
+requires
+  dbrtl,
+  designide,
+  rtl,
+  vcl,
+  vcldb,
+  vcljpg,
+  vclx,
+  dxComnRS10,
+  dxCoreRS10,
+  dxThemeRS10,
+  cxDataRS10,
+  dxGDIPlusRS10,
+  cxLibraryRS10,
+  cxEditorsRS10,
+  cxPageControlRS10,
+  cxExtEditorsRS10,
+  dxLayoutControlRS10,
+  dxPSCoreRS10,
+  dxPSdxLC3LnkRS10,
+  dcldb,
+  dclstd,
+  dcldxCoreRS10,
+  dcldxPSCoreRS10;
+
+contains
+  dxPSdxLC3LnkReg;
+
+end.

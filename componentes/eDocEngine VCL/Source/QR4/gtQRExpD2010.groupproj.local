@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009/08/14 17:47:11.252.groupproj,C:\Documents and Settings\sandeep\My Documents\RAD Studio\Projects\ProjectGroup1.groupproj=H:\Sandeep\EDE_2010\EDE_PRO_VSS\EDE\Source\QR4\gtQRExpBDS2010.groupproj</Transaction>
+    <Transaction>2009/08/17 16:33:48.816.groupproj,H:\Sandeep\17_08_09\EDE_2010\EDE_PRO_VSS\EDE\Source\QR4\gtQRExpBDS2010.groupproj=H:\Sandeep\17_08_09\EDE_2010\EDE_PRO_VSS\EDE\Source\QR4\gtQRExpD2010.groupproj</Transaction>
+  </Transactions>
+	<Default.Personality>
+		<Projects ActiveProject="DCLgtQRExpD2010.bpl"/>
+	</Default.Personality>
+</BorlandProject>

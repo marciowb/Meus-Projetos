@@ -1,0 +1,76 @@
+/*
+   dxEdStr.rc
+   Developer Express Visual Component Library
+   Express inplace editors strings resource
+*/
+
+STRINGTABLE
+{
+  //dxGrClms strings
+  38901, "True"
+  38902, "False"
+  38903, "Today"
+  38904, "Clear"
+
+  // blob edit buttons
+  38905,  "&OK"
+  38906,  "&Cancel"
+  38907,  "&Close"
+
+  38908,  "Cu&t"
+  38909,  "&Copy"
+  38910,  "&Paste"
+  38911,  "&Delete"
+  38912,  "&Save to file..."
+  38913,  "&Load from file..."
+
+  38914,  "Cu&t"
+  38915,  "&Copy"
+  38916,  "&Paste"
+  38917,  "&Delete"
+  38918,  "&Load..."
+  38919,  "&Save To..."
+
+  38920,  "Cut"
+  38921,  "Copy"
+  38922,  "Paste"
+  38923,  "Delete"
+  38924,  "Load from file..."
+  38925,  "Save to file..."
+
+  38926,  "Toolbox"
+
+  38927,  "Invalid Date"
+
+  38928,  "TODAY"
+  38929,  "YESTERDAY"
+  38930,  "TOMORROW"
+  38931,  "SUNDAY"
+  38932,  "MONDAY"
+  38933,  "TUESDAY"
+  38934,  "WEDNESDAY"
+  38935,  "THURSDAY"
+  38936,  "FRIDAY"
+  38937,  "SATURDAY"
+  38938,  "FIRST"
+  38939,  "SECOND"
+  38940,  "THIRD"
+  38941,  "FOURTH"
+  38942,  "FIFTH"
+  38943,  "SIXTH"
+  38944,  "SEVENTH"
+  38945,  "BOM"
+  38946,  "EOM"
+  38947,  "NOW"
+
+  38948, "Invalid input value. Use escape key to abandon changes"
+
+  38949, "&Undo"
+  38950, "&Redo"
+  38952, "Cu&t"
+  38953, "&Copy"
+  38954, "&Paste"
+  38955, "&Delete"
+  38956, "Select &All"
+}
+

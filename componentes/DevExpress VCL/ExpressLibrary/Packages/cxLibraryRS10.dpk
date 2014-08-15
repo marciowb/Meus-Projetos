@@ -1,0 +1,72 @@
+package cxLibraryRS10;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Express Cross Platform Library by Developer Express Inc.'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclx,
+  dxCoreRS10,
+  dxThemeRS10,
+  dxGDIPlusRS10;
+
+contains
+  cxClasses,
+  cxControls,
+  cxGraphics,
+  cxLookAndFeelPainters,
+  cxLookAndFeels,
+  cxStorage,
+  cxStyles,
+  cxScrollBar,
+  cxStyleSheetEditor,
+  cxContainer,
+  cxLibraryStrs,
+  cxPropertiesStore,
+  cxConverterUtils,
+  cxCustomConverter,
+  cxGeometry,
+  cxDrawTextUtils,
+  cxAccessibility,
+  cxDateUtils,
+  cxFormats,
+  cxDWMApi,
+  cxLibraryConsts,
+  dxFading,
+  dxSkinInfo,
+  dxSkinsCore,
+  dxSkinsStrs,
+  cxLocalization;
+
+end.

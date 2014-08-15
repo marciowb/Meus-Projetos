@@ -1,0 +1,60 @@
+package dclcxTreeListdxBarPopupMenuRS11;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressQuantumTreeList 5 dxBar Built-In Menu by Developer Express Inc.'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  designide,
+  rtl,
+  vcl,
+  vcldb,
+  vcljpg,
+  vclx,
+  dxComnRS11,
+  dxCoreRS11,
+  dxThemeRS11,
+  cxDataRS11,
+  dxGDIPlusRS11,
+  cxLibraryRS11,
+  cxEditorsRS11,
+  cxExportRS11,
+  cxPageControlRS11,
+  dxBarRS11,
+  cxExtEditorsRS11,
+  cxTreeListRS11,
+  cxTreeListdxBarPopupMenuRS11;
+
+contains
+  cxTLdxBarBuiltInMenuReg;
+
+end.

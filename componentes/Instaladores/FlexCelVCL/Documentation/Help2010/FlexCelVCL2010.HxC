@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HelpCollection SYSTEM "MS-Help://Hx/Resources/HelpCollection.DTD">
+<HelpCollection
+   Id = "FlexCelVCL2010"
+   DTDVersion = "1.0"
+   Title = "FlexCel Studio for VCL/LCL"
+   Copyright = "Copyright (c) 2002-2010 TMS Software. All rights reserved."
+   FileVersion = "3.1.0.0"
+>
+<CompilerOptions
+    CompileResult = "Hxs"
+    OutputFile = "FlexCelVCL2010.HxS"
+    CreateFullTextIndex = "Yes" >
+<IncludeFile File = "FlexCelVCL2010.HxF" />
+</CompilerOptions>
+<TOCDef File = "FlexCelVCL2010.HxT" />
+<KeywordIndexDef File = "FlexCelVCL2010_K.HxK" />
+<KeywordIndexDef File = "FlexCelVCL2010_F.HxK" />
+<KeywordIndexDef File = "FlexCelVCL2010_A.HxK" />
+<KeywordIndexDef File = "FlexCelVCL2010_NamedURL.HxK" />
+    <ItemMoniker Name="!DefaultToc" ProgId="HxDs.HxHierarchy" InitData=""/>
+    <ItemMoniker Name="!DefaultFullTextSearch" ProgId="HxDs.HxFullTextSearch" InitData=""/>
+    <ItemMoniker Name="!DefaultKeywordIndex" ProgId="HxDs.HxIndex" InitData="K"/>
+    <ItemMoniker Name="!DefaultAssociativeIndex" ProgId="HxDs.HxIndex" InitData="A" />
+    <ItemMoniker Name="!DefaultContextWindowIndex" ProgId="HxDs.HxIndex" InitData="F" />
+    <ItemMoniker Name="!DefaultNamedUrlIndex" ProgId="HxDs.HxIndex" InitData="NamedURLIndex"/>
+</HelpCollection>

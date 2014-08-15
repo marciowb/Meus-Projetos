@@ -50,7 +50,7 @@ begin
   try
     frmCad_Contrato := TfrmCad_Contrato.Create(nil);
     frmCad_Contrato.NovoReg:= True;
-    frmCad_Contrato.idProposta := CdsListagem.FieldByName('IDPROPOSTA').AsInteger;
+    frmCad_Contrato.idProposta := CdsListagem.FieldByName('IDPROPOSTA').Value;
     frmCad_Contrato.ShowModal;
     AtuDados;
   finally

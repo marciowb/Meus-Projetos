@@ -1,0 +1,63 @@
+package dcldxSkinscxScheduler3PainterRS11;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressSkins Library Uses Clause Auto Fill Helper for Scheduler 3 Painter by Developer Express Inc.'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  designide,
+  rtl,
+  vcl,
+  vcldb,
+  vcljpg,
+  vclx,
+  dxCoreRS11,
+  dxThemeRS11,
+  cxDataRS11,
+  dxGDIPlusRS11,
+  cxLibraryRS11,
+  cxEditorsRS11,
+  cxExportRS11,
+  dxSkinsCoreRS11,
+  cxExtEditorsRS11,
+  cxSchedulerRS11,
+  dxSkinscxScheduler3PainterRS11,
+  dcldxCoreRS11,
+  dclcxLibraryRS11,
+  dcldxSkinsCoreRS11,
+  dcldxSkinsDesignHelperRS11;
+
+contains
+  dxSkinscxScheduler3PainterReg;
+
+end.

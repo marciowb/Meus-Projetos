@@ -1,0 +1,39 @@
+1 	 World 	      6525170264 	 July 2006 est.
+2 	 China 	      1313973713 	 July 2006 est.
+3 	 India 	      1095351995 	 July 2006 est.
+4 	 European Union 	       456953258 	 July 2006 est.
+5 	 United States 	       298444215 	 July 2006 est.
+6 	 Indonesia 	       245452739 	 July 2006 est.
+7 	 Brazil 	       188078227 	 July 2006 est.
+8 	 Pakistan 	       165803560 	 July 2006 est.
+9 	 Bangladesh 	       147365352 	 July 2006 est.
+10 	 Russia 	       142893540 	 July 2006 est.
+11 	 Nigeria 	       131859731 	 July 2006 est.
+12 	 Japan 	       127463611 	 July 2006 est.
+13 	 Mexico 	       107449525 	 July 2006 est.
+14 	 Philippines 	        89468677 	 July 2006 est.
+15 	 Vietnam 	        84402966 	 July 2006 est.
+16 	 Germany 	        82422299 	 July 2006 est.
+17 	 Egypt 	        78887007 	 July 2006 est.
+18 	 Ethiopia 	        74777981 	 July 2006 est.
+19 	 Turkey 	        70413958 	 July 2006 est.
+20 	 Iran 	        68688433 	 July 2006 est.
+21 	 Thailand 	        64631595 	 July 2006 est.
+22 	 Congo Democratic Republic of the 	        62660551 	 July 2006 est.
+23 	 France 	        60876136 	 July 2006 est.
+24 	 United Kingdom 	        60609153 	 July 2006 est.
+25 	 Italy 	        58133509 	 July 2006 est.
+26 	 Korea South 	        48846823 	 July 2006 est.
+27 	 Burma 	        47382633 	 July 2006 est.
+28 	 Ukraine 	        46710816 	 July 2006 est.
+29 	 South Africa 	        44187637 	 July 2006 est.
+30 	 Colombia 	        43593035 	 July 2006 est.
+31 	 Sudan 	        41236378 	 July 2006 est.
+32 	 Spain 	        40397842 	 July 2006 est.
+33 	 Argentina 	        39921833 	 July 2006 est.
+34 	 Poland 	        38536869 	 July 2006 est.
+35 	 Tanzania 	        37445392 	 July 2006 est.
+36 	 Kenya 	        34707817 	 July 2006 est.
+37 	 Morocco 	        33241259 	 July 2006 est.
+38 	 Canada 	        33098932 	 July 2006 est.
+39 	 Algeria 	        32930091 	 July 2006 est.

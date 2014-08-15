@@ -1,0 +1,2783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HelpIndex SYSTEM "MS-Help://Hx/Resources/HelpIndex.dtd">
+<HelpIndex
+   Name = "A"
+   DTDVersion = "1.0"
+   LangId = "1033"
+>
+
+<Keyword Term = "CalcImgCells function" >
+    <Jump Url = "CalcImgCells@TExcelFile@integer@integer@integer@integer@extended@extended@TImageProperties.html" />
+</Keyword>
+<Keyword Term = "CalcImgDimentions function" >
+    <Jump Url = "CalcImgDimentions@TExcelFile@TClientAnchor@extended@extended@extended@extended.html" />
+    <Jump Url = "CalcImgDimentions@TExcelFile@TClientAnchor@integer@integer.html" />
+    <Jump Url = "CalcImgDimentions@TExcelFile@TClientAnchor@extended@extended.html" />
+</Keyword>
+<Keyword Term = "Classes" >
+    <Jump Url = "!!CLASSES.html" />
+</Keyword>
+<Keyword Term = "ColMult variable" >
+    <Jump Url = "ColMult.html" />
+</Keyword>
+<Keyword Term = "ComputeAldusChecksum function" >
+    <Jump Url = "ComputeAldusChecksum@TMetafileHeader.html" />
+</Keyword>
+<Keyword Term = "Constants" >
+    <Jump Url = "!!CONSTANTS.html" />
+</Keyword>
+<Keyword Term = "CreateBmpPattern function" >
+    <Jump Url = "CreateBmpPattern@integer@integer@integer.html" />
+</Keyword>
+<Keyword Term = "DataSetStr constant" >
+    <Jump Url = "DataSetStr.html" />
+</Keyword>
+<Keyword Term = "Date1904Diff constant" >
+    <Jump Url = "Date1904Diff.html" />
+</Keyword>
+<Keyword Term = "DefaultDateTimeFormat constant" >
+    <Jump Url = "DefaultDateTimeFormat.html" />
+</Keyword>
+<Keyword Term = "DefColWidthAdapt constant" >
+    <Jump Url = "DefColWidthAdapt.html" />
+</Keyword>
+<Keyword Term = "EncodeColumn function" >
+    <Jump Url = "EncodeColumn@integer.html" />
+</Keyword>
+<Keyword Term = "Excel Internal Units" >
+    <Jump Url = "Excel_Internal_Units.html" />
+</Keyword>
+<Keyword Term = "ExtrasDelim constant" >
+    <Jump Url = "ExtrasDelim.html" />
+</Keyword>
+<Keyword Term = "FieldStr constant" >
+    <Jump Url = "FieldStr.html" />
+</Keyword>
+<Keyword Term = "Files" >
+    <Jump Url = "!!FILES.html" />
+</Keyword>
+<Keyword Term = "FLX_VAR_LOCALE_USER_DEFAULT constant" >
+    <Jump Url = "FLX_VAR_LOCALE_USER_DEFAULT.html" />
+</Keyword>
+<Keyword Term = "FLXCOMPILER.INC" >
+    <Jump Url = "FLXCOMPILER_INC.html" />
+</Keyword>
+<Keyword Term = "FLXCONFIG.INC" >
+    <Jump Url = "FLXCONFIG_INC.html" />
+</Keyword>
+<Keyword Term = "FlxTryStrToDateTime function" >
+    <Jump Url = "FlxTryStrToDateTime@UTF16String@TDateTime@UTF16String@boolean@boolean@UTF16String@UTF16String@PFormatSettings.html" />
+</Keyword>
+<Keyword Term = "fpo_Draft constant" >
+    <Jump Url = "fpo_Draft.html" />
+</Keyword>
+<Keyword Term = "fpo_LeftToRight constant" >
+    <Jump Url = "fpo_LeftToRight.html" />
+</Keyword>
+<Keyword Term = "fpo_NoColor constant" >
+    <Jump Url = "fpo_NoColor.html" />
+</Keyword>
+<Keyword Term = "fpo_NoOrient constant" >
+    <Jump Url = "fpo_NoOrient.html" />
+</Keyword>
+<Keyword Term = "fpo_NoPls constant" >
+    <Jump Url = "fpo_NoPls.html" />
+</Keyword>
+<Keyword Term = "fpo_Notes constant" >
+    <Jump Url = "fpo_Notes.html" />
+</Keyword>
+<Keyword Term = "fpo_Orientation constant" >
+    <Jump Url = "fpo_Orientation.html" />
+</Keyword>
+<Keyword Term = "fpo_UsePage constant" >
+    <Jump Url = "fpo_UsePage.html" />
+</Keyword>
+<Keyword Term = "FullDataSetStr constant" >
+    <Jump Url = "FullDataSetStr.html" />
+</Keyword>
+<Keyword Term = "Functions" >
+    <Jump Url = "!!FUNCTIONS.html" />
+</Keyword>
+<Keyword Term = "GetDefaultLocaleFormatSettings function" >
+    <Jump Url = "GetDefaultLocaleFormatSettings.html" />
+</Keyword>
+<Keyword Term = "HasXlsDateTime function" >
+    <Jump Url = "HasXlsDateTime@UTF16String@boolean@boolean@PFormatSettings.html" />
+</Keyword>
+<Keyword Term = "HPageBreakStr constant" >
+    <Jump Url = "HPageBreakStr.html" />
+</Keyword>
+<Keyword Term = "InitializeNamedRange function" >
+    <Jump Url = "InitializeNamedRange@TXlsNamedRange.html" />
+</Keyword>
+<Keyword Term = "Interfaces" >
+    <Jump Url = "!!INTERFACES.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Auto_Activate constant" >
+    <Jump Url = "InternalNameRange_Auto_Activate.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Auto_Close constant" >
+    <Jump Url = "InternalNameRange_Auto_Close.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Auto_Deactivate constant" >
+    <Jump Url = "InternalNameRange_Auto_Deactivate.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Auto_Open constant" >
+    <Jump Url = "InternalNameRange_Auto_Open.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Consolidate_Area constant" >
+    <Jump Url = "InternalNameRange_Consolidate_Area.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Criteria constant" >
+    <Jump Url = "InternalNameRange_Criteria.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Data_Form constant" >
+    <Jump Url = "InternalNameRange_Data_Form.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Database constant" >
+    <Jump Url = "InternalNameRange_Database.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Extract constant" >
+    <Jump Url = "InternalNameRange_Extract.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Filter_DataBase constant" >
+    <Jump Url = "InternalNameRange_Filter_DataBase.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Print_Area constant" >
+    <Jump Url = "InternalNameRange_Print_Area.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Print_Titles constant" >
+    <Jump Url = "InternalNameRange_Print_Titles.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Recorder constant" >
+    <Jump Url = "InternalNameRange_Recorder.html" />
+</Keyword>
+<Keyword Term = "InternalNameRange_Sheet_Title constant" >
+    <Jump Url = "InternalNameRange_Sheet_Title.html" />
+</Keyword>
+<Keyword Term = "InvariantFormatSettings function" >
+    <Jump Url = "InvariantFormatSettings.html" />
+</Keyword>
+<Keyword Term = "IWaitCursor interface" >
+    <Jump Url = "IWaitCursor.html" />
+</Keyword>
+<Keyword Term = "LoadFromTextDelim function" >
+    <Jump Url = "LoadFromTextDelim@TStreamReader@TExcelFile@Char@integer@integer@array_of_XLSColumnImportTypes.html" />
+    <Jump Url = "LoadFromTextDelim@TStream@TExcelFile@Char@integer@integer@array_of_XLSColumnImportTypes@TEncoding@Boolean.html" />
+    <Jump Url = "LoadFromTextDelim@TStream@TExcelFile@Char@integer@integer@array_of_XLSColumnImportTypes.html" />
+</Keyword>
+<Keyword Term = "LoadWmf function" >
+    <Jump Url = "LoadWmf@TPicture@TStream@TXlsImgTypes.html" />
+</Keyword>
+<Keyword Term = "MainTxt constant" >
+    <Jump Url = "MainTxt.html" />
+</Keyword>
+<Keyword Term = "MarkedRowStr constant" >
+    <Jump Url = "MarkedRowStr.html" />
+</Keyword>
+<Keyword Term = "MatchNearestColor function" >
+    <Jump Url = "MatchNearestColor@TExcelFile@TColor@BooleanArray.html" />
+</Keyword>
+<Keyword Term = "OffsetRange function" >
+    <Jump Url = "OffsetRange@TXlsCellRange@integer@integer.html" />
+</Keyword>
+<Keyword Term = "PAddress type" >
+    <Jump Url = "PAddress.html" />
+</Keyword>
+<Keyword Term = "RecordCountPrefix constant" >
+    <Jump Url = "RecordCountPrefix.html" />
+</Keyword>
+<Keyword Term = "RowMult variable" >
+    <Jump Url = "RowMult.html" />
+</Keyword>
+<Keyword Term = "SaveAsTextDelim function" >
+    <Jump Url = "SaveAsTextDelim@TStream@TExcelFile@Char.html" />
+    <Jump Url = "SaveAsTextDelim@TStream@TExcelFile@Char@TEncoding.html" />
+</Keyword>
+<Keyword Term = "SaveImgStreamToDiskImage function" >
+    <Jump Url = "SaveImgStreamToDiskImage@TStream@TXlsImgTypes@TStream@boolean.html" />
+</Keyword>
+<Keyword Term = "SaveImgStreamToGraphic function" >
+    <Jump Url = "SaveImgStreamToGraphic@TStream@TXlsImgTypes@TPicture@boolean.html" />
+</Keyword>
+<Keyword Term = "SaveRangeAsTextDelim function" >
+    <Jump Url = "SaveRangeAsTextDelim@TStream@TExcelFile@Char@TXlsCellRange.html" />
+    <Jump Url = "SaveRangeAsTextDelim@TStream@TExcelFile@Char@TXlsCellRange@TEncoding.html" />
+</Keyword>
+<Keyword Term = "SearchPathStr function" >
+    <Jump Url = "SearchPathStr@String@String.html" />
+    <Jump Url = "SearchPathStr@String.html" />
+</Keyword>
+<Keyword Term = "StrClose constant" >
+    <Jump Url = "StrClose.html" />
+</Keyword>
+<Keyword Term = "StrOpen constant" >
+    <Jump Url = "StrOpen.html" />
+</Keyword>
+<Keyword Term = "Structs, Records, Enums" >
+    <Jump Url = "!!RECORDS.html" />
+</Keyword>
+<Keyword Term = "TCalcRecordCount enumeration" >
+    <Jump Url = "TCalcRecordCount.html" />
+</Keyword>
+<Keyword Term = "TClientAnchor record" >
+    <Jump Url = "TClientAnchor.html" />
+</Keyword>
+<Keyword Term = "TColorPaletteRange type" >
+    <Jump Url = "TColorPaletteRange.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport class" >
+    <Jump Url = "TCustomFlexCelReport.html" />
+    <Keyword Term = "Adapter" >
+        <Jump Url = "TCustomFlexCelReport_Adapter.html" />
+    </Keyword>
+    <Keyword Term = "AutoClose" >
+        <Jump Url = "TCustomFlexCelReport_AutoClose.html" />
+    </Keyword>
+    <Keyword Term = "Cancel" >
+        <Jump Url = "TCustomFlexCelReport_Cancel.html" />
+    </Keyword>
+    <Keyword Term = "Canceled" >
+        <Jump Url = "TCustomFlexCelReport_Canceled.html" />
+    </Keyword>
+    <Keyword Term = "ClearProgress" >
+        <Jump Url = "TCustomFlexCelReport_ClearProgress.html" />
+    </Keyword>
+    <Keyword Term = "DateTimeFormat" >
+        <Jump Url = "TCustomFlexCelReport_DateTimeFormat.html" />
+    </Keyword>
+    <Keyword Term = "DeleteEmptyRows" >
+        <Jump Url = "TCustomFlexCelReport_DeleteEmptyRows.html" />
+    </Keyword>
+    <Keyword Term = "DesignDataModule" >
+        <Jump Url = "TCustomFlexCelReport_DesignDataModule.html" />
+    </Keyword>
+    <Keyword Term = "FileName" >
+        <Jump Url = "TCustomFlexCelReport_FileName.html" />
+    </Keyword>
+    <Keyword Term = "FUseDisplayNames" >
+        <Jump Url = "TCustomFlexCelReport_FUseDisplayNames.html" />
+    </Keyword>
+    <Keyword Term = "FUseHiddenFields" >
+        <Jump Url = "TCustomFlexCelReport_FUseHiddenFields.html" />
+    </Keyword>
+    <Keyword Term = "GetDataSet" >
+        <Jump Url = "TCustomFlexCelReport_GetDataSet@string.html" />
+    </Keyword>
+    <Keyword Term = "GetMethodInfo" >
+        <Jump Url = "TCustomFlexCelReport_GetMethodInfo@string.html" />
+    </Keyword>
+    <Keyword Term = "GetPagesDataSet" >
+        <Jump Url = "TCustomFlexCelReport_GetPagesDataSet.html" />
+    </Keyword>
+    <Keyword Term = "GetPictureType" >
+        <Jump Url = "TCustomFlexCelReport_GetPictureType@UTF16String.html" />
+    </Keyword>
+    <Keyword Term = "GetPropertyInfo" >
+        <Jump Url = "TCustomFlexCelReport_GetPropertyInfo@string.html" />
+    </Keyword>
+    <Keyword Term = "GetVariantMethod" >
+        <Jump Url = "TCustomFlexCelReport_GetVariantMethod@pointer@string.html" />
+    </Keyword>
+    <Keyword Term = "GetVariantProperty" >
+        <Jump Url = "TCustomFlexCelReport_GetVariantProperty@PPropInfo.html" />
+    </Keyword>
+    <Keyword Term = "KeepEmptyPictures" >
+        <Jump Url = "TCustomFlexCelReport_KeepEmptyPictures.html" />
+    </Keyword>
+    <Keyword Term = "OnAfterGeneratePage" >
+        <Jump Url = "TCustomFlexCelReport_OnAfterGeneratePage.html" />
+    </Keyword>
+    <Keyword Term = "OnAfterGenerateWorkbook" >
+        <Jump Url = "TCustomFlexCelReport_OnAfterGenerateWorkbook.html" />
+    </Keyword>
+    <Keyword Term = "OnBeforeGeneratePage" >
+        <Jump Url = "TCustomFlexCelReport_OnBeforeGeneratePage.html" />
+    </Keyword>
+    <Keyword Term = "OnBeforeGenerateWorkbook" >
+        <Jump Url = "TCustomFlexCelReport_OnBeforeGenerateWorkbook.html" />
+    </Keyword>
+    <Keyword Term = "OnGetCellValue" >
+        <Jump Url = "TCustomFlexCelReport_OnGetCellValue.html" />
+    </Keyword>
+    <Keyword Term = "OnGetCellValueX" >
+        <Jump Url = "TCustomFlexCelReport_OnGetCellValueX.html" />
+    </Keyword>
+    <Keyword Term = "OnGetCellValueXRow" >
+        <Jump Url = "TCustomFlexCelReport_OnGetCellValueXRow.html" />
+    </Keyword>
+    <Keyword Term = "OnGetFilename" >
+        <Jump Url = "TCustomFlexCelReport_OnGetFilename.html" />
+    </Keyword>
+    <Keyword Term = "OnGetImageSize" >
+        <Jump Url = "TCustomFlexCelReport_OnGetImageSize.html" />
+    </Keyword>
+    <Keyword Term = "OnGetOutStream" >
+        <Jump Url = "TCustomFlexCelReport_OnGetOutStream.html" />
+    </Keyword>
+    <Keyword Term = "OnProgress" >
+        <Jump Url = "TCustomFlexCelReport_OnProgress.html" />
+    </Keyword>
+    <Keyword Term = "PagesDataField" >
+        <Jump Url = "TCustomFlexCelReport_PagesDataField.html" />
+    </Keyword>
+    <Keyword Term = "Progress" >
+        <Jump Url = "TCustomFlexCelReport_Progress.html" />
+    </Keyword>
+    <Keyword Term = "ReportModeCols" >
+        <Jump Url = "TCustomFlexCelReport_ReportModeCols.html" />
+    </Keyword>
+    <Keyword Term = "ReportModeRows" >
+        <Jump Url = "TCustomFlexCelReport_ReportModeRows.html" />
+    </Keyword>
+    <Keyword Term = "Run" >
+        <Jump Url = "TCustomFlexCelReport_Run.html" />
+        <Jump Url = "TCustomFlexCelReport_Run@TStream@TStream.html" />
+    </Keyword>
+    <Keyword Term = "SaveToStream" >
+        <Jump Url = "TCustomFlexCelReport_SaveToStream@TStream.html" />
+    </Keyword>
+    <Keyword Term = "Template" >
+        <Jump Url = "TCustomFlexCelReport_Template.html" />
+    </Keyword>
+    <Keyword Term = "UseDisplayNames" >
+        <Jump Url = "TCustomFlexCelReport_UseDisplayNames.html" />
+    </Keyword>
+    <Keyword Term = "UseHiddenFields" >
+        <Jump Url = "TCustomFlexCelReport_UseHiddenFields.html" />
+    </Keyword>
+    <Keyword Term = "Values" >
+        <Jump Url = "TCustomFlexCelReport_Values.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.Adapter property" >
+    <Jump Url = "TCustomFlexCelReport_Adapter.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.AutoClose property" >
+    <Jump Url = "TCustomFlexCelReport_AutoClose.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.Cancel method" >
+    <Jump Url = "TCustomFlexCelReport_Cancel.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.Canceled field" >
+    <Jump Url = "TCustomFlexCelReport_Canceled.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.ClearProgress method" >
+    <Jump Url = "TCustomFlexCelReport_ClearProgress.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.DateTimeFormat property" >
+    <Jump Url = "TCustomFlexCelReport_DateTimeFormat.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.DeleteEmptyRows property" >
+    <Jump Url = "TCustomFlexCelReport_DeleteEmptyRows.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.DesignDataModule method" >
+    <Jump Url = "TCustomFlexCelReport_DesignDataModule.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.FileName property" >
+    <Jump Url = "TCustomFlexCelReport_FileName.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.FUseDisplayNames field" >
+    <Jump Url = "TCustomFlexCelReport_FUseDisplayNames.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.FUseHiddenFields field" >
+    <Jump Url = "TCustomFlexCelReport_FUseHiddenFields.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.GetDataSet method" >
+    <Jump Url = "TCustomFlexCelReport_GetDataSet@string.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.GetMethodInfo method" >
+    <Jump Url = "TCustomFlexCelReport_GetMethodInfo@string.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.GetPagesDataSet method" >
+    <Jump Url = "TCustomFlexCelReport_GetPagesDataSet.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.GetPictureType method" >
+    <Jump Url = "TCustomFlexCelReport_GetPictureType@UTF16String.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.GetPropertyInfo method" >
+    <Jump Url = "TCustomFlexCelReport_GetPropertyInfo@string.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.GetVariantMethod method" >
+    <Jump Url = "TCustomFlexCelReport_GetVariantMethod@pointer@string.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.GetVariantProperty method" >
+    <Jump Url = "TCustomFlexCelReport_GetVariantProperty@PPropInfo.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.KeepEmptyPictures property" >
+    <Jump Url = "TCustomFlexCelReport_KeepEmptyPictures.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.OnAfterGeneratePage event" >
+    <Jump Url = "TCustomFlexCelReport_OnAfterGeneratePage.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.OnAfterGenerateWorkbook event" >
+    <Jump Url = "TCustomFlexCelReport_OnAfterGenerateWorkbook.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.OnBeforeGeneratePage event" >
+    <Jump Url = "TCustomFlexCelReport_OnBeforeGeneratePage.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.OnBeforeGenerateWorkbook event" >
+    <Jump Url = "TCustomFlexCelReport_OnBeforeGenerateWorkbook.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.OnGetCellValue event" >
+    <Jump Url = "TCustomFlexCelReport_OnGetCellValue.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.OnGetCellValueX event" >
+    <Jump Url = "TCustomFlexCelReport_OnGetCellValueX.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.OnGetCellValueXRow event" >
+    <Jump Url = "TCustomFlexCelReport_OnGetCellValueXRow.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.OnGetFilename event" >
+    <Jump Url = "TCustomFlexCelReport_OnGetFilename.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.OnGetImageSize event" >
+    <Jump Url = "TCustomFlexCelReport_OnGetImageSize.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.OnGetOutStream event" >
+    <Jump Url = "TCustomFlexCelReport_OnGetOutStream.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.OnProgress event" >
+    <Jump Url = "TCustomFlexCelReport_OnProgress.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.PagesDataField property" >
+    <Jump Url = "TCustomFlexCelReport_PagesDataField.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.Progress property" >
+    <Jump Url = "TCustomFlexCelReport_Progress.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.ReportModeCols property" >
+    <Jump Url = "TCustomFlexCelReport_ReportModeCols.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.ReportModeRows property" >
+    <Jump Url = "TCustomFlexCelReport_ReportModeRows.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.Run method" >
+    <Jump Url = "TCustomFlexCelReport_Run.html" />
+    <Jump Url = "TCustomFlexCelReport_Run@TStream@TStream.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.SaveToStream method" >
+    <Jump Url = "TCustomFlexCelReport_SaveToStream@TStream.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.Template property" >
+    <Jump Url = "TCustomFlexCelReport_Template.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.UseDisplayNames property" >
+    <Jump Url = "TCustomFlexCelReport_UseDisplayNames.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.UseHiddenFields property" >
+    <Jump Url = "TCustomFlexCelReport_UseHiddenFields.html" />
+</Keyword>
+<Keyword Term = "TCustomFlexCelReport.Values property" >
+    <Jump Url = "TCustomFlexCelReport_Values.html" />
+</Keyword>
+<Keyword Term = "TemplateStore.pas" >
+    <Jump Url = "TemplateStore_pas.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize type" >
+    <Jump Url = "TExcelPaperSize.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A2 constant" >
+    <Jump Url = "TExcelPaperSize_A2.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A3 constant" >
+    <Jump Url = "TExcelPaperSize_A3.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A3Extra constant" >
+    <Jump Url = "TExcelPaperSize_A3Extra.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A3ExtraTransverse constant" >
+    <Jump Url = "TExcelPaperSize_A3ExtraTransverse.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A3Rotated constant" >
+    <Jump Url = "TExcelPaperSize_A3Rotated.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A3Transverse constant" >
+    <Jump Url = "TExcelPaperSize_A3Transverse.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A4 constant" >
+    <Jump Url = "TExcelPaperSize_A4.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A4Extra constant" >
+    <Jump Url = "TExcelPaperSize_A4Extra.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A4Plus constant" >
+    <Jump Url = "TExcelPaperSize_A4Plus.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A4Rotated constant" >
+    <Jump Url = "TExcelPaperSize_A4Rotated.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A4small constant" >
+    <Jump Url = "TExcelPaperSize_A4small.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A4Transverse constant" >
+    <Jump Url = "TExcelPaperSize_A4Transverse.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A5 constant" >
+    <Jump Url = "TExcelPaperSize_A5.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A5Extra constant" >
+    <Jump Url = "TExcelPaperSize_A5Extra.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A5Rotated constant" >
+    <Jump Url = "TExcelPaperSize_A5Rotated.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A5Transverse constant" >
+    <Jump Url = "TExcelPaperSize_A5Transverse.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A6 constant" >
+    <Jump Url = "TExcelPaperSize_A6.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_A6Rotated constant" >
+    <Jump Url = "TExcelPaperSize_A6Rotated.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_B4_ISO constant" >
+    <Jump Url = "TExcelPaperSize_B4_ISO.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_B4_ISO_2 constant" >
+    <Jump Url = "TExcelPaperSize_B4_ISO_2.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_B4_JIS constant" >
+    <Jump Url = "TExcelPaperSize_B4_JIS.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_B4_JIS_Rotated constant" >
+    <Jump Url = "TExcelPaperSize_B4_JIS_Rotated.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_B5_ISO constant" >
+    <Jump Url = "TExcelPaperSize_B5_ISO.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_B5_ISO_Extra constant" >
+    <Jump Url = "TExcelPaperSize_B5_ISO_Extra.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_B5_JIS constant" >
+    <Jump Url = "TExcelPaperSize_B5_JIS.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_B5_JIS_Rotated constant" >
+    <Jump Url = "TExcelPaperSize_B5_JIS_Rotated.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_B5_JIS_Transverse constant" >
+    <Jump Url = "TExcelPaperSize_B5_JIS_Transverse.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_B6_ISO constant" >
+    <Jump Url = "TExcelPaperSize_B6_ISO.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_B6_JIS constant" >
+    <Jump Url = "TExcelPaperSize_B6_JIS.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_B6_JIS_Rotated constant" >
+    <Jump Url = "TExcelPaperSize_B6_JIS_Rotated.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_C constant" >
+    <Jump Url = "TExcelPaperSize_C.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_D constant" >
+    <Jump Url = "TExcelPaperSize_D.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_DblJapanesePostcard constant" >
+    <Jump Url = "TExcelPaperSize_DblJapanesePostcard.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_DblJapPostcardRot constant" >
+    <Jump Url = "TExcelPaperSize_DblJapPostcardRot.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_E constant" >
+    <Jump Url = "TExcelPaperSize_E.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Envelope10 constant" >
+    <Jump Url = "TExcelPaperSize_Envelope10.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Envelope11 constant" >
+    <Jump Url = "TExcelPaperSize_Envelope11.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Envelope12 constant" >
+    <Jump Url = "TExcelPaperSize_Envelope12.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Envelope14 constant" >
+    <Jump Url = "TExcelPaperSize_Envelope14.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Envelope9 constant" >
+    <Jump Url = "TExcelPaperSize_Envelope9.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_EnvelopeC3 constant" >
+    <Jump Url = "TExcelPaperSize_EnvelopeC3.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_EnvelopeC4 constant" >
+    <Jump Url = "TExcelPaperSize_EnvelopeC4.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_EnvelopeC5 constant" >
+    <Jump Url = "TExcelPaperSize_EnvelopeC5.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_EnvelopeC6 constant" >
+    <Jump Url = "TExcelPaperSize_EnvelopeC6.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_EnvelopeC6_C5 constant" >
+    <Jump Url = "TExcelPaperSize_EnvelopeC6_C5.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_EnvelopeDL constant" >
+    <Jump Url = "TExcelPaperSize_EnvelopeDL.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_EnvelopeInvite constant" >
+    <Jump Url = "TExcelPaperSize_EnvelopeInvite.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_EnvelopeItaly constant" >
+    <Jump Url = "TExcelPaperSize_EnvelopeItaly.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_EnvelopeMonarch constant" >
+    <Jump Url = "TExcelPaperSize_EnvelopeMonarch.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Executive constant" >
+    <Jump Url = "TExcelPaperSize_Executive.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Folio constant" >
+    <Jump Url = "TExcelPaperSize_Folio.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_GermanLegalFanfold constant" >
+    <Jump Url = "TExcelPaperSize_GermanLegalFanfold.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_GermanStdFanfold constant" >
+    <Jump Url = "TExcelPaperSize_GermanStdFanfold.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_JapanesePostcard constant" >
+    <Jump Url = "TExcelPaperSize_JapanesePostcard.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_JapanesePostcardRot constant" >
+    <Jump Url = "TExcelPaperSize_JapanesePostcardRot.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Ledger constant" >
+    <Jump Url = "TExcelPaperSize_Ledger.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Legal constant" >
+    <Jump Url = "TExcelPaperSize_Legal.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_LegalExtra constant" >
+    <Jump Url = "TExcelPaperSize_LegalExtra.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Letter constant" >
+    <Jump Url = "TExcelPaperSize_Letter.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_LetterExtra constant" >
+    <Jump Url = "TExcelPaperSize_LetterExtra.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_LetterExtraTransv constant" >
+    <Jump Url = "TExcelPaperSize_LetterExtraTransv.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_LetterPlus constant" >
+    <Jump Url = "TExcelPaperSize_LetterPlus.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_LetterRotated constant" >
+    <Jump Url = "TExcelPaperSize_LetterRotated.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Lettersmall constant" >
+    <Jump Url = "TExcelPaperSize_Lettersmall.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_LetterTransverse constant" >
+    <Jump Url = "TExcelPaperSize_LetterTransverse.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Note constant" >
+    <Jump Url = "TExcelPaperSize_Note.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Quarto constant" >
+    <Jump Url = "TExcelPaperSize_Quarto.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_s10x11 constant" >
+    <Jump Url = "TExcelPaperSize_s10x11.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_s10x14 constant" >
+    <Jump Url = "TExcelPaperSize_s10x14.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_s11x17 constant" >
+    <Jump Url = "TExcelPaperSize_s11x17.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_s12x11 constant" >
+    <Jump Url = "TExcelPaperSize_s12x11.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_s15x11 constant" >
+    <Jump Url = "TExcelPaperSize_s15x11.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_s63_4Envelope constant" >
+    <Jump Url = "TExcelPaperSize_s63_4Envelope.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_s9x11 constant" >
+    <Jump Url = "TExcelPaperSize_s9x11.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Statement constant" >
+    <Jump Url = "TExcelPaperSize_Statement.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_SuperA_A4 constant" >
+    <Jump Url = "TExcelPaperSize_SuperA_A4.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_SuperB_A3 constant" >
+    <Jump Url = "TExcelPaperSize_SuperB_A3.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Tabloid constant" >
+    <Jump Url = "TExcelPaperSize_Tabloid.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_TabloidExtra constant" >
+    <Jump Url = "TExcelPaperSize_TabloidExtra.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_Undefined constant" >
+    <Jump Url = "TExcelPaperSize_Undefined.html" />
+</Keyword>
+<Keyword Term = "TExcelPaperSize_USStandardFanfold constant" >
+    <Jump Url = "TExcelPaperSize_USStandardFanfold.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid class" >
+    <Jump Url = "TFlexCelGrid.html" />
+    <Keyword Term = "ApplySheet" >
+        <Jump Url = "TFlexCelGrid_ApplySheet.html" />
+    </Keyword>
+    <Keyword Term = "BackgroundColor" >
+        <Jump Url = "TFlexCelGrid_BackgroundColor.html" />
+    </Keyword>
+    <Keyword Term = "BorderSize" >
+        <Jump Url = "TFlexCelGrid_BorderSize.html" />
+    </Keyword>
+    <Keyword Term = "CalcNumberOfPrintingPages" >
+        <Jump Url = "TFlexCelGrid_CalcNumberOfPrintingPages@integer.html" />
+        <Jump Url = "TFlexCelGrid_CalcNumberOfPrintingPages@TXlsCellRange@integer.html" />
+    </Keyword>
+    <Keyword Term = "CanEdit" >
+        <Jump Url = "TFlexCelGrid_CanEdit.html" />
+    </Keyword>
+    <Keyword Term = "CopyToClipboard" >
+        <Jump Url = "TFlexCelGrid_CopyToClipboard.html" />
+    </Keyword>
+    <Keyword Term = "CreateEditor" >
+        <Jump Url = "TFlexCelGrid_CreateEditor.html" />
+    </Keyword>
+    <Keyword Term = "FlexCelImport" >
+        <Jump Url = "TFlexCelGrid_FlexCelImport.html" />
+    </Keyword>
+    <Keyword Term = "ForegroundColor" >
+        <Jump Url = "TFlexCelGrid_ForegroundColor.html" />
+    </Keyword>
+    <Keyword Term = "FormulaReadOnly" >
+        <Jump Url = "TFlexCelGrid_FormulaReadOnly.html" />
+    </Keyword>
+    <Keyword Term = "FullWorksheet" >
+        <Jump Url = "TFlexCelGrid_FullWorksheet.html" />
+    </Keyword>
+    <Keyword Term = "HideCursor" >
+        <Jump Url = "TFlexCelGrid_HideCursor.html" />
+    </Keyword>
+    <Keyword Term = "LoadSheet" >
+        <Jump Url = "TFlexCelGrid_LoadSheet.html" />
+    </Keyword>
+    <Keyword Term = "MaxPrintableCol" >
+        <Jump Url = "TFlexCelGrid_MaxPrintableCol.html" />
+    </Keyword>
+    <Keyword Term = "MaxPrintableRow" >
+        <Jump Url = "TFlexCelGrid_MaxPrintableRow.html" />
+    </Keyword>
+    <Keyword Term = "MaxVisibleCol" >
+        <Jump Url = "TFlexCelGrid_MaxVisibleCol.html" />
+    </Keyword>
+    <Keyword Term = "MaxVisibleRow" >
+        <Jump Url = "TFlexCelGrid_MaxVisibleRow.html" />
+    </Keyword>
+    <Keyword Term = "OnAllowEditCell" >
+        <Jump Url = "TFlexCelGrid_OnAllowEditCell.html" />
+    </Keyword>
+    <Keyword Term = "OnColWidthsChanged" >
+        <Jump Url = "TFlexCelGrid_OnColWidthsChanged.html" />
+    </Keyword>
+    <Keyword Term = "OnFormatPicture" >
+        <Jump Url = "TFlexCelGrid_OnFormatPicture.html" />
+    </Keyword>
+    <Keyword Term = "OnGetFontName" >
+        <Jump Url = "TFlexCelGrid_OnGetFontName.html" />
+    </Keyword>
+    <Keyword Term = "OnRowHeightsChanged" >
+        <Jump Url = "TFlexCelGrid_OnRowHeightsChanged.html" />
+    </Keyword>
+    <Keyword Term = "OnSelectCell" >
+        <Jump Url = "TFlexCelGrid_OnSelectCell.html" />
+    </Keyword>
+    <Keyword Term = "OnSetEditText" >
+        <Jump Url = "TFlexCelGrid_OnSetEditText.html" />
+    </Keyword>
+    <Keyword Term = "OnTopLeftChanged" >
+        <Jump Url = "TFlexCelGrid_OnTopLeftChanged.html" />
+    </Keyword>
+    <Keyword Term = "OnZoomChanged" >
+        <Jump Url = "TFlexCelGrid_OnZoomChanged.html" />
+    </Keyword>
+    <Keyword Term = "PasteFromClipboard" >
+        <Jump Url = "TFlexCelGrid_PasteFromClipboard.html" />
+    </Keyword>
+    <Keyword Term = "PreviewPage" >
+        <Jump Url = "TFlexCelGrid_PreviewPage@TXlsCellRange@integer@TCanvas@integer.html" />
+    </Keyword>
+    <Keyword Term = "Print" >
+        <Jump Url = "TFlexCelGrid_Print@integer@integer.html" />
+        <Jump Url = "TFlexCelGrid_Print@TXlsCellRange@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "PrintLineWidth" >
+        <Jump Url = "TFlexCelGrid_PrintLineWidth.html" />
+    </Keyword>
+    <Keyword Term = "ReadOnly" >
+        <Jump Url = "TFlexCelGrid_ReadOnly.html" />
+    </Keyword>
+    <Keyword Term = "ScrollWheelOffset" >
+        <Jump Url = "TFlexCelGrid_ScrollWheelOffset.html" />
+    </Keyword>
+    <Keyword Term = "SetCell" >
+        <Jump Url = "TFlexCelGrid_SetCell@integer@integer@UTF16String.html" />
+    </Keyword>
+    <Keyword Term = "ShowHiddenCols" >
+        <Jump Url = "TFlexCelGrid_ShowHiddenCols.html" />
+    </Keyword>
+    <Keyword Term = "ShowHiddenRows" >
+        <Jump Url = "TFlexCelGrid_ShowHiddenRows.html" />
+    </Keyword>
+    <Keyword Term = "SplitText" >
+        <Jump Url = "TFlexCelGrid_SplitText@TExcelFile@TCanvas@UTF16String@integer@WidestringArray@TRTFRunList@TRTFRunListList@TSize@boolean@extended.html" />
+    </Keyword>
+    <Keyword Term = "TopLeftChanged" >
+        <Jump Url = "TFlexCelGrid_TopLeftChanged.html" />
+    </Keyword>
+    <Keyword Term = "UseFixedCells" >
+        <Jump Url = "TFlexCelGrid_UseFixedCells.html" />
+    </Keyword>
+    <Keyword Term = "Zoom" >
+        <Jump Url = "TFlexCelGrid_Zoom.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TFlexCelGrid.ApplySheet method" >
+    <Jump Url = "TFlexCelGrid_ApplySheet.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.BackgroundColor property" >
+    <Jump Url = "TFlexCelGrid_BackgroundColor.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.BorderSize method" >
+    <Jump Url = "TFlexCelGrid_BorderSize.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.CalcNumberOfPrintingPages method" >
+    <Jump Url = "TFlexCelGrid_CalcNumberOfPrintingPages@integer.html" />
+    <Jump Url = "TFlexCelGrid_CalcNumberOfPrintingPages@TXlsCellRange@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.CanEdit property" >
+    <Jump Url = "TFlexCelGrid_CanEdit.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.CopyToClipboard method" >
+    <Jump Url = "TFlexCelGrid_CopyToClipboard.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.CreateEditor method" >
+    <Jump Url = "TFlexCelGrid_CreateEditor.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.FlexCelImport property" >
+    <Jump Url = "TFlexCelGrid_FlexCelImport.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.ForegroundColor property" >
+    <Jump Url = "TFlexCelGrid_ForegroundColor.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.FormulaReadOnly property" >
+    <Jump Url = "TFlexCelGrid_FormulaReadOnly.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.FullWorksheet property" >
+    <Jump Url = "TFlexCelGrid_FullWorksheet.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.HideCursor property" >
+    <Jump Url = "TFlexCelGrid_HideCursor.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.LoadSheet method" >
+    <Jump Url = "TFlexCelGrid_LoadSheet.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.MaxPrintableCol property" >
+    <Jump Url = "TFlexCelGrid_MaxPrintableCol.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.MaxPrintableRow property" >
+    <Jump Url = "TFlexCelGrid_MaxPrintableRow.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.MaxVisibleCol property" >
+    <Jump Url = "TFlexCelGrid_MaxVisibleCol.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.MaxVisibleRow property" >
+    <Jump Url = "TFlexCelGrid_MaxVisibleRow.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.OnAllowEditCell event" >
+    <Jump Url = "TFlexCelGrid_OnAllowEditCell.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.OnColWidthsChanged event" >
+    <Jump Url = "TFlexCelGrid_OnColWidthsChanged.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.OnFormatPicture event" >
+    <Jump Url = "TFlexCelGrid_OnFormatPicture.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.OnGetFontName event" >
+    <Jump Url = "TFlexCelGrid_OnGetFontName.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.OnRowHeightsChanged event" >
+    <Jump Url = "TFlexCelGrid_OnRowHeightsChanged.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.OnSelectCell event" >
+    <Jump Url = "TFlexCelGrid_OnSelectCell.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.OnSetEditText event" >
+    <Jump Url = "TFlexCelGrid_OnSetEditText.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.OnTopLeftChanged event" >
+    <Jump Url = "TFlexCelGrid_OnTopLeftChanged.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.OnZoomChanged event" >
+    <Jump Url = "TFlexCelGrid_OnZoomChanged.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.PasteFromClipboard method" >
+    <Jump Url = "TFlexCelGrid_PasteFromClipboard.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.PreviewPage method" >
+    <Jump Url = "TFlexCelGrid_PreviewPage@TXlsCellRange@integer@TCanvas@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.Print method" >
+    <Jump Url = "TFlexCelGrid_Print@integer@integer.html" />
+    <Jump Url = "TFlexCelGrid_Print@TXlsCellRange@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.PrintLineWidth property" >
+    <Jump Url = "TFlexCelGrid_PrintLineWidth.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.ReadOnly property" >
+    <Jump Url = "TFlexCelGrid_ReadOnly.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.ScrollWheelOffset property" >
+    <Jump Url = "TFlexCelGrid_ScrollWheelOffset.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.SetCell method" >
+    <Jump Url = "TFlexCelGrid_SetCell@integer@integer@UTF16String.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.ShowHiddenCols property" >
+    <Jump Url = "TFlexCelGrid_ShowHiddenCols.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.ShowHiddenRows property" >
+    <Jump Url = "TFlexCelGrid_ShowHiddenRows.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.SplitText method" >
+    <Jump Url = "TFlexCelGrid_SplitText@TExcelFile@TCanvas@UTF16String@integer@WidestringArray@TRTFRunList@TRTFRunListList@TSize@boolean@extended.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.TopLeftChanged method" >
+    <Jump Url = "TFlexCelGrid_TopLeftChanged.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.UseFixedCells property" >
+    <Jump Url = "TFlexCelGrid_UseFixedCells.html" />
+</Keyword>
+<Keyword Term = "TFlexCelGrid.Zoom property" >
+    <Jump Url = "TFlexCelGrid_Zoom.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport class" >
+    <Jump Url = "TFlexCelImport.html" />
+    <Keyword Term = "ActiveFileName" >
+        <Jump Url = "TFlexCelImport_ActiveFileName.html" />
+    </Keyword>
+    <Keyword Term = "ActiveSheet" >
+        <Jump Url = "TFlexCelImport_ActiveSheet.html" />
+    </Keyword>
+    <Keyword Term = "ActiveSheetCodeName" >
+        <Jump Url = "TFlexCelImport_ActiveSheetCodeName.html" />
+    </Keyword>
+    <Keyword Term = "ActiveSheetName" >
+        <Jump Url = "TFlexCelImport_ActiveSheetName.html" />
+    </Keyword>
+    <Keyword Term = "ActiveSheetVisible" >
+        <Jump Url = "TFlexCelImport_ActiveSheetVisible.html" />
+    </Keyword>
+    <Keyword Term = "Adapter" >
+        <Jump Url = "TFlexCelImport_Adapter.html" />
+    </Keyword>
+    <Keyword Term = "AddFont" >
+        <Jump Url = "TFlexCelImport_AddFont@TFlxFont.html" />
+    </Keyword>
+    <Keyword Term = "AddFormat" >
+        <Jump Url = "TFlexCelImport_AddFormat@TFlxFormat.html" />
+    </Keyword>
+    <Keyword Term = "AddHyperLink" >
+        <Jump Url = "TFlexCelImport_AddHyperLink@TXlsCellRange@THyperLink.html" />
+    </Keyword>
+    <Keyword Term = "AddPicture" >
+        <Jump Url = "TFlexCelImport_AddPicture@ByteArray@TXlsImgTypes@integer@integer@integer@integer@integer@integer@TFlxAnchorType.html" />
+        <Jump Url = "TFlexCelImport_AddPicture@ByteArray@TXlsImgTypes@TImageProperties@TFlxAnchorType.html" />
+        <Jump Url = "TFlexCelImport_AddPicture@TStream@TXlsImgTypes@integer@integer@integer@integer@integer@integer@TFlxAnchorType.html" />
+        <Jump Url = "TFlexCelImport_AddPicture@TStream@TXlsImgTypes@TImageProperties@TFlxAnchorType.html" />
+    </Keyword>
+    <Keyword Term = "AssignCellFormulaX" >
+        <Jump Url = "TFlexCelImport_AssignCellFormulaX@integer@integer@UTF16String@variant.html" />
+    </Keyword>
+    <Keyword Term = "AssignPicture" >
+        <Jump Url = "TFlexCelImport_AssignPicture@integer@ByteArray@TXlsImgTypes.html" />
+        <Jump Url = "TFlexCelImport_AssignPicture@integer@ByteArray@TXlsImgTypes@integer@integer@integer@integer@integer@integer@TFlxAnchorType.html" />
+    </Keyword>
+    <Keyword Term = "AssignPictureProperties" >
+        <Jump Url = "TFlexCelImport_AssignPictureProperties@integer@integer@integer@integer@integer@integer@integer@TFlxAnchorType.html" />
+    </Keyword>
+    <Keyword Term = "AutofitCol" >
+        <Jump Url = "TFlexCelImport_AutofitCol@integer@Boolean@extended.html" />
+        <Jump Url = "TFlexCelImport_AutofitCol@integer@integer@Boolean@extended.html" />
+    </Keyword>
+    <Keyword Term = "AutofitRow" >
+        <Jump Url = "TFlexCelImport_AutofitRow@integer@Boolean@extended.html" />
+        <Jump Url = "TFlexCelImport_AutofitRow@integer@integer@Boolean@Boolean@extended.html" />
+    </Keyword>
+    <Keyword Term = "AutofitRowsOnWorkbook" >
+        <Jump Url = "TFlexCelImport_AutofitRowsOnWorkbook@Boolean@Boolean@extended.html" />
+    </Keyword>
+    <Keyword Term = "AutoRowHeight" >
+        <Jump Url = "TFlexCelImport_AutoRowHeight.html" />
+    </Keyword>
+    <Keyword Term = "CanOptimizeRead" >
+        <Jump Url = "TFlexCelImport_CanOptimizeRead.html" />
+    </Keyword>
+    <Keyword Term = "Cell" >
+        <Jump Url = "TFlexCelImport_Cell.html" />
+    </Keyword>
+    <Keyword Term = "CellFormat" >
+        <Jump Url = "TFlexCelImport_CellFormat.html" />
+    </Keyword>
+    <Keyword Term = "CellFormatDef" >
+        <Jump Url = "TFlexCelImport_CellFormatDef.html" />
+    </Keyword>
+    <Keyword Term = "CellFormula" >
+        <Jump Url = "TFlexCelImport_CellFormula.html" />
+    </Keyword>
+    <Keyword Term = "CellMergedBounds" >
+        <Jump Url = "TFlexCelImport_CellMergedBounds.html" />
+    </Keyword>
+    <Keyword Term = "CellMergedList" >
+        <Jump Url = "TFlexCelImport_CellMergedList.html" />
+    </Keyword>
+    <Keyword Term = "CellMergedListCount" >
+        <Jump Url = "TFlexCelImport_CellMergedListCount.html" />
+    </Keyword>
+    <Keyword Term = "CellValue" >
+        <Jump Url = "TFlexCelImport_CellValue.html" />
+    </Keyword>
+    <Keyword Term = "ClearPicture" >
+        <Jump Url = "TFlexCelImport_ClearPicture@integer.html" />
+    </Keyword>
+    <Keyword Term = "ClearSheet" >
+        <Jump Url = "TFlexCelImport_ClearSheet.html" />
+    </Keyword>
+    <Keyword Term = "CloseFile" >
+        <Jump Url = "TFlexCelImport_CloseFile.html" />
+    </Keyword>
+    <Keyword Term = "ColByIndex" >
+        <Jump Url = "TFlexCelImport_ColByIndex.html" />
+    </Keyword>
+    <Keyword Term = "ColIndex" >
+        <Jump Url = "TFlexCelImport_ColIndex.html" />
+    </Keyword>
+    <Keyword Term = "ColIndexCount" >
+        <Jump Url = "TFlexCelImport_ColIndexCount.html" />
+    </Keyword>
+    <Keyword Term = "ColorPalette" >
+        <Jump Url = "TFlexCelImport_ColorPalette.html" />
+    </Keyword>
+    <Keyword Term = "ColorPaletteCount" >
+        <Jump Url = "TFlexCelImport_ColorPaletteCount.html" />
+    </Keyword>
+    <Keyword Term = "ColumnFormat" >
+        <Jump Url = "TFlexCelImport_ColumnFormat.html" />
+    </Keyword>
+    <Keyword Term = "ColumnHidden" >
+        <Jump Url = "TFlexCelImport_ColumnHidden.html" />
+    </Keyword>
+    <Keyword Term = "ColumnWidth" >
+        <Jump Url = "TFlexCelImport_ColumnWidth.html" />
+    </Keyword>
+    <Keyword Term = "Comments" >
+        <Jump Url = "TFlexCelImport_Comments.html" />
+    </Keyword>
+    <Keyword Term = "CommentsCount" >
+        <Jump Url = "TFlexCelImport_CommentsCount.html" />
+    </Keyword>
+    <Keyword Term = "CopyToClipboard" >
+        <Jump Url = "TFlexCelImport_CopyToClipboard.html" />
+        <Jump Url = "TFlexCelImport_CopyToClipboard@TXlsCellRange.html" />
+    </Keyword>
+    <Keyword Term = "DefaultColWidth" >
+        <Jump Url = "TFlexCelImport_DefaultColWidth.html" />
+    </Keyword>
+    <Keyword Term = "DefaultFormat" >
+        <Jump Url = "TFlexCelImport_DefaultFormat.html" />
+    </Keyword>
+    <Keyword Term = "DefaultRowHeight" >
+        <Jump Url = "TFlexCelImport_DefaultRowHeight.html" />
+    </Keyword>
+    <Keyword Term = "DeleteCols" >
+        <Jump Url = "TFlexCelImport_DeleteCols@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "DeleteHPageBreak" >
+        <Jump Url = "TFlexCelImport_DeleteHPageBreak@word.html" />
+    </Keyword>
+    <Keyword Term = "DeleteHyperLink" >
+        <Jump Url = "TFlexCelImport_DeleteHyperLink@integer.html" />
+    </Keyword>
+    <Keyword Term = "DeletePicture" >
+        <Jump Url = "TFlexCelImport_DeletePicture@integer.html" />
+    </Keyword>
+    <Keyword Term = "DeleteRows" >
+        <Jump Url = "TFlexCelImport_DeleteRows@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "DeleteSheet" >
+        <Jump Url = "TFlexCelImport_DeleteSheet@integer.html" />
+    </Keyword>
+    <Keyword Term = "DeleteVPageBreak" >
+        <Jump Url = "TFlexCelImport_DeleteVPageBreak@word.html" />
+    </Keyword>
+    <Keyword Term = "Destroy" >
+        <Jump Url = "TFlexCelImport_Destroy.html" />
+    </Keyword>
+    <Keyword Term = "FillPageHeaderFooter" >
+        <Jump Url = "TFlexCelImport_FillPageHeaderFooter@UTF16String@UTF16String@UTF16String@UTF16String.html" />
+    </Keyword>
+    <Keyword Term = "FontList" >
+        <Jump Url = "TFlexCelImport_FontList.html" />
+    </Keyword>
+    <Keyword Term = "FontListCount" >
+        <Jump Url = "TFlexCelImport_FontListCount.html" />
+    </Keyword>
+    <Keyword Term = "FormatList" >
+        <Jump Url = "TFlexCelImport_FormatList.html" />
+    </Keyword>
+    <Keyword Term = "FormatListCount" >
+        <Jump Url = "TFlexCelImport_FormatListCount.html" />
+    </Keyword>
+    <Keyword Term = "FreezePanes" >
+        <Jump Url = "TFlexCelImport_FreezePanes@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "FromOADate" >
+        <Jump Url = "TFlexCelImport_FromOADate@double.html" />
+    </Keyword>
+    <Keyword Term = "GetAutoFilterRange" >
+        <Jump Url = "TFlexCelImport_GetAutoFilterRange.html" />
+    </Keyword>
+    <Keyword Term = "GetCellComment" >
+        <Jump Url = "TFlexCelImport_GetCellComment@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "GetCellFormatDef" >
+        <Jump Url = "TFlexCelImport_GetCellFormatDef@integer@integer@TFlxFormat.html" />
+    </Keyword>
+    <Keyword Term = "GetColOutlineLevel" >
+        <Jump Url = "TFlexCelImport_GetColOutlineLevel@integer.html" />
+    </Keyword>
+    <Keyword Term = "GetDefaultFormat" >
+        <Jump Url = "TFlexCelImport_GetDefaultFormat@TFlxFormat.html" />
+    </Keyword>
+    <Keyword Term = "GetFontList" >
+        <Jump Url = "TFlexCelImport_GetFontList@integer@TFlxFont.html" />
+    </Keyword>
+    <Keyword Term = "GetFormatList" >
+        <Jump Url = "TFlexCelImport_GetFormatList@integer@TFlxFormat.html" />
+    </Keyword>
+    <Keyword Term = "GetFrozenPanes" >
+        <Jump Url = "TFlexCelImport_GetFrozenPanes@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "GetHyperLink" >
+        <Jump Url = "TFlexCelImport_GetHyperLink@integer.html" />
+    </Keyword>
+    <Keyword Term = "GetHyperLinkCellRange" >
+        <Jump Url = "TFlexCelImport_GetHyperLinkCellRange@integer.html" />
+    </Keyword>
+    <Keyword Term = "GetPicture" >
+        <Jump Url = "TFlexCelImport_GetPicture@integer@TStream@TXlsImgTypes@TClientAnchor.html" />
+    </Keyword>
+    <Keyword Term = "GetRowOutlineLevel" >
+        <Jump Url = "TFlexCelImport_GetRowOutlineLevel@integer.html" />
+    </Keyword>
+    <Keyword Term = "GetSplitWindow" >
+        <Jump Url = "TFlexCelImport_GetSplitWindow@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "GetUsedPaletteColors" >
+        <Jump Url = "TFlexCelImport_GetUsedPaletteColors.html" />
+    </Keyword>
+    <Keyword Term = "GetWorkbook" >
+        <Jump Url = "TFlexCelImport_GetWorkbook.html" />
+    </Keyword>
+    <Keyword Term = "HasAutoFilter" >
+        <Jump Url = "TFlexCelImport_HasAutoFilter.html" />
+        <Jump Url = "TFlexCelImport_HasAutoFilter@Int32@Int32.html" />
+    </Keyword>
+    <Keyword Term = "HasHPageBreak" >
+        <Jump Url = "TFlexCelImport_HasHPageBreak@integer.html" />
+    </Keyword>
+    <Keyword Term = "HasVPageBreak" >
+        <Jump Url = "TFlexCelImport_HasVPageBreak@integer.html" />
+    </Keyword>
+    <Keyword Term = "HyperLinkCount" >
+        <Jump Url = "TFlexCelImport_HyperLinkCount.html" />
+    </Keyword>
+    <Keyword Term = "InsertAndCopyCols" >
+        <Jump Url = "TFlexCelImport_InsertAndCopyCols@integer@integer@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "InsertAndCopyRows" >
+        <Jump Url = "TFlexCelImport_InsertAndCopyRows@integer@integer@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "InsertAndCopySheets" >
+        <Jump Url = "TFlexCelImport_InsertAndCopySheets@integer@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "InsertEmptySheets" >
+        <Jump Url = "TFlexCelImport_InsertEmptySheets@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "InsertHPageBreak" >
+        <Jump Url = "TFlexCelImport_InsertHPageBreak@word.html" />
+    </Keyword>
+    <Keyword Term = "InsertVPageBreak" >
+        <Jump Url = "TFlexCelImport_InsertVPageBreak@word.html" />
+    </Keyword>
+    <Keyword Term = "InvalidateFormulas" >
+        <Jump Url = "TFlexCelImport_InvalidateFormulas.html" />
+    </Keyword>
+    <Keyword Term = "IsEmptyRow" >
+        <Jump Url = "TFlexCelImport_IsEmptyRow@integer.html" />
+    </Keyword>
+    <Keyword Term = "IsFormula" >
+        <Jump Url = "TFlexCelImport_IsFormula.html" />
+    </Keyword>
+    <Keyword Term = "IsLoaded" >
+        <Jump Url = "TFlexCelImport_IsLoaded.html" />
+    </Keyword>
+    <Keyword Term = "IsXltTemplate" >
+        <Jump Url = "TFlexCelImport_IsXltTemplate.html" />
+    </Keyword>
+    <Keyword Term = "LoadFromStream" >
+        <Jump Url = "TFlexCelImport_LoadFromStream@TStream.html" />
+    </Keyword>
+    <Keyword Term = "LoadFromTextStream" >
+        <Jump Url = "TFlexCelImport_LoadFromTextStream@TStream@Char.html" />
+        <Jump Url = "TFlexCelImport_LoadFromTextStream@TStream@Char@array_of_XLSColumnImportTypes.html" />
+        <Jump Url = "TFlexCelImport_LoadFromTextStream@TStream@Char@array_of_XLSColumnImportTypes@TEncoding@boolean.html" />
+    </Keyword>
+    <Keyword Term = "MaxCol" >
+        <Jump Url = "TFlexCelImport_MaxCol.html" />
+    </Keyword>
+    <Keyword Term = "MaxRow" >
+        <Jump Url = "TFlexCelImport_MaxRow.html" />
+    </Keyword>
+    <Keyword Term = "MergeCells" >
+        <Jump Url = "TFlexCelImport_MergeCells@integer@integer@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "NearestColorIndex" >
+        <Jump Url = "TFlexCelImport_NearestColorIndex@TColor.html" />
+        <Jump Url = "TFlexCelImport_NearestColorIndex@TColor@BooleanArray.html" />
+    </Keyword>
+    <Keyword Term = "NewFile" >
+        <Jump Url = "TFlexCelImport_NewFile@integer.html" />
+    </Keyword>
+    <Keyword Term = "OpenFile" >
+        <Jump Url = "TFlexCelImport_OpenFile@TFileName.html" />
+    </Keyword>
+    <Keyword Term = "OpenText" >
+        <Jump Url = "TFlexCelImport_OpenText@TFileName@Char.html" />
+        <Jump Url = "TFlexCelImport_OpenText@TFileName@Char@array_of_XLSColumnImportTypes.html" />
+    </Keyword>
+    <Keyword Term = "Options1904Dates" >
+        <Jump Url = "TFlexCelImport_Options1904Dates.html" />
+    </Keyword>
+    <Keyword Term = "OptionsPrecisionAsDisplayed" >
+        <Jump Url = "TFlexCelImport_OptionsPrecisionAsDisplayed.html" />
+    </Keyword>
+    <Keyword Term = "OptionsR1C1" >
+        <Jump Url = "TFlexCelImport_OptionsR1C1.html" />
+    </Keyword>
+    <Keyword Term = "OptionsSaveExternalLinkValues" >
+        <Jump Url = "TFlexCelImport_OptionsSaveExternalLinkValues.html" />
+    </Keyword>
+    <Keyword Term = "OutlineAutomaticStyles" >
+        <Jump Url = "TFlexCelImport_OutlineAutomaticStyles.html" />
+    </Keyword>
+    <Keyword Term = "OutlineSummaryColsRightOfDetail" >
+        <Jump Url = "TFlexCelImport_OutlineSummaryColsRightOfDetail.html" />
+    </Keyword>
+    <Keyword Term = "OutlineSummaryRowsBelowDetail" >
+        <Jump Url = "TFlexCelImport_OutlineSummaryRowsBelowDetail.html" />
+    </Keyword>
+    <Keyword Term = "PageFooter" >
+        <Jump Url = "TFlexCelImport_PageFooter.html" />
+    </Keyword>
+    <Keyword Term = "PageHeader" >
+        <Jump Url = "TFlexCelImport_PageHeader.html" />
+    </Keyword>
+    <Keyword Term = "PasteFromClipboard" >
+        <Jump Url = "TFlexCelImport_PasteFromClipboard@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "PictureName" >
+        <Jump Url = "TFlexCelImport_PictureName.html" />
+    </Keyword>
+    <Keyword Term = "PicturesCount" >
+        <Jump Url = "TFlexCelImport_PicturesCount.html" />
+    </Keyword>
+    <Keyword Term = "PrintCopies" >
+        <Jump Url = "TFlexCelImport_PrintCopies.html" />
+    </Keyword>
+    <Keyword Term = "PrinterDriverSettings" >
+        <Jump Url = "TFlexCelImport_PrinterDriverSettings.html" />
+    </Keyword>
+    <Keyword Term = "PrintGridLines" >
+        <Jump Url = "TFlexCelImport_PrintGridLines.html" />
+    </Keyword>
+    <Keyword Term = "PrintHCentered" >
+        <Jump Url = "TFlexCelImport_PrintHCentered.html" />
+    </Keyword>
+    <Keyword Term = "PrintMargins" >
+        <Jump Url = "TFlexCelImport_PrintMargins.html" />
+    </Keyword>
+    <Keyword Term = "PrintNumberOfHorizontalPages" >
+        <Jump Url = "TFlexCelImport_PrintNumberOfHorizontalPages.html" />
+    </Keyword>
+    <Keyword Term = "PrintNumberOfVerticalPages" >
+        <Jump Url = "TFlexCelImport_PrintNumberOfVerticalPages.html" />
+    </Keyword>
+    <Keyword Term = "PrintOptions" >
+        <Jump Url = "TFlexCelImport_PrintOptions.html" />
+    </Keyword>
+    <Keyword Term = "PrintPaperSize" >
+        <Jump Url = "TFlexCelImport_PrintPaperSize.html" />
+    </Keyword>
+    <Keyword Term = "PrintScale" >
+        <Jump Url = "TFlexCelImport_PrintScale.html" />
+    </Keyword>
+    <Keyword Term = "PrintToFit" >
+        <Jump Url = "TFlexCelImport_PrintToFit.html" />
+    </Keyword>
+    <Keyword Term = "PrintVCentered" >
+        <Jump Url = "TFlexCelImport_PrintVCentered.html" />
+    </Keyword>
+    <Keyword Term = "PrintXResolution" >
+        <Jump Url = "TFlexCelImport_PrintXResolution.html" />
+    </Keyword>
+    <Keyword Term = "PrintYResolution" >
+        <Jump Url = "TFlexCelImport_PrintYResolution.html" />
+    </Keyword>
+    <Keyword Term = "RangeC1" >
+        <Jump Url = "TFlexCelImport_RangeC1.html" />
+    </Keyword>
+    <Keyword Term = "RangeC2" >
+        <Jump Url = "TFlexCelImport_RangeC2.html" />
+    </Keyword>
+    <Keyword Term = "RangeCount" >
+        <Jump Url = "TFlexCelImport_RangeCount.html" />
+    </Keyword>
+    <Keyword Term = "RangeName" >
+        <Jump Url = "TFlexCelImport_RangeName.html" />
+    </Keyword>
+    <Keyword Term = "RangeR1" >
+        <Jump Url = "TFlexCelImport_RangeR1.html" />
+    </Keyword>
+    <Keyword Term = "RangeR2" >
+        <Jump Url = "TFlexCelImport_RangeR2.html" />
+    </Keyword>
+    <Keyword Term = "RangeSheet" >
+        <Jump Url = "TFlexCelImport_RangeSheet.html" />
+    </Keyword>
+    <Keyword Term = "RemoveAutoFilter" >
+        <Jump Url = "TFlexCelImport_RemoveAutoFilter.html" />
+    </Keyword>
+    <Keyword Term = "RowFormat" >
+        <Jump Url = "TFlexCelImport_RowFormat.html" />
+    </Keyword>
+    <Keyword Term = "RowHeight" >
+        <Jump Url = "TFlexCelImport_RowHeight.html" />
+    </Keyword>
+    <Keyword Term = "RowHidden" >
+        <Jump Url = "TFlexCelImport_RowHidden.html" />
+    </Keyword>
+    <Keyword Term = "RTFRuns" >
+        <Jump Url = "TFlexCelImport_RTFRuns.html" />
+    </Keyword>
+    <Keyword Term = "Save" >
+        <Jump Url = "TFlexCelImport_Save@TFileName.html" />
+    </Keyword>
+    <Keyword Term = "SaveAsText" >
+        <Jump Url = "TFlexCelImport_SaveAsText@TFileName@Char.html" />
+        <Jump Url = "TFlexCelImport_SaveAsText@TFileName@Char@TEncoding@boolean.html" />
+    </Keyword>
+    <Keyword Term = "SaveToStream" >
+        <Jump Url = "TFlexCelImport_SaveToStream@TStream.html" />
+    </Keyword>
+    <Keyword Term = "SaveToStreamAsText" >
+        <Jump Url = "TFlexCelImport_SaveToStreamAsText@TStream@Char.html" />
+        <Jump Url = "TFlexCelImport_SaveToStreamAsText@TStream@Char@TEncoding@boolean.html" />
+    </Keyword>
+    <Keyword Term = "SetAutoFilter" >
+        <Jump Url = "TFlexCelImport_SetAutoFilter@Int32@Int32@Int32.html" />
+        <Jump Url = "TFlexCelImport_SetAutoFilter@TXlsCellRange.html" />
+    </Keyword>
+    <Keyword Term = "SetCellComment" >
+        <Jump Url = "TFlexCelImport_SetCellComment@integer@integer@UTF16String.html" />
+        <Jump Url = "TFlexCelImport_SetCellComment@integer@integer@UTF16String@TImageProperties.html" />
+    </Keyword>
+    <Keyword Term = "SetCellString" >
+        <Jump Url = "TFlexCelImport_SetCellString@integer@integer@UTF16String.html" />
+        <Jump Url = "TFlexCelImport_SetCellString@integer@integer@UTF16String@TFlxFormat.html" />
+    </Keyword>
+    <Keyword Term = "SetColOutlineLevel" >
+        <Jump Url = "TFlexCelImport_SetColOutlineLevel@integer@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "SetFontList" >
+        <Jump Url = "TFlexCelImport_SetFontList@integer@TFlxFont.html" />
+    </Keyword>
+    <Keyword Term = "SetFormatList" >
+        <Jump Url = "TFlexCelImport_SetFormatList@integer@TFlxFormat.html" />
+    </Keyword>
+    <Keyword Term = "SetHyperLink" >
+        <Jump Url = "TFlexCelImport_SetHyperLink@integer@THyperLink.html" />
+    </Keyword>
+    <Keyword Term = "SetHyperLinkCellRange" >
+        <Jump Url = "TFlexCelImport_SetHyperLinkCellRange@integer@TXlsCellRange.html" />
+    </Keyword>
+    <Keyword Term = "SetNamedRange" >
+        <Jump Url = "TFlexCelImport_SetNamedRange@TXlsNamedRange.html" />
+    </Keyword>
+    <Keyword Term = "SetRowOutlineLevel" >
+        <Jump Url = "TFlexCelImport_SetRowOutlineLevel@integer@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "SheetCount" >
+        <Jump Url = "TFlexCelImport_SheetCount.html" />
+    </Keyword>
+    <Keyword Term = "SheetZoom" >
+        <Jump Url = "TFlexCelImport_SheetZoom.html" />
+    </Keyword>
+    <Keyword Term = "ShowGridHeaders" >
+        <Jump Url = "TFlexCelImport_ShowGridHeaders.html" />
+    </Keyword>
+    <Keyword Term = "ShowGridLines" >
+        <Jump Url = "TFlexCelImport_ShowGridLines.html" />
+    </Keyword>
+    <Keyword Term = "SplitWindow" >
+        <Jump Url = "TFlexCelImport_SplitWindow@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "ToOADate" >
+        <Jump Url = "TFlexCelImport_ToOADate@TDateTime.html" />
+    </Keyword>
+    <Keyword Term = "UnMergeCells" >
+        <Jump Url = "TFlexCelImport_UnMergeCells@integer@integer@integer@integer.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TFlexCelImport.ActiveFileName property" >
+    <Jump Url = "TFlexCelImport_ActiveFileName.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ActiveSheet property" >
+    <Jump Url = "TFlexCelImport_ActiveSheet.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ActiveSheetCodeName property" >
+    <Jump Url = "TFlexCelImport_ActiveSheetCodeName.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ActiveSheetName property" >
+    <Jump Url = "TFlexCelImport_ActiveSheetName.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ActiveSheetVisible property" >
+    <Jump Url = "TFlexCelImport_ActiveSheetVisible.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.Adapter property" >
+    <Jump Url = "TFlexCelImport_Adapter.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.AddFont method" >
+    <Jump Url = "TFlexCelImport_AddFont@TFlxFont.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.AddFormat method" >
+    <Jump Url = "TFlexCelImport_AddFormat@TFlxFormat.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.AddHyperLink method" >
+    <Jump Url = "TFlexCelImport_AddHyperLink@TXlsCellRange@THyperLink.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.AddPicture method" >
+    <Jump Url = "TFlexCelImport_AddPicture@ByteArray@TXlsImgTypes@integer@integer@integer@integer@integer@integer@TFlxAnchorType.html" />
+    <Jump Url = "TFlexCelImport_AddPicture@ByteArray@TXlsImgTypes@TImageProperties@TFlxAnchorType.html" />
+    <Jump Url = "TFlexCelImport_AddPicture@TStream@TXlsImgTypes@integer@integer@integer@integer@integer@integer@TFlxAnchorType.html" />
+    <Jump Url = "TFlexCelImport_AddPicture@TStream@TXlsImgTypes@TImageProperties@TFlxAnchorType.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.AssignCellFormulaX method" >
+    <Jump Url = "TFlexCelImport_AssignCellFormulaX@integer@integer@UTF16String@variant.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.AssignPicture method" >
+    <Jump Url = "TFlexCelImport_AssignPicture@integer@ByteArray@TXlsImgTypes.html" />
+    <Jump Url = "TFlexCelImport_AssignPicture@integer@ByteArray@TXlsImgTypes@integer@integer@integer@integer@integer@integer@TFlxAnchorType.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.AssignPictureProperties method" >
+    <Jump Url = "TFlexCelImport_AssignPictureProperties@integer@integer@integer@integer@integer@integer@integer@TFlxAnchorType.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.AutofitCol method" >
+    <Jump Url = "TFlexCelImport_AutofitCol@integer@Boolean@extended.html" />
+    <Jump Url = "TFlexCelImport_AutofitCol@integer@integer@Boolean@extended.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.AutofitRow method" >
+    <Jump Url = "TFlexCelImport_AutofitRow@integer@Boolean@extended.html" />
+    <Jump Url = "TFlexCelImport_AutofitRow@integer@integer@Boolean@Boolean@extended.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.AutofitRowsOnWorkbook method" >
+    <Jump Url = "TFlexCelImport_AutofitRowsOnWorkbook@Boolean@Boolean@extended.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.AutoRowHeight property" >
+    <Jump Url = "TFlexCelImport_AutoRowHeight.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.CanOptimizeRead method" >
+    <Jump Url = "TFlexCelImport_CanOptimizeRead.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.Cell property" >
+    <Jump Url = "TFlexCelImport_Cell.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.CellFormat property" >
+    <Jump Url = "TFlexCelImport_CellFormat.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.CellFormatDef property" >
+    <Jump Url = "TFlexCelImport_CellFormatDef.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.CellFormula property" >
+    <Jump Url = "TFlexCelImport_CellFormula.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.CellMergedBounds property" >
+    <Jump Url = "TFlexCelImport_CellMergedBounds.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.CellMergedList property" >
+    <Jump Url = "TFlexCelImport_CellMergedList.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.CellMergedListCount method" >
+    <Jump Url = "TFlexCelImport_CellMergedListCount.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.CellValue property" >
+    <Jump Url = "TFlexCelImport_CellValue.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ClearPicture method" >
+    <Jump Url = "TFlexCelImport_ClearPicture@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ClearSheet method" >
+    <Jump Url = "TFlexCelImport_ClearSheet.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.CloseFile method" >
+    <Jump Url = "TFlexCelImport_CloseFile.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ColByIndex property" >
+    <Jump Url = "TFlexCelImport_ColByIndex.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ColIndex property" >
+    <Jump Url = "TFlexCelImport_ColIndex.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ColIndexCount property" >
+    <Jump Url = "TFlexCelImport_ColIndexCount.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ColorPalette property" >
+    <Jump Url = "TFlexCelImport_ColorPalette.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ColorPaletteCount property" >
+    <Jump Url = "TFlexCelImport_ColorPaletteCount.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ColumnFormat property" >
+    <Jump Url = "TFlexCelImport_ColumnFormat.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ColumnHidden property" >
+    <Jump Url = "TFlexCelImport_ColumnHidden.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ColumnWidth property" >
+    <Jump Url = "TFlexCelImport_ColumnWidth.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.Comments property" >
+    <Jump Url = "TFlexCelImport_Comments.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.CommentsCount property" >
+    <Jump Url = "TFlexCelImport_CommentsCount.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.CopyToClipboard method" >
+    <Jump Url = "TFlexCelImport_CopyToClipboard.html" />
+    <Jump Url = "TFlexCelImport_CopyToClipboard@TXlsCellRange.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.DefaultColWidth property" >
+    <Jump Url = "TFlexCelImport_DefaultColWidth.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.DefaultFormat method" >
+    <Jump Url = "TFlexCelImport_DefaultFormat.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.DefaultRowHeight property" >
+    <Jump Url = "TFlexCelImport_DefaultRowHeight.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.DeleteCols method" >
+    <Jump Url = "TFlexCelImport_DeleteCols@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.DeleteHPageBreak method" >
+    <Jump Url = "TFlexCelImport_DeleteHPageBreak@word.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.DeleteHyperLink method" >
+    <Jump Url = "TFlexCelImport_DeleteHyperLink@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.DeletePicture method" >
+    <Jump Url = "TFlexCelImport_DeletePicture@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.DeleteRows method" >
+    <Jump Url = "TFlexCelImport_DeleteRows@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.DeleteSheet method" >
+    <Jump Url = "TFlexCelImport_DeleteSheet@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.DeleteVPageBreak method" >
+    <Jump Url = "TFlexCelImport_DeleteVPageBreak@word.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.Destroy destructor" >
+    <Jump Url = "TFlexCelImport_Destroy.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.FillPageHeaderFooter method" >
+    <Jump Url = "TFlexCelImport_FillPageHeaderFooter@UTF16String@UTF16String@UTF16String@UTF16String.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.FontList property" >
+    <Jump Url = "TFlexCelImport_FontList.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.FontListCount property" >
+    <Jump Url = "TFlexCelImport_FontListCount.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.FormatList property" >
+    <Jump Url = "TFlexCelImport_FormatList.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.FormatListCount property" >
+    <Jump Url = "TFlexCelImport_FormatListCount.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.FreezePanes method" >
+    <Jump Url = "TFlexCelImport_FreezePanes@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.FromOADate method" >
+    <Jump Url = "TFlexCelImport_FromOADate@double.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetAutoFilterRange method" >
+    <Jump Url = "TFlexCelImport_GetAutoFilterRange.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetCellComment method" >
+    <Jump Url = "TFlexCelImport_GetCellComment@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetCellFormatDef method" >
+    <Jump Url = "TFlexCelImport_GetCellFormatDef@integer@integer@TFlxFormat.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetColOutlineLevel method" >
+    <Jump Url = "TFlexCelImport_GetColOutlineLevel@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetDefaultFormat method" >
+    <Jump Url = "TFlexCelImport_GetDefaultFormat@TFlxFormat.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetFontList method" >
+    <Jump Url = "TFlexCelImport_GetFontList@integer@TFlxFont.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetFormatList method" >
+    <Jump Url = "TFlexCelImport_GetFormatList@integer@TFlxFormat.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetFrozenPanes method" >
+    <Jump Url = "TFlexCelImport_GetFrozenPanes@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetHyperLink method" >
+    <Jump Url = "TFlexCelImport_GetHyperLink@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetHyperLinkCellRange method" >
+    <Jump Url = "TFlexCelImport_GetHyperLinkCellRange@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetPicture method" >
+    <Jump Url = "TFlexCelImport_GetPicture@integer@TStream@TXlsImgTypes@TClientAnchor.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetRowOutlineLevel method" >
+    <Jump Url = "TFlexCelImport_GetRowOutlineLevel@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetSplitWindow method" >
+    <Jump Url = "TFlexCelImport_GetSplitWindow@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetUsedPaletteColors method" >
+    <Jump Url = "TFlexCelImport_GetUsedPaletteColors.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.GetWorkbook method" >
+    <Jump Url = "TFlexCelImport_GetWorkbook.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.HasAutoFilter method" >
+    <Jump Url = "TFlexCelImport_HasAutoFilter.html" />
+    <Jump Url = "TFlexCelImport_HasAutoFilter@Int32@Int32.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.HasHPageBreak method" >
+    <Jump Url = "TFlexCelImport_HasHPageBreak@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.HasVPageBreak method" >
+    <Jump Url = "TFlexCelImport_HasVPageBreak@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.HyperLinkCount method" >
+    <Jump Url = "TFlexCelImport_HyperLinkCount.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.InsertAndCopyCols method" >
+    <Jump Url = "TFlexCelImport_InsertAndCopyCols@integer@integer@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.InsertAndCopyRows method" >
+    <Jump Url = "TFlexCelImport_InsertAndCopyRows@integer@integer@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.InsertAndCopySheets method" >
+    <Jump Url = "TFlexCelImport_InsertAndCopySheets@integer@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.InsertEmptySheets method" >
+    <Jump Url = "TFlexCelImport_InsertEmptySheets@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.InsertHPageBreak method" >
+    <Jump Url = "TFlexCelImport_InsertHPageBreak@word.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.InsertVPageBreak method" >
+    <Jump Url = "TFlexCelImport_InsertVPageBreak@word.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.InvalidateFormulas property" >
+    <Jump Url = "TFlexCelImport_InvalidateFormulas.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.IsEmptyRow method" >
+    <Jump Url = "TFlexCelImport_IsEmptyRow@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.IsFormula property" >
+    <Jump Url = "TFlexCelImport_IsFormula.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.IsLoaded method" >
+    <Jump Url = "TFlexCelImport_IsLoaded.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.IsXltTemplate property" >
+    <Jump Url = "TFlexCelImport_IsXltTemplate.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.LoadFromStream method" >
+    <Jump Url = "TFlexCelImport_LoadFromStream@TStream.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.LoadFromTextStream method" >
+    <Jump Url = "TFlexCelImport_LoadFromTextStream@TStream@Char.html" />
+    <Jump Url = "TFlexCelImport_LoadFromTextStream@TStream@Char@array_of_XLSColumnImportTypes.html" />
+    <Jump Url = "TFlexCelImport_LoadFromTextStream@TStream@Char@array_of_XLSColumnImportTypes@TEncoding@boolean.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.MaxCol property" >
+    <Jump Url = "TFlexCelImport_MaxCol.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.MaxRow property" >
+    <Jump Url = "TFlexCelImport_MaxRow.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.MergeCells method" >
+    <Jump Url = "TFlexCelImport_MergeCells@integer@integer@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.NearestColorIndex method" >
+    <Jump Url = "TFlexCelImport_NearestColorIndex@TColor.html" />
+    <Jump Url = "TFlexCelImport_NearestColorIndex@TColor@BooleanArray.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.NewFile method" >
+    <Jump Url = "TFlexCelImport_NewFile@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.OpenFile method" >
+    <Jump Url = "TFlexCelImport_OpenFile@TFileName.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.OpenText method" >
+    <Jump Url = "TFlexCelImport_OpenText@TFileName@Char.html" />
+    <Jump Url = "TFlexCelImport_OpenText@TFileName@Char@array_of_XLSColumnImportTypes.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.Options1904Dates property" >
+    <Jump Url = "TFlexCelImport_Options1904Dates.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.OptionsPrecisionAsDisplayed property" >
+    <Jump Url = "TFlexCelImport_OptionsPrecisionAsDisplayed.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.OptionsR1C1 property" >
+    <Jump Url = "TFlexCelImport_OptionsR1C1.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.OptionsSaveExternalLinkValues property" >
+    <Jump Url = "TFlexCelImport_OptionsSaveExternalLinkValues.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.OutlineAutomaticStyles property" >
+    <Jump Url = "TFlexCelImport_OutlineAutomaticStyles.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.OutlineSummaryColsRightOfDetail property" >
+    <Jump Url = "TFlexCelImport_OutlineSummaryColsRightOfDetail.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.OutlineSummaryRowsBelowDetail property" >
+    <Jump Url = "TFlexCelImport_OutlineSummaryRowsBelowDetail.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PageFooter property" >
+    <Jump Url = "TFlexCelImport_PageFooter.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PageHeader property" >
+    <Jump Url = "TFlexCelImport_PageHeader.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PasteFromClipboard method" >
+    <Jump Url = "TFlexCelImport_PasteFromClipboard@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PictureName property" >
+    <Jump Url = "TFlexCelImport_PictureName.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PicturesCount property" >
+    <Jump Url = "TFlexCelImport_PicturesCount.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintCopies property" >
+    <Jump Url = "TFlexCelImport_PrintCopies.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrinterDriverSettings property" >
+    <Jump Url = "TFlexCelImport_PrinterDriverSettings.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintGridLines property" >
+    <Jump Url = "TFlexCelImport_PrintGridLines.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintHCentered property" >
+    <Jump Url = "TFlexCelImport_PrintHCentered.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintMargins property" >
+    <Jump Url = "TFlexCelImport_PrintMargins.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintNumberOfHorizontalPages property" >
+    <Jump Url = "TFlexCelImport_PrintNumberOfHorizontalPages.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintNumberOfVerticalPages property" >
+    <Jump Url = "TFlexCelImport_PrintNumberOfVerticalPages.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintOptions property" >
+    <Jump Url = "TFlexCelImport_PrintOptions.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintPaperSize property" >
+    <Jump Url = "TFlexCelImport_PrintPaperSize.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintScale property" >
+    <Jump Url = "TFlexCelImport_PrintScale.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintToFit property" >
+    <Jump Url = "TFlexCelImport_PrintToFit.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintVCentered property" >
+    <Jump Url = "TFlexCelImport_PrintVCentered.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintXResolution property" >
+    <Jump Url = "TFlexCelImport_PrintXResolution.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.PrintYResolution property" >
+    <Jump Url = "TFlexCelImport_PrintYResolution.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.RangeC1 property" >
+    <Jump Url = "TFlexCelImport_RangeC1.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.RangeC2 property" >
+    <Jump Url = "TFlexCelImport_RangeC2.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.RangeCount property" >
+    <Jump Url = "TFlexCelImport_RangeCount.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.RangeName property" >
+    <Jump Url = "TFlexCelImport_RangeName.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.RangeR1 property" >
+    <Jump Url = "TFlexCelImport_RangeR1.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.RangeR2 property" >
+    <Jump Url = "TFlexCelImport_RangeR2.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.RangeSheet property" >
+    <Jump Url = "TFlexCelImport_RangeSheet.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.RemoveAutoFilter method" >
+    <Jump Url = "TFlexCelImport_RemoveAutoFilter.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.RowFormat property" >
+    <Jump Url = "TFlexCelImport_RowFormat.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.RowHeight property" >
+    <Jump Url = "TFlexCelImport_RowHeight.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.RowHidden property" >
+    <Jump Url = "TFlexCelImport_RowHidden.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.RTFRuns property" >
+    <Jump Url = "TFlexCelImport_RTFRuns.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.Save method" >
+    <Jump Url = "TFlexCelImport_Save@TFileName.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SaveAsText method" >
+    <Jump Url = "TFlexCelImport_SaveAsText@TFileName@Char.html" />
+    <Jump Url = "TFlexCelImport_SaveAsText@TFileName@Char@TEncoding@boolean.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SaveToStream method" >
+    <Jump Url = "TFlexCelImport_SaveToStream@TStream.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SaveToStreamAsText method" >
+    <Jump Url = "TFlexCelImport_SaveToStreamAsText@TStream@Char.html" />
+    <Jump Url = "TFlexCelImport_SaveToStreamAsText@TStream@Char@TEncoding@boolean.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SetAutoFilter method" >
+    <Jump Url = "TFlexCelImport_SetAutoFilter@Int32@Int32@Int32.html" />
+    <Jump Url = "TFlexCelImport_SetAutoFilter@TXlsCellRange.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SetCellComment method" >
+    <Jump Url = "TFlexCelImport_SetCellComment@integer@integer@UTF16String.html" />
+    <Jump Url = "TFlexCelImport_SetCellComment@integer@integer@UTF16String@TImageProperties.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SetCellString method" >
+    <Jump Url = "TFlexCelImport_SetCellString@integer@integer@UTF16String.html" />
+    <Jump Url = "TFlexCelImport_SetCellString@integer@integer@UTF16String@TFlxFormat.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SetColOutlineLevel method" >
+    <Jump Url = "TFlexCelImport_SetColOutlineLevel@integer@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SetFontList method" >
+    <Jump Url = "TFlexCelImport_SetFontList@integer@TFlxFont.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SetFormatList method" >
+    <Jump Url = "TFlexCelImport_SetFormatList@integer@TFlxFormat.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SetHyperLink method" >
+    <Jump Url = "TFlexCelImport_SetHyperLink@integer@THyperLink.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SetHyperLinkCellRange method" >
+    <Jump Url = "TFlexCelImport_SetHyperLinkCellRange@integer@TXlsCellRange.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SetNamedRange method" >
+    <Jump Url = "TFlexCelImport_SetNamedRange@TXlsNamedRange.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SetRowOutlineLevel method" >
+    <Jump Url = "TFlexCelImport_SetRowOutlineLevel@integer@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SheetCount property" >
+    <Jump Url = "TFlexCelImport_SheetCount.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SheetZoom property" >
+    <Jump Url = "TFlexCelImport_SheetZoom.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ShowGridHeaders property" >
+    <Jump Url = "TFlexCelImport_ShowGridHeaders.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ShowGridLines property" >
+    <Jump Url = "TFlexCelImport_ShowGridLines.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.SplitWindow method" >
+    <Jump Url = "TFlexCelImport_SplitWindow@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.ToOADate method" >
+    <Jump Url = "TFlexCelImport_ToOADate@TDateTime.html" />
+</Keyword>
+<Keyword Term = "TFlexCelImport.UnMergeCells method" >
+    <Jump Url = "TFlexCelImport_UnMergeCells@integer@integer@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview class" >
+    <Jump Url = "TFlexCelPreview.html" />
+    <Keyword Term = "Canvas" >
+        <Jump Url = "TFlexCelPreview_Canvas.html" />
+    </Keyword>
+    <Keyword Term = "CenteredPreview" >
+        <Jump Url = "TFlexCelPreview_CenteredPreview.html" />
+    </Keyword>
+    <Keyword Term = "CurrentPage" >
+        <Jump Url = "TFlexCelPreview_CurrentPage.html" />
+    </Keyword>
+    <Keyword Term = "Done" >
+        <Jump Url = "TFlexCelPreview_Done.html" />
+    </Keyword>
+    <Keyword Term = "FlexCelGrid" >
+        <Jump Url = "TFlexCelPreview_FlexCelGrid.html" />
+    </Keyword>
+    <Keyword Term = "Init" >
+        <Jump Url = "TFlexCelPreview_Init@TXlsCellRange@integer@integer.html" />
+    </Keyword>
+    <Keyword Term = "MaxBmpCache" >
+        <Jump Url = "TFlexCelPreview_MaxBmpCache.html" />
+    </Keyword>
+    <Keyword Term = "OnPageChange" >
+        <Jump Url = "TFlexCelPreview_OnPageChange.html" />
+    </Keyword>
+    <Keyword Term = "PageColor" >
+        <Jump Url = "TFlexCelPreview_PageColor.html" />
+    </Keyword>
+    <Keyword Term = "PageMargin" >
+        <Jump Url = "TFlexCelPreview_PageMargin.html" />
+    </Keyword>
+    <Keyword Term = "Resize" >
+        <Jump Url = "TFlexCelPreview_Resize.html" />
+    </Keyword>
+    <Keyword Term = "ScrollWheelOffset" >
+        <Jump Url = "TFlexCelPreview_ScrollWheelOffset.html" />
+    </Keyword>
+    <Keyword Term = "TotalPages" >
+        <Jump Url = "TFlexCelPreview_TotalPages.html" />
+    </Keyword>
+    <Keyword Term = "ZoomPreview" >
+        <Jump Url = "TFlexCelPreview_ZoomPreview.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TFlexCelPreview.Canvas property" >
+    <Jump Url = "TFlexCelPreview_Canvas.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.CenteredPreview property" >
+    <Jump Url = "TFlexCelPreview_CenteredPreview.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.CurrentPage property" >
+    <Jump Url = "TFlexCelPreview_CurrentPage.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.Done method" >
+    <Jump Url = "TFlexCelPreview_Done.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.FlexCelGrid property" >
+    <Jump Url = "TFlexCelPreview_FlexCelGrid.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.Init method" >
+    <Jump Url = "TFlexCelPreview_Init@TXlsCellRange@integer@integer.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.MaxBmpCache property" >
+    <Jump Url = "TFlexCelPreview_MaxBmpCache.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.OnPageChange event" >
+    <Jump Url = "TFlexCelPreview_OnPageChange.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.PageColor property" >
+    <Jump Url = "TFlexCelPreview_PageColor.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.PageMargin property" >
+    <Jump Url = "TFlexCelPreview_PageMargin.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.Resize method" >
+    <Jump Url = "TFlexCelPreview_Resize.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.ScrollWheelOffset property" >
+    <Jump Url = "TFlexCelPreview_ScrollWheelOffset.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.TotalPages property" >
+    <Jump Url = "TFlexCelPreview_TotalPages.html" />
+</Keyword>
+<Keyword Term = "TFlexCelPreview.ZoomPreview property" >
+    <Jump Url = "TFlexCelPreview_ZoomPreview.html" />
+</Keyword>
+<Keyword Term = "TFlexCelReport class" >
+    <Jump Url = "TFlexCelReport.html" />
+    <Keyword Term = "CalcRecordCount" >
+        <Jump Url = "TFlexCelReport_CalcRecordCount.html" />
+    </Keyword>
+    <Keyword Term = "DataModule" >
+        <Jump Url = "TFlexCelReport_DataModule.html" />
+    </Keyword>
+    <Keyword Term = "DesignDataModule" >
+        <Jump Url = "TFlexCelReport_DesignDataModule.html" />
+    </Keyword>
+    <Keyword Term = "GetDataSet" >
+        <Jump Url = "TFlexCelReport_GetDataSet@string.html" />
+    </Keyword>
+    <Keyword Term = "GetPagesDataSet" >
+        <Jump Url = "TFlexCelReport_GetPagesDataSet.html" />
+    </Keyword>
+    <Keyword Term = "OnRecordCount" >
+        <Jump Url = "TFlexCelReport_OnRecordCount.html" />
+    </Keyword>
+    <Keyword Term = "PagesDataSet" >
+        <Jump Url = "TFlexCelReport_PagesDataSet.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TFlexCelReport.CalcRecordCount property" >
+    <Jump Url = "TFlexCelReport_CalcRecordCount.html" />
+</Keyword>
+<Keyword Term = "TFlexCelReport.DataModule property" >
+    <Jump Url = "TFlexCelReport_DataModule.html" />
+</Keyword>
+<Keyword Term = "TFlexCelReport.DesignDataModule method" >
+    <Jump Url = "TFlexCelReport_DesignDataModule.html" />
+</Keyword>
+<Keyword Term = "TFlexCelReport.GetDataSet method" >
+    <Jump Url = "TFlexCelReport_GetDataSet@string.html" />
+</Keyword>
+<Keyword Term = "TFlexCelReport.GetPagesDataSet method" >
+    <Jump Url = "TFlexCelReport_GetPagesDataSet.html" />
+</Keyword>
+<Keyword Term = "TFlexCelReport.OnRecordCount event" >
+    <Jump Url = "TFlexCelReport_OnRecordCount.html" />
+</Keyword>
+<Keyword Term = "TFlexCelReport.PagesDataSet property" >
+    <Jump Url = "TFlexCelReport_PagesDataSet.html" />
+</Keyword>
+<Keyword Term = "TFlexCelReportNoDB class" >
+    <Jump Url = "TFlexCelReportNoDB.html" />
+    <Keyword Term = "DataModule" >
+        <Jump Url = "TFlexCelReportNoDB_DataModule.html" />
+    </Keyword>
+    <Keyword Term = "DesignDataModule" >
+        <Jump Url = "TFlexCelReportNoDB_DesignDataModule.html" />
+    </Keyword>
+    <Keyword Term = "PagesDataSet" >
+        <Jump Url = "TFlexCelReportNoDB_PagesDataSet.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TFlexCelReportNoDB.DataModule property" >
+    <Jump Url = "TFlexCelReportNoDB_DataModule.html" />
+</Keyword>
+<Keyword Term = "TFlexCelReportNoDB.DesignDataModule method" >
+    <Jump Url = "TFlexCelReportNoDB_DesignDataModule.html" />
+</Keyword>
+<Keyword Term = "TFlexCelReportNoDB.PagesDataSet property" >
+    <Jump Url = "TFlexCelReportNoDB_PagesDataSet.html" />
+</Keyword>
+<Keyword Term = "TFlxAnchorType enumeration" >
+    <Jump Url = "TFlxAnchorType.html" />
+</Keyword>
+<Keyword Term = "TFlxBorders record" >
+    <Jump Url = "TFlxBorders.html" />
+</Keyword>
+<Keyword Term = "TFlxBorderStyle enumeration" >
+    <Jump Url = "TFlxBorderStyle.html" />
+</Keyword>
+<Keyword Term = "TFlxDbMemColumn class" >
+    <Jump Url = "TFlxDbMemColumn.html" />
+    <Keyword Term = "Name" >
+        <Jump Url = "TFlxDbMemColumn_Name.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TFlxDbMemColumn.Name property" >
+    <Jump Url = "TFlxDbMemColumn_Name.html" />
+</Keyword>
+<Keyword Term = "TFlxDbMemColumnList class" >
+    <Jump Url = "TFlxDbMemColumnList.html" />
+</Keyword>
+<Keyword Term = "TFlxDiagonalBorder enumeration" >
+    <Jump Url = "TFlxDiagonalBorder.html" />
+</Keyword>
+<Keyword Term = "TFlxFillPattern record" >
+    <Jump Url = "TFlxFillPattern.html" />
+</Keyword>
+<Keyword Term = "TFlxFont record" >
+    <Jump Url = "TFlxFont.html" />
+</Keyword>
+<Keyword Term = "TFlxFontStyle enumeration" >
+    <Jump Url = "TFlxFontStyle.html" />
+</Keyword>
+<Keyword Term = "TFlxFormat record" >
+    <Jump Url = "TFlxFormat.html" />
+</Keyword>
+<Keyword Term = "TFlxInPlaceEdit class" >
+    <Jump Url = "TFlxInPlaceEdit.html" />
+    <Keyword Term = "Font" >
+        <Jump Url = "TFlxInPlaceEdit_Font.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TFlxInPlaceEdit.Font property" >
+    <Jump Url = "TFlxInPlaceEdit_Font.html" />
+</Keyword>
+<Keyword Term = "TFlxMasterList class" >
+    <Jump Url = "TFlxMasterList.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable class" >
+    <Jump Url = "TFlxMemTable.html" />
+    <Keyword Term = "Active" >
+        <Jump Url = "TFlxMemTable_Active.html" />
+    </Keyword>
+    <Keyword Term = "AddRecord" >
+        <Jump Url = "TFlxMemTable_AddRecord@Array_of_Variant.html" />
+    </Keyword>
+    <Keyword Term = "CaseInsensitive" >
+        <Jump Url = "TFlxMemTable_CaseInsensitive.html" />
+    </Keyword>
+    <Keyword Term = "Clear" >
+        <Jump Url = "TFlxMemTable_Clear.html" />
+    </Keyword>
+    <Keyword Term = "Close" >
+        <Jump Url = "TFlxMemTable_Close.html" />
+    </Keyword>
+    <Keyword Term = "Columns" >
+        <Jump Url = "TFlxMemTable_Columns.html" />
+    </Keyword>
+    <Keyword Term = "DsName" >
+        <Jump Url = "TFlxMemTable_DsName.html" />
+    </Keyword>
+    <Keyword Term = "Duplicates" >
+        <Jump Url = "TFlxMemTable_Duplicates.html" />
+    </Keyword>
+    <Keyword Term = "Eof" >
+        <Jump Url = "TFlxMemTable_Eof.html" />
+    </Keyword>
+    <Keyword Term = "FieldByName" >
+        <Jump Url = "TFlxMemTable_FieldByName@string.html" />
+    </Keyword>
+    <Keyword Term = "FieldCount" >
+        <Jump Url = "TFlxMemTable_FieldCount.html" />
+    </Keyword>
+    <Keyword Term = "FieldVisibleCount" >
+        <Jump Url = "TFlxMemTable_FieldVisibleCount.html" />
+    </Keyword>
+    <Keyword Term = "FindKey" >
+        <Jump Url = "TFlxMemTable_FindKey@array_of_variant.html" />
+    </Keyword>
+    <Keyword Term = "First" >
+        <Jump Url = "TFlxMemTable_First.html" />
+    </Keyword>
+    <Keyword Term = "GetActive" >
+        <Jump Url = "TFlxMemTable_GetActive.html" />
+    </Keyword>
+    <Keyword Term = "GetFields" >
+        <Jump Url = "TFlxMemTable_GetFields@integer.html" />
+    </Keyword>
+    <Keyword Term = "IndexFieldNames" >
+        <Jump Url = "TFlxMemTable_IndexFieldNames.html" />
+    </Keyword>
+    <Keyword Term = "IndexFieldPos" >
+        <Jump Url = "TFlxMemTable_IndexFieldPos.html" />
+    </Keyword>
+    <Keyword Term = "Last" >
+        <Jump Url = "TFlxMemTable_Last.html" />
+    </Keyword>
+    <Keyword Term = "MasterField" >
+        <Jump Url = "TFlxMemTable_MasterField.html" />
+    </Keyword>
+    <Keyword Term = "MasterTable" >
+        <Jump Url = "TFlxMemTable_MasterTable.html" />
+    </Keyword>
+    <Keyword Term = "Next" >
+        <Jump Url = "TFlxMemTable_Next.html" />
+    </Keyword>
+    <Keyword Term = "OnFirst" >
+        <Jump Url = "TFlxMemTable_OnFirst.html" />
+    </Keyword>
+    <Keyword Term = "OnGetData" >
+        <Jump Url = "TFlxMemTable_OnGetData.html" />
+    </Keyword>
+    <Keyword Term = "OnLast" >
+        <Jump Url = "TFlxMemTable_OnLast.html" />
+    </Keyword>
+    <Keyword Term = "OnNext" >
+        <Jump Url = "TFlxMemTable_OnNext.html" />
+    </Keyword>
+    <Keyword Term = "OnVirtualRecordCount" >
+        <Jump Url = "TFlxMemTable_OnVirtualRecordCount.html" />
+    </Keyword>
+    <Keyword Term = "Open" >
+        <Jump Url = "TFlxMemTable_Open.html" />
+    </Keyword>
+    <Keyword Term = "RecordCount" >
+        <Jump Url = "TFlxMemTable_RecordCount.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TFlxMemTable.Active property" >
+    <Jump Url = "TFlxMemTable_Active.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.AddRecord method" >
+    <Jump Url = "TFlxMemTable_AddRecord@Array_of_Variant.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.CaseInsensitive property" >
+    <Jump Url = "TFlxMemTable_CaseInsensitive.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.Clear method" >
+    <Jump Url = "TFlxMemTable_Clear.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.Close method" >
+    <Jump Url = "TFlxMemTable_Close.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.Columns property" >
+    <Jump Url = "TFlxMemTable_Columns.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.DsName method" >
+    <Jump Url = "TFlxMemTable_DsName.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.Duplicates property" >
+    <Jump Url = "TFlxMemTable_Duplicates.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.Eof method" >
+    <Jump Url = "TFlxMemTable_Eof.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.FieldByName method" >
+    <Jump Url = "TFlxMemTable_FieldByName@string.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.FieldCount method" >
+    <Jump Url = "TFlxMemTable_FieldCount.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.FieldVisibleCount method" >
+    <Jump Url = "TFlxMemTable_FieldVisibleCount.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.FindKey method" >
+    <Jump Url = "TFlxMemTable_FindKey@array_of_variant.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.First method" >
+    <Jump Url = "TFlxMemTable_First.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.GetActive method" >
+    <Jump Url = "TFlxMemTable_GetActive.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.GetFields method" >
+    <Jump Url = "TFlxMemTable_GetFields@integer.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.IndexFieldNames property" >
+    <Jump Url = "TFlxMemTable_IndexFieldNames.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.IndexFieldPos method" >
+    <Jump Url = "TFlxMemTable_IndexFieldPos.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.Last method" >
+    <Jump Url = "TFlxMemTable_Last.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.MasterField property" >
+    <Jump Url = "TFlxMemTable_MasterField.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.MasterTable property" >
+    <Jump Url = "TFlxMemTable_MasterTable.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.Next method" >
+    <Jump Url = "TFlxMemTable_Next.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.OnFirst event" >
+    <Jump Url = "TFlxMemTable_OnFirst.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.OnGetData event" >
+    <Jump Url = "TFlxMemTable_OnGetData.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.OnLast event" >
+    <Jump Url = "TFlxMemTable_OnLast.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.OnNext event" >
+    <Jump Url = "TFlxMemTable_OnNext.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.OnVirtualRecordCount event" >
+    <Jump Url = "TFlxMemTable_OnVirtualRecordCount.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.Open method" >
+    <Jump Url = "TFlxMemTable_Open.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTable.RecordCount method" >
+    <Jump Url = "TFlxMemTable_RecordCount.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTableField class" >
+    <Jump Url = "TFlxMemTableField.html" />
+    <Keyword Term = "AsFloat" >
+        <Jump Url = "TFlxMemTableField_AsFloat.html" />
+    </Keyword>
+    <Keyword Term = "DataSet" >
+        <Jump Url = "TFlxMemTableField_DataSet.html" />
+    </Keyword>
+    <Keyword Term = "DisplayName" >
+        <Jump Url = "TFlxMemTableField_DisplayName.html" />
+    </Keyword>
+    <Keyword Term = "IsTDateTimeField" >
+        <Jump Url = "TFlxMemTableField_IsTDateTimeField.html" />
+    </Keyword>
+    <Keyword Term = "IsTMemoField" >
+        <Jump Url = "TFlxMemTableField_IsTMemoField.html" />
+    </Keyword>
+    <Keyword Term = "Value" >
+        <Jump Url = "TFlxMemTableField_Value.html" />
+    </Keyword>
+    <Keyword Term = "Visible" >
+        <Jump Url = "TFlxMemTableField_Visible.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TFlxMemTableField.AsFloat method" >
+    <Jump Url = "TFlxMemTableField_AsFloat.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTableField.DataSet method" >
+    <Jump Url = "TFlxMemTableField_DataSet.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTableField.DisplayName method" >
+    <Jump Url = "TFlxMemTableField_DisplayName.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTableField.IsTDateTimeField method" >
+    <Jump Url = "TFlxMemTableField_IsTDateTimeField.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTableField.IsTMemoField method" >
+    <Jump Url = "TFlxMemTableField_IsTMemoField.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTableField.Value method" >
+    <Jump Url = "TFlxMemTableField_Value.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTableField.Visible method" >
+    <Jump Url = "TFlxMemTableField_Visible.html" />
+</Keyword>
+<Keyword Term = "TFlxMemTableOnGetDataEvent type" >
+    <Jump Url = "TFlxMemTableOnGetDataEvent.html" />
+</Keyword>
+<Keyword Term = "TFlxOneBorder record" >
+    <Jump Url = "TFlxOneBorder.html" />
+</Keyword>
+<Keyword Term = "TFlxOnPageChangeEvent type" >
+    <Jump Url = "TFlxOnPageChangeEvent.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle type" >
+    <Jump Url = "TFlxPatternStyle.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Automatic constant" >
+    <Jump Url = "TFlxPatternStyle_Automatic.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Checker constant" >
+    <Jump Url = "TFlxPatternStyle_Checker.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_CrissCross constant" >
+    <Jump Url = "TFlxPatternStyle_CrissCross.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Down constant" >
+    <Jump Url = "TFlxPatternStyle_Down.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Gray16 constant" >
+    <Jump Url = "TFlxPatternStyle_Gray16.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Gray25 constant" >
+    <Jump Url = "TFlxPatternStyle_Gray25.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Gray50 constant" >
+    <Jump Url = "TFlxPatternStyle_Gray50.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Gray75 constant" >
+    <Jump Url = "TFlxPatternStyle_Gray75.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Gray8 constant" >
+    <Jump Url = "TFlxPatternStyle_Gray8.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Grid constant" >
+    <Jump Url = "TFlxPatternStyle_Grid.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Horizontal constant" >
+    <Jump Url = "TFlxPatternStyle_Horizontal.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_LightDown constant" >
+    <Jump Url = "TFlxPatternStyle_LightDown.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_LightHorizontal constant" >
+    <Jump Url = "TFlxPatternStyle_LightHorizontal.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_LightUp constant" >
+    <Jump Url = "TFlxPatternStyle_LightUp.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_LightVertical constant" >
+    <Jump Url = "TFlxPatternStyle_LightVertical.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_None constant" >
+    <Jump Url = "TFlxPatternStyle_None.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_SemiGray75 constant" >
+    <Jump Url = "TFlxPatternStyle_SemiGray75.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Solid constant" >
+    <Jump Url = "TFlxPatternStyle_Solid.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Up constant" >
+    <Jump Url = "TFlxPatternStyle_Up.html" />
+</Keyword>
+<Keyword Term = "TFlxPatternStyle_Vertical constant" >
+    <Jump Url = "TFlxPatternStyle_Vertical.html" />
+</Keyword>
+<Keyword Term = "TFlxProgress class" >
+    <Jump Url = "TFlxProgress.html" />
+    <Keyword Term = "Counter" >
+        <Jump Url = "TFlxProgress_Counter.html" />
+    </Keyword>
+    <Keyword Term = "Phase" >
+        <Jump Url = "TFlxProgress_Phase.html" />
+    </Keyword>
+    <Keyword Term = "Sheet" >
+        <Jump Url = "TFlxProgress_Sheet.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TFlxProgress.Counter property" >
+    <Jump Url = "TFlxProgress_Counter.html" />
+</Keyword>
+<Keyword Term = "TFlxProgress.Phase property" >
+    <Jump Url = "TFlxProgress_Phase.html" />
+</Keyword>
+<Keyword Term = "TFlxProgress.Sheet property" >
+    <Jump Url = "TFlxProgress_Sheet.html" />
+</Keyword>
+<Keyword Term = "TFlxProgressPhase enumeration" >
+    <Jump Url = "TFlxProgressPhase.html" />
+</Keyword>
+<Keyword Term = "TFlxProp class" >
+    <Jump Url = "TFlxProp.html" />
+    <Keyword Term = "Name" >
+        <Jump Url = "TFlxProp_Name.html" />
+    </Keyword>
+    <Keyword Term = "Value" >
+        <Jump Url = "TFlxProp_Value.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TFlxProp.Name field" >
+    <Jump Url = "TFlxProp_Name.html" />
+</Keyword>
+<Keyword Term = "TFlxProp.Value field" >
+    <Jump Url = "TFlxProp_Value.html" />
+</Keyword>
+<Keyword Term = "TFlxPropList class" >
+    <Jump Url = "TFlxPropList.html" />
+</Keyword>
+<Keyword Term = "TFlxReportMode enumeration" >
+    <Jump Url = "TFlxReportMode.html" />
+</Keyword>
+<Keyword Term = "TFlxUnderline enumeration" >
+    <Jump Url = "TFlxUnderline.html" />
+</Keyword>
+<Keyword Term = "TFormatSettings record" >
+    <Jump Url = "TFormatSettings.html" />
+</Keyword>
+<Keyword Term = "THFlxAlignment enumeration" >
+    <Jump Url = "THFlxAlignment.html" />
+</Keyword>
+<Keyword Term = "THyperLink record" >
+    <Jump Url = "THyperLink.html" />
+</Keyword>
+<Keyword Term = "THyperLinkType enumeration" >
+    <Jump Url = "THyperLinkType.html" />
+</Keyword>
+<Keyword Term = "TImageProperties record" >
+    <Jump Url = "TImageProperties.html" />
+</Keyword>
+<Keyword Term = "TMetafileHeader record" >
+    <Jump Url = "TMetafileHeader.html" />
+</Keyword>
+<Keyword Term = "TOnAllowEditCellEvent type" >
+    <Jump Url = "TOnAllowEditCellEvent.html" />
+</Keyword>
+<Keyword Term = "TOnFlxProgressEvent type" >
+    <Jump Url = "TOnFlxProgressEvent.html" />
+</Keyword>
+<Keyword Term = "TOnFormatPictureEvent type" >
+    <Jump Url = "TOnFormatPictureEvent.html" />
+</Keyword>
+<Keyword Term = "TOnGenerateEvent type" >
+    <Jump Url = "TOnGenerateEvent.html" />
+</Keyword>
+<Keyword Term = "TOnGeneratePageEvent type" >
+    <Jump Url = "TOnGeneratePageEvent.html" />
+</Keyword>
+<Keyword Term = "TOnGetCellValue type" >
+    <Jump Url = "TOnGetCellValue.html" />
+</Keyword>
+<Keyword Term = "TOnGetCellValueX type" >
+    <Jump Url = "TOnGetCellValueX.html" />
+</Keyword>
+<Keyword Term = "TOnGetCellValueXRow type" >
+    <Jump Url = "TOnGetCellValueXRow.html" />
+</Keyword>
+<Keyword Term = "TOnGetFileNameEvent type" >
+    <Jump Url = "TOnGetFileNameEvent.html" />
+</Keyword>
+<Keyword Term = "TOnGetFontNameEvent type" >
+    <Jump Url = "TOnGetFontNameEvent.html" />
+</Keyword>
+<Keyword Term = "TOnGetImageSize type" >
+    <Jump Url = "TOnGetImageSize.html" />
+</Keyword>
+<Keyword Term = "TOnGetOutStreamEvent type" >
+    <Jump Url = "TOnGetOutStreamEvent.html" />
+</Keyword>
+<Keyword Term = "TOnVirtualRecordCountEvent type" >
+    <Jump Url = "TOnVirtualRecordCountEvent.html" />
+</Keyword>
+<Keyword Term = "TOnZoomChangedEvent type" >
+    <Jump Url = "TOnZoomChangedEvent.html" />
+</Keyword>
+<Keyword Term = "TPrinterDriverSettings record" >
+    <Jump Url = "TPrinterDriverSettings.html" />
+</Keyword>
+<Keyword Term = "TRecordCountEvent type" >
+    <Jump Url = "TRecordCountEvent.html" />
+</Keyword>
+<Keyword Term = "TRichString record" >
+    <Jump Url = "TRichString.html" />
+</Keyword>
+<Keyword Term = "TRTFRun record" >
+    <Jump Url = "TRTFRun.html" />
+</Keyword>
+<Keyword Term = "TRTFRunList type" >
+    <Jump Url = "TRTFRunList.html" />
+</Keyword>
+<Keyword Term = "TRTFRunListList type" >
+    <Jump Url = "TRTFRunListList.html" />
+</Keyword>
+<Keyword Term = "TryFormatDateTime function" >
+    <Jump Url = "TryFormatDateTime@string@TDateTime.html" />
+</Keyword>
+<Keyword Term = "TryFormatDateTime1904 function" >
+    <Jump Url = "TryFormatDateTime1904@string@TDateTime@boolean.html" />
+    <Jump Url = "TryFormatDateTime1904@string@TDateTime@boolean@TFormatSettings.html" />
+</Keyword>
+<Keyword Term = "TryStrToFloatInvariant function" >
+    <Jump Url = "TryStrToFloatInvariant@string@extended.html" />
+</Keyword>
+<Keyword Term = "TSavedFont record" >
+    <Jump Url = "TSavedFont.html" />
+</Keyword>
+<Keyword Term = "TSmallRect record" >
+    <Jump Url = "TSmallRect.html" />
+</Keyword>
+<Keyword Term = "TSpawnedCell class" >
+    <Jump Url = "TSpawnedCell.html" />
+</Keyword>
+<Keyword Term = "TSpawnedCellList class" >
+    <Jump Url = "TSpawnedCellList.html" />
+</Keyword>
+<Keyword Term = "TVFlxAlignment enumeration" >
+    <Jump Url = "TVFlxAlignment.html" />
+</Keyword>
+<Keyword Term = "TWaitCursor class" >
+    <Jump Url = "TWaitCursor.html" />
+</Keyword>
+<Keyword Term = "TWideSetEditEvent type" >
+    <Jump Url = "TWideSetEditEvent.html" />
+</Keyword>
+<Keyword Term = "TXlsCellRange record" >
+    <Jump Url = "TXlsCellRange.html" />
+</Keyword>
+<Keyword Term = "TXlsCellValue record" >
+    <Jump Url = "TXlsCellValue.html" />
+</Keyword>
+<Keyword Term = "TXlsImgTypes enumeration" >
+    <Jump Url = "TXlsImgTypes.html" />
+</Keyword>
+<Keyword Term = "TXlsMargins record" >
+    <Jump Url = "TXlsMargins.html" />
+</Keyword>
+<Keyword Term = "TXlsNamedRange record" >
+    <Jump Url = "TXlsNamedRange.html" />
+</Keyword>
+<Keyword Term = "TXlsSheetVisible enumeration" >
+    <Jump Url = "TXlsSheetVisible.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplate class" >
+    <Jump Url = "TXlsTemplate.html" />
+    <Keyword Term = "FileName" >
+        <Jump Url = "TXlsTemplate_FileName.html" />
+    </Keyword>
+    <Keyword Term = "LoadFrom" >
+        <Jump Url = "TXlsTemplate_LoadFrom@TFileName.html" />
+        <Jump Url = "TXlsTemplate_LoadFrom@TStream.html" />
+    </Keyword>
+    <Keyword Term = "ModifiedDate" >
+        <Jump Url = "TXlsTemplate_ModifiedDate.html" />
+    </Keyword>
+    <Keyword Term = "SaveAs" >
+        <Jump Url = "TXlsTemplate_SaveAs@TFileName.html" />
+    </Keyword>
+    <Keyword Term = "StoredFile" >
+        <Jump Url = "TXlsTemplate_StoredFile.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TXlsTemplate.FileName property" >
+    <Jump Url = "TXlsTemplate_FileName.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplate.LoadFrom method" >
+    <Jump Url = "TXlsTemplate_LoadFrom@TFileName.html" />
+    <Jump Url = "TXlsTemplate_LoadFrom@TStream.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplate.ModifiedDate property" >
+    <Jump Url = "TXlsTemplate_ModifiedDate.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplate.SaveAs method" >
+    <Jump Url = "TXlsTemplate_SaveAs@TFileName.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplate.StoredFile property" >
+    <Jump Url = "TXlsTemplate_StoredFile.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplateList class" >
+    <Jump Url = "TXlsTemplateList.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplateStore class" >
+    <Jump Url = "TXlsTemplateStore.html" />
+    <Keyword Term = "CaseInsensitive" >
+        <Jump Url = "TXlsTemplateStore_CaseInsensitive.html" />
+    </Keyword>
+    <Keyword Term = "Compress" >
+        <Jump Url = "TXlsTemplateStore_Compress.html" />
+    </Keyword>
+    <Keyword Term = "FTemplates" >
+        <Jump Url = "TXlsTemplateStore_FTemplates.html" />
+    </Keyword>
+    <Keyword Term = "GetStoredFile" >
+        <Jump Url = "TXlsTemplateStore_GetStoredFile@UTF16String.html" />
+    </Keyword>
+    <Keyword Term = "IsUpToDate" >
+        <Jump Url = "TXlsTemplateStore_IsUpToDate.html" />
+    </Keyword>
+    <Keyword Term = "LoadTemplateFromStream" >
+        <Jump Url = "TXlsTemplateStore_LoadTemplateFromStream@TStream@UTF16String.html" />
+    </Keyword>
+    <Keyword Term = "Refresh" >
+        <Jump Url = "TXlsTemplateStore_Refresh.html" />
+    </Keyword>
+    <Keyword Term = "RefreshPath" >
+        <Jump Url = "TXlsTemplateStore_RefreshPath.html" />
+    </Keyword>
+    <Keyword Term = "Templates" >
+        <Jump Url = "TXlsTemplateStore_Templates.html" />
+    </Keyword>
+</Keyword>
+<Keyword Term = "TXlsTemplateStore.CaseInsensitive property" >
+    <Jump Url = "TXlsTemplateStore_CaseInsensitive.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplateStore.Compress property" >
+    <Jump Url = "TXlsTemplateStore_Compress.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplateStore.FTemplates field" >
+    <Jump Url = "TXlsTemplateStore_FTemplates.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplateStore.GetStoredFile method" >
+    <Jump Url = "TXlsTemplateStore_GetStoredFile@UTF16String.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplateStore.IsUpToDate method" >
+    <Jump Url = "TXlsTemplateStore_IsUpToDate.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplateStore.LoadTemplateFromStream method" >
+    <Jump Url = "TXlsTemplateStore_LoadTemplateFromStream@TStream@UTF16String.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplateStore.Refresh method" >
+    <Jump Url = "TXlsTemplateStore_Refresh.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplateStore.RefreshPath property" >
+    <Jump Url = "TXlsTemplateStore_RefreshPath.html" />
+</Keyword>
+<Keyword Term = "TXlsTemplateStore.Templates property" >
+    <Jump Url = "TXlsTemplateStore_Templates.html" />
+</Keyword>
+<Keyword Term = "Types" >
+    <Jump Url = "!!TYPES.html" />
+</Keyword>
+<Keyword Term = "UCustomFlexCelReport.pas" >
+    <Jump Url = "UCustomFlexCelReport_pas.html" />
+</Keyword>
+<Keyword Term = "UFlexCelGrid.pas" >
+    <Jump Url = "UFlexCelGrid_pas.html" />
+</Keyword>
+<Keyword Term = "UFlexCelImport.pas" >
+    <Jump Url = "UFlexCelImport_pas.html" />
+</Keyword>
+<Keyword Term = "UFlexCelPreview.pas" >
+    <Jump Url = "UFlexCelPreview_pas.html" />
+</Keyword>
+<Keyword Term = "UFlexCelReport.pas" >
+    <Jump Url = "UFlexCelReport_pas.html" />
+</Keyword>
+<Keyword Term = "UFlexCelReportNoDB.pas" >
+    <Jump Url = "UFlexCelReportNoDB_pas.html" />
+</Keyword>
+<Keyword Term = "UFlxFormats.pas" >
+    <Jump Url = "UFlxFormats_pas.html" />
+</Keyword>
+<Keyword Term = "UFlxMemTable.pas" >
+    <Jump Url = "UFlxMemTable_pas.html" />
+</Keyword>
+<Keyword Term = "UFlxMessages.pas" >
+    <Jump Url = "UFlxMessages_pas.html" />
+</Keyword>
+<Keyword Term = "UFlxNumberFormat.pas" >
+    <Jump Url = "UFlxNumberFormat_pas.html" />
+</Keyword>
+<Keyword Term = "UFlxUtils.pas" >
+    <Jump Url = "UFlxUtils_pas.html" />
+</Keyword>
+<Keyword Term = "UTextDelim.pas" >
+    <Jump Url = "UTextDelim_pas.html" />
+</Keyword>
+<Keyword Term = "UTF16Char type" >
+    <Jump Url = "UTF16Char.html" />
+</Keyword>
+<Keyword Term = "UTF16String type" >
+    <Jump Url = "UTF16String.html" />
+</Keyword>
+<Keyword Term = "UWaitCursor.pas" >
+    <Jump Url = "UWaitCursor_pas.html" />
+</Keyword>
+<Keyword Term = "UXlsPictures.pas" >
+    <Jump Url = "UXlsPictures_pas.html" />
+</Keyword>
+<Keyword Term = "Variables" >
+    <Jump Url = "!!VARIABLES.html" />
+</Keyword>
+<Keyword Term = "VariantToString function" >
+    <Jump Url = "VariantToString@variant.html" />
+</Keyword>
+<Keyword Term = "VarStr constant" >
+    <Jump Url = "VarStr.html" />
+</Keyword>
+<Keyword Term = "xls_Emf constant" >
+    <Jump Url = "xls_Emf.html" />
+</Keyword>
+<Keyword Term = "xls_Jpeg constant" >
+    <Jump Url = "xls_Jpeg.html" />
+</Keyword>
+<Keyword Term = "xls_Png constant" >
+    <Jump Url = "xls_Png.html" />
+</Keyword>
+<Keyword Term = "xls_Wmf constant" >
+    <Jump Url = "xls_Wmf.html" />
+</Keyword>
+<Keyword Term = "XLSColumnImportTypes enumeration" >
+    <Jump Url = "XLSColumnImportTypes.html" />
+</Keyword>
+<Keyword Term = "XlsFormatValue function" >
+    <Jump Url = "XlsFormatValue@variant@UTF16String@Integer.html" />
+</Keyword>
+<Keyword Term = "XlsFormatValue1904 function" >
+    <Jump Url = "XlsFormatValue1904@variant@UTF16String@boolean@Integer@PFormatSettings.html" />
+</Keyword>
+</HelpIndex>

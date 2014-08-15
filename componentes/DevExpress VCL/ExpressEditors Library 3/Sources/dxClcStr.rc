@@ -1,0 +1,12 @@
+/*
+   dxClcStr.rc
+   Developer Express Visual Component Library
+   Calculator string resource
+*/
+
+STRINGTABLE
+{
+  38951, "Error"
+}
+
+

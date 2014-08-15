@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{C2A38A76-FEDD-42DB-A724-F8086BF50323}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="FIBPlus2005.bpl">FIBPlus2005.bdsproj</Projects>
+      <Projects Name="FIBDBMidas2005.bpl">FIBDBMidas2005.bdsproj</Projects>
+      <Projects Name="FIBPlusEditors2005.bpl">FIBPlusEditors2005.bdsproj</Projects>
+      <Projects Name="pFIBPlusTools2005.bpl">Tools\pFIBPlusTools2005.bdsproj</Projects>
+      <Projects Name="Targets">FIBPlus2005.bpl FIBDBMidas2005.bpl FIBPlusEditors2005.bpl pFIBPlusTools2005.bpl</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

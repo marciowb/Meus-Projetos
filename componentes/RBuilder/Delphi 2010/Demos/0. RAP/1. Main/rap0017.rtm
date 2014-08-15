@@ -1,0 +1,426 @@
+object TppReport
+  PrinterSetup.BinName = 'Auto Select'
+  PrinterSetup.DocumentName = 'ppReport1'
+  PrinterSetup.PaperName = 'Letter 8 ½ x 11 in'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  SaveAsTemplate = True
+  Template.FileName = 'E:\Development\Demos\0. Rap\1. Main\rap0017.rtm'
+  Template.Format = ftASCII
+  UserName = 'Report'
+  CachePages = True
+  DeviceType = 'Screen'
+  Language = lgEnglish
+  Version = '5.0'
+  mmColumnWidth = 0
+  object ppHeaderBand1: TppHeaderBand
+    PrintHeight = phDynamic
+    mmBottomOffset = 0
+    mmHeight = 202142
+    mmPrintPosition = 0
+    object ppLabel4: TppLabel
+      UserName = 'Label4'
+      Caption = 'RAP Demo - LoadFromFile and SaveToFile'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold, fsItalic]
+      Transparent = True
+      mmHeight = 4763
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 85461
+      BandType = 0
+    end
+    object ppMemo1: TppMemo
+      UserName = 'Memo2'
+      Caption = 
+        'This report contains a RAP event handler attached to the BeforeG' +
+        'enerate event of the DetailBand.'#13#10#13#10'The event handler concatenat' +
+        'es the first name and last name of a contact and assigns the res' +
+        'ult to the caption of a label.'#13#10#13#10'To View the RAP code for this ' +
+        'example'#13#10#13#10'1. Select the Calc tab'#13#10'2. Select the View | Events m' +
+        'enu option'#13#10#13#10#13#10
+      CharWrap = False
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = []
+      Lines.Strings = (
+        
+          'This report uses the LoadFromFile and SaveToFile methods of TStr' +
+          'ings, TppRichText and TPicture that have been surfaced via RTTI.'
+        ''
+        'To View the RAP code for this example'
+        ''
+        '1. Select the Calc tab'
+        '2. Select the View | Events menu option'
+        ''
+        '')
+      Stretch = True
+      Transparent = True
+      mmHeight = 38629
+      mmLeft = 4233
+      mmTop = 6350
+      mmWidth = 137848
+      BandType = 0
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      mmLeading = 0
+    end
+    object ppRegion1: TppRegion
+      UserName = 'Region1'
+      Caption = 'Region1'
+      ParentWidth = False
+      Pen.Color = clMaroon
+      ShiftRelativeTo = ppRegion6
+      Stretch = True
+      mmHeight = 22490
+      mmLeft = 0
+      mmTop = 100542
+      mmWidth = 203200
+      BandType = 0
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      object ppMemo2: TppMemo
+        UserName = 'Memo1'
+        Caption = 'Memo1'
+        CharWrap = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Courier New'
+        Font.Size = 8
+        Font.Style = []
+        Stretch = True
+        Transparent = True
+        mmHeight = 15610
+        mmLeft = 2117
+        mmTop = 103717
+        mmWidth = 76200
+        BandType = 0
+        mmBottomOffset = 0
+        mmOverFlowOffset = 0
+        mmStopPosition = 0
+        mmLeading = 0
+      end
+      object ppLabel3: TppLabel
+        UserName = 'Label3'
+        Caption = 'Assign to --->'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 9
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3969
+        mmLeft = 81492
+        mmTop = 112978
+        mmWidth = 19844
+        BandType = 0
+      end
+      object ppMemo3: TppMemo
+        UserName = 'Memo3'
+        Caption = 'Memo3'
+        CharWrap = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Courier New'
+        Font.Size = 8
+        Font.Style = []
+        Stretch = True
+        Transparent = True
+        mmHeight = 15610
+        mmLeft = 109009
+        mmTop = 103453
+        mmWidth = 76200
+        BandType = 0
+        mmBottomOffset = 0
+        mmOverFlowOffset = 0
+        mmStopPosition = 0
+        mmLeading = 0
+      end
+    end
+    object ppRegion2: TppRegion
+      UserName = 'Region2'
+      Caption = 'Region2'
+      ParentWidth = False
+      Pen.Color = clAqua
+      Pen.Style = psClear
+      ShiftRelativeTo = ppRegion1
+      Stretch = True
+      mmHeight = 9260
+      mmLeft = 0
+      mmTop = 124884
+      mmWidth = 203200
+      BandType = 0
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      object ppLabel1: TppLabel
+        UserName = 'Label1'
+        Caption = 'LoadFromFile rap0017.txt'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clMaroon
+        Font.Name = 'Arial'
+        Font.Size = 9
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 8731
+        mmLeft = 2117
+        mmTop = 127000
+        mmWidth = 38100
+        BandType = 0
+      end
+      object ppLabel2: TppLabel
+        UserName = 'Label2'
+        Caption = 'SaveToFile Out0017.txt'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clMaroon
+        Font.Name = 'Arial'
+        Font.Size = 9
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 7938
+        mmLeft = 109009
+        mmTop = 127000
+        mmWidth = 34396
+        BandType = 0
+      end
+    end
+    object ppRegion3: TppRegion
+      UserName = 'Region3'
+      Caption = 'Region3'
+      ParentWidth = False
+      Pen.Color = clBlue
+      ShiftRelativeTo = ppMemo1
+      Stretch = True
+      mmHeight = 36248
+      mmLeft = 0
+      mmTop = 50800
+      mmWidth = 203200
+      BandType = 0
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      object ppImage1: TppImage
+        UserName = 'Image1'
+        MaintainAspectRatio = False
+        AutoSize = True
+        mmHeight = 13229
+        mmLeft = 2117
+        mmTop = 56092
+        mmWidth = 13229
+        BandType = 0
+      end
+      object ppLabel6: TppLabel
+        UserName = 'Label6'
+        Caption = 'Assign to --->'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 9
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 27252
+        mmLeft = 82550
+        mmTop = 57150
+        mmWidth = 19844
+        BandType = 0
+      end
+      object ppImage2: TppImage
+        UserName = 'Image2'
+        MaintainAspectRatio = False
+        AutoSize = True
+        mmHeight = 13229
+        mmLeft = 109009
+        mmTop = 56092
+        mmWidth = 13229
+        BandType = 0
+      end
+    end
+    object ppRegion4: TppRegion
+      UserName = 'Region4'
+      Caption = 'Region4'
+      ParentWidth = False
+      Pen.Color = clGray
+      ShiftRelativeTo = ppRegion2
+      Stretch = True
+      mmHeight = 21960
+      mmLeft = 0
+      mmTop = 135467
+      mmWidth = 203200
+      BandType = 0
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      object ppRichText1: TppRichText
+        UserName = 'RichText1'
+        Caption = 'RichText1'
+        Stretch = True
+        mmHeight = 17463
+        mmLeft = 2117
+        mmTop = 136525
+        mmWidth = 76200
+        BandType = 0
+        mmBottomOffset = 0
+        mmOverFlowOffset = 0
+        mmStopPosition = 0
+      end
+      object ppLabel8: TppLabel
+        UserName = 'Label8'
+        Caption = 'Assign to --->'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 9
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3969
+        mmLeft = 80433
+        mmTop = 139701
+        mmWidth = 19844
+        BandType = 0
+      end
+      object ppRichText2: TppRichText
+        UserName = 'RichText2'
+        Caption = 'RichText2'
+        Stretch = True
+        mmHeight = 17727
+        mmLeft = 110067
+        mmTop = 136526
+        mmWidth = 74877
+        BandType = 0
+        mmBottomOffset = 0
+        mmOverFlowOffset = 0
+        mmStopPosition = 0
+      end
+    end
+    object ppRegion5: TppRegion
+      UserName = 'Region5'
+      Caption = 'Region5'
+      ParentWidth = False
+      Pen.Style = psClear
+      ShiftRelativeTo = ppRegion4
+      mmHeight = 11113
+      mmLeft = 0
+      mmTop = 158750
+      mmWidth = 203200
+      BandType = 0
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      object ppLabel5: TppLabel
+        UserName = 'Label5'
+        Caption = 'LoadFromFile rap0017.rtf'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clGray
+        Font.Name = 'Arial'
+        Font.Size = 9
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3969
+        mmLeft = 3175
+        mmTop = 161396
+        mmWidth = 37571
+        BandType = 0
+      end
+      object ppLabel7: TppLabel
+        UserName = 'Label7'
+        Caption = 'SaveToFile Out0017.rtf'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clGray
+        Font.Name = 'Arial'
+        Font.Size = 9
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3969
+        mmLeft = 110067
+        mmTop = 161396
+        mmWidth = 33867
+        BandType = 0
+      end
+    end
+    object ppRegion6: TppRegion
+      UserName = 'Region6'
+      Caption = 'Region6'
+      ParentWidth = False
+      Pen.Color = clBlue
+      Pen.Style = psClear
+      ShiftRelativeTo = ppRegion3
+      Stretch = True
+      mmHeight = 11113
+      mmLeft = 0
+      mmTop = 87842
+      mmWidth = 203200
+      BandType = 0
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      object ppLabel9: TppLabel
+        UserName = 'Label9'
+        Caption = 'LoadFromFile rap0017.bmp'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlue
+        Font.Name = 'Arial'
+        Font.Size = 9
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 10583
+        mmLeft = 2910
+        mmTop = 88371
+        mmWidth = 40746
+        BandType = 0
+      end
+      object ppLabel10: TppLabel
+        UserName = 'Label10'
+        Caption = 'SaveToFile Out0017.bmp'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlue
+        Font.Name = 'Arial'
+        Font.Size = 9
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 11113
+        mmLeft = 109802
+        mmTop = 88371
+        mmWidth = 37042
+        BandType = 0
+      end
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 0
+    mmPrintPosition = 0
+  end
+  object TraCodeModule
+    ProgramStream = {
+      01060F5472614576656E7448616E646C65720B50726F6772616D4E616D650611
+      4865616465724265666F72655072696E740B50726F6772616D54797065070B74
+      7450726F63656475726506536F757263650CB001000070726F63656475726520
+      4865616465724265666F72655072696E743B0D0A626567696E0D0A2020496D61
+      6765312E506963747572652E4C6F616446726F6D46696C652827726170303031
+      372E626D7027293B0D0A2020496D616765322E506963747572652E4173736967
+      6E28496D616765312E50696374757265293B0D0A2020496D616765322E506963
+      747572652E53617665546F46696C6528274F7574303031372E626D7027293B0D
+      0A0D0A20204D656D6F312E4C696E65732E4C6F616446726F6D46696C65282772
+      6170303031372E74787427293B0D0A20204D656D6F332E4C696E65732E417373
+      69676E284D656D6F312E4C696E6573293B0D0A20204D656D6F332E4C696E6573
+      2E53617665546F46696C6528274F7574303031372E74787427293B0D0A0D0A20
+      205269636854657874312E4C6F616446726F6D46696C65282772617030303137
+      2E72746627293B0D0A20205269636854657874322E5269636854657874203A3D
+      205269636854657874312E52696368546578743B0D0A20205269636854657874
+      322E53617665546F46696C6528274F7574303031372E72746627293B0D0A0D0A
+      656E643B0D0A0D436F6D706F6E656E744E616D65060648656164657209457665
+      6E744E616D65060B4265666F72655072696E74074576656E74494402180000}
+  end
+end

@@ -21,8 +21,8 @@ interface
     end;
 
     TRegrasVendaProduto = class
-      class function PrecoVendaProduto(IdProduto,IdCliente,IdEmpresa: TipoCampoChave; Data: TDate; IdCor:TipoCampoChave =  SemID;IdTamanho: TipoCampoChave = SemID): Currency;
-      class function DescontoMaxProduto(IdProduto,IdCliente,IdEmpresa: TipoCampoChave; Data: TDate;IdTabelaPreco: TipoCampoChave = SemID ;IdCor:TipoCampoChave =  SemID;IdTamanho: TipoCampoChave = SemID): Currency;
+      class function PrecoVendaProduto(IdProduto,IdCliente,IdEmpresa: TipoCampoChave; Data: TDate; IdCor:TipoCampoChave = '-1' ;IdTamanho: TipoCampoChave = '-1'): Currency;
+      class function DescontoMaxProduto(IdProduto,IdCliente,IdEmpresa: TipoCampoChave; Data: TDate;IdTabelaPreco: TipoCampoChave = '-1' ;IdCor:TipoCampoChave =  '-1';IdTamanho: TipoCampoChave = '-1'): Currency;
 
     end;
 
@@ -146,8 +146,7 @@ begin
   { TODO : Fazer depois pq a prioridade é o contrato e a OS }
 end;
 
-class function TRegrasVendaProduto.PrecoVendaProduto(IdProduto, IdCliente,
-  IdEmpresa: TipoCampoChave; Data: TDate; IdCor, IdTamanho: TipoCampoChave): Currency;
+class function TRegrasVendaProduto.PrecoVendaProduto(IdProduto,IdCliente,IdEmpresa: TipoCampoChave; Data: TDate; IdCor:TipoCampoChave = '-1' ;IdTamanho: TipoCampoChave = '-1'): Currency;
 var
   Temp: String;
 begin

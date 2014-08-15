@@ -1,0 +1,36 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = cxPivotGridRS12.bpl cxPivotGridChartRS12.bpl cxPivotGridOLAPRS12.bpl \
+  dclcxPivotGridRS12.bpl dclcxPivotGridChartRS12.bpl dclcxPivotGridOLAPRS12.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+cxPivotGridRS12.bpl: ..\..\ExpressPivotGrid 2\Packages\cxPivotGridRS12.dpk
+  $(DCC)
+
+cxPivotGridChartRS12.bpl: ..\..\ExpressPivotGrid 2\Packages\cxPivotGridChartRS12.dpk
+  $(DCC)
+
+cxPivotGridOLAPRS12.bpl: ..\..\ExpressPivotGrid 2\Packages\cxPivotGridOLAPRS12.dpk
+  $(DCC)
+
+dclcxPivotGridRS12.bpl: ..\..\ExpressPivotGrid 2\Packages\dclcxPivotGridRS12.dpk
+  $(DCC)
+
+dclcxPivotGridChartRS12.bpl: ..\..\ExpressPivotGrid 2\Packages\dclcxPivotGridChartRS12.dpk
+  $(DCC)
+
+dclcxPivotGridOLAPRS12.bpl: ..\..\ExpressPivotGrid 2\Packages\dclcxPivotGridOLAPRS12.dpk
+  $(DCC)
+
+

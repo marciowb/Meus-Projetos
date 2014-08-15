@@ -1,0 +1,23 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = cxLibraryRS12.bpl dclcxLibraryRS12.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+cxLibraryRS12.bpl: ..\..\ExpressLibrary\Packages\cxLibraryRS12.dpk
+  $(DCC)
+
+dclcxLibraryRS12.bpl: ..\..\ExpressLibrary\Packages\dclcxLibraryRS12.dpk
+  $(DCC)
+
+

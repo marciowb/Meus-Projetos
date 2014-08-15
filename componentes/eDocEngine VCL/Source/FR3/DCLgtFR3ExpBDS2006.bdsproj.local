@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2005/10/25 21:05:15.719.bdsproj,C:\Documents and Settings\testmac\My Documents\Borland Studio Projects\Package1.bdsproj=E:\Work\Shruthi\eDocEngine\Source\FR3\DCLgtFR3ExpD2006.bdsproj</Transaction>
+    <Transaction>2006/01/02 13:59:30.357.txaPackage,E:\work\Shameer\Build 2006\Source\Pro\FR3\ModelSupport_DCLgtFR3ExpD2006\default.txaPackage=</Transaction>
+    <Transaction>2006/01/02 13:59:30.467.bdsproj,E:\work\Shameer\Build 2006\Source\Pro\FR3\DCLgtFR3ExpD2006.bdsproj=E:\work\Shameer\Build 2006\Source\Pro\FR3\DCLgtFR3ExpBDS2006.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>

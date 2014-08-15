@@ -1,0 +1,158 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dxSkinsCoreD11.bpl dxSkinBlackD11.bpl dxSkinBlueD11.bpl \
+  dxSkinCaramelD11.bpl dxSkinCoffeeD11.bpl dxSkinDarkRoomD11.bpl \
+  dxSkinDarkSideD11.bpl dxSkinFoggyD11.bpl dxSkinGlassOceansD11.bpl \
+  dxSkiniMaginaryD11.bpl dxSkinLilianD11.bpl dxSkinLiquidSkyD11.bpl \
+  dxSkinLondonLiquidSkyD11.bpl dxSkinMcSkinD11.bpl dxSkinMoneyTwinsD11.bpl \
+  dxSkinOffice2007BlackD11.bpl dxSkinOffice2007BlueD11.bpl \
+  dxSkinOffice2007GreenD11.bpl dxSkinOffice2007PinkD11.bpl \
+  dxSkinOffice2007SilverD11.bpl dxSkinPumpkinD11.bpl dxSkinscxPCPainterD11.bpl \
+  dxSkinscxScheduler3PainterD11.bpl dxSkinsdxBarPainterD11.bpl \
+  dxSkinsdxBarSkinnedCustomizationFormD11.bpl dxSkinsdxDLPainterD11.bpl \
+  dxSkinsdxNavBar2PainterD11.bpl dxSkinsdxRibbonPainterD11.bpl dxSkinSevenD11.bpl \
+  dxSkinSharpD11.bpl dxSkinSilverD11.bpl dxSkinSpringTimeD11.bpl \
+  dxSkinStardustD11.bpl dxSkinSummer2008D11.bpl dxSkinValentineD11.bpl \
+  dxSkinXmas2008BlueD11.bpl dcldxSkinsCoreD11.bpl dcldxSkinsDesignHelperD11.bpl \
+  dcldxSkinscxPCPainterD11.bpl dcldxSkinscxScheduler3PainterD11.bpl \
+  dcldxSkinsdxBarsPaintersD11.bpl dcldxSkinsdxNavBar2PainterD11.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dxSkinsCoreD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinsCoreD11.dpk
+  $(DCC)
+
+dxSkinBlackD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinBlackD11.dpk
+  $(DCC)
+
+dxSkinBlueD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinBlueD11.dpk
+  $(DCC)
+
+dxSkinCaramelD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinCaramelD11.dpk
+  $(DCC)
+
+dxSkinCoffeeD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinCoffeeD11.dpk
+  $(DCC)
+
+dxSkinDarkRoomD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinDarkRoomD11.dpk
+  $(DCC)
+
+dxSkinDarkSideD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinDarkSideD11.dpk
+  $(DCC)
+
+dxSkinFoggyD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinFoggyD11.dpk
+  $(DCC)
+
+dxSkinGlassOceansD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinGlassOceansD11.dpk
+  $(DCC)
+
+dxSkiniMaginaryD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkiniMaginaryD11.dpk
+  $(DCC)
+
+dxSkinLilianD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinLilianD11.dpk
+  $(DCC)
+
+dxSkinLiquidSkyD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinLiquidSkyD11.dpk
+  $(DCC)
+
+dxSkinLondonLiquidSkyD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinLondonLiquidSkyD11.dpk
+  $(DCC)
+
+dxSkinMcSkinD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinMcSkinD11.dpk
+  $(DCC)
+
+dxSkinMoneyTwinsD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinMoneyTwinsD11.dpk
+  $(DCC)
+
+dxSkinOffice2007BlackD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinOffice2007BlackD11.dpk
+  $(DCC)
+
+dxSkinOffice2007BlueD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinOffice2007BlueD11.dpk
+  $(DCC)
+
+dxSkinOffice2007GreenD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinOffice2007GreenD11.dpk
+  $(DCC)
+
+dxSkinOffice2007PinkD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinOffice2007PinkD11.dpk
+  $(DCC)
+
+dxSkinOffice2007SilverD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinOffice2007SilverD11.dpk
+  $(DCC)
+
+dxSkinPumpkinD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinPumpkinD11.dpk
+  $(DCC)
+
+dxSkinscxPCPainterD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinscxPCPainterD11.dpk
+  $(DCC)
+
+dxSkinscxScheduler3PainterD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinscxScheduler3PainterD11.dpk
+  $(DCC)
+
+dxSkinsdxBarPainterD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinsdxBarPainterD11.dpk
+  $(DCC)
+
+dxSkinsdxBarSkinnedCustomizationFormD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinsdxBarSkinnedCustomizationFormD11.dpk
+  $(DCC)
+
+dxSkinsdxDLPainterD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinsdxDLPainterD11.dpk
+  $(DCC)
+
+dxSkinsdxNavBar2PainterD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinsdxNavBar2PainterD11.dpk
+  $(DCC)
+
+dxSkinsdxRibbonPainterD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinsdxRibbonPainterD11.dpk
+  $(DCC)
+
+dxSkinSevenD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinSevenD11.dpk
+  $(DCC)
+
+dxSkinSharpD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinSharpD11.dpk
+  $(DCC)
+
+dxSkinSilverD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinSilverD11.dpk
+  $(DCC)
+
+dxSkinSpringTimeD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinSpringTimeD11.dpk
+  $(DCC)
+
+dxSkinStardustD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinStardustD11.dpk
+  $(DCC)
+
+dxSkinSummer2008D11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinSummer2008D11.dpk
+  $(DCC)
+
+dxSkinValentineD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinValentineD11.dpk
+  $(DCC)
+
+dxSkinXmas2008BlueD11.bpl: ..\..\ExpressSkins Library\Packages\dxSkinXmas2008BlueD11.dpk
+  $(DCC)
+
+dcldxSkinsCoreD11.bpl: ..\..\ExpressSkins Library\Packages\dcldxSkinsCoreD11.dpk
+  $(DCC)
+
+dcldxSkinsDesignHelperD11.bpl: ..\..\ExpressSkins Library\Packages\dcldxSkinsDesignHelperD11.dpk
+  $(DCC)
+
+dcldxSkinscxPCPainterD11.bpl: ..\..\ExpressSkins Library\Packages\dcldxSkinscxPCPainterD11.dpk
+  $(DCC)
+
+dcldxSkinscxScheduler3PainterD11.bpl: ..\..\ExpressSkins Library\Packages\dcldxSkinscxScheduler3PainterD11.dpk
+  $(DCC)
+
+dcldxSkinsdxBarsPaintersD11.bpl: ..\..\ExpressSkins Library\Packages\dcldxSkinsdxBarsPaintersD11.dpk
+  $(DCC)
+
+dcldxSkinsdxNavBar2PainterD11.bpl: ..\..\ExpressSkins Library\Packages\dcldxSkinsdxNavBar2PainterD11.dpk
+  $(DCC)
+
+

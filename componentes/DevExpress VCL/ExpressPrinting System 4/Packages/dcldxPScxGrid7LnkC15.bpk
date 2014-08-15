@@ -1,0 +1,139 @@
+# ---------------------------------------------------------------------------
+!if !$d(BCB)
+BCB = $(MAKEDIR)\..
+!endif
+
+!ifdef DXDEBUGMODE
+DEBUGOPTIONS = -$D+ -$L+ -$W+ -$O-
+!else
+DEBUGOPTIONS = -$D- -$L- -$W- -$O+
+!endif
+
+# ---------------------------------------------------------------------------
+# IDE SECTION
+# ---------------------------------------------------------------------------
+# The following section of the project makefile is managed by the BCB IDE.
+# It is recommended to use the IDE to change any of the values in this
+# section.
+# ---------------------------------------------------------------------------
+
+VERSION = BCB.15.00
+# ---------------------------------------------------------------------------
+PROJECT = dcldxPScxGrid7LnkC15.bpl
+OBJFILES = dxPScxGrid7LnkPredefinedStyleSheets.obj \
+  dxPScxGrid7LnkReg.obj \
+  dcldxPScxGrid7LnkC15.obj
+MAINSOURCE = dcldxPScxGrid7LnkC15.cpp
+RESFILES = dcldxPScxGrid7LnkC15.res
+RESDEPEN = $(RESFILES) dxPScxGrid7LnkPredefinedStyleSheets.dfm
+LIBFILES =
+LIBRARIES =
+SPARELIBS = 
+PACKAGES = designide.bpi dclcxLibraryC15.bpi dxPScxGrid7LnkC15.bpi rtl.bpi vcl.bpi \
+  dxCoreC15.bpi dcldxCoreC15.bpi vclx.bpi dxGDIPlusC15.bpi dxThemeC15.bpi cxLibraryC15.bpi \
+  dbrtl.bpi vcldb.bpi vclimg.bpi dxComnC15.bpi cxDataC15.bpi cxEditorsC15.bpi cxExtEditorsC15.bpi \
+  cxPageControlC15.bpi dxPSCoreC15.bpi dxPSLnksC15.bpi dxPScxCommonC15.bpi cxExportC15.bpi \
+  cxGridC15.bpi dcldxPSCoreC15.bpi
+DEFFILE =
+# ---------------------------------------------------------------------------
+PATHCPP = .;
+PATHASM = .;
+PATHPAS = .;
+PATHRC = .;
+USERDEFINES =
+SYSDEFINES = _RTLDLL;NO_STRICT;USEPACKAGES
+# ---------------------------------------------------------------------------
+CFLAG1 = -I$(BCB)\include\windows\rtl;$(BCB)\include\windows\vcl;"$(SEARCHPATH)";$(LIBDIR) -O2 -w- -Vx -Ve -a8 -k- -vi -c -b- -tWM 
+PFLAGS = -DBCB -$Y- $(DEBUGOPTIONS) -$A8 -v -JPHNE -M -LUdclstd -LUdcldb
+RFLAGS =
+AFLAGS = 
+LFLAGS = -D"ExpressPrinting System 4 ReportLink for ExpressQuantumGrid 7 by Developer Express Inc." -aa -Tpp -x -Gn -Gl -Gi -Gpd
+# ---------------------------------------------------------------------------
+ALLOBJ = c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib
+# ---------------------------------------------------------------------------
+# MAKE SECTION
+# ---------------------------------------------------------------------------
+# This section of the project file is not used by the BCB IDE.  It is for
+# the benefit of building from the command-line using the MAKE utility.
+# ---------------------------------------------------------------------------
+
+.autodepend
+# ---------------------------------------------------------------------------
+!if !$d(BCC32)
+BCC32 = bcc32
+!endif
+
+!if !$d(CPP32)
+CPP32 = cpp32
+!endif
+
+!if !$d(DCC32)
+DCC32 = dcc32
+!endif
+
+!if !$d(TASM32)
+TASM32 = tasm32
+!endif
+
+!if !$d(LINKER)
+LINKER = ilink32
+!endif
+
+!if !$d(BRCC32)
+BRCC32 = brcc32
+!endif
+
+# ---------------------------------------------------------------------------
+!if $d(PATHCPP)
+.PATH.CPP = $(PATHCPP)
+.PATH.C   = $(PATHCPP)
+!endif
+
+!if $d(PATHPAS)
+.PATH.PAS = $(PATHPAS)
+!endif
+
+!if $d(PATHASM)
+.PATH.ASM = $(PATHASM)
+!endif
+
+!if $d(PATHRC)
+.PATH.RC  = $(PATHRC)
+!endif
+# ---------------------------------------------------------------------------
+$(PROJECT): $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+    $(BCB)\BIN\$(LINKER) @&&!
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT),, +
+    $(ALLLIB), +
+    $(DEFFILE), +
+    $(ALLRES)
+!
+# ---------------------------------------------------------------------------
+.pas.hpp:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.pas.obj:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.cpp.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) -n$(@D) {$< }
+
+.c.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) -n$(@D) {$< }
+
+.c.i:
+    $(BCB)\BIN\$(CPP32) $(CFLAG1) -n. {$< }
+
+.cpp.i:
+    $(BCB)\BIN\$(CPP32) $(CFLAG1) -n. {$< }
+
+.asm.obj:
+    $(BCB)\BIN\$(TASM32) $(AFLAGS) $<, $@
+
+.rc.res:
+    $(BCB)\BIN\$(BRCC32) $(RFLAGS) -fo$@ $<
+# ---------------------------------------------------------------------------

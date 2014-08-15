@@ -1,0 +1,26 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = gtAdvGridExpD50.bpl gtAdvGridExpD50.bat DCLgtAdvGridExpD50.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+gtAdvGridExpD50.bpl: gtAdvGridExpD50.dpk
+  $(DCC)
+
+gtAdvGridExpD50.bat: gtAdvGridExpD50.bat
+  call $**
+
+DCLgtAdvGridExpD50.bpl: DCLgtAdvGridExpD50.dpk
+  $(DCC)
+
+

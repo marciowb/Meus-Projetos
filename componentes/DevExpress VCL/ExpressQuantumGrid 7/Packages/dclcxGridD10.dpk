@@ -1,0 +1,68 @@
+package dclcxGridD10;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$R cxGridReg.dcr}
+{$R cxGridPopupMenuReg.dcr}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressQuantumGrid 7 by Developer Express Inc.'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  cxGridD10,
+  dxThemeD10,
+  designide,
+  dclcxLibraryD10,
+  dclcxEditorsD10,
+  dclcxExtEditorsD10,
+  dclcxPageControlD10;
+
+contains
+  cxBandedTableViewEditor,
+  cxCardViewEditor,
+  cxChartViewEditor,
+  cxCustomTableViewEditor,
+  cxDBGridConverter,
+  cxDXGridConverter,
+  cxGridConverter,
+  cxGridEditor,
+  cxGridImportDialog,
+  cxGridPopupMenuReg,
+  cxGridPredefinedStyles,
+  cxGridReg,
+  cxGridStructureNavigator,
+  cxGridViewLayoutEditor,
+  cxImageComboBoxItemsEditor,
+  cxTableViewEditor,
+  cxViewEditor,
+  cxWWGridConverter;
+
+end.

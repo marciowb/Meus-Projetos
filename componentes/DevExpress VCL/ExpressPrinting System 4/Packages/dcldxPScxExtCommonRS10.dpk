@@ -1,0 +1,59 @@
+package dcldxPScxExtCommonRS10;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressPrinting System 4 Extended Cross Platform Library by Developer Express Inc.'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  designide,
+  rtl,
+  vcl,
+  vcldb,
+  vcljpg,
+  vclx,
+  dxComnRS10,
+  dxCoreRS10,
+  dxThemeRS10,
+  cxDataRS10,
+  dxGDIPlusRS10,
+  cxLibraryRS10,
+  cxEditorsRS10,
+  cxPageControlRS10,
+  cxExtEditorsRS10,
+  dxPSCoreRS10,
+  dxPSLnksRS10,
+  dxPScxCommonRS10,
+  dxPScxExtCommonRS10,
+  dcldb,
+  dclstd,
+  dcldxCoreRS10,
+  dcldxPSCoreRS10;
+
+contains
+  dxPScxExtDBEditorLnkReg,
+  dxPScxExtEditorLnkReg;
+
+end.

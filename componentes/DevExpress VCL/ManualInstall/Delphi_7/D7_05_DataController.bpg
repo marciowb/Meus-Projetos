@@ -1,0 +1,30 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = cxDataD7.bpl cxADOAdaptersD7.bpl cxBDEAdaptersD7.bpl \
+  cxIBXAdaptersD7.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+cxADOAdaptersD7.bpl: ..\..\ExpressDataController\Packages\cxADOAdaptersD7.dpk
+  $(DCC)
+
+cxBDEAdaptersD7.bpl: ..\..\ExpressDataController\Packages\cxBDEAdaptersD7.dpk
+  $(DCC)
+
+cxDataD7.bpl: ..\..\ExpressDataController\Packages\cxDataD7.dpk
+  $(DCC)
+
+cxIBXAdaptersD7.bpl: ..\..\ExpressDataController\Packages\cxIBXAdaptersD7.dpk
+  $(DCC)
+
+

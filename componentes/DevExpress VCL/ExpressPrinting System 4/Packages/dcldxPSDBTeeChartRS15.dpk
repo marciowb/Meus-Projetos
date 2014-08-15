@@ -1,0 +1,82 @@
+package dcldxPSDBTeeChartRS15;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressPrinting System 4 ReportLink for DBTeeChart by Developer Express Inc.'}
+{$IMPLICITBUILD OFF}
+{$DESIGNONLY}
+
+requires
+  dbrtl,
+  designide,
+  rtl,
+  vcl,
+  vcldb,
+  vclimg,
+  vclx,
+  dxComnRS15,
+  dxCoreRS15,
+  dxThemeRS15,
+  cxDataRS15,
+  dxGDIPlusRS15,
+  cxLibraryRS15,
+  cxEditorsRS15,
+  cxPageControlRS15,
+  cxExtEditorsRS15,
+  dxPSCoreRS15,
+  dxPSTeeChartRS15,
+  dxPSDBTeeChartRS15,
+  dcldb,
+  dclstd,
+  dcldxCoreRS15,
+  dcldxPSCoreRS15,
+  dcldxPSTeeChartRS15,
+{$IFNDEF TEEPRO}  
+  tee,
+  teedb;
+{$ELSE}  
+{$IFDEF TEE7}
+  tee715,
+  teedb715;
+{$ENDIF}
+{$IFDEF TEE8}
+  tee815,
+  teedb815;
+{$ENDIF}
+{$IFDEF TEE9}
+  tee915,
+  teedb915;
+{$ENDIF}
+{$ENDIF}
+
+contains
+  dxPSDBTCLnkReg;
+
+end.

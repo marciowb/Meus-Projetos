@@ -1,0 +1,36 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = gtRtlD70.bpl gtFontD70.bpl gtCompressionD70.bpl \
+  gtFiltersD70.bpl gtCryptD70.bpl gtSharedD70.bat
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+gtRtlD70.bpl: Rtl\gtRtlD70.dpk
+  $(DCC)
+
+gtFontD70.bpl: PDFFontProcessor\gtFontD70.dpk
+  $(DCC)
+
+gtCompressionD70.bpl: Compression\gtCompressionD70.dpk
+  $(DCC)
+
+gtFiltersD70.bpl: Filters\gtFiltersD70.dpk
+  $(DCC)
+
+gtCryptD70.bpl: PDFCrypt\gtCryptD70.dpk
+  $(DCC)
+
+gtSharedD70.bat: gtSharedD70.bat
+  call $**
+
+

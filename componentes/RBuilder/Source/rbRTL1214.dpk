@@ -1,0 +1,114 @@
+package rbRTL1214;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ReportBuilder Common Type Libraries'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+
+requires
+  VCLX,
+  VCL;
+
+contains
+
+  //General
+
+  ppCollectionBase in 'ppCollectionBase.pas',
+  ppComm in 'ppComm.pas',
+  ppCharacter in 'ppCharacter.pas',
+  ppDesignEventHub in 'ppDesignEventHub.pas',
+  ppDsIntf in 'ppDsIntf.pas',
+  ppDisplayFormat in 'ppDisplayFormat.pas',
+  ppEnum in 'ppEnum.pas',
+  ppLanguage in 'ppLanguage.pas',
+  ppMetaBitmap in 'ppMetaBitmap.pas',
+  ppMulticast in 'ppMulticast.pas',
+  ppIniStorage in 'ppIniStorage.pas',
+  ppInterfacedObject in 'ppInterfacedObject.pas',
+  ppPrintr in 'ppPrintr.pas',
+  ppRelatv in 'ppRelatv.pas',
+  ppRTTI in 'ppRTTI.pas',
+  ppToolResources in 'ppToolResources.pas',
+  ppTreeNode in 'ppTreeNode.pas',
+
+
+  //Utilities/Types
+
+  ppFileUtils in 'ppFileUtils.pas',
+  ppMath in 'ppMath.pas',
+  ppStrUtils in 'ppStrUtils.pas',
+  ppTypes in 'ppTypes.pas',
+  ppUtils in 'ppUtils.pas',
+
+
+  //Encryption/Compression
+
+  ppDCPconst in 'ppDCPConst.pas',
+  ppDCPcrypt2 in 'ppDCPcrypt2.pas',
+  ppDCPmd4 in 'ppDCPmd4.pas',
+  ppDCPmd5 in 'ppDCPmd5.pas',
+  ppDCPrc4 in 'ppDCPrc4.pas',
+  ppZLib in 'ppZLib.pas',
+
+
+  //TBX
+
+  ppToolbarTBX in 'ppToolbarTBX.pas', 
+  ppTB2MRU in 'ppTB2MRU.pas',
+  ppTB2Toolbar in 'ppTB2Toolbar.pas',
+  ppTB2Dock in 'ppTB2Dock.pas',
+  ppTB2ToolWindow in 'ppTB2ToolWindow.pas',
+  ppTB2Common in 'ppTB2Common.pas',
+  ppTB2Consts in 'ppTB2Consts.pas',
+  ppTB2ExtItems in 'ppTB2ExtItems.pas',
+  ppTB2Hook in 'ppTB2Hook.pas',
+  ppTB2Item in 'ppTB2Item.pas',
+  ppTB2Acc in 'ppTB2Acc.pas',
+  ppTB2Version in 'ppTB2Version.pas',
+  ppTB2Anim in 'ppTB2Anim.pas',
+  ppTBX in 'ppTBX.pas',
+  ppTBXDefaultTheme in 'ppTBXDefaultTheme.pas',
+  ppTBXOffice2003Theme in 'ppTBXOffice2003Theme.pas',
+  ppTBXOffice2007Theme in 'ppTBXOffice2007Theme.pas',
+  ppTBXOutlook2007Theme in 'ppTBXOutlook2007Theme.pas',
+  ppTBXOfficeXPTheme in 'ppTBXOfficeXPTheme.pas',
+  ppTBXWhidbeyTheme in 'ppTBXWhidbeyTheme.pas',
+  ppTBXAluminumTheme in 'ppTBXAluminumTheme.pas',
+  ppTBXrmkThemes in 'ppTBXrmkThemes.pas',
+  ppTBXDkPanels in 'ppTBXDkPanels.pas',
+  ppTBXThemes in 'ppTBXThemes.pas',
+  ppTBXUtils in 'ppTBXUtils.pas',
+  ppTBXUxThemes in 'ppTBXUxThemes.pas',
+  ppTBXLists in 'ppTBXLists.pas',
+  ppTBXExtItems in 'ppTBXExtItems.pas',
+  ppTBXPanel in 'ppTBXPanel.pas',
+  ppTBXToolPals in 'ppTBXToolPals.pas',
+  ppTBXStatusbars in 'ppTBXStatusbars.pas';
+
+end.
+
+
+  
+  

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{1775958D-C602-4E99-B724-FE155435A28E}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  
+    <Projects>
+      <Projects Name="gtRtlBDS2006.bpl">Rtl\gtRtlBDS2006.bdsproj</Projects>
+      <Projects Name="gtCompressionBDS2006.bpl">Compression\gtCompressionBDS2006.bdsproj</Projects>
+      <Projects Name="gtFiltersBDS2006.bpl">Filters\gtFiltersBDS2006.bdsproj</Projects>
+      <Projects Name="gtFontBDS2006.bpl">PDFFontProcessor\gtFontBDS2006.bdsproj</Projects>
+      <Projects Name="gtCryptBDS2006.bpl">PDFCrypt\gtCryptBDS2006.bdsproj</Projects>
+      <Projects Name="Targets">gtRtlBDS2006.bpl gtCompressionBDS2006.bpl gtFiltersBDS2006.bpl gtFontBDS2006.bpl gtCryptBDS2006.bpl</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

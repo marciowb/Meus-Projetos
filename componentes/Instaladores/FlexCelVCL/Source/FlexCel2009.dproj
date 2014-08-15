@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{cf2369c9-1641-4e71-90b9-f77a38d27bb1}</ProjectGuid>
+			<MainSource>FlexCel2009.dpk</MainSource>
+			<ProjectVersion>12.0</ProjectVersion>
+			<Config Condition="'$(Config)'==''">Release</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+			<DCC_DependencyCheckOutputName>FlexCel2009.bpl</DCC_DependencyCheckOutputName>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_Release)'!=''">
+			<Cfg_Release>true</Cfg_Release>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_Debug)'!=''">
+			<Cfg_Debug>true</Cfg_Debug>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+	  <PropertyGroup Condition="'$(Base)'!=''">
+		  <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+		  <DCC_OutputXMLDocumentation>false</DCC_OutputXMLDocumentation>
+      <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_ImageBase>$400000</DCC_ImageBase>
+			<DCC_DependencyCheckOutputName>FlexCel2009.bpl</DCC_DependencyCheckOutputName>
+			<DCC_Description>FlexCel Studio for VCL - Runtime Package</DCC_Description>
+			<DesignOnlyPackage>false</DesignOnlyPackage>
+			<RuntimeOnlyPackage>false</RuntimeOnlyPackage>
+			<GenDll>true</GenDll>
+			<GenPackage>true</GenPackage>
+			<DCC_WriteableConstants>true</DCC_WriteableConstants>
+			<DCC_DcuOutput>..\dcu\2009</DCC_DcuOutput>
+			<DCC_ObjOutput>..\dcu\2009</DCC_ObjOutput>
+			<DCC_HppOutput>..\dcu\2009</DCC_HppOutput>
+			<DCC_BplOutput>..\dcu\bpl</DCC_BplOutput>
+			<DCC_DcpOutput>..\dcu\2009</DCC_DcpOutput>
+			<DCC_BpiOutput>..\dcu\2009</DCC_BpiOutput>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_Release)'!=''">
+			<DCC_DebugInformation>False</DCC_DebugInformation>
+			<DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_Define>RELEASE</DCC_Define>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_Debug)'!=''">
+      <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_Define>DEBUG</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="FlexCel2009.dpk">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="dbrtl.dcp"/>
+        <DCCReference Include="vclimg.dcp"/>
+        <DCCReference Include="vcl.dcp"/>
+        <DCCReference Include="UExcelAdapter.pas"/>
+        <DCCReference Include="UFlxMessages.pas"/>
+        <DCCReference Include="UFlxRowComments.pas"/>
+        <DCCReference Include="UFlxFullDataSets.pas"/>
+        <DCCReference Include="UFlexCelImport.pas"/>
+        <DCCReference Include="UFlexCelReport.pas"/>
+        <DCCReference Include="UXlsDB.pas"/>
+        <DCCReference Include="UCustomFlexCelReport.pas"/>
+        <DCCReference Include="UXlsTDataSet.pas"/>
+        <DCCReference Include="UFlxMemTable.pas"/>
+        <DCCReference Include="UFlexCelReportNoDB.pas"/>
+        <DCCReference Include="UFlxFormats.pas"/>
+        <DCCReference Include="UFlexCelGrid.pas"/>
+        <DCCReference Include="UFlxNumberFormat.pas"/>
+        <DCCReference Include="TemplateStore.pas"/>
+        <DCCReference Include="XlsMessages.pas"/>
+        <DCCReference Include="XLSAdapter.pas"/>
+        <DCCReference Include="UBreakList.pas"/>
+        <DCCReference Include="UEscherGraphToBSE.pas"/>
+        <DCCReference Include="UEscherOtherRecords.pas"/>
+        <DCCReference Include="UEscherRecords.pas"/>
+        <DCCReference Include="UExcelRecords.pas"/>
+        <DCCReference Include="UXlsMD5.pas"/>
+        <DCCReference Include="USheetNameList.pas"/>
+        <DCCReference Include="UXlsBaseClientData.pas"/>
+        <DCCReference Include="UXlsBaseList.pas"/>
+        <DCCReference Include="UXlsBaseRecordLists.pas"/>
+        <DCCReference Include="UXlsBaseRecords.pas"/>
+        <DCCReference Include="UXlsChart.pas"/>
+        <DCCReference Include="UXlsClientData.pas"/>
+        <DCCReference Include="UXlsCondFmt.pas"/>
+        <DCCReference Include="UXlsEscher.pas"/>
+        <DCCReference Include="UXlsFormula.pas"/>
+        <DCCReference Include="UXlsNotes.pas"/>
+        <DCCReference Include="UXlsOtherRecords.pas"/>
+        <DCCReference Include="UXlsRangeRecords.pas"/>
+        <DCCReference Include="UXlsReferences.pas"/>
+        <DCCReference Include="UXlsRowColEntries.pas"/>
+        <DCCReference Include="UXlsSections.pas"/>
+        <DCCReference Include="UXlsSheet.pas"/>
+        <DCCReference Include="UXlsStrings.pas"/>
+        <DCCReference Include="UXlsTokenArray.pas"/>
+        <DCCReference Include="UXlsWorkbookGlobals.pas"/>
+        <DCCReference Include="UXlsCellRecords.pas"/>
+        <DCCReference Include="XlsBaseTemplateStore.pas"/>
+        <DCCReference Include="UXlsPageBreaks.pas"/>
+        <DCCReference Include="UXlsColInfo.pas"/>
+        <DCCReference Include="UXlsXF.pas"/>
+        <DCCReference Include="UXlsPalette.pas"/>
+        <DCCReference Include="UXlsTIBODataSet.pas"/>
+        <DCCReference Include="UIBOFlexCelReport.pas"/>
+        <DCCReference Include="UXlsTDOADataSet.pas"/>
+        <DCCReference Include="UDOAFlexCelReport.pas"/>
+        <DCCReference Include="UXlsSST.pas"/>
+        <DCCReference Include="UTextDelim.pas"/>
+        <DCCReference Include="UFlexCelPreview.pas"/>
+        <DCCReference Include="UXlsFormulaParser.pas"/>
+        <DCCReference Include="UFlxStack.pas"/>
+        <DCCReference Include="XlsFormulaMessages.pas"/>
+        <DCCReference Include="UXlsEncodeFormula.pas"/>
+        <DCCReference Include="UXlsPictures.pas"/>
+        <DCCReference Include="AdvGridExcel.pas"/>
+        <DCCReference Include="UFlxUtils.pas"/>
+        <DCCReference Include="UXlsHyperLink.pas"/>
+        <DCCReference Include="UFlexCelBands.pas"/>
+        <DCCReference Include="UOle2Impl.pas"/>
+        <DCCReference Include="UXlsProtect.pas"/>
+        <DCCReference Include="UWaitCursor.pas"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_Release</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_Debug</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality</Borland.Personality>
+			<Borland.ProjectType>Package</Borland.ProjectType>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">FlexCel2009.dpk</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">3</VersionInfo>
+						<VersionInfo Name="MinorVer">4</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+            <VersionInfo Name="Locale">1033</VersionInfo>
+            <VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">TMS Software</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">Suite of Components for manipulating Excel files.</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">3.4.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">(c) 2002-2011 TMS Software</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">FlexCel Studio for VCL/LCL</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">3.4.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+				</Delphi.Personality>
+			</BorlandProject>
+		</ProjectExtensions>
+	</Project>

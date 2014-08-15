@@ -1,0 +1,61 @@
+package dcldxRibbonRS12;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$R dxRibbonReg.dcr}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressBars Ribbon controls by Developer Express Inc.'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  designide,
+  rtl,
+  vcl,
+  vclx,
+  dxCoreRS12,
+  dxThemeRS12,
+  dxComnRS12,
+  dxGDIPlusRS12,
+  cxLibraryRS12,
+  dxBarRS12,
+  dxRibbonRS12,
+  dcldxCoreRS12,
+  dclcxLibraryRS12,
+  dcldxBarRS12;
+
+contains
+  dxRibbonBackstageViewReg,
+  dxRibbonGalleryFilterEd,
+  dxRibbonGalleryReg,
+  dxRibbonGalleryDesigner,
+  dxRibbonReg,
+  dxSkinChooserGalleryReg;
+
+end.

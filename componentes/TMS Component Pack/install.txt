@@ -1,0 +1,540 @@
+********************************************************
+* TMS Component Pack Pro 5.7.1                         *
+* for Delphi 5.0,6.0,7.0,2005,2006,2007,2009,2010      *
+*     C++Builder 5.0,6.0,2006,2007,2009,2010           *
+********************************************************
+ 
+      ////////////////////////////////////////////////// 
+      //   I M P O R T A N T    R E M A R K  !!!!!    //
+      //                                              //  
+      //  For a succesful install of the components,  //
+      //       follow  A L L  steps below             //
+      //                                              //   
+      //////////////////////////////////////////////////
+
+
+Installation :
+--------------
+
+ Setting library paths
+ _____________________
+
+ For Delphi 5,6,7 & C++Builder 5,6
+ ---------------------------------
+ Under Tools, Environment Options, Library, add the directory where
+ the TMS components have been installed {$TMSDIR} to the library path
+ as well as {$TMSDIR}\XlsAdapter
+
+
+ For Delphi 2005,2006,2007,2009,2010 & C++Builder 2006,2007,2009,2010
+ --------------------------------------------------------------------
+ 
+ Under Tools, Environment Options, Library, add the directory where
+ the TMS components have been installed {$TMSDIR}\Win32 to the Win32 library path
+
+  
+ Installing components with project groups (preferred)
+ _____________________________________________________
+
+ In Delphi or C++Builder, select File, Open
+ and browse for the appropriate project group file:
+
+ Delphi 5        : TMSD5.BPG
+ Delphi 6        : TMSD6.BPG
+ Delphi 7        : TMSD7.BPG
+ Delphi 2005     : TMSD2005.BDSGROUP
+ Delphi 2006     : TMSD2006.BDSGROUP
+ Delphi 2007     : TMSD2007.BDSGROUP
+ Delphi 2009     : TMSD2009.GROUPPROJ
+ Delphi 2010     : TMSD2010GROUP.GROUPPROJ
+
+ C++Builder 5    : TMSC5.BPG
+ C++Builder 6    : TMSC6.BPG
+ C++Builder 2006 : TMSC2006.BDSGROUP
+ C++Builder 2007 : TMSC2007.GROUPPROJ
+ C++Builder 2009 : TMSC2009.GROUPPROJ
+ C++Builder 2010 : TMSC2010GROUP.GROUPPROJ
+
+ Right click on each of the packages in the project group 
+ and choose Install in following order:
+
+ TMSxxx
+ TMSEXxxx
+ TMSDExxx
+ TMSXLSxxx (only for Delphi 6/C++Builder 6 or higher)
+ TMSWIZxxx (only Delphi 2006/2007/2009/2010!)
+
+ with 
+ xxx = D5 for Delphi 5
+ xxx = D6 for Delphi 6
+ xxx = D7 for Delphi 7
+ xxx = D2005 for Delphi 2005
+ xxx = D2006 for Delphi 2006
+ xxx = D2007 for Delphi 2007
+ xxx = D2009 for Delphi 2009
+ xxx = D2010 for Delphi 2010
+ xxx = C5 for C++Builder 5
+ xxx = C6 for C++Builder 6
+ xxx = C2006 for C++Builder 2006
+ xxx = C2007 for C++Builder 2007
+ xxx = C2009 for C++Builder 2009
+ xxx = C2010 for C++Builder 2010
+
+
+
+ Installing components with packages (deprecated backwards compatible method)
+ ____________________________________________________________________________
+
+ In Delphi or C++Builder, select File, Open
+ and browse for the appropriate package file:
+
+  Delphi 5  : TMSD5.DPK & TMSEXD5.DPK
+  Delphi 6  : TMSD6PERS.DPK (Personal)
+  Delphi 6  : TMSD6.DPK & TMSEXD6.DPK (Professional and Enterprise)
+  Delphi 7  : TMSD7PERS.DPK (Personal)
+  Delphi 7  : TMSD7.DPK & TMSEXD7.DPK (Professional, Enterprise, Architect versions) 
+
+  C++Builder 5 : TMSC5.BPK & TMSEXC5.BPK
+  C++Builder 6 : TMSC6PERS.BPK (Personal)
+  C++Builder 6 : TMSC6.BPK & TMSEXC6.BPK (Professional and Enterprise) 
+
+  After opening the package file, choose Compile and after
+  compilation, select Install.
+
+
+  For Delphi 2005
+
+  Support for Win32 VCL for Delphi 2005 Prof, Enterprise, Architect
+
+  In the IDE, select File, Open
+  browse for TMSD2005.bdsproj and TMSEXD2005.bdsproj
+  From the project manager, right click on the TMSD2005.bdsproj and TMSEXD2005.bdsproj project and from the menu, choose
+  Install VCL package
+
+  Support for Win32 VCL for Delphi 2005 Personal
+
+  In the IDE, select File, Open
+  browse for TMSD2005pers.bdsproj
+  From the project manager, right click on the TMSD2005.bdsproj project and from the menu, choose
+  Install VCL package
+
+  Support for VCL.NET for Delphi 2005 Prof, Enterprise, Architect
+  
+  In the IDE, select File, Open
+  browse for TMSD2005NET.bdsproj
+  From the project manager, right click on the TMSD2005NET.dll project and from the menu, choose build.
+  From the Component menu, select .NET components
+  On the VCL.NET Component tab, choose Add and browse for TMSD2005NET.dll
+  
+
+  For Borland Developer Studio 2006 & Turbo Delphi
+
+  Support for Win32 VCL for Borland Developer Studio 2006 Prof, Enterprise, Architect
+
+  In the IDE, select File, Open
+  browse for TMSD2006.bdsproj and TMSEXD2006.bdsproj
+  From the project manager, right click on the TMSD2006.bdsproj and TMSEXD2006.bdsproj project and from the menu, choose
+  Install VCL package
+
+  Support for VCL.NET for Delphi 2006 Prof, Enterprise, Architect
+  
+  In the IDE, select File, Open
+  browse for TMSD2006NET.bdsproj
+  From the project manager, right click on the TMSD2006NET.dll project and from the menu, choose build.
+  From the Component menu, select .NET components
+  On the VCL.NET Component tab, choose Add and browse for TMSD2006NET.dll
+ 
+  For Turbo C++
+
+  Support for Win32 VCL for Turbo C++
+
+  In the IDE, select File, Open
+  browse for TMSC2006.bdsproj and TMSEXC2006.bdsproj
+  From the project manager, right click on the TMSC2006.bdsproj and TMSEXC2006.bdsproj project and from the menu, choose
+  Install VCL package
+
+  For Delphi 2007
+
+  Support for Win32 VCL for Delphi 2007 Prof, Enterprise, Architect
+
+  In the IDE, select File, Open
+  browse for TMSD2007.dproj and TMSEXD2007.dproj
+  From the project manager, right click on the TMSD2007.dproj and TMSEXD2007.dproj project and from the menu, choose
+  Install VCL package
+
+
+  For RAD Studio 2007
+
+  Support for Win32 VCL for Delphi 2007 Prof, Enterprise, Architect
+
+  In the IDE, select File, Open
+  browse for TMSD2007.dproj and TMSEXD2007.dproj
+  From the project manager, right click on the TMSD2007.dproj and TMSEXD2007.dproj project and from the menu, choose
+  Install VCL package
+
+
+  For Delphi 2009 / RAD Studio 2009
+
+  Support for Win32 VCL for Delphi 2009 Prof, Enterprise, Architect
+
+  In the IDE, select File, Open
+  browse for TMSD2009.dproj and TMSEXD2009.dproj
+  From the project manager, right click on the TMSD2009.dproj and TMSEXD2009.dproj project and from the menu, choose
+  Install VCL package
+
+
+  For C++Builder 2009
+
+  Support for Win32 VCL for C++Builder 2009 Prof, Enterprise, Architect
+
+  In the IDE, select File, Open
+  browse for TMSC2009.cbproj and TMSEXC2009.cbproj
+  From the project manager, right click on the TMSC2009.cbproj and TMSEXC2009.cbproj project and from the menu, choose
+  Install VCL package
+
+
+  For Delphi 2010 / RAD Studio 2010
+
+  Support for Win32 VCL for Delphi 2009 Prof, Enterprise, Architect
+
+  In the IDE, select File, Open
+  browse for TMSD2010.dproj and TMSEXD2010.dproj
+  From the project manager, right click on the TMSD2010.dproj and TMSEXD2010.dproj project and from the menu, choose
+  Install VCL package
+
+
+  For C++Builder 2010
+
+  Support for Win32 VCL for Delphi 2010 Prof, Enterprise, Architect
+
+  In the IDE, select File, Open
+  browse for TMSC2010.cbproj and TMSEXC2010.cbproj
+  From the project manager, right click on the TMSC2010.cbproj and TMSEXC2010.cbproj project and from the menu, choose
+  Install VCL package
+
+
+
+ Installing design time support (not for Std or Personal versions)
+ -----------------------------------------------------------------
+
+ In Delphi or C++Builder, select File, Open
+ and browse for the appropriate package file:
+
+  Delphi 5  : TMSDED5.DPK
+  Delphi 6  : TMSDED6.DPK 
+  Delphi 7  : TMSDED7.DPK
+
+  C++Builder 5 : TMSDEC5.BPK
+  C++Builder 6 : TMSDEC6.BPK 
+
+  After opening the package file, choose Compile and after
+  compilation, select Install.
+
+ For Delphi 2005
+
+  Support for Win32
+
+  In the IDE, select File, Open
+  browse for TMSDED2005.bdsproj
+  From the project manager, right click on the TMSDED2005.bdsproj project and from the menu, choose
+  Install VCL package
+
+
+  Support for VCL.NET
+
+  In the IDE, select File, Open
+  browse for TMSDED2005NET.bdsproj
+  From the project manager, right click on the TMSDED2005NET.dll project and from the menu, choose build
+  From the Component menu, select .NET components
+  On the VCL.NET Component tab, choose Add and browse for TMSDED2005NET.dll
+
+
+ For Borland Developer Studio 2006 & Turbo Delphi
+
+  Support for Win32
+
+  In the IDE, select File, Open
+  browse for TMSDED2006.bdsproj
+  From the project manager, right click on the TMSDED2006.bdsproj project and from the menu, choose
+  Install VCL package
+
+
+  Support for VCL.NET (not applicable for C++Builder 2006)
+
+  In the IDE, select File, Open
+  browse for TMSDED2006NET.bdsproj
+  From the project manager, right click on the TMSDED2006NET.dll project and from the menu, choose build
+  From the Component menu, select .NET components
+  On the VCL.NET Component tab, choose Add and browse for TMSDED2006NET.dll
+
+
+ For Turbo C++
+
+  Support for Win32 VCL for Turbo C++
+
+  In the IDE, select File, Open
+  browse for TMSDEC2006.bdsproj
+  From the project manager, right click on the TMSDEC2006.bdsproj project and from the menu, choose
+  Install VCL package
+
+ For Delphi 2007
+
+  Support for Win32
+
+  In the IDE, select File, Open
+  browse for TMSDED2007.bdsproj
+  From the project manager, right click on the TMSDED2007.bdsproj project and from the menu, choose
+  Install VCL package
+
+ 
+ For RAD Studio 2007
+
+  Support for Win32
+
+  In the IDE, select File, Open
+  browse for TMSDED2007.dproj
+  From the project manager, right click on the TMSDED2007.dproj project and from the menu, choose
+  Install VCL package
+
+
+ For Delphi 2009 / RAD Studio 2009
+
+  Support for Win32
+
+  In the IDE, select File, Open
+  browse for TMSDED2009.dproj
+  From the project manager, right click on the TMSDED2009.dproj project and from the menu, choose
+  Install VCL package
+
+ 
+ For C++Builder 2009
+
+  Support for Win32
+
+  In the IDE, select File, Open
+  browse for TMSDEC2009.cbproj
+  From the project manager, right click on the TMSDEC2009.cbproj project and from the menu, choose
+  Install VCL package
+
+
+ For Delphi 2010 / RAD Studio 2010
+
+  Support for Win32
+
+  In the IDE, select File, Open
+  browse for TMSDED2010.dproj
+  From the project manager, right click on the TMSDED2010.dproj project and from the menu, choose
+  Install VCL package
+
+ 
+ For C++Builder 2010
+
+  Support for Win32
+
+  In the IDE, select File, Open
+  browse for TMSDEC2010.cbproj
+  From the project manager, right click on the TMSDEC2010.cbproj project and from the menu, choose
+  Install VCL package
+
+
+
+ Installing native XLS export / import
+ -------------------------------------
+
+ For Delphi 6,7 and C++Builder 6:
+
+  Delphi 6  : TMSXLSD6.DPK
+  Delphi 7  : TMSXLSD7.DPK
+
+  C++Builder 6 : TMSXLSC6.BPK
+
+  After opening the package file, choose Compile and after
+  compilation, select Install.
+
+ For Delphi 2005
+ 
+  In the IDE, select File, Open
+  browse for TMSXLSD2005.bdsproj
+
+  From the project manager, right click on the TMSXLSD2005.bdsproj project and from the menu, choose
+  Install VCL package
+
+  For Borland Developer Studio 2006 & Turbo Delphi
+ 
+  In the IDE, select File, Open
+  browse for TMSXLSD2006.bdsproj
+
+  From the project manager, right click on the TMSXLSD2006.bdsproj project and from the menu, choose
+  Install VCL package
+
+
+ For Turbo C++
+
+  Support for Win32 VCL for Turbo C++
+
+  In the IDE, select File, Open
+  browse for TMSXLSC2006.bdsproj
+
+  From the project manager, right click on the TMSXLSC2006.bdsproj project and from the menu, choose
+  Install VCL package
+
+
+ For Delphi 2007
+ 
+  In the IDE, select File, Open
+  browse for TMSXLSD2007.dproj
+
+  From the project manager, right click on the TMSXLSD2007.bdsproj project and from the menu, choose
+  Install VCL package
+
+
+ For Delphi 2009 / RAD Studio 2009
+ 
+  In the IDE, select File, Open
+  browse for TMSXLSD2009.dproj
+
+  From the project manager, right click on the TMSXLSD2009.dproj project and from the menu, choose
+  Install VCL package
+
+ For C++Builder 2009
+ 
+  In the IDE, select File, Open
+  browse for TMSXLSC2009.cbproj
+
+  From the project manager, right click on the TMSXLSC2009.cbproj project and from the menu, choose
+  Install VCL package
+
+ For Delphi 2010 / RAD Studio 2010
+ 
+  In the IDE, select File, Open
+  browse for TMSXLSD2010.dproj
+
+  From the project manager, right click on the TMSXLSD2010.dproj project and from the menu, choose
+  Install VCL package
+
+ For C++Builder 2010
+ 
+  In the IDE, select File, Open
+  browse for TMSXLSC2010.cbproj
+
+  From the project manager, right click on the TMSXLSC2010.cbproj project and from the menu, choose
+  Install VCL package
+
+  Notes for TeeChart Pro users:
+
+  The TMS Component Pack comes with support for the default installed
+  TeeChart in Delphi & C++Builder. If you have installed another version
+  of TeeChart, open the TMS Component Pack package file, remove TEE*.*
+  from the requires list of the package an press Install. Delphi or 
+  C++Builder will then automatically add the correct TeeChart library
+  reference to the TMS Component Pack package file.
+
+
+ Installing wizard support
+ -------------------------------------
+
+ For Delphi 7:
+
+  Delphi 7  : TMSWIZD7.DPK
+
+  After opening the package file, choose Compile and after
+  compilation, select Install.
+
+ For Delphi 2005, 2006, 2007, 2009, 2010
+ 
+  In the IDE, select File, Open
+  browse for TMSWIZDxxxx.bdsproj
+
+  From the project manager, right click on the TMWIZSDxxxx.bdsproj project and from the menu, choose
+  Install VCL package
+
+
+
+  Installing online help
+  ______________________
+
+  For Delphi 6,7 it is required to first put the TMSPACK.ALS file in the
+  {$DELPHI}\Help directory.
+
+  Go through menu Help, Customize and add following file to the Index tab:
+  
+  C++Builder 5 : TMSPACKB5.HLP 
+  C++Builder 6 : TMSPACKB6.HLP 
+  Delphi 5     : TMSPACKD5.HLP
+  Delphi 6     : TMSPACKD6.HLP
+  Delphi 7     : TMSPACKD7.HLP
+
+  Delphi 2005
+  Close the IDE
+  Run RegHelp2 /i TMSPackdBDS3W.hxx
+  Restart the IDE
+
+  Delphi 2006 
+  Close the IDE
+  Run RegHelp2 /i TMSPackdBDS4W.hxx
+  Restart the IDE
+
+  Delphi 2007 
+  Close the IDE
+  Run RegHelp2 /i TMSPackdBDS5W.hxx
+  Restart the IDE
+
+  Delphi 2009 
+  Close the IDE
+  Run RegHelp2 /i TMSPackdRS2009W.hxx
+  Restart the IDE
+
+  Delphi 2010
+  Close the IDE
+  Run RegHelp2 /i TMSPackdRS2010W.hxx
+  Restart the IDE
+
+  C++Builder 2006
+  Close the IDE
+  Run RegHelp2 /i TMSPackbBDS4W.hxx
+  Restart the IDE
+
+  C++Builder 2007
+  Close the IDE
+  Run RegHelp2 /i TMSPackbBDS5W.hxx
+  Restart the IDE
+
+  C++Builder 2009
+  Run RegHelp2 /i TMSPackbRS2009W.hxx
+  Restart the IDE
+
+  C++Builder 2010
+  Run RegHelp2 /i TMSPackbRS2010W.hxx
+  Restart the IDE
+
+
+Examples
+--------
+Examples for components usage can be obtained after login on the
+website with registration email & code and are included as well
+in the freeware distribution files and available for free download 
+at : http://www.tmssoftware.com
+
+
+Free updates for a full version cycle :
+---------------------------------------
+Free source code updates to all new versions
+during a full TMS Component Pack version cycle
+are available upon request. New versions are
+released at : http://www.tmssoftware.com
+and source code can be obtained after login on
+our website in the registered users section.
+
+
+Installing Add-on components
+----------------------------
+Several add-on components require other 3rd party libraries to be installed.
+In case you have these 3rd party libraries installed, you can use the components.
+
+Installation can be done by adding following files to the TMS Component Pack package
+file :
+
+TChartLink : Add ChartLinkReg.pas
+TAddictPlannerCheck : Add AddictPlannerCheckReg.pas
+TEmailAlarm : Add PlanEmailAlarm.pas
+TOxygenSMSAlaram : Add PlanSMSAlarm.pas

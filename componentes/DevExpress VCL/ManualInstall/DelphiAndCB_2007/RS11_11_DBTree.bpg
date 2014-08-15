@@ -1,0 +1,29 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dxdbtrRS11.bpl dxtrmdRS11.bpl dcldxdbtrRS11.bpl dcldxtrmdRS11.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dxdbtrRS11.bpl: ..\..\ExpressDBTree Suite\Packages\dxdbtrRS11.dpk
+  $(DCC)
+
+dxtrmdRS11.bpl: ..\..\ExpressDBTree Suite\Packages\dxtrmdRS11.dpk
+  $(DCC)
+
+dcldxdbtrRS11.bpl: ..\..\ExpressDBTree Suite\Packages\dcldxdbtrRS11.dpk
+  $(DCC)
+
+dcldxtrmdRS11.bpl: ..\..\ExpressDBTree Suite\Packages\dcldxtrmdRS11.dpk
+  $(DCC)
+
+

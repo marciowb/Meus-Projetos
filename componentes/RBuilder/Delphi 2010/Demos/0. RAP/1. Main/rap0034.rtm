@@ -1,0 +1,276 @@
+object TppReport
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'Letter'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  PrinterSetup.PaperSize = 1
+  SaveAsTemplate = True
+  Template.FileName = 'C:\RBldr\Demos\0. Rap\1. Main\rap0034.rtm'
+  Template.Format = ftASCII
+  DeviceType = 'Screen'
+  Version = '5.1 (Field Test 2)'
+  mmColumnWidth = 0
+  object ppTitleBand1: TppTitleBand
+    PrintHeight = phDynamic
+    mmBottomOffset = 0
+    mmHeight = 63500
+    mmPrintPosition = 0
+    object ppMemo1: TppMemo
+      UserName = 'Memo1'
+      Caption = 'Memo1'
+      CharWrap = False
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = []
+      Lines.Strings = (
+        'This report demonstrates registering a class with RAP. '
+        ''
+        
+          'The TDataBase class is not registered with RAP normally, yet we ' +
+          'have done so in myRapFuncs0034.pas. If you examine that code, yo' +
+          'u will see that the TmyTDataBaseRTTI class is declared and regis' +
+          'tered using raRegisterRTTI(). This process will make all publish' +
+          'ed properties available. As an example of how to register publc ' +
+          'properties, the Directory property is surfaced.')
+      Stretch = True
+      Transparent = True
+      mmHeight = 40746
+      mmLeft = 3175
+      mmTop = 12965
+      mmWidth = 189707
+      BandType = 1
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      mmLeading = 0
+    end
+    object ppLabel6: TppLabel
+      UserName = 'Label6'
+      Caption = 'RAP Demo - Registering a Class'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold, fsItalic]
+      Transparent = True
+      mmHeight = 4763
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 64294
+      BandType = 1
+    end
+    object ppLine1: TppLine
+      UserName = 'Line1'
+      Pen.Color = clGray
+      ParentWidth = True
+      Weight = 1
+      mmHeight = 3969
+      mmLeft = 0
+      mmTop = 59531
+      mmWidth = 203200
+      BandType = 1
+    end
+  end
+  object ppHeaderBand1: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 9260
+    mmPrintPosition = 0
+    object ppLabel7: TppLabel
+      UserName = 'Label7'
+      Caption = 'TDatabase Properties'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clGray
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5027
+      mmLeft = 3175
+      mmTop = 1852
+      mmWidth = 43656
+      BandType = 0
+    end
+  end
+  object ppDetailBand2: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 43392
+    mmPrintPosition = 0
+    object ppLabel4: TppLabel
+      UserName = 'Label4'
+      Caption = 'Connected:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5027
+      mmLeft = 11113
+      mmTop = 27517
+      mmWidth = 23813
+      BandType = 4
+    end
+    object ppVariable1: TppVariable
+      UserName = 'Variable1'
+      CalcOrder = 0
+      DataType = dtBoolean
+      DisplayFormat = 'True;False'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4763
+      mmLeft = 41804
+      mmTop = 27517
+      mmWidth = 17992
+      BandType = 4
+    end
+    object ppLabel1: TppLabel
+      UserName = 'Label1'
+      Caption = 'Params.Path:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5027
+      mmLeft = 11113
+      mmTop = 34925
+      mmWidth = 27252
+      BandType = 4
+    end
+    object ppVariable2: TppVariable
+      UserName = 'Variable2'
+      CalcOrder = 1
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4763
+      mmLeft = 41804
+      mmTop = 34925
+      mmWidth = 17992
+      BandType = 4
+    end
+    object ppLabel2: TppLabel
+      UserName = 'Label2'
+      Caption = 'Directory:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5027
+      mmLeft = 11113
+      mmTop = 8996
+      mmWidth = 20108
+      BandType = 4
+    end
+    object ppVariable3: TppVariable
+      UserName = 'Variable3'
+      CalcOrder = 2
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4763
+      mmLeft = 41804
+      mmTop = 8996
+      mmWidth = 17992
+      BandType = 4
+    end
+    object ppLabel9: TppLabel
+      UserName = 'Label9'
+      Caption = 'Published'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clGray
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5027
+      mmLeft = 7673
+      mmTop = 19844
+      mmWidth = 20373
+      BandType = 4
+    end
+    object ppLabel8: TppLabel
+      UserName = 'Label8'
+      Caption = 'Public'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clGray
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5027
+      mmLeft = 7673
+      mmTop = 529
+      mmWidth = 12700
+      BandType = 4
+    end
+  end
+  object TraCodeModule
+    ProgramStream = {
+      01060D54726156617250726F6772616D094368696C645479706502110B50726F
+      6772616D4E616D6506095661726961626C65730B50726F6772616D5479706507
+      0B747450726F63656475726506536F75726365064470726F6365647572652056
+      61726961626C65733B0D0A7661720D0A2020677644617461626173653A205444
+      617461626173653B0D0A626567696E0D0A0D0A656E643B0D0A0001060A547261
+      50726F6772616D094368696C645479706502130B50726F6772616D4E616D6506
+      0E476C6F62616C4F6E4372656174650B50726F6772616D54797065070B747450
+      726F63656475726506536F7572636506A370726F63656475726520476C6F6261
+      6C4F6E4372656174653B0D0A7661720D0A20206C436F6D706F6E656E743A2054
+      436F6D706F6E656E743B0D0A626567696E0D0A20206C436F6D706F6E656E7420
+      3A3D2047657444656C706869436F6D706F6E656E742827646244656D6F27293B
+      0D0A202067764461746162617365203A3D20544461746162617365286C436F6D
+      706F6E656E74293B0D0A20200D0A656E643B0D0A0001060F5472614576656E74
+      48616E646C65720B50726F6772616D4E616D65060F5661726961626C65314F6E
+      43616C630B50726F6772616D54797065070B747450726F63656475726506536F
+      75726365066570726F636564757265205661726961626C65314F6E43616C6328
+      7661722056616C75653A2056617269616E74293B0D0A626567696E0D0A0D0A20
+      2056616C7565203A3D20677644617461626173652E436F6E6E65637465643B0D
+      0A20200D0A656E643B0D0A0D436F6D706F6E656E744E616D6506095661726961
+      626C6531094576656E744E616D6506064F6E43616C63074576656E7449440221
+      0001060F5472614576656E7448616E646C65720B50726F6772616D4E616D6506
+      0F5661726961626C65324F6E43616C630B50726F6772616D54797065070B7474
+      50726F63656475726506536F757263650C7901000070726F6365647572652056
+      61726961626C65324F6E43616C63287661722056616C75653A2056617269616E
+      74293B0D0A7661720D0A20206C694E616D65496E6465783A20496E7465676572
+      3B0D0A20206C734E616D653A20537472696E673B0D0A626567696E0D0A0D0A20
+      206C694E616D65496E646578203A3D20677644617461626173652E506172616D
+      732E496E6465784F664E616D6528275061746827293B0D0A20200D0A20206966
+      20286C694E616D65496E646578203E3D203029207468656E0D0A202020206265
+      67696E0D0A2020202020206C734E616D65203A3D20677644617461626173652E
+      506172616D732E4E616D65735B6C694E616D65496E6465785D3B0D0A20202020
+      202056616C756520203A3D20677644617461626173652E506172616D732E5661
+      6C7565735B6C734E616D655D3B0D0A20202020656E640D0A2020656C73650D0A
+      2020202056616C7565203A3D20274E6F205061746820706172616D20666F756E
+      642E273B0D0A0D0A656E643B0D0A0D436F6D706F6E656E744E616D6506095661
+      726961626C6532094576656E744E616D6506064F6E43616C63074576656E7449
+      4402210001060F5472614576656E7448616E646C65720B50726F6772616D4E61
+      6D65060F5661726961626C65334F6E43616C630B50726F6772616D5479706507
+      0B747450726F63656475726506536F75726365066570726F6365647572652056
+      61726961626C65334F6E43616C63287661722056616C75653A2056617269616E
+      74293B0D0A626567696E0D0A0D0A202056616C7565203A3D2067764461746162
+      6173652E4469726563746F72793B0D0A20200D0A656E643B0D0A0D436F6D706F
+      6E656E744E616D6506095661726961626C6533094576656E744E616D6506064F
+      6E43616C63074576656E74494402210000}
+  end
+end

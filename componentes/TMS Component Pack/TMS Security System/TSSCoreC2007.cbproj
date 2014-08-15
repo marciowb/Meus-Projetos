@@ -1,0 +1,214 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{92a193a3-1266-494d-a010-2a737e4321e1}</ProjectGuid>
+    <ProjectType>CppPackage</ProjectType>
+    <MainSource>TSSCoreC2007.cpp</MainSource>
+    <Config Condition="'$(Config)'==''">Debug Build</Config>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+    <Base>true</Base>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Debug Build' or '$(Cfg_1)'!=''">
+    <Base>true</Base>
+    <Cfg_1>true</Cfg_1>
+    <CfgParent>Base</CfgParent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Release Build' or '$(Cfg_2)'!=''">
+    <Base>true</Base>
+    <Cfg_2>true</Cfg_2>
+    <CfgParent>Base</CfgParent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Base)'!=''">
+    <DCC_Optimize>false</DCC_Optimize>
+    <OutputExt>bpl</OutputExt>
+    <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+    <DynamicRTL>true</DynamicRTL>
+    <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+    <ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
+    <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+    <BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+    <ILINK_AppType>Windows</ILINK_AppType>
+    <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+    <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+    <UsePackages>true</UsePackages>
+    <BCC_ZeroLengthEmptyMemberFuncs>true</BCC_ZeroLengthEmptyMemberFuncs>
+    <DCC_MakeModifiedUnits>true</DCC_MakeModifiedUnits>
+    <FinalOutputDir>.</FinalOutputDir>
+    <TASM_AdditionalSwitches> /w2</TASM_AdditionalSwitches>
+    <PackageImports>rtl.bpi;vcl.bpi;dbrtl.bpi;vcldb.bpi</PackageImports>
+    <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj</DCC_UnitSearchPath>
+    <ILINK_Description>TMS Security System core</ILINK_Description>
+    <BCC_GenerateMultithreaded>true</BCC_GenerateMultithreaded>
+    <BCC_StackFrames>true</BCC_StackFrames>
+    <ILINK_WinAppType>Package</ILINK_WinAppType>
+    <BRCC_UserSuppliedOptions> -I$(BDS)\Bin;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_UserSuppliedOptions>
+    <BCC_PCHCache>true</BCC_PCHCache>
+    <BCC_IntegerSizedEnums>false</BCC_IntegerSizedEnums>
+    <BCC_IncludePath>$(BDS)\Bin;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BCC_IncludePath>
+    <TASM_IncludePath>$(BDS)\Bin;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</TASM_IncludePath>
+    <AllPackageLibs>rtl.lib;vcldb.lib;adortl.lib;bdertl.lib;vcldbx.lib;ibxpress.lib;dsnap.lib;dsnapcon.lib;teeui.lib;teedb.lib;tee.lib;dss.lib;dsnapcon.lib;bcbsmp.lib;inetdbbde.lib;inetdbxpress.lib;dbexpress.lib;bcbie.lib;soaprtl.lib;dbxcds.lib;indycore.lib;indysystem.lib;bcboffice2k.lib;TMSUnicodeC6.lib;IntrawebDB_90_60.lib;Intraweb_90_60.lib;DBAdvGlowNavigatorPkgC6.lib;amsqlc6.lib;iw9qbc6.lib</AllPackageLibs>
+    <BRCC_IncludePath>$(BDS)\Bin;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_IncludePath>
+    <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj</DCC_IncludePath>
+    <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+    <BCC_ZeroLengthEmptyBaseClass>true</BCC_ZeroLengthEmptyBaseClass>
+    <ILINK_LibraryPath>C:\Program Files\Intraweb 9.0\LibCB6;$(BDS)\Projects\Lib;$(BDS)\Bin;$(BDS)\lib\obj;$(BDS)\lib</ILINK_LibraryPath>
+    <BCC_Defines>NO_STRICT</BCC_Defines>
+    <BRCC_Defines>_DEBUG</BRCC_Defines>
+    <TASM_Defines>_DEBUG</TASM_Defines>
+    <Multithreaded>true</Multithreaded>
+    <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+    <DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Cfg_1)'!=''">
+    <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+    <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+    <IntermediateOutputDir>Debug_Build</IntermediateOutputDir>
+    <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+    <ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+    <BCC_Defines>_DEBUG;$(BCC_Defines)</BCC_Defines>
+    <TASM_Debugging>Full</TASM_Debugging>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Cfg_2)'!=''">
+    <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+    <DCC_Optimize>true</DCC_Optimize>
+    <BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
+    <BCC_UseRegisterVariables>Always</BCC_UseRegisterVariables>
+    <DCC_DebugInformation>false</DCC_DebugInformation>
+    <IntermediateOutputDir>Release_Build</IntermediateOutputDir>
+    <BCC_StackFrames>false</BCC_StackFrames>
+    <ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+    <BCC_Defines>NDEBUG;$(BCC_Defines)</BCC_Defines>
+    <TASM_Debugging>None</TASM_Debugging>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>CPlusPlusBuilder.Personality</Borland.Personality>
+    <Borland.ProjectType>CppPackage</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject xmlns=""> <CPlusPlusBuilder.Personality>   <VersionInfo>
+      <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+      <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+      <VersionInfo Name="MajorVer">1</VersionInfo>
+      <VersionInfo Name="MinorVer">0</VersionInfo>
+      <VersionInfo Name="Release">0</VersionInfo>
+      <VersionInfo Name="Build">0</VersionInfo>
+      <VersionInfo Name="Debug">False</VersionInfo>
+      <VersionInfo Name="PreRelease">False</VersionInfo>
+      <VersionInfo Name="Special">False</VersionInfo>
+      <VersionInfo Name="Private">False</VersionInfo>
+      <VersionInfo Name="DLL">False</VersionInfo>
+      <VersionInfo Name="Locale">1033</VersionInfo>
+      <VersionInfo Name="CodePage">1252</VersionInfo>
+    </VersionInfo>
+    <VersionInfoKeys>
+      <VersionInfoKeys Name="CompanyName"></VersionInfoKeys>
+      <VersionInfoKeys Name="FileDescription"></VersionInfoKeys>
+      <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+      <VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+      <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductName"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+      <VersionInfoKeys Name="Comments"></VersionInfoKeys>
+    </VersionInfoKeys>
+    <Debugging>
+      <Debugging Name="DebugSourceDirs">$(BCB)\source\vcl</Debugging>
+    </Debugging>
+    <Parameters>
+      <Parameters Name="RunParams"></Parameters>
+      <Parameters Name="Launcher"></Parameters>
+      <Parameters Name="UseLauncher">False</Parameters>
+      <Parameters Name="DebugCWD"></Parameters>
+      <Parameters Name="HostApplication"></Parameters>
+      <Parameters Name="RemoteHost"></Parameters>
+      <Parameters Name="RemotePath"></Parameters>
+      <Parameters Name="RemoteParams"></Parameters>
+      <Parameters Name="RemoteLauncher"></Parameters>
+      <Parameters Name="UseRemoteLauncher">False</Parameters>
+      <Parameters Name="RemoteCWD"></Parameters>
+      <Parameters Name="RemoteDebug">False</Parameters>
+      <Parameters Name="Debug Symbols Search Path"></Parameters>
+      <Parameters Name="LoadAllSymbols">True</Parameters>
+      <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+    </Parameters>
+    <Linker>
+      <Linker Name="LibPrefix"></Linker>
+      <Linker Name="LibSuffix"></Linker>
+      <Linker Name="LibVersion"></Linker>
+    </Linker>
+    <Source>
+      <Source Name="MainSource">TSSCoreC2007.cpp</Source>
+    </Source>
+    <ProjectProperties>
+      <ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+      <ProjectProperties Name="ManagePaths">True</ProjectProperties>
+      <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+    </ProjectProperties>
+  </CPlusPlusBuilder.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <ItemGroup />
+  <ItemGroup>
+    <PackageImport Include="dbrtl.bpi">
+      <BuildOrder>0</BuildOrder>
+    </PackageImport>
+    <PackageImport Include="rtl.bpi">
+      <BuildOrder>1</BuildOrder>
+    </PackageImport>
+    <PackageImport Include="vcl.bpi">
+      <BuildOrder>2</BuildOrder>
+    </PackageImport>
+    <PackageImport Include="vcldb.bpi">
+      <BuildOrder>3</BuildOrder>
+    </PackageImport>
+    <CppCompile Include="TSSCoreC2007.cpp">
+      <BuildOrder>4</BuildOrder>
+    </CppCompile>
+    <ResFiles Include="TSSCoreC2007.res">
+      <ModuleName>TSSCoreC2007.res</ModuleName>
+      <BuildOrder>5</BuildOrder>
+    </ResFiles>
+    <DelphiCompile Include="uBindary.pas">
+      <BuildOrder>6</BuildOrder>
+    </DelphiCompile>
+    <DelphiCompile Include="uEditGroupForm.pas">
+      <Form>frmEditGroup</Form>
+      <BuildOrder>7</BuildOrder>
+    </DelphiCompile>
+    <DelphiCompile Include="uEditUserForm.pas">
+      <Form>frmEditUser</Form>
+      <BuildOrder>8</BuildOrder>
+    </DelphiCompile>
+    <DelphiCompile Include="uFormPolicy.pas">
+      <BuildOrder>9</BuildOrder>
+    </DelphiCompile>
+    <DelphiCompile Include="uFormPolicyDesigner.pas">
+      <Form>frmFormPolicy</Form>
+      <BuildOrder>10</BuildOrder>
+    </DelphiCompile>
+    <DelphiCompile Include="uProxy.pas">
+      <BuildOrder>11</BuildOrder>
+    </DelphiCompile>
+    <DelphiCompile Include="uSecControl.pas">
+      <BuildOrder>12</BuildOrder>
+    </DelphiCompile>
+    <DelphiCompile Include="USecCoreReg.pas">
+      <BuildOrder>13</BuildOrder>
+    </DelphiCompile>
+    <DelphiCompile Include="uSecDlgForm.pas">
+      <BuildOrder>14</BuildOrder>
+    </DelphiCompile>
+    <DelphiCompile Include="usmGlobals.pas">
+      <BuildOrder>15</BuildOrder>
+    </DelphiCompile>
+    <FormResources Include="uEditGroupForm.dfm" />
+    <FormResources Include="uEditUserForm.dfm" />
+    <FormResources Include="uFormPolicyDesigner.dfm" />
+    <BuildConfiguration Include="Debug Build">
+      <Key>Cfg_1</Key>
+    </BuildConfiguration>
+    <BuildConfiguration Include="Release Build">
+      <Key>Cfg_2</Key>
+    </BuildConfiguration>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Borland.Cpp.Targets" />
+</Project>

@@ -1,0 +1,26 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = gtRichVwExpD60.bpl gtRichVwExpD60.bat DCLgtRichVwExpD60.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+gtRichVwExpD60.bpl: gtRichVwExpD60.dpk
+  $(DCC)
+
+gtRichVwExpD60.bat: gtRichVwExpD60.bat
+  call $**
+
+DCLgtRichVwExpD60.bpl: DCLgtRichVwExpD60.dpk
+  $(DCC)
+
+

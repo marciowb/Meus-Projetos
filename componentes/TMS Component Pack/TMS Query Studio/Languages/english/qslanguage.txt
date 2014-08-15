@@ -1,0 +1,447 @@
+[strings]
+SAfter=after
+SAggregationFunctionNotAllowed=Aggregation function "%s" not allowed with data type "%s"
+SAlias=alias
+SAmbiguousError=Ambiguos error
+SAnd=And
+SAndNot=And not
+SAnyFile=Any file
+SAs=as
+SAscending=ascending
+SAutomaticListEditor=Automatic-list editor
+SAvg=Average of
+SBefore=before
+SBring=Bring
+SCancel=Cancel
+SCannotClearParser=Cannot clear parser when parsing
+SCapabilityNotSupportedJoins=Capability not supported on join conditions linking table "%s" to "%s"
+SCheckListEditor=Check-list editor
+SChooseListEditor=Choose-list editor
+SCompareFieldToAnother=Compare a field to another field
+SCompareFieldToParametricValue=Compare a field to a parametric value
+SCompareFieldToSpecificValue=Compare a field to a specific value
+SConditionExpressionNotSpecified=Condition expression is not specified
+SConditionRightSideNotSpecified=Condition right side is not specified
+SConfirmChangeLogicalConnector=Confirm to change logical conector of the grouped conditions?
+SConfirmClearAllItems=Clear all items?
+SConfirmDeleteSelectedItems=Are you sure you want to delete selected item(s)?
+SConfirmExcludeAllDefinitions=Confirm to exclude all definitions of query "%s"?
+SConfirmUpdatingMetaSQL=Confirm updating MetaSQL component with current SQL statement?
+SContaining=containing
+SCount=Count
+SCustomExpression=Custom expression
+SCustomExpressionSQLSyntax=Custom expression (SQL syntax)
+SDatabaseNameNotInformed=Database name not informed
+SDataFields=Data fields
+SDataTypeNotIndicated=Data type not indicated
+SDate=date
+SDay=day
+SDeleteThisQuery=&Delete this query
+SDescending=descending
+SDifferent=different
+SDropdownAutomatic=dropdown automatic-list
+SDropdownCheck=dropdown check-list
+SDropdownChoose=dropdown choose-list
+SDropdownQuery=dropdown query-list
+SDuplicateThisQuery=Du&plicate this query as...
+SEditMetaSQL=Edit Meta SQL
+SEditParameterEditorTitled=Edit parameter:%s with %s editor, titled "%s"
+SEmpty=empty
+SEndingWith=ending with
+SEnterTableAlias=Enter table alias:
+SEqual=equal
+SErrorOpeningQueryCombo=Error opening TatQueryCombo internal query:
+SErroSintaxeLinhaColuna=Syntax error at row %d, col %d of Meta SQL:
+SExportQueriesToFile=Export queries to file
+SExpression=Expression
+SExpressionAliasTitled=Expression %s alias %s, titled "%s"
+SExpressionFieldNotSpecified=Expression field is not specified
+SExpressionOperatorNotSpecified=Expression operator is not specified
+SFalse=False
+SField=field
+SFieldAliasNotIndicated=Field alias not indicated
+SFieldAliasNotUnique=Field alias is not unique on meta-sql
+SFieldCalculatedByAnExpression=Field calculated by an expression
+SFieldComparing=Field comparing
+SFieldExpressionNotIndicated=Field expression not indicated
+SFieldKindAvg=Average of (evaluate the field value average on a group of records)
+SFieldKindBring=Bring (bring individual field value from database table)
+SFieldKindCount=Count (count field value occurencies on a group of records)
+SFieldKindMax=Maximum of (evaluate the maximum field value on a group of records)
+SFieldKindMin=Minimum of (evaluate the minum field value on a group of record)
+SFieldKindSum=Sum of (compute the sum of field value on a group of records)
+SFieldNameNotIndicated=Field name not indicated
+SFieldNotIndicated=Field not indicated
+SFilterConditions=Filter conditions
+SFreeTyping=free typing
+SFreeTypingEditor=Free typing editor
+SGreaterOrEqual=greater or equal
+SGreaterThan=greater than
+SGroupingFields=Grouping fields
+SImportQueriesFromFile=Import queries from file
+SImportQueryFromTargetDataset=Import query from target dataset
+SImportQueryFromTargetMetaSQL=Import query from target meta-sql
+SInclude=Include
+SIncludeANewItem=include a new item
+SIncorrectGrammarLiteralString=Incorrect grammar. Literal string not terminated on "%s"
+SIncorrectGrammarSubexpressionEmpty=Incorrect grammar. Subexpression is empty on "%s"
+SIncorrectGrammarSubexpressionNotTerminated=Incorrect grammar. Subexpression not terminated on "%s"
+SIndexOutOfBounds=Index out of bounds
+SInvalidFieldType=Invalid field type
+SInvalidIncludedInputBuffer=Invalid included input buffer. Each nodes must begin and end on the same input buffer
+SInvalidMetaSQL=Invalid Meta SQL:
+SInvalidSQLForQueryCombo=Invalid SQL for TatQueryCombo internal query
+SInvalidQueryFirstSecondFields=Invalid query. First field should be the key and the second field should be a caption
+SItemSets=item "%s" sets
+SJoinConditionEmpty=Join condition is empty
+SJoinConditionError=Join condition error:
+SLessOrEqual=less or equal
+SLessThan=less than
+SLike=like
+SMainConditions=Main conditions
+SMax=Maximum of
+SMin=Minimum of
+SMonth=month
+SNaoPossivelInserirSubstring=Cannot insert a substring into node "%s", because it belongs to its subnode %d ("%s")
+SNaoPossivelModificarSubstring=Cannot modify the substring "%s" in node "%s", because it belongs to its subnode %d ("%s")
+SNestedConditions=Nested conditions...
+SNestedSubconditions=Nested subconditions
+SNewCheckItem=new check item
+SNewChooseItem=new choose item
+SNewCondition=new condition
+SNewEditor=new editor
+SNewField=new field
+SNewGroupField=new group field
+SNewOrderField=new order field
+SNewParameterAssignment=new parameter assignment
+SNewQuery=&New query...
+SNewTable=new table
+SNewVisualQueryTitle=(New visual query)
+SNone=(none)
+SNotEnoughTableLinks=One or more tables not linked
+SNotImplemented=Not implemented
+SNow=now
+SNull=null
+SNullNode=Null node
+SOff=off
+SOK=OK
+SOr=Or
+SOrderingFields=Ordering fields
+SOrNot=Or not
+SParamCaptionNotSpecified=Param caption not specified
+SParameter=parameter
+SParameterEditors=Parameter editors
+SParameterTo=parameter: %s to "%s"
+SParamNameNotIndicated=Param name not indicated
+SParamNameNotReferFieldComparingCondition=Param name not refer to a field comparing condition
+SParamNameNotValid=Param name is not valid.
+SQueryAlreadyExists=Query "%s" already exists. Confirm overwriting?
+SQueryDefinitionFile=Query definition file
+SQueryEditorForParameter=Query editor for parameter: %s
+SQueryListEditor=Query-list editor
+SQueryTitle=Query title
+SSaveCurrentQuery=Save current query into query list
+SSelectDirectory=Select directory
+SSetContinueOnRemarksShouldOnlyBeCalled=SetContinueOnRemarks should only be called when processing input remarks
+SSetCurrentInputPosShouldOnlyBeCalled=SetCurrentInputPos should only be called when processing input remarks
+SSetCurrentMaxInputPosShouldOnlyBeCalled=SetCurrentMaxInputPos should only be called when processing input remarks
+SSetTableAlias=Set table alias
+SShowSQL=Show SQL
+SSingleField=Single field
+SSingleTable=Single table
+SSourceTables=Source tables
+SSQLIs=SQL is:
+SStartingWith=starting with
+SSum=Sum of
+SSyntaxErrorAtRow=Syntax error at row %d character %d
+SSyntaxOK=Syntax Ok!
+STable=Table
+STableAliasAlreadyIncluded=Table alias "%s" already included in meta-sql
+STableAliasEmpty=Table alias is empty
+STableAliasJoinedConditioned=%s alias %s joined %s above tables, conditioned by
+STableJoinHandlingFailure=Table join handling failure
+STableLinkedToAnother=Table linked to another
+STableNameEmpty=Table name is empty
+STableNotIndicated=Table not indicated
+STargetDatasetNotSupported=Target dataset not compatible with current TatDatabase component.
+STentativaAcessarPosicaoInexistente=Attempt to access a nonexistent position in the source
+STentativaInserirSubstring=Attempt to insert a substring out of the node "%s"
+STentativaModificarSubstring=Attempt to modify a substring not belonging to node "%s"
+STitled=titled
+SToday=today
+STokenDoesNotContainSubnode="%s" does not contain subnode %d'
+STokenIsNotNode="'%s" is not a %s node'
+STrue=True
+SUndefinedValue=undefined
+SValue=value
+SValuesAppliedNoItemSelected=Values to be applied when no item is selected:
+SValuesAppliedItemSelected=Values to be applied when item "%s" is selected:
+SVisualQueryEditor=Visual query editor
+SWhen=When
+SWhenNot=When not
+SWith=with
+SYear=year
+SYouMustCompleteUndefinedItem=You must complete the undefined item definition to add new one
+SYouMustSpecifyTargetDataset=You must specify TargetDataset property to import query
+SYouMustSpecifyTargetMetaSQL=You must specify TargetMetaSQL property to import query
+
+[atMetaSQLConditionEditor]
+fmMetaSQLConditionEditor.Label2.Caption=Value
+fmMetaSQLConditionEditor.lbLinkType.Caption=Operator
+fmMetaSQLConditionEditor.Label1.Caption=Field alias
+fmMetaSQLConditionEditor.Label3.Caption=Condition name
+fmMetaSQLConditionEditor.Label8.Caption=Condition type
+fmMetaSQLConditionEditor.Label7.Caption=Expression
+fmMetaSQLConditionEditor.Label4.Caption=Subconds operator
+fmMetaSQLConditionEditor.lvItems.Items0.Caption=Condition name
+fmMetaSQLConditionEditor.lvItems.Items1.Caption=Field alias
+fmMetaSQLConditionEditor.lvItems.Items2.Caption=Operator
+fmMetaSQLConditionEditor.lvItems.Items3.Caption=Value
+fmMetaSQLConditionEditor.lvItems.Items4.Caption=Connector
+fmMetaSQLConditionEditor.lvItems.Items5.Caption=Condition type
+fmMetaSQLConditionEditor.lvItems.Items6.Caption=Expression
+
+[atMetaSQLConditionForm]
+fmMetaSQLConditionForm.Self.Caption=Conditions editor
+
+[atmetasqlcustomeditor]
+fmMetaSQLCustomEditor.btInsert.Caption=&Save
+fmMetaSQLCustomEditor.acNew.Caption=&New
+fmMetaSQLCustomEditor.acInsert.Caption=&Insert
+fmMetaSQLCustomEditor.acCancel.Caption=&Cancel
+fmMetaSQLCustomEditor.acEdit.Caption=&Edit
+fmMetaSQLCustomEditor.acClearItems.Caption=Clear all items
+fmMetaSQLCustomEditor.acDelete.Caption=&Delete
+
+[atMetaSQLFieldEditor]
+fmMetaSQLFieldEditor.Label1.Caption=Display label
+fmMetaSQLFieldEditor.Label2.Caption=Table Alias
+fmMetaSQLFieldEditor.Label3.Caption=Field Name
+fmMetaSQLFieldEditor.Label4.Caption=Group function
+fmMetaSQLFieldEditor.Label5.Caption=Data type
+fmMetaSQLFieldEditor.Label6.Caption=Field Alias
+fmMetaSQLFieldEditor.Label7.Caption=Field expression
+fmMetaSQLFieldEditor.Label8.Caption=Expression type
+fmMetaSQLFieldEditor.Label10.Caption=Visible
+fmMetaSQLFieldEditor.lbOptions.Caption=Options
+fmMetaSQLFieldEditor.lvItems.Items0.Caption=Field alias
+fmMetaSQLFieldEditor.lvItems.Items1.Caption=Table alias
+fmMetaSQLFieldEditor.lvItems.Items2.Caption=Field Name
+fmMetaSQLFieldEditor.lvItems.Items3.Caption=Data type
+fmMetaSQLFieldEditor.lvItems.Items4.Caption=Display label
+fmMetaSQLFieldEditor.lvItems.Items5.Caption=Group function
+fmMetaSQLFieldEditor.lvItems.Items6.Caption=Expression
+fmMetaSQLFieldEditor.lvItems.Items7.Caption=Field expression
+fmMetaSQLFieldEditor.lvItems.Items8.Caption=Visible
+fmMetaSQLFieldEditor.lvItems.Items9.Caption=Hidden from user
+fmMetaSQLFieldEditor.lvItems.Items10.Caption=Always in select
+fmMetaSQLFieldEditor.lvItems.Items11.Caption=Can order by
+fmMetaSQLFieldEditor.lvItems.Items12.Caption=Can use in condition
+fmMetaSQLFieldEditor.acAppendDataset.Caption=&Append from dataset
+fmMetaSQLFieldEditor.acAppendTable.Caption=Append from &table
+fmMetaSQLFieldEditor.acTableAlias.Caption=Set table alias
+fmMetaSQLFieldEditor.ldPickDataset.CancelCaption=Cancel
+fmMetaSQLFieldEditor.ldPickDataset.OkCaption=Ok
+fmMetaSQLFieldEditor.ldPickDataset.Title=Choose dataset
+
+[atMetaSQLForm]
+fmMetaSQLEditor.Self.Caption=Meta SQL Editor
+fmMetaSQLEditor.TabControl1.Tabs0=Tables
+fmMetaSQLEditor.TabControl1.Tabs1=Fields
+fmMetaSQLEditor.TabControl1.Tabs2=Joins
+fmMetaSQLEditor.TabControl1.Tabs3=Conditions
+fmMetaSQLEditor.TabControl1.Tabs4=Order
+fmMetaSQLEditor.TabControl1.Tabs5=Group
+fmMetaSQLEditor.TabControl1.Tabs6=SQL
+fmMetaSQLEditor.TabControl1.Tabs7=Data result
+fmMetaSQLEditor.Label1.Caption=&Database:
+fmMetaSQLEditor.cbSaveDB.Caption=&Save last used database
+fmMetaSQLEditor.acNextTab.Caption=Next tab
+fmMetaSQLEditor.acPreviousTab.Caption=Previous tab
+fmMetaSQLEditor.acImportFromSQL.Caption=Import from SQL
+
+[atMetaSQLGroupEditor]
+fmMetaSQLGroupEditor.Label2.Caption=Group by field alias
+fmMetaSQLGroupEditor.lvItems.Items0.Caption=Group by field alias
+fmMetaSQLGroupEditor.lvItems.Items1.Caption=
+
+[atmetasqljoineditor]
+fmMetaSQLJoinEditor.Label2.Caption=Foreign table alias
+fmMetaSQLJoinEditor.Label4.Caption=Link type
+fmMetaSQLJoinEditor.Label1.Caption=Primary table alias
+fmMetaSQLJoinEditor.cbLinkType.Items0=Inner join
+fmMetaSQLJoinEditor.cbLinkType.Items1=Left join
+fmMetaSQLJoinEditor.cbLinkType.Items2=Right join
+fmMetaSQLJoinEditor.lvItems.Items0.Caption=Prim. table
+fmMetaSQLJoinEditor.lvItems.Items1.Caption=For. Table
+fmMetaSQLJoinEditor.lvItems.Items2.Caption=Link description
+fmMetaSQLJoinEditor.lvItems.Items3.Caption=SubConditions
+fmMetaSQLJoinEditor.acSubConditions.Caption=Edit &subconditions
+
+[atMetaSQLOrderEditor]
+fmMetaSQLOrderEditor.Label2.Caption=Order by field alias
+fmMetaSQLOrderEditor.Label4.Caption=Sort type
+fmMetaSQLOrderEditor.cbSortType.Items0=ascending
+fmMetaSQLOrderEditor.cbSortType.Items1=descending
+fmMetaSQLOrderEditor.lvItems.Items0.Caption=Order by field alias
+fmMetaSQLOrderEditor.lvItems.Items1.Caption=Sort type
+
+[atMetaSQLTableEditor]
+fmMetaSQLTableEditor.Label1.Caption=Table name
+fmMetaSQLTableEditor.Label2.Caption=Table Alias
+fmMetaSQLTableEditor.lvItems.Columns0.Caption=Table name
+fmMetaSQLTableEditor.lvItems.Columns1.Caption=Table alias
+
+[atVisualQueryEditor]
+fmVisualQueryEditor.Self.Caption=Editing the visual-query
+fmVisualQueryEditor.TabSheet1.Caption=&Visual-query preview
+fmVisualQueryEditor.atVisualQuery1.MetaSqlDefs0.Title=(New visual query)
+fmVisualQueryEditor.Button1.Caption=&Ok
+fmVisualQueryEditor.Button2.Caption=&Cancel
+
+[fCheckListParamEditor]
+fmCheckListParamEditor.Self.Caption=Check list parameter editor
+fmCheckListParamEditor.lbInfo.Caption=This parameter allow users to select one or more items on a drop down list editor.\#13#10Each selected item apply all corresponding param values to the query. \#13#10Unselected items deactivates associated parameter values from query.
+
+[fChooseListParamEditor]
+fmChooseListParamEditor.Self.Caption=Choose list parameter editor
+fmChooseListParamEditor.lbInfo.Caption=This parameter allow users to select one among several items on a drop down list editor.\#13#10The unique selected item apply all corresponding parameter values to the query.\#13#10Unselected items deactivates corresponding parameter values from query.
+
+[fCompareConditionEditor]
+fmCompareConditionEditor.Self.Caption=Query comparing condition
+fmCompareConditionEditor.Label1.Caption=Expression:
+fmCompareConditionEditor.lbInfo.Caption=This condition represents a single comparing of two informations.\#13#10A database field can be compared to another field, to a single value or to a parameter.
+
+[fCustomConditionEditor]
+fmCustomConditionEditor.Self.Caption=Custom condition editor
+fmCustomConditionEditor.Label3.Caption=Conector:
+fmCustomConditionEditor.edLogicOper.Items0=Field 1
+fmCustomConditionEditor.edLogicOper.Items1=Field 2
+fmCustomConditionEditor.edLogicOper.Items2=Sample field
+
+[fcustomeditor]
+fmCustomEditor.Self.Caption=fmCustomEditor
+fmCustomEditor.btOk.Caption=&Ok
+fmCustomEditor.btCancel.Caption=&Cancel
+fmCustomEditor.lbInfo.Caption=
+
+[fCustomFieldEditor]
+fmCustomFieldEditor.Self.Caption=Custom field editor
+
+[fCustomGroupEditor]
+fmCustomGroupEditor.Self.Caption=Query group field
+fmCustomGroupEditor.Label2.Caption=Field expression:
+fmCustomGroupEditor.lbInfo.Caption=This field will be used to break aggregation functions. Generally, all visible fields that have not aggregation function should be grouped like this.
+
+[fCustomListParamEditor]
+fmCustomListParamEditor.Self.Caption=Custom list parameter editor
+fmCustomListParamEditor.lbParamValues.Caption=Corresponding condition parameters:
+fmCustomListParamEditor.Label2.Caption=Drop down list:
+fmCustomListParamEditor.edParamValues.Items0.Caption=Value
+fmCustomListParamEditor.edParamValues.Items1.Caption=Param name
+fmCustomListParamEditor.edListItems.Items0.Caption=Item text
+fmCustomListParamEditor.lbInfo.Caption=
+
+[fCustomOrderEditor]
+fmCustomOrderEditor.Self.Caption=Query order field
+fmCustomOrderEditor.Label2.Caption=Field expression:
+fmCustomOrderEditor.Label4.Caption=Sort direction:
+fmCustomOrderEditor.edAggregation.Items0=Ascending
+fmCustomOrderEditor.edAggregation.Items1=Descending
+fmCustomOrderEditor.lbInfo.Caption=This field may be lonely or combined with others to specify a sorting criteria over the query result set.
+
+[fCustomParamEditor]
+fmCustomParamEditor.Self.Caption=Custom parameter editor
+fmCustomParamEditor.Label5.Caption=Caption:
+
+[fCustomTableEditor]
+fmCustomTableEditor.Self.Caption=Query table
+fmCustomTableEditor.Label1.Caption=Table name:
+fmCustomTableEditor.Label2.Caption=Table alias:
+fmCustomTableEditor.Label4.Caption=Join type:
+fmCustomTableEditor.edJoinType.Items0=(no join)
+fmCustomTableEditor.edJoinType.Items1=Inner join
+fmCustomTableEditor.edJoinType.Items2=Left outer join
+fmCustomTableEditor.edJoinType.Items3=Right outer join
+fmCustomTableEditor.Label3.Caption=Join condition:
+fmCustomTableEditor.lbInfo.Caption=Table indicated here is a data source for querying. One or more tables may be linked together to build a query.\#13#10Join condition is used to link this table to other related tables.
+
+[fDistinctListParamEditor]
+fmDistinctListParamEditor.Self.Caption=Distinct list parameter editor
+fmDistinctListParamEditor.Label2.Caption=Param name:
+fmDistinctListParamEditor.lbInfo.Caption=This parameter brings to the user a list of all distinctive values contained on related table. The used table is the owner of field compared to this parameter.
+
+[fExpressionConditionEditor]
+fmExpressionConditionEditor.Self.Caption=Query expression condition
+fmExpressionConditionEditor.Label5.Caption=Expression:
+fmExpressionConditionEditor.lbInfo.Caption=This condition may be represented by any valid meta-sql logic expression. Parameter names may be used prefixed by a colon.
+
+[fExpressionFieldEditor]
+fmExpressionFieldEditor.Self.Caption=Query expression field
+fmExpressionFieldEditor.Label4.Caption=Aggregation:
+fmExpressionFieldEditor.edAggregation.Items0=(none)
+fmExpressionFieldEditor.edAggregation.Items1=Row count
+fmExpressionFieldEditor.edAggregation.Items2=Sum
+fmExpressionFieldEditor.edAggregation.Items3=Maximum
+fmExpressionFieldEditor.edAggregation.Items4=Minimum
+fmExpressionFieldEditor.edAggregation.Items5=Average
+fmExpressionFieldEditor.Label6.Caption=Expression:
+fmExpressionFieldEditor.Label3.Caption=Field alias:
+fmExpressionFieldEditor.Label5.Caption=Display label:
+fmExpressionFieldEditor.Label7.Caption=Data type:
+fmExpressionFieldEditor.edDataType.Items0=(none)
+fmExpressionFieldEditor.edDataType.Items1=Row count
+fmExpressionFieldEditor.edDataType.Items2=Sum
+fmExpressionFieldEditor.edDataType.Items3=Maximum
+fmExpressionFieldEditor.edDataType.Items4=Minimum
+fmExpressionFieldEditor.edDataType.Items5=Average
+fmExpressionFieldEditor.lbInfo.Caption=This field acts like a calculated information, which data expression may be any valid meta-sql field expression.
+
+[fFreeEditParamEditor]
+fmFreeEditParamEditor.Self.Caption=Free parameter editor
+fmFreeEditParamEditor.Label2.Caption=Param name:
+fmFreeEditParamEditor.lbInfo.Caption=This parameter editor allow user to type values that corresponds to the parameters used by query conditions.
+
+[fQueryEditor]
+fmQueryEditor.Self.Caption=Query for parameter editor
+fmQueryEditor.VisualQuery.MetaSqlDefs0.Title=(New visual query)
+fmQueryEditor.Button1.Caption=&Ok
+fmQueryEditor.Button2.Caption=&Cancel
+
+[fQueryListParamEditor]
+fmQueryListParamEditor.Self.Caption=Query list parameter editor
+fmQueryListParamEditor.Label2.Caption=Param name:
+fmQueryListParamEditor.Label1.Caption=Meta-SQL:
+fmQueryListParamEditor.btMetaSql.Caption=Wizard >>
+fmQueryListParamEditor.lbInfo.Caption=This parameter allow user to select a value from a drop down list. List items are fetched from this meta-sql query. The first field on such query should correspond to the field associated to this parameter.
+
+[fSingleFieldEditor]
+fmSingleFieldEditor.Self.Caption=Query single field
+fmSingleFieldEditor.Label1.Caption=Table:
+fmSingleFieldEditor.Label2.Caption=Field name:
+fmSingleFieldEditor.Label4.Caption=Aggregation:
+fmSingleFieldEditor.edAggregation.Items0=(none)
+fmSingleFieldEditor.edAggregation.Items1=Row count
+fmSingleFieldEditor.edAggregation.Items2=Sum
+fmSingleFieldEditor.edAggregation.Items3=Maximum
+fmSingleFieldEditor.edAggregation.Items4=Minimum
+fmSingleFieldEditor.edAggregation.Items5=Average
+fmSingleFieldEditor.Label3.Caption=Field alias:
+fmSingleFieldEditor.Label5.Caption=Display label:
+fmSingleFieldEditor.Label7.Caption=Data type:
+fmSingleFieldEditor.edDataType.Items0=(none)
+fmSingleFieldEditor.edDataType.Items1=Row count
+fmSingleFieldEditor.edDataType.Items2=Sum
+fmSingleFieldEditor.edDataType.Items3=Maximum
+fmSingleFieldEditor.edDataType.Items4=Minimum
+fmSingleFieldEditor.edDataType.Items5=Average
+fmSingleFieldEditor.lbInfo.Caption=This field is a single expression to an information.\#13#10Just one database field may be indicated here.
+
+[fSubconditionsEditor]
+fmSubconditionsEditor.Self.Caption=Query collection condition
+fmSubconditionsEditor.lbInfo.Caption=This condition is a group of other subconditions.\#13#10Evaluation of its subconditions depends of this condition.
+
+[ShowSQLForm]
+fmShowSQL.Self.Caption=Show SQL
+fmShowSQL.Button1.Caption=Close
+

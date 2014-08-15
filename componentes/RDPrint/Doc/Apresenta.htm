@@ -1,0 +1,1362 @@
+<html>
+<head>
+<title>Principal</title>
+<base target="_self">
+</head>
+
+<body bgcolor="#F4FFF4">
+
+<div align="center">
+  <center>
+  <table border="1" cellspacing="0" width="100%">
+    <tr>
+      <td width="23%" align="center">
+      <img border="0" src="Deltress.jpg" width="129" height="114"><br>
+      &nbsp;</tr>
+      <td width="77%" align="center">
+      </font>
+      <b><font color="#FF9933" size="6" face="Arial">RDprint 4.0</font><font color="#FF9933"><br>
+      </font>
+      <font face="Arial" size="3" color="#0000FF">Componente de Impressão para Matriciais</font></b>
+      <p><font face="Arial" size="2"><b><font color="#0000FF">Deltress
+      Informática Ltda</font></b><font color="#0000FF"><br>
+      Av.República, 948 - Centro<br>
+      17509-031 - Marília - SP<br>
+      Fone/Fax (14) 3454-7880<br>
+      </font>
+      <a href="http://www.deltress.com.br">www.deltress.com.br</a><font color="#0000FF"><br>
+      </font>
+      <a href="mailto:deltress@deltress.com.br">deltress@deltress.com.br</a></font></p>
+    </tr>
+  </table>
+  </center>
+</div>
+
+
+<p align="center"><a name="APRESENTAÇÃO"><font color="#FF0000"><b>APRESENTAÇÃO</b></font></a></p>
+
+<p><b>Problemas com Impressão ?</b></p>
+<p align="justify">
+Como você e como muitos outros programadores eu me deparei 
+com sérios problemas de impressão no ambiente Windows / Delphi, um simples
+relatório que eu fazia em COBOL ou CLIPPER, não consiguia mais.
+</p>
+<p align="justify">
+O Windows abriu um leque de opções para relatórios, à
+primeira vista é tudo maravilhoso, impressoras Laser, Jato de Tinta, gráficos
+e etc. QuickReport, Rave e outros geradores facilitaram nossa vida, porém como ficam
+os relatórios mais simples, como a emissão de <b>Notas Fiscais</b>, <b>Duplicatas</b>,
+<b>Cheques</b>, <b>Boletos</b> e outros ?
+</p>
+<p>
+<b>
+Imprimindo em MATRICIAIS os principais problemas encontrados são:</b>
+</p>
+<p>
+- Falta configuração adequada para impressão em SEXTOS e OITAVOS;<br>
+- Impressão de caracteres comprimidos, Expandidos, negrito e outros;<br>
+- Configuração do tamanho da Página para os diversos tipos de impressos<br>
+- Velocidade de impressão<br>
+- Impressão de Acentos
+</p>
+<p><b>Algumas maneiras de imprimir:</b></p>
+<p align="justify">
+QuickReport ou Similares: São excelentes geradores de relatórios,
+imprimem gráficos, fazem quebras de grupos etc, mas você já tentou mudar a
+configuração de uma impressora, como por exemplo, Tamanho do Papel, Impressão
+na Rede, Caracteres Padrão ASCII, velocidade de impressão em Matriciais.
+</p>
+<p align="justify">
+PRINTER CANVAS: Foi minha primeira solução até que tive problemas com
+impressoras com resoluções diferentes, e também dependência de estar
+instalada e configurada corretamente no Windows.</p>
+<p align="justify">
+WRITELN: Imprimir direto para impressora é a solução, mas o trabalho
+que dá?, tenho que montar linha, enviar caracteres de controle, mesmo assim
+ainda tenho os seguintes problemas:</p>
+<p>
+- Compatibilidade com os diversos modelos de impressora no Mercado;<br>
+- Impressão em Rede;<br>
+- Falta de Preview;<br>
+- Seleção de página etc
+</p>
+<p><b>RDprint, a solução definitiva:</b></p>
+<p align="justify">
+RDprint foi criado com a finalidade de oferecer a todos os
+programadores Delphi, mais uma opção / Recurso de impressão, não queremos que você
+troque o QuickReport, Rave ou outro gerador, nossa intenção é oferecer
+recursos para simplificar a impressão de relatórios em <b>MATRICIAIS</b> e até mesmo
+em impressoras Laser e Jato de Tinta, já que o componente possui recursos
+compatíveis com todos os modelos de impressoras.
+</p>
+<p align="justify">
+Além de imprimir de Forma rápida, eficiente e com muita facilidade: Notas
+Fiscais, Duplicatas, Cheques e todo tipo de relatório.
+</p>
+<p align="justify">
+Se você já programou em MS-DOS (COBOL, Clipper etc), certamente irá achar
+esse componente FANTÁSTICO e não terá problemas em utiliza-lo, se você esta
+iniciando agora, oferecemos vários exemplos que irão facilitar a sua
+utilização.
+</p>
+<p align="center"><a name="CARACTERÍSTICAS"><font color="#FF0000"><b>CARACTERÍSTICAS</b></font></a></p>
+<p><b>A) Configurações básicas:</b></p>
+<p>
+- Local de impressão podendo ser LOCAL ou em REDE;<br>
+- Avanço de linha em sexto e oitavos (entrelinhas);<br>
+- Tamanho da Página para correto avanço do papel;<br>
+- Seleção do Modelo da impressora utilizada através de <b>MAPEAMENTO</b> de 
+modelos<br>
+- Definição da fonte padrão, facilitando a criação do relatório.
+</p>
+<p><b>B) Recursos avançados:</b></p>
+<p>
+- <b>Preview Real</b> de impressão com opções e personalização da visualização;<br>
+- <b>Setup</b> para o usuário final com opção de &quot;cancelar&quot;;<br>
+- Seleção do intervalo de páginas a serem impressas idem ao Word;<br>
+- Seleção do número de cópias com opção para<b> Agrupar e Inverter</b> ordem;<br>
+- Utiliza o gerenciador de impressão do Windows (spool);<br>
+- <b>Barra de progresso</b> indicando o andamento da impressão, com opção de 
+mostrar ou não;<br>
+- Configura Captions/Fontes/Cor dos form SETUP / PREVIEW <br>
+- <b>Procura de Texto</b> no form do preview
+</p>
+<p><b>C) Recursos de impressão:</b></p>
+<p>
+- <b>Tamanho da Fonte</b>: Normal (10),Comprimido em 12, 17 e 20 cpp e Expandido;<br>
+- <b>Estilo de Fontes</b>: Negrito, Itálico e Sublinhado;<br>
+- Imprime caracteres acentuados;<br>
+- Imprime códigos ASCII (comandos especiais diretamente para a impressora)<br>
+- Imprime <b>Box</b>, <b>Linhas Verticais e Horizontais</b>, Simples e Duplas<br>
+- Impressão com alinhamento (direita, esquerda e centralizado);<br>
+- Impressão de valores com definição de Mascaras e alinhamento à direita. <br>
+- <b>Impressão COLORIDA</b> para preview e impressão em Jato de Tinta</p>
+<p><b>D) Relatórios em arquivos:</b></p>
+<p>
+- Permite Salvar o relatório em arquivo em 3 modos diferentes:<br>
+TXT : Formato <b>TEXTO</b> puro, sem caracteres de controle, podendo ser visualizado por qualquer outro editor de textos.<br>
+PRN : Formato de Impressão. contém todos os caracteres de controle, podendo ser enviado diretamente para a impressora através do comando COPY.<br>
+RDP : Formato especial RDprint, para uso exclusivo com o componente.
+</p>
+<p>
+- Permite Ler relatórios salvos no formato RDP para reapresentação no Preview e Impressão.
+</p>
+<hr>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<table border="0" cellspacing="0" width="100%" height="3965" bgcolor="#F0FFFF">
+<tr><td bgcolor="#000080">
+<p align="center"><b><font color="#F4FFF4">PROPRIEDADES</font></b></p></td></tr>
+    
+<tr><td>&nbsp;<a name="Autor"><b><font color="#FF0000">Autor</font></b></a> 
+    <blockquote>
+    <p>property Autor : Tautor</p>
+    <p>type Tautor = (Deltress);</p>
+    <p>Descrição: Nome do autor do componente (FIXO &quot;Deltress&quot;)
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="About"><b><font color="#FF0000">About</font></b></a>
+    <blockquote>
+    <p>property About&nbsp; : string</p>
+    <p><b>Descrição</b>: Informações sobre a versão do componente. <br>
+    <b>Valor Defauld</b>: RDprint 4.0 - Registrado</blockquote><hr></td></tr>
+
+<tr>
+  <td width="527" height="100%" bgcolor="#FFFFF2">
+    <p align="center"><font color="#FF0000"><b>ATENÇÃO</b></font>: Para que possa ser impresso TODOS os acentos corretamente, é
+       necessário que a impressora esteja configurada em seu hardware, para o<br>
+&nbsp;<font color="#FF0000">CÓDIGO DE PÁGINA 850 (MULTLINGUAL).</font><br> 
+       <b>Consulte o manual da impressora para procedimentos de configuração</b>.</p>
+    </td>
+</tr>
+
+<tr><td>&nbsp;<a name="Acentuacao"><b><font color="#FF0000">Acentuacao</font></b></a> 
+    <blockquote>
+    <p>property Acentuacao : Tacento</p>
+    <p>Type TAcento = (Transliterate, SemAcento);</p>
+    <p><b>Descrição</b>: Define o tratamento dado a caracteres acentuados, tem 
+    efeito apenas na impressão em Matriciais. No preview e impressão GRAFICA o 
+    acento permanecerá</p>
+    <p>Transliterate = Converte caracteres para ASCII padrão.<br>
+       SemAcento = Remove acentos trocando os caracteres acentuados.<br>
+       Exemplo: á = a, É = E, ç = c, etc...</p>
+    <table border="1" cellpadding="4" style="border-collapse: collapse" bordercolor="#111111" width="90%" id="AutoNumber1" cellspacing="0">
+      <tr>
+        <td width="527" height="100%" bgcolor="#FFFFFF">
+        <font color="#FF0000" face="Courier New" size="2">procedure</font><font color="#0000FF" face="Courier New" size="2"> 
+        TForm1.Button1Click(Sender: TObject);<br>
+        </font><font color="#FF0000" face="Courier New" size="2">begin</font><font color="#0000FF" face="Courier New" size="2"><br>
+&nbsp;&nbsp;&nbsp;&nbsp; </font>
+        <font color="#008000" face="Courier New" size="2">// Definindo a 
+        propriedade...</font><font color="#0000FF" face="Courier New" size="2"><br>
+&nbsp;&nbsp;&nbsp;&nbsp; RDprint1.acentuacao := Transliterate;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; RDprint1.acentuacao := SemAcento;<br>
+        <br>
+&nbsp;&nbsp;&nbsp;&nbsp; </font>
+        <font color="#008000" face="Courier New" size="2">// Testando a 
+        configuração...</font><font color="#0000FF" face="Courier New" size="2"><br>
+&nbsp;&nbsp;&nbsp;&nbsp; If RDprint1.acentuacao = SemAcento then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; showmessage('</font><font color="#FF0000" face="Courier New" size="2">Caracteres 
+        acentuados serão trocados</font><font color="#0000FF" face="Courier New" size="2">');<br>
+        </font><font color="#FF0000" face="Courier New" size="2">end</font><font color="#0000FF" face="Courier New" size="2">;</font></td>
+      </tr>
+    </table>
+    <p align="center"><font color="#0000FF">&nbsp;</font><font color="#ff0000"><b>ATENÇÃO</b></font>: 
+    Para que possa ser impresso TODOS os acentos corretamente, é necessário que 
+    a impressora esteja configurada em seu hardware, para o&nbsp;<font color="#ff0000"><br>
+    CÓDIGO DE PÁGINA 850 (MULTLINGUAL).</font><br>
+    <b>Consulte o manual da impressora para procedimentos de configuração.</b></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="CaptionSetup"><b><font color="#FF0000">CaptionSetup</font></b></a>
+    <blockquote>
+    <p>property CaptionSetup : String</p>
+    <p><b>Descrição</b>: String que define o Caption do form Setup</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">RDprint1.CaptionSetup := 'Configuração da Impressora';<br>
+       RDprint1.CaptionSetup := table1relatorio.value;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="TitulodoRelatorio"><b><font color="#FF0000">TitulodoRelatorio</font></b></a>  
+    <blockquote>
+    <p>property TitulodoRelatorio : String </p>
+    <p><b>Descrição</b>: String que define o nome do relatório, esse titulo irá 
+       aparecer no Gerenciador de Impressão e na barra de progresso.</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">RDprint1.TitulodoRelatorio := 'Relação de Clientes';<br>
+       RDprint1.TitulodoRelatorio := table1titulo.value;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="UsaGerenciadorImpr"><b><font color="#FF0000">UsaGerenciadorImpr</font></b></a> 
+    <blockquote>
+    <p>property&nbsp; UsaGerenciadorImpr : boolean</p>
+    <p><b>Descrição</b>: Se false a impressão é feita diretamente para a
+       Porta paralela ou endereço da rede, utiliza o comando WRITELN.Se True a impressão é enviada para o gerenciador de impressão do Windows utilizando API'S do windows.</p>
+    <p>Observações:</p>
+    <p>1) A opção false foi feita para manter compatibilidade;<br>
+       2) Sempre que possível coloque como True;<br>
+       3) Use o gerenciador principalmente em grandes relatórios, assim, a liberação
+          do seu programa muito mais rápido e evita travamentos indesejados;<br>
+       4) Se TRUE a propriedade TESTAPORTA deve estar FALSE.</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">RDprint1.UsaGerenciadorImpr := TRUE;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="CorForm"><b><font color="#FF0000">CorForm</font></b></a> 
+    <blockquote>
+    <p>property CorForm : Tcolor</p>
+    <p><b>Descrição</b>: Customiza a Cor dos Form's Setup e Preview;</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">RDprint1.CorForm := clBtnFace;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="CorFonte"><b><font color="#FF0000">CorFonte</font></b></a> 
+    <blockquote>
+    <p>property&nbsp; CorFonte : Tcolor</p>
+    <p><b>Descrição</b>: Customiza a Cor da Fonte dos Form's Setup e Preview;</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">RDprint1.CorForm := clBlue;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="Impressora"><b><font color="#FF0000">Impressora</font></b></a> 
+    <blockquote>
+    <p>property Impressora : TModelo</p>
+    <p>TModelo = (Epson, Rima, HP, Grafico, Personalizado);</p>
+    <p><b>Descrição</b>: Modelo da impressora a ser utilizada para impressão, 
+       utiliza o padrão de linguagem, tais como ESC, ESCP, PCL etc...</p>
+    <p><b>Epson</b> = Toda a linha Epson matriciais/Jato de Tinta/Laser e impressoras que 
+       utilizem a linguagem ESC/ESCP/ESCP2 ou que são compatíveis com o
+    padrão Epson. (ex. Grafix).</p>
+    <p><b>HP</b> = Toda linha HP Laser e Jato de Tinta e impressoras que utilizem
+       a linguagem padrão PCL nível 3 ou superior.</p>
+    <p><b>Rima</b> = Todos os modelos nacionais de impressoras Rima e Emilia PC.</p>
+    <p><b>Gráfico</b> = Impressão em modo Gráfico compatível com Windows, pode ser utilizados 
+       em TODAS as impressoras instaladas no Windows. indicado principalmente para as 
+       algumas impressoras Laser ou Jato de Tinta que não suportam a impressão em modo 
+       direto. A impressão será uma cópia fiel do preview.</p>
+    <p><b>Personalizado</b> = Modelo com comandos de controle personalizados pelo
+    usuário.
+       Utilize este modelo quando for imprimir em impressoras ESPECIAIS que
+       possuem comando próprios e incompatíveis com o padrão do mercado.</p>
+    <p>* Veja Mais detalhes em <a href="#ImpressoraPersonalizada">ImpressoraPersonalizada</a></p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">RDprint1.Impressora := epson;</font></p>
+    <p><font color="#0000FF">case rdprint1.impressora of<br>
+       &nbsp;&nbsp; epson&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: msg := 'Epson';<br>
+       &nbsp;&nbsp; HP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    : msg := 'HP';<br>
+       &nbsp;&nbsp; grafico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : msg := 'Grafico';<br>
+       &nbsp;&nbsp; personalizado : msg :='Personalizada';<br>
+       &nbsp;&nbsp; rima&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : msg := 'Rima';<br>
+       &nbsp;&nbsp; end;<br>
+       showmessage('A impressora escolhida foi: ' + msg);</font></p>
+     </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="PortaComunicacao"><b><font color="#FF0000">PortaComunicacao</font></b></a> 
+    <blockquote>
+    <p>property PortaComunicacao : String</p>
+    <p><b>Descrição</b>: Porta ou caminho indicando o LOCAL ou meio físico para impressão.</p>
+    <p>Ex: Portas Locais: 'LPT1', 'LPT2', 'COM2'<br>
+       &nbsp;&nbsp;&nbsp; Endereço da Rede: '\\SERVIDOR\EPSON'&nbsp;</p>
+    <p><b>IMPORTANTE</b>: Não tem efeito estiver utilizando o WINDOWS NT/2000
+    ou se a propriedade UsaGerenciadorIMP = TRUE.<br>
+    Você pode selecionar uma impressora diretamente usando as funções
+    SetPrintByName e SetPrintByPorta;</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">RDprint1.PortaComunicacao := 'LPT1';<br>
+       RDprint1.PortaComunicacao := '\\servidor\HP';</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp; <a name="TamanhoQteLinhas"> <b><font color="#FF0000">TamanhoQteLinhas</font></b></a>   
+    <blockquote>
+    <p>property TamanhoQteLinhas : Integer</p>
+    <p><b>Descrição</b>: Define a Altura do formulário em números de Linhas,
+       sendo utilizado na definição da página do PREVIEW e no SALTO DE
+       PÁGINA quando as funções novapagina ou fechar são utilizadas.</p>
+    <p>Veja também <a href="#TamanhoQteLPP">TamanhoQteLPP</a></p>
+    <p>Exemplo: Formulário Padrão: 66 Linhas<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cheques em 1/6&nbsp;&nbsp;
+    : 18 Linhas<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cheques em 1/8&nbsp;&nbsp;
+    : 24 Linhas</p>
+    <p><b>COMO SABER ?</b><br>
+       Utilize um régua de gabarito para fazer a correta medição ou na falta você pode 
+       calcular manualmente, veja:</p>
+    <p><b>Sabendo-se que:</b>&nbsp;1 Polegada = 2,54 cm<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1/6 significa 6 linhas por polegada.<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1/8 significa 8 linhas por polegada.</p>
+    <p><b>Então:</b> Se um formulário de duplicata mede 15,3 cm de altura e possui 6 linhas por polegada, 
+       calculamos:</p>
+    <p>Altura em cm / 1 polegada * Linhas por Polegada = Numero de Linhas</p>
+    <p>ou seja: 15,3 / 2,54 * 6 = 36 Linhas (não existe frações de Linha).</p>
+    <p>Exemplos em &quot;Run Time&quot;:</p>
+    <p>RDprint1.TamanhoQteLinhas := 66;</p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="TamanhoQteColunas"><b><font color="#FF0000">TamanhoQteColunas</font></b></a>  
+     <blockquote>
+     <p>property&nbsp; TamanhoQteColunas : Integer</p>
+     <p>Descriçao: Define a Largura do formulário em colunas, é
+        utilizado para a definição da pagina de PREVIEW.</p>
+     <p>Veja também <a href="#FonteTamanhoPadrao">FonteTamanhoPadrao</a></p>
+     <p>COMO SABER ?<br>
+        Utilize um régua de gabarito para fazer a correta medição ou na 
+        falta você pode calcular manualmente, veja:</p>
+     <p>Sabendo-se que:<br> 
+        1 Polegada = 2,54 cm<br>
+        10 cpp significa 10 caracteres por polegada.<br>
+        12 cpp significa 12 caracteres por polegada.<br>
+        17 cpp significa 17 caracteres por polegada.<br>
+        20 cpp significa 20 caracteres por polegada.</p>
+     <p>Então: Se um formulário de duplicata mede 20,3 cm de largura e a
+        fonte padrão para impressão é 10 cpp (Padrão), calculamos:</p>
+     <p>Largura em cm / Polegada * cpp = Numero de Colunas</p>
+     <p>ou seja: <font color="#0000FF"> 20,3 / 2,54 * 10 = 80 Colunas</font>&nbsp;</p>
+     <p>Se a Fonte Padrão for comprimida em 12, 17 ou 20 basta recalcular.</p>
+     <p>&nbsp;&nbsp;&nbsp; 12:&nbsp; 20,3 / 2,54 * 12 = 96 Colunas<br>
+        &nbsp;&nbsp;&nbsp; 17:&nbsp; 20,3 / 2,54 * 17 = 136 Colunas<br>
+        &nbsp;&nbsp;&nbsp; 20:&nbsp; 20,3 / 2,54 * 20 = 160 Colunas&nbsp;</p>
+     <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+     <p><font color="#0000FF">RDprint1.TamanhoQteColunas := 80;</font></p>
+     </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="TamanhoQteLPP"><b><font color="#FF0000">TamanhoQteLPP</font></b></a> 
+    <blockquote>
+    <p>property TamanhoQteLPP : Tlinha</p>
+    <p>TLinha = (Seis, Oito);</p>
+    <p><b>Descrição</b>: Define o espaçamento entre linhas, o padrão é SEIS, porém existem 
+       alguns impressos personalizados de Nota Fiscal, Duplicata, Cheques etc, que 
+       utilizam o avanço em 8 LPP, ou seja, 8 linhas por polegada.</p>
+    <p>Seis = Sexto (6 linhas por polegada)<br>
+       Oito = Oitavo (8 linhas por polegada)</p>
+    <p>Veja Também <a href="#TamanhoQteLinhas">TamanhoQteLinhas</a></p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">RDprint1.TamanhoQteLPP := seis;<br>
+       RDprint1.TamanhoQteLPP := oito;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="NumerodeCopias"><b><font color="#FF0000">NumerodeCopias</font></b></a>     
+    <blockquote>
+    <p>property NumerodeCopias : Integer</p>
+    <p><b>Descrição</b>: Define número de cópias do relatório.</p>
+    <P><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></P>
+    <P><font color="#0000FF">RDprint1.NumerodeCopias := 2;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="FonteTamanhoPadrao"><b><font color="#FF0000">FonteTamanhoPadrao</font></b></a> 
+    <blockquote>
+    <p>property FonteTamanhoPadrao : TSize</p>
+    <p>TSize = (S05cpp,S10cpp,S12cpp,S17cpp,S20cpp);</p>
+    <p>S05cpp =&nbsp; 5 cpp (Expandido)&nbsp;<br>
+       S10cpp = 10 cpp (Normal)<br>
+       S12cpp = 12 cpp (Comprimido)<br>
+       S17cpp = 17 cpp (Condensado)<br>
+       S20cpp = 20 cpp (Comprimido + Condensado)</p>
+    <p><b>Descrição</b>: Tamanho da fonte padrão para o relatório. Ajuste o valor 
+       para o tamanho de Fonte que será mais utilizado em todo o relatório, 
+       otimizando o envio de caracteres de controle para a impressora.</P>
+    <p>Veja também <a href="#TamanhoQteColunas">TamanhoQteColunas</a>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></P>
+    <P><font color="#0000FF">// Fonte Default<br>
+       case radiogroup1.itemindex of<br>
+       &nbsp;&nbsp; 0 : rdprint1.FonteTamanhoPadrao := s05cpp;<br>
+       &nbsp;&nbsp; 1 : rdprint1.FonteTamanhoPadrao := s10cpp;<br>
+       &nbsp;&nbsp; 2 : rdprint1.FonteTamanhoPadrao := s12cpp;<br>
+       &nbsp;&nbsp; 3 : rdprint1.FonteTamanhoPadrao := s17cpp;<br>
+       &nbsp;&nbsp; 4 : rdprint1.FonteTamanhoPadrao := s20cpp;<br>
+       &nbsp;&nbsp; end;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="FonteEstiloPadrao"><b><font color="#FF0000">FonteEstiloPadrao</font></b></a> 
+    <blockquote>
+    <p>property FonteEstioPadrao : TStyle * </p>
+    <p>TEstilo = (Snegrito,Sitalico,Ssublinhado);<br>
+       TStyle = Set of TEstilo;
+    <p>Snegrito = Negrito<br>
+       Sitalico = Itálico<br>
+       Ssublinhado = Sublinhado</P>
+    <p><b>Descrição</b>: Define o estilo da fonte padrão.</P>
+    <p>* Obsoleto, será removido na próxima versão</P>
+    </blockquote><hr></td></tr>
+        
+<tr><td>&nbsp;<a name="Orientacao"><b><font color="#FF0000">Orientacao</font></b></a> 
+    <blockquote>
+    <p>property Orientacao : TPrinterOrientation </p>
+    <p>type TPrinterOrientation = (poPortrait, poLandscape);</p>
+    <p>poPortrait&nbsp;&nbsp;&nbsp;&nbsp; = Modo Normal<br>
+       poLandscape = modo paisagem</p>
+    <p><b>Descrição</b>: Define se a impressão será vertical ou horizontal na 
+       página, mas só irá funcionar se a impressão for feita em modo GRÁFICO.&nbsp;</p>
+    <p><font color="#008000"><b>IMPORTANTE</b>: Você deve declarar a unit 
+    PRINTERS em USES do seu form, pois é lá que estão declaradas as variaveis 
+    poPortrait e poLandscape</font></p>
+    <p>veja também <a href="#Impressora">Impressora</a></p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></P>
+    <p><b><font color="#FF0000">interface</font></b><font color="#0000FF"><br>
+    </font><b><font color="#FF0000">uses</font></b><font color="#0000FF">&nbsp; 
+    Printers;&nbsp;&nbsp; </font><font color="#008000">&lt;&lt;&nbsp; Importante</font></P>
+    <p><b><font color="#FF0000">Procedure</font></b><font color="#0000FF">...<br>
+    </font><font color="#FF0000"><b>Begin</b><br>
+    </font><font color="#0000FF">&nbsp;&nbsp;&nbsp;&nbsp; RDprint1.Orientacao := poLandscape;<br>
+&nbsp;</font></P>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="ImpressoraPersonalizada"><b><font color="#FF0000">ImpressoraPersonalizada</font></b></a> 
+    <blockquote>
+    <p><font face="Courier New" size="2">property ImpressoraPersonalizada : TCustom</font></p>
+    <p><font face="Courier New" size="2">TCustom = class(TPersistent)<br>
+       &nbsp;&nbsp; FCustomNomeImpr: String;<br>
+       &nbsp;&nbsp; FCustomavanco8 : String;<br>
+       &nbsp;&nbsp; FCustomavanco6 : String;<br>
+       &nbsp;&nbsp; FCustomSalto&nbsp;&nbsp; : String;<br>
+       &nbsp;&nbsp; FCustomTampag&nbsp; : String;<br>
+       &nbsp;&nbsp; FCustomnegrito : String;<br>
+       &nbsp;&nbsp; FCustomitalico : String;<br>
+       &nbsp;&nbsp; FCustomsublinh : String;<br>
+       &nbsp;&nbsp; FCustomexpande : String;<br>
+       &nbsp;&nbsp; FCustomnormal&nbsp; : String;<br>
+       &nbsp;&nbsp; FCustomcomp12&nbsp; : String;<br>
+       &nbsp;&nbsp; FCustomcomp17&nbsp; : String;<br>
+       &nbsp;&nbsp; FCustomcomp20&nbsp; : String;<br>
+       &nbsp;&nbsp; FCustomreset&nbsp;&nbsp; : String;<br>
+       &nbsp;&nbsp; FCustomFinal &nbsp;&nbsp; : String;</font></p>
+    <p>property <a name="NomeImpressora"> NomeImpressora</a> : String</p>
+    <p><b>Descrição</b>: Nome da Impressora personalizada<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exemplo: 'Grafix'&nbsp;</p>
+    <p><font face="Courier New" size="2">property AvancaOitavos : String<br>
+       property AvancaSextos&nbsp; : String<br>
+       property SaltoPagina&nbsp;&nbsp; : String<br>
+       property TamanhoPagina : String<br>
+       property Negrito&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : String<br>
+       property Italico&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : String<br>
+       property Sublinhado&nbsp;&nbsp;&nbsp; : String<br>
+       property Expandido&nbsp;&nbsp;&nbsp;&nbsp; : String<br>
+       property Normal10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : String<br>
+       property Comprimir12&nbsp;&nbsp; : String<br>
+       property Comprimir17&nbsp;&nbsp; : String<br>
+       property Comprimir20&nbsp;&nbsp; : String<br>
+       property Reset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : String<br>
+       property Inicializar&nbsp;&nbsp; : String</font></p>
+    <p><b>Descrição</b>: Campo string onde devem ser informados os códigos de controle 
+       para os respectivos comandos da impressora. Todos os códigos devem ser informados 
+       em DECIMAL e na sequência de comandos, cada código deve estar separado por um ESPAÇO.</p>
+    <p>Consulte o Manual da impressora para obter os respectivos códigos de
+       controle, consulte também a tabela de caracteres ASCII para obter
+       códigos decimais de controles como ESC, NULL, CRTL G, etc.</p>
+    <p><b>Exemplo de Configuração</b>: Impressora EPSON LX300</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">RDprint1.FMyPrinter.FCustomNomeImpr := 'Epson LX300';<br>
+       <br>
+       <font face="Courier New" size="2">WithRDprint1.FMyPrinter do<br>
+       &nbsp; begin<br>
+       &nbsp; FCustomNomeImpr:= 'Epson LX300';<br>
+       &nbsp; FCustomavanco6 := '27 50';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // #27+'2'<br>
+       &nbsp; FCustomavanco8 := '27 48';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // #27+'0'<br>
+       &nbsp; FCustomSalto&nbsp;&nbsp; := '12';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // #12<br>
+       &nbsp; FCustomTampag&nbsp; := '27 67 66';&nbsp;&nbsp;&nbsp; // #27+'C'+Linhas<br>
+       &nbsp; FCustomnegrito := '27 69';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // #27+'E'<br>
+       &nbsp; FCustomitalico := '27 52';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // #27+'4'<br>
+       &nbsp; FCustomsublinh := '27 45 49';&nbsp;&nbsp;&nbsp; // #27+'-'+'1'<br>
+       &nbsp; FCustomexpande := '27 14';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // #27+#14<br>
+       &nbsp; FCustomnormal&nbsp; := '18 27 80';&nbsp;&nbsp;&nbsp; // #18+#27+'P'<br>
+       &nbsp; FCustomcomp12&nbsp; := '18 27 77';&nbsp;&nbsp;&nbsp; // #18+#27+'M'<br>
+       &nbsp; FCustomcomp17&nbsp; := '27 80 27 15';   // #27+'P'+#27+#15<br>
+       &nbsp; FCustomcomp20&nbsp; := '27 77 27 15';   // #27+'M'+#27+#15<br>
+       &nbsp; FCustomreset&nbsp;&nbsp; := '27 80 18 20 27 53 27 70 27 45 48';<br>
+       &nbsp; FCustomFinal&nbsp;&nbsp; := '27 64';<br>
+    &nbsp; end;</font></font></p>
+    <p>* O Comando de Reset DEVE ser composto pelos seguintes comandos:<br>
+    a) Tamanho da fonte em 10 cpp<br>
+    b) cancelar condensado<br>
+    c) cancelar largura dupla&nbsp;<br>
+    d) cancelar itálico<br>
+    e) cancelar enfatizado&nbsp;<br>
+    f) cancelar sublinhado&nbsp;</p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="OpcoesPreview"><font color="#FF0000"><b>OpcoesPreview</b></font></a> 
+    <blockquote>
+    <p>property&nbsp; OpcoesPreview : TPreviewOptions</p>
+    <p>FMyPreview : TPreviewOptions;&nbsp;</p>
+    <p><b>Descrição</b>: Grupo de propriedades que definem as opções do Preview.
+       Veja detalhes nas sub-propriedades.</p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="PaginaZebrada"><b><font color="#FF0000">PaginaZebrada</font></b></a> 
+    <blockquote>
+    <p>property PaginaZebrada : Boolean</p>
+    <p><b>Descrição</b>: Se True faz com que a página de preview seja visualizada com 
+       linhas alternadas em verde, imitando o formulário zebrado, se False a página 
+       de preview será mostrada na&nbsp;cor definida pela propriedade <a href="#CorPapelPreview">CorPapelPreview</a>.</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">RDprint1.OpcoesPreview.PaginaZebrada := True;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="Remalina"><b><font color="#FF0000">Remalina</font></b></a> 
+    <blockquote>
+    <p>property&nbsp; Remalina : Boolean</p>
+    <p><b>Descrição</b>: Se True irá mostrar uma margem direita e esquerda com serrilha e 
+       furinhos imitando o formulário continuo, se False a página de preview será mostrada
+       cor um quadro simulando as margens de impressão.</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">rdprint1.OpcoesPreview.Remalina := False;</font></p>
+    </blockquote><hr></td></tr>
+         
+<tr><td>&nbsp;<a name="CaptionPreview"><b><font color="#FF0000">CaptionPreview</font></b></a> 
+    <blockquote>
+    <p>property&nbsp; CaptionPreview : String</p>
+    <p><b>Descrição</b>: Define o Caption do Form de Preview.</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">rdprint1.OpcoesPreview.CaptionPreview := 'Nota Fiscal';</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="PreviewZoom"><b><font color="#FF0000">PreviewZoom</font></b></a> 
+    <blockquote>
+    <p>property&nbsp; PreviewZoom : Integer</p>
+    <p><b>Descrição</b>: Define qual é a porcentagem ou modo de
+       apresentação inicial do Zoom. podendo ter valores de&nbsp; -2 a 400.</p>
+    <p><b>Os valores aceitos são:</b><br>
+    &nbsp;0 = zoom total, mostra a página inteira<br>
+       -1 = zoom na LARGURA da página<br>
+       -2 = zoom em 100%<br>
+       de 1 a 400 = Porcentagem de zoom.</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">rdprint1.OpcoesPreview.PreviewZoom := 100;<br>
+       rdprint1.OpcoesPreview.PreviewZoom := 0; // Total<br>
+       rdprint1.OpcoesPreview.PreviewZoom := -1; //Largura<br>
+       rdprint1.OpcoesPreview.PreviewZoom := -2; //100%</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="CorPapelPreview"><b><font color="#FF0000">CorPapelPreview</font></b></a> 
+    <blockquote>
+    <p>property&nbsp; CorPapelPreview : Tcolor</p>
+    <p><b>Descrição</b>: Define a cor de fundo do papel na página de preview.
+    Tem efeito apenas 
+       no visual e não altera a impressão, mesmo quando for em modo gráfico.</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">rdprint1.OpcoesPreview.CorPapelPreview := clInfobk;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="CorLetraPreview"><b><font color="#FF0000">CorLetraPreview</font></b></a> 
+    <blockquote>
+    <p>property CorLetraPreview : Tcolor</p>
+    <p><b>Descrição</b>: Define a cor da Letra e traços na página do Preview.</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">rdprint1.OpcoesPreview.CorLetraPreview := clBlue;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp; <a name="Preview"> <b><font color="#FF0000">Preview</font></b></a> 
+    <blockquote>
+    <p>property Preview : boolean </p>
+    <p><b>Descrição</b>: Se True após o comando <a href="#Fechar">FECHAR</a>
+       faz com que a página de preview seja mostrada, se False inicia a impressão.</p>
+    </blockquote>
+    <p align="center">
+    <img border="0" src="preview.gif" width="646" height="416"></p>
+    <blockquote>
+    <p><b>Teclas de Atalho no Preview</b>:</p>
+         <div align="center"><center>
+         <table border="1" cellspacing="0" width="457">
+         <tr><td width="282" align="center" bgcolor="#FFFFF2"><b>Comando / Ação</b></td>
+             <td width="165" align="center" bgcolor="#FFFFF2"><b>Teclas de Atalho</b></td></tr>
+         <tr><td width="282">&nbsp;Rolagem da página</td>
+             <td width="165">&nbsp;Setas</td></tr>
+         <tr><td width="282">&nbsp;Rolagem Rápida da página</td>
+             <td width="165">&nbsp;Shift + Setas</td></tr>
+         <tr><td width="282">&nbsp;Primeira Página</td>
+             <td width="165">&nbsp;Home</td></tr>
+         <tr><td width="282">&nbsp;Última Página</td>
+             <td width="165">&nbsp;End</td></tr>
+         <tr><td width="282">&nbsp;Próxima Página</td>
+             <td width="165">&nbsp;PageUP</td></tr>
+         <tr><td width="282">&nbsp;Página Anterior</td>
+             <td width="165">&nbsp;PageDown</td></tr>
+         <tr><td width="282">&nbsp;Página N (acesso direto)</td>
+             <td width="165">&nbsp;CTRL + &quot;N&quot;</td></tr>
+         <tr><td width="282">&nbsp;Ajuste de Zoom</td>
+             <td width="165">&nbsp;&quot;+&quot;&nbsp; e&nbsp;&quot;-&quot;&nbsp;</td></tr>
+         <tr><td width="282">&nbsp;Configurar a Impressora</td>
+             <td width="165">&nbsp;CTRL + &quot;S&quot;</td></tr>
+         <tr><td width="282">&nbsp;Imprimir</td>
+             <td width="165">&nbsp;CTRL + &quot;P&quot;</td></tr>
+         <tr><td width="282">&nbsp;Gravar em Arquivo</td>
+             <td width="165">&nbsp;CTRL + &quot;G&quot;</td></tr>
+         <tr><td width="282">&nbsp;Ler Relatório</td>
+             <td width="165">&nbsp;CTRL + &quot;L&quot;</td></tr>
+         <tr><td width="282"><font color="#008000">&nbsp;Iniciar PROCURA</font></td>
+             <td width="165"><font color="#008000">&nbsp;CTRL + &quot;F&quot;</font></td></tr>
+         <tr><td width="282"><font color="#008000">&nbsp;Continuar PROCURA
+           </font></td>
+             <td width="165"><font color="#008000">&nbsp;F3</font></td></tr>
+         <tr><td width="282">&nbsp;Cancelar</td>
+             <td width="165">&nbsp;ESC</td></tr>
+         </table>
+         </center>
+         </div>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">rdprint1.OpcoesPreview.Preview := True;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="Botões da Tela de Preview"><b><font color="#FF0000">Botões da Tela de Preview</font></b></a>
+    <blockquote>
+    <p>property BotaoSetup : TStatBut<br>
+       property BotaoImprimir : TStatBut<br>
+       property BotaoGravar : TStatBut<br>
+       property BotaoLer : TStatBut</p>
+    <p>Type TStatBut = (Ativo, Inativo, Invisivel);</p>
+    <p><b>Descrição</b>: Define o status dos respectivos botões na tela de Preview
+       permitindo personalizar as ações que o usuário poderá executar, como a
+       impressão e gravação do relatório.</p>
+    <p>* Desabilita também as teclas de atalho do Preview.</p>
+    <p><font color="#0000FF">Exemplos em &quot;Run Time&quot;:</font></p>
+    <p><font color="#0000FF">rdprint1.OpcoesPreview.BotaoSetup := Inativo;<br>
+       rdprint1.OpcoesPreview.BotaoImprimir := Ativo;<br>
+       rdprint1.OpcoesPreview.BotaoGravar := Invisivel;<br>
+       rdprint1.OpcoesPreview.BotaoSetup := Invisivel;</font></p>
+    </blockquote><hr></td></tr>
+</table>
+
+<p>&nbsp;</p>
+
+<div align="center"><center>
+<table border="0" cellspacing="0" width="100%" bgcolor="#F4FFF4">
+<tr><td bgcolor="#000080"><p align="center"><b><font color="#FFFFF2">FUNÇÕES</font></b></p></td></tr>
+
+<tr><td>&nbsp;<a name="Abrir"><b><font color="#FF0000">Abrir</font></b></a> 
+    <blockquote>
+    <p>Function Abrir&nbsp;: boolean</p>
+    <p><b>Descrição</b>: Inicializa os parâmetros para criação do relatório.&nbsp;</p>
+    <p>Retorna True ou False como resultado da Função.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">RDprint1.Abrir;</font></p>
+    <p><font color="#0000FF">Exemplo 2:</font></p>
+    <p><font color="#0000FF">if RDprint1.Abrir = False then<br>
+       &nbsp;&nbsp; showmessage('Erro na inicialização do RDprint');</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="Fechar"><b><font color="#FF0000">Fechar</font></b></a>       
+    <blockquote>
+    <p>Function Fechar : boolean</p>
+    <p><b>Descrição</b>: Se a propriedade preview for TRUE, mostra o form de PREVIEW 
+       colocando à disposição do usuário as opções de navegação pelo relatório 
+       e as opções para configuração da impressão, impressão e operações com 
+       arquivos, permitindo SALVAR o relatório ou LER um relatórios salvos
+       anteriormente, se a propriedade preview for FALSE, então inicia o processo de impressão.</p>
+    <p>Após o termino da impressão ou fechamento do form PREVIEW a impressora e a memória alocada
+    são liberadas, podendo-se iniciar um novo relatório.</p>
+    <p>Retorna True ou False como resultado da Função.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">RDprint1.Fechar;</font></p>
+    <p><font color="#0000FF">Exemplo 2:</font></p>
+    <p><font color="#0000FF">if RDprint1.Fechar = False then<br>
+       &nbsp;&nbsp; showmessage('Erro no fechamento do RDprint');</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="Abortar"><b><font color="#FF0000">Abortar</font></b></a>      
+    <blockquote>
+    <p>Function Abortar : boolean</p>
+    <p><b>Descrição</b>: Aborta a geração de um relatório em andamento&nbsp;(fase de criação 
+       do relatório), ou seja, quando o comando FECHAR ainda não foi enviado.</p>
+    <p>Retorna True ou False como resultado da Função.</P>
+    <p><font color="#0000FF">Exemplo:&nbsp;&nbsp;</font><p><font color="#0000FF">RDprint1.Abrir;<br>
+       While not Table1.eof do<br>
+       &nbsp; begin<br>
+       &nbsp; if QualquerMotivo = true then&nbsp;<br>
+       &nbsp;&nbsp;&nbsp;&nbsp; begin<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RDprint1.Abortar;<br>
+       &nbsp;&nbsp;&nbsp;&nbsp; break;<br>
+       &nbsp;&nbsp;&nbsp;&nbsp; exit;<br>
+       &nbsp;&nbsp;&nbsp;&nbsp; end;&nbsp;&nbsp;<br>
+       &nbsp;&nbsp; RDprint1.impf(01,01,table1name.value,[normal]);<br>
+       &nbsp;&nbsp; end;<br>
+       RDprint1.Fechar;</font>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp; <a name="Novapagina">  <b><font color="#FF0000">Novapagina</font></b></a>   
+    <blockquote>
+    <p>Function Novapagina : integer</p>
+    <p><b>Descrição</b>: Inicializa uma nova página incrementando o contador de 
+       página interno e retornando o número da nova página.</P> 
+    <p>Na impressão irá provocar o salto de página.</P>
+    <p><font color="#0000FF">Exemplo 1:</font></P>
+    <p><font color="#0000FF">//Inicializa uma nova página<br>
+       RDprint1.NovaPagina;&nbsp;</font></p>
+    <p><font color="#0000FF">Exemplo2:</font></P>
+    <p><font color="#0000FF">// Inicializa nova página jogando o nº da Pagina&nbsp;<br>
+       // para a variável NumPagina.<br>
+       NumPagina := RDprint1.NovaPagina;</font>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="Setup"><b><font color="#FF0000">Setup</font></b></a> 
+    <blockquote>
+    <p>Function Setup : boolean</p>
+    <p><b>Descrição</b>: Mostra a form de SETUP da impressão para que o
+       usuário possa informar os parâmetros de impressão,ou seja:</p>
+    <p>- Impressora e Local de Impressão,<br>
+    - Modelo da Impressora,<br>
+    - Intervalo de Paginas que deseja imprimir e<br>
+    - Número de Cópias.</p>
+    <p>Retorna TRUE se o usuário clicar no botão &quot;OK&quot; e FALSE
+       se o usuário clicar no botão &quot;CANCELAR&quot;.</p>
+    <p>O SETUP só deve ser chamado após o <a href="#Abrir">ABRIR</a> e
+       se a escolha for o botão CANCELAR, então o comando <a href="#Fechar">FECHAR</a>
+       não pode ser chamado, pois o cancelamento já foi processado internamente.</p>
+    <p align="center"><img border="0" src="SETUP.gif" width="528" height="314"></p>
+    <p><font color="#0000FF">Exemplo:</font></p>
+    <p><font color="#0000FF">// Inicializa uma
+       nova página<br>
+       RDprint1.Abrir;&nbsp;<br>
+       if RDprint1.SETUP then<br>
+       &nbsp;&nbsp; begin<br>
+       &nbsp;&nbsp; RDprint1.imp(01,01,'Você clicou o botão OK');<br>
+       &nbsp;&nbsp; RDprint1.imp(02,01,'Então estou imprimindo');<br>
+       &nbsp;&nbsp; RDprint1.Fechar;<br>
+       &nbsp;&nbsp;
+       end<br>
+       else<br>
+       &nbsp;&nbsp; begin<br>
+       &nbsp;&nbsp; showmessage('Você clicou no botão CANCELAR');<br>
+       &nbsp;&nbsp; end;</font>
+    </blockquote><hr></td></tr>
+
+<tr><td><b><font color="#FF0000">&nbsp;<a name="SetPrintByName">SetPrintByName</a></font></b>
+    <blockquote>
+    <p>Function SetPrintByName (PrintName : string)&nbsp; :&nbsp; Boolean</p>
+    <p><b>Descrição</b>: Seleciona uma impressora pelo Nome.</p>
+    <p><b>PrintName</b>: String informando o nome da Impressora (LX300, HP,
+    NOTA, etc)</p>
+    <p><b>Observações</b>:&nbsp;<br>
+       a) Seleciona a primeira impressora que tiver a string PRINTNAME no nome
+    conforme definido no painel de controle/Impressoras<br>
+       b) Use para selecionar impressoras diretamente, compativel com todas as
+    versões do Windows.&nbsp;<br>
+    c) Após selecionada uma impressora, tenta identificar o modelo e caso
+    consiga, ajusta também o MODELO de impressora. Você pode acrescentar
+    palavras chaves no nome da impressora para ajudar a identificação.</p>
+    <p>Exemplo: &quot;HP 870&quot;, &quot;Nota Fiscal - Epson&quot; etc..&nbsp;</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">// Seleciona uma impressora pelo Nome<br>
+    if rdprint1.SetPrintByName('Nota Fiscal') then<br>
+       &nbsp;&nbsp; showmessage('Impressora foi selecionada)&nbsp;<br>
+    else<br>
+       &nbsp;&nbsp; showmessage('Não existe impressora chamada &quot;Nota
+    Fiscal&quot;') ;</font></p>
+    <p><font color="#0000FF">Exemplo 2:</font></p>
+    <p><font color="#0000FF">if not rdprint1.SetPrintByName('LX 300') then<br>
+    &nbsp;&nbsp; begin<br>
+    &nbsp;&nbsp; showmessage('Impressora não localizada...');<br>
+    &nbsp;&nbsp; exit;<br>
+    &nbsp;&nbsp; end;
+    </font></p>
+    </blockquote><hr></td></tr>
+
+<tr>
+  <td><b><font color="#FF0000">&nbsp;<a name="SetPrintByPorta">SetPrintByPorta</a></font></b>
+    <blockquote>
+    <p>Function SetPrintByPorta (PrintPort : string)&nbsp; :&nbsp; Boolean</p>
+    <p><b>Descrição</b>: Seleciona uma impressora pelo Porta ou Local de
+    impressão.</p>
+    <p><b>PrintPort</b>: String informando o local da Impressora ('LPT1',
+    'LPT2', '\\SERVIDOR\EPSON', etc)</p>
+    <p><b>Observações</b>:&nbsp;<br>
+       a) Seleciona a primeira impressora que estiver na Porta/Local indicado
+    pela string PRINTPORT, conforme definido no painel de controle/Impressoras.<br>
+    b) Use para selecionar impressoras diretamente pela porta, compativel com
+    Windows 95/98/me.&nbsp;<br>
+    c) Incompativel com Windows NT/2000, nestes casos use a SetPrintByName.<br>
+    d) Após selecionada uma impressora, tenta identificar o modelo e caso
+    consiga, ajusta também o MODELO de impressora. Você pode acrescentar
+    palavras chaves no nome da impressora para ajudar a identificação.</p>
+    <p>Exemplo: &quot;HP 870&quot;, &quot;Nota Fiscal - Epson&quot; etc..&nbsp;</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">// Seleciona uma impressora pela Porta / Local<br>
+    if rdprint1.SetPrintByPorta('LPT2') then<br>
+       &nbsp;&nbsp; showmessage('Impressora foi selecionada)&nbsp;<br>
+    else<br>
+       &nbsp;&nbsp; showmessage('Não existe impressora configurada na porta
+    &quot;LPT2&quot;') ;</font></p>
+    <p><font color="#0000FF">Exemplo 2:</font></p>
+    <p><font color="#0000FF">if not rdprint1.SetPrintByPorta('\\servidor\epson')
+    then<br>
+    &nbsp;&nbsp; begin<br>
+    &nbsp;&nbsp; showmessage('Impressora não localizada...');<br>
+    &nbsp;&nbsp; exit;<br>
+    &nbsp;&nbsp; end;
+    </font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="Imp"><b><font color="#FF0000">Imp</font></b></a>
+    <blockquote>
+    <p>Function&nbsp;Imp&nbsp;<br>
+       &nbsp; (linha, coluna : integer; texto : string) : boolean</p>
+    <p><b>Descrição</b>: Impressão com Fonte Padrão. Envia uma STRING (TEXTO) para 
+       impressão na Linha e Coluna Especificada.&nbsp;</p>
+    <p>Nessa função não é especificada a fonte, neste caso a fonte
+       será a <a href="#FonteTamanhoPadrao">Fonte Padrão</a> definida no Componente.</p>
+    <p>onde: Linha e Coluna indicam a coordenada de impressão;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Texto é a STRING a ser impressa.</p>
+    <p>Retorna TRUE se OK ou FALSE se ocorrer algum erro.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">Var<br>
+       &nbsp;&nbsp; TXT&nbsp;&nbsp; : String;<br>
+       &nbsp;&nbsp; Valor : Double;<br>
+       &nbsp;&nbsp; Numero: integer;<br>
+       Begin<br>
+       // Imprime
+       sem especificar a Fonte<br>
+       RDprint1.IMP(01,01,'Teste de Impressão');&nbsp;<br>
+       RDprint1.IMP(02,01,Table1Nome.value);&nbsp;<br>
+       RDprint1.IMP(03,01,txt);<br>
+       RDprint1.IMP(04,01,inttostr(numero));<br>
+    RDprint1.IMP(05,01,formatFloat('###,##0.00',Valor));</font></P>
+    <p>Os comandos IMPC e IMPD poderão não funcionar corretamente dependendo da Fonte padrão
+       (default) e da fonte utilizada no comando, de maneira geral os comandos funcionaram 
+       bem se as fontes forem do mesmo tamanho e estilo.</p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="ImpF"><b><font color="#FF0000">ImpF</font></b></a>
+    <blockquote>
+    <p>Function IMPF<a name="ImpF"><br></a>
+       &nbsp; (linha,coluna:integer; texto:string; Fonte:TFonte):boolean</p>
+    <p>Type: TTipoFonte = (negrito, italico, sublinhado, expandido, normal, comp12, comp17, comp20);<br>
+       TFonte = set of Ttipofonte;</p>
+    <p><b>Descrição</b>: Impressão com especificação de Fonte. Envia uma STRING (TEXTO) para impressão 
+       na Linha e Coluna Especificada e ainda com o TAMANHO e ESTILO de fonte específicos.</p>
+    <p>Veja também as funções <a href="#ImpD">IMPD</a>, <a href="#ImpC">IMPC</a>,
+       <a href="#ImpVal">IMPVAL</a>, <a href="#ImpASCII">IMPASCII</a></p>
+    <p>onde: Linha e Coluna indicam a coordenada de impressão<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Texto é a STRING a ser impressa.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fonte é um conjunto onde é especificado o Tamanho e Estilo da fonte,
+
+<font face="Courier New" size="3">
+
+<b>as opções para tamanho de Fonte são:</b></font></p>
+    <p>
+
+<font face="Courier New" size="3">
+
+       Expandido = Fonte Expandida em 5 cpp<br>
+       Normal&nbsp;&nbsp;&nbsp; = Fonte Normal em 10 cpp&nbsp;<br>
+       comp12&nbsp;&nbsp;&nbsp; = Fonte Comprimida em 12 cpp&nbsp;&nbsp;<br>
+       comp17&nbsp;&nbsp;&nbsp; = Fonte Condensada em 17 cpp&nbsp;<br>
+       comp20&nbsp;&nbsp;&nbsp; = Fonte Comprimida + Condensado (20 cpp)</p>
+    <p><b>e as opções de Estilo são:</b> Negrito, Italico e Sublinhado</p>
+    <p><b>Atenção</b>: Você pode combinar tamanho e Estilo, mas lembre-se, escolha apenas 
+       um TAMANHO e combine com os estilos desejados.</p>
+    <p>Retorna TRUE se OK ou FALSE se ocorrer algum erro.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">Var<br>
+       &nbsp;&nbsp; TXT&nbsp;&nbsp; : String;<br>
+       &nbsp;&nbsp; Valor : Double;<br>
+       &nbsp;&nbsp; Numero: integer;<br>
+       Begin<br>
+       // Imprime
+       sem especificar a Fonte<br>
+       RDprint1.IMPF(01,01,'Teste de Impressão',[expandido]);&nbsp;<br>
+       RDprint1.IMPF(02,01,Table1Nome.value,[normal]);&nbsp;<br>
+       RDprint1.IMPF(03,01,txt,[italico]);<br>
+       RDprint1.IMPF(04,01,inttostr(numero),[comp12,negrito']);<br>
+       RDprint1.IMPF(05,01,formatFloat('###,##0.00',Valor),[]);</font></P>
+    </blockquote><hr></font></td></tr>
+
+<tr><td>&nbsp;<a name="ImpD"><b><font color="#FF0000">ImpD</font></b></a>
+    <blockquote>
+    <p>Function ImpD<br>
+       &nbsp;&nbsp;&nbsp;(linha,coluna:integer;texto:string; Fonte:TFonte):boolean</p>
+    <p><b>Descrição</b>:&nbsp;Impressão com Fonte Padrão e ALINHAMENTO do texto à direita. Envia 
+       uma STRING (TEXTO) para impressão na Linha alinhando-o à direita da Coluna Especificada.</p>
+    <p>Veja também a <a href="#ImpF">IMPF</a>&nbsp;e <a href="#ImpVal">IMPVAL</a>
+    para impressão de valores.</p>
+    <p><b>Atenção</b>:<br>
+       a) A COLUNA informada deve ser a coluna base para alinhamento.<br>
+       b) Esta função pode não funcionar muito bem quando a fonte utilizada for diferente da <a href="#FonteTamanhoPadrao">Fonte Padrão</a>.</p>
+    <p>Retorna TRUE se OK ou FALSE se ocorrer algum erro.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">Var<br>
+       &nbsp;&nbsp; TXT&nbsp;&nbsp; : String;<br>
+       &nbsp;&nbsp; Valor : Double;<br>
+       &nbsp;&nbsp; Numero: integer;<br>
+       Begin<br>
+       // Imprime
+       sem especificar a Fonte<br>
+       RDprint1.IMPD(01,40,'Teste de Impressão');<br>
+       RDprint1.IMPD(02,40,Table1Nome.value);<br>
+       RDprint1.IMPD(03,40,txt);<br>
+       RDprint1.IMPD(03,40,inttostr(numero));<br>
+       RDprint1.IMPD(03,40,formatFloat('###,##0.00',Valor));</font>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="ImpC"><b><font color="#FF0000">ImpC</font></b></a>
+    <blockquote>
+    <p>Function Impc (linha, coluna : integer; texto : string; Fonte : TFonte) :
+    boolean</p>
+    <p><b>Descrição</b>: Impressão com Fonte Padrão e CENTRALIZAÇÃO do texto. Envia uma 
+       STRING (TEXTO) para impressão na Linha centralizando-o à na Coluna Especificada.</p>
+    <p>Veja também a <a href="#ImpF">IMPF</a>&nbsp;</p>
+    <p><b>Atenção</b>:<br>
+       a) A COLUNA informada deve ser a coluna base para a centralização, não importa a 
+          largura da folha, assim é possível centralizar um texto em qualquer posição da folha.<br>
+       b) Esta função pode não funcionar muito bem quando a fonte utilizada for diferente da <a href="#FonteTamanhoPadrao">Fonte Padrão</a>.</p>
+    <p>Retorna TRUE se OK ou FALSE se ocorrer algum erro.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">Var<br>
+       &nbsp;&nbsp; TXT&nbsp;&nbsp; : String;<br>
+       &nbsp;&nbsp; Valor : Double;<br>
+       &nbsp;&nbsp; Numero: integer;<br>
+       Begin<br>
+       // Imprime
+       sem especificar a Fonte<br>
+       RDprint1.IMPC(01,40,'Teste de Impressão');&nbsp;<br>
+       RDprint1.IMPC(02,40,Table1Nome.value);&nbsp;<br>
+       RDprint1.IMPC(03,40,txt);<br>
+       RDprint1.IMPC(03,40,inttostr(numero));<br>
+       RDprint1.IMPC(03,40,formatFloat('###,##0.00',Valor));</font>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="ImpVal"><b><font color="#FF0000">ImpVal</font></b></a>
+    <blockquote>
+    <p>Function ImpVal&nbsp;<br>
+       &nbsp; (linha,coluna:integer;&nbsp; mascara : string;&nbsp;<br>
+       &nbsp;&nbsp; Valor : double; Fonte : TFonte) : boolean</p>
+    <p><b>Descrição</b>: Função Especial para a impressão de VALORES alinhados à direita. 
+       É basicamente uma mistura do FORMATFLOAT com IMPD, porém mais fácil de usar 
+       e com perfeito alinhamento à direita.</p>
+    <p>- Linha e Coluna indicam a posição de impressão;<br>
+       - Mascara é a mesma utilizada no FormatFloat;<br>
+       - Valor é o número inteiro ou valor para formatação;<br>
+       - Fonte é a especificação do Tamanho e Estilo (Veja <a href="#ImpF">IMPF</a>)</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">// Imprime valores alinhados à direita<br>
+       rdprint1.ImpVal( 6,5,'###,##0.00',-11.78,[negrito]);<br>
+       rdprint1.ImpVal( 7,5,'###,##0.00',222.74,[]);<br>
+       rdprint1.ImpVal( 8,5,'###,##0.00;;0.00',0,[]);<br>
+       rdprint1.ImpVal( 9,5,'###,##0.00;;0.00',1.78,[]);<br>
+       rdprint1.ImpVal(10,5,'###,##0.00;;#',0,[]);</font>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="ImpASCII"><b><font color="#FF0000">ImpASCII</font></b></a>
+    <blockquote>
+    <p>Function ImpASCII<br>
+       &nbsp; (linha,coluna:integer; texto : string) : boolean </p>
+    <p><b>Descrição</b>: Função Especial para o ENVIO de caracteres ou comandos ASCII.</p>
+    <p><b>Atenção</b>:<br>
+      - Este códigos não afetam o Preview e NÃO terão efeito na impressão em modo <a href="#Impressora">GRAFICO</a>.<br>
+      - Os códigos enviados poderão ser incompatíveis com o modelo de impressora utilizado, a responsabilidade
+    fica por sua conta.<br>
+      - Os códigos devem ser informados SEMPRE em DECIMAL e com um espaços separando-os.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">// Imprimir um texto em modo SUBESCRITO (EPSON)<br>
+       rdprint1.ImpASCII(1,1,'27 83'); // Seleciona&nbsp;<br>
+       rdprint1.ImpVal&nbsp; (1,1,'TESTE -&gt; Texto subscrito');<br>
+       rdprint1.ImpASCII(1,1,'27 84'); // Cancela</font>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="ImpBox"><b><font color="#FF0000">ImpBox</font></b></a>
+    <blockquote>
+    <p>Procedure impBox (linha, coluna : integer; texto: string)</p>
+    <p><b>Descrição</b>: Função Especial para a impressão de caracteres semi-gráficos utilizados 
+       na criação de Traços, Conexões e Caixas com opção de traço simples ou duplo.</p>
+    <p>Veja também <a href="#Box">BOX</a>, <a href="#LinhaV">LINHAV</a> e <a href="#LinhaH">LINHAH</a></p>
+    <p>Para esse comando são utilizados caracteres que serão substituídos por códigos especiais 
+       que não podem ser representados no Windows.</p>
+    <p><b>Tabela de Conversão é a seguinte</b>:</p>
+    <p align="center"><img border="0" src="IMPBOX.JPG" width="328" height="147"></p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">// Exemplo de um Box com linhas duplas...</font></P>
+    <p><font color="#0000FF">rdprint1.abrir;<br>
+       rdprint1.impBox(15,1,'A====T====B');<br>
+       rdprint1.impBox(16,1,'I&nbsp;&nbsp;&nbsp; I&nbsp;&nbsp;&nbsp; I');<br>
+       rdprint1.impBox(17,1,'I&nbsp;&nbsp;&nbsp; I&nbsp;&nbsp;&nbsp; I');<br>
+       rdprint1.impBox(18,1,'[====#====]');<br>
+       rdprint1.impBox(19,1,'I&nbsp;&nbsp;&nbsp; I&nbsp;&nbsp;&nbsp; I');<br>
+       rdprint1.impBox(20,1,'I&nbsp;&nbsp;&nbsp; I&nbsp;&nbsp;&nbsp; I');<br>
+       rdprint1.impBox(21,1,'D====V====C');<br>
+       <br>
+       // Exemplo de um Box com linhas simples...<br>
+       rdprint1.impBox(15,31,'a----t----b');<br>
+       rdprint1.impBox(16,31,'i&nbsp;&nbsp;&nbsp; i&nbsp;&nbsp;&nbsp; i');<br>
+       rdprint1.impBox(17,31,'i&nbsp;&nbsp;&nbsp; i&nbsp;&nbsp;&nbsp; i');<br>
+       rdprint1.impBox(18,31,'&lt;----+---->');<br>
+       rdprint1.impBox(19,31,'i&nbsp;&nbsp;&nbsp; i&nbsp;&nbsp;&nbsp; i');<br>
+       rdprint1.impBox(20,31,'i&nbsp;&nbsp;&nbsp; i&nbsp;&nbsp;&nbsp; i');<br>
+       rdprint1.impBox(21,31,'d----v----c');<br>
+       rdprint1.fechar;</font>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="Box"><b><font color="#FF0000">Box</font></b></a>
+    <blockquote>
+    <p>Procedure Box<br>
+        &nbsp; (LTop, CLeft, LButton, CRigth  : integer; Duplo : boolean)</p>
+    <p><b>Descrição</b>: Função Especial para desenhar uma CAIXA (BOX)
+       utilizando-se caracteres semi-gráficos da tabela ASCII.</p>
+    <p>Veja também <a href="#ImpBox">IMPBOX</a>, <a href="#LinhaV">LINHAV</a>, <a href="#LinhaH">LINHAH</a></p>
+    <p>Você deve informar as coordenadas dos cantos superior esquerdo,
+       inferior direito e também se o traço irá ser DUPLO ou não.</p>
+    <p>LTOP&nbsp;&nbsp;&nbsp; = Linha superior;<br>
+       CLEFT&nbsp;&nbsp; = Coluna da Esquerda;<br>
+       LButton = Linha Inferior;<br>
+       CRigth&nbsp;&nbsp;= Coluna da Direita;<br>
+       Duplo&nbsp;&nbsp;&nbsp;= TRUE para traço duplo e FALSE para traço
+    simples.</p>
+    <p align="center"><img border="0" src="BOX.JPG" width="262" height="101"></p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">// Desenhar um BOX com traços Duplos<br>
+       rdprint1.BOX(1, 1,10,10, True);</font></P>
+    <p><font color="#0000FF">// Desenhar um BOX com traços Simples<br>
+       rdprint1.BOX(1,20,10,30, False);</font></P>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="LinhaV"><b><font color="#FF0000">LinhaV</font></b></a>
+    <blockquote>
+    <p>Procedure LinhaV<br>
+       &nbsp; (Coluna, Inicio, Fim, Conexao  : integer; Duplo : boolean)</p>
+    <p><b>Descrição</b>: Função Especial para desenhar uma LINHA
+       VERTICAL utilizando-se caracteres semi-gráficos da tabela ASCII.</p>
+    <p>Veja também <a href="#ImpBox">IMPBOX</a>, <a href="#Box">BOX</a>, <a href="#LinhaH">LINHAH</a></p>
+    <p>COLUNA&nbsp; = Coluna base para a Linha vertical;<br>
+       INICIO&nbsp; = Linha onde irá iniciar o traço;<br>
+       FIM&nbsp;&nbsp;&nbsp;&nbsp; = Linha onde irá terminar o traço;<br>
+    CONEXAO = Número inteiro de 0 a 3 que indica qual é o caractere que irá iniciar e terminar o Traço, permitindo a conexão com outras LINHAS e BOX;<br>
+       Duplo&nbsp;&nbsp;&nbsp;= TRUE para traço duplo e FALSE para traço simples.</p>
+    <p><b>Tipos de Conexões permitidas</b>:</p>
+    <p align="center"><img border="0" src="LINHAV.JPG" width="263" height="121"></p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">RDprint1.Abrir;<br>
+       // Traço Duplo<br>
+       RDprint1.LinhaV(10,10,20,0,true);<br>
+       RDprint1.LinhaV(12,10,20,1,true);<br>
+       RDprint1.LinhaV(14,10,20,2,true);<br>
+       RDprint1.LinhaV(16,10,20,3,true);<br>
+       // Traço Simples<br>
+       RDprint1.LinhaV(20,10,20,0,false);<br>
+       RDprint1.LinhaV(22,10,20,1,false);<br>
+       RDprint1.LinhaV(24,10,20,2,false);<br>
+       RDprint1.LinhaV(26,10,20,3,false);<br>
+       RDprint1.Fechar;</font></p>
+   </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="LinhaH"><b><font color="#FF0000">LinhaH</font></b></a>
+    <blockquote>
+    <p>Procedure LinhaH<br>
+        &nbsp; (Linha,  Inicio, Fim, Conexao  : integer; Duplo : boolean)</p>
+    <p><b>Descrição</b>: Função Especial para desenhar um LINHA HORIZONTAL, utilizando-se 
+       caracteres semi-gráficos da tabela ASCII.</p>
+    <p>Veja também <a href="#ImpBox">IMPBOX</a>, <a href="#Box">BOX</a>, <a href="#LinhaV">LINHAV</a></p>
+    <p>LINHA&nbsp;&nbsp; = Linha base para a Linha Horizontal;&nbsp;<br>
+       INICIO&nbsp; = Coluna onde irá iniciar o traço;<br>
+       FIM&nbsp;&nbsp;&nbsp;&nbsp; = Coluna onde irá terminar o traço;<br>
+
+<font face="Courier New" size="3">
+
+CONEXAO = Número inteiro de 0 a 3 que indica qual é o caractere que irá iniciar e terminar o Traço, permitindo a conexão com outras LINHAS e BOX;<br>
+    </font>
+       Duplo&nbsp;&nbsp; = TRUE para traço duplo e FALSE para traço simples.</p>
+    <p><b>Tipos de Conexões permitidas</b>:</p>
+    <p align="center"><img border="0" src="LINHAH.JPG" width="264" height="125"></p></center>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">RDprint1.Abrir;<br>
+       // Traço Duplo<br>
+       RDprint1.LinhaH(10,10,20,0,true);<br>
+       RDprint1.LinhaH(12,10,20,1,true);<br>
+       RDprint1.LinhaH(14,10,20,2,true);<br>
+       RDprint1.LinhaH(16,10,20,3,true);<br>
+       // Traço Simples<br>
+       RDprint1.LinhaH(20,10,20,0,false);<br>
+       RDprint1.LinhaH(22,10,20,1,false);<br>
+       RDprint1.LinhaH(24,10,20,2,false);<br>
+       RDprint1.LinhaH(26,10,20,3,false);<br>
+       RDprint1.Fechar;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="GerarRDP"><b><font color="#FF0000">GerarRDP</font></b></a>
+    <blockquote>
+    <p>procedure GerarRDP (NomeArq : string)</p>
+    <p><b>Descrição</b>: Salva o relatório em ARQUIVO, com o nome
+       indicado, no formato RDP (<i>padrão RDprint</i>). O formato RDP permite que
+       o relatório seja carregado através da função <a href="#LerRDP">LERRDP</a>.</p>
+    <p>NomeARQ = Local e Nome do Arquivo, extensão deve ser RDP.</p>
+    <p>O arquivo RDP possui um formato especial e não pode ser lido ou editado 
+       por editores de texto. Sua principal finalidade é poder ser carregado 
+       pelo RDprint e a partir dai ser novamente visualizado e impresso.</p>
+    <p>Esta função deve ser chamada quando o relatório já foi
+       totalmente gerado, ou seja, antes da função <a href="#Fechar">FECHAR</a>,
+       se após gravar o arquivo você não quiser visualizar e nem imprimir
+       o relatório, então utilize a função <a href="#Abortar">ABORTAR</a>.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">// Salvar
+       Relatório em ARQUIVO - Formato RDprint1.GerarRDP('C:\MeusDoc\Vendas.RDP');</font>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="GerarPRN"><b><font color="#FF0000">GerarPRN</font></b></a>
+    <blockquote>
+    <p>procedure GerarPRN (NomeArq : string)</p>
+    <p><b>Descrição</b>: Salva o relatório em ARQUIVO, com o nome
+       indicado, no formato PRN (formato para impressão).&nbsp;&nbsp;</p>
+    <p>NomeARQ = Local e Nome do Arquivo, extensão deve ser PRN.</p>
+    <p><b>ATENÇÃO</b>:&nbsp;<br>
+       a) O formato PRN possui TODOS os caracteres e comandos de CONTROLE
+       para a impressora selecionada no RDprint, portanto só poderá ser
+       impresso em uma impressora compatível com o modelo gravado, caso
+       contrário a impressão poderá sair totalmente desordenada.&nbsp;</p>
+    <p>b) Apesar de poder ser visualizado e editado por qualquer editor de
+       TEXTOS, é aconselhável que não seja alterado, pois os caracteres de
+       controle dificultam a correta visualização do relatório e você
+       poderá danificar o arquivo original.</p>
+    <p>c) O formato PRN permite enviar o relatório diretamente para o
+       local de impressão através do comando COPY.</p>
+    <p>Exemplo: Copy C:\MeusDoc\Vendas.PRN PRN:&nbsp;&nbsp;</p>
+    <p>Esta função deve ser chamada quando o relatório já foi totalmente gerado, 
+       ou seja, antes da função <a href="#Fechar">FECHAR</a>, se após gravar o 
+       arquivo você não quiser visualizar e nem imprimir o relatório, então 
+       utilize a função <a href="#Abortar">ABORTAR</a>.&nbsp;</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">// Salvar
+       Relatório em ARQUIVO - Formato RDprint1.GerarPRN('C:\MeusDoc\Vendas.PRN');</font>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="GerarTXT"><b><font color="#FF0000">GerarTXT</font></b></a>
+    <blockquote>
+    <p>procedure gerarTXT (NomeArq : string)</p>
+    <p><b>Descrição</b>: Salva o relatório em ARQUIVO, com o nome indicado, no 
+       formato TXT, ou seja, TEXTO PURO. Neste formato não será gravado 
+       nenhum caractere de controle, mas para que ele possa ser visualizado 
+       corretamente é necessário uma padronização na sua geração.</p>
+    <p>NomeARQ = Local e Nome do Arquivo, extensão deve ser TXT.</p>
+    <p>Esta função deve ser chamada quando o relatório já foi totalmente gerado, 
+       ou seja, antes da função <a href="#Fechar">FECHAR</a>, se após gravar o 
+       arquivo você não quiser visualizar e nem imprimir o relatório, então 
+       utilize a função <a href="#Abortar">ABORTAR</a>.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">// Salvar Relatório em ARQUIVO - Formato <br>
+    RDprint1.GerarTXT('C:\MeusDoc\Vendas.TXT');</font></P>
+    <p><b><font color="#FF0000">Dicas e Recomendações Importantes:<br>
+    </font></b><font color="#000080">- Se deseja gerar arquivos TXT utilize 
+    apenas 1 tamanho de fonte em todo o relatório<br>
+    - Cuidado com os espaços entre as colunas, evite a sobreposição de valores<br>
+    - O arquivo gerado é padrão MS-DOS, caracteres acentuados não serão 
+    mostrados corretamente quando o arquivo for aberto por editores no Windows. 
+    Se for o caso retire a acentuação.<br>
+    - Evite usar também Frames e Box</font></P>
+    </blockquote><hr></td></tr>
+
+<tr><td><p>&nbsp;<a name="LerRDP"><b><font color="#FF0000">LerRDP</font></b></a></p>
+    <blockquote>
+    <p>procedure LerRDP (NomeArq : string)</p>
+    <p><b>Descrição</b>: Função Especial para LER um relatório salvo no
+    formato RDP.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">// Inicializa o RDprint e carrega um Relatório já gravado, a função Fechar irá
+       completar a operação mostrando o preview ou imprimindo.</font>
+    <p><font color="#0000FF">rdprint1.Abrir;<br>
+    rdprint1.LerRDP('C:\MeusDoc\Vendas.RDP');<br>
+       rdprint1.Fechar;</font></P>
+    </blockquote><hr></td></tr>
+</table>
+</div>
+
+<p>&nbsp;</p>
+
+<div align="center"><center>
+<table border="0" cellspacing="0" width="100%" bgcolor="#FFFFF2" cellpadding="0">
+<tr><td bgcolor="#000080"><p align="center"><b><font color="#FFFFF2">EVENTOS</font></b></p></td></tr>
+
+<tr><td>&nbsp; <a name="OnErro"><b><font color="#FF0000">OnErro</font></b></a>
+    <blockquote>
+    <p><b>Descrição</b>: Ocorre quando houver alguma falha nas funções
+        internas do RDprint ou erro no acesso à arquivos ou impressoras do sistema.</p>
+    <p><b>Parâmetro</b>: Trás a descrição do ERRO na variável MENSAGEM.</p>
+    <p><b>Mensagens Padronizadas de ERRO</b>:<br>
+       Erro01 = 'Erro #01 - (ABRIR) Relatório já foi aberto...';<br>
+       Erro02 = 'Erro #02 - (FECHAR) Relatório não foi aberto...';<br>
+       Erro03 = 'Erro #03 - I/O ';<br>
+       Erro04 = 'Erro #04 - (NOVA PAGINA) Relatório não foi aberto...';<br>
+       Erro05 = 'Erro #05 - (SETUP) Relatório não foi aberto...';<br>
+       Erro06 = 'Erro #06 - (IMP/IMPF) Relatório não foi aberto...';<br>
+       Erro08 = 'Erro #08 - (ABORTAR) Relatório não foi aberto...';</p>
+    <p><b>Dica</b>: Conhecendo os ERROS acima, você poderá intercepta-los e criar uma rotina 
+       para um tratamento personalizado e mais adequado à sua necessidade.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">procedure TForm1.RDprint1Erro(Sender: TObject; Mensagem: String);<br>
+       begin<br>
+       &nbsp;&nbsp; showmessage('Mensagem do componente => ' + mensagem);<br>
+       end;</font></P>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="OnNewPage"><b><font color="#FF0000">OnNewPage</font></b></a>
+    <blockquote>
+    <p><b>Descrição</b>: Ocorre quando uma nova página é iniciada
+       através da função <a href="#Novapagina">NovaPagina</a>.</p>
+    <p><b>Parâmetro</b>: Trás o número da Página atual.</p>
+    <p><b>Dica</b>: Utilize este evento para fazer a rotina de CABEÇALHO, facilitando a programação.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">procedure TForm1.RDprint1NewPage(Sender: TObject; Pagina: Integer);<br>
+       begin<br>
+       // Cabeçalho...<br>
+       rdprint1.impf(01,01,'======================',[normal]);<br>
+       rdprint1.impf(02,05,'CLIENTES', [expandido,NEGRITO]);<br>
+       rdprint1.impf(03,01,'Deltress',[normal]);<br>
+       rdprint1.impf(03,15,'Pag: ' + formatfloat('000', pagina),[]);<br>
+       rdprint1.impf(04,01,'======================',[normal]);<br>
+       linha  := 8;<br>
+       end;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="OnBeforeNewPage"><b><font color="#FF0000">OnBeforeNewPage</font></b></a>
+    <blockquote>
+    <p><b>Descrição</b>: Ocorre antes que uma nova página seja iniciada
+       através da função <a href="#Novapagina">NovaPagina</a>.</p>
+    <p><b>Parâmetro</b>: Trás o número da Página atual.</p>
+    <p><b>Dica</b>: Utilize este evento para fazer a rotina de RODAPÉ,
+       facilitando&nbsp; a programação.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">procedure TForm1.RDprint1BeforeNewPage(Sender: TObject; Pagina: Integer);<br>
+       begin<br>
+       // Rodapé...<br>
+       RDprint1.impf(51,01,'=======================',[normal]);<br>
+       DRprint1.impf(52,01,'Pagina nº ' + inttostr(pagina),[comp17]);<br>
+       end;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="OnBeforePrint"><b><font color="#FF0000">OnBeforePrint</font></b></a>
+    <blockquote>
+    <p><b>Descrição</b>: Ocorre antes de iniciar a impressão, existindo
+       a possibilidade de ABORTAR a impressão.</p>
+    <p><b>Parâmetro</b>: A variável <i><b> CONTINUAR</b></i> pode ser alterada para
+       FALSE, interrompendo a inicialização da impressão.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">// Mostra parametros do RDprint atuais e pede a confirmação para continuar a impressão.</font></p>
+    <p><font color="#0000FF">procedure TForm1.RDprint1BeforePrint(Sender: TObject;<br>
+       var Continuar: Boolean);<br>
+       var<br>
+       msg : string;<br>
+       begin<br>
+       msg := '';<br>
+       msg := msg + 'Porta:'   +  rdprint1.PortaComunicacao + #13;<br>
+       msg := msg + 'Inicial:' + inttostr(rdprint1.PaginaInicial)+ #13;<br>
+       msg := msg + 'Final:'   + inttostr(rdprint1.PaginaFinal)+ #13;<br>
+       case rdprint1.impressora of<br>
+       &nbsp; epson         : msg := msg + 'Impressora: Epson'+#13;<br>
+       &nbsp; HP            : msg := msg + 'Impressora: HP'#13;<br>
+       &nbsp; grafico       : msg := msg + 'Impressora: Grafico'+#13;<br>
+       &nbsp; personalizado : msg := msg + 'Impressora: Personalizada'#13;<br>
+       &nbsp; rima          : msg := msg + 'Impressora: Rima'#13;<br>
+       &nbsp; end;<br>
+       <br>
+       msg := msg + 'Continuar impressão ?';<br>
+       if MessageDlg(msg, mtConfirmation, [mbYes, mbNo], 0) = mrYes then<br>
+       &nbsp; Continuar := true<br>
+       else<br>
+       &nbsp; continuar := false;<br>
+       end;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="OnAfterPrint"><b><font color="#FF0000">OnAfterPrint</font></b></a>
+    <blockquote>
+    <p><b>Descrição</b>: Ocorre no término da impressão.</p>
+    <p><b>Dica</b>: Utilize este evento para saber se o relatório foi realmente impresso ou simplesmente visualizado.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">procedure TForm1.RDprint1AfterPrint(Sender: TObject);<br>
+       begin<br>
+       &nbsp; showmessage('Fim da Impressão');<br>
+       end;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="OnCancel"><b><font color="#FF0000">OnCancel</font></b></a>
+    <blockquote>
+    <p><b>Descrição</b>: Ocorre quando o processo de impressão ou
+       gravação em arquivo for abortado pelo usuário.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">procedure TForm1.RDprint1Cancel(Sender: TObject);<br>
+       begin<br>
+       &nbsp; Showmessage('Vai Cancelar...');<br>
+       end;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="OnSave"><b><font color="#FF0000">OnSave</font></b></a>
+    <blockquote>
+    <p><b>Descrição</b>: Ocorre antes de salvar o relatório em arquivo.</p>
+    <p><b>Parâmetro</b>: Trás o Local e nome do arquivo.&nbsp;</p>
+    <p><b>Dica</b>: Você pode alterar o parâmetro <i><b>ARQUIVOLOCAL</b></i>, salvando
+       em um diretório especifico ou trocando o nome do arquivo.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">procedure TForm1.RDprint1Save(Sender: TObject; var ArquivoLocal: String);<br>
+       begin<br>
+       &nbsp;&nbsp; showmessage('Vou Salvar o arquivo ' + ArquivoLocal);<br>
+       end;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="OnLoad"><b><font color="#FF0000">OnLoad</font></b></a>
+    <blockquote>
+    <p><b>Descrição</b>: Ocorre quanto o RDprint for carregar um
+       relatório de um arquivo. (Formato RDP)</p>
+    <p><b>Parâmetro</b>: Trás o Local e Nome do Arquivo a ser carregado.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">procedure TForm1.RDprint1Load(Sender: TObject; var ArquivoLocal: String);<br>
+       begin<br>
+       &nbsp;&nbsp; showmessage('Vou LER o arquivo ' + ArquivoLocal);<br>
+       end;</font></p>
+    </blockquote><hr></td></tr>
+
+<tr><td>&nbsp;<a name="OnPreview"><b><font color="#FF0000">OnPreview</font></b></a>
+    <blockquote>
+    <p><b>Descrição</b>: Ocorre antes do Form de Preview ser apresentado.</p>
+    <p><font color="#0000FF">Exemplo 1:</font></p>
+    <p><font color="#0000FF">procedure TForm1.RDprint1Preview(Sender: TObject);<br>
+       begin<br>
+       &nbsp;&nbsp; showmessage('Vou mostrar o preview agora...');<br>
+       end;</font></p>
+    </blockquote><hr></td></tr>
+</table>
+</center>
+</div>
+
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+</body>
+</html>

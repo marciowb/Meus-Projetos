@@ -1,0 +1,65 @@
+package dxLayoutControlRS10;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressLayout Control 3 by Developer Express Inc.'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  rtl,
+  vcl,
+  vcldb,
+  vcljpg,
+  vclx,
+  dxComnRS10,
+  dxCoreRS10,
+  dxThemeRS10,
+  cxDataRS10,
+  dxGDIPlusRS10,
+  cxLibraryRS10,
+  cxEditorsRS10,
+  cxPageControlRS10,
+  cxExtEditorsRS10;
+
+contains
+  dxLayoutLookAndFeels,
+  dxLayoutControl,
+  dxLayoutContainer,
+  dxLayoutControlAdapters,
+  dxLayoutCustomizeForm,
+  dxLayoutEditForm,
+  dxLayoutDragAndDrop,
+  dxLayoutSelection,
+  dxLayoutCommon,
+  dxLayoutcxEditAdapters;
+
+end.

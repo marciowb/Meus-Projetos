@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">CPlusPlusBuilder.Personality</Option>
+			<Option Name="ProjectType">CppPackage</Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{A724225F-82F9-48ED-B099-DCDD6754F835}</Option>
+		</Option>
+	</PersonalityInfo>
+	<CPlusPlusBuilder.Personality>
+		<BCBPROJECT>
+      <project version="10.0">
+        <property category="build.config" name="active" value="0"/>
+        <property category="build.config" name="count" value="1"/>
+        <property category="build.config" name="excludedefaultforzero" value="0"/>
+        <property category="build.config.0" name="builddir" value="Debug"/>
+        <property category="build.config.0" name="key" value="Debug_Build"/>
+        <property category="build.config.0" name="name" value="Debug Build"/>
+        <property category="build.config.0" name="settings.win32b" value="default"/>
+        <property category="build.config.0" name="type" value="Toolset"/>
+        <property category="build.config.0" name="win32.win32b.builddir" value="Debug_Build"/>
+        <property category="build.config.1" name="key" value="Release_Build"/>
+        <property category="build.config.1" name="name" value="Release Build"/>
+        <property category="build.config.1" name="settings.win32b" value="default"/>
+        <property category="build.config.1" name="type" value="Toolset"/>
+        <property category="build.config.1" name="win32.win32b.builddir" value="Release_Build"/>
+        <property category="build.node" name="libraries" value="VclSmp.lib bcboffice2k.lib indysystem.lib indycore.lib dbxcds.lib soaprtl.lib bcbie.lib dbexpress.lib inetdbxpress.lib inetdbbde.lib dsnapcon.lib dss.lib tee.lib teedb.lib teeui.lib dsnapcon.lib dsnap.lib ibxpress.lib vcldbx.lib"/>
+        <property category="build.node" name="name" value="ascriptproc2006.bpl"/>
+        <property category="build.node" name="packages" value="rtl;designide;vcl;inet;bcbsmp;dbrtl;vcldb;adortl;bdertl"/>
+        <property category="build.node" name="sparelibs" value="rtl.lib vcldb.lib adortl.lib bdertl.lib vcldbx.lib ibxpress.lib dsnap.lib dsnapcon.lib teeui.lib teedb.lib tee.lib dss.lib dsnapcon.lib bcbsmp.lib inetdbbde.lib inetdbxpress.lib dbexpress.lib bcbie.lib soaprtl.lib dbxcds.lib indycore.lib indysystem.lib bcboffice2k.lib VclSmp.lib vcl.lib dbrtl.lib"/>
+        <property category="build.node" name="use_packages" value="1"/>
+        <property category="build.platform" name="active" value="win32"/>
+        <property category="build.platform" name="win32.Debug_Build.toolset" value="win32b"/>
+        <property category="build.platform" name="win32.Release_Build.toolset" value="win32b"/>
+        <property category="build.platform" name="win32.default" value="win32b"/>
+        <property category="build.platform" name="win32.enabled" value="1"/>
+        <property category="build.platform" name="win32.win32b.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.D.arg.1" value="_DEBUG"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.D.arg.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.D.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.r.enabled" value="0"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.$D.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.D.arg.1" value="DEBUG"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.D.arg.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.D.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="param.filenames.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.D.arg.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.D.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.L.arg.1" value="$(BDS)\lib\debug"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.L.arg.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.L.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.tasm32" name="option.z.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.tasm32" name="option.zd.enabled" value="0"/>
+        <property category="win32.Debug_Build.win32b.tasm32" name="option.zi.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.D.arg.1" value="NDEBUG"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.D.arg.merge" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.D.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.O2.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.k.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.r.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.vi.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.dcc32" name="option.$D.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.dcc32" name="option.$O.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.dcc32" name="option.V.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.L.arg.1" value="$(BDS)\lib\release"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.L.arg.merge" value="1"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.L.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.tasm32" name="option.z.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.tasm32" name="option.zd.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.tasm32" name="option.zi.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.tasm32" name="option.zn.enabled" value="1"/>
+        <optionset name="all_configurations">
+          <property category="node" name="displayname" value="All Configurations"/>
+          <property category="win32.*.win32b.bcc32" name="option.H=.arg.1" value="$(BDS)\lib\vcl100.csm"/>
+          <property category="win32.*.win32b.bcc32" name="option.H=.arg.merge" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.H=.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.Hc.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.1" value="imports\delphi2006"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.2" value="designer"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.3" value="advmemo"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.4" value="$(BDS)\Automa\Scripter\advmemo"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.5" value="$(BDS)\Projects"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.6" value="$(BDS)\Automa\Scripter"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.7" value="$(BDS)\include"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.8" value="$(BDS)\include\vcl"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.9" value="$(BDS)\include\dinkumware"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.merge" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.Od.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.Ve.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.Vx.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.X.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.b.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.k.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.noregistervars.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.arg.1" value="_RTLDLL"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.arg.2" value="NO_STRICT"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.arg.3" value="USEPACKAGES"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.arg.merge" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.tWM.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.v.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.vi.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.y.enabled" value="1"/>
+          <property category="win32.*.win32b.brcc32" name="option.D.arg.1" value="_DEBUG"/>
+          <property category="win32.*.win32b.brcc32" name="option.D.arg.merge" value="1"/>
+          <property category="win32.*.win32b.brcc32" name="option.D.enabled" value="0"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.1" value="$(BDS)\Automa\Scripter\advmemo"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.2" value="$(BDS)\Projects"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.3" value="$(BDS)\Automa\Scripter"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.4" value="$(BDS)\include"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.5" value="$(BDS)\include\vcl"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.6" value="$(BDS)\include\dinkumware"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.merge" value="1"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.enabled" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.$.arg.1" value="YD"/>
+          <property category="win32.*.win32b.dcc32" name="option.$.arg.2" value="W"/>
+          <property category="win32.*.win32b.dcc32" name="option.$.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.$.enabled" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.$O.enabled" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.1" value="imports\delphi2006"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.2" value="designer"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.3" value="advmemo"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.enabled" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.LU.arg.1" value="designide"/>
+          <property category="win32.*.win32b.dcc32" name="option.LU.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.LU.enabled" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.M.enabled" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.1" value="imports\delphi2006"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.2" value="designer"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.3" value="advmemo"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.enabled" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.1" value="imports\delphi2006"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.2" value="designer"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.3" value="advmemo"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.enabled" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.1" value="imports\delphi2006"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.2" value="designer"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.3" value="advmemo"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.4" value=".\"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.5" value="$(BDS)\lib"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.6" value="$(BDS)\lib\obj"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.enabled" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="param.filenames.merge" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.D.arg.1" value="_DEBUG"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.D.arg.merge" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.D.enabled" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.1" value="imports\delphi2006"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.2" value="designer"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.3" value="advmemo"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.4" value="$(BDS)\Automa\Scripter\advmemo"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.5" value="$(BDS)\Projects"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.6" value="$(BDS)\Automa\Scripter"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.7" value="$(BDS)\include"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.8" value="$(BDS)\include\vcl"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.merge" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.enabled" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.boa.enabled" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.srcsuffix.arg" value="      cpp"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.srcsuffix.arg.merge" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.srcsuffix.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.D.arg" value="&quot;Scripter Studio components&quot;"/>
+          <property category="win32.*.win32b.ilink32" name="option.D.arg.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.D.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.Gi.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.Gl.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.1" value="imports\delphi2006"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.10" value="$(BDS)\lib\obj"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.11" value="$(BDS)\lib"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.2" value="designer"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.3" value="advmemo"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.4" value="C:\Program Files\Intraweb 8.0\LibCB6"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.5" value="$(BDS)\Automa\Scripter\advmemo"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.6" value="C:\Program Files\IntraWeb\CBuilder\LibCB6"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.7" value="$(BDS)\Projects\Lib"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.8" value="$(BDS)\Projects"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.9" value="$(BDS)\Automa\Scripter"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.Tpp.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.aa.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.dynamicrtl.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.1" value="imports\delphi2006"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.2" value="designer"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.3" value="advmemo"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.outputdir.arg.1" value="."/>
+          <property category="win32.*.win32b.ilink32" name="option.outputdir.arg.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.outputdir.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.v.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="param.libfiles.1" value="$(LIBRARIES)"/>
+          <property category="win32.*.win32b.ilink32" name="param.libfiles.2" value="import32.lib"/>
+          <property category="win32.*.win32b.ilink32" name="param.libfiles.3" value="cp32mti.lib"/>
+          <property category="win32.*.win32b.ilink32" name="param.libfiles.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="param.objfiles.1" value="c0pkg32.obj"/>
+          <property category="win32.*.win32b.ilink32" name="param.objfiles.2" value="$(PACKAGES)"/>
+          <property category="win32.*.win32b.ilink32" name="param.objfiles.3" value="Memmgr.Lib"/>
+          <property category="win32.*.win32b.ilink32" name="param.objfiles.4" value="sysinit.obj"/>
+          <property category="win32.*.win32b.ilink32" name="param.objfiles.merge" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.d.arg.1" value="_DEBUG"/>
+          <property category="win32.*.win32b.tasm32" name="option.d.arg.merge" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.d.enabled" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.1" value="$(BDS)\Automa\Scripter\advmemo"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.2" value="$(BDS)\Projects"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.3" value="$(BDS)\Automa\Scripter"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.4" value="$(BDS)\include"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.5" value="$(BDS)\include\vcl"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.6" value="$(BDS)\include\dinkumware"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.merge" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.enabled" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.w2.enabled" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="param.listfile.merge" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="param.objfile.merge" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="param.xreffile.merge" value="1"/>
+        </optionset>
+      </project>
+      <FILELIST>
+        <FILE FILENAME="ascriptproc2006.res" CONTAINERID="ResTool" LOCALCOMMAND="" UNITNAME="ascriptproc2006.res" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="ascriptproc2006.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="ascriptproc2006" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\imports\delphi2006\advmemo\advmemo\rtl.bpi" CONTAINERID="BPITool" LOCALCOMMAND="" UNITNAME="rtl" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="RegScrpt.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="RegScrpt" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="RegScrpt.dcr" CONTAINERID="DcrTool" LOCALCOMMAND="" UNITNAME="" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\imports\delphi2006\advmemo\advmemo\designide.bpi" CONTAINERID="BPITool" LOCALCOMMAND="" UNITNAME="designide" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\imports\delphi2006\advmemo\advmemo\vcl.bpi" CONTAINERID="BPITool" LOCALCOMMAND="" UNITNAME="vcl" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\AdvMemoReg.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="AdvMemoReg" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\AdvMemoReg.dcr" CONTAINERID="DcrTool" LOCALCOMMAND="" UNITNAME="" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="UVBSCRIPTLIBRARY.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="UVBSCRIPTLIBRARY" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="atBasic.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="atBasic" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="atHTMLParse.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="atHTMLParse" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="atMemoInterface.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="atMemoInterface" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="atparser.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="atparser" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="atPascal.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="atPascal" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="atscript.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="atscript" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="ATSCRIPTDEBUG.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="ATSCRIPTDEBUG" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="atscriptdebugform.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="atscriptdebugform" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="atscripter.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="atscripter" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="atWebScripter.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="atWebScripter" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="atWebScriptPP.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="atWebScriptPP" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="dispatchlib.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="dispatchlib" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="EditScript.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="EditScript" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="FormScript.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="FormScript" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="fSimplifiedCode.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="fSimplifiedCode" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="fSyntaxTree.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="fSyntaxTree" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="fWatchProperties.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="fWatchProperties" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="fWatchViewer.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="fWatchViewer" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="ScriptCtrls.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="ScriptCtrls" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="ucalldll.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="ucalldll" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="uSystemLibrary.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="uSystemLibrary" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\imports\delphi2006\inet.bpi" CONTAINERID="BPITool" LOCALCOMMAND="" UNITNAME="inet" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\uMemoEdit.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="uMemoEdit" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\AdvCodeHint.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="AdvCodeHint" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\AdvCodeList.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="AdvCodeList" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\AdvCodeListDD.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="AdvCodeListDD" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\AdvCodeListLib.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="AdvCodeListLib" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\advmbs.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="advmbs" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\advmemo.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="advmemo" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\AdvMemoAC.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="AdvMemoAC" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\AdvMemoDE.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="AdvMemoDE" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\advmemostylermanager.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="advmemostylermanager" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\advmps.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="advmps" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\advstyleif.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="advstyleif" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="advmemo\RTFEngine.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="RTFEngine" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\imports\delphi2006\bcbsmp.bpi" CONTAINERID="BPITool" LOCALCOMMAND="" UNITNAME="bcbsmp" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\TreeViewInspEditor.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="TreeViewInspEditor" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\CollectionInspEditor.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="CollectionInspEditor" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\componentinspector.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="componentinspector" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\DesignerAddControls.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="DesignerAddControls" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\DesignerAlignDialog.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="DesignerAlignDialog" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\DesignerAlignPalette.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="DesignerAlignPalette" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\DesignerControlsEditor.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="DesignerControlsEditor" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\designeroptionsdialog.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="designeroptionsdialog" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\designersizedialog.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="designersizedialog" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\DesignerTabOrderDialog.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="DesignerTabOrderDialog" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\dIDEActions.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="dIDEActions" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\fIDEEditor.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="fIDEEditor" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\fObjectInspector.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="fObjectInspector" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\FormDesigner.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="FormDesigner" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\fSelectLanguage.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="fSelectLanguage" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\fSelectUnit.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="fSelectUnit" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\fToolPalette.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="fToolPalette" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\fWatches.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="fWatches" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\IDEDialog.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="IDEDialog" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\idemain.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="idemain" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\IDEReg.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="IDEReg" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\IDEReg.dcr" CONTAINERID="DcrTool" LOCALCOMMAND="" UNITNAME="" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\InspectorControls.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="InspectorControls" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\ListViewInspEditor.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="ListViewInspEditor" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\MenuInspEditor.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="MenuInspEditor" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\MenuInspIDEEditor.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="MenuInspIDEEditor" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\PictureInspEditor.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="PictureInspEditor" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\PropertyInspEditors.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="PropertyInspEditors" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\PropertyList.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="PropertyList" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\StringsInspEditor.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="StringsInspEditor" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\imports\delphi2006\dbrtl.bpi" CONTAINERID="BPITool" LOCALCOMMAND="" UNITNAME="dbrtl" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\imports\delphi2006\vcldb.bpi" CONTAINERID="BPITool" LOCALCOMMAND="" UNITNAME="vcldb" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\imports\delphi2006\adortl.bpi" CONTAINERID="BPITool" LOCALCOMMAND="" UNITNAME="adortl" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\imports\delphi2006\bdertl.bpi" CONTAINERID="BPITool" LOCALCOMMAND="" UNITNAME="bdertl" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="designer\ImageListEditor.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="ImageListEditor" FORMNAME="" DESIGNCLASS=""/>
+      </FILELIST>
+      <IDEOPTIONS>
+        <VersionInfo>
+          <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+          <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+          <VersionInfo Name="MajorVer">1</VersionInfo>
+          <VersionInfo Name="MinorVer">0</VersionInfo>
+          <VersionInfo Name="Release">0</VersionInfo>
+          <VersionInfo Name="Build">0</VersionInfo>
+          <VersionInfo Name="Debug">False</VersionInfo>
+          <VersionInfo Name="PreRelease">False</VersionInfo>
+          <VersionInfo Name="Special">False</VersionInfo>
+          <VersionInfo Name="Private">False</VersionInfo>
+          <VersionInfo Name="DLL">False</VersionInfo>
+          <VersionInfo Name="Locale">2067</VersionInfo>
+          <VersionInfo Name="CodePage">1252</VersionInfo>
+        </VersionInfo>
+        <VersionInfoKeys>
+          <VersionInfoKeys Name="CompanyName"></VersionInfoKeys>
+          <VersionInfoKeys Name="FileDescription"></VersionInfoKeys>
+          <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+          <VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+          <VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys>
+          <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+          <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+          <VersionInfoKeys Name="ProductName"></VersionInfoKeys>
+          <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+        </VersionInfoKeys>
+        <HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Count">1</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item0">$(BCB)\Projects;$(BCB)\Automa\Scripter;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+        </HistoryLists_hlIncludePath>
+        <HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Count">1</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item0">C:\Program Files\IntraWeb\CBuilder\LibCB6;$(BCB)\Projects\Lib;$(BCB)\Projects;$(BCB)\Automa\Scripter;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+        </HistoryLists_hlLibraryPath>
+        <HistoryLists_hlDebugSourcePath>
+          <HistoryLists_hlDebugSourcePath Name="Count">1</HistoryLists_hlDebugSourcePath>
+          <HistoryLists_hlDebugSourcePath Name="Item0">$(BCB)\source\vcl</HistoryLists_hlDebugSourcePath>
+        </HistoryLists_hlDebugSourcePath>
+        <HistoryLists_hlConditionals>
+          <HistoryLists_hlConditionals Name="Count">1</HistoryLists_hlConditionals>
+          <HistoryLists_hlConditionals Name="Item0">_DEBUG</HistoryLists_hlConditionals>
+        </HistoryLists_hlConditionals>
+        <Debugging>
+          <Debugging Name="DebugSourceDirs">$(BCB)\source\vcl</Debugging>
+        </Debugging>
+        <Parameters>
+          <Parameters Name="RunParams"></Parameters>
+          <Parameters Name="Launcher"></Parameters>
+          <Parameters Name="UseLauncher">False</Parameters>
+          <Parameters Name="DebugCWD"></Parameters>
+          <Parameters Name="HostApplication"></Parameters>
+          <Parameters Name="RemoteHost"></Parameters>
+          <Parameters Name="RemotePath"></Parameters>
+          <Parameters Name="RemoteParams"></Parameters>
+          <Parameters Name="RemoteLauncher"></Parameters>
+          <Parameters Name="UseRemoteLauncher">False</Parameters>
+          <Parameters Name="RemoteCWD"></Parameters>
+          <Parameters Name="RemoteDebug">False</Parameters>
+          <Parameters Name="Debug Symbols Search Path"></Parameters>
+          <Parameters Name="LoadAllSymbols">True</Parameters>
+          <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+        </Parameters>
+        <Language>
+          <Language Name="ActiveLang"></Language>
+          <Language Name="ProjectLang">$00000000</Language>
+          <Language Name="RootDir"></Language>
+        </Language>
+        <Linker>
+          <Linker Name="LibPrefix"></Linker>
+          <Linker Name="LibSuffix"></Linker>
+          <Linker Name="LibVersion"></Linker>
+        </Linker>
+      </IDEOPTIONS>
+    </BCBPROJECT>
+		<Source>
+			<Source Name="MainSource">ascriptproc2006.cpp</Source>
+		</Source>
+		<buildevents/>
+	</CPlusPlusBuilder.Personality>
+	<StarTeamAssociation></StarTeamAssociation>
+	<StarTeamNonRelativeFiles></StarTeamNonRelativeFiles>
+</BorlandProject>

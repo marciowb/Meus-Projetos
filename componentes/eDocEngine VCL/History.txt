@@ -1,0 +1,996 @@
+Gnostice eDocEngine VCL - Version History
+Copyright © 2002-2009 Gnostice Information Technologies Private Limited
+
+History
+
+---------------------------------
+Version 2.5.2 - August 31, 2009
+---------------------------------
+
+Enhancements 
+	General 
+		Delphi 2010 Support
+		Mailing support for Indy v10.2.5 
+	HTML and Text Generation 
+		OnNeedFileName event for changing the file name at run time 
+Resolved 
+	General 
+		Many warnings in Delphi 2009 [Professional Edition only] 
+		Paragraph rendering when AutoPaginate is set to true [Professional Edition only] 
+		Rendering of bullet points 
+		Memory leaks 
+	PDF Generation 
+		Text rendering - access violation and overlapping of text 
+		PDF documents with non-ASCII characters causing printing problems 
+		Character spacing of Unicode characters 
+		Range-check errors in certain cases
+	Excel Generation 
+		AutoFormatCells property when applied to cells containing percentage values 
+	Export Interfaces for Delphi Reporting Tools 
+		FastReport - Blank pages (except for last page) when printing 
+
+
+---------------------------------
+Version 2.5.1 - October 24, 2008
+---------------------------------
+Enhancements:
+	General:
+		Support for CodeGear RAD Studio 2009
+
+	Export Interfaces:
+
+		ReportBuilder
+			Support for ReportBuilder v11.00
+		
+Fixes:
+	General:
+		Both UseImageAsResource and ProcessAfterEachPage handled correctly under different cases.
+		[Pro] Paragraph rendering handled correctly in case of AutoPaginate set to True
+
+	HTML:
+		Images now correctly displaying in Mozilla and Opera
+
+	RTF:
+		[Pro] Extra space and junk characters removed when using TextOut's with BeginTab - EndTab
+		Footer overflowing to next page is now corrected
+		Spacing between lines of text in case of ease-of-editing handled correctly
+		Repitition problem of richtext (when exporting from QuickReport) is now rectified
+
+	Export Interfaces:
+
+		ReportBuilder
+			Text with TabStopPositions in Memo field now correctly handled
+			Changes to FileDescription during exporting now correctly handled
+
+		[Pro]TMS
+			Rendering of grid lines now correctly handled
+			Exporting only selected rows and columns now correctly handled
+	
+----------------------------
+Version 2.5 - April 16, 2007
+----------------------------
+Enhancements:
+	General:
+		Support for Delphi 2007.
+		Updated version of ZLib compression library (v1.2.3) used.
+
+	Excel:
+		NewSheet method now introduced to add a new worksheet within the document.
+
+	TXT:
+		ContinuousMode property now introduced to avoid extra blank lines at the end of each page.
+
+Fixes:
+	PDF:
+		Rendering of RoundRect now correctly handled.
+		Encoding of Bookmarks with document events now correctly handled.
+		Symbol font encoding problem now rectified.
+
+	RTF:
+		List index out of bounds error rectified.
+		Encoding of images when SourceDPI is -1 now correctly handled.
+
+	Excel:
+		Page PaperSize and Orientation now correctly encoded in Excel document.
+		Cell type with thousand separator and negative currency numbers now correctly formatted.
+
+	HTML:
+		Image FileName now accepts complete file path in the event OnNeedImageFileName.
+
+	TXT:
+		Missing line problem for Separator mode now rectified.
+
+	BMP:
+		Monochrome bitmaps now correctly created.
+
+	Export Interfaces:
+		Ace:
+			Page orientation now set correctly.
+			Stretched metafile images now correctly rendered.
+
+		QuickReport:
+			RenderDocument(TQuickRep; ...) now takes margins automatically from the report.
+
+		Rave:
+			MoveTo function now correctly handled.
+
+		FastReport 3.x:
+			Problem with ShowPreparedReport for custom Previews now rectified.
+
+		FastReport 2.x:
+			FileName problem with Clipboard Engine now corrected.
+
+		ReportBuilder:
+			Line spacing now correctly handled while rendering Memo.
+			Image border problem (for RB v10.0.5) now corrected.
+
+--------------------------------
+Version 2.43 - December 01, 2006
+--------------------------------
+
+Fixes:
+	PDF:
+		Hyperlinks to files now correctly encoded to handle special characters.
+		Rendering of closed Polyline and zero degree Arc now correctly handled.
+
+	Metafile Rendering:
+		Problem with rendering of text with bullets now fixed.
+
+	Export Interfaces:
+		Rave:
+			OnDecodeImage event of RvSystem handled explicitly for image rendering.
+
+		Ace:
+			Custom page size problem now corrected.
+
+	General:
+		[Pro] Special characters (/,<,>) now correctly handled for HTMLTextOut method.
+		Memory usage optimized for image rendering.
+
+Changes:
+	PDF:
+		IgnoreCharSpacing property is now removed and character spacing is handled implicitly.
+
+-------------------------------
+Version 2.42 - October 20, 2006
+-------------------------------
+
+Enhancements:
+	General:
+		Support for Turbo Delphi and Turbo C++.
+	
+	Export Interfaces:
+		QuickReport:
+			Separate packages for QuickReport 4 for C++Builder 2006 now provided.
+
+		ReportBuilder:
+			MetafileAsRasterImage property added for rendering metafiles as raster images.
+
+		FastReport:
+			Support for FastReport 4.
+
+Fixes:
+	BMP, JPEG, PNG:
+		Unicode text rendering now correctly handled for all image formats.
+
+	Metafile Rendering:
+		Rectangle rendering handled correctly while processing the record EMR_BITBLT.
+
+	General:
+		Canvas rendering correctly handled during OnBeforeBeginPage event.
+
+---------------------------------
+Version 2.41 - September 22, 2006
+---------------------------------
+
+Enhancements:
+	PDF:
+		IgnoreCharSpacing property introduced for text rendering.
+
+	Excel:
+		ContinuousMode property added for ignoring the page information and continuously rendering contents, without introducing blank rows between pages.
+
+	General:
+		PNGDelphi (http://pngdelphi.sourceforge.net) support now added for DrawImage functions.
+
+Fixes:
+	PDF:
+		[Pro] Access Violation for empty ListBox Form field now corrected.
+
+	XHTML:
+		DOCTYPE Header information now correctly encoded.
+
+	Metafile Rendering:
+		Text background color rendering problem now fixed.
+
+	Export Interfaces:
+		RaveReports:
+			Empty FileName problem now fixed.
+
+		ReportBuilder:
+			RichText rendering rewritten for better output.
+
+		HTMLViewer:
+			Reports now rendered correctly when Header/Footer margins are set in the Engine.
+
+-----------------------------
+Version 2.4 - August 25, 2006
+-----------------------------
+
+Enhancements:
+	HTML, XHTML:
+		HTML page background can now be made transparent using TransparentBackground property.
+		Naming of images can now be controlled using the new event OnNeedImageFileName.
+
+	Export Interfaces:
+		RaveReports:
+			UserStream property added to support Rave's OutputStream property.
+
+Fixes:
+	PDF:
+		[Pro] Named Action "LastPage" now correctly encoded.
+		[Pro] Encryption problems with FormFeilds, Annotations and Actions now fixed.
+		Encryption problems for strings with special characters now fixed.
+		Pen style problem for rectangles now fixed.
+		Recognition of non-TrueType fonts correctly handled.
+		Character spacing for text items improved.
+
+	Text:
+		Text rendering accuracy improved.
+
+	BMP:
+		PixelFormat correctly considered while encoding.
+
+	Metafile rendering:
+		Unknown values for ROP2 ignored while processing the record EMR_BITBLT.
+		Stretched images correctly handled while processing the record EMR_STRETCHDIBITS.
+
+	Export Interfaces:
+		RaveReports:
+			Deprecated method PrintRender now replaced by Render method for Rave v5.0.8 and above.
+			Positioning problems for right aligned text corrected.
+
+---------------------------
+Version 2.3 - July 28, 2006
+---------------------------
+
+Enhancements:
+	RTF:
+		Character Spacing support when rendering from Metafile.
+
+Fixes:
+	PDF:
+		Underscore position problem corrected.
+	
+	Metafile rendering:
+		Negative rectangles handled while processing the record EMR_STRETCHBLT.
+		Certain cases of incorrect usage of Font size in relation to MapMode corrected.
+		
+	Export Interfaces:
+		QuickReport:
+			Known Memory Leaks corrected.
+
+General maintenance tasks related to compatibility with PDFtoolkit VCL Version 2.3.
+
+---------------------------
+Version 2.2 - June 29, 2006
+---------------------------
+
+Enhancements:
+
+	General:
+		Property UseImagesAsResources is added to Preferences for efficient memory management.
+		Demo for using eDocEngine with QRDesign is now provided. Refer "<eDocEngine Install Dir>\Demos\2.10. QRDesign\".
+		[Std] Methods ClearHeader, ClearFooter, ClearWatermark and ClearStamp introduced to encode different header/footer/watermark/stamp settings for each page.
+
+	PDF:
+		[Std] Overloaded version of DrawJPEGDirect method accepts TGraphic object to directly embed JPEG images into document.
+		[Pro] Properties HAlignment and IsBorder are added to TextField in PDF Forms (see TgtPDFFormTextField class in Help).
+
+	Metafile rendering:
+		EMR_POLYLINETO records now supported.
+
+	Export Interfaces:
+		ReportBuilder:
+			Support for WPRichText Controls Add-on for version 5 now added.
+
+Fixes:
+	General:
+		Rendering of Images within the DisplayRect corrected for all sizes of images.
+		Wrapping of text corrected.
+		[Std] Trimming problem corrected while rendering text.
+		[Std] NewRow method of table rendering now returns correct remaining space in the current MeasurementUnit.
+		[Std] Starting position of the table corrected when auto-paginated.
+
+	PDF:
+		Encryption problem with page ranges corrected.
+		Images with DeviceRGB and DeviceGray colorspaces are now correctly handled.
+		[Pro] Appearances of certain FormFields corrected for Adobe Reader 5.0.5.
+		[Pro] Rendering of multi-line text in the TextField (in PDF Forms) corrected.
+
+	RTF:
+		Images created in different DPI are handled.
+		Default TabStop value is now correctly set for the RTF document.
+		Header and Footer heights now get set correctly in the generated document.
+
+	HTML:
+		Tab character is correctly handled in the document.
+
+	Excel:
+		Numbers preceded by currency now rendered correctly.
+		Rows exceeding 65,536 are now shifted to new Worksheet.
+
+	RTF, HTML, TXT:
+		Clipping of text handled correctly.
+	
+	Metafile rendering:
+		Text height correctly handled while processing the record EMR_EXTCREATEFONTINDIRECTW.
+		Processing of the record EMR_EXTTEXTOUTW corrected to handle null string and WideString.
+		Pen width correctly handled while processing the record EMR_CREATEPEN.
+		Rendering of images corrected while processing the record EMR_STRETCHDIBITS.
+		'Index out of bounds' errors handled.
+	
+	Export Interfaces:
+		General:
+			Rendering of multiple reports to a single document is now corrected.
+
+		QuickReport:
+			Rendering of reports with Custom PaperSize is now corrected.
+
+		Rave:
+			Rendering of shaded rectangles corrected.
+	
+		ReportBuilder:
+			Page orientation problem corrected.
+
+		RichView:
+			[Std] Page header and footer height is now considered while exporting.
+	
+Changes:
+	[Std] Alignment parameter added to OnCellDraw event for changing the alignment of the individual table cell.
+
+--------------------------------
+Version 2.11 - February 27, 2006
+--------------------------------
+		Compatibility Release for PDFtoolkit VCL Version 2.2.
+
+------------------------------
+Version 2.11 - January 2, 2006
+------------------------------
+		Support for Borland Developer Studio 2006 Delphi and C++ Builder Win32.
+
+-----------------------------
+Version 2.1 - August 30, 2005
+-----------------------------
+Enhancements:
+
+	General:
+		Support for rendering metafiles to a specified rectangle using new PlayMetafile.
+		Support for converting from JEDI RichText component.
+		Support for rendering RichText from file and stream. 
+		Support for exporting WPRichText.
+
+	RTF:
+		Support for Mixed paper orientation.
+		
+	Metafile rendering:
+		Support for ISOTROPIC and ANISOTROPIC Mapping Modes.
+		Support for Character Spacing.
+		Support for PolyDraw function.
+		Rendering of paths now improved.
+
+	Export Interfaces:
+
+		AceReporter:
+			Support for SctCustomLabel component.
+
+		Rave:
+			Support for rendering from NDR stream and file.
+
+Fixes:
+	General:
+		Improved rendering through HTMLTextOut method.
+		Rendering of Ellipse and Rectangle improved.
+		Rendering of PolyLines improved.
+		Known Memory Leaks corrected.
+		
+	PDF:
+		Rendering of Symbol Font corrected.
+
+	Metafile rendering:
+		Size of Images now scaled to the original size.
+		Inappropriate clipping of contents causing elements to be hidden now corrected.
+		Correct Font Height now used for different Mapping Modes.
+		List Index out of bounds exception raised on rendering specific metafiles now corrected.
+		Lines with thickness less than 1 unit now rendered.
+
+	Export Interfaces:
+
+		Rave:
+			Lines rendered with proper thickness.
+			Saving output to stream now corrected.
+
+		ReportBuilder:
+			Font size now handled correctly in DrawText method.
+
+----------------------------
+Version 2.05 - June 27, 2005
+----------------------------
+Enhancements:
+
+	General:
+		[Pro] HTMLTextOut method introduced. Supports inline HTML tags for bold, italic, underline and strikeout.
+	
+	PDF:
+		Support for right to left languages (Arabic & Hebrew) for simple text.
+		
+	Metafile rendering:
+		Support for rendering several new drawing path instructions.
+		Rendering of WMF in a report file now supported.		
+
+Fixes:
+
+	General:
+		Range Checking errors corrected.
+		Infinite Loop in Table Pagination corrected.
+		Blank lines in rows appear properly.
+		Extra blank lines in the table title removed.
+
+	Metafile rendering:
+		ISOTROPIC and ANISOTROPIC Mapping Modes now considered in calculating font size and pen width.
+		Rendering of multiple metafiles on a single PDF page now corrected.
+		Correct GDI Drawing objects now used for drawing.
+
+	Export Interfaces:
+
+		TRichView:
+			Access Violation raised when canceling export job now fixed.
+
+----------------------------
+Version 2.04 - May 30, 2005
+----------------------------
+Enhancements:
+
+	Metafile rendering:
+		Polypolygons now supported, enabling more types of charts and graphics to be rendered correctly.
+
+	HTML:
+		Property 'HTMLFileNames' can be accessed to get the generated HTML file names and count.
+		Property 'RelatedFileNames' can be accessed to get Image, CSS and JavaScript file names and count.
+
+	Export Interfaces:
+
+		ReportBuilder:
+			Checkboxes in GridPack now supported.
+
+		Rave:
+			Support for Subscript and Superscript text.
+
+		GmPrintSuite:
+			Now supported in Delphi 2005.
+
+Fixes:
+
+	General:
+		Pagination of table when row height is greater than page height corrected.
+
+	Metafile rendering:
+		Pen width problem corrected.
+
+	Export Interfaces:
+
+		ReportBuilder:
+			Repetition of text in Memo fields fixed.
+
+		AceReporter:
+			Shifting of controls now fixed.
+
+------------------------------
+Version 2.03 - April 29, 2005
+------------------------------
+Enhancements:
+
+	General:
+		Support for Indy 10.
+
+	Metafile rendering:
+		Clipping of Regions now supported for PDF.
+		Gradient Filling now supported.
+
+	Excel:
+		Numbers within parenthesis are encoded as negative numbers.
+
+	Export Interfaces:
+
+		ReportBuilder:
+			Support for TabStopPositions and Tabs for text fields.
+
+		FastReport:
+			Support for Tabs in text fields.
+
+Fixes:
+
+	General:
+		Predefined paper sizes corrected.
+
+	Metafile rendering:
+		Pen width problem fixed.
+		Improper drawing in very rare cases due to uninitialized drawing objects now corrected.
+
+	Export Interfaces:
+
+		Rave:
+			Justification of text in Memo fields corrected.
+
+Changes:
+
+	General:
+		TgtRect record and gtRect() functions moved to gtUtils to avoid conflicts with Gnostice PDFtoolkit.
+
+------------------------------
+Version 2.02 - March 30, 2005
+------------------------------
+Enhancements:
+
+	General:
+		Support for RichEdit98.
+
+	PDF:
+		[Pro] Support for CCITT 3 and 4 Compression techniques.
+
+	RTF:
+		"Ease of Editing" mode implemented completely.
+
+	HTML:
+		Support for Custom Metadata.
+
+	Excel:
+		Numbers are aligned to the right and strings are aligned to the left.
+
+	Export Interfaces:
+	
+		FastReport:
+			Support for Trial version of FastReport. Enable compiler switch "FR3Trial" in the file "gtFR3XportIntf.pas".
+
+Fixes:
+
+	General:
+		Table pagination corrected.
+		DrawRichText height problem corrected.
+		Autopagination of paragraph fixed.
+		Image KeepAspectRatio with Center handled correctly.
+		Space can now be inserted at the beginning of the paragraph.
+
+	PDF:
+		No Compression in PDF file when switch is OFF.
+		Correct pen settings for each object is applied.
+
+	RTF:
+		Images in proper position even if text exceeds Page Limit.
+		Variables support for RTF corrected.
+
+	Excel:
+		[Pro] Comma inside a string is accepted in FORMULA SUPPORT.
+		Color palette problem solved.
+
+	Metafile rendering:
+		ImageSize problem corrected.
+		Image flipping problem corrected.
+		Text Clipping problem corrected.
+
+	Export Interfaces:
+
+		FastReport:
+			XHTML Description problem corrected.
+
+		AceReporter:
+			Full Justification of Text rectified.
+			Pen Style corrected.
+			Page Settings.
+			Image Setting problem fixed.
+
+		ReportBuilder:
+			Right Justification and Center Justification of rotated Text corrected.
+
+---------------------------------
+Version 2.01 - December 06, 2004
+---------------------------------
+Enhancements:
+
+	General:
+		Support for pagination when rendering tables introduced.
+
+		Complete support for Delphi 2005.
+
+		NEW - ReportExport Edition. All the features for advanced exporting from QuickReport, ReportBuilder, FastReport, RaveReports, AceReport, GmPrint Suite.
+
+	Excel:
+		Support for inserting formula into cells is now possible using FormulaOut(...) procedure.
+
+	Export Interfaces:
+
+		FastReport 3:
+			Added separate Interface for exporting from FastReport 3.
+
+		ReportBuilder:
+			Added support for version 9.0.
+			Added support for GridPack Add-on.
+			Added support for TRichView Add-on.
+
+Fixes:
+
+	General:
+		Following memory leaks fixed:
+		- TMetafile leak in Gnostice FastReport Export fixed.
+		- TGraphic leak while creating documents with images fixed.
+
+		Problem with creating large images in Windows98 corrected.
+
+	PDF:
+		Problem with Unicode Bookmarks, Annotations, DocInfo with encryption corrected.
+
+	Excel:
+		'Format Cells' dialog box now appears for all cells in excel document. 
+
+	Export Interfaces:
+
+		Ace: 
+			Problem with trimming of RichText contents while exporting corrected.
+
+		QuickReport:
+			Problem with Measurement Units and Page Size corrected.
+
+		Rave:
+			Installation problem with Rave versions below 4.0.7 corrected.
+
+		ReportBuilder:
+			Problem with stretched RichText corrected.
+
+-------------------------------
+Version 2.0 - October 27, 2004
+-------------------------------
+Enhancements:
+
+	General:
+		Delphi 2005 support.
+
+		Built-in run-time Setup Dialogs enhanced for greater ease of use and appearance. 
+
+		Email options now included in setup dialog and are also accessible from Object Inspector for one-step export-email.
+		
+		The SMTP port can now be specified for emailing the documents.
+		
+		Authentication type can be now specified while sending the generated documents as email attachments. See AuthenticationRequired property.
+
+		Font and Frame parameters added to OnCellDraw event to allow greater flexibility and customization for table drawing.
+		
+		Word wrap support for Title Row for each column in table drawing now incorporated.
+
+		Pagination for text output as single line and paragraphs now supported.
+
+		Support for Variables / Place holders for Text rendering provided. Built-in and user-defined variables are supported. Built-in variables include Page#, Total Pages, Date and Time. This feature can be used in many ways, such as for mail-merging, page numbering, defining headers/footers... See CalculateVariables property and OnCalcVariables event.
+
+		Automatic activation of Email and file:// links contained in text now supported.
+
+		RichText rendering now supported as a standard procedure (DrawRichText). All content supported by TRichEdit can be rendered.
+
+		Document rendering can now be aborted in the middle. See AbortCreation property.
+
+		Unicode support added for text rendering.
+
+		General document events (like OnBeforeBeginDoc, OnAfterBeginDoc etc) provided for greater control of the creation process.
+
+		Resolution support for all formats: Input resolution can be specified to render objects and metafiles created in different resolutions. Useful for rendering metafiles created at higher resolution than screen resolution.
+
+		Highly improved and expanded documentation with lots of tutorials, examples and how-to procedures.
+
+		Help file now automatically integrates into the development environment. You can now get F1 help in the IDE.
+
+		Improved installation process for cleaning previous installations.
+
+	PDF:
+		Support for Vertical Text rendering now added. See procedure TextOutV.
+
+		JPEG image file can now be inserted directly into the PDF document. Facilitates inserting of large JPEGs that can't be loaded in TJPEGImage. See procedure DrawJPEGDirect.
+
+		Document Information and Bookmarks now support Unicode characters.
+
+		Default Page Layout changed to Continuous mode for easier navigation.
+
+		Size of the PDF document greatly reduced for font subset embedding option and Unicode characters, nearly 1/10 the original size.
+
+		Unicode support for text rendering, stamping, annotations, bookmarks and document information.
+
+		[Pro] New Annotations added: FreeText, Line, Square, Circle, Highlight, Underline, Squiggly, StrikeOut, Stamp, Ink.
+
+		[Pro] File Attachment: Support for attaching any type of external file to the created PDF now provided.
+
+		[Pro] New Actions added: GoToR, Launch, Named, JavaScript.
+
+		[Pro] Support for inserting Custom Document Information. Write XMP metadata of document to insert custom document information and make it accessible to applications that support XMP. Useful in implementing document workflow and document management applications.
+
+		[Pro] Support for actions on Document and Page events. JavaScript actions can be associated with document and page events such as Open, Close, Print, Save.
+
+		[Pro] Support for associating all actions with annotations, bookmarks, and document and page events.
+
+	RTF:
+		Document Information now supports Unicode characters.
+
+	Excel:
+		Alignment and missing data problems avoided through ApplyAlignment and MultiPass properties.
+
+		Word wrapping of cell text supported to fit text in specified column width. See WordWrap property.
+
+	Export Interfaces:
+		ReportBuilder:
+			- Included support for WPRichText Add-On for RB.
+			- Completely re-written to export more efficiently, accurately and keep the output file size to a minimum.
+			- Optimized image rendering: Storing a reused image only once in the PDF now possible using OnEncodeGraphic and OnEncodeGraphicDone events. Greatly reduces file sizes when images are repeated.
+
+Fixes:
+
+	General:
+		Problem with PagesToRender corrected.
+
+		Several memory leaks fixed.
+
+	HTML:
+		Table grid lines problem while rendering table corrected.
+
+	PDF:
+		Problem with reusing Images corrected.
+
+		Problem 'Font <FontName> contains bad /Widths' when opening PDF corrected.
+
+		Problem with PDF Bookmarks with encryption corrected.
+
+	RTF:
+		Overlapping of repeated text corrected.
+
+	Excel:
+		Spacing problem between Rows corrected.
+
+		Formatting applied for numbers which are having trailing negative sign.
+
+	Metafile rendering:
+		Text underline/strikeout problem corrected.
+
+		Stretch drawing of images corrected.
+
+	Export Interfaces:
+		Ace:
+			- CheckBox rendering corrected.
+
+		RichView:
+			- Problem with MeasurementUnit corrected.
+
+		ReportBuilder:
+			- Text overflow for justified text corrected.
+
+Changes:
+
+	General:
+		Sender, Font and Frame added to OnCellDraw event.
+
+		Event OnBeginDoc removed, use OnBeforeBeginDoc or OnAfterBeginDoc.
+		Event OnBeginPage removed, use OnBeforeBeginPage or OnAfterBeginPage.
+		Event OnEndPage removed, use OnBeforeEndPage or OnAfterEndPage.
+		Event OnEndDoc removed, use OnBeforeEndDoc or OnAfterEndDoc.
+
+		Parameters for Text related functions / procedures changed to accept WideString for supporting Unicode.
+
+		Unit gtExPDFFont no longer used. All functionality implemented in unit gtPDFFont.
+
+	Export Interfaces:
+		General:
+			- Compiler directives related to specific Export Interfaces moved to corresponding source files (*Intf.pas)
+
+-----------------------------
+Version 1.1 - April 26, 2004
+-----------------------------
+Enhancements:
+
+	General:
+		TextRect function implemented for clipping text to a rectangle.
+
+		Re-Compilation and Installation of Export Interfaces greatly simplified.
+
+		Conversion Utility to convert projects using older Gnostice products to Gnostice eDocEngine provided.
+		(Please mail 'support@gnostice.com' to receive the applications)
+
+	RTF:
+		Printer BinNumber property provided.
+
+	PDF:
+		FontEmbedExcludeList property provided for excluding specified fonts from being embedded. Further optimizes file size.
+		TextEffects property provided for text styles (in PDF only).
+		PushButton form element enhanced to include Visible and AltFieldName properties.
+
+	Export Interfaces:
+		AceReporter Interface completely rewritten to correct problems in generating Excel output.
+
+		PageBreaks in HTMLViewer Interface handled.
+
+		QuickReport: 
+			- QuickReport 4 support.
+			- ShowProgress property provided.
+
+		ReportBuilder v6.0 support added.
+
+		Support for exporting from TMS Grids provided.
+
+Fixes:
+
+	General:
+		Several memory leaks fixed.
+
+		AutoAdjustColumnWidth feature for rendering tables corrected.
+
+	Text:
+		Problem with UseSeparator property corrected.
+
+	Metafile rendering:
+		Symbol and other SYMBOL_CHARSET fonts related problem corrected.
+
+		Text clipping handled.
+
+		Bitmap processing for Win98 / Win2000 problem corrected.
+
+	Excel:
+		Default Cell Font Color problem corrected.
+
+		Table encoding problem corrected.
+
+		Thousand Separator, Decimal Separator, Date Separator problem corrected.
+
+		Row Alignment corrected.
+
+	PDF:
+		'List Index out of bounds' problem corrected.
+
+		Form submit problem corrected.
+
+	Export Interfaces:
+		RaveReports:
+			- RaveReports version problem corrected.
+			- StretchDraw function problem corrected.
+
+		AceReporter PageSize problem corrected.
+
+		QuickReport:
+			- QRPrinter error corrected.
+			- Access violation with QRPrinter Client corrected.
+			- Combined Report Export through TList corrected.
+
+		ReportBuilder DrawShape function problem corrected.
+
+Changes:
+
+	General:
+		ReferencePoint property published.
+
+	Export Interfaces:
+		Properties DoBeginDoc and DoEndDoc published.
+
+-------------------------------
+Version 1.03 - January 8, 2004
+-------------------------------
+Enhancements:
+
+	Stamping feature implemented for overlaying text and graphics on top of page content.
+
+	Text Effects such as outline, fill introduced and implemented in PDF.
+
+	Form Submit feature in PDF enhanced to submit data in HTML, FDF and XML formats.
+
+	Cell Border styles and color implemented in Excel.
+
+	ReportBuilder Export: Support for Builder Controls add-on.
+	
+	Several new demos added: Drawing functions, Exporting, Web server, Report server, PDF form server.
+
+Fixes:
+
+	Metafile rendering
+	  - PolyBezier drawing corrected.
+	  - Rotated Text with alignment corrected.
+	  - Image problem for Win98/ME avoided.
+	
+	Memory leaks fixed.
+
+	Entry Point error in Ace Export Interface corrected.
+
+	Text Rotation corrected for Rave 407Up.
+
+	Image positioning in RTF corrected.
+
+	Excel
+ 	  - Column overwriting problem solved.
+	  - Bug in numeric data encoding corrected.
+
+	"Wrong Operand Type" error, while opening PDF, corrected.
+
+	Internal margins in HTML Tables corrected.
+
+Changes:
+
+	ExportInterface: Method to generate document renamed to RenderDocument in all Export Interfaces.
+
+--------------------------------
+Version 1.02 - October 14, 2003
+--------------------------------
+Enhancements:
+	
+	Exporting multiple reports into a single document introduced.
+
+	Exporting from multiple reporting tools into a single document introduced.
+
+	New Export Interfaces for following components implemented.
+	  - ThtmlViewer
+	  - TRichView
+	  - Developer Express Printing System
+	  - GmPrintSuite
+	
+	Page borders for all Engines implemented.
+
+	Paragraph borders is implemented for RTF.
+
+	InputXRes and InputYRes properties implemented for PDF.
+
+	New property PageCount introduced.
+
+	RichText rendering enabled in RB Export interface.
+
+	Rendering rotated text is implemented in Rave Export interface.
+
+Fixes:
+	
+	Metafile rendering
+	  - Problem with drawing lines corrected.
+	  - Range check errors corrected.
+	  - Optimized for use in Multithreaded applications.
+
+	Encoding shapes in HTML is corrected.
+
+	Text positioning optimized in Excel.
+	
+	Problem with EaseOfEditing in RTF fixed.
+
+	Access violation in QR ExportInterface is corrected.
+
+	Problem with Registering multiple formats with FastReport is corrected.
+
+	Problem with Report margins corrected in FR Export interface.
+
+	Problem with page width and Height corrected in FR Export interface.
+
+---------------------------------
+Version 1.01 - September 1, 2003
+---------------------------------
+Enhancements:
+
+	TextWidth and TextHeight methods introduced.
+	
+	ReferencePoint property introduced.
+	
+	Help file updated with more FAQ and examples.
+
+	Code samples updated.
+
+Fixes:
+
+	Problem with processing WMF Images corrected.
+
+	PDF Document creation speed improved.
+
+	Underline thickness problem in PDF corrected.
+
+	Problem with Hyperlink Text encoding in SVG corrected.
+
+	Problem with paper size in Rave Export Interface corrected.
+				
+------------------------------
+Version 1.0 - August 15, 2003
+------------------------------
+
+	Released!

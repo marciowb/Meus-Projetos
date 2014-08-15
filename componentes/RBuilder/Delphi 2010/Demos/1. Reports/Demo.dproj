@@ -1,0 +1,354 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{D7E51334-B492-4270-A879-8E845FE85F67}</ProjectGuid>
+			<MainSource>Demo.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+			<ProjectVersion>12.0</ProjectVersion>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
+			<DCC_DependencyCheckOutputName>Demo.exe</DCC_DependencyCheckOutputName>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_Platform>x86</DCC_Platform>
+			<DCC_N>true</DCC_N>
+			<DCC_S>false</DCC_S>
+			<DCC_K>false</DCC_K>
+			<DCC_E>false</DCC_E>
+			<DCC_F>false</DCC_F>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="Demo.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="dm0106.pas">
+				<Form>frm0106</Form>
+			</DCCReference>
+			<DCCReference Include="dm0147.pas">
+				<Form>frm0147</Form>
+			</DCCReference>
+			<DCCReference Include="dm0111.pas">
+				<Form>frm0111</Form>
+			</DCCReference>
+			<DCCReference Include="dm0102.pas">
+				<Form>frm0102</Form>
+			</DCCReference>
+			<DCCReference Include="dm0104.pas">
+				<Form>frm0104</Form>
+			</DCCReference>
+			<DCCReference Include="dm0103.pas">
+				<Form>frm0103</Form>
+			</DCCReference>
+			<DCCReference Include="dm0109.pas">
+				<Form>frm0109</Form>
+			</DCCReference>
+			<DCCReference Include="dm0110.pas">
+				<Form>frm0110</Form>
+			</DCCReference>
+			<DCCReference Include="dm0041.pas">
+				<Form>frm0041</Form>
+			</DCCReference>
+			<DCCReference Include="dm0101.pas">
+				<Form>frm0101</Form>
+			</DCCReference>
+			<DCCReference Include="dm0112.pas">
+				<Form>frm0112</Form>
+			</DCCReference>
+			<DCCReference Include="dm0113.pas">
+				<Form>frm0113</Form>
+			</DCCReference>
+			<DCCReference Include="dm0114.pas">
+				<Form>frm0114</Form>
+			</DCCReference>
+			<DCCReference Include="dm0115.pas">
+				<Form>frm0115</Form>
+			</DCCReference>
+			<DCCReference Include="dm0151.pas">
+				<Form>frm0151</Form>
+			</DCCReference>
+			<DCCReference Include="dm0082.pas">
+				<Form>frm0082</Form>
+			</DCCReference>
+			<DCCReference Include="dm0015.pas">
+				<Form>frm0015</Form>
+			</DCCReference>
+			<DCCReference Include="dm0012.pas">
+				<Form>frm0012</Form>
+			</DCCReference>
+			<DCCReference Include="dm0016.pas">
+				<Form>frm0016</Form>
+			</DCCReference>
+			<DCCReference Include="dm0153.pas">
+				<Form>frm0153</Form>
+			</DCCReference>
+			<DCCReference Include="dm0042.pas">
+				<Form>frm0042</Form>
+			</DCCReference>
+			<DCCReference Include="dm0052.pas">
+				<Form>frm0052</Form>
+			</DCCReference>
+			<DCCReference Include="dmMain.pas">
+				<Form>frmDMMain</Form>
+			</DCCReference>
+			<DCCReference Include="dmUtil.pas"/>
+			<DCCReference Include="dm0018.pas">
+				<Form>frm0018</Form>
+			</DCCReference>
+			<DCCReference Include="dm0021.pas">
+				<Form>frm0021</Form>
+			</DCCReference>
+			<DCCReference Include="dm0022.pas">
+				<Form>frm0022</Form>
+			</DCCReference>
+			<DCCReference Include="dm0025.pas">
+				<Form>frm0025</Form>
+			</DCCReference>
+			<DCCReference Include="dm0026.pas">
+				<Form>frm0026</Form>
+			</DCCReference>
+			<DCCReference Include="dm0027.pas">
+				<Form>frm0027</Form>
+			</DCCReference>
+			<DCCReference Include="dm0028.pas">
+				<Form>frm0028</Form>
+			</DCCReference>
+			<DCCReference Include="dm0029.pas">
+				<Form>frm0029</Form>
+			</DCCReference>
+			<DCCReference Include="dm0033.pas">
+				<Form>frm0033</Form>
+			</DCCReference>
+			<DCCReference Include="dm0121.pas">
+				<Form>frm0121</Form>
+			</DCCReference>
+			<DCCReference Include="dm0122.pas">
+				<Form>frm0122</Form>
+			</DCCReference>
+			<DCCReference Include="dm0148.pas">
+				<Form>frm0148</Form>
+			</DCCReference>
+			<DCCReference Include="dm0134.pas">
+				<Form>frm0134</Form>
+			</DCCReference>
+			<DCCReference Include="dmLevels.pas">
+				<Form>frmDMLevelDirectory</Form>
+			</DCCReference>
+			<DCCReference Include="dm0131.pas">
+				<Form>frm0131</Form>
+			</DCCReference>
+			<DCCReference Include="dm0132.pas">
+				<Form>frm0132</Form>
+			</DCCReference>
+			<DCCReference Include="dm0154.pas">
+				<Form>frm0154</Form>
+			</DCCReference>
+			<DCCReference Include="dm0083.pas">
+				<Form>frm0083</Form>
+			</DCCReference>
+			<DCCReference Include="dm0084.pas">
+				<Form>frm0084</Form>
+			</DCCReference>
+			<DCCReference Include="dm0051.pas">
+				<Form>frm0051</Form>
+			</DCCReference>
+			<DCCReference Include="dm0014.pas">
+				<Form>frm0014</Form>
+			</DCCReference>
+			<DCCReference Include="dm0063.pas">
+				<Form>frm0063</Form>
+			</DCCReference>
+			<DCCReference Include="dm0062.pas">
+				<Form>frm0062</Form>
+			</DCCReference>
+			<DCCReference Include="dm0073.pas">
+				<Form>frm0073</Form>
+			</DCCReference>
+			<DCCReference Include="dmPrvw.pas">
+				<Form>frmTwoPagePreview</Form>
+			</DCCReference>
+			<DCCReference Include="dm0085.pas">
+				<Form>frm0085</Form>
+			</DCCReference>
+			<DCCReference Include="dm0091.pas">
+				<Form>frm0091</Form>
+			</DCCReference>
+			<DCCReference Include="dm0133.pas">
+				<Form>frm0133</Form>
+			</DCCReference>
+			<DCCReference Include="dm0013.pas">
+				<Form>frm0013</Form>
+			</DCCReference>
+			<DCCReference Include="dm0135.pas">
+				<Form>frm0135</Form>
+			</DCCReference>
+			<DCCReference Include="dm0061.pas">
+				<Form>frm0061</Form>
+			</DCCReference>
+			<DCCReference Include="dm0123.pas">
+				<Form>frm0123</Form>
+			</DCCReference>
+			<DCCReference Include="dm0137.pas">
+				<Form>frm0137</Form>
+			</DCCReference>
+			<DCCReference Include="dm0145.pas">
+				<Form>frm0145</Form>
+			</DCCReference>
+			<DCCReference Include="dm0141.pas">
+				<Form>frm0141</Form>
+			</DCCReference>
+			<DCCReference Include="dmEvents.pas">
+				<Form>frmEvents</Form>
+			</DCCReference>
+			<DCCReference Include="dm0142.pas">
+				<Form>frm0142</Form>
+			</DCCReference>
+			<DCCReference Include="dm0143.pas">
+				<Form>frm0143</Form>
+			</DCCReference>
+			<DCCReference Include="dm0146.pas">
+				<Form>frm0146</Form>
+			</DCCReference>
+			<DCCReference Include="dm0144.pas">
+				<Form>frm0144</Form>
+			</DCCReference>
+			<DCCReference Include="dm0031.pas">
+				<Form>frm0031</Form>
+			</DCCReference>
+			<DCCReference Include="dm0136.pas">
+				<Form>frm0136</Form>
+			</DCCReference>
+			<DCCReference Include="dm0071.pas">
+				<Form>frm0071</Form>
+			</DCCReference>
+			<DCCReference Include="dm0152.pas">
+				<Form>frm0152</Form>
+			</DCCReference>
+			<DCCReference Include="dm0064.pas">
+				<Form>frm0064</Form>
+			</DCCReference>
+			<DCCReference Include="dm0017.pas">
+				<Form>frm0017</Form>
+			</DCCReference>
+			<DCCReference Include="dm0139.pas">
+				<Form>frm0139</Form>
+			</DCCReference>
+			<DCCReference Include="dm0138.pas">
+				<Form>frm0138</Form>
+			</DCCReference>
+			<DCCReference Include="dm0107.pas">
+				<Form>frm0107</Form>
+			</DCCReference>
+			<DCCReference Include="dm0116.pas">
+				<Form>frm0116</Form>
+			</DCCReference>
+			<DCCReference Include="dm0081.pas">
+				<Form>frm0081</Form>
+			</DCCReference>
+			<DCCReference Include="dm0124.pas">
+				<Form>frm0124</Form>
+			</DCCReference>
+			<DCCReference Include="dm0011.pas">
+				<Form>frm0011</Form>
+			</DCCReference>
+			<DCCReference Include="dm0032.pas">
+				<Form>frm0032</Form>
+			</DCCReference>
+			<DCCReference Include="dm0023.pas">
+				<Form>frm0023</Form>
+			</DCCReference>
+			<DCCReference Include="dm0024.pas">
+				<Form>frm0024</Form>
+			</DCCReference>
+			<DCCReference Include="dm0140.pas">
+				<Form>frm0140</Form>
+			</DCCReference>
+			<DCCReference Include="dm0072.pas">
+				<Form>frm0072</Form>
+			</DCCReference>
+			<DCCReference Include="dm0155.pas">
+				<Form>frm0155</Form>
+			</DCCReference>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">Demo.dpr</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Language>
+						<Language Name="RootDir">C:\TeamCo\RB Demos\1. Reports\</Language>
+					</Language>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

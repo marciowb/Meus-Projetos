@@ -1,0 +1,197 @@
+ENTERPRISE EDITION SOFTWARE LICENSE
+ 
+
+THIS IS A LEGAL DOCUMENT BY AND AMONG YOU ("LICENSEE"), AND VENDOR.  PLEASE READ THIS AGREEMENT BEFORE USING THE SOFTWARE AND THE SERVICES.  BY USING THE SOFTWARE YOU INDICATE THAT YOU HAVE READ AND UNDERSTAND THIS AGREEMENT AND AGREE TO ACCEPT AND BE BOUND BY THIS AGREEMENT.  IF YOU DO NOT AGREE WITH THIS AGREEMENT, DO NOT ACCESS THE SOFTWARE AND PROMPTLY RETURN THE DOCUMENTATION TO VENDOR.
+
+SOFTWARE LICENSE
+
+By clicking the ‘Agree’ button you accept this SOFTWARE LICENSE ("Agreement") as made by and among Digital Metaphors Corporation, a Texas corporation with offices located at 16775 Addison Rd. Suite 613, Addison, Texas and you; the party identified as "Licensee" in this Agreement. If you do not accept and agree to all of the terms and conditions, click the "Do Not Accept" button and installation of the software will be canceled.
+
+W I T N E S S E T H:
+
+WHEREAS, Digital Metaphors Corporation ("Vendor") has developed and owns ReportBuilder ("Software"); and 
+
+WHEREAS, Licensee desires to obtain a license to access the Software, subject to the terms and conditions of this Agreement; and
+
+WHEREAS, Vendor desires to grant Licensee a license to access the Software, subject to the terms and conditions of this Agreement.
+
+NOW, THEREFORE, in consideration of the mutual benefits of the covenants and restrictions set forth below, Licensee and Vendor hereby agree as follows:
+
+
+ARTICLE I:  DEFINITIONS:
+
+Section 1.01 -- Recitals:  The above identification of parties and recitals are true and correct.
+
+Section 1.02 -- Definitions:  The following definitions shall apply:
+
+(1)	Access:  The term "access" and variants thereof (including, but not limited to, the terms "access", "accessible" and "accessing", in upper or lower case) shall mean to store data in, retrieve data from or otherwise approach or make use of (directly or indirectly) through electronic means or otherwise.
+	
+(2)	Associates:  The term "Associates" shall mean an employee of Vendor or an independent contractor hired by Vendor.
+	
+(3)	Authorized Person:  The term "Authorized Person" shall mean employees of Licensee authorized by Licensee to access Confidential Information and individuals or entities who are authorized in writing by Vendor to receive Confidential Information and who agrees to maintain the confidentiality of such Confidential Information.
+
+(4)	Cancellation Notice:  The term "Cancellation Notice" shall mean that written notice sent by one party to this Agreement to the other party to this Agreement seeking to cancel this Agreement because of breach by such other party. 
+
+(5)	Concurrent Access:  The term "Concurrent Access" shall mean concurrent access to the Product using the same Password.
+
+(6)	Confidential Information: The term "Confidential Information" shall mean all information concerning the business and technical plans of Vendor and all information in connection with the Services, the Product and this Agreement which is disclosed by Vendor to Licensee or learned by Licensee and which is not: (a) already known to Licensee;  (b) conveyed to Licensee by a third party without restriction; (c) released by Vendor without restriction; (d) independently developed by Licensee; or (e) in the public domain. 
+
+(7)	Documentation:  The term "Documentation" shall mean the Software user guide as provided in printed or electronic form to Licensee.
+
+(8)	Effective Date:  The term "Effective Date" shall mean the date Licensee accesses the Product.
+	
+(9)	Export Laws:  The term "Export Laws" shall mean the Export Administration Act, 50 U.S.C. §2401 et. seq., and the Export Administration Regulations, 15 C.F.R. Parts 730-774.
+	
+(10)	Government:  The term "Government" shall mean the state and federal governments of the United States of America, including (without limitation) any and all branches, bodies, agencies, departments, offices, entities and corporations in connection therewith.
+
+(11)	Licensee:  The term "Licensee" shall mean the individual or entity referenced herein as Licensee.
+
+(12)	Password:  The term "Password" shall mean that certain user name and password assigned by Vendor to each User for purposes of accessing the Software.
+
+(13)	Price Schedule:  The term "Price Schedule" shall mean the schedule of fees and payment terms regarding access to the Software as published by Vendor and as modified by Vendor from time to time.  
+	
+(14)	Product: The term "Product" shall mean the Software and the Documentation.
+	
+(15)	Restatements:  The term "Restatements" shall mean Section 757 of the Restatement of Torts, Section 39 of the Restatement (Third) of Unfair Competition, 18 U.S.C. §1839 and Section 1 of the Uniform Trade Secrets Act.
+
+(16)	Rules:  The term "Rules" shall mean laws, rules, regulations, orders, procedures or policies of Government or third parties as amended.
+	
+(17)	Software:  The term "Software" shall mean the executable code for that certain computer software developed and owned by Vendor as accessed by Licensee.
+	
+(18)	Unauthorized Access:  The term "Unauthorized Access" shall mean any access to the Product except for the exclusive purposes of using the performance, utility and functions of the Product for internal business operation of Licensee, and training employees of Licensee in the use of the Product.
+	
+(19)	Unauthorized User:  The term "Unauthorized User" shall mean any individual who accesses the Product except for employees of Licensee to access the Product using the performance, utility and functions of the Product for internal business operations of Licensee and training employees of Licensee in the use of the Product.
+
+(20)	Users:  The term "Users" shall mean employees of Licensee authorized by Licensee to access the Product, excluding Unauthorized Users.
+
+ARTICLE II:  SCOPE OF LICENSE:
+
+Section 2.01 -- Grant of License: Vendor hereby grants to Licensee a non-exclusive and non-transferable license to access the Software and to use the Documentation for the Term, subject to the terms and conditions of this Agreement.
+
+Section 2.02 -- Authorized Use:  Licensee shall prevent Unauthorized Users from accessing the Product.  Licensee shall prevent Unauthorized Access to the Product.  Licensee shall promptly inform Vendor of any and all Unauthorized Access (or suspected Unauthorized Access) and Unauthorized Users (or suspected Unauthorized Users) of which Licensee has knowledge or suspicion.  Access to the Product using third party software for the purpose of viewing, using or disclosing the internal structure of the Product; Concurrent Access; and modifications to the Product shall be deemed Unauthorized Access.
+
+ARTICLE III:  SERVICES:
+
+Section 3.01 -- Password:  Vendor shall assign each User a Password for purposes of accessing the Software during the Term.  The Password shall be used only by such User.  All assignments of the Password by Licensee shall be void.  Licensee shall not concurrently access the Software using the same Password.  Licensee shall prevent Concurrent Access.  Licensee shall be responsible for the confidentiality and maintenance of the Password.  Modification and termination of the Password shall be subject to prior written approval of Vendor.
+
+
+ARTICLE IV:  PAYMENTS AND FEES:
+
+Section 4.01 -- Fees:  Licensee shall pay the Fee to Vendor in accordance with the payment terms set forth in the Price Schedule.  
+
+Section 4.02 -- Taxes:  Licensee shall pay any and all applicable taxes (municipal, state and federal) which may now or hereafter be imposed on accessing the Product or use of the Services by Licensee (excluding income taxes assessed against Vendor).
+
+
+ARTICLE V:  INTELLECTUAL PROPERTY:
+
+Section 5.01 -- Ownership and Title:  Vendor shall own any and all rights, title and interests in the Product, including (without limitation) ownership rights to any and all patents, copyrights, trademarks, and trade secrets in connection therewith. 
+
+Section 5.02 -- Confidential Information:  Licensee shall not disclose Confidential Information except to Authorized Persons.  Licensee shall not duplicate, use or disclose Confidential Information except as otherwise permitted under this Agreement.  The Product shall be deemed Confidential Information of Vendor.
+
+Section 5.03 -- Trade Secrets:  Licensee hereby acknowledges and agrees that the Confidential Information of Vendor derives independent economic value (actual or potential) from not being generally known to other persons who can obtain economic value from its disclosure or use and not being readily ascertainable by proper means by other persons who can obtain economic value from its disclosure or use; is the subject of reasonable efforts by Vendor under the circumstances to maintain its secrecy; and is a trade secret as defined under Chapter 688 of the Florida Statutes [§688.002(4)] and the Restatements.
+
+Section 5.04 -- No Contest:  Licensee shall not contest or aid in contesting the ownership or validity of the copyrights, trademarks, service marks, and trade secrets of Vendor.
+
+Section 5.05 -- Reverse Engineering:  Licensee shall not reverse engineer, decompile, disassemble or translate the Product or access the Product using third party software, without the prior written consent of Vendor.  Licensee shall not allow the Product to be reverse engineered, decompiled, disassembled, translated, or accessed using third party software without the prior written consent of Vendor.
+
+Section 5.06 -- Modifications:  Licensee may modify or extend the Product or use the Product or any materials incident thereto to develop computer software. These rights do not extend to any of the following activities:
+
+1. Distribution of files contained in this software package, including, but not limited to, .PAS, .DFM, .DCU, .DCP files, and design-time packages. Run-time packages, as listed in the on-line help, may be distributed. 
+
+2. Modification, decompilation, disassembly, reverse engineering or translation of the Software.
+
+3. Removal of proprietary notices, labels or marks from the Software or Software Documentation.
+
+4. Inclusion of the Software in a development environment. 
+
+5. Creation of an application that does not differ materially from the Software.
+
+6. Development and/or distribution of a stand-alone reporting application based on the Software.
+
+7. Creation of an application (whether it be freeware, shareware or a commercial product) which competes directly or indirectly with the Software.  
+
+In the event that the Licensee engages in any of above listed activities, the Vendor may terminate this Agreement as stated in Article VIII.
+
+Section 5.07 -- Export:  Licensee shall not export or reexport the Product and shall not allow the Product to be exported or perform any act in violation of any applicable law, including (without limitation) the Export Laws.  The Product or Services shall not be used by Licensee to transfer the Data to either a foreign national or a foreign destination in violation of any applicable law, including (without limitation) the Export Laws.
+
+Section 5.08 -- U.S. Government Restricted Rights:  Where Licensee is the U.S. Government or an agency or department thereof (collectively "Government"), the Product is provided with RESTRICTED RIGHTS and use or disclosure by the Government is subject to restrictions set forth in subparagraph (c)(1)(ii) of the Rights in Technical Data and Computer Software clause at DFARS 252.227-7013 or subparagraphs (c)(1) and (c)(2) of the Commercial Computer Software Restricted Rights clause at 48 C.F.R. 52.227-19, as applicable, which is incorporated herein by this reference.
+
+Section 5.09 -- Continuation:  The terms and provisions of this Article V shall survive termination and cancellation of this Agreement.
+
+
+ARTICLE VI:  WARRANTY:
+
+Section 6.01 -- Software Warranty:  Vendor provides no warranty with regard to the Software. Licensee agrees that any and all computer software developed by Licensee which utilizes the Software is warranted solely by Licensee, and further; that Licensee will hold harmless Vendor, from any liabilities which may arise out computer software so developed by Licensee.
+
+SECTION 6.02 -- EXPRESS WARRANTIES:  LICENSEE HEREBY ACKNOWLEDGES AND AGREES THAT VENDOR (INCLUDING OFFICERS, ASSOCIATES, AGENTS AND DIRECTORS OF VENDOR) HAS NOT MADE OR GRANTED ANY EXPRESS WARRANTIES CONCERNING THE SERVICES AND THE PRODUCT EXCEPT FOR THE SOFTWARE WARRANTY IN SECTION 6.02.  
+
+SECTION 6.03 -- WARRANTY LIMITATION:  THE WARRANTIES SET FORTH IN SECTIONS 6.01 AND 6.02 ARE IN LIEU OF ALL OTHER WARRANTIES EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE AND WARRANTIES OF MERCHANTABILITY.  THE WARRANTIES SET FORTH IN SECTIONS 6.01 AND 6.02 ARE LIMITED TO THE PRODUCT AND DO NOT APPLY TO ANY THIRD PARTY SOFTWARE OR TECHNOLOGY.  EXCEPTING THE WARRANTY SET FORTH IN SECTION 6.01, VENDOR HEREBY DISCLAIMS AND LICENSEE HEREBY WAIVES ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ALL IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND ALL IMPLIED WARRANTIES ARISING BY USAGE OF TRADE, COURSE OF DEALING OR COURSE OF PERFORMANCE. VENDOR DOES NOT MAKE ANY WARRANTY AND LICENSEE HEREBY WAIVES ANY AND ALL WARRANTIES AS TO THE RESULTS OBTAINED FROM THE SUPPORT SERVICES.  LICENSEE HEREBY ACKNOWLEDGES AND AGREES THAT USE OF SUPPORT SERVICES SHALL BE AT THE SOLE AND EXCLUSIVE RISK OF LICENSEE AND SUBJECT TO THE RULES, THE POLICY STATEMENT AND THIS AGREEMENT.  VENDOR SHALL NOT BE LIABLE UNDER ANY CIRCUMSTANCES FOR HARM OR DAMAGES RESULTING FROM OR ARISING OUT OF LICENSEE INABILITY TO USE VENDOR SERVICES OR TO ACCESS THE PRODUCT.
+
+Section 6.04 -- Regulations:  The Product shall not be used (directly or indirectly) to conduct or solicit the performance of any business or activity which is tortious or prohibited by law.  Licensee shall comply with Rules.
+
+Section 6.05 -- Force Majeure:  Vendor shall not be liable for any failure to perform its obligations or for any failure of the Services because of circumstances beyond the control of Vendor.  Such circumstances shall include (without limitation) any acts or omissions of any government or governmental authority, declarations of government, war, natural disaster, act of a public enemy, acts of terrorism, riot, sabotage, labor disputes, power failure, delays in transportation or deliveries of supplies or materials, laws, court orders, acts of God, computer failure, network downtime, electronic mail failure, telecommunication failure, failure of Licensee to cooperate with the reasonable requests of Vendor, misuse of the Service by Licensee or a third party, misuse of the Product by Licensee or a third party, breach of this Agreement by Licensee, or any other events reasonably beyond the control of Vendor.
+
+
+ARTICLE VII:  INDEMNIFICATION:
+
+Section 7.01 -- Limitation of Damages:  Vendor shall not be liable for any lost profits or consequential, exemplary, incidental or punitive damages under this Agreement (including, without limitation, in connection with (i) use or performance of Vendor Services and Borrower Services; (ii) use, performance or operation of the Product; and (iii) loss of Data), regardless of the form of action, whether in contract or in tort, including negligence, regardless of whether Vendor has been advised of the possibility of such damages in advance or whether such damages are reasonably foreseeable. 
+
+SECTION 7.02 -- LIMITATION OF LIABILITY:  THE LIABILITY OF VENDOR FOR ANY REASON AND FOR ANY CAUSE OF ACTION WHATSOEVER IN CONNECTION WITH THIS AGREEMENT, THE PRODUCT OR SUPPORT SERVICES, REGARDLESS OF THE FORM OF ACTION, WHETHER IN CONTRACT OR IN TORT, INCLUDING NEGLIGENCE, SHALL NOT EXCEED THE TOTAL AMOUNT OF MONEY PAID BY LICENSEE TO VENDOR FOR THE SOFTWARE.
+
+Section 7.03 -- Vendor Indemnification:  Licensee shall release, indemnify, defend and hold harmless Vendor (including officers, directors, agents, and Associates of Vendor), Vendor subsidiaries, Vendor affiliates and Vendor suppliers and distributors, from and against any and all losses, costs, claims, suits, obligations, demands, damages, liabilities, expenses and reasonable attorney and paralegal fees on account thereof resulting from or in connection with (i) access to the Product by Licensee (including, without limitation, any claim regarding use of the Product by Licensee in an infringing manner or any claim by Borrower or third parties for breach of warranty, libel, slander, invasion of privacy or false advertising); (ii) the performance of the Product; (iii) the Services; (iv) Licensee failure to comply with the Rules or Licensee breach of the Rules; (v) the acts (or any failure to act) of Licensee hereunder; or (vi) any breach by Licensee of the obligations of Licensee hereunder; (vii) the performance of any product created by Licensee, which utilizes the Product in its construction.  This Section 7.03 shall survive termination and cancellation of this Agreement.  Licensee hereby accepts responsibility for, and shall be liable for, all access to the Software and use of Vendor Services in connection with the Password.
+
+Section 7.04 -- Licensee Indemnification:  If a third party receives a judgment from a court of competent jurisdiction upholding claims that the Product violates trade secrets, proprietary information, trademark, copyright or any patent rights of such third party, Vendor shall perform one or more of the following actions (as determined by Vendor) within one year of the date of judgment in favor of such third party’s claim is rendered by a court of competent jurisdiction:
+
+(1)	Replacement:  Replace the Product by delivering to Licensee a non-infringing software product or Documentation (as the case may be) of substantially equivalent functional and performance capability;
+
+(2)	Modification:  Modify the Software or the Documentation (as the case may be) to avoid the infringement without substantially eliminating the functional and performance capabilities of the Product as described in the Documentation; 
+
+(3)	Obtain License:  Obtain a license for use of the Product from the third party claiming infringement for use of the Product by Licensee.
+
+The remedies set forth herein shall be the sole and exclusive remedies of Licensee for any and all claims of indemnification under this Section 7.04.
+
+
+ARTICLE VIII:  TERMINATION:
+
+Section 8.01 -- Termination Limitations:  This Agreement shall only be terminated or canceled as provided under this Article VIII.  This Agreement shall be valid for the Term.  Licensee may terminate this Agreement for convenience upon providing thirty (30) days advance written notice of termination to the other parties.
+
+Section 8.02 -- Cancellation:  If a party violates its obligations under this Agreement, the other party may cancel this Agreement by sending Cancellation Notice describing the noncompliance to the noncomplying party and to the other party. Upon receiving Cancellation Notice describing the noncompliance, the noncomplying party shall have thirty (30) days from the date of such notice to cure any such noncompliance.  If such noncompliance is not cured within the required thirty day period, the party providing Cancellation Notice shall have the right to cancel this Agreement as of the thirty-first (31st) day after the date of the Cancellation Notice.
+
+Section 8.03 -- Access to the Product:  Upon termination or cancellation of this Agreement, Licensee shall cease accessing the Product, and provide Vendor with a certificate of compliance with this Section 8.04 signed by an authorized representative of Licensee. 
+
+
+ARTICLE IX:  MISCELLANEOUS:
+
+Section 9.01 -- Assignments:  All assignments of rights under this Agreement by Licensee without the prior written consent of Vendor shall be void.
+
+Section 9.02 -- Entire Agreement: This Agreement contains the entire understanding of the parties and supersedes previous verbal and written agreements between the parties concerning the subject matter herein. 
+
+Section 9.03 -- Amendments and Modifications:  Vendor may modify this Agreement from time to time in the exclusive discretion of Vendor.  Such modifications shall be deemed accepted and approved by Licensee, shall apply to the Product, and the Services and shall be binding upon Licensee upon notice to Licensee pursuant to Section 9.09.  Alterations, modifications or amendments of a provision of this Agreement by Licensee and Vendor shall not be binding unless such alterations, modifications or amendments are in writing and signed by authorized representatives of Vendor and Licensee.
+
+Section 9.04 -- Policy Statement:  Licensee shall comply with the Policy Statement.  Vendor may modify the Policy Statement from time to time in the exclusive discretion of Vendor.  Such modified Policy Statement shall be deemed accepted and approved by Licensee, shall apply to the Product, the Services and Borrower Services and shall be binding upon Licensee upon notice to Licensee pursuant to Section 9.09.
+
+Section 9.05 -- Severability:  If a provision of this Agreement is rendered invalid, the remaining provisions shall remain in full force and effect.
+
+Section 9.06 -- Captions:  The headings and captions of this Agreement are inserted for reference convenience and do not define, limit or describe the scope or intent of this Agreement or any particular section, paragraph or provision.  Pronouns and nouns shall refer to the masculine, feminine, neuter, singular or plural as the context shall require.  
+
+Section 9.07 -- Public Announcement:  All public announcements of the relationship of Vendor and Licensee under this Agreement shall be subject to the prior written approval of Vendor.
+
+Section 9.08 -- Governing Law: This Agreement shall be governed by the laws of the State of Texas without regard to any rules of conflict or choice of laws which require the application of laws of another jurisdiction, and venue shall be Collin County, Dallas, Texas.
+
+Section 9.09 -- Notice:  All notices shall be in writing.  Notices to Vendor shall be deemed delivered when delivered by commercial overnight delivery service, Certified or Registered Mail – Return Receipt Requested - or by hand to the address set forth below for Vendor on the Subscriber Agreement.  Notices to Licensee shall be deemed delivered when delivered electronically, by commercial overnight delivery services, by Certified or Registered Mail – Return Receipt Requested – or by hand to the address set forth in the Subscription Subscriber Agreement for Licensee.  Notices shall be deemed given on the date notice is delivered electronically (in case of notices delivered to Licensee) or on the date of receipt - as evidenced in the case of Certified or Registered Mail by Return Receipt.  Notices delivered to Licensee electronically (including, without limitation, electronic mail) shall be deemed written notices.
+
+Digital Metaphors Corporation
+16775 Addison Rd. Suite 613
+Addison, Texas 75001
+
+Section 9.10 -- Waiver: Waiver of breach of this Agreement shall not constitute waiver of another breach. Failing to enforce a provision of this Agreement shall not constitute a waiver or create an estoppel from enforcing such provision. Any waiver of a provision of this Agreement shall not be binding unless such waiver is in writing and signed by the party waiving such provision.
+
+Section 9.11 -- Relationship of the Parties:  It is agreed that the relationship of the parties is primarily that of licensee and licensor.  Nothing herein shall be construed as creating a partnership, an employment relationship, or an agency relationship between the parties, or as authorizing either party to act as agent for the other.  Each party shall maintain its separate identity.  
+
+Section 9.12 -- Litigation Expense:  In the event of litigation arising out of this Agreement, Licensee agrees to pay both its own costs and any costs incurred by Vendor in the pursuit of litigation or arbitration. 
+
+Section 9.13 -- Equitable Remedies:  The parties hereby acknowledge that damages at law may be an inadequate remedy for Vendor.  In addition to other rights which may be available, Vendor shall have the right of specific performance, injunction or other equitable remedy (including, but not limited to, the right to such equitable remedies prior to or pending arbitration) in the event of a breach or threatened breach of this Agreement by Licensee.
+
+
+
+

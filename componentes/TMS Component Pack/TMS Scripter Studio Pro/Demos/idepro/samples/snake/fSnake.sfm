@@ -1,0 +1,131 @@
+object Form2: TScriptForm
+  Left = 5
+  Top = 5
+  BorderIcons = [biSystemMenu]
+  Caption = 'Snake game'
+  ClientHeight = 254
+  ClientWidth = 312
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesigned
+  SaveProps.Strings = (
+    'Visible=False'
+    'Position=poScreenCenter')
+  SaveEvents.Strings = (
+    'Self.OnCreate=Form2Create'
+    'Self.OnKeyDown=Form2KeyDown'
+    'BitBtn1.OnClick=BitBtn1Click'
+    'Self.OnClose=Form2Close'
+    'SpeedButton1.OnClick=SpeedButton1Click'
+    'SpeedButton2.OnClick=SpeedButton2Click')
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Shape1: TShape
+    Left = 0
+    Top = 209
+    Width = 312
+    Height = 1
+  end
+  object Label1: TLabel
+    Left = 8
+    Top = 224
+    Width = 34
+    Height = 13
+    Caption = 'Speed:'
+  end
+  object SpeedButton1: TSpeedButton
+    Left = 97
+    Top = 220
+    Width = 23
+    Height = 22
+    Caption = '+'
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 120
+    Top = 220
+    Width = 23
+    Height = 22
+    Caption = '-'
+  end
+  object Button5: TButton
+    Left = 184
+    Top = 64
+    Width = 9
+    Height = 9
+    TabOrder = 0
+    TabStop = False
+  end
+  object Button1: TButton
+    Left = 152
+    Top = 80
+    Width = 9
+    Height = 9
+    Caption = '8'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    TabStop = False
+  end
+  object Button2: TButton
+    Left = 144
+    Top = 80
+    Width = 9
+    Height = 9
+    Caption = '8'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    TabStop = False
+  end
+  object Button3: TButton
+    Left = 136
+    Top = 80
+    Width = 9
+    Height = 9
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    TabStop = False
+  end
+  object Button4: TButton
+    Left = 128
+    Top = 80
+    Width = 9
+    Height = 9
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+    TabStop = False
+  end
+  object Edit1: TEdit
+    Left = 48
+    Top = 221
+    Width = 49
+    Height = 21
+    Enabled = False
+    ReadOnly = True
+    TabOrder = 5
+    Text = '20'
+  end
+end

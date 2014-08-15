@@ -1,0 +1,843 @@
+object TppReport
+  AutoStop = False
+  DataPipeline = plEvents
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'Letter 8 ½ x 11 in'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  SaveAsTemplate = True
+  Template.FileName = 'E:\Development\RBDemos\0. Rap\1. CodeSite\rap0003.rtm'
+  Template.Format = ftASCII
+  Units = utScreenPixels
+  UserName = 'Report'
+  DeviceType = 'Screen'
+  Language = lgEnglish
+  Version = '4.24 Pro'
+  mmColumnWidth = 0
+  object ppTitleBand1: TppTitleBand
+    NewPage = True
+    mmBottomOffset = 0
+    mmHeight = 40481
+    mmPrintPosition = 0
+    object ppMemo1: TppMemo
+      UserName = 'Memo1'
+      Caption = 'Memo1'
+      CharWrap = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Lines.Strings = (
+        'This report contains calls to the following CodeSite methods:'
+        ''
+        'SendProperty'
+        'SendAssignedEx'
+        'ScratchPad'
+        'SendRectEx'
+        ''
+        'Move forward to the next page to view the report and the calls.')
+      Transparent = True
+      mmHeight = 36777
+      mmLeft = 1058
+      mmTop = 1058
+      mmWidth = 194205
+      BandType = 1
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      mmLeading = 0
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    PrintHeight = phDynamic
+    mmBottomOffset = 0
+    mmHeight = 57150
+    mmPrintPosition = 0
+    object ppLine2: TppLine
+      UserName = 'Line2'
+      Pen.Color = clMaroon
+      ParentHeight = True
+      Position = lpLeft
+      StretchWithParent = True
+      Weight = 0.75
+      mmHeight = 57150
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 3175
+      BandType = 4
+    end
+    object ppLabel5: TppLabel
+      UserName = 'Label5'
+      AutoSize = False
+      Caption = 'Venue'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clMaroon
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 12700
+      mmTop = 2646
+      mmWidth = 19844
+      BandType = 4
+    end
+    object ppDBText4: TppDBText
+      UserName = 'DBText4'
+      DataField = 'Venue'
+      DataPipeline = plEvents
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clMaroon
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 33602
+      mmTop = 2646
+      mmWidth = 80433
+      BandType = 4
+    end
+    object ppLabel6: TppLabel
+      UserName = 'Label6'
+      AutoSize = False
+      Caption = 'Ticket Price'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clMaroon
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 12700
+      mmTop = 7938
+      mmWidth = 19844
+      BandType = 4
+    end
+    object ppDBText5: TppDBText
+      UserName = 'DBText5'
+      DataField = 'Ticket_price'
+      DataPipeline = plEvents
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clMaroon
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 33602
+      mmTop = 7938
+      mmWidth = 27517
+      BandType = 4
+    end
+    object ppLabel7: TppLabel
+      UserName = 'Label7'
+      AutoSize = False
+      Caption = 'Capacity'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clMaroon
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 12700
+      mmTop = 13229
+      mmWidth = 19844
+      BandType = 4
+    end
+    object ppDBText6: TppDBText
+      UserName = 'DBText6'
+      DataField = 'Capacity'
+      DataPipeline = plEvents
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clMaroon
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 33602
+      mmTop = 13229
+      mmWidth = 27517
+      BandType = 4
+    end
+    object ppDBImage1: TppDBImage
+      UserName = 'DBImage1'
+      DirectDraw = True
+      MaintainAspectRatio = True
+      Transparent = True
+      DataField = 'Venue_Map'
+      DataPipeline = plEvents
+      GraphicType = 'Bitmap'
+      mmHeight = 52917
+      mmLeft = 116417
+      mmTop = 2910
+      mmWidth = 74877
+      BandType = 4
+    end
+    object ppLabel8: TppLabel
+      UserName = 'Label8'
+      AutoSize = False
+      Caption = 'Remarks'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clMaroon
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 12700
+      mmTop = 18785
+      mmWidth = 15081
+      BandType = 4
+    end
+    object ppDBMemo2: TppDBMemo
+      UserName = 'DBMemo2'
+      CharWrap = False
+      DataField = 'Remarks'
+      DataPipeline = plEvents
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clMaroon
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Stretch = True
+      Transparent = True
+      mmHeight = 13229
+      mmLeft = 33867
+      mmTop = 18785
+      mmWidth = 79640
+      BandType = 4
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      mmLeading = 0
+    end
+  end
+  object ppGroup1: TppGroup
+    BreakName = 'EventNo'
+    DataPipeline = plEvents
+    KeepTogether = True
+    UserName = 'Group1'
+    mmNewColumnThreshold = 0
+    mmNewPageThreshold = 0
+    object ppGroupHeaderBand1: TppGroupHeaderBand
+      PrintHeight = phDynamic
+      mmBottomOffset = 0
+      mmHeight = 31750
+      mmPrintPosition = 0
+      object ppShape1: TppShape
+        UserName = 'Shape1'
+        Brush.Color = clMaroon
+        ParentHeight = True
+        ParentWidth = True
+        StretchWithParent = True
+        mmHeight = 31750
+        mmLeft = 0
+        mmTop = 0
+        mmWidth = 203200
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel1: TppLabel
+        UserName = 'Label1'
+        AutoSize = False
+        Caption = 'Event Name'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsItalic]
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 1058
+        mmTop = 794
+        mmWidth = 19844
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppDBText1: TppDBText
+        UserName = 'DBText1'
+        DataField = 'Event_Name'
+        DataPipeline = plEvents
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 21960
+        mmTop = 794
+        mmWidth = 80433
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel2: TppLabel
+        UserName = 'Label2'
+        AutoSize = False
+        Caption = 'Event Date'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsItalic]
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 6350
+        mmTop = 6085
+        mmWidth = 28046
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppDBText2: TppDBText
+        UserName = 'DBText2'
+        DataField = 'Event_Date'
+        DataPipeline = plEvents
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 35454
+        mmTop = 6085
+        mmWidth = 27517
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel3: TppLabel
+        UserName = 'Label3'
+        AutoSize = False
+        Caption = 'Event Time'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsItalic]
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 6350
+        mmTop = 11377
+        mmWidth = 28046
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppDBText3: TppDBText
+        UserName = 'DBText3'
+        DataField = 'Event_Time'
+        DataPipeline = plEvents
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 35454
+        mmTop = 11377
+        mmWidth = 27517
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel4: TppLabel
+        UserName = 'Label4'
+        AutoSize = False
+        Caption = 'Event Description'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsItalic]
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 6350
+        mmTop = 16669
+        mmWidth = 28046
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppDBMemo1: TppDBMemo
+        UserName = 'DBMemo1'
+        CharWrap = False
+        DataField = 'Event_Description'
+        DataPipeline = plEvents
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        Stretch = True
+        Transparent = True
+        mmHeight = 13229
+        mmLeft = 35454
+        mmTop = 16669
+        mmWidth = 136525
+        BandType = 3
+        GroupNo = 0
+        mmBottomOffset = 0
+        mmOverFlowOffset = 0
+        mmStopPosition = 0
+        mmLeading = 0
+      end
+      object ppDBImage2: TppDBImage
+        UserName = 'DBImage2'
+        MaintainAspectRatio = True
+        Stretch = True
+        DataField = 'Event_Photo'
+        DataPipeline = plEvents
+        GraphicType = 'Bitmap'
+        mmHeight = 13229
+        mmLeft = 106892
+        mmTop = 1058
+        mmWidth = 27781
+        BandType = 3
+        GroupNo = 0
+      end
+    end
+    object ppGroupFooterBand1: TppGroupFooterBand
+      PrintHeight = phDynamic
+      mmBottomOffset = 0
+      mmHeight = 3969
+      mmPrintPosition = 0
+      object ppLine1: TppLine
+        UserName = 'Line1'
+        Pen.Color = clMaroon
+        ParentWidth = True
+        Weight = 0.75
+        mmHeight = 3969
+        mmLeft = 0
+        mmTop = 0
+        mmWidth = 203200
+        BandType = 5
+        GroupNo = 0
+      end
+    end
+  end
+  object TraCodeModule
+    ProgramStream = {
+      01060D54726156617250726F6772616D094368696C645479706502110B50726F
+      6772616D4E616D6506095661726961626C65730B50726F6772616D5479706507
+      0B747450726F63656475726506536F75726365067B70726F6365647572652056
+      61726961626C65733B0D0A7661720D0A20206244657461696C5072696E746564
+      3A20426F6F6C65616E3B200D0A2020624669727374496E7374616E63653A2042
+      6F6F6C65616E3B0D0A2020694C696E65496E6465783A20496E74656765723B0D
+      0A626567696E0D0A0D0A656E643B0D0A0001060A54726150726F6772616D0943
+      68696C645479706502130B50726F6772616D4E616D65060E476C6F62616C4F6E
+      4372656174650B50726F6772616D54797065070B747450726F63656475726506
+      536F75726365067370726F63656475726520476C6F62616C4F6E437265617465
+      3B0D0A626567696E0D0A20206244657461696C5072696E746564203A3D204661
+      6C73653B0D0A2020624669727374496E7374616E6365203A3D20547275653B0D
+      0A2020694C696E65496E646578203A3D20303B0D0A656E643B0D0A0001060F54
+      72614576656E7448616E646C65720B50726F6772616D4E616D65061144657461
+      696C4265666F72655072696E740B50726F6772616D54797065070B747450726F
+      63656475726506536F7572636506B070726F6365647572652044657461696C42
+      65666F72655072696E743B0D0A626567696E0D0A2020696620694C696E65496E
+      646578203C20313030207468656E0D0A2020626567696E0D0A20202020637353
+      63726174636850616428694C696E65496E6465782C202744657461696C2E4265
+      666F72655072696E7427293B0D0A20202020694C696E65496E646578203A3D20
+      694C696E65496E646578202B20313B0D0A2020656E643B0D0A656E643B0D0A0D
+      436F6D706F6E656E744E616D65060644657461696C094576656E744E616D6506
+      0B4265666F72655072696E74074576656E74494402180001060F547261457665
+      6E7448616E646C65720B50726F6772616D4E616D65061044657461696C416674
+      65725072696E740B50726F6772616D54797065070B747450726F636564757265
+      06536F7572636506AE70726F6365647572652044657461696C41667465725072
+      696E743B0D0A626567696E0D0A2020696620694C696E65496E646578203C2031
+      3030207468656E0D0A2020626567696E0D0A2020202063735363726174636850
+      616428694C696E65496E6465782C202744657461696C2E41667465725072696E
+      7427293B0D0A20202020694C696E65496E646578203A3D20694C696E65496E64
+      6578202B20313B0D0A2020656E643B0D0A656E643B0D0A0D436F6D706F6E656E
+      744E616D65060644657461696C094576656E744E616D65060A41667465725072
+      696E74074576656E74494402170001060F5472614576656E7448616E646C6572
+      0B50726F6772616D4E616D65060D5368617065314F6E5072696E740B50726F67
+      72616D54797065070B747450726F63656475726506536F757263650C1A010000
+      70726F636564757265205368617065314F6E5072696E743B0D0A626567696E0D
+      0A20206373456E7465724D6574686F6428275368617065312E4F6E5072696E74
+      27293B0D0A2020637353656E644F626A656374282747726F7570204865616465
+      722053686170652031272C20536861706531293B0D0A2020637353656E64436F
+      6C6F72457828636D7453747265616D2C20275368617065312E42727573682E43
+      6F6C6F72272C205368617065312E42727573682E636F6C6F72293B0D0A202063
+      7353656E6450726F706572747928275368617065312E5368617065272C205368
+      617065312C2027536861706527293B0D0A20206373457869744D6574686F6428
+      275368617065312E4F6E5072696E7427293B0D0A656E643B0D0A0D436F6D706F
+      6E656E744E616D650606536861706531094576656E744E616D6506074F6E5072
+      696E74074576656E74494402200001060F5472614576656E7448616E646C6572
+      0B50726F6772616D4E616D65060F4442496D616765324F6E5072696E740B5072
+      6F6772616D54797065070B747450726F63656475726506536F75726365065D70
+      726F636564757265204442496D616765324F6E5072696E743B0D0A626567696E
+      0D0A2020637353656E644F626A656374282747726F7570204865616465722044
+      42496D61676532272C204442496D61676532293B0D0A656E643B0D0A0D436F6D
+      706F6E656E744E616D6506084442496D61676532094576656E744E616D650607
+      4F6E5072696E74074576656E74494402200001060F5472614576656E7448616E
+      646C65720B50726F6772616D4E616D65061B47726F757048656164657242616E
+      64314265666F72655072696E740B50726F6772616D54797065070B747450726F
+      63656475726506536F757263650C4501000070726F6365647572652047726F75
+      7048656164657242616E64314265666F72655072696E743B0D0A626567696E0D
+      0A2020696620624669727374496E7374616E6365207468656E0D0A2020626567
+      696E0D0A202020206373436C6561723B0D0A20202020637353656E6441737369
+      676E656428274C6162656C31272C204C6162656C31293B0D0A20202020624669
+      727374496E7374616E6365203A3D2046616C73653B0D0A2020656E643B0D0A20
+      200D0A2020696620694C696E65496E646578203C20313030207468656E0D0A20
+      20626567696E0D0A2020202063735363726174636850616428694C696E65496E
+      6465782C202747726F75704865616465722E4265666F72655072696E7427293B
+      0D0A20202020694C696E65496E646578203A3D20694C696E65496E646578202B
+      20313B0D0A2020656E643B0D0A20200D0A656E643B0D0A0D436F6D706F6E656E
+      744E616D65061047726F757048656164657242616E6431094576656E744E616D
+      65060B4265666F72655072696E74074576656E74494402180001060F54726145
+      76656E7448616E646C65720B50726F6772616D4E616D65061A47726F75704865
+      6164657242616E643141667465725072696E740B50726F6772616D5479706507
+      0B747450726F63656475726506536F7572636506BD70726F6365647572652047
+      726F757048656164657242616E643141667465725072696E743B0D0A62656769
+      6E0D0A2020696620694C696E65496E646578203C20313030207468656E0D0A20
+      20626567696E0D0A2020202063735363726174636850616428694C696E65496E
+      6465782C202747726F75704865616465722E41667465725072696E7427293B0D
+      0A20202020694C696E65496E646578203A3D20694C696E65496E646578202B20
+      313B0D0A2020656E643B0D0A656E643B0D0A0D436F6D706F6E656E744E616D65
+      061047726F757048656164657242616E6431094576656E744E616D65060A4166
+      7465725072696E74074576656E74494402170001060F5472614576656E744861
+      6E646C65720B50726F6772616D4E616D65061B47726F7570466F6F7465724261
+      6E64314265666F72655072696E740B50726F6772616D54797065070B74745072
+      6F63656475726506536F7572636506BF70726F6365647572652047726F757046
+      6F6F74657242616E64314265666F72655072696E743B0D0A626567696E0D0A20
+      20696620694C696E65496E646578203C20313030207468656E0D0A2020626567
+      696E0D0A2020202063735363726174636850616428694C696E65496E6465782C
+      202747726F7570466F6F7465722E4265666F72655072696E7427293B0D0A2020
+      2020694C696E65496E646578203A3D20694C696E65496E646578202B20313B0D
+      0A2020656E643B0D0A656E643B0D0A0D436F6D706F6E656E744E616D65061047
+      726F7570466F6F74657242616E6431094576656E744E616D65060B4265666F72
+      655072696E74074576656E74494402180001060F5472614576656E7448616E64
+      6C65720B50726F6772616D4E616D65061A47726F7570466F6F74657242616E64
+      3141667465725072696E740B50726F6772616D54797065070B747450726F6365
+      6475726506536F7572636506BF70726F6365647572652047726F7570466F6F74
+      657242616E643141667465725072696E743B0D0A626567696E0D0A2020696620
+      694C696E65496E646578203C20313030207468656E0D0A2020626567696E0D0A
+      2020202063735363726174636850616428694C696E65496E6465782C20274772
+      6F7570466F6F7465722E41667465725072696E7427293B0D0A20202020694C69
+      6E65496E646578203A3D20694C696E65496E646578202B20313B0D0A2020656E
+      643B0D0A0D0A656E643B0D0A0D436F6D706F6E656E744E616D65061047726F75
+      70466F6F74657242616E6431094576656E744E616D65060A4166746572507269
+      6E74074576656E74494402170000}
+  end
+  object TdaDataModule
+    object TdaBDEQueryDataView
+      Left = 10
+      Top = 10
+      Width = 296
+      Height = 411
+      UserName = 'Query_Events'
+      AutoSearchTabOrder = 0
+      object plEvents: TppChildBDEPipeline
+        AutoCreateFields = False
+        UserName = 'plEvents'
+        object TppField
+          FieldAlias = 'Eventno'
+          FieldName = 'EventNo'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 10
+          Position = 0
+          TableName = 'events.db'
+        end
+        object TppField
+          FieldAlias = 'Venueno'
+          FieldName = 'VenueNo'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 10
+          Position = 1
+          TableName = 'events.db'
+        end
+        object TppField
+          FieldAlias = 'Event Name'
+          FieldName = 'Event_Name'
+          FieldLength = 30
+          DisplayWidth = 30
+          Position = 2
+          TableName = 'events.db'
+        end
+        object TppField
+          FieldAlias = 'Event Date'
+          FieldName = 'Event_Date'
+          FieldLength = 0
+          DataType = dtDate
+          DisplayWidth = 10
+          Position = 3
+          TableName = 'events.db'
+        end
+        object TppField
+          FieldAlias = 'Event Time'
+          FieldName = 'Event_Time'
+          FieldLength = 0
+          DataType = dtTime
+          DisplayWidth = 10
+          Position = 4
+          TableName = 'events.db'
+        end
+        object TppField
+          FieldAlias = 'Event Description'
+          FieldName = 'Event_Description'
+          FieldLength = 100
+          DataType = dtMemo
+          DisplayWidth = 10
+          Position = 5
+          TableName = 'events.db'
+        end
+        object TppField
+          FieldAlias = 'Ticket Price'
+          FieldName = 'Ticket_price'
+          FieldLength = 0
+          DataType = dtCurrency
+          DisplayWidth = 10
+          Position = 6
+          TableName = 'events.db'
+        end
+        object TppField
+          FieldAlias = 'Event Photo'
+          FieldName = 'Event_Photo'
+          FieldLength = 0
+          DataType = dtGraphic
+          DisplayWidth = 10
+          Position = 7
+          TableName = 'events.db'
+        end
+        object TppField
+          FieldAlias = 'Venueno (2)'
+          FieldName = 'VenueNo_1'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 10
+          Position = 8
+          TableName = 'venues.db'
+        end
+        object TppField
+          FieldAlias = 'Venue'
+          FieldName = 'Venue'
+          FieldLength = 30
+          DisplayWidth = 30
+          Position = 9
+          TableName = 'venues.db'
+        end
+        object TppField
+          FieldAlias = 'Capacity'
+          FieldName = 'Capacity'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 10
+          Position = 10
+          TableName = 'venues.db'
+        end
+        object TppField
+          FieldAlias = 'Venue Map'
+          FieldName = 'Venue_Map'
+          FieldLength = 0
+          DataType = dtGraphic
+          DisplayWidth = 10
+          Position = 11
+          TableName = 'venues.db'
+        end
+        object TppField
+          FieldAlias = 'Remarks'
+          FieldName = 'Remarks'
+          FieldLength = 80
+          DataType = dtMemo
+          DisplayWidth = 10
+          Position = 12
+          TableName = 'venues.db'
+        end
+      end
+      object TdaSQL
+        DatabaseName = 'DBDEMOS'
+        DatabaseType = dtParadox
+        DataPipelineName = 'plEvents'
+        Description = 'Events'
+        SQLText.Strings = (
+          'SELECT events.EventNo, events.VenueNo, '
+          '       events.Event_Name, events.Event_Date, '
+          '       events.Event_Time, '
+          '       events.Event_Description, '
+          '       events.Ticket_price, events.Event_Photo, '
+          '       venues.VenueNo, venues.Venue, '
+          '       venues.Capacity, venues.Venue_Map, '
+          '       venues.Remarks'
+          'FROM "events.db" events'
+          '      INNER JOIN "venues.db" venues ON '
+          '     (venues.VenueNo = events.VenueNo)')
+        object TdaField
+          Alias = 'Eventno'
+          DataType = dtInteger
+          FieldAlias = 'Eventno'
+          FieldName = 'EventNo'
+          TableName = 'events.db'
+          SQLFieldName = 'EventNo'
+          TableAlias = 'Events'
+          TableSQLAlias = 'events'
+        end
+        object TdaField
+          Alias = 'Venueno'
+          DataType = dtInteger
+          FieldAlias = 'Venueno'
+          FieldName = 'VenueNo'
+          TableName = 'events.db'
+          SQLFieldName = 'VenueNo'
+          TableAlias = 'Events'
+          TableSQLAlias = 'events'
+        end
+        object TdaField
+          Alias = 'Event Name'
+          FieldAlias = 'Event Name'
+          FieldName = 'Event_Name'
+          TableName = 'events.db'
+          SQLFieldName = 'Event_Name'
+          TableAlias = 'Events'
+          TableSQLAlias = 'events'
+        end
+        object TdaField
+          Alias = 'Event Date'
+          DataType = dtDate
+          FieldAlias = 'Event Date'
+          FieldName = 'Event_Date'
+          TableName = 'events.db'
+          SQLFieldName = 'Event_Date'
+          TableAlias = 'Events'
+          TableSQLAlias = 'events'
+        end
+        object TdaField
+          Alias = 'Event Time'
+          DataType = dtTime
+          FieldAlias = 'Event Time'
+          FieldName = 'Event_Time'
+          TableName = 'events.db'
+          SQLFieldName = 'Event_Time'
+          TableAlias = 'Events'
+          TableSQLAlias = 'events'
+        end
+        object TdaField
+          Alias = 'Event Description'
+          DataType = dtMemo
+          FieldAlias = 'Event Description'
+          FieldName = 'Event_Description'
+          TableName = 'events.db'
+          SQLFieldName = 'Event_Description'
+          TableAlias = 'Events'
+          TableSQLAlias = 'events'
+        end
+        object TdaField
+          Alias = 'Ticket Price'
+          DataType = dtCurrency
+          FieldAlias = 'Ticket Price'
+          FieldName = 'Ticket_price'
+          TableName = 'events.db'
+          SQLFieldName = 'Ticket_price'
+          TableAlias = 'Events'
+          TableSQLAlias = 'events'
+        end
+        object TdaField
+          Alias = 'Event Photo'
+          DataType = dtGraphic
+          FieldAlias = 'Event Photo'
+          FieldName = 'Event_Photo'
+          TableName = 'events.db'
+          SQLFieldName = 'Event_Photo'
+          TableAlias = 'Events'
+          TableSQLAlias = 'events'
+        end
+        object TdaField
+          Alias = 'Venueno (2)'
+          DataType = dtInteger
+          FieldAlias = 'Venueno'
+          FieldName = 'VenueNo'
+          TableName = 'venues.db'
+          SQLFieldName = 'VenueNo_1'
+          TableAlias = 'Venues'
+          TableSQLAlias = 'venues'
+        end
+        object TdaField
+          Alias = 'Venue'
+          FieldAlias = 'Venue'
+          FieldName = 'Venue'
+          TableName = 'venues.db'
+          SQLFieldName = 'Venue'
+          TableAlias = 'Venues'
+          TableSQLAlias = 'venues'
+        end
+        object TdaField
+          Alias = 'Capacity'
+          DataType = dtInteger
+          FieldAlias = 'Capacity'
+          FieldName = 'Capacity'
+          TableName = 'venues.db'
+          SQLFieldName = 'Capacity'
+          TableAlias = 'Venues'
+          TableSQLAlias = 'venues'
+        end
+        object TdaField
+          Alias = 'Venue Map'
+          DataType = dtGraphic
+          FieldAlias = 'Venue Map'
+          FieldName = 'Venue_Map'
+          TableName = 'venues.db'
+          SQLFieldName = 'Venue_Map'
+          TableAlias = 'Venues'
+          TableSQLAlias = 'venues'
+        end
+        object TdaField
+          Alias = 'Remarks'
+          DataType = dtMemo
+          FieldAlias = 'Remarks'
+          FieldName = 'Remarks'
+          TableName = 'venues.db'
+          SQLFieldName = 'Remarks'
+          TableAlias = 'Venues'
+          TableSQLAlias = 'venues'
+        end
+        object TdaTable
+          ChildType = 5
+          Alias = 'Events'
+          TableAlias = 'Events'
+          TableName = 'events.db'
+          SQLAlias = 'events'
+          JoinType = dajtNone
+        end
+        object TdaTable
+          ChildType = 5
+          Alias = 'Venues'
+          TableAlias = 'Venues'
+          TableName = 'venues.db'
+          SQLAlias = 'venues'
+          object TdaTableJoin
+            ChildType = 6
+            object TdaField
+              ChildType = 3
+              Alias = 'Venueno'
+              DataType = dtInteger
+              FieldAlias = 'Venueno'
+              FieldName = 'VenueNo'
+              TableName = 'venues.db'
+              TableAlias = 'Venues'
+              TableSQLAlias = 'venues'
+            end
+            object TdaField
+              ChildType = 4
+              Alias = 'Venueno'
+              DataType = dtInteger
+              FieldAlias = 'Venueno'
+              FieldName = 'VenueNo'
+              TableName = 'events.db'
+              TableAlias = 'Events'
+              TableSQLAlias = 'events'
+            end
+          end
+        end
+      end
+    end
+  end
+end

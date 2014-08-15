@@ -1,0 +1,131 @@
+package rbIDE1214;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ReportBuilder Designer'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rbRCL1214;
+
+contains
+  ppPgSDlg in 'ppPgSDlg.pas',
+  ppAbout in 'ppAbout.pas',
+  ppFmtDlg in 'ppFmtDlg.pas',
+  ppGrpDlg in 'ppGrpDlg.pas',
+  ppGrdDlg in 'ppGrdDlg.pas',
+  ppTxtDlg in 'ppTxtDlg.pas',
+  ppRichEd in 'ppRichEd.pas',
+  ppClcDlg in 'ppClcDlg.pas',
+  ppShfDlg in 'ppShfDlg.pas',
+  ppMemDlg in 'ppMemDlg.pas',
+  ppPosDlg in 'ppPosDlg.pas',
+  ppBPsDlg in 'ppBPsDlg.pas',
+  ppDatDlg in 'ppDatDlg.pas',
+  ppDemo in 'ppDemo.pas',
+  ppEndUsr in 'ppEndUsr.pas',
+  ppBarDlg in 'ppBarDlg.pas',
+  ppDrlDlg in 'ppDrlDlg.pas',
+  ppDsgner in 'ppDsgner.pas',
+  ppTreeVw in 'ppTreeVw.pas',
+  ppNewDlg in 'ppNewDlg.pas',
+  ppVarDlg in 'ppVarDlg.pas',
+  ppCOrDlg in 'ppCOrDlg.pas',
+  ppPgNDlg in 'ppPgNDlg.pas',
+  ppMetaAL in 'ppMetaAL.pas',
+  ppMetaRW in 'ppMetaRW.pas',
+  ppRptWiz in 'ppRptWiz.pas',
+  ppRWzDlg in 'ppRWzDlg.pas',
+  ppExpDlg in 'ppExpDlg.pas',
+  ppExpFrm in 'ppExpFrm.pas',
+  ppRptExp in 'ppRptExp.pas',
+  ppWizard in 'ppWizard.pas',
+  ppDsgnDB in 'ppDsgnDB.pas',
+  ppLWzDlg in 'ppLWzDlg.pas',
+  ppAvStd in 'ppAvStd.pas',
+  ppLabelDef in 'ppLabelDef.pas',
+  ppLabWiz in 'ppLabWiz.pas',
+  ppAvIntl in 'ppAvIntl.pas',
+  ppRstDlg in 'ppRstDlg.pas',
+  ppOutlineSettingsPreviewThread in 'ppOutlineSettingsPreviewThread.pas',
+  ppOutlineSettingsDialog in 'ppOutlineSettingsDialog.pas',
+  ppTextSearchSettingsDialog in 'ppTextSearchSettingsDialog.pas',
+  ppDesignControlsEx in 'ppDesignControlsEx.pas',
+  ppDesignControls in 'ppDesignControls.pas',
+  ppDesignerWorkspace in 'ppDesignerWorkspace.pas',
+  ppPopupMenus in 'ppPopupMenus.pas',
+  ppDesignerForms in 'ppDesignerForms.pas',
+  ppInspector in 'ppInspector.pas',
+  ppParametersEd in 'ppParametersEd.pas',
+  ppUndo in 'ppUndo.pas',
+  ppJvInspector in 'ppJvInspector.pas',
+  ppJvInspExtraEditors in 'ppJvInspExtraEditors.pas',
+  ppJvTabBar in 'ppJvTabBar.pas',
+  ppJclBase in 'ppJclBase.pas',
+  ppJclLogic in 'ppJclLogic.pas',
+  ppJclRTTI in 'ppJclRTTI.pas',
+  ppJclResources in 'ppJclResources.pas',
+  ppJclStrings in 'ppJclStrings.pas',
+  ppBarCode2DDesign in 'ppBarCode2DDesign.pas',
+  ppDesignControllers in 'ppDesignControllers.pas',
+  ppDesignControllerBase in 'ppDesignControllerBase.pas',
+  ppDesignDialogController in 'ppDesignDialogController.pas',
+  ppDesignDocumentController in 'ppDesignDocumentController.pas',
+  ppDesignSelectionController in 'ppDesignSelectionController.pas',
+  ppDesignWorkspaceController in 'ppDesignWorkspaceController.pas',
+  ppDesignObserver in 'ppDesignObserver.pas',
+  ppDesignToolManagerTBX in 'ppDesignToolManagerTBX.pas',
+  ppDesignToolActions in 'ppDesignToolActions.pas',
+  ppDesignToolWindow in 'ppDesignToolWindow.pas',
+  ppDesignToolBar in 'ppDesignToolBar.pas',
+  ppDesignToolItemsTBX in 'ppDesignToolItemsTBX.pas',
+  ppDesignToolbarsTBX in 'ppDesignToolbarsTBX.pas',
+  ppDesignSelection in 'ppDesignSelection.pas',
+  ppDesignWorkspaceView in 'ppDesignWorkspaceView.pas',
+  ppDesignPreview in 'ppDesignPreview.pas',
+  ppDesignLayoutManager in 'ppDesignLayoutManager.pas',
+  ppDesignLayoutMenu in 'ppDesignLayoutMenu.pas',
+  ppToolWnTBX in 'ppToolWnTBX.pas',
+  ppTabbedNoteBook in 'ppTabbedNoteBook.pas',
+  ppPaintBoxDesign in 'ppPaintBoxDesign.pas',
+  ppSynUEditTextBuffer in 'ppSynUEditTextBuffer.pas',
+  ppSynUEditKbdHandler in 'ppSynUEditKbdHandler.pas',
+  ppSynUEditKeyConst in 'ppSynUEditKeyConst.pas',
+  ppSynUEditTypes in 'ppSynUEditTypes.pas',
+  ppSynUEditMiscProcs in 'ppSynUEditMiscProcs.pas',
+  ppSynUEditStrConst in 'ppSynUEditStrConst.pas',
+  ppSynUHighlighterPas in 'ppSynUHighlighterPas.pas',
+  ppSynUHighlighterHashEntries in 'ppSynUHighlighterHashEntries.pas',
+  ppSynUHighlighterMulti in 'ppSynUHighlighterMulti.pas',
+  ppSynUEdit in 'ppSynUEdit.pas',
+  ppSynUEditWordWrap in 'ppSynUEditWordWrap.pas',
+  ppSynUTextDrawer in 'ppSynUTextDrawer.pas',
+  ppSynUEditHighlighter in 'ppSynUEditHighlighter.pas',
+  ppSynEditSearch in 'ppSynEditSearch.pas',
+  ppSynUEditKeyCmds in 'ppSynUEditKeyCmds.pas',
+  ppSynUEditMiscClasses in 'ppSynUEditMiscClasses.pas',
+  ppSynURegExpr in 'ppSynURegExpr.pas',
+  ppSynUsp10 in 'ppSynUsp10.pas';
+
+end.

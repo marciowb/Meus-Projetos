@@ -1,0 +1,158 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dxSkinsCoreRS15.bpl dxSkinBlackRS15.bpl dxSkinBlueRS15.bpl \
+  dxSkinCaramelRS15.bpl dxSkinCoffeeRS15.bpl dxSkinDarkRoomRS15.bpl \
+  dxSkinDarkSideRS15.bpl dxSkinFoggyRS15.bpl dxSkinGlassOceansRS15.bpl \
+  dxSkiniMaginaryRS15.bpl dxSkinLilianRS15.bpl dxSkinLiquidSkyRS15.bpl \
+  dxSkinLondonLiquidSkyRS15.bpl dxSkinMcSkinRS15.bpl dxSkinMoneyTwinsRS15.bpl \
+  dxSkinOffice2007BlackRS15.bpl dxSkinOffice2007BlueRS15.bpl \
+  dxSkinOffice2007GreenRS15.bpl dxSkinOffice2007PinkRS15.bpl \
+  dxSkinOffice2007SilverRS15.bpl dxSkinPumpkinRS15.bpl dxSkinscxPCPainterRS15.bpl \
+  dxSkinscxScheduler3PainterRS15.bpl dxSkinsdxBarPainterRS15.bpl \
+  dxSkinsdxBarSkinnedCustomizationFormRS15.bpl dxSkinsdxDLPainterRS15.bpl \
+  dxSkinsdxNavBar2PainterRS15.bpl dxSkinsdxRibbonPainterRS15.bpl dxSkinSevenRS15.bpl \
+  dxSkinSharpRS15.bpl dxSkinSilverRS15.bpl dxSkinSpringTimeRS15.bpl \
+  dxSkinStardustRS15.bpl dxSkinSummer2008RS15.bpl dxSkinValentineRS15.bpl \
+  dxSkinXmas2008BlueRS15.bpl dcldxSkinsCoreRS15.bpl dcldxSkinsDesignHelperRS15.bpl \
+  dcldxSkinscxPCPainterRS15.bpl dcldxSkinscxScheduler3PainterRS15.bpl \
+  dcldxSkinsdxBarsPaintersRS15.bpl dcldxSkinsdxNavBar2PainterRS15.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dxSkinsCoreRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinsCoreRS15.dpk
+  $(DCC)
+
+dxSkinBlackRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinBlackRS15.dpk
+  $(DCC)
+
+dxSkinBlueRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinBlueRS15.dpk
+  $(DCC)
+
+dxSkinCaramelRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinCaramelRS15.dpk
+  $(DCC)
+
+dxSkinCoffeeRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinCoffeeRS15.dpk
+  $(DCC)
+
+dxSkinDarkRoomRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinDarkRoomRS15.dpk
+  $(DCC)
+
+dxSkinDarkSideRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinDarkSideRS15.dpk
+  $(DCC)
+
+dxSkinFoggyRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinFoggyRS15.dpk
+  $(DCC)
+
+dxSkinGlassOceansRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinGlassOceansRS15.dpk
+  $(DCC)
+
+dxSkiniMaginaryRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkiniMaginaryRS15.dpk
+  $(DCC)
+
+dxSkinLilianRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinLilianRS15.dpk
+  $(DCC)
+
+dxSkinLiquidSkyRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinLiquidSkyRS15.dpk
+  $(DCC)
+
+dxSkinLondonLiquidSkyRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinLondonLiquidSkyRS15.dpk
+  $(DCC)
+
+dxSkinMcSkinRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinMcSkinRS15.dpk
+  $(DCC)
+
+dxSkinMoneyTwinsRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinMoneyTwinsRS15.dpk
+  $(DCC)
+
+dxSkinOffice2007BlackRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinOffice2007BlackRS15.dpk
+  $(DCC)
+
+dxSkinOffice2007BlueRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinOffice2007BlueRS15.dpk
+  $(DCC)
+
+dxSkinOffice2007GreenRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinOffice2007GreenRS15.dpk
+  $(DCC)
+
+dxSkinOffice2007PinkRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinOffice2007PinkRS15.dpk
+  $(DCC)
+
+dxSkinOffice2007SilverRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinOffice2007SilverRS15.dpk
+  $(DCC)
+
+dxSkinPumpkinRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinPumpkinRS15.dpk
+  $(DCC)
+
+dxSkinscxPCPainterRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinscxPCPainterRS15.dpk
+  $(DCC)
+
+dxSkinscxScheduler3PainterRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinscxScheduler3PainterRS15.dpk
+  $(DCC)
+
+dxSkinsdxBarPainterRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinsdxBarPainterRS15.dpk
+  $(DCC)
+
+dxSkinsdxBarSkinnedCustomizationFormRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinsdxBarSkinnedCustomizationFormRS15.dpk
+  $(DCC)
+
+dxSkinsdxDLPainterRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinsdxDLPainterRS15.dpk
+  $(DCC)
+
+dxSkinsdxNavBar2PainterRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinsdxNavBar2PainterRS15.dpk
+  $(DCC)
+
+dxSkinsdxRibbonPainterRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinsdxRibbonPainterRS15.dpk
+  $(DCC)
+
+dxSkinSevenRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinSevenRS15.dpk
+  $(DCC)
+
+dxSkinSharpRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinSharpRS15.dpk
+  $(DCC)
+
+dxSkinSilverRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinSilverRS15.dpk
+  $(DCC)
+
+dxSkinSpringTimeRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinSpringTimeRS15.dpk
+  $(DCC)
+
+dxSkinStardustRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinStardustRS15.dpk
+  $(DCC)
+
+dxSkinSummer2008RS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinSummer2008RS15.dpk
+  $(DCC)
+
+dxSkinValentineRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinValentineRS15.dpk
+  $(DCC)
+
+dxSkinXmas2008BlueRS15.bpl: ..\..\ExpressSkins Library\Packages\dxSkinXmas2008BlueRS15.dpk
+  $(DCC)
+
+dcldxSkinsCoreRS15.bpl: ..\..\ExpressSkins Library\Packages\dcldxSkinsCoreRS15.dpk
+  $(DCC)
+
+dcldxSkinsDesignHelperRS15.bpl: ..\..\ExpressSkins Library\Packages\dcldxSkinsDesignHelperRS15.dpk
+  $(DCC)
+
+dcldxSkinscxPCPainterRS15.bpl: ..\..\ExpressSkins Library\Packages\dcldxSkinscxPCPainterRS15.dpk
+  $(DCC)
+
+dcldxSkinscxScheduler3PainterRS15.bpl: ..\..\ExpressSkins Library\Packages\dcldxSkinscxScheduler3PainterRS15.dpk
+  $(DCC)
+
+dcldxSkinsdxBarsPaintersRS15.bpl: ..\..\ExpressSkins Library\Packages\dcldxSkinsdxBarsPaintersRS15.dpk
+  $(DCC)
+
+dcldxSkinsdxNavBar2PainterRS15.bpl: ..\..\ExpressSkins Library\Packages\dcldxSkinsdxNavBar2PainterRS15.dpk
+  $(DCC)
+
+

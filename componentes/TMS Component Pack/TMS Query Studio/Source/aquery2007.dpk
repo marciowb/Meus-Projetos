@@ -1,0 +1,96 @@
+package aquery2007;
+
+{$R *.res}
+{$R 'atdbreg.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Query Studio components'}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  vclx,
+  vcldb,
+  bdertl,
+  vclsmp,
+  rtl,
+  designide;
+
+contains
+  uDBUtil in 'uDBUtil.pas',
+  atQueryCombo in 'atQueryCombo.pas',
+  atVisualQuery in 'atVisualQuery.pas',
+  atVisualQueryEditor in 'atVisualQueryEditor.pas',
+  fCheckListParamEditor in 'fCheckListParamEditor.pas',
+  fChooseListParamEditor in 'fChooseListParamEditor.pas',
+  fCompareConditionEditor in 'fCompareConditionEditor.pas',
+  fCustomConditionEditor in 'fCustomConditionEditor.pas',
+  fCustomEditor in 'fCustomEditor.pas',
+  fCustomFieldEditor in 'fCustomFieldEditor.pas',
+  fCustomGroupEditor in 'fCustomGroupEditor.pas',
+  fCustomListParamEditor in 'fCustomListParamEditor.pas',
+  fCustomOrderEditor in 'fCustomOrderEditor.pas',
+  fCustomParamEditor in 'fCustomParamEditor.pas',
+  fCustomTableEditor in 'fCustomTableEditor.pas',
+  fDistinctListParamEditor in 'fDistinctListParamEditor.pas',
+  fExpressionConditionEditor in 'fExpressionConditionEditor.pas',
+  fExpressionFieldEditor in 'fExpressionFieldEditor.pas',
+  fFreeEditParamEditor in 'fFreeEditParamEditor.pas',
+  fQueryEditor in 'fQueryEditor.pas',
+  fQueryListParamEditor in 'fQueryListParamEditor.pas',
+  fSingleFieldEditor in 'fSingleFieldEditor.pas',
+  fSubconditionsEditor in 'fSubconditionsEditor.pas',
+  atdbreg in 'atdbreg.pas',
+  atPictureContainer in 'atPictureContainer.pas',
+  atParHTML in 'atParHTML.pas',
+  atParXPVS in 'atParXPVS.pas',
+  atParamTreeView in 'atParamTreeView.pas',
+  ShowSQLForm in 'ShowSQLForm.pas' {fmShowSQL},
+  atBdeDatabase in 'atBdeDatabase.pas',
+  atCheckListEdit in 'atCheckListEdit.pas',
+  atCustomDatabase in 'atCustomDatabase.pas',
+  atDatabase in 'atDatabase.pas',
+  atImportSQLForm in 'atImportSQLForm.pas' {fmImportSQL},
+  atListBoxDlg in 'atListBoxDlg.pas',
+  atMetaSQL in 'atMetaSQL.pas',
+  atMetaSQLAbstractEditor in 'atMetaSQLAbstractEditor.pas' {fmMetaSQLAbstractEditor: TFrame},
+  atMetaSQLConditionEditor in 'atMetaSQLConditionEditor.pas',
+  atMetaSQLConditionForm in 'atMetaSQLConditionForm.pas' {fmMetaSQLConditionForm},
+  atmetasqlcustomeditor in 'atmetasqlcustomeditor.pas',
+  atMetaSQLDataResult in 'atMetaSQLDataResult.pas' {fmMetaSQLDataResult: TFrame},
+  atMetaSQLEditor in 'atMetaSQLEditor.pas',
+  atMetaSQLFieldEditor in 'atMetaSQLFieldEditor.pas',
+  atMetaSQLForm in 'atMetaSQLForm.pas' {fmMetaSQLEditor},
+  atMetaSQLGroupEditor in 'atMetaSQLGroupEditor.pas',
+  atmetasqljoineditor in 'atmetasqljoineditor.pas',
+  atMetaSQLMemo in 'atMetaSQLMemo.pas' {fmMetaSQLMemo: TFrame},
+  atMetaSQLOrderEditor in 'atMetaSQLOrderEditor.pas',
+  atMetaSQLReg in 'atMetaSQLReg.pas',
+  atMetaSQLTableEditor in 'atMetaSQLTableEditor.pas',
+  atPanel in 'atPanel.pas',
+  atSQLParser in 'atSQLParser.pas',
+  ListForm in 'ListForm.pas' {fmListForm},
+  atBaseParser in 'atBaseParser.pas',
+  qsRes in 'qsRes.pas',
+  qsLanguage in 'qsLanguage.pas';
+
+end.

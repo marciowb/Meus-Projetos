@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HelpTOC SYSTEM "MS-Help://Hx/Resources/HelpTOC.dtd">
+<HelpTOC
+   DTDVersion = "1.0"
+>
+
+<HelpTOCNode Title = "Symbol Reference" >
+    <HelpTOCNode Title = "Classes" Url = "!!CLASSES.html" >
+        <HelpTOCNode Title = "TCustomFlexCelReport Class" Url = "TCustomFlexCelReport.html" >
+            <HelpTOCNode Title = "TCustomFlexCelReport Fields" Url = "!!MEMBERTYPE_Fields_TCustomFlexCelReport.html" >
+                <HelpTOCNode Title = "TCustomFlexCelReport.Canceled Field" Url = "TCustomFlexCelReport_Canceled.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.FUseDisplayNames Field" Url = "TCustomFlexCelReport_FUseDisplayNames.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.FUseHiddenFields Field" Url = "TCustomFlexCelReport_FUseHiddenFields.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TCustomFlexCelReport Methods" Url = "!!MEMBERTYPE_Methods_TCustomFlexCelReport.html" >
+                <HelpTOCNode Title = "TCustomFlexCelReport.Cancel Method" Url = "TCustomFlexCelReport_Cancel.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.ClearProgress Method" Url = "TCustomFlexCelReport_ClearProgress.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.DesignDataModule Method" Url = "TCustomFlexCelReport_DesignDataModule.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.GetDataSet Method" Url = "TCustomFlexCelReport_GetDataSet@string.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.GetMethodInfo Method" Url = "TCustomFlexCelReport_GetMethodInfo@string.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.GetPagesDataSet Method" Url = "TCustomFlexCelReport_GetPagesDataSet.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.GetPictureType Method" Url = "TCustomFlexCelReport_GetPictureType@UTF16String.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.GetPropertyInfo Method" Url = "TCustomFlexCelReport_GetPropertyInfo@string.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.GetVariantMethod Method" Url = "TCustomFlexCelReport_GetVariantMethod@pointer@string.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.GetVariantProperty Method" Url = "TCustomFlexCelReport_GetVariantProperty@PPropInfo.html" />
+                <HelpTOCNode Title = "Run Method" Url = "!!OVERLOADED_Run_TCustomFlexCelReport.html" >
+                    <HelpTOCNode Title = "TCustomFlexCelReport.Run Method ()" Url = "TCustomFlexCelReport_Run.html" />
+                    <HelpTOCNode Title = "TCustomFlexCelReport.Run Method (TStream, TStream)" Url = "TCustomFlexCelReport_Run@TStream@TStream.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TCustomFlexCelReport.SaveToStream Method" Url = "TCustomFlexCelReport_SaveToStream@TStream.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TCustomFlexCelReport Properties" Url = "!!MEMBERTYPE_Properties_TCustomFlexCelReport.html" >
+                <HelpTOCNode Title = "TCustomFlexCelReport.Adapter Property" Url = "TCustomFlexCelReport_Adapter.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.AutoClose Property" Url = "TCustomFlexCelReport_AutoClose.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.DateTimeFormat Property" Url = "TCustomFlexCelReport_DateTimeFormat.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.DeleteEmptyRows Property" Url = "TCustomFlexCelReport_DeleteEmptyRows.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.FileName Property" Url = "TCustomFlexCelReport_FileName.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.KeepEmptyPictures Property" Url = "TCustomFlexCelReport_KeepEmptyPictures.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.PagesDataField Property" Url = "TCustomFlexCelReport_PagesDataField.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.Progress Property" Url = "TCustomFlexCelReport_Progress.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.ReportModeCols Property" Url = "TCustomFlexCelReport_ReportModeCols.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.ReportModeRows Property" Url = "TCustomFlexCelReport_ReportModeRows.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.Template Property" Url = "TCustomFlexCelReport_Template.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.UseDisplayNames Property" Url = "TCustomFlexCelReport_UseDisplayNames.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.UseHiddenFields Property" Url = "TCustomFlexCelReport_UseHiddenFields.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.Values Property" Url = "TCustomFlexCelReport_Values.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TCustomFlexCelReport Events" Url = "!!MEMBERTYPE_Events_TCustomFlexCelReport.html" >
+                <HelpTOCNode Title = "TCustomFlexCelReport.OnAfterGeneratePage Event" Url = "TCustomFlexCelReport_OnAfterGeneratePage.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.OnAfterGenerateWorkbook Event" Url = "TCustomFlexCelReport_OnAfterGenerateWorkbook.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.OnBeforeGeneratePage Event" Url = "TCustomFlexCelReport_OnBeforeGeneratePage.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.OnBeforeGenerateWorkbook Event" Url = "TCustomFlexCelReport_OnBeforeGenerateWorkbook.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.OnGetCellValue Event" Url = "TCustomFlexCelReport_OnGetCellValue.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.OnGetCellValueX Event" Url = "TCustomFlexCelReport_OnGetCellValueX.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.OnGetCellValueXRow Event" Url = "TCustomFlexCelReport_OnGetCellValueXRow.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.OnGetFilename Event" Url = "TCustomFlexCelReport_OnGetFilename.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.OnGetImageSize Event" Url = "TCustomFlexCelReport_OnGetImageSize.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.OnGetOutStream Event" Url = "TCustomFlexCelReport_OnGetOutStream.html" />
+                <HelpTOCNode Title = "TCustomFlexCelReport.OnProgress Event" Url = "TCustomFlexCelReport_OnProgress.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlexCelGrid Class" Url = "TFlexCelGrid.html" >
+            <HelpTOCNode Title = "TFlexCelGrid Methods" Url = "!!MEMBERTYPE_Methods_TFlexCelGrid.html" >
+                <HelpTOCNode Title = "TFlexCelGrid.ApplySheet Method" Url = "TFlexCelGrid_ApplySheet.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.BorderSize Method" Url = "TFlexCelGrid_BorderSize.html" />
+                <HelpTOCNode Title = "CalcNumberOfPrintingPages Method" Url = "!!OVERLOADED_CalcNumberOfPrintingPages_TFlexCelGrid.html" >
+                    <HelpTOCNode Title = "TFlexCelGrid.CalcNumberOfPrintingPages Method (TXlsCellRange, integer)" Url = "TFlexCelGrid_CalcNumberOfPrintingPages@TXlsCellRange@integer.html" />
+                    <HelpTOCNode Title = "TFlexCelGrid.CalcNumberOfPrintingPages Method (integer)" Url = "TFlexCelGrid_CalcNumberOfPrintingPages@integer.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TFlexCelGrid.CopyToClipboard Method" Url = "TFlexCelGrid_CopyToClipboard.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.CreateEditor Method" Url = "TFlexCelGrid_CreateEditor.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.LoadSheet Method" Url = "TFlexCelGrid_LoadSheet.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.PasteFromClipboard Method" Url = "TFlexCelGrid_PasteFromClipboard.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.PreviewPage Method" Url = "TFlexCelGrid_PreviewPage@TXlsCellRange@integer@TCanvas@integer.html" />
+                <HelpTOCNode Title = "Print Method" Url = "!!OVERLOADED_Print_TFlexCelGrid.html" >
+                    <HelpTOCNode Title = "TFlexCelGrid.Print Method (TXlsCellRange, integer, integer)" Url = "TFlexCelGrid_Print@TXlsCellRange@integer@integer.html" />
+                    <HelpTOCNode Title = "TFlexCelGrid.Print Method (integer, integer)" Url = "TFlexCelGrid_Print@integer@integer.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TFlexCelGrid.SetCell Method" Url = "TFlexCelGrid_SetCell@integer@integer@UTF16String.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.SplitText Method" Url = "TFlexCelGrid_SplitText@TExcelFile@TCanvas@UTF16String@integer@WidestringArray@TRTFRunList@TRTFRunListList@TSize@boolean@extended.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.TopLeftChanged Method" Url = "TFlexCelGrid_TopLeftChanged.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TFlexCelGrid Properties" Url = "!!MEMBERTYPE_Properties_TFlexCelGrid.html" >
+                <HelpTOCNode Title = "TFlexCelGrid.BackgroundColor Property" Url = "TFlexCelGrid_BackgroundColor.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.CanEdit Property" Url = "TFlexCelGrid_CanEdit.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.FlexCelImport Property" Url = "TFlexCelGrid_FlexCelImport.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.ForegroundColor Property" Url = "TFlexCelGrid_ForegroundColor.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.FormulaReadOnly Property" Url = "TFlexCelGrid_FormulaReadOnly.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.FullWorksheet Property" Url = "TFlexCelGrid_FullWorksheet.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.HideCursor Property" Url = "TFlexCelGrid_HideCursor.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.MaxPrintableCol Property" Url = "TFlexCelGrid_MaxPrintableCol.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.MaxPrintableRow Property" Url = "TFlexCelGrid_MaxPrintableRow.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.MaxVisibleCol Property" Url = "TFlexCelGrid_MaxVisibleCol.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.MaxVisibleRow Property" Url = "TFlexCelGrid_MaxVisibleRow.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.PrintLineWidth Property" Url = "TFlexCelGrid_PrintLineWidth.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.ReadOnly Property" Url = "TFlexCelGrid_ReadOnly.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.ScrollWheelOffset Property" Url = "TFlexCelGrid_ScrollWheelOffset.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.ShowHiddenCols Property" Url = "TFlexCelGrid_ShowHiddenCols.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.ShowHiddenRows Property" Url = "TFlexCelGrid_ShowHiddenRows.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.UseFixedCells Property" Url = "TFlexCelGrid_UseFixedCells.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.Zoom Property" Url = "TFlexCelGrid_Zoom.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TFlexCelGrid Events" Url = "!!MEMBERTYPE_Events_TFlexCelGrid.html" >
+                <HelpTOCNode Title = "TFlexCelGrid.OnAllowEditCell Event" Url = "TFlexCelGrid_OnAllowEditCell.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.OnColWidthsChanged Event" Url = "TFlexCelGrid_OnColWidthsChanged.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.OnFormatPicture Event" Url = "TFlexCelGrid_OnFormatPicture.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.OnGetFontName Event" Url = "TFlexCelGrid_OnGetFontName.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.OnRowHeightsChanged Event" Url = "TFlexCelGrid_OnRowHeightsChanged.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.OnSelectCell Event" Url = "TFlexCelGrid_OnSelectCell.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.OnSetEditText Event" Url = "TFlexCelGrid_OnSetEditText.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.OnTopLeftChanged Event" Url = "TFlexCelGrid_OnTopLeftChanged.html" />
+                <HelpTOCNode Title = "TFlexCelGrid.OnZoomChanged Event" Url = "TFlexCelGrid_OnZoomChanged.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlexCelImport Class" Url = "TFlexCelImport.html" >
+            <HelpTOCNode Title = "TFlexCelImport.Destroy Destructor" Url = "TFlexCelImport_Destroy.html" />
+            <HelpTOCNode Title = "TFlexCelImport Methods" Url = "!!MEMBERTYPE_Methods_TFlexCelImport.html" >
+                <HelpTOCNode Title = "TFlexCelImport.AddFont Method" Url = "TFlexCelImport_AddFont@TFlxFont.html" />
+                <HelpTOCNode Title = "TFlexCelImport.AddFormat Method" Url = "TFlexCelImport_AddFormat@TFlxFormat.html" />
+                <HelpTOCNode Title = "TFlexCelImport.AddHyperLink Method" Url = "TFlexCelImport_AddHyperLink@TXlsCellRange@THyperLink.html" />
+                <HelpTOCNode Title = "AddPicture Method" Url = "!!OVERLOADED_AddPicture_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.AddPicture Method (ByteArray, TXlsImgTypes, TImageProperties, TFlxAnchorType)" Url = "TFlexCelImport_AddPicture@ByteArray@TXlsImgTypes@TImageProperties@TFlxAnchorType.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.AddPicture Method (ByteArray, TXlsImgTypes, integer, integer, integer, integer, integer, integer, TFlxAnchorType)" Url = "TFlexCelImport_AddPicture@ByteArray@TXlsImgTypes@integer@integer@integer@integer@integer@integer@TFlxAnchorType.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.AddPicture Method (TStream, TXlsImgTypes, TImageProperties, TFlxAnchorType)" Url = "TFlexCelImport_AddPicture@TStream@TXlsImgTypes@TImageProperties@TFlxAnchorType.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.AddPicture Method (TStream, TXlsImgTypes, integer, integer, integer, integer, integer, integer, TFlxAnchorType)" Url = "TFlexCelImport_AddPicture@TStream@TXlsImgTypes@integer@integer@integer@integer@integer@integer@TFlxAnchorType.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TFlexCelImport.AssignCellFormulaX Method" Url = "TFlexCelImport_AssignCellFormulaX@integer@integer@UTF16String@variant.html" />
+                <HelpTOCNode Title = "AssignPicture Method" Url = "!!OVERLOADED_AssignPicture_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.AssignPicture Method (integer, ByteArray, TXlsImgTypes)" Url = "TFlexCelImport_AssignPicture@integer@ByteArray@TXlsImgTypes.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.AssignPicture Method (integer, ByteArray, TXlsImgTypes, integer, integer, integer, integer, integer, integer, TFlxAnchorType)" Url = "TFlexCelImport_AssignPicture@integer@ByteArray@TXlsImgTypes@integer@integer@integer@integer@integer@integer@TFlxAnchorType.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TFlexCelImport.AssignPictureProperties Method" Url = "TFlexCelImport_AssignPictureProperties@integer@integer@integer@integer@integer@integer@integer@TFlxAnchorType.html" />
+                <HelpTOCNode Title = "AutofitCol Method" Url = "!!OVERLOADED_AutofitCol_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.AutofitCol Method (integer, Boolean, extended)" Url = "TFlexCelImport_AutofitCol@integer@Boolean@extended.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.AutofitCol Method (integer, integer, Boolean, extended)" Url = "TFlexCelImport_AutofitCol@integer@integer@Boolean@extended.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "AutofitRow Method" Url = "!!OVERLOADED_AutofitRow_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.AutofitRow Method (integer, Boolean, extended)" Url = "TFlexCelImport_AutofitRow@integer@Boolean@extended.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.AutofitRow Method (integer, integer, Boolean, Boolean, extended)" Url = "TFlexCelImport_AutofitRow@integer@integer@Boolean@Boolean@extended.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TFlexCelImport.AutofitRowsOnWorkbook Method" Url = "TFlexCelImport_AutofitRowsOnWorkbook@Boolean@Boolean@extended.html" />
+                <HelpTOCNode Title = "TFlexCelImport.CanOptimizeRead Method" Url = "TFlexCelImport_CanOptimizeRead.html" />
+                <HelpTOCNode Title = "TFlexCelImport.CellMergedListCount Method" Url = "TFlexCelImport_CellMergedListCount.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ClearPicture Method" Url = "TFlexCelImport_ClearPicture@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ClearSheet Method" Url = "TFlexCelImport_ClearSheet.html" />
+                <HelpTOCNode Title = "TFlexCelImport.CloseFile Method" Url = "TFlexCelImport_CloseFile.html" />
+                <HelpTOCNode Title = "CopyToClipboard Method" Url = "!!OVERLOADED_CopyToClipboard_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.CopyToClipboard Method ()" Url = "TFlexCelImport_CopyToClipboard.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.CopyToClipboard Method (TXlsCellRange)" Url = "TFlexCelImport_CopyToClipboard@TXlsCellRange.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TFlexCelImport.DefaultFormat Method" Url = "TFlexCelImport_DefaultFormat.html" />
+                <HelpTOCNode Title = "TFlexCelImport.DeleteCols Method" Url = "TFlexCelImport_DeleteCols@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.DeleteHPageBreak Method" Url = "TFlexCelImport_DeleteHPageBreak@word.html" />
+                <HelpTOCNode Title = "TFlexCelImport.DeleteHyperLink Method" Url = "TFlexCelImport_DeleteHyperLink@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.DeletePicture Method" Url = "TFlexCelImport_DeletePicture@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.DeleteRows Method" Url = "TFlexCelImport_DeleteRows@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.DeleteSheet Method" Url = "TFlexCelImport_DeleteSheet@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.DeleteVPageBreak Method" Url = "TFlexCelImport_DeleteVPageBreak@word.html" />
+                <HelpTOCNode Title = "TFlexCelImport.FillPageHeaderFooter Method" Url = "TFlexCelImport_FillPageHeaderFooter@UTF16String@UTF16String@UTF16String@UTF16String.html" />
+                <HelpTOCNode Title = "TFlexCelImport.FreezePanes Method" Url = "TFlexCelImport_FreezePanes@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.FromOADate Method" Url = "TFlexCelImport_FromOADate@double.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetAutoFilterRange Method" Url = "TFlexCelImport_GetAutoFilterRange.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetCellComment Method" Url = "TFlexCelImport_GetCellComment@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetCellFormatDef Method" Url = "TFlexCelImport_GetCellFormatDef@integer@integer@TFlxFormat.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetColOutlineLevel Method" Url = "TFlexCelImport_GetColOutlineLevel@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetDefaultFormat Method" Url = "TFlexCelImport_GetDefaultFormat@TFlxFormat.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetFontList Method" Url = "TFlexCelImport_GetFontList@integer@TFlxFont.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetFormatList Method" Url = "TFlexCelImport_GetFormatList@integer@TFlxFormat.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetFrozenPanes Method" Url = "TFlexCelImport_GetFrozenPanes@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetHyperLink Method" Url = "TFlexCelImport_GetHyperLink@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetHyperLinkCellRange Method" Url = "TFlexCelImport_GetHyperLinkCellRange@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetPicture Method" Url = "TFlexCelImport_GetPicture@integer@TStream@TXlsImgTypes@TClientAnchor.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetRowOutlineLevel Method" Url = "TFlexCelImport_GetRowOutlineLevel@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetSplitWindow Method" Url = "TFlexCelImport_GetSplitWindow@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetUsedPaletteColors Method" Url = "TFlexCelImport_GetUsedPaletteColors.html" />
+                <HelpTOCNode Title = "TFlexCelImport.GetWorkbook Method" Url = "TFlexCelImport_GetWorkbook.html" />
+                <HelpTOCNode Title = "HasAutoFilter Method" Url = "!!OVERLOADED_HasAutoFilter_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.HasAutoFilter Method ()" Url = "TFlexCelImport_HasAutoFilter.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.HasAutoFilter Method (Int32, Int32)" Url = "TFlexCelImport_HasAutoFilter@Int32@Int32.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TFlexCelImport.HasHPageBreak Method" Url = "TFlexCelImport_HasHPageBreak@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.HasVPageBreak Method" Url = "TFlexCelImport_HasVPageBreak@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.HyperLinkCount Method" Url = "TFlexCelImport_HyperLinkCount.html" />
+                <HelpTOCNode Title = "TFlexCelImport.InsertAndCopyCols Method" Url = "TFlexCelImport_InsertAndCopyCols@integer@integer@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.InsertAndCopyRows Method" Url = "TFlexCelImport_InsertAndCopyRows@integer@integer@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.InsertAndCopySheets Method" Url = "TFlexCelImport_InsertAndCopySheets@integer@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.InsertEmptySheets Method" Url = "TFlexCelImport_InsertEmptySheets@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.InsertHPageBreak Method" Url = "TFlexCelImport_InsertHPageBreak@word.html" />
+                <HelpTOCNode Title = "TFlexCelImport.InsertVPageBreak Method" Url = "TFlexCelImport_InsertVPageBreak@word.html" />
+                <HelpTOCNode Title = "TFlexCelImport.IsEmptyRow Method" Url = "TFlexCelImport_IsEmptyRow@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.IsLoaded Method" Url = "TFlexCelImport_IsLoaded.html" />
+                <HelpTOCNode Title = "TFlexCelImport.LoadFromStream Method" Url = "TFlexCelImport_LoadFromStream@TStream.html" />
+                <HelpTOCNode Title = "LoadFromTextStream Method" Url = "!!OVERLOADED_LoadFromTextStream_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.LoadFromTextStream Method (TStream, Char)" Url = "TFlexCelImport_LoadFromTextStream@TStream@Char.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.LoadFromTextStream Method (TStream, Char, array of XLSColumnImportTypes)" Url = "TFlexCelImport_LoadFromTextStream@TStream@Char@array_of_XLSColumnImportTypes.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.LoadFromTextStream Method (TStream, Char, array of XLSColumnImportTypes, TEncoding, boolean)" Url = "TFlexCelImport_LoadFromTextStream@TStream@Char@array_of_XLSColumnImportTypes@TEncoding@boolean.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TFlexCelImport.MergeCells Method" Url = "TFlexCelImport_MergeCells@integer@integer@integer@integer.html" />
+                <HelpTOCNode Title = "NearestColorIndex Method" Url = "!!OVERLOADED_NearestColorIndex_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.NearestColorIndex Method (TColor)" Url = "TFlexCelImport_NearestColorIndex@TColor.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.NearestColorIndex Method (TColor, BooleanArray)" Url = "TFlexCelImport_NearestColorIndex@TColor@BooleanArray.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TFlexCelImport.NewFile Method" Url = "TFlexCelImport_NewFile@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.OpenFile Method" Url = "TFlexCelImport_OpenFile@TFileName.html" />
+                <HelpTOCNode Title = "OpenText Method" Url = "!!OVERLOADED_OpenText_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.OpenText Method (TFileName, Char)" Url = "TFlexCelImport_OpenText@TFileName@Char.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.OpenText Method (TFileName, Char, array of XLSColumnImportTypes)" Url = "TFlexCelImport_OpenText@TFileName@Char@array_of_XLSColumnImportTypes.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TFlexCelImport.PasteFromClipboard Method" Url = "TFlexCelImport_PasteFromClipboard@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.RemoveAutoFilter Method" Url = "TFlexCelImport_RemoveAutoFilter.html" />
+                <HelpTOCNode Title = "TFlexCelImport.Save Method" Url = "TFlexCelImport_Save@TFileName.html" />
+                <HelpTOCNode Title = "SaveAsText Method" Url = "!!OVERLOADED_SaveAsText_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.SaveAsText Method (TFileName, Char)" Url = "TFlexCelImport_SaveAsText@TFileName@Char.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.SaveAsText Method (TFileName, Char, TEncoding, boolean)" Url = "TFlexCelImport_SaveAsText@TFileName@Char@TEncoding@boolean.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TFlexCelImport.SaveToStream Method" Url = "TFlexCelImport_SaveToStream@TStream.html" />
+                <HelpTOCNode Title = "SaveToStreamAsText Method" Url = "!!OVERLOADED_SaveToStreamAsText_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.SaveToStreamAsText Method (TStream, Char)" Url = "TFlexCelImport_SaveToStreamAsText@TStream@Char.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.SaveToStreamAsText Method (TStream, Char, TEncoding, boolean)" Url = "TFlexCelImport_SaveToStreamAsText@TStream@Char@TEncoding@boolean.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "SetAutoFilter Method" Url = "!!OVERLOADED_SetAutoFilter_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.SetAutoFilter Method (Int32, Int32, Int32)" Url = "TFlexCelImport_SetAutoFilter@Int32@Int32@Int32.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.SetAutoFilter Method (TXlsCellRange)" Url = "TFlexCelImport_SetAutoFilter@TXlsCellRange.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "SetCellComment Method" Url = "!!OVERLOADED_SetCellComment_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.SetCellComment Method (integer, integer, UTF16String)" Url = "TFlexCelImport_SetCellComment@integer@integer@UTF16String.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.SetCellComment Method (integer, integer, UTF16String, TImageProperties)" Url = "TFlexCelImport_SetCellComment@integer@integer@UTF16String@TImageProperties.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "SetCellString Method" Url = "!!OVERLOADED_SetCellString_TFlexCelImport.html" >
+                    <HelpTOCNode Title = "TFlexCelImport.SetCellString Method (integer, integer, UTF16String)" Url = "TFlexCelImport_SetCellString@integer@integer@UTF16String.html" />
+                    <HelpTOCNode Title = "TFlexCelImport.SetCellString Method (integer, integer, UTF16String, TFlxFormat)" Url = "TFlexCelImport_SetCellString@integer@integer@UTF16String@TFlxFormat.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TFlexCelImport.SetColOutlineLevel Method" Url = "TFlexCelImport_SetColOutlineLevel@integer@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.SetFontList Method" Url = "TFlexCelImport_SetFontList@integer@TFlxFont.html" />
+                <HelpTOCNode Title = "TFlexCelImport.SetFormatList Method" Url = "TFlexCelImport_SetFormatList@integer@TFlxFormat.html" />
+                <HelpTOCNode Title = "TFlexCelImport.SetHyperLink Method" Url = "TFlexCelImport_SetHyperLink@integer@THyperLink.html" />
+                <HelpTOCNode Title = "TFlexCelImport.SetHyperLinkCellRange Method" Url = "TFlexCelImport_SetHyperLinkCellRange@integer@TXlsCellRange.html" />
+                <HelpTOCNode Title = "TFlexCelImport.SetNamedRange Method" Url = "TFlexCelImport_SetNamedRange@TXlsNamedRange.html" />
+                <HelpTOCNode Title = "TFlexCelImport.SetRowOutlineLevel Method" Url = "TFlexCelImport_SetRowOutlineLevel@integer@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.SplitWindow Method" Url = "TFlexCelImport_SplitWindow@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ToOADate Method" Url = "TFlexCelImport_ToOADate@TDateTime.html" />
+                <HelpTOCNode Title = "TFlexCelImport.UnMergeCells Method" Url = "TFlexCelImport_UnMergeCells@integer@integer@integer@integer.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TFlexCelImport Properties" Url = "!!MEMBERTYPE_Properties_TFlexCelImport.html" >
+                <HelpTOCNode Title = "TFlexCelImport.ActiveFileName Property" Url = "TFlexCelImport_ActiveFileName.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ActiveSheet Property" Url = "TFlexCelImport_ActiveSheet.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ActiveSheetCodeName Property" Url = "TFlexCelImport_ActiveSheetCodeName.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ActiveSheetName Property" Url = "TFlexCelImport_ActiveSheetName.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ActiveSheetVisible Property" Url = "TFlexCelImport_ActiveSheetVisible.html" />
+                <HelpTOCNode Title = "TFlexCelImport.Adapter Property" Url = "TFlexCelImport_Adapter.html" />
+                <HelpTOCNode Title = "TFlexCelImport.AutoRowHeight Property" Url = "TFlexCelImport_AutoRowHeight.html" />
+                <HelpTOCNode Title = "TFlexCelImport.Cell Property" Url = "TFlexCelImport_Cell.html" />
+                <HelpTOCNode Title = "TFlexCelImport.CellFormat Property" Url = "TFlexCelImport_CellFormat.html" />
+                <HelpTOCNode Title = "TFlexCelImport.CellFormatDef Property" Url = "TFlexCelImport_CellFormatDef.html" />
+                <HelpTOCNode Title = "TFlexCelImport.CellFormula Property" Url = "TFlexCelImport_CellFormula.html" />
+                <HelpTOCNode Title = "TFlexCelImport.CellMergedBounds Property" Url = "TFlexCelImport_CellMergedBounds.html" />
+                <HelpTOCNode Title = "TFlexCelImport.CellMergedList Property" Url = "TFlexCelImport_CellMergedList.html" />
+                <HelpTOCNode Title = "TFlexCelImport.CellValue Property" Url = "TFlexCelImport_CellValue.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ColByIndex Property" Url = "TFlexCelImport_ColByIndex.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ColIndex Property" Url = "TFlexCelImport_ColIndex.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ColIndexCount Property" Url = "TFlexCelImport_ColIndexCount.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ColorPalette Property" Url = "TFlexCelImport_ColorPalette.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ColorPaletteCount Property" Url = "TFlexCelImport_ColorPaletteCount.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ColumnFormat Property" Url = "TFlexCelImport_ColumnFormat.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ColumnHidden Property" Url = "TFlexCelImport_ColumnHidden.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ColumnWidth Property" Url = "TFlexCelImport_ColumnWidth.html" />
+                <HelpTOCNode Title = "TFlexCelImport.Comments Property" Url = "TFlexCelImport_Comments.html" />
+                <HelpTOCNode Title = "TFlexCelImport.CommentsCount Property" Url = "TFlexCelImport_CommentsCount.html" />
+                <HelpTOCNode Title = "TFlexCelImport.DefaultColWidth Property" Url = "TFlexCelImport_DefaultColWidth.html" />
+                <HelpTOCNode Title = "TFlexCelImport.DefaultRowHeight Property" Url = "TFlexCelImport_DefaultRowHeight.html" />
+                <HelpTOCNode Title = "TFlexCelImport.FontList Property" Url = "TFlexCelImport_FontList.html" />
+                <HelpTOCNode Title = "TFlexCelImport.FontListCount Property" Url = "TFlexCelImport_FontListCount.html" />
+                <HelpTOCNode Title = "TFlexCelImport.FormatList Property" Url = "TFlexCelImport_FormatList.html" />
+                <HelpTOCNode Title = "TFlexCelImport.FormatListCount Property" Url = "TFlexCelImport_FormatListCount.html" />
+                <HelpTOCNode Title = "TFlexCelImport.InvalidateFormulas Property" Url = "TFlexCelImport_InvalidateFormulas.html" />
+                <HelpTOCNode Title = "TFlexCelImport.IsFormula Property" Url = "TFlexCelImport_IsFormula.html" />
+                <HelpTOCNode Title = "TFlexCelImport.IsXltTemplate Property" Url = "TFlexCelImport_IsXltTemplate.html" />
+                <HelpTOCNode Title = "TFlexCelImport.MaxCol Property" Url = "TFlexCelImport_MaxCol.html" />
+                <HelpTOCNode Title = "TFlexCelImport.MaxRow Property" Url = "TFlexCelImport_MaxRow.html" />
+                <HelpTOCNode Title = "TFlexCelImport.Options1904Dates Property" Url = "TFlexCelImport_Options1904Dates.html" />
+                <HelpTOCNode Title = "TFlexCelImport.OptionsPrecisionAsDisplayed Property" Url = "TFlexCelImport_OptionsPrecisionAsDisplayed.html" />
+                <HelpTOCNode Title = "TFlexCelImport.OptionsR1C1 Property" Url = "TFlexCelImport_OptionsR1C1.html" />
+                <HelpTOCNode Title = "TFlexCelImport.OptionsSaveExternalLinkValues Property" Url = "TFlexCelImport_OptionsSaveExternalLinkValues.html" />
+                <HelpTOCNode Title = "TFlexCelImport.OutlineAutomaticStyles Property" Url = "TFlexCelImport_OutlineAutomaticStyles.html" />
+                <HelpTOCNode Title = "TFlexCelImport.OutlineSummaryColsRightOfDetail Property" Url = "TFlexCelImport_OutlineSummaryColsRightOfDetail.html" />
+                <HelpTOCNode Title = "TFlexCelImport.OutlineSummaryRowsBelowDetail Property" Url = "TFlexCelImport_OutlineSummaryRowsBelowDetail.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PageFooter Property" Url = "TFlexCelImport_PageFooter.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PageHeader Property" Url = "TFlexCelImport_PageHeader.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PictureName Property" Url = "TFlexCelImport_PictureName.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PicturesCount Property" Url = "TFlexCelImport_PicturesCount.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintCopies Property" Url = "TFlexCelImport_PrintCopies.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrinterDriverSettings Property" Url = "TFlexCelImport_PrinterDriverSettings.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintGridLines Property" Url = "TFlexCelImport_PrintGridLines.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintHCentered Property" Url = "TFlexCelImport_PrintHCentered.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintMargins Property" Url = "TFlexCelImport_PrintMargins.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintNumberOfHorizontalPages Property" Url = "TFlexCelImport_PrintNumberOfHorizontalPages.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintNumberOfVerticalPages Property" Url = "TFlexCelImport_PrintNumberOfVerticalPages.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintOptions Property" Url = "TFlexCelImport_PrintOptions.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintPaperSize Property" Url = "TFlexCelImport_PrintPaperSize.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintScale Property" Url = "TFlexCelImport_PrintScale.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintToFit Property" Url = "TFlexCelImport_PrintToFit.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintVCentered Property" Url = "TFlexCelImport_PrintVCentered.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintXResolution Property" Url = "TFlexCelImport_PrintXResolution.html" />
+                <HelpTOCNode Title = "TFlexCelImport.PrintYResolution Property" Url = "TFlexCelImport_PrintYResolution.html" />
+                <HelpTOCNode Title = "TFlexCelImport.RangeC1 Property" Url = "TFlexCelImport_RangeC1.html" />
+                <HelpTOCNode Title = "TFlexCelImport.RangeC2 Property" Url = "TFlexCelImport_RangeC2.html" />
+                <HelpTOCNode Title = "TFlexCelImport.RangeCount Property" Url = "TFlexCelImport_RangeCount.html" />
+                <HelpTOCNode Title = "TFlexCelImport.RangeName Property" Url = "TFlexCelImport_RangeName.html" />
+                <HelpTOCNode Title = "TFlexCelImport.RangeR1 Property" Url = "TFlexCelImport_RangeR1.html" />
+                <HelpTOCNode Title = "TFlexCelImport.RangeR2 Property" Url = "TFlexCelImport_RangeR2.html" />
+                <HelpTOCNode Title = "TFlexCelImport.RangeSheet Property" Url = "TFlexCelImport_RangeSheet.html" />
+                <HelpTOCNode Title = "TFlexCelImport.RowFormat Property" Url = "TFlexCelImport_RowFormat.html" />
+                <HelpTOCNode Title = "TFlexCelImport.RowHeight Property" Url = "TFlexCelImport_RowHeight.html" />
+                <HelpTOCNode Title = "TFlexCelImport.RowHidden Property" Url = "TFlexCelImport_RowHidden.html" />
+                <HelpTOCNode Title = "TFlexCelImport.RTFRuns Property" Url = "TFlexCelImport_RTFRuns.html" />
+                <HelpTOCNode Title = "TFlexCelImport.SheetCount Property" Url = "TFlexCelImport_SheetCount.html" />
+                <HelpTOCNode Title = "TFlexCelImport.SheetZoom Property" Url = "TFlexCelImport_SheetZoom.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ShowGridHeaders Property" Url = "TFlexCelImport_ShowGridHeaders.html" />
+                <HelpTOCNode Title = "TFlexCelImport.ShowGridLines Property" Url = "TFlexCelImport_ShowGridLines.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlexCelPreview Class" Url = "TFlexCelPreview.html" >
+            <HelpTOCNode Title = "TFlexCelPreview Methods" Url = "!!MEMBERTYPE_Methods_TFlexCelPreview.html" >
+                <HelpTOCNode Title = "TFlexCelPreview.Done Method" Url = "TFlexCelPreview_Done.html" />
+                <HelpTOCNode Title = "TFlexCelPreview.Init Method" Url = "TFlexCelPreview_Init@TXlsCellRange@integer@integer.html" />
+                <HelpTOCNode Title = "TFlexCelPreview.Resize Method" Url = "TFlexCelPreview_Resize.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TFlexCelPreview Properties" Url = "!!MEMBERTYPE_Properties_TFlexCelPreview.html" >
+                <HelpTOCNode Title = "TFlexCelPreview.Canvas Property" Url = "TFlexCelPreview_Canvas.html" />
+                <HelpTOCNode Title = "TFlexCelPreview.CenteredPreview Property" Url = "TFlexCelPreview_CenteredPreview.html" />
+                <HelpTOCNode Title = "TFlexCelPreview.CurrentPage Property" Url = "TFlexCelPreview_CurrentPage.html" />
+                <HelpTOCNode Title = "TFlexCelPreview.FlexCelGrid Property" Url = "TFlexCelPreview_FlexCelGrid.html" />
+                <HelpTOCNode Title = "TFlexCelPreview.MaxBmpCache Property" Url = "TFlexCelPreview_MaxBmpCache.html" />
+                <HelpTOCNode Title = "TFlexCelPreview.PageColor Property" Url = "TFlexCelPreview_PageColor.html" />
+                <HelpTOCNode Title = "TFlexCelPreview.PageMargin Property" Url = "TFlexCelPreview_PageMargin.html" />
+                <HelpTOCNode Title = "TFlexCelPreview.ScrollWheelOffset Property" Url = "TFlexCelPreview_ScrollWheelOffset.html" />
+                <HelpTOCNode Title = "TFlexCelPreview.TotalPages Property" Url = "TFlexCelPreview_TotalPages.html" />
+                <HelpTOCNode Title = "TFlexCelPreview.ZoomPreview Property" Url = "TFlexCelPreview_ZoomPreview.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TFlexCelPreview Events" Url = "!!MEMBERTYPE_Events_TFlexCelPreview.html" >
+                <HelpTOCNode Title = "TFlexCelPreview.OnPageChange Event" Url = "TFlexCelPreview_OnPageChange.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlexCelReport Class" Url = "TFlexCelReport.html" >
+            <HelpTOCNode Title = "TFlexCelReport Methods" Url = "!!MEMBERTYPE_Methods_TFlexCelReport.html" >
+                <HelpTOCNode Title = "TFlexCelReport.DesignDataModule Method" Url = "TFlexCelReport_DesignDataModule.html" />
+                <HelpTOCNode Title = "TFlexCelReport.GetDataSet Method" Url = "TFlexCelReport_GetDataSet@string.html" />
+                <HelpTOCNode Title = "TFlexCelReport.GetPagesDataSet Method" Url = "TFlexCelReport_GetPagesDataSet.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TFlexCelReport Properties" Url = "!!MEMBERTYPE_Properties_TFlexCelReport.html" >
+                <HelpTOCNode Title = "TFlexCelReport.CalcRecordCount Property" Url = "TFlexCelReport_CalcRecordCount.html" />
+                <HelpTOCNode Title = "TFlexCelReport.DataModule Property" Url = "TFlexCelReport_DataModule.html" />
+                <HelpTOCNode Title = "TFlexCelReport.PagesDataSet Property" Url = "TFlexCelReport_PagesDataSet.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TFlexCelReport Events" Url = "!!MEMBERTYPE_Events_TFlexCelReport.html" >
+                <HelpTOCNode Title = "TFlexCelReport.OnRecordCount Event" Url = "TFlexCelReport_OnRecordCount.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlexCelReportNoDB Class" Url = "TFlexCelReportNoDB.html" >
+            <HelpTOCNode Title = "TFlexCelReportNoDB Methods" Url = "!!MEMBERTYPE_Methods_TFlexCelReportNoDB.html" >
+                <HelpTOCNode Title = "TFlexCelReportNoDB.DesignDataModule Method" Url = "TFlexCelReportNoDB_DesignDataModule.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TFlexCelReportNoDB Properties" Url = "!!MEMBERTYPE_Properties_TFlexCelReportNoDB.html" >
+                <HelpTOCNode Title = "TFlexCelReportNoDB.DataModule Property" Url = "TFlexCelReportNoDB_DataModule.html" />
+                <HelpTOCNode Title = "TFlexCelReportNoDB.PagesDataSet Property" Url = "TFlexCelReportNoDB_PagesDataSet.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxDbMemColumn Class" Url = "TFlxDbMemColumn.html" >
+            <HelpTOCNode Title = "TFlxDbMemColumn Properties" Url = "!!MEMBERTYPE_Properties_TFlxDbMemColumn.html" >
+                <HelpTOCNode Title = "TFlxDbMemColumn.Name Property" Url = "TFlxDbMemColumn_Name.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxDbMemColumnList Class" Url = "TFlxDbMemColumnList.html" />
+        <HelpTOCNode Title = "TFlxInPlaceEdit Class" Url = "TFlxInPlaceEdit.html" >
+            <HelpTOCNode Title = "TFlxInPlaceEdit Properties" Url = "!!MEMBERTYPE_Properties_TFlxInPlaceEdit.html" >
+                <HelpTOCNode Title = "TFlxInPlaceEdit.Font Property" Url = "TFlxInPlaceEdit_Font.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxMasterList Class" Url = "TFlxMasterList.html" />
+        <HelpTOCNode Title = "TFlxMemTable Class" Url = "TFlxMemTable.html" >
+            <HelpTOCNode Title = "TFlxMemTable Methods" Url = "!!MEMBERTYPE_Methods_TFlxMemTable.html" >
+                <HelpTOCNode Title = "TFlxMemTable.AddRecord Method" Url = "TFlxMemTable_AddRecord@Array_of_Variant.html" />
+                <HelpTOCNode Title = "TFlxMemTable.Clear Method" Url = "TFlxMemTable_Clear.html" />
+                <HelpTOCNode Title = "TFlxMemTable.Close Method" Url = "TFlxMemTable_Close.html" />
+                <HelpTOCNode Title = "TFlxMemTable.DsName Method" Url = "TFlxMemTable_DsName.html" />
+                <HelpTOCNode Title = "TFlxMemTable.Eof Method" Url = "TFlxMemTable_Eof.html" />
+                <HelpTOCNode Title = "TFlxMemTable.FieldByName Method" Url = "TFlxMemTable_FieldByName@string.html" />
+                <HelpTOCNode Title = "TFlxMemTable.FieldCount Method" Url = "TFlxMemTable_FieldCount.html" />
+                <HelpTOCNode Title = "TFlxMemTable.FieldVisibleCount Method" Url = "TFlxMemTable_FieldVisibleCount.html" />
+                <HelpTOCNode Title = "TFlxMemTable.FindKey Method" Url = "TFlxMemTable_FindKey@array_of_variant.html" />
+                <HelpTOCNode Title = "TFlxMemTable.First Method" Url = "TFlxMemTable_First.html" />
+                <HelpTOCNode Title = "TFlxMemTable.GetActive Method" Url = "TFlxMemTable_GetActive.html" />
+                <HelpTOCNode Title = "TFlxMemTable.GetFields Method" Url = "TFlxMemTable_GetFields@integer.html" />
+                <HelpTOCNode Title = "TFlxMemTable.IndexFieldPos Method" Url = "TFlxMemTable_IndexFieldPos.html" />
+                <HelpTOCNode Title = "TFlxMemTable.Last Method" Url = "TFlxMemTable_Last.html" />
+                <HelpTOCNode Title = "TFlxMemTable.Next Method" Url = "TFlxMemTable_Next.html" />
+                <HelpTOCNode Title = "TFlxMemTable.Open Method" Url = "TFlxMemTable_Open.html" />
+                <HelpTOCNode Title = "TFlxMemTable.RecordCount Method" Url = "TFlxMemTable_RecordCount.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TFlxMemTable Properties" Url = "!!MEMBERTYPE_Properties_TFlxMemTable.html" >
+                <HelpTOCNode Title = "TFlxMemTable.Active Property" Url = "TFlxMemTable_Active.html" />
+                <HelpTOCNode Title = "TFlxMemTable.CaseInsensitive Property" Url = "TFlxMemTable_CaseInsensitive.html" />
+                <HelpTOCNode Title = "TFlxMemTable.Columns Property" Url = "TFlxMemTable_Columns.html" />
+                <HelpTOCNode Title = "TFlxMemTable.Duplicates Property" Url = "TFlxMemTable_Duplicates.html" />
+                <HelpTOCNode Title = "TFlxMemTable.IndexFieldNames Property" Url = "TFlxMemTable_IndexFieldNames.html" />
+                <HelpTOCNode Title = "TFlxMemTable.MasterField Property" Url = "TFlxMemTable_MasterField.html" />
+                <HelpTOCNode Title = "TFlxMemTable.MasterTable Property" Url = "TFlxMemTable_MasterTable.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TFlxMemTable Events" Url = "!!MEMBERTYPE_Events_TFlxMemTable.html" >
+                <HelpTOCNode Title = "TFlxMemTable.OnFirst Event" Url = "TFlxMemTable_OnFirst.html" />
+                <HelpTOCNode Title = "TFlxMemTable.OnGetData Event" Url = "TFlxMemTable_OnGetData.html" />
+                <HelpTOCNode Title = "TFlxMemTable.OnLast Event" Url = "TFlxMemTable_OnLast.html" />
+                <HelpTOCNode Title = "TFlxMemTable.OnNext Event" Url = "TFlxMemTable_OnNext.html" />
+                <HelpTOCNode Title = "TFlxMemTable.OnVirtualRecordCount Event" Url = "TFlxMemTable_OnVirtualRecordCount.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxMemTableField Class" Url = "TFlxMemTableField.html" >
+            <HelpTOCNode Title = "TFlxMemTableField Methods" Url = "!!MEMBERTYPE_Methods_TFlxMemTableField.html" >
+                <HelpTOCNode Title = "TFlxMemTableField.AsFloat Method" Url = "TFlxMemTableField_AsFloat.html" />
+                <HelpTOCNode Title = "TFlxMemTableField.DataSet Method" Url = "TFlxMemTableField_DataSet.html" />
+                <HelpTOCNode Title = "TFlxMemTableField.DisplayName Method" Url = "TFlxMemTableField_DisplayName.html" />
+                <HelpTOCNode Title = "TFlxMemTableField.IsTDateTimeField Method" Url = "TFlxMemTableField_IsTDateTimeField.html" />
+                <HelpTOCNode Title = "TFlxMemTableField.IsTMemoField Method" Url = "TFlxMemTableField_IsTMemoField.html" />
+                <HelpTOCNode Title = "TFlxMemTableField.Value Method" Url = "TFlxMemTableField_Value.html" />
+                <HelpTOCNode Title = "TFlxMemTableField.Visible Method" Url = "TFlxMemTableField_Visible.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxProgress Class" Url = "TFlxProgress.html" >
+            <HelpTOCNode Title = "TFlxProgress Properties" Url = "!!MEMBERTYPE_Properties_TFlxProgress.html" >
+                <HelpTOCNode Title = "TFlxProgress.Counter Property" Url = "TFlxProgress_Counter.html" />
+                <HelpTOCNode Title = "TFlxProgress.Phase Property" Url = "TFlxProgress_Phase.html" />
+                <HelpTOCNode Title = "TFlxProgress.Sheet Property" Url = "TFlxProgress_Sheet.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxProp Class" Url = "TFlxProp.html" >
+            <HelpTOCNode Title = "TFlxProp Fields" Url = "!!MEMBERTYPE_Fields_TFlxProp.html" >
+                <HelpTOCNode Title = "TFlxProp.Name Field" Url = "TFlxProp_Name.html" />
+                <HelpTOCNode Title = "TFlxProp.Value Field" Url = "TFlxProp_Value.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxPropList Class" Url = "TFlxPropList.html" />
+        <HelpTOCNode Title = "TSpawnedCell Class" Url = "TSpawnedCell.html" />
+        <HelpTOCNode Title = "TSpawnedCellList Class" Url = "TSpawnedCellList.html" />
+        <HelpTOCNode Title = "TWaitCursor Class" Url = "TWaitCursor.html" />
+        <HelpTOCNode Title = "TXlsTemplate Class" Url = "TXlsTemplate.html" >
+            <HelpTOCNode Title = "TXlsTemplate Methods" Url = "!!MEMBERTYPE_Methods_TXlsTemplate.html" >
+                <HelpTOCNode Title = "LoadFrom Method" Url = "!!OVERLOADED_LoadFrom_TXlsTemplate.html" >
+                    <HelpTOCNode Title = "TXlsTemplate.LoadFrom Method (TFileName)" Url = "TXlsTemplate_LoadFrom@TFileName.html" />
+                    <HelpTOCNode Title = "TXlsTemplate.LoadFrom Method (TStream)" Url = "TXlsTemplate_LoadFrom@TStream.html" />
+                </HelpTOCNode>
+                <HelpTOCNode Title = "TXlsTemplate.SaveAs Method" Url = "TXlsTemplate_SaveAs@TFileName.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TXlsTemplate Properties" Url = "!!MEMBERTYPE_Properties_TXlsTemplate.html" >
+                <HelpTOCNode Title = "TXlsTemplate.FileName Property" Url = "TXlsTemplate_FileName.html" />
+                <HelpTOCNode Title = "TXlsTemplate.ModifiedDate Property" Url = "TXlsTemplate_ModifiedDate.html" />
+                <HelpTOCNode Title = "TXlsTemplate.StoredFile Property" Url = "TXlsTemplate_StoredFile.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TXlsTemplateList Class" Url = "TXlsTemplateList.html" />
+        <HelpTOCNode Title = "TXlsTemplateStore Class" Url = "TXlsTemplateStore.html" >
+            <HelpTOCNode Title = "TXlsTemplateStore Fields" Url = "!!MEMBERTYPE_Fields_TXlsTemplateStore.html" >
+                <HelpTOCNode Title = "TXlsTemplateStore.FTemplates Field" Url = "TXlsTemplateStore_FTemplates.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TXlsTemplateStore Methods" Url = "!!MEMBERTYPE_Methods_TXlsTemplateStore.html" >
+                <HelpTOCNode Title = "TXlsTemplateStore.GetStoredFile Method" Url = "TXlsTemplateStore_GetStoredFile@UTF16String.html" />
+                <HelpTOCNode Title = "TXlsTemplateStore.IsUpToDate Method" Url = "TXlsTemplateStore_IsUpToDate.html" />
+                <HelpTOCNode Title = "TXlsTemplateStore.LoadTemplateFromStream Method" Url = "TXlsTemplateStore_LoadTemplateFromStream@TStream@UTF16String.html" />
+                <HelpTOCNode Title = "TXlsTemplateStore.Refresh Method" Url = "TXlsTemplateStore_Refresh.html" />
+            </HelpTOCNode>
+            <HelpTOCNode Title = "TXlsTemplateStore Properties" Url = "!!MEMBERTYPE_Properties_TXlsTemplateStore.html" >
+                <HelpTOCNode Title = "TXlsTemplateStore.CaseInsensitive Property" Url = "TXlsTemplateStore_CaseInsensitive.html" />
+                <HelpTOCNode Title = "TXlsTemplateStore.Compress Property" Url = "TXlsTemplateStore_Compress.html" />
+                <HelpTOCNode Title = "TXlsTemplateStore.RefreshPath Property" Url = "TXlsTemplateStore_RefreshPath.html" />
+                <HelpTOCNode Title = "TXlsTemplateStore.Templates Property" Url = "TXlsTemplateStore_Templates.html" />
+            </HelpTOCNode>
+        </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title = "Interfaces" Url = "!!INTERFACES.html" >
+        <HelpTOCNode Title = "IWaitCursor Interface" Url = "IWaitCursor.html" />
+    </HelpTOCNode>
+    <HelpTOCNode Title = "Functions" Url = "!!FUNCTIONS.html" >
+        <HelpTOCNode Title = "CalcImgCells Function" Url = "CalcImgCells@TExcelFile@integer@integer@integer@integer@extended@extended@TImageProperties.html" />
+        <HelpTOCNode Title = "CalcImgDimentions Function" Url = "CalcImgDimentions@TExcelFile@TClientAnchor@extended@extended.html" />
+        <HelpTOCNode Title = "CalcImgDimentions Function" Url = "CalcImgDimentions@TExcelFile@TClientAnchor@extended@extended@extended@extended.html" />
+        <HelpTOCNode Title = "CalcImgDimentions Function" Url = "CalcImgDimentions@TExcelFile@TClientAnchor@integer@integer.html" />
+        <HelpTOCNode Title = "ComputeAldusChecksum Function" Url = "ComputeAldusChecksum@TMetafileHeader.html" />
+        <HelpTOCNode Title = "CreateBmpPattern Function" Url = "CreateBmpPattern@integer@integer@integer.html" />
+        <HelpTOCNode Title = "EncodeColumn Function" Url = "EncodeColumn@integer.html" />
+        <HelpTOCNode Title = "FlxTryStrToDateTime Function" Url = "FlxTryStrToDateTime@UTF16String@TDateTime@UTF16String@boolean@boolean@UTF16String@UTF16String@PFormatSettings.html" />
+        <HelpTOCNode Title = "GetDefaultLocaleFormatSettings Function" Url = "GetDefaultLocaleFormatSettings.html" />
+        <HelpTOCNode Title = "HasXlsDateTime Function" Url = "HasXlsDateTime@UTF16String@boolean@boolean@PFormatSettings.html" />
+        <HelpTOCNode Title = "InitializeNamedRange Function" Url = "InitializeNamedRange@TXlsNamedRange.html" />
+        <HelpTOCNode Title = "InvariantFormatSettings Function" Url = "InvariantFormatSettings.html" />
+        <HelpTOCNode Title = "LoadFromTextDelim Function" Url = "LoadFromTextDelim@TStream@TExcelFile@Char@integer@integer@array_of_XLSColumnImportTypes.html" />
+        <HelpTOCNode Title = "LoadFromTextDelim Function" Url = "LoadFromTextDelim@TStream@TExcelFile@Char@integer@integer@array_of_XLSColumnImportTypes@TEncoding@Boolean.html" />
+        <HelpTOCNode Title = "LoadFromTextDelim Function" Url = "LoadFromTextDelim@TStreamReader@TExcelFile@Char@integer@integer@array_of_XLSColumnImportTypes.html" />
+        <HelpTOCNode Title = "LoadWmf Function" Url = "LoadWmf@TPicture@TStream@TXlsImgTypes.html" />
+        <HelpTOCNode Title = "MatchNearestColor Function" Url = "MatchNearestColor@TExcelFile@TColor@BooleanArray.html" />
+        <HelpTOCNode Title = "OffsetRange Function" Url = "OffsetRange@TXlsCellRange@integer@integer.html" />
+        <HelpTOCNode Title = "SaveAsTextDelim Function" Url = "SaveAsTextDelim@TStream@TExcelFile@Char.html" />
+        <HelpTOCNode Title = "SaveAsTextDelim Function" Url = "SaveAsTextDelim@TStream@TExcelFile@Char@TEncoding.html" />
+        <HelpTOCNode Title = "SaveImgStreamToDiskImage Function" Url = "SaveImgStreamToDiskImage@TStream@TXlsImgTypes@TStream@boolean.html" />
+        <HelpTOCNode Title = "SaveImgStreamToGraphic Function" Url = "SaveImgStreamToGraphic@TStream@TXlsImgTypes@TPicture@boolean.html" />
+        <HelpTOCNode Title = "SaveRangeAsTextDelim Function" Url = "SaveRangeAsTextDelim@TStream@TExcelFile@Char@TXlsCellRange.html" />
+        <HelpTOCNode Title = "SaveRangeAsTextDelim Function" Url = "SaveRangeAsTextDelim@TStream@TExcelFile@Char@TXlsCellRange@TEncoding.html" />
+        <HelpTOCNode Title = "SearchPathStr Function" Url = "SearchPathStr@String.html" />
+        <HelpTOCNode Title = "SearchPathStr Function" Url = "SearchPathStr@String@String.html" />
+        <HelpTOCNode Title = "TryFormatDateTime Function" Url = "TryFormatDateTime@string@TDateTime.html" />
+        <HelpTOCNode Title = "TryFormatDateTime1904 Function" Url = "TryFormatDateTime1904@string@TDateTime@boolean.html" />
+        <HelpTOCNode Title = "TryFormatDateTime1904 Function" Url = "TryFormatDateTime1904@string@TDateTime@boolean@TFormatSettings.html" />
+        <HelpTOCNode Title = "TryStrToFloatInvariant Function" Url = "TryStrToFloatInvariant@string@extended.html" />
+        <HelpTOCNode Title = "VariantToString Function" Url = "VariantToString@variant.html" />
+        <HelpTOCNode Title = "XlsFormatValue Function" Url = "XlsFormatValue@variant@UTF16String@Integer.html" />
+        <HelpTOCNode Title = "XlsFormatValue1904 Function" Url = "XlsFormatValue1904@variant@UTF16String@boolean@Integer@PFormatSettings.html" />
+    </HelpTOCNode>
+    <HelpTOCNode Title = "Structs, Records, Enums" Url = "!!RECORDS.html" >
+        <HelpTOCNode Title = "TCalcRecordCount Enumeration" Url = "TCalcRecordCount.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TClientAnchor Record" Url = "TClientAnchor.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxAnchorType Enumeration" Url = "TFlxAnchorType.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxBorders Record" Url = "TFlxBorders.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxBorderStyle Enumeration" Url = "TFlxBorderStyle.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxDiagonalBorder Enumeration" Url = "TFlxDiagonalBorder.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxFillPattern Record" Url = "TFlxFillPattern.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxFont Record" Url = "TFlxFont.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxFontStyle Enumeration" Url = "TFlxFontStyle.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxFormat Record" Url = "TFlxFormat.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxOneBorder Record" Url = "TFlxOneBorder.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxProgressPhase Enumeration" Url = "TFlxProgressPhase.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxReportMode Enumeration" Url = "TFlxReportMode.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFlxUnderline Enumeration" Url = "TFlxUnderline.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TFormatSettings Record" Url = "TFormatSettings.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "THFlxAlignment Enumeration" Url = "THFlxAlignment.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "THyperLink Record" Url = "THyperLink.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "THyperLinkType Enumeration" Url = "THyperLinkType.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TImageProperties Record" Url = "TImageProperties.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TMetafileHeader Record" Url = "TMetafileHeader.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TPrinterDriverSettings Record" Url = "TPrinterDriverSettings.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TRichString Record" Url = "TRichString.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TRTFRun Record" Url = "TRTFRun.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TSavedFont Record" Url = "TSavedFont.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TSmallRect Record" Url = "TSmallRect.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TVFlxAlignment Enumeration" Url = "TVFlxAlignment.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TXlsCellRange Record" Url = "TXlsCellRange.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TXlsCellValue Record" Url = "TXlsCellValue.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TXlsImgTypes Enumeration" Url = "TXlsImgTypes.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TXlsMargins Record" Url = "TXlsMargins.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TXlsNamedRange Record" Url = "TXlsNamedRange.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "TXlsSheetVisible Enumeration" Url = "TXlsSheetVisible.html" >
+        </HelpTOCNode>
+        <HelpTOCNode Title = "XLSColumnImportTypes Enumeration" Url = "XLSColumnImportTypes.html" >
+        </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title = "Types" Url = "!!TYPES.html" >
+        <HelpTOCNode Title = "PAddress Type" Url = "PAddress.html" />
+        <HelpTOCNode Title = "TColorPaletteRange Type" Url = "TColorPaletteRange.html" />
+        <HelpTOCNode Title = "TExcelPaperSize Type" Url = "TExcelPaperSize.html" />
+        <HelpTOCNode Title = "TFlxMemTableOnGetDataEvent Type" Url = "TFlxMemTableOnGetDataEvent.html" />
+        <HelpTOCNode Title = "TFlxOnPageChangeEvent Type" Url = "TFlxOnPageChangeEvent.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle Type" Url = "TFlxPatternStyle.html" />
+        <HelpTOCNode Title = "TOnAllowEditCellEvent Type" Url = "TOnAllowEditCellEvent.html" />
+        <HelpTOCNode Title = "TOnFlxProgressEvent Type" Url = "TOnFlxProgressEvent.html" />
+        <HelpTOCNode Title = "TOnFormatPictureEvent Type" Url = "TOnFormatPictureEvent.html" />
+        <HelpTOCNode Title = "TOnGenerateEvent Type" Url = "TOnGenerateEvent.html" />
+        <HelpTOCNode Title = "TOnGeneratePageEvent Type" Url = "TOnGeneratePageEvent.html" />
+        <HelpTOCNode Title = "TOnGetCellValue Type" Url = "TOnGetCellValue.html" />
+        <HelpTOCNode Title = "TOnGetCellValueX Type" Url = "TOnGetCellValueX.html" />
+        <HelpTOCNode Title = "TOnGetCellValueXRow Type" Url = "TOnGetCellValueXRow.html" />
+        <HelpTOCNode Title = "TOnGetFileNameEvent Type" Url = "TOnGetFileNameEvent.html" />
+        <HelpTOCNode Title = "TOnGetFontNameEvent Type" Url = "TOnGetFontNameEvent.html" />
+        <HelpTOCNode Title = "TOnGetImageSize Type" Url = "TOnGetImageSize.html" />
+        <HelpTOCNode Title = "TOnGetOutStreamEvent Type" Url = "TOnGetOutStreamEvent.html" />
+        <HelpTOCNode Title = "TOnVirtualRecordCountEvent Type" Url = "TOnVirtualRecordCountEvent.html" />
+        <HelpTOCNode Title = "TOnZoomChangedEvent Type" Url = "TOnZoomChangedEvent.html" />
+        <HelpTOCNode Title = "TRecordCountEvent Type" Url = "TRecordCountEvent.html" />
+        <HelpTOCNode Title = "TRTFRunList Type" Url = "TRTFRunList.html" />
+        <HelpTOCNode Title = "TRTFRunListList Type" Url = "TRTFRunListList.html" />
+        <HelpTOCNode Title = "TWideSetEditEvent Type" Url = "TWideSetEditEvent.html" />
+        <HelpTOCNode Title = "UTF16Char Type" Url = "UTF16Char.html" />
+        <HelpTOCNode Title = "UTF16String Type" Url = "UTF16String.html" />
+    </HelpTOCNode>
+    <HelpTOCNode Title = "Variables" Url = "!!VARIABLES.html" >
+        <HelpTOCNode Title = "ColMult Variable" Url = "ColMult.html" />
+        <HelpTOCNode Title = "RowMult Variable" Url = "RowMult.html" />
+    </HelpTOCNode>
+    <HelpTOCNode Title = "Constants" Url = "!!CONSTANTS.html" >
+        <HelpTOCNode Title = "DataSetStr Constant" Url = "DataSetStr.html" />
+        <HelpTOCNode Title = "Date1904Diff Constant" Url = "Date1904Diff.html" />
+        <HelpTOCNode Title = "DefaultDateTimeFormat Constant" Url = "DefaultDateTimeFormat.html" />
+        <HelpTOCNode Title = "DefColWidthAdapt Constant" Url = "DefColWidthAdapt.html" />
+        <HelpTOCNode Title = "ExtrasDelim Constant" Url = "ExtrasDelim.html" />
+        <HelpTOCNode Title = "FieldStr Constant" Url = "FieldStr.html" />
+        <HelpTOCNode Title = "FLX_VAR_LOCALE_USER_DEFAULT Constant" Url = "FLX_VAR_LOCALE_USER_DEFAULT.html" />
+        <HelpTOCNode Title = "fpo_Draft Constant" Url = "fpo_Draft.html" />
+        <HelpTOCNode Title = "fpo_LeftToRight Constant" Url = "fpo_LeftToRight.html" />
+        <HelpTOCNode Title = "fpo_NoColor Constant" Url = "fpo_NoColor.html" />
+        <HelpTOCNode Title = "fpo_NoOrient Constant" Url = "fpo_NoOrient.html" />
+        <HelpTOCNode Title = "fpo_NoPls Constant" Url = "fpo_NoPls.html" />
+        <HelpTOCNode Title = "fpo_Notes Constant" Url = "fpo_Notes.html" />
+        <HelpTOCNode Title = "fpo_Orientation Constant" Url = "fpo_Orientation.html" />
+        <HelpTOCNode Title = "fpo_UsePage Constant" Url = "fpo_UsePage.html" />
+        <HelpTOCNode Title = "FullDataSetStr Constant" Url = "FullDataSetStr.html" />
+        <HelpTOCNode Title = "HPageBreakStr Constant" Url = "HPageBreakStr.html" />
+        <HelpTOCNode Title = "InternalNameRange_Auto_Activate Constant" Url = "InternalNameRange_Auto_Activate.html" />
+        <HelpTOCNode Title = "InternalNameRange_Auto_Close Constant" Url = "InternalNameRange_Auto_Close.html" />
+        <HelpTOCNode Title = "InternalNameRange_Auto_Deactivate Constant" Url = "InternalNameRange_Auto_Deactivate.html" />
+        <HelpTOCNode Title = "InternalNameRange_Auto_Open Constant" Url = "InternalNameRange_Auto_Open.html" />
+        <HelpTOCNode Title = "InternalNameRange_Consolidate_Area Constant" Url = "InternalNameRange_Consolidate_Area.html" />
+        <HelpTOCNode Title = "InternalNameRange_Criteria Constant" Url = "InternalNameRange_Criteria.html" />
+        <HelpTOCNode Title = "InternalNameRange_Data_Form Constant" Url = "InternalNameRange_Data_Form.html" />
+        <HelpTOCNode Title = "InternalNameRange_Database Constant" Url = "InternalNameRange_Database.html" />
+        <HelpTOCNode Title = "InternalNameRange_Extract Constant" Url = "InternalNameRange_Extract.html" />
+        <HelpTOCNode Title = "InternalNameRange_Filter_DataBase Constant" Url = "InternalNameRange_Filter_DataBase.html" />
+        <HelpTOCNode Title = "InternalNameRange_Print_Area Constant" Url = "InternalNameRange_Print_Area.html" />
+        <HelpTOCNode Title = "InternalNameRange_Print_Titles Constant" Url = "InternalNameRange_Print_Titles.html" />
+        <HelpTOCNode Title = "InternalNameRange_Recorder Constant" Url = "InternalNameRange_Recorder.html" />
+        <HelpTOCNode Title = "InternalNameRange_Sheet_Title Constant" Url = "InternalNameRange_Sheet_Title.html" />
+        <HelpTOCNode Title = "MainTxt Constant" Url = "MainTxt.html" />
+        <HelpTOCNode Title = "MarkedRowStr Constant" Url = "MarkedRowStr.html" />
+        <HelpTOCNode Title = "RecordCountPrefix Constant" Url = "RecordCountPrefix.html" />
+        <HelpTOCNode Title = "StrClose Constant" Url = "StrClose.html" />
+        <HelpTOCNode Title = "StrOpen Constant" Url = "StrOpen.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A2 Constant" Url = "TExcelPaperSize_A2.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A3 Constant" Url = "TExcelPaperSize_A3.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A3Extra Constant" Url = "TExcelPaperSize_A3Extra.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A3ExtraTransverse Constant" Url = "TExcelPaperSize_A3ExtraTransverse.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A3Rotated Constant" Url = "TExcelPaperSize_A3Rotated.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A3Transverse Constant" Url = "TExcelPaperSize_A3Transverse.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A4 Constant" Url = "TExcelPaperSize_A4.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A4Extra Constant" Url = "TExcelPaperSize_A4Extra.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A4Plus Constant" Url = "TExcelPaperSize_A4Plus.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A4Rotated Constant" Url = "TExcelPaperSize_A4Rotated.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A4small Constant" Url = "TExcelPaperSize_A4small.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A4Transverse Constant" Url = "TExcelPaperSize_A4Transverse.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A5 Constant" Url = "TExcelPaperSize_A5.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A5Extra Constant" Url = "TExcelPaperSize_A5Extra.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A5Rotated Constant" Url = "TExcelPaperSize_A5Rotated.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A5Transverse Constant" Url = "TExcelPaperSize_A5Transverse.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A6 Constant" Url = "TExcelPaperSize_A6.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_A6Rotated Constant" Url = "TExcelPaperSize_A6Rotated.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_B4_ISO Constant" Url = "TExcelPaperSize_B4_ISO.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_B4_ISO_2 Constant" Url = "TExcelPaperSize_B4_ISO_2.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_B4_JIS Constant" Url = "TExcelPaperSize_B4_JIS.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_B4_JIS_Rotated Constant" Url = "TExcelPaperSize_B4_JIS_Rotated.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_B5_ISO Constant" Url = "TExcelPaperSize_B5_ISO.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_B5_ISO_Extra Constant" Url = "TExcelPaperSize_B5_ISO_Extra.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_B5_JIS Constant" Url = "TExcelPaperSize_B5_JIS.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_B5_JIS_Rotated Constant" Url = "TExcelPaperSize_B5_JIS_Rotated.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_B5_JIS_Transverse Constant" Url = "TExcelPaperSize_B5_JIS_Transverse.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_B6_ISO Constant" Url = "TExcelPaperSize_B6_ISO.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_B6_JIS Constant" Url = "TExcelPaperSize_B6_JIS.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_B6_JIS_Rotated Constant" Url = "TExcelPaperSize_B6_JIS_Rotated.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_C Constant" Url = "TExcelPaperSize_C.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_D Constant" Url = "TExcelPaperSize_D.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_DblJapanesePostcard Constant" Url = "TExcelPaperSize_DblJapanesePostcard.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_DblJapPostcardRot Constant" Url = "TExcelPaperSize_DblJapPostcardRot.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_E Constant" Url = "TExcelPaperSize_E.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Envelope10 Constant" Url = "TExcelPaperSize_Envelope10.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Envelope11 Constant" Url = "TExcelPaperSize_Envelope11.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Envelope12 Constant" Url = "TExcelPaperSize_Envelope12.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Envelope14 Constant" Url = "TExcelPaperSize_Envelope14.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Envelope9 Constant" Url = "TExcelPaperSize_Envelope9.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_EnvelopeC3 Constant" Url = "TExcelPaperSize_EnvelopeC3.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_EnvelopeC4 Constant" Url = "TExcelPaperSize_EnvelopeC4.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_EnvelopeC5 Constant" Url = "TExcelPaperSize_EnvelopeC5.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_EnvelopeC6 Constant" Url = "TExcelPaperSize_EnvelopeC6.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_EnvelopeC6_C5 Constant" Url = "TExcelPaperSize_EnvelopeC6_C5.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_EnvelopeDL Constant" Url = "TExcelPaperSize_EnvelopeDL.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_EnvelopeInvite Constant" Url = "TExcelPaperSize_EnvelopeInvite.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_EnvelopeItaly Constant" Url = "TExcelPaperSize_EnvelopeItaly.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_EnvelopeMonarch Constant" Url = "TExcelPaperSize_EnvelopeMonarch.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Executive Constant" Url = "TExcelPaperSize_Executive.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Folio Constant" Url = "TExcelPaperSize_Folio.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_GermanLegalFanfold Constant" Url = "TExcelPaperSize_GermanLegalFanfold.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_GermanStdFanfold Constant" Url = "TExcelPaperSize_GermanStdFanfold.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_JapanesePostcard Constant" Url = "TExcelPaperSize_JapanesePostcard.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_JapanesePostcardRot Constant" Url = "TExcelPaperSize_JapanesePostcardRot.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Ledger Constant" Url = "TExcelPaperSize_Ledger.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Legal Constant" Url = "TExcelPaperSize_Legal.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_LegalExtra Constant" Url = "TExcelPaperSize_LegalExtra.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Letter Constant" Url = "TExcelPaperSize_Letter.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_LetterExtra Constant" Url = "TExcelPaperSize_LetterExtra.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_LetterExtraTransv Constant" Url = "TExcelPaperSize_LetterExtraTransv.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_LetterPlus Constant" Url = "TExcelPaperSize_LetterPlus.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_LetterRotated Constant" Url = "TExcelPaperSize_LetterRotated.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Lettersmall Constant" Url = "TExcelPaperSize_Lettersmall.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_LetterTransverse Constant" Url = "TExcelPaperSize_LetterTransverse.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Note Constant" Url = "TExcelPaperSize_Note.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Quarto Constant" Url = "TExcelPaperSize_Quarto.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_s10x11 Constant" Url = "TExcelPaperSize_s10x11.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_s10x14 Constant" Url = "TExcelPaperSize_s10x14.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_s11x17 Constant" Url = "TExcelPaperSize_s11x17.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_s12x11 Constant" Url = "TExcelPaperSize_s12x11.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_s15x11 Constant" Url = "TExcelPaperSize_s15x11.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_s63_4Envelope Constant" Url = "TExcelPaperSize_s63_4Envelope.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_s9x11 Constant" Url = "TExcelPaperSize_s9x11.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Statement Constant" Url = "TExcelPaperSize_Statement.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_SuperA_A4 Constant" Url = "TExcelPaperSize_SuperA_A4.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_SuperB_A3 Constant" Url = "TExcelPaperSize_SuperB_A3.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Tabloid Constant" Url = "TExcelPaperSize_Tabloid.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_TabloidExtra Constant" Url = "TExcelPaperSize_TabloidExtra.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_Undefined Constant" Url = "TExcelPaperSize_Undefined.html" />
+        <HelpTOCNode Title = "TExcelPaperSize_USStandardFanfold Constant" Url = "TExcelPaperSize_USStandardFanfold.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Automatic Constant" Url = "TFlxPatternStyle_Automatic.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Checker Constant" Url = "TFlxPatternStyle_Checker.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_CrissCross Constant" Url = "TFlxPatternStyle_CrissCross.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Down Constant" Url = "TFlxPatternStyle_Down.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Gray16 Constant" Url = "TFlxPatternStyle_Gray16.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Gray25 Constant" Url = "TFlxPatternStyle_Gray25.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Gray50 Constant" Url = "TFlxPatternStyle_Gray50.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Gray75 Constant" Url = "TFlxPatternStyle_Gray75.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Gray8 Constant" Url = "TFlxPatternStyle_Gray8.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Grid Constant" Url = "TFlxPatternStyle_Grid.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Horizontal Constant" Url = "TFlxPatternStyle_Horizontal.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_LightDown Constant" Url = "TFlxPatternStyle_LightDown.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_LightHorizontal Constant" Url = "TFlxPatternStyle_LightHorizontal.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_LightUp Constant" Url = "TFlxPatternStyle_LightUp.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_LightVertical Constant" Url = "TFlxPatternStyle_LightVertical.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_None Constant" Url = "TFlxPatternStyle_None.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_SemiGray75 Constant" Url = "TFlxPatternStyle_SemiGray75.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Solid Constant" Url = "TFlxPatternStyle_Solid.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Up Constant" Url = "TFlxPatternStyle_Up.html" />
+        <HelpTOCNode Title = "TFlxPatternStyle_Vertical Constant" Url = "TFlxPatternStyle_Vertical.html" />
+        <HelpTOCNode Title = "VarStr Constant" Url = "VarStr.html" />
+        <HelpTOCNode Title = "xls_Emf Constant" Url = "xls_Emf.html" />
+        <HelpTOCNode Title = "xls_Jpeg Constant" Url = "xls_Jpeg.html" />
+        <HelpTOCNode Title = "xls_Png Constant" Url = "xls_Png.html" />
+        <HelpTOCNode Title = "xls_Wmf Constant" Url = "xls_Wmf.html" />
+    </HelpTOCNode>
+    <HelpTOCNode Title = "Files" Url = "!!FILES.html" >
+        <HelpTOCNode Title = "FLXCOMPILER.INC" Url = "FLXCOMPILER_INC.html" />
+        <HelpTOCNode Title = "FLXCONFIG.INC" Url = "FLXCONFIG_INC.html" />
+        <HelpTOCNode Title = "TemplateStore.pas" Url = "TemplateStore_pas.html" />
+        <HelpTOCNode Title = "UCustomFlexCelReport.pas" Url = "UCustomFlexCelReport_pas.html" />
+        <HelpTOCNode Title = "UFlexCelGrid.pas" Url = "UFlexCelGrid_pas.html" />
+        <HelpTOCNode Title = "UFlexCelImport.pas" Url = "UFlexCelImport_pas.html" />
+        <HelpTOCNode Title = "UFlexCelPreview.pas" Url = "UFlexCelPreview_pas.html" />
+        <HelpTOCNode Title = "UFlexCelReport.pas" Url = "UFlexCelReport_pas.html" />
+        <HelpTOCNode Title = "UFlexCelReportNoDB.pas" Url = "UFlexCelReportNoDB_pas.html" />
+        <HelpTOCNode Title = "UFlxFormats.pas" Url = "UFlxFormats_pas.html" />
+        <HelpTOCNode Title = "UFlxMemTable.pas" Url = "UFlxMemTable_pas.html" />
+        <HelpTOCNode Title = "UFlxMessages.pas" Url = "UFlxMessages_pas.html" />
+        <HelpTOCNode Title = "UFlxNumberFormat.pas" Url = "UFlxNumberFormat_pas.html" />
+        <HelpTOCNode Title = "UFlxUtils.pas" Url = "UFlxUtils_pas.html" />
+        <HelpTOCNode Title = "UTextDelim.pas" Url = "UTextDelim_pas.html" />
+        <HelpTOCNode Title = "UWaitCursor.pas" Url = "UWaitCursor_pas.html" />
+        <HelpTOCNode Title = "UXlsPictures.pas" Url = "UXlsPictures_pas.html" />
+    </HelpTOCNode>
+</HelpTOCNode>
+<HelpTOCNode Title = "Excel Internal Units" Url = "Excel_Internal_Units.html" />
+</HelpTOC>

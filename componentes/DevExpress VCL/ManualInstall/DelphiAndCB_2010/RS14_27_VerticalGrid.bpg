@@ -1,0 +1,23 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = cxVerticalGridRS14.bpl dclcxVerticalGridRS14.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+cxVerticalGridRS14.bpl: ..\..\ExpressVerticalGrid\Packages\cxVerticalGridRS14.dpk
+  $(DCC)
+
+dclcxVerticalGridRS14.bpl: ..\..\ExpressVerticalGrid\Packages\dclcxVerticalGridRS14.dpk
+  $(DCC)
+
+

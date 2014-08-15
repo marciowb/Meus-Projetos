@@ -1,0 +1,277 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{49fde0c4-6690-4708-aedd-48ffb6299cf7}</ProjectGuid>
+    <MainSource>gtDocEngBDS2006Pro.dpk</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>..\Lib\BDS2006\gtDocEngBDS2006Pro.bpl</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+    <DCC_DcuOutput>..\Lib\BDS2006</DCC_DcuOutput>
+    <DCC_ObjOutput>..\Lib\BDS2006</DCC_ObjOutput>
+    <DCC_HppOutput>..\Lib\BDS2006</DCC_HppOutput>
+    <DCC_BplOutput>..\Lib\BDS2006</DCC_BplOutput>
+    <DCC_DcpOutput>..\Lib\BDS2006</DCC_DcpOutput>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+    <DCC_DcuOutput>..\Lib\BDS2006</DCC_DcuOutput>
+    <DCC_ObjOutput>..\Lib\BDS2006</DCC_ObjOutput>
+    <DCC_HppOutput>..\Lib\BDS2006</DCC_HppOutput>
+    <DCC_BplOutput>..\Lib\BDS2006</DCC_BplOutput>
+    <DCC_DcpOutput>..\Lib\BDS2006</DCC_DcpOutput>
+    <DCC_Define>DEBUG</DCC_Define>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>Package</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject xmlns=""> <Delphi.Personality>   <Parameters>
+      <Parameters Name="UseLauncher">False</Parameters>
+      <Parameters Name="LoadAllSymbols">True</Parameters>
+      <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+    </Parameters>
+    <Package_Options>
+      <Package_Options Name="PackageDescription">Gnostice eDocEngine</Package_Options>
+      <Package_Options Name="ImplicitBuild">True</Package_Options>
+      <Package_Options Name="DesigntimeOnly">False</Package_Options>
+      <Package_Options Name="RuntimeOnly">True</Package_Options>
+    </Package_Options>
+    <VersionInfo>
+      <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+      <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+      <VersionInfo Name="MajorVer">2</VersionInfo>
+      <VersionInfo Name="MinorVer">0</VersionInfo>
+      <VersionInfo Name="Release">0</VersionInfo>
+      <VersionInfo Name="Build">0</VersionInfo>
+      <VersionInfo Name="Debug">False</VersionInfo>
+      <VersionInfo Name="PreRelease">False</VersionInfo>
+      <VersionInfo Name="Special">False</VersionInfo>
+      <VersionInfo Name="Private">False</VersionInfo>
+      <VersionInfo Name="DLL">False</VersionInfo>
+      <VersionInfo Name="Locale">1033</VersionInfo>
+      <VersionInfo Name="CodePage">1252</VersionInfo>
+    </VersionInfo>
+    <VersionInfoKeys>
+      <VersionInfoKeys Name="CompanyName"></VersionInfoKeys>
+      <VersionInfoKeys Name="FileDescription"></VersionInfoKeys>
+      <VersionInfoKeys Name="FileVersion">2.0.0.0</VersionInfoKeys>
+      <VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+      <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductName"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductVersion">2.0.0.0</VersionInfoKeys>
+      <VersionInfoKeys Name="Comments"></VersionInfoKeys>
+    </VersionInfoKeys>
+    <Excluded_Packages>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvAppFrmD10D.bpl">JVCL Application and Form Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvBandsD10D.bpl">JVCL Band Objects</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvBDED10D.bpl">JVCL BDE Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvCmpD10D.bpl">JVCL Non-Visual Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvCoreD10D.bpl">JVCL Core Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvCryptD10D.bpl">JVCL Encryption and Compression Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvCtrlsD10D.bpl">JVCL Visual Controls</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvCustomD10D.bpl">JVCL Custom Controls</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvDBD10D.bpl">JVCL Database Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvDlgsD10D.bpl">JVCL Dialog Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvDockingD10D.bpl">JVCL Docking Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvDotNetCtrlsD10D.bpl">JVCL DotNet Controls</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvEDID10D.bpl">JVCL EDI Components Designtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvGlobusD10D.bpl">JVCL Globus Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvHMID10D.bpl">JVCL HMI Controls design time unit</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvInterpreterD10D.bpl">JVCL Interpreter Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvJansD10D.bpl">JVCL Jans Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvManagedThreadsD10D.bpl">JVCL Managed Threads</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvMMD10D.bpl">JVCL Multimedia and Image Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvNetD10D.bpl">JVCL Network Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvPageCompsD10D.bpl">JVCL Page Style Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvPluginD10D.bpl">JVCL Plugin Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvPrintPreviewD10D.bpl">JVCL Print Preview Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvRuntimeDesignD10D.bpl">JVCL Runtime Design Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvStdCtrlsD10D.bpl">JVCL Standard Controls</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvSystemD10D.bpl">JVCL System Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvTimeFrameworkD10D.bpl">JVCL Time Framework</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvUIBD10D.bpl">JVCL Unified Interbase Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvValidatorsD10D.bpl">JVCL Validators and Error Provider Components</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvWizardD10D.bpl">JVCL Wizard Design Time Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Documents and Settings\sandeep\My Documents\Borland Studio Projects\Bpl\JvXPCtrlsD10D.bpl">JVCL XP Controls</Excluded_Packages>
+    </Excluded_Packages>
+    <Source>
+      <Source Name="MainSource">gtDocEngBDS2006Pro.dpk</Source>
+    </Source>
+  </Delphi.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <ItemGroup />
+  <ItemGroup>
+    <DelphiCompile Include="gtDocEngBDS2006Pro.dpk">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="gtBMPEng.pas" />
+    <DCCReference Include="gtBMPEngDlg.pas" />
+    <DCCReference Include="gtClipboard.pas" />
+    <DCCReference Include="gtCompressionBDS2006.dcp" />
+    <DCCReference Include="gtCryptBDS2006.dcp" />
+    <DCCReference Include="gtCstGfxEng.pas" />
+    <DCCReference Include="gtCstHTMLEng.pas" />
+    <DCCReference Include="gtCstPDFEng.pas" />
+    <DCCReference Include="gtCstPlnEng.pas" />
+    <DCCReference Include="gtCstSpdEng.pas" />
+    <DCCReference Include="gtCstXLSEng.pas" />
+    <DCCReference Include="gtDIFEng.pas" />
+    <DCCReference Include="gtDIFEngDlg.pas" />
+    <DCCReference Include="gtDocDlg.pas">
+      <Form>gtDocumentDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtDocEngBDS2006.dcp" />
+    <DCCReference Include="gtEMFEng.pas" />
+    <DCCReference Include="gtEMFEngDlg.pas" />
+    <DCCReference Include="gtExHTMLEng.pas" />
+    <DCCReference Include="gtExPDFEng.pas" />
+    <DCCReference Include="gtExXLSEng.pas" />
+    <DCCReference Include="gtFiltersBDS2006.dcp" />
+    <DCCReference Include="gtFontBDS2006.dcp" />
+    <DCCReference Include="gtGfxDlg.pas">
+      <Form>gtGraphicsDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtGIFEng.pas" />
+    <DCCReference Include="gtGIFEngDlg.pas">
+      <Form>gtGIFEngineDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtHTMLEng.pas" />
+    <DCCReference Include="gtHTMLEngDlg.pas" />
+    <DCCReference Include="gtImgPrvwDlg.pas">
+      <Form>gtImgPrvwDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtJPEGEng.pas" />
+    <DCCReference Include="gtJPEGEngDlg.pas">
+      <Form>gtJPEGEngineDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtLotusEng.pas" />
+    <DCCReference Include="gtLotusEngDlg.pas" />
+    <DCCReference Include="gtMetafileEng.pas" />
+    <DCCReference Include="gtPDFEng.pas" />
+    <DCCReference Include="gtPDFEngDlg.pas" />
+    <DCCReference Include="gtPlnDlg.pas">
+      <Form>gtPlainSheetDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtPNGEng.pas" />
+    <DCCReference Include="gtPNGEngDlg.pas">
+      <Form>gtPNGEngineDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtQProEng.pas" />
+    <DCCReference Include="gtQProEngDlg.pas" />
+    <DCCReference Include="gtRTFEng.pas" />
+    <DCCReference Include="gtRTFEngDlg.pas">
+      <Form>gtRTFEngineDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtRtlBDS2006.dcp" />
+    <DCCReference Include="gtSLKEng.pas" />
+    <DCCReference Include="gtSLKEngDlg.pas" />
+    <DCCReference Include="gtSpdDlg.pas">
+      <Form>gtSpreadSheetDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtSVGEng.pas" />
+    <DCCReference Include="gtSVGEngDlg.pas">
+      <Form>gtSVGEngineDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtTIFFEng.pas" />
+    <DCCReference Include="gtTIFFEngDlg.pas">
+      <Form>gtTIFFEngineDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtTXTEng.pas" />
+    <DCCReference Include="gtTXTEngDlg.pas">
+      <Form>gtTextEngineDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtWMFEng.pas" />
+    <DCCReference Include="gtWMFEngDlg.pas">
+      <Form>gtWMFEngineDlg</Form>
+    </DCCReference>
+    <DCCReference Include="gtXHTMLEng.pas" />
+    <DCCReference Include="gtXHTMLEngDlg.pas" />
+    <DCCReference Include="gtXLSEng.pas" />
+    <DCCReference Include="gtXLSEngDlg.pas">
+      <Form>gtExcelEngineDlg</Form>
+    </DCCReference>
+    <DCCReference Include="inet.dcp" />
+    <DCCReference Include="rtl.dcp" />
+    <DCCReference Include="vcl.dcp" />
+    <DCCReference Include="vcljpg.dcp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+</Project>

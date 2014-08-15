@@ -1,0 +1,159 @@
+# ---------------------------------------------------------------------------
+!if !$d(BCB)
+BCB = $(MAKEDIR)\..
+!endif
+
+!ifdef DXDEBUGMODE
+DEBUGOPTIONS = -$D+ -$L+ -$W+ -$O-
+!else
+DEBUGOPTIONS = -$D- -$L- -$W- -$O+
+!endif
+
+# ---------------------------------------------------------------------------
+# IDE SECTION
+# ---------------------------------------------------------------------------
+# The following section of the project makefile is managed by the BCB IDE.
+# It is recommended to use the IDE to change any of the values in this
+# section.
+# ---------------------------------------------------------------------------
+
+VERSION = BCB.15.00
+# ---------------------------------------------------------------------------
+PROJECT = dcldxPSDBTeeChartC15.bpl
+OBJFILES = dxPSDBTCLnkReg.obj \
+  dcldxPSDBTeeChartC15.obj
+MAINSOURCE = dcldxPSDBTeeChartC15.cpp
+RESFILES = dcldxPSDBTeeChartC15.res
+RESDEPEN = $(RESFILES)
+LIBFILES =
+LIBRARIES =
+SPARELIBS = 
+PACKAGES = dxPSCoreC15.bpi dcldxPSTeeChartC15.bpi dxPSDBTeeChartC15.bpi rtl.bpi \
+ vcl.bpi vclx.bpi dbrtl.bpi vclimg.bpi dxComnC15.bpi vcldb.bpi dxThemeC15.bpi \ 
+ dxCoreC15.bpi cxDataC15.bpi dxGDIPlusC15.bpi cxLibraryC15.bpi cxEditorsC15.bpi \
+ cxExtEditorsC15.bpi cxPageControlC15.bpi designide.bpi dxPSTeeChartC15.bpi dcldxPSCoreC15.bpi
+!if !$d(TEEPRO)
+PACKAGES = $(PACKAGES) tee.bpi teedb.bpi
+USERDEFINES =
+!elif $d(TEE5)
+PACKAGES = $(PACKAGES) tee5C15.bpi teedb5C15.bpi
+USERDEFINES = TEEPRO;TEE5
+!elif $d(TEE6)
+PACKAGES = $(PACKAGES) tee6C15.bpi teedb6C15.bpi
+USERDEFINES = TEEPRO;TEE6
+!elif $d(TEE7)
+PACKAGES = $(PACKAGES) tee715.bpi teedb715.bpi
+USERDEFINES = TEEPRO;TEE7
+!elif $d(TEE8)
+PACKAGES = $(PACKAGES) tee815.bpi teedb815.bpi
+USERDEFINES = TEEPRO;TEE8
+!elif $d(TEE9)
+PACKAGES = $(PACKAGES) tee915.bpi teedb915.bpi
+USERDEFINES = TEEPRO;TEE9
+!endif 
+DEFFILE =
+# ---------------------------------------------------------------------------
+PATHCPP = .;
+PATHASM = .;
+PATHPAS = .;
+PATHRC = .;
+USERDEFINES =
+SYSDEFINES = _RTLDLL;NO_STRICT;USEPACKAGES
+# ---------------------------------------------------------------------------
+CFLAG1 = -I$(BCB)\include\windows\rtl;$(BCB)\include\windows\vcl -O2 -Hc -H=$(BCB)\lib\vcl100.csm -w -Ve -a8 \
+  -k- -vi -c -b- -w-par -w-inl -Vx -tWM -D$(SYSDEFINES);$(USERDEFINES)
+PFLAGS = -U"$(SEARCHPATH)";$(LIBDIR);$(BCB)\lib\obj;$(BCB)\lib;$(RELEASELIBPATH) \
+  -I$(BCB)\include\windows\rtl;$(BCB)\include\windows\vcl -$Y- $(DEBUGOPTIONS) -v -JPHNE -M -LUdclstd
+RFLAGS =
+AFLAGS =
+LFLAGS = -L"$(SEARCHPATH)";$(LIBDIR);$(BCB)\lib\obj;$(BCB)\lib;$(RELEASELIBPATH) \
+  -D"ExpressPrinting System 4 ReportLink for DBTeeChart by Developer Express Inc." -aa -Tpp -x -Gn -Gl -Gi -Gpd
+# ---------------------------------------------------------------------------
+ALLOBJ = c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib
+# ---------------------------------------------------------------------------
+# MAKE SECTION
+# ---------------------------------------------------------------------------
+# This section of the project file is not used by the BCB IDE.  It is for
+# the benefit of building from the command-line using the MAKE utility.
+# ---------------------------------------------------------------------------
+
+.autodepend
+# ---------------------------------------------------------------------------
+!if !$d(BCC32)
+BCC32 = bcc32
+!endif
+
+!if !$d(CPP32)
+CPP32 = cpp32
+!endif
+
+!if !$d(DCC32)
+DCC32 = dcc32
+!endif
+
+!if !$d(TASM32)
+TASM32 = tasm32
+!endif
+
+!if !$d(LINKER)
+LINKER = ilink32
+!endif
+
+!if !$d(BRCC32)
+BRCC32 = brcc32
+!endif
+
+# ---------------------------------------------------------------------------
+!if $d(PATHCPP)
+.PATH.CPP = $(PATHCPP)
+.PATH.C   = $(PATHCPP)
+!endif
+
+!if $d(PATHPAS)
+.PATH.PAS = $(PATHPAS)
+!endif
+
+!if $d(PATHASM)
+.PATH.ASM = $(PATHASM)
+!endif
+
+!if $d(PATHRC)
+.PATH.RC  = $(PATHRC)
+!endif
+# ---------------------------------------------------------------------------
+$(PROJECT): $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+    $(BCB)\BIN\$(LINKER) @&&!
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT),, +
+    $(ALLLIB), +
+    $(DEFFILE), +
+    $(ALLRES)
+!
+# ---------------------------------------------------------------------------
+.pas.hpp:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.pas.obj:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.cpp.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) -n$(@D) {$< }
+
+.c.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) -n$(@D) {$< }
+
+.c.i:
+    $(BCB)\BIN\$(CPP32) $(CFLAG1) -n. {$< }
+
+.cpp.i:
+    $(BCB)\BIN\$(CPP32) $(CFLAG1) -n. {$< }
+
+.asm.obj:
+    $(BCB)\BIN\$(TASM32) $(AFLAGS) $<, $@
+
+.rc.res:
+    $(BCB)\BIN\$(BRCC32) $(RFLAGS) -fo$@ $<
+# ---------------------------------------------------------------------------

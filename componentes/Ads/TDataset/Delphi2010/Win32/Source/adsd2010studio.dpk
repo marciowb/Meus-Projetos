@@ -1,0 +1,58 @@
+package adsd2010studio;
+
+{$R *.res}
+{$R 'adscnnct.dcr'}
+{$R 'adsdictionary.dcr'}
+{$R 'adsset.dcr'}
+{$R 'adstable.dcr'}
+{$R 'adsbatchmove.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Advantage TDataSet Descendant Components'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  VCLX,
+  VCLDB;
+
+contains
+  aceunpub,
+  Indexdlg,
+  infoexp,
+  InfoStru,
+  Adsstrng,
+  ace,
+  AdsData,
+  AdsEventHandler,
+  Adsfunc,
+  Adsver,
+  adscnnct,
+  adsdictionary,
+  adsset,
+  adstable,
+  AdsAEPSessionMgr,
+  AdsBatchMove,
+  CollationPicker;
+
+end.

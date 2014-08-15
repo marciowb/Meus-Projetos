@@ -1,0 +1,136 @@
+**********************************************************************
+Author: TMS Software
+        Copyright © 1996-2010
+        E-mail: info@tmssoftware.com
+        Web: http://www.tmssoftware.com
+**********************************************************************
+
+
+TMS Guimotions : Create spectacular 3D animated user experiences in your Delphi applications
+
+
+Files :
+-------
+  GuiMotionsPkgD5.zip : component files for Delphi 5
+  GuiMotionsPkgD6.zip : component files for Delphi 6
+  GuiMotionsPkgD7.zip : component files for Delphi 7
+  GuiMotionsPkgD2005.zip : component files for Delphi 2005
+  GuiMotionsSetup.zip : component files for Delphi 2006, 2007
+  TMSGuiMotions.zip : component files for Delphi 2009, 2010
+
+
+Release 1.2.0.1 :
+-----------------
+
+    * Offers 6 different animation modes for images, glyphs, controls
+    * Includes the Carousel animation mode, similar to the Apple coverflow
+    * Supports hosting controls
+    * Supports custom drawn items
+    * Different ways to load images: directly, by file reference, threaded
+    * Zoom on selected item, alternate selected item display
+    * Mouse & keyboard support
+    * Keyboard lookup
+    * Optional navigator to immediately scroll through images
+    * Comes with 4 demos : image browser, chart browser, grid browser and file browser
+
+
+History :
+---------
+  v1.0 : First release
+
+  v1.0.0.1: Improved : Memory usage when using iqNone mode
+
+  v1.0.0.2 : Added exception handling on picture.loadfromfile.
+           : Improved : Image quality in zoomstate when loading image with quality iqNone.
+
+  v1.0.0.3 : New: Added support for displaying floating points
+
+  v1.0.1.0 : New: Added Left and Right click on Images to allow zoom or allow alternate image
+           : Improved: browse through images with arrows on scrollbar
+  
+  v1.0.1.1 : Fixed: Performance issues
+
+  v1.0.1.2 : Fixed: Scrollbar slider position
+           : Fixed: issue with Cursor
+           : Fixed: stop animation when csDestroying in ComponentState
+
+  v1.0.2.0 : New: SelectedScaleFactor to change selected image default size
+           : Improved: Threadloading
+           : Improved: navigator handling
+
+  v1.1.0.0 : New: Programmatic control of animation
+
+  v1.1.0.1 : Fixed : Floating point division by zero when only one image is loaded
+           : Fixed : Access violation when only one image is loaded
+
+  v1.1.0.2 : Fixed : Creation of 2 threads instead of one.
+
+  v1.1.1.0 : New : ImageStripMargin to position the imagestrip image wall
+           : Fixed : Visible image count in Carousel mode.
+
+  v1.1.1.1 : Fixed : Issue with Alternate image Vertex buffer
+
+  v1.1.1.2 : Improved : Double Click image
+           : Fixed : Issue with disappearing images
+
+  v1.1.1.3 : Fixed : Issue with runtime creating and selecting images
+
+  v1.1.1.4 : Fixed : Issue with repainting after clearing images
+
+  v1.1.1.5 : Improved : Updating images with UpdateImage at runtime
+
+  v1.1.1.6 : Fixed : Issue with list index out of bounds
+
+  v1.1.1.7 : Fixed : ansistring warning
+
+  v1.1.1.8 : Fixed : Issue with Double-clicking called twice
+
+  v1.2.0.0 : New : Delphi and C++Builder XE support
+
+  v1.2.0.1 : Fixed : Issue in imagestrip index
+
+Usage:
+------
+ Use of TMS software components in applications requires a license.
+ A license can be obtained by registration. A single developer license
+ registration is available as well as a site license.
+ With the purchase of one single developer license, one developer in
+ the company is entitled to:
+ - use of registered version that contains full source code and no
+   limitations 
+ - free updates for a full version cycle
+ - free email priority support & access to support newsgroups
+ - discounts to purchases of other products
+
+ With a site license, multiple developers in the company are entitled
+ to:
+ - use of registered version that contains full source code and no
+   limitations 
+ - add additional developers at any time who make use of the components
+ - free updates for a full version cycle
+ - free email priority support & access to support newsgroups
+ - discounts to purchases of other products
+
+ Online order information can be found at:
+ http://www.tmssoftware.com/go/?orders
+
+Note: 
+-----
+
+ The components are also part of the TMS VCL Subscription, see 
+ http://www.tmssoftware.com/go/?vdsub
+
+
+Help, hints, tips, bug reports:
+-------------------------------
+ Send any questions/remarks/suggestions to : help@tmssoftware.com
+
+ Before contacting support about a possible issue with the component
+ you encounter, make sure that you are using the latest version of the 
+ component.
+ If a problem persists with the latest version, provide information 
+ about which Delphi or C++Builder version you are using as well as
+ the operating system and if possible, steps to reproduce the problem
+ you encounter. That will guarantee the fastest turnaround times for
+ your support case. 
+

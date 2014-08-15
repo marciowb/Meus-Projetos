@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{571F900E-A54D-4C22-BA61-7B80E4926780}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="FIBPlus2006.bpl">FIBPlus2006.bdsproj</Projects>
+      <Projects Name="FIBDBMidas2006.bpl">FIBDBMidas2006.bdsproj</Projects>
+      <Projects Name="FIBPlusEditors2006.bpl">FIBPlusEditors2006.bdsproj</Projects>
+      <Projects Name="pFIBPlusTools2006.bpl">Tools\pFIBPlusTools2006.bdsproj</Projects>
+      <Projects Name="Targets">FIBPlus2006.bpl FIBDBMidas2006.bpl FIBPlusEditors2006.bpl pFIBPlusTools2006.bpl</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+	<StarTeamAssociation></StarTeamAssociation>
+	<StarTeamNonRelativeFiles></StarTeamNonRelativeFiles>
+</BorlandProject>

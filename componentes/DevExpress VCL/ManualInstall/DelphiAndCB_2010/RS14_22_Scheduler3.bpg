@@ -1,0 +1,30 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = cxSchedulerRS14.bpl cxSchedulerGridRS14.bpl dclcxSchedulerRS14.bpl \
+  dclcxSchedulerGridRS14.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+cxSchedulerRS14.bpl: ..\..\ExpressScheduler 3\Packages\cxSchedulerRS14.dpk
+  $(DCC)
+
+cxSchedulerGridRS14.bpl: ..\..\ExpressScheduler 3\Packages\cxSchedulerGridRS14.dpk
+  $(DCC)
+
+dclcxSchedulerRS14.bpl: ..\..\ExpressScheduler 3\Packages\dclcxSchedulerRS14.dpk
+  $(DCC)
+
+dclcxSchedulerGridRS14.bpl: ..\..\ExpressScheduler 3\Packages\dclcxSchedulerGridRS14.dpk
+  $(DCC)
+
+

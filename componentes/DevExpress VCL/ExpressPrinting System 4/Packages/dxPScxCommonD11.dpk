@@ -1,0 +1,47 @@
+package dxPScxCommonD11;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressPrinting System 4 Cross Platform Library by Developer Express Inc.'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dxPSCoreD11,
+  dxPSLnksD11,
+  cxLibraryD11,
+  cxDataD11,
+  cxEditorsD11,
+  cxExtEditorsD11,
+  cxPageControlD11;
+
+contains
+  dxPScxCommon,
+  dxPScxDBEditorLnks,
+  dxPScxEditorLnks,
+  dxPScxEditorProducers,
+  dxPScxImgLnk,
+  dxPScxListBoxLnk;
+
+end.

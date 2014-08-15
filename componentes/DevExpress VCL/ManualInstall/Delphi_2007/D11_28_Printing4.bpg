@@ -1,0 +1,151 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dxPSCoreD11.bpl dxPSLnksD11.bpl dxPScxCommonD11.bpl \
+  dxPScxExtCommonD11.bpl dxPScxGrid6LnkD11.bpl dxPScxPCProdD11.bpl \
+  dxPScxPivotGrid2LnkD11.bpl dxPScxScheduler3LnkD11.bpl dxPScxSSLnkD11.bpl \
+  dxPScxTL5LnkD11.bpl dxPScxVGridLnkD11.bpl dxPSTeeChartD11.bpl dxPSDBTeeChartD11.bpl \
+  dxPSdxOCLnkD11.bpl dxPSdxDBOCLnkD11.bpl dxPSdxDBTVLnkD11.bpl dxPSdxFCLnkD11.bpl \
+  dxPSdxLC2LnkD11.bpl dxPSdxMVLnkD11.bpl dxPsPrVwAdvD11.bpl dxPSPrVwRibbonD11.bpl \
+  dcldxPSCoreD11.bpl dcldxPSLnksD11.bpl dcldxPScxCommonD11.bpl \
+  dcldxPScxExtCommonD11.bpl dcldxPScxGrid6LnkD11.bpl dcldxPScxPivotGrid2LnkD11.bpl \
+  dcldxPScxScheduler3LnkD11.bpl dcldxPScxSSLnkD11.bpl dcldxPScxTL5LnkD11.bpl \
+  dcldxPScxVGridLnkD11.bpl dcldxPSTeeChartD11.bpl dcldxPSDBTeeChartD11.bpl \
+  dcldxPSdxOCLnkD11.bpl dcldxPSdxDBOCLnkD11.bpl dcldxPSdxDBTVLnkD11.bpl \
+  dcldxPSdxFCLnkD11.bpl dcldxPSdxLC2LnkD11.bpl dcldxPSdxMVLnkD11.bpl \
+  dcldxPsPrVwAdvD11.bpl dcldxPSPrVwRibbonD11.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dxPSCoreD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPSCoreD11.dpk
+  $(DCC)
+
+dxPSLnksD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPSLnksD11.dpk
+  $(DCC)
+
+dxPScxCommonD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPScxCommonD11.dpk
+  $(DCC)
+
+dxPScxExtCommonD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPScxExtCommonD11.dpk
+  $(DCC)
+
+dxPScxGrid6LnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPScxGrid6LnkD11.dpk
+  $(DCC)
+
+dxPScxPCProdD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPScxPCProdD11.dpk
+  $(DCC)
+
+dxPScxPivotGrid2LnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPScxPivotGrid2LnkD11.dpk
+  $(DCC)
+
+dxPScxScheduler3LnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPScxScheduler3LnkD11.dpk
+  $(DCC)
+
+dxPScxSSLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPScxSSLnkD11.dpk
+  $(DCC)
+
+dxPScxTL5LnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPScxTL5LnkD11.dpk
+  $(DCC)
+
+dxPScxVGridLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPScxVGridLnkD11.dpk
+  $(DCC)
+
+dxPSTeeChartD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPSTeeChartD11.dpk
+  $(DCC)
+
+dxPSDBTeeChartD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPSDBTeeChartD11.dpk
+  $(DCC)
+
+dxPSdxOCLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPSdxOCLnkD11.dpk
+  $(DCC)
+
+dxPSdxDBOCLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPSdxDBOCLnkD11.dpk
+  $(DCC)
+
+dxPSdxDBTVLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPSdxDBTVLnkD11.dpk
+  $(DCC)
+
+dxPSdxFCLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPSdxFCLnkD11.dpk
+  $(DCC)
+
+dxPSdxLC2LnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPSdxLC2LnkD11.dpk
+  $(DCC)
+
+dxPSdxMVLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPSdxMVLnkD11.dpk
+  $(DCC)
+
+dxPsPrVwAdvD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPsPrVwAdvD11.dpk
+  $(DCC)
+
+dxPSPrVwRibbonD11.bpl: ..\..\ExpressPrinting System 4\Packages\dxPSPrVwRibbonD11.dpk
+  $(DCC)
+
+dcldxPSCoreD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPSCoreD11.dpk
+  $(DCC)
+
+dcldxPSLnksD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPSLnksD11.dpk
+  $(DCC)
+
+dcldxPScxCommonD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPScxCommonD11.dpk
+  $(DCC)
+
+dcldxPScxExtCommonD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPScxExtCommonD11.dpk
+  $(DCC)
+
+dcldxPScxGrid6LnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPScxGrid6LnkD11.dpk
+  $(DCC)
+
+dcldxPScxPivotGrid2LnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPScxPivotGrid2LnkD11.dpk
+  $(DCC)
+
+dcldxPScxScheduler3LnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPScxScheduler3LnkD11.dpk
+  $(DCC)
+
+dcldxPScxSSLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPScxSSLnkD11.dpk
+  $(DCC)
+
+dcldxPScxTL5LnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPScxTL5LnkD11.dpk
+  $(DCC)
+
+dcldxPScxVGridLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPScxVGridLnkD11.dpk
+  $(DCC)
+
+dcldxPSTeeChartD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPSTeeChartD11.dpk
+  $(DCC)
+
+dcldxPSDBTeeChartD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPSDBTeeChartD11.dpk
+  $(DCC)
+
+dcldxPSdxOCLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPSdxOCLnkD11.dpk
+  $(DCC)
+
+dcldxPSdxDBOCLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPSdxDBOCLnkD11.dpk
+  $(DCC)
+
+dcldxPSdxDBTVLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPSdxDBTVLnkD11.dpk
+  $(DCC)
+
+dcldxPSdxFCLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPSdxFCLnkD11.dpk
+  $(DCC)
+
+dcldxPSdxLC2LnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPSdxLC2LnkD11.dpk
+  $(DCC)
+
+dcldxPSdxMVLnkD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPSdxMVLnkD11.dpk
+  $(DCC)
+
+dcldxPsPrVwAdvD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPsPrVwAdvD11.dpk
+  $(DCC)
+
+dcldxPSPrVwRibbonD11.bpl: ..\..\ExpressPrinting System 4\Packages\dcldxPSPrVwRibbonD11.dpk
+  $(DCC)
+

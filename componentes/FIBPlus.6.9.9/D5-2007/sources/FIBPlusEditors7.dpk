@@ -1,0 +1,61 @@
+package FIBPlusEditors7;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'FIBPlus Property Editors'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  vcldb,
+  vclx,
+  designide,
+  FIBPlus7,
+  rtl,
+  dbrtl,
+  visualdbclx,
+  visualclx,
+  vclactnband;
+
+contains
+  RegFIBPlusEditors in 'Editors\RegFIBPlusEditors.pas',
+  EdFieldInfo in 'Editors\EdFieldInfo.pas' {frmFields},
+  EdDataSetInfo in 'Editors\EdDataSetInfo.pas' {frmEdDataSetInfo},
+  pFIBDBEdit in 'Editors\pFIBDBEdit.pas' {DBEditForm},
+  pFIBTrEdit in 'Editors\pFIBTrEdit.pas' {frmTransEdit},
+  pFIBConditionsEdit in 'Editors\pFIBConditionsEdit.pas' {frmEditCheckStrings},
+  pFIBAutoUpdEditor in 'Editors\pFIBAutoUpdEditor.pas' {pFIBAutoUpdateOptionForm},
+  pFIBDataSetOptions in 'Editors\pFIBDataSetOptions.pas' {FPDataSetOptionsForm},
+  EdParamToFields in 'Editors\EdParamToFields.pas' {frmEdParamToFields},
+  fraSQLEdit in 'Editors\fraSQLEdit.pas' {fSQLEdit: TFrame},
+  fraDSSQLEdit in 'Editors\fraDSSQLEdit.pas' {fDSSQLEdit: TFrame},
+  fraAutoUpdEditor in 'Editors\fraAutoUpdEditor.pas' {fAutoUpdateOptionForm: TFrame},
+  fraConditionsEdit in 'Editors\fraConditionsEdit.pas' {fraEdConditions: TFrame},
+  FIBSQLEditor in 'Editors\FIBSQLEditor.pas' {frmSQLEdit},
+  FIBDataSQLEditor in 'Editors\FIBDataSQLEditor.pas' {frmDstSQLedit},
+  EdErrorInfo in 'Editors\EdErrorInfo.pas' {frmErrors},
+  ToCodeEditor in 'Editors\ToCodeEditor.pas',
+  ToCodeEditorIntfs in 'Editors\ToCodeEditorIntfs.pas';
+
+end.

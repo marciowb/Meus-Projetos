@@ -1,0 +1,44 @@
+package gtDocEngD50;
+
+{$R *.RES}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Gnostice eDocEngine'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  vcl50,
+  gtCompressionD50,
+  gtFiltersD50,
+  gtRtlD50,
+  vcljpg50;
+
+contains
+  gtXportIntf in 'gtXportIntf.pas',
+  gtDocConsts in 'gtDocConsts.pas',
+  gtMetafileProcessor in 'gtMetafileProcessor.pas',
+  gtCstDocEng in 'gtCstDocEng.pas',
+  gtDocUtils in 'gtDocUtils.pas',
+  gtDocResStrs in 'gtDocResStrs.pas';
+
+end.

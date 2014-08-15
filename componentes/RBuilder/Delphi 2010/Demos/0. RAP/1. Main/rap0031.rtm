@@ -1,0 +1,208 @@
+object TppReport
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'Letter 8 ½ x 11 in'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  SaveAsTemplate = True
+  Template.FileName = 
+    'D:\Program Files\Borland\Delphi5\RBuilder Pro 4\Demos\0. RAP\1. ' +
+    'Main\rap0031.rtm'
+  Template.Format = ftASCII
+  UserName = 'Report'
+  DeviceType = 'Screen'
+  Language = lgEnglish
+  Version = '4.24 Pro'
+  mmColumnWidth = 0
+  object ppHeaderBand1: TppHeaderBand
+    PrintHeight = phDynamic
+    mmBottomOffset = 0
+    mmHeight = 69850
+    mmPrintPosition = 0
+    object ppMemo1: TppMemo
+      UserName = 'Memo1'
+      Caption = 'Memo1'
+      CharWrap = False
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = []
+      Lines.Strings = (
+        
+          'The following function is not standard to RAP but has been regis' +
+          'tered by calling raRegisterFunction in the MyRapFuncs0031.pas un' +
+          'it. '
+        
+          'If you look in the Code Toolbox you will see this new function i' +
+          'n the Language tab under Functions|String.'
+        ''
+        'Trim()'
+        ''
+        'See MyRapFunc0031.pas for more information.')
+      Stretch = True
+      Transparent = True
+      mmHeight = 36513
+      mmLeft = 3175
+      mmTop = 16404
+      mmWidth = 139436
+      BandType = 0
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      mmLeading = 0
+    end
+    object ppLabel1: TppLabel
+      UserName = 'Label1'
+      Caption = 'The following displays a string before and after trimming:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clGray
+      Font.Name = 'Arial'
+      Font.Size = 14
+      Font.Style = []
+      Transparent = True
+      mmHeight = 5821
+      mmLeft = 3175
+      mmTop = 62177
+      mmWidth = 125413
+      BandType = 0
+    end
+    object ppLabel2: TppLabel
+      UserName = 'Label2'
+      Caption = 'RAP Demo - Registering a New Function'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold, fsItalic]
+      Transparent = True
+      mmHeight = 4763
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 80698
+      BandType = 0
+    end
+    object ppLine1: TppLine
+      UserName = 'Line1'
+      Pen.Color = clGray
+      ParentWidth = True
+      Position = lpBottom
+      Weight = 0.75
+      mmHeight = 3969
+      mmLeft = 0
+      mmTop = 55563
+      mmWidth = 203200
+      BandType = 0
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 16140
+    mmPrintPosition = 0
+    object ppLabel4: TppLabel
+      UserName = 'Label4'
+      Caption = 'String:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5027
+      mmLeft = 3175
+      mmTop = 2910
+      mmWidth = 13758
+      BandType = 4
+    end
+    object ppVariable4: TppVariable
+      UserName = 'Variable1'
+      CalcOrder = 0
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4763
+      mmLeft = 41540
+      mmTop = 2910
+      mmWidth = 17992
+      BandType = 4
+    end
+    object ppLabel3: TppLabel
+      UserName = 'Label3'
+      Caption = 'Trimmed String:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5027
+      mmLeft = 3175
+      mmTop = 8731
+      mmWidth = 32544
+      BandType = 4
+    end
+    object ppVariable1: TppVariable
+      UserName = 'Variable2'
+      CalcOrder = 1
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4763
+      mmLeft = 41540
+      mmTop = 8731
+      mmWidth = 17992
+      BandType = 4
+    end
+  end
+  object ppFooterBand1: TppFooterBand
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+  end
+  object TraCodeModule
+    ProgramStream = {
+      01060F547261436F6E737450726F6772616D094368696C645479706502120B50
+      726F6772616D4E616D650609436F6E7374616E74730B50726F6772616D547970
+      65070B747450726F63656475726506536F75726365067770726F636564757265
+      20436F6E7374616E74733B0D0A636F6E73740D0A202063735370616365645374
+      72696E67203D202720202020202020202020204120737472696E6720696E206E
+      656564206F66207472696D6D696E672E20202020202020202020273B200D0A62
+      6567696E0D0A0D0A656E643B0D0A0001060D54726156617250726F6772616D09
+      4368696C645479706502110B50726F6772616D4E616D6506095661726961626C
+      65730B50726F6772616D54797065070B747450726F63656475726506536F7572
+      6365064070726F636564757265205661726961626C65733B0D0A7661720D0A20
+      206D79537472696E673A20537472696E673B200D0A626567696E0D0A0D0A656E
+      643B0D0A0001060A54726150726F6772616D094368696C645479706502130B50
+      726F6772616D4E616D65060E476C6F62616C4F6E4372656174650B50726F6772
+      616D54797065070B747450726F63656475726506536F75726365064770726F63
+      656475726520476C6F62616C4F6E4372656174653B0D0A626567696E0D0A2020
+      4D79537472696E67203A3D206373537061636564537472696E673B0D0A656E64
+      3B0D0A0001060F5472614576656E7448616E646C65720B50726F6772616D4E61
+      6D65060F5661726961626C65314F6E43616C630B50726F6772616D5479706507
+      0B747450726F63656475726506536F75726365066570726F6365647572652056
+      61726961626C65314F6E43616C63287661722056616C75653A2056617269616E
+      74293B0D0A626567696E0D0A0D0A202056616C7565203A3D20272227202B204D
+      79537472696E67202B202722273B0D0A20200D0A656E643B0D0A0D436F6D706F
+      6E656E744E616D6506095661726961626C6531094576656E744E616D6506064F
+      6E43616C63074576656E74494402210001060F5472614576656E7448616E646C
+      65720B50726F6772616D4E616D65060F5661726961626C65324F6E43616C630B
+      50726F6772616D54797065070B747450726F63656475726506536F7572636506
+      6970726F636564757265205661726961626C65324F6E43616C63287661722056
+      616C75653A2056617269616E74293B0D0A626567696E0D0A0D0A202056616C75
+      65203A3D20272227202B205472696D284D79537472696E6729202B202722273B
+      0D0A0D0A656E643B0D0A0D436F6D706F6E656E744E616D650609566172696162
+      6C6532094576656E744E616D6506064F6E43616C63074576656E744944022100
+      00}
+  end
+end

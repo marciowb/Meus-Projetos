@@ -1,0 +1,199 @@
+object TppReport
+  AutoStop = False
+  DataPipeline = daBDEQueryDataView1.orders
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'Letter'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.SaveDeviceSettings = False
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  PrinterSetup.PaperSize = 1
+  SaveAsTemplate = True
+  Template.FileName = 'C:\TeamCo\RB Demos\0. RAP\1. Main\rap0052.rtm'
+  Template.Format = ftASCII
+  DeviceType = 'Screen'
+  EmailSettings.ReportFormat = 'PDF'
+  OutlineSettings.CreateNode = True
+  OutlineSettings.CreatePageNodes = True
+  OutlineSettings.Enabled = True
+  OutlineSettings.Visible = True
+  PDFSettings.EmbedFontOptions = []
+  TextSearchSettings.DefaultString = '<FindText>'
+  TextSearchSettings.Enabled = True
+  Version = '11.0'
+  mmColumnWidth = 0
+  DataPipelineName = 'orders'
+  object ppTitleBand1: TppTitleBand
+    mmBottomOffset = 0
+    mmHeight = 66675
+    mmPrintPosition = 0
+    object ppMemo1: TppMemo
+      UserName = 'Memo1'
+      Border.BorderPositions = []
+      Border.Color = clBlack
+      Border.Style = psSolid
+      Border.Visible = False
+      Caption = 'Memo1'
+      CharWrap = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = []
+      Lines.Strings = (
+        
+          'This example shows how to create a data aware chart completely i' +
+          'n RAP code.  Be sure to enable TeeChart near the top of the rbMa' +
+          'in.pas file.')
+      Transparent = True
+      mmHeight = 21167
+      mmLeft = 122767
+      mmTop = 27517
+      mmWidth = 71967
+      BandType = 1
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      mmLeading = 0
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+  end
+  object raCodeModule1: TraCodeModule
+    ProgramStream = {
+      01060D54726156617250726F6772616D094368696C645479706502110B50726F
+      6772616D4E616D6506095661726961626C65730B50726F6772616D5479706507
+      0B747450726F63656475726506536F75726365065F70726F6365647572652056
+      61726961626C65733B0D0A7661720D0A20204643686172743A20547070546565
+      43686172743B0D0A2020464261725365726965733A2054506965536572696573
+      3B0D0A0D0A626567696E0D0A0D0A656E643B0D0A0001060A54726150726F6772
+      616D094368696C645479706502130B50726F6772616D4E616D65060E476C6F62
+      616C4F6E4372656174650B50726F6772616D54797065070B747450726F636564
+      75726506536F757263650C8B01000070726F63656475726520476C6F62616C4F
+      6E4372656174653B0D0A626567696E0D0A2020464368617274203A3D20547070
+      445054656543686172742E437265617465286E696C293B0D0A20204642617253
+      6572696573203A3D20544261725365726965732E437265617465286E696C293B
+      0D0A0D0A20204643686172742E42616E64203A3D205265706F72742E5469746C
+      6542616E643B0D0A20204643686172742E5769647468203A3D20343B0D0A2020
+      4643686172742E486569676874203A3D20322E353B0D0A0D0A20204642617253
+      65726965732E506172656E744368617274203A3D204643686172742E43686172
+      743B0D0A2020464261725365726965732E436C6561723B0D0A20204642617253
+      65726965732E44617461536F75726365203A3D206F72646572733B0D0A202046
+      4261725365726965732E5956616C7565536F75726365203A3D2027416D6F756E
+      7450616964273B0D0A2020464261725365726965732E5856616C7565536F7572
+      6365203A3D20274F726465724E6F273B0D0A0D0A656E643B0D0A0000}
+  end
+  object daDataModule1: TdaDataModule
+    object daBDEQueryDataView1: TdaBDEQueryDataView
+      UserName = 'Query_orders'
+      Height = 131
+      Left = 10
+      NameColumnWidth = 105
+      SizeColumnWidth = 35
+      SortMode = 0
+      Top = 10
+      TypeColumnWidth = 52
+      Width = 200
+      AutoSearchTabOrder = 0
+      object orders: TppChildBDEPipeline
+        AutoCreateFields = False
+        UserName = 'orders'
+        object ppField1: TppField
+          FieldAlias = 'OrderNo'
+          FieldName = 'OrderNo'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 0
+          TableName = 'orders'
+        end
+        object ppField2: TppField
+          FieldAlias = 'AmountPaid'
+          FieldName = 'AmountPaid'
+          FieldLength = 0
+          DataType = dtCurrency
+          DisplayWidth = 10
+          Position = 1
+          TableName = 'orders'
+        end
+      end
+      object daSQL1: TdaSQL
+        CollationType = ctASCII
+        DatabaseName = 'DBDEMOS'
+        DatabaseType = dtParadox
+        DataPipelineName = 'orders'
+        IsCaseSensitive = True
+        LinkColor = clMaroon
+        LinkType = ltMagicSQL
+        MaxSQLFieldAliasLength = 25
+        SQLText.Strings = (
+          'SELECT orders.OrderNo, orders.AmountPaid'
+          'FROM "orders.db" orders'
+          'WHERE ( orders.OrderNo < 1011 )')
+        object daCriteria1: TdaCriteria
+          ChildType = 7
+          Level = 0
+          Operator = dacoLessThan
+          Value = '1011'
+          object TdaField
+            Alias = 'OrderNo'
+            DataType = dtDouble
+            DisplayWidth = 10
+            FieldAlias = 'OrderNo'
+            FieldLength = 0
+            FieldName = 'OrderNo'
+            SQLFieldName = 'OrderNo'
+            TableAlias = 'orders'
+            TableName = 'orders.db'
+            TableSQLAlias = 'orders'
+          end
+          object TdaNumericValue
+            Value = 1011.000000000000000000
+          end
+        end
+        object daField1: TdaField
+          Alias = 'OrderNo'
+          DataType = dtDouble
+          DisplayWidth = 10
+          FieldAlias = 'OrderNo'
+          FieldLength = 0
+          FieldName = 'OrderNo'
+          SQLFieldName = 'OrderNo'
+          TableAlias = 'orders'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object daField2: TdaField
+          Alias = 'AmountPaid'
+          DataType = dtCurrency
+          DisplayWidth = 10
+          FieldAlias = 'AmountPaid'
+          FieldLength = 0
+          FieldName = 'AmountPaid'
+          SQLFieldName = 'AmountPaid'
+          TableAlias = 'orders'
+          TableName = 'orders.db'
+          TableSQLAlias = 'orders'
+        end
+        object daTable1: TdaTable
+          ChildType = 5
+          Alias = 'orders'
+          JoinType = dajtNone
+          SQLAlias = 'orders'
+          TableAlias = 'orders'
+          TableName = 'orders.db'
+        end
+      end
+    end
+  end
+  object ppParameterList1: TppParameterList
+  end
+end

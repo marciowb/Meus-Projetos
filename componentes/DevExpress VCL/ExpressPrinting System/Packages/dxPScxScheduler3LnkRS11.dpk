@@ -1,0 +1,66 @@
+package dxPScxScheduler3LnkRS11;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressPrinting System ReportLink for ExpressScheduler 3 by Developer Express Inc.'}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  designide,
+  rtl,
+  vcl,
+  vcldb,
+  vcljpg,
+  vclx,
+  dxComnRS11,
+  dxCoreRS11,
+  dxThemeRS11,
+  cxDataRS11,
+  dxGDIPlusRS11,
+  cxLibraryRS11,
+  cxEditorsRS11,
+  cxExportRS11,
+  dxPSCoreRS11,
+  cxExtEditorsRS11,
+  dxPSLnksRS11,
+  cxSchedulerRS11,
+  dxPScxCommonRS11,
+  dcldb,
+  dclstd,
+  dcldxCoreRS11,
+  dclcxLibraryRS11,
+  dcldxPSCoreRS11;
+
+contains
+  dxPScxScheduler3Lnk,
+  dxPScxScheduler3LnkReg;
+
+end.

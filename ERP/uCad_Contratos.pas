@@ -259,7 +259,7 @@ var
 begin
   Try
     CdsTemp := TpFIBClientDataSet.Create(nil);
-    SetCds(CdsTemp,tpERPProposta,'IDPROPOSTA = '+IntToStr(idProposta));
+    SetCds(CdsTemp,tpERPProposta,'IDPROPOSTA = '+TipoCampoChaveToStr(idProposta));
     CdsCadastro.FieldByName('IDEMPRESA').Value := CdsTemp.FieldByName('IDEMPRESA').Value;
     CdsCadastro.FieldByName('IDCLIENTE').Value := CdsTemp.FieldByName('IDCLIENTE').Value;
     CdsCadastro.FieldByName('DATA').Value := CdsTemp.FieldByName('DATA').Value;
@@ -267,9 +267,9 @@ begin
     CdsCadastro.FieldByName('IDPERIODICIDADEVISITA').Value := CdsTemp.FieldByName('IDPERIODICIDADEVISITACONTRATO').Value;
     CdsCadastro.FieldByName('OBS').Value := CdsTemp.FieldByName('OBS').Value;
     CdsCadastro.FieldByName('IDPROPOSTA').Value := CdsTemp.FieldByName('IDPROPOSTA').Value;
-    SetCds(CdsTemp,tpERPCondicaoPagamentoProposta,'IDPROPOSTA = '+IntToStr(idProposta));
+    SetCds(CdsTemp,tpERPCondicaoPagamentoProposta,'IDPROPOSTA = '+TipoCampoChaveToStr(idProposta));
     CdsCadastro.FieldByName('IDCONDICAOPAGAMENTO').Value := CdsTemp.FieldByName('IDCONDICAOPAGAMENTO').Value;
-    SetCds(CdsTemp,tpERPItemProposta,'IDPROPOSTA = '+IntToStr(idProposta)+' and P.TIPOPRODUTO = ''S'' ');
+    SetCds(CdsTemp,tpERPItemProposta,'IDPROPOSTA = '+TipoCampoChaveToStr(idProposta)+' and P.TIPOPRODUTO = ''S'' ');
     CdsTemp.First;
     while not CdsTemp.Eof do
     begin
@@ -346,7 +346,7 @@ begin
     tpERPPeridicidade, False, '', '', 'CODIGO', 'IDPERIODICIDADEVISITA');
   ConfiguraEditPesquisa(edtTipoContrato, CdsCadastro, tpERPTipoContrato);
   ConfiguraEditPesquisa(edtCondPagamento, CdsCadastro, tpERPCondicaoPagamento);
-  if (NovoReg) and (idProposta >0 )  then
+  if (NovoReg) and (idProposta = SemID )  then
     ConverteProposta;
   edtEmpresa.SetFocus;
 end;

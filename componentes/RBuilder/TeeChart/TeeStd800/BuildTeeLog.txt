@@ -1,0 +1,101 @@
+
+C:\Users\Raphael\AppData\Local\Temp\mia273E.tmp>set PACKSUFFIX="1214" 
+
+C:\Users\Raphael\AppData\Local\Temp\mia273E.tmp>set DCC="C:\Program Files (x86)\Embarcadero\RAD Studio\7.0\Bin\Dcc32.exe" 
+
+C:\Users\Raphael\AppData\Local\Temp\mia273E.tmp>set SYSTEMDIR="C:\Windows\system32" 
+
+C:\Users\Raphael\AppData\Local\Temp\mia273E.tmp>cd "D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800" 
+
+C:\Users\Raphael\AppData\Local\Temp\mia273E.tmp>D:
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>REM Building dcu's... 
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>Copy ..\..\Source\ppIfDef.pas . /y 
+        1 arquivo(s) copiado(s).
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>"C:\Program Files (x86)\Embarcadero\RAD Studio\7.0\Bin\Dcc32.exe" BuildTee.dpr -B  
+Embarcadero Delphi for Win32 compiler version 21.0
+Copyright (c) 1983,2009 Embarcadero Technologies, Inc.
+4065 lines, 5.69 seconds, 3074020 bytes code, 58944 bytes data.
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>REM Building packages... 
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>"C:\Program Files (x86)\Embarcadero\RAD Studio\7.0\Bin\Dcc32.exe" rbTC"1214".dpk  
+Embarcadero Delphi for Win32 compiler version 21.0
+Copyright (c) 1983,2009 Embarcadero Technologies, Inc.
+39 lines, 0.34 seconds, 36920 bytes code, 100 bytes data.
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>"C:\Program Files (x86)\Embarcadero\RAD Studio\7.0\Bin\Dcc32.exe" rbTCUI"1214".dpk  
+Embarcadero Delphi for Win32 compiler version 21.0
+Copyright (c) 1983,2009 Embarcadero Technologies, Inc.
+44 lines, 0.45 seconds, 18320 bytes code, 100 bytes data.
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>"C:\Program Files (x86)\Embarcadero\RAD Studio\7.0\Bin\Dcc32.exe" rbTDBC"1214".dpk  
+Embarcadero Delphi for Win32 compiler version 21.0
+Copyright (c) 1983,2009 Embarcadero Technologies, Inc.
+623 lines, 0.55 seconds, 16632 bytes code, 84 bytes data.
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>"C:\Program Files (x86)\Embarcadero\RAD Studio\7.0\Bin\Dcc32.exe" dclRBC"1214".dpk  
+Embarcadero Delphi for Win32 compiler version 21.0
+Copyright (c) 1983,2009 Embarcadero Technologies, Inc.
+40 lines, 0.58 seconds, 9736 bytes code, 84 bytes data.
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>REM Copy packages and source 
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>Copy *.pas ..\..\Source /y 
+ppChDPEd.pas
+ppChDPEdDlg.pas
+ppChReg.pas
+ppChrt.pas
+ppChrtDB.pas
+ppChrtDP.pas
+ppChrtUI.pas
+ppIfDef.pas
+ppIfDefTee.pas
+        9 arquivo(s) copiado(s).
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>Copy *.dpk ..\..\Source /y 
+dclRBC1214.dpk
+rbTC1214.dpk
+rbTCUI1214.dpk
+rbTDBC1214.dpk
+        4 arquivo(s) copiado(s).
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>Copy *.dfm ..\..\Source /y 
+ppChDPEdDlg.dfm
+        1 arquivo(s) copiado(s).
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>Copy *.dcu ..\..\Lib /y 
+dclRBC1214.dcu
+ppChDPEdDlg.dcu
+ppChReg.dcu
+ppChrt.dcu
+ppChrtDB.dcu
+ppChrtDP.dcu
+ppChrtUI.dcu
+rbTC1214.dcu
+rbTCUI1214.dcu
+rbTDBC1214.dcu
+       10 arquivo(s) copiado(s).
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>Copy *.dcp ..\..\Lib /y 
+dclRBC1214.dcp
+rbTC1214.dcp
+rbTCUI1214.dcp
+rbTDBC1214.dcp
+        4 arquivo(s) copiado(s).
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>Copy *.dfm ..\..\Lib /y 
+ppChDPEdDlg.dfm
+        1 arquivo(s) copiado(s).
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>copy dcl*.bpl ..\..\Lib /y 
+dclRBC1214.bpl
+        1 arquivo(s) copiado(s).
+
+D:\Meus Projetos\componentes\RBuilder\TeeChart\TeeStd800>copy rb*.bpl "C:\Windows\system32" /y 
+rbTC1214.bpl
+rbTCUI1214.bpl
+rbTDBC1214.bpl
+        3 arquivo(s) copiado(s).

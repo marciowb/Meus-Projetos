@@ -1,0 +1,30 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = gtDocEngD70.bpl gtDocEngD70Pro.bpl gtDocEngD70.bat \
+  DCLgtDocEngD70Pro.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+gtDocEngD70.bpl: gtDocEngD70.dpk
+  $(DCC)
+
+gtDocEngD70Pro.bpl: gtDocEngD70Pro.dpk
+  $(DCC)
+
+DCLgtDocEngD70Pro.bpl: DCLgtDocEngD70Pro.dpk
+  $(DCC)
+
+gtDocEngD70.bat: gtDocEngD70.bat
+  call $**
+
+

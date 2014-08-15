@@ -1,0 +1,824 @@
+LICENSE AGREEMENT
+
+Advantage CA-Clipper RDDs
+Advantage CA-Visual Objects RDDs
+Advantage Client Engine API
+Advantage Crystal Reports Driver
+Advantage Data Architect
+Advantage JDBC Driver
+Advantage .NET Data Provider
+Advantage ODBC Driver
+Advantage OLE DB Provider (for ADO)
+Advantage TDataSet Descendant
+Advantage Delphi Components
+
+    (the “Program(s)”)
+
+
+
+IMPORTANT NOTICE: Read this License Agreement, including the Program
+specific terms at the end of the License Agreement, (collectively, the
+"Agreement") carefully before using the Program.  IF YOU DO NOT AGREE TO
+BE BOUND BY THESE TERMS, YOU MAY NOT USE THE PROGRAM.  By downloading,
+installing, or using the Program in any way, You acknowledge that You
+have read, understand and agree to the terms of this Agreement.  If You
+do not agree with these terms, present your receipt or other proof of
+purchase, together with the Program media, Documentation and packaging
+(if any) to the entity from which You obtained this product within 30
+days to request a refund.  THIS IS A LICENSE AND NOT A SALE.
+
+If You, Your company, or Your public agency have signed a written
+software license agreement with Sybase, Inc., or Sybase Canada Limited
+("Sybase") or a Sybase subsidiary or authorized reseller, covering the
+Use of the Program, the terms of the signed license agreement shall take
+precedence over any conflicting terms of this Agreement.
+
+Installation by Agent or other Third Party.  If you are downloading or
+installing the Program on behalf of another person or entity, you hereby
+represent and warrant that you have the authority to bind the party or
+entity for which you are performing the download or installation to the
+terms and conditions of this Agreement.  If you do not have such
+authority, you may not download or install the Program.
+
+CLICK THE "I AGREE" BUTTON IF YOU WISH TO DOWNLOAD OR INSTALL THE PROGRAM.
+
+
+1.  ABBREVIATIONS AND DEFINITIONS.  Abbreviations and definitions appear
+    at the end of this Agreement.
+
+
+2.  LICENSE.
+
+  2.1 Sybase grants to You a nonexclusive, nontransferable, perpetual
+      license to Use the Program at the location(s) specified on the
+      Order.  Each Program shall be subject to the usage limitations
+      based on quantity and type of license purchased, as indicated on
+      the Order.  You may Use the Program (and accompanying
+      Documentation) solely for Your internal business purposes by Your
+      employees, agents and contractors and on the operating systems
+      specified in the Order, unless otherwise permitted by the type of
+      license purchased.  If the type of license is not indicated in the
+      Order, each copy shall be licensed for a single Seat on a single
+      Machine.  The Program may not be transferred, sold, assigned,
+      sublicensed or otherwise conveyed (whether by operation of law or
+      otherwise) to another party without Sybase's prior written consent
+      and payment of any applicable fees in accordance with Sybase's
+      then current policies.  The Program may be transferred to another
+      Machine, site or Operating System Software only upon prior written
+      notice and subject to Sybase's transfer policies and fees then in
+      effect.  If multiplexing hardware or software is used, the number
+      of Seats shall include all inputs to the multiplexing front end.
+
+  2.2 You understand and agree that some Sybase Programs and license
+      types are subject to additional or supplemental terms and
+      conditions ("Product Specific License Terms") that are posted on
+      www.sybase.com/pslt as of the date of the Order for such Programs.
+      Product Specific License Terms are written and shall be
+      enforceable in the English language.  You acknowledge that You
+      have had the opportunity to review the Product Specific License
+      Terms applicable to each licensed Program prior to placing an
+      Order.  By ordering, installing or using the Program in any way,
+      You acknowledge and agree that You have read, understand and agree
+      to the applicable Product Specific License Terms.
+
+  2.3 You may not copy the Program except (a) to make a reasonable
+      number of copies of each Program solely for inactive backup or
+      archival purposes, and (b) to make the number of Secondary Copies
+      indicated in the Order for the Program.  You may not modify,
+      reverse engineer, decompile or disassemble the Program (except as
+      specifically permitted by law without the possibility of
+      contractual waiver, or as expressly permitted in the
+      Documentation).  Transfer of the Program outside the country in
+      which it was originally delivered to You is not permitted without
+      Sybase's prior written consent and is subject to compliance with
+      all applicable export regulations and restrictions.  If the
+      Program includes more than one component product, Use of all
+      components of the Program is restricted to the same Machine and
+      the Program may not be unbundled for Use on different or
+      additional Machines.  You may not Use the Program for timesharing,
+      hosting, rental or service bureau purposes, or otherwise allow
+      direct or indirect (including over the Internet) access or Use of
+      the Program by any third party (except consultants and contractors
+      performing services for Your benefit as expressly permitted in
+      Sections 2.1 and 5), without Sybase's prior written consent and
+      subject to any applicable fees.  You may contract with a third
+      party ("Outsourcer") to operate the Program on Your behalf and
+      solely for Your benefit; however, You shall remain subject to all
+      of the provisions of this Agreement and shall be liable for
+      Outsourcer's compliance with the provisions of this Agreement.
+      You shall not remove any copyright notices or other proprietary
+      notices from the Program, and shall reproduce such notices on all
+      copies of the Program.  Results of benchmark or other performance
+      tests run on the Program may not be disclosed to any third party
+      without Sybase's prior written consent.
+
+  2.4 You, at Your own expense, shall be responsible for installing the
+      Program and all Updates.
+
+  2.5 Third party products delivered by Sybase that are accompanied by a
+      license agreement from the supplier are provided subject to such
+      supplier license agreement.  The terms of this Agreement shall not
+      apply to such third party products, except that as between You and
+      Sybase, the provisions of this Section 2.5, Section 3, Section 8.4
+      and Section 10.8 shall apply.  SYBASE PROVIDES SUCH THIRD PARTY
+      PRODUCTS "AS IS" WITHOUT ANY INDEMNITIES OR WARRANTIES OF ANY
+      KIND, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, WITHOUT
+      LIMITATION, ANY WARRANTIES OF MERCHANTABILITY, NONINFRINGEMENT,
+      ACCURACY OF INFORMATIONAL CONTENT, CONDITIONS OF MERCHANTABLE
+      QUALITY, OR FITNESS FOR A PARTICULAR PURPOSE.  Sybase shall not be
+      obligated to provide any Support or error correction services for
+      such third party products, but such services may be available from
+      the third party supplier.  Third party products not accompanied by
+      a license agreement from the supplier shall be subject to the
+      terms of this Agreement.
+
+  2.6 No more often than once in any 12-month period, Sybase may, at its
+      expense, upon reasonable notice and during business hours, audit
+      the number of copies of the Program in Use and Your compliance
+      with the applicable usage limitations set forth by this Agreement.
+      The auditors shall protect the confidentiality of Your information
+      and abide by Your reasonable security regulations.  If the Use of
+      the Program is found to be greater than that for which You are
+      licensed, You shall pay any additional amounts due based upon the
+      prices set forth in the Price List.
+
+  2.7 Sybase reserves any and all rights and licenses in and to the
+      Program not expressly granted herein.
+
+
+3.  FEES AND PAYMENT
+
+License and Support fees for the Program are due and payable to Sybase
+Net 30 days after the invoice date if You have acquired the Program
+directly from Sybase; otherwise such fees are due and payable in
+accordance with the reseller's policies.  You shall pay all applicable
+shipping and handling charges, and sales, use, value added, personal
+property, or similar taxes, tariffs or governmental charges, exclusive
+of those based upon Sybase's or its reseller's income and corporate
+franchise taxes.  You will reimburse Sybase for all reasonable costs
+incurred (including reasonable attorneys' fees) in collecting past due
+amounts.
+
+
+4.  SUPPORT AND TECHNICAL SERVICES.
+
+  4.1 The payment of license fees does not entitle You to Support
+      services or software Updates, however, Support and Updates are
+      available from Sybase under this Agreement upon the payment of
+      additional fees.  Fees for Support ("Support Fees") shall be paid
+      annually in advance.  Support may be extended for one-year periods
+      at the Support Fees set forth in the Price List for as long as
+      Sybase offers Support for the applicable Program.  If You do not
+      provide a valid Purchase Order or written acknowledgement for the
+      renewal of Support prior to expiration, Support will be suspended
+      on the expiration date.  Once Support has been suspended, You may
+      reinstate Support only by paying Sybase's then current
+      reinstatement fee.
+
+  4.2 Sybase will provide You the level of Support corresponding to the
+      Support Plan specified on the Order, subject to Your payment of
+      applicable Support Fees.  Support will be provided in accordance
+      with Sybase's then current plan description for such Support Plan
+      solely to Your authorized support contacts for the "Supported
+      Program" listed on such Order.  "Supported Program" shall mean the
+      then current Major Version of a listed Program running on the
+      specified Operating System Software and, for a period of 12 months
+      after introduction of a new Major Version of such Program, the
+      immediately preceding Major Version of the Program.  If You
+      purchase Support for any Program in Use on a Machine or in a
+      network, You must purchase the same level of Support for all
+      copies of such Program on such Machine or network.  As part of
+      such Support service, Sybase will use commercially reasonable
+      efforts to correct or circumvent reported errors in the Supported
+      Program that can be reproduced at a Sybase support facility.
+      Sybase shall have no obligation to provide Support with respect
+      to: (i) Use of any Program on any computer system other than the
+      specified Machine and Operating System Software; (ii) Use of any
+      version of the Program modified by You in breach of this
+      Agreement; or (iii) Use of versions of different co-operating
+      Supported Programs that are not specified in the applicable
+      Documentation to execute correctly together on a Machine or in a
+      network.  Sybase has no obligation to modify any version of the
+      Program to run with new versions of the Operating System Software.
+      Sybase reserves the right to make corrections only to the most
+      current generally available Major Version of the Program.
+
+  4.3 You understand and agree that some Updates are subject to Product
+      Specific License Terms that are posted on www.sybase.com/pslt and
+      also that the provisions of this License Agreement apply to a
+      software Update as well as to a Program.
+
+  4.4 The payment of license fees does not entitle You to consulting or
+      education services, however, such services are available under
+      this Agreement upon the payment of additional fees.  Consulting
+      services provided under this Agreement will be billed on a time
+      and materials basis.
+
+
+5.  CONFIDENTIALITY.
+
+"Confidential Information" shall include the Program (including methods
+or concepts utilized therein) and all information identified by Sybase
+as proprietary or confidential.  Confidential Information shall remain
+the sole property of Sybase and shall not be disclosed to any third
+party without the express written consent of Sybase; except that You may
+disclose Confidential Information to consultants performing services for
+Your benefit, provided that such consultants are bound by a written
+non-disclosure agreement with You that protects such Confidential
+Information in a manner consistent with this Agreement.  Except with
+respect to the Program, items will not be deemed Confidential
+Information if (i) available to the public other than by a breach of an
+agreement with Sybase; (ii) rightfully received from a third party not
+in breach of any obligation of confidentiality; (iii) independently
+developed by You without access to the Confidential Information; or (iv)
+if proven to have been known to You at the time of disclosure.  You
+shall immediately inform Sybase if You are required to produce
+Confidential Information by operation of law, and if so requested by
+Sybase, shall provide reasonable assistance to Sybase in seeking to
+limit such production.  A copyright notice on a Program does not, by
+itself, constitute evidence of publication or public disclosure.
+
+
+6.  INFRINGEMENT INDEMNITY.
+
+Sybase, at its own expense, agrees to (a) defend, or at its option
+settle, any claim or suit against You on the basis of infringement of
+any copyright, trademark, trade secret or United States patent
+("Intellectual Property Rights") by Your Use of the Program, and (b) pay
+any final judgment entered against You on such issue or any settlement
+thereof, provided (i) You give Sybase sole control of the defense and/or
+settlement; (ii) You notify Sybase promptly in writing of each such
+claim or suit and give Sybase all information known to You relating
+thereto, and (iii) You cooperate with Sybase in the settlement and/or
+defense.  (You will be reimbursed for all reasonable out-of-pocket
+expenses incurred in providing any cooperation requested by Sybase.) If
+all or any part of the Program is, or in the opinion of Sybase may
+become, the subject of any claim or suit for infringement of any
+Intellectual Property Right, or in the event of any adjudication that
+the Program or any part does infringe, or if Your Use of the Program or
+any part is enjoined, Sybase, at its expense, may either: (a) procure
+for You the right to Use the Program or the affected part; (b) replace
+the Program or affected part; (c) modify the Program or affected part to
+make it non-infringing; or (d) if none of the foregoing remedies are
+commercially and reasonably feasible, refund to You the license fees
+received by Sybase for the Program.  Sybase shall have no obligation to
+the extent a claim is based upon (a) Use of any version of the Program
+other than a current, unaltered version, if infringement would have been
+avoided by a current, unaltered version; (b) combination, operation or
+Use of the Program with software and/or hardware not delivered by Sybase
+or recommended by Sybase in the Documentation, if such infringement
+could have been avoided by not combining, operating or using the Program
+with such software and/or hardware, or (c) any modifications to the
+Program which were not made by Sybase.  This Section 6 states the entire
+liability of Sybase and Your exclusive remedy with respect to any
+infringement or alleged infringement by the Program or any part thereof.
+
+
+7.  PROPRIETARY RIGHTS AND OWNERSHIP.
+
+All of the copyright and intellectual property rights in the Program,
+Documentation and all copies thereof are owned by Sybase or its
+subsidiaries, or their respective suppliers and are protected by
+copyright and/or trade secret laws and international treaty provisions.
+You acquire only the non-exclusive, non-transferable right to Use the
+Program as permitted herein, and do not acquire any rights of ownership
+in the Program.
+
+
+8.  LIMITED WARRANTY AND LIMITATIONS ON LIABILITY.
+
+  8.1 Unless otherwise specified in the Documentation, for a period of
+      90 days from the date of shipment (or date on which an electronic
+      download access code is made available) to You, Sybase warrants
+      that the Program, when Used in accordance with the Documentation,
+      will operate in material conformity with such Documentation and
+      the Program media shall be free of defects.  In the event of a
+      non-conforming Program or defective media, Your sole remedy shall
+      be, at Sybase's option, replacement of the defective Program or a
+      refund of the license fees received by Sybase for the affected
+      Program.  This limited warranty gives You specific legal rights.
+      You may have other rights that vary from jurisdiction to
+      jurisdiction.  Sybase warranties extend solely to You, the
+      original licensee.
+
+  8.2 SYBASE DISCLAIMS ALL OTHER WARRANTIES AND CONDITIONS, EXPRESS OR
+      IMPLIED, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+      MERCHANTABILITY, NONINFRINGEMENT, ACCURACY OF INFORMATIONAL
+      CONTENT, FITNESS FOR A PARTICULAR PURPOSE, AND CONDITIONS OF
+      MERCHANTABLE QUALITY, WHETHER ARISING BY STATUTE OR IN LAW OR AS A
+      RESULT OF A COURSE OF DEALING OR USAGE OF TRADE, WITH RESPECT TO
+      THE PROGRAM, DOCUMENTATION, SUPPORT OR OTHER SERVICES RELATED TO
+      THE PROGRAM.  Some jurisdictions do not allow limitations on
+      implied warranties so the above limitations may not apply to You.
+      NO WARRANTY IS MADE REGARDING THE RESULTS TO BE OBTAINED FROM ANY
+      PROGRAM OR SERVICES, THAT THE PROGRAM WILL BE ERROR FREE, THAT ALL
+      ERRORS IN THE PROGRAM WILL BE CORRECTED, OR THAT THE PROGRAM'S
+      FUNCTIONALITY WILL MEET YOUR REQUIREMENTS.  YOU ACKNOWLEDGE YOUR
+      RESPONSIBILITY TO (a) REGULARLY BACK UP DATA, AND (b) ADEQUATELY
+      TEST PROGRAM PRIOR TO DEPLOYMENT.
+
+  8.3 The Program and third party products are not fault-tolerant and
+      are not designed, manufactured or intended for Use in the control
+      of nuclear facilities, aircraft navigation or communication
+      systems, air traffic control, direct life support machines,
+      weapons systems, or other applications in which the failure of the
+      Program could lead directly to death, personal injury, or severe
+      physical or environmental damage, and Sybase and its suppliers
+      specifically disclaim any express or implied warranty of fitness
+      for such purposes.
+
+  8.4 LIMITATIONS ON LIABILITY.  NEITHER SYBASE, ITS SUBSIDIARIES, NOR
+      ANY OF ITS LICENSORS SHALL BE LIABLE FOR ANY LOSS OR INACCURACY OF
+      DATA, LOSS OF PROFITS OR INDIRECT, SPECIAL, INCIDENTAL OR
+      CONSEQUENTIAL DAMAGES, WHETHER BASED ON CONTRACT, TORT OR OTHER
+      LEGAL THEORY, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE
+      POSSIBILITY OF SUCH DAMAGES.  THE TOTAL LIABILITY OF SYBASE AND
+      ITS SUBSIDIARIES, IF ANY, ARISING OUT OF THIS AGREEMENT OR YOUR
+      USE OF THE PROGRAM OR RELATED SERVICES SHALL NOT EXCEED AN AMOUNT
+      EQUAL TO THE LICENSE OR SERVICE FEES PAID FOR THE PROGRAM OR
+      SERVICES GIVING RISE TO THE CLAIM.  LICENSORS OF SOFTWARE
+      COMPONENTS INCLUDED IN SYBASE PRODUCTS SHALL NOT BE LIABLE FOR
+      DIRECT DAMAGES.  Some jurisdictions do not allow the exclusion or
+      limitation of certain damages, so the above limitations and
+      exclusions may not apply to You.
+
+
+9.  TERM AND TERMINATION.
+
+This license is effective until terminated.  Sybase may terminate a
+license if You have not paid any fees due within 15 calendar days after
+written notice that payment is past due.  You may terminate the license
+at any time by destroying the Program and documentation.  Either party
+may terminate this Agreement upon any other material breach of this
+Agreement by the other party that has not been corrected within 60
+calendar days after written notice.  Upon termination of this Agreement,
+all licenses granted hereunder shall terminate, You shall cease Using
+the Program and Documentation (whether or not modified or merged into
+other materials) and You shall certify in writing to Sybase that all
+copies (in any form or media) have been destroyed or returned to Sybase.
+Termination shall not relieve You from paying all fees accruing prior to
+termination and shall not limit either party from pursuing any other
+available remedies.  Sections 1, 5, 6, 7, 8, 9, 10 and 11 shall survive
+termination of this Agreement.
+
+
+10.  GENERAL
+
+  10.1 Neither this Agreement nor any license granted hereunder may be
+      assigned by You (whether by operation of law or otherwise) without
+      Sybase's prior written consent.  Any such purported assignment
+      shall be void.
+
+  10.2 This Agreement is the entire agreement of the parties and
+      supersedes all previous and contemporaneous communications,
+      representations, or agreements regarding the subject matter
+      hereof.  This Agreement may be modified only in writing signed by
+      both parties.  Purchase Orders shall be binding as to the products
+      and services ordered, the fees due and the site for installation
+      or performance of services.  Other terms and preprinted terms on
+      or attached to any Purchase Order shall be void.
+
+  10.3 You shall not transfer, directly or indirectly, any restricted
+      Program or technical data received from Sybase or its
+      subsidiaries, or the direct product of such data, to any
+      destination or entity subject to export restrictions under U.S.
+      law, unless prior written authorization is obtained from the
+      appropriate U.S.  agency.
+
+  10.4 Sybase shall not be liable by reason of any failure or delay in
+      the performance of its obligations hereunder on account of: acts
+      by You, acts of God or the public enemy, war, terrorism, riots,
+      strike, embargo, acts of civil or military authority,
+      unavailability of communications facilities or energy sources, or
+      any other cause that is beyond the reasonable control of Sybase.
+
+  10.5 All notices relating to this Agreement shall be in writing and
+      delivered to the other party by overnight delivery service or
+      first class prepaid mail with return receipt requested (in the
+      case of Sybase to the attention of its General Counsel).
+
+  10.6 The Program is restricted commercial computer software.  If this
+      license is acquired under a U.S.  Government contract, Use,
+      duplication or disclosure by the U.S.  Government is subject to
+      restrictions set forth in this Agreement or in a written license
+      agreement that incorporates applicable FAR provisions, for example
+      FAR 52.227-19.  Sybase reserves all unpublished rights under the
+      United States copyright laws.
+
+  10.7 If any provision of this Agreement is held to be unenforceable,
+      the parties shall substitute for the affected provision an
+      enforceable provision that approximates the intent and economic
+      effect of the affected provision.  The failure or delay by either
+      party to enforce any term of this Agreement shall not be deemed a
+      waiver of such term.
+
+  10.8 This Agreement shall be governed by, and construed and enforced
+      in accordance with the laws of the State of California without
+      regard to conflict of law principles.  Jurisdiction and venue over
+      any dispute arising under this Agreement shall lie exclusively
+      within the state and/or federal courts of the State of California,
+      and each of the parties hereby irrevocably submits to the
+      jurisdiction of the state and federal courts of the State of
+      California.  The United Nations Convention on the International
+      Sale of Goods, the application of which is expressly excluded,
+      shall not govern this Agreement.  The parties agree that the
+      Uniform Computer Information Transactions Act or any version
+      thereof adopted by any state in any form ("UCITA") shall not apply
+      to this Agreement.  To the extent that UCITA is applicable, the
+      parties agree to opt out of the applicability of UCITA pursuant to
+      the Opt-Out provision(s) contained therein.
+
+  10.9 If you have any questions about this Agreement, write to Sybase,
+      Inc., Attn: General Counsel, One Sybase Drive, Dublin, CA 94568.
+
+
+11.  ABBREVIATIONS AND DEFINITIONS.
+
+  "Agreement" - This License Agreement, together with any applicable
+  Supplements and Product Specific License Terms, and each Order.
+
+  "Application License" or "AP" - The limited right to install the
+  Program on any server at the single physical location (or approved
+  hosting site) specified for such license in the applicable Order.
+
+  "Cluster License", or "CL" - The limited right to Use the Program on
+  any number of Servers at the Site specified for such license in the
+  applicable Order, but only if each such Server is part of a
+  load-balanced or failover configuration and in the aggregate provide
+  no greater access to the Program or any associated data than would be
+  provided by a single Server operating alone.
+
+  "Cold Standby" - A Cold Standby Program shall be limited to the
+  Machine running the operating system shown on the Order, at a site
+  shown on the Order.  A Cold Standby Program is a copy of a Program
+  that is deployed on a separate Machine as a backup to process data
+  that is periodically updated from data residing on Customer's primary
+  production Machine.  In the event of a failure of the production copy
+  or production Machine, the Cold Standby Program may be used to access
+  and process such updated data.  A Cold Standby Program may not be
+  accessed or Used in production at the same time as the primary
+  production copy.  The Cold Standby Program must be licensed for the
+  same number of Seats or Concurrent Users, as applicable, as the
+  production copy.  Programs for which a Cold Standby License is
+  available may be found at www.sybase.com/pslt.
+
+  "Concurrent User License" or "CU" - The limited right for a maximum
+  number of users, as indicated in the applicable Order, to directly or
+  indirectly access a single server copy of a Program at any one time.
+  Under the Concurrent User license model, each Concurrent User may only
+  access a single, identifiable licensed server.
+
+  "CPU Fee" or "IC" - The license fee payable by Customer for each copy
+  of the Program shall be determined by multiplying the number of
+  processors ("CPUs") by the applicable rate, each as specified on the
+  Order.  In the event that the number of processors on the Machine is
+  increased, Customer shall report such increase, execute a new Exhibit
+  A and pay an additional amount determined by multiplying the
+  incremental processors by the then applicable rate per processor set
+  forth in the Price List.
+
+  "CPU License", or "CP" - The license fee payable by Customer for each
+  copy of the Program shall be determined by multiplying the total
+  number of processors on a Machine ("CPUs") by the applicable rate each
+  as specified on the Order.  In the event that the number of processors
+  on the Machine is increased, Customer shall report such increase,
+  execute a new Exhibit A, and pay an additional amount determined by
+  multiplying the incremental processors by the then applicable rate per
+  processor set forth in the Price List.  The number of users shall be
+  limited only by the capacity of the licensed CPUs, and may include
+  internal users within the Customer's organization, and external users
+  outside of the Customers organization accessing the Program via the
+  Internet ("Internet Users").  Internet Users may not Use the Program
+  to develop or modify applications or perform other programming tasks,
+  and may only Use the Program in conjunction with Customer's
+  applications.
+
+  "Development and Testing License" or "DT" - The limited right to Use a
+  Program for development and testing purposes only and not in a
+  parallel production environment.  DT licenses are CPU-based.  See CPU
+  License.  A DT license is not limited to a Standalone Seat
+
+  "Documentation" - Installation instructions and user manuals supplied
+  with the Program.
+
+  "ESD" - Electronic Software Download.
+
+  "Exhibit A" - a standard form purchase-authorizing document made
+  available by Sybase which may be substituted for a Purchase Order.
+
+  "Hot Standby" - A Hot Standby license permits a copy of a Program to
+  be loaded onto one or more Machines in a cluster environment where
+  monitoring for a failure of the production copy of the Program occurs
+  automatically and continuously and failover to the Hot Standby Program
+  is automatic.  A Hot Standby Program may not be accessed or Used in
+  production at the same time as the primary production copy.  The Hot
+  Standby Program must be licensed for the same number of Seats or
+  Concurrent Users, as applicable, as the production copy.  Programs for
+  which a Hot Standby License is available will be specified in the then
+  current Price List.
+
+  "Internet Access License" or "IAL" - a limited right to permit access
+  to a licensed Program by a number of "External Internet Seats" which
+  shall be limited only by the capacity of the Machine, provided
+  Customer has paid the applicable CPU fees for each processor on such
+  Machine.  "External Internet Seats" shall mean Seats which access the
+  specified Program via the Internet; provided that the person at such
+  Seat is not acting in the capacity of an employee, agent or
+  independent contractor of Customer.  External Internet Seats may query
+  the Program database and update such database to the extent allowed by
+  Customer's application, but may not use the Program to develop or
+  modify applications or perform other programming tasks.  Customer may
+  not Use the specified Program in connection with a website hosted by
+  Customer on behalf of third parties.  An Internet Access License does
+  not cover intranet usage or other internal usage and Customer must
+  acquire the necessary Seat licenses for all internal usage of the
+  Program.  If Customer purchases (or renews) Support for a Program for
+  which an Internet Access License has been obtained, Customer shall
+  purchase the same level of Support for the Internet Access License as
+  for such Program.
+
+  "Machine" - A single computer hardware system identified on the
+  applicable Order running a single copy of the Operating System
+  Software.
+
+  "Mainframe Base" or "MB" - The basic license fee applicable for
+  certain mainframe Programs based upon the mainframe Machine model set
+  forth in the applicable Order.  For each copy of a Program designated
+  as license type MB, Customer shall also pay the applicable MSU License
+  fee based upon the then current MSU rating of the mainframe Machine.
+  See also "MSU (Millions of Service Units) License".
+
+  "Major Version" or "Major Release" - A major Update release of the
+  Programs containing new features and functions as well as error
+  corrections.
+
+  "MSU (Millions of Service Units) License" or "MU" - The license fee
+  payable by Customer for each copy of the Program shall be determined
+  by multiplying the number of MSUs for the Machine by the applicable
+  rate and adding the applicable Mainframe Base rate thereto, all as
+  specified in the applicable Order.  In the event that the number of
+  MSUs for the Machine is increased, Customer shall report such
+  increase, execute a new Exhibit A, and pay an additional amount
+  determined by multiplying the incremental number of MSUs by the then
+  applicable MSU rate for the Program and adding any incremental base
+  rate fee thereto, all as set forth in the Price List.  The number of
+  users shall be limited only by the capacity of the licensed MSUs, and
+  may include internal users within the Customer's organization, and
+  external users outside of the Customers organization accessing the
+  Program via the Internet ("Internet Users").  Internet Users may not
+  Use the Program to develop or modify applications or perform other
+  programming tasks, and may only Use the Program in conjunction with
+  Customer's applications.
+
+  "Networked License" - The limited right to access any licensed server
+  in the network from any licensed Seat.
+
+  "Networked Seat" - see "Seat".
+
+  "Operating System Software" - The operating system software listed in
+  the Order applicable to the relevant copy of the Program.
+
+  "Order" - a Purchase Order or Exhibit A signed by Customer and
+  accepted by Sybase.
+
+  "OT" - denotes "other", for products or services included on an Order
+  that are not otherwise defined.
+
+  "Price List" - Sybase's then current price list for the country in
+  which the Program is to be installed.
+
+  "Primary Copy" - a licensed copy of the Program provided by Sybase,
+  including a copy provided initially as a trial copy.
+
+  "Program" - the object code version of the software product(s) listed
+  in the Order, as well as any and all Updates and authorized copies.
+  Although the Program media may contain other software products,
+  Customer is licensed to install and Use only the designated Program.
+
+  "Purchase Order" - a purchase order or other purchase-authorizing
+  document issued by Customer for Sybase products and/or services and
+  accepted by Sybase, as confirmed by a Sybase invoice.
+
+  "Quantity of Licenses" - the number of copies, Servers, Seats,
+  Concurrent Users or CPUs, as applicable, licensed for a particular
+  Program pursuant to an Order.
+
+  "Seat", or "ST" - a specific identifiable unique accessor of
+  information such as (but not limited to) a terminal, personal
+  computer, single user workstation, personal digital assistant ("PDA"),
+  wireless or real time device.
+
+  "Secondary Copy" - a licensed copy of the Program reproduced by
+  Customer from the Primary Copy.
+
+  "Server" or "SR" - a computer containing software, which permits it to
+  await and fulfill services to other computers.
+
+  "Standalone Seat" or "SS" - The limited right to install the Program
+  on a single workstation Machine (and not a server Machine) for access
+  solely by the single workstation Machine upon which it resides.
+
+  "Standby Concurrent User", or "SC" - Permits installation of a back up
+  copy of a Program licensed under a Concurrent User License.
+
+  "Standby CPU" or "SF" - Permits installation of a back up copy of a
+  Program licensed under a CPU License, either "CP" or "IC".  See "CPU
+  License" and "CPU Fee".
+
+  "Standby Seat" or "SE" - Permits installation of a back up copy of a
+  Program licensed under a Networked License.
+
+  "Standby Server" or "SV" - Permits a copy of a Program to be installed
+  as a back up in the event of an interruption in the operation of a
+  production copy of the same Program.  See further, "Cold Standby",
+  "Warm Standby" and "Hot Standby".
+
+  "Support" - The technical support plan selected by Customer.
+
+  "Transactions" means the number of inbound messages plus the number of
+  outbound messages processed.
+
+  "Updates" means error corrections, maintenance releases and Major
+  Version releases of the Program made available to Sybase customers
+  under certain Sybase Support plans.
+
+  "Upgrade" means (i) transfer of the Program to a Machine of a higher
+  Sybase Machine Class, i.e.  transfer to a Machine that provides
+  greater processing capacity, or (ii) Customer migration from one
+  edition of a Program to another edition with increased functionality,
+  e.g.  from Advanced Edition to Enterprise Edition.
+
+  "Use" - to load, view, print, update, access, utilize, or store the
+  Program.
+
+  "Warm Standby" - A Warm Standby Program shall be limited to the
+  Machine running the operating system shown on the Order, at a site
+  shown on the Order.  A Warm Standby Program is an operating copy of a
+  Program deployed on a separate Machine as a backup to process data
+  that is automatically and continuously being replicated from
+  Customer's primary production Machine.  A Warm Standby Program may not
+  be accessed or Used in production at the same time as the primary
+  production copy.  In the event of a failure of the production copy or
+  production Machine, the Warm Standby Program may be Used to access
+  such replicated data.  The Warm Standby Program must be licensed for
+  the same number of Seats or Concurrent Users, as applicable, as the
+  production copy.  Programs for which a Warm Standby License is
+  available may be found at www.sybase.com/pslt.
+
+
+
+In addition to the terms and conditions of the License Agreement, the
+following additional or different Program specific terms and conditions
+shall apply to the Program for which you have purchased a license:
+
+A.  Additional Definitions.  "Advantage Database Server" is defined to
+    mean the remote Advantage Database Server product that executes on a
+    Novell NetWare, Microsoft Windows NT/2000/XP/2003, or Linux OS.
+    "Advantage Local Server" is a module that allows an application
+    developed with an Advantage client product to execute in local and
+    peer-to-peer environments without the presence of an Advantage
+    Database Server.
+
+B.  License Grant.
+
+  i.  License to Use Program.  You are only granted a non-exclusive,
+      non-transferable, perpetual right to use the Program for purposes
+      of designing, developing, and testing Your software product(s)
+      that are designed to interoperate with the Advantage Database
+      Server or Advantage Local Server.  You may install copies of the
+      Program on an unlimited number of Your Machines.
+
+  ii. Redistributable Components.
+
+    (a) Sample Code.  In addition to the rights granted above, You are
+        granted the right to use, modify, and copy the source code
+        version of those portions of the Program designated as "Sample
+        Code" for the sole purposes of designing, developing, and
+        testing your software product(s), and to reproduce and
+        distribute the Sample Code, along with any modifications
+        thereof, only in compiled and linked binary code form provided
+        that you comply with the Redistribution Requirements stated
+        below.  If the source code is used, modified, or copied by the
+        licensee, Sybase, Inc.  reserves the right to receive from the
+        licensee, upon request, at no cost to Sybase, Inc., the
+        modifications.
+
+    (b) Redistributable Components.  In addition to the rights stated
+        above, You are granted a nonexclusive, royalty-free right to
+        reproduce and distribute the object code version of the portions
+        of the Program referred to in the Documentation as
+        redistributable with your application ("Redistributable
+        Software"), provided you comply with the Redistribution
+        Requirements below.
+
+    (c) Redistribution Requirements.  If You redistribute the Sample
+        Code or Redistributable Software, You agree to:
+
+      1) Distribute the Sample Code or Redistributable Software in
+         object code only in conjunction with and as a part of a
+         software application product developed by You that adds
+         significant and primary functionality to the Program, and that
+         operates with the Advantage Database Server or Advantage Local
+         Server.
+
+      2) Not use the name, logo, or trademarks of Sybase or any of its
+         affiliates to market your software application product.
+
+      3) Include a valid Sybase copyright notice on your software
+         product, such as "Portions of this application contain
+         copyrighted (c) material of Sybase, Inc".
+
+      4) Indemnify, hold harmless, and defend Sybase and its affiliates
+         from and against any claims or lawsuits, including attorney's
+         fees, that arise or result from the use or distribution of Your
+         software application product.
+
+      5) Not permit further distribution of the Sample Code or
+         Redistributables by the end user.
+
+  iii.Advantage Local Server Connections.  If Your application using
+      the Program is distributed to work without the Advantage Database
+      Server (i.e., it uses the Advantage Local Server to access data),
+      the application must act as a "client" that directly accesses and
+      uses the data.  For purposes of clarification, only computers that
+      have the Advantage Local Server DLL loaded into memory can have
+      access to the data that is obtained by that Advantage Local Server
+      DLL.  The application cannot act as "middleware" or as a "server"
+      by having the data forwarded by any means to a separate computer.
+      In other words, it is illegal to use the Advantage Local Server
+      with a Web server, an application server, a terminal server, or
+      any other type of middleware or server product to access data on
+      behalf of remote computers.  An Advantage Database Server (a.k.a.
+      remote server) product must be purchased and used to allow the
+      Program to access data on behalf of applications running on remote
+      computers.
+
+C.  Support and Technical Services.  Section 4.0 (Support and Technical
+    Services) of the Agreement is amended as follows:
+
+      You are not entitled to any maintenance, technical support
+      services or any updates or new versions of the Program in
+      connection with this developer license.  Maintenance and support
+      may be obtained for a fee.
+
+D.  Warranty/Limitation of Liability.  Section 8.1 (Warranty/Limitations
+    of Liability) of the Agreement is amended as follows:
+
+      The Program is provided AS IS, without any warranty whatsoever.
+      SYBASE DISCLAIMS ALL WARRANTIES AND CONDITIONS, EXPRESS OR
+      IMPLIED, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+      MERCHANTABILITY, NONINFRINGEMENT, ACCURACY OF INFORMATIONAL
+      CONTENT, FITNESS FOR A PARTICULAR PURPOSE, AND CONDITIONS OF
+      MERCHANTABLE QUALITY, WHETHER ARISING BY STATUTE OR IN LAW OR AS A
+      RESULT OF A COURSE OF DEALING OR USAGE OF TRADE, WITH RESPECT TO
+      THE PROGRAM, DOCUMENTATION, SUPPORT OR OTHER SERVICES RELATED TO
+      THE PROGRAM.  NO WARRANTY IS MADE REGARDING THE RESULTS TO BE
+      OBTAINED FROM ANY PROGRAM OR SERVICES, THAT THE PROGRAM WILL BE
+      ERROR FREE, THAT ALL ERRORS IN THE PROGRAM WILL BE CORRECTED, OR
+      THAT THE PROGRAM’S FUNCTIONALITY WILL MEET YOUR REQUIREMENTS.  YOU
+      ACKNOWLEDGE YOUR RESPONSIBILITY TO (a) REGULARLY BACK UP DATA, AND
+      (b) ADEQUATELY TEST PROGRAM PRIOR TO DEPLOYMENT (IF A DEPLOYMENT
+      LICENSE IS OBTAINED).  Some jurisdictions do not allow the
+      exclusion of certain warranties, so the above exclusions may not
+      apply to you.
+
+E.  Termination.  Section 9 (Termination) of the Agreement is amended as
+    follows:
+
+      This Agreement and license are effective until terminated.  You
+      may terminate the Agreement and the license at any time by
+      destroying the Program(s) and Documentation.  This Agreement and
+      the license will also terminate automatically if You fail to
+      comply with any term or condition of this Agreement.  Upon such
+      termination, You agree to destroy the Program(s) and
+      Documentation.  All disclaimers of warranties and limitations of
+      liability shall survive any termination of this Agreement.
+
+F.  Free Download Components.
+
+      The Program, including any software provided with it, may include
+      certain third party open source and other free download components
+      (“Free Download Components”).  You may have additional rights in
+      the Free Download Components that are provided by the third party
+      licensors of those components.  The Free Download Components and
+      any such third party licenses and third party-required notices for
+      the Program are identified at
+      http://www.sybase.com/thirdpartylegal (third party licenses and
+      notices for Free Download Components are identified under the
+      name(s) of the licensed Program).  Any obligations undertaken by
+      iAnywhere in the Agreement relating to the Free Download
+      Components as part of the Program are provided by iAnywhere alone,
+      and not by the third party licensors of the Free Download
+      Components.  A.  FURTHER DISCLAIMER OF WARRANTIES AND LIABILITIES.
+      The Free Download Components are provided “AS IS” by the third
+      party licensors, who disclaim all liabilities, damages (even if
+      they have been advised of the possibility of such damages),
+      warranties, indemnities and other obligations of any kind, express
+      or implied, with regard to the Free Download Components.  Nothing
+      in the foregoing affects any performance warranty provided by
+      iAnywhere with regard to the Program as a whole.  B.  Disclaimer
+      of Indemnities.  The Free Download Components are excluded from
+      any indemnity provided by iAnywhere or its subsidiaries in the
+      Agreement.
+
+

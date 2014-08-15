@@ -1,0 +1,132 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{9543a493-0ca1-421c-a8b6-528411f687b3}</ProjectGuid>
+			<MainSource>adsd2010dstudio.dpk</MainSource>
+			<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+			<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+			<DCC_DependencyCheckOutputName>C:\Documents and Settings\All Users\Documents\RAD Studio\6.0\Bpl\adsd2010dstudio.bpl</DCC_DependencyCheckOutputName>
+			<ProjectVersion>11.1</ProjectVersion>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_Release)'!=''">
+			<Cfg_Release>true</Cfg_Release>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_Debug)'!=''">
+			<Cfg_Debug>true</Cfg_Debug>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
+			<BRCC_Defines>COMPONENT;$(BRCC_Defines)</BRCC_Defines>
+			<DCC_DependencyCheckOutputName>C:\Documents and Settings\All Users\Documents\RAD Studio\7.0\Bpl\adsd2010dstudio.bpl</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_Description>Advantage TDataSet Descendant Components</DCC_Description>
+			<DesignOnlyPackage>true</DesignOnlyPackage>
+			<DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+			<GenDll>true</GenDll>
+			<DCC_WriteableConstants>true</DCC_WriteableConstants>
+			<GenPackage>true</GenPackage>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_Release)'!=''">
+			<Version>7.0</Version>
+			<DCC_DebugInformation>False</DCC_DebugInformation>
+			<DCC_WriteableConstants>True</DCC_WriteableConstants>
+			<DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+			<DCC_Optimize>False</DCC_Optimize>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_UnitAlias>WinTypes=Borland.Vcl.Windows;WinProcs=Borland.Vcl.Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;</DCC_UnitAlias>
+			<DCC_NameSpace>Borland.Vcl</DCC_NameSpace>
+			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_StackSize>4096,1048576</DCC_StackSize>
+			<DCC_Define>RELEASE</DCC_Define>
+			<DCC_UNSAFE_TYPE>True</DCC_UNSAFE_TYPE>
+			<DCC_UNSAFE_CODE>True</DCC_UNSAFE_CODE>
+			<DCC_UNSAFE_CAST>True</DCC_UNSAFE_CAST>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_Debug)'!=''">
+			<Version>7.0</Version>
+			<DCC_WriteableConstants>True</DCC_WriteableConstants>
+			<DCC_Optimize>False</DCC_Optimize>
+			<DCC_UnitAlias>WinTypes=Borland.Vcl.Windows;WinProcs=Borland.Vcl.Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;</DCC_UnitAlias>
+			<DCC_NameSpace>Borland.Vcl</DCC_NameSpace>
+			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_StackSize>4096,1048576</DCC_StackSize>
+			<DCC_UNSAFE_TYPE>True</DCC_UNSAFE_TYPE>
+			<DCC_UNSAFE_CODE>True</DCC_UNSAFE_CODE>
+			<DCC_UNSAFE_CAST>True</DCC_UNSAFE_CAST>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="adsd2010dstudio.dpk">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="vcl.dcp"/>
+			<DCCReference Include="designide.dcp"/>
+			<DCCReference Include="adsd2010studio.dcp"/>
+			<DCCReference Include="dcldb.dcp"/>
+			<DCCReference Include="adsdesign.pas"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_Release</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_Debug</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType>Package</Borland.ProjectType>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">9</VersionInfo>
+						<VersionInfo Name="MinorVer">10</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">1</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">iAnywhere, Inc</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">Advantage TDataSet Descendant Design-time Components for RAD Studio 2010</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">9.10.0.1</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName">Advantage TDataSet Descendant Design-time Components for RAD Studio 2010</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalCopyright">Portions Copyright © 2005-2008, iAnywhere Solutions, Inc. Copyright © Extended Systems, Inc. 1996-2005 </VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">Advantage TDataSet Descendant Design-time Components for RAD Studio 2010</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">9.10.0.1</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Source>
+						<Source Name="MainSource">adsd2010dstudio.dpk</Source>
+					</Source>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

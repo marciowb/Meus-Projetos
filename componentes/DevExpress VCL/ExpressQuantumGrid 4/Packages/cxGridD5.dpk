@@ -1,0 +1,62 @@
+package cxGridD5;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressQuantumGrid 4 (VCL Edition) by Developer Express Inc.'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl50,
+  cxEditorsD5,
+  cxExportD5;
+
+contains
+  cxFilterDialog,
+  cxDBExtLookupComboBox,
+  cxGrid,
+  cxGridBandedTableView,
+  cxGridCardView,
+  cxGridCommon,
+  cxGridCustomTableView,
+  cxGridCustomView,
+  cxGridDBBandedTableView,
+  cxGridDBCardView,
+  cxGridDBDataDefinitions,
+  cxGridDBTableView,
+  cxGridDetailsSite,
+  cxGridLevel,
+  cxGridRows,
+  cxGridTableView,
+  cxGridViewData,
+  cxExportGrid4Link,
+  cxGridStrs,
+  cxGridFilterHelpers;
+
+end.

@@ -1,0 +1,69 @@
+package ExceptionExpert14;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'EurekaLog'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  designide,
+  rtl,
+  vcl;
+
+contains
+  EIDEOptions in 'EIDEOptions.pas' {IDEOptionsForm},
+  EOption in 'EOption.pas' {OptionsForm},
+  ExceptionLog in 'ExceptionLog.pas',
+  EBaseModule in 'EBaseModule.pas',
+  ETypes in 'ETypes.pas',
+  ECore in 'ECore.pas',
+  EConsts in 'EConsts.pas',
+  EHook in 'EHook.pas',
+  EMain in 'EMain.pas',
+  EAbout in 'EAbout.pas' {AboutForm},
+  ELang in 'ELang.pas',
+  EDesign in 'EDesign.pas',
+  EWait in 'EWait.pas' {WaitForm},
+  ESockets in 'ESockets.pas',
+  EResource in 'EResource.pas',
+  EZLib2 in 'EZLib2.pas',
+  ECommon in 'ECommon.pas',
+  EToolsAPI in 'EToolsAPI.pas',
+  EEncrypt in 'EEncrypt.pas',
+  EBase64 in 'EBase64.pas',
+  EListView in 'EListView.pas',
+  ELogManager in 'ELogManager.pas',
+  EParser in 'EParser.pas',
+  EWebTools in 'EWebTools.pas',
+  EXMLBuilder in 'EXMLBuilder.pas',
+  EBorlandDebug in 'EBorlandDebug.pas',
+  EZip in 'EZip.pas',
+  EHash in 'EHash.pas',
+  ELeaks in 'ELeaks.pas',
+  EDebug in 'EDebug.pas',
+  EVariables in 'EVariables.pas' {VariableForm},
+  EMessages in 'EMessages.pas',
+  EDisAsm in 'EDisAsm.pas';
+
+end.

@@ -1,0 +1,457 @@
+object TppReport
+  AutoStop = False
+  DataPipeline = plClients
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'Letter'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  SaveAsTemplate = True
+  Template.FileName = 'D:\Rbldr5\Demos\0. Rap\rap0021.rtm'
+  Template.Format = ftASCII
+  UserName = 'Report'
+  DeviceType = 'Screen'
+  Language = lgEnglish
+  Version = '4.24 Pro'
+  mmColumnWidth = 0
+  object ppHeaderBand1: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 48683
+    mmPrintPosition = 0
+    object ppMemo1: TppMemo
+      UserName = 'Memo1'
+      Caption = 'Memo1'
+      CharWrap = False
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = []
+      Lines.Strings = (
+        'This program prints the value of a global string constant.'
+        ''
+        'To view the RAP code for this example:'
+        ''
+        '1. Select the Calc tab.'
+        '2. Select the View | Module menu option.')
+      Transparent = True
+      mmHeight = 33073
+      mmLeft = 3175
+      mmTop = 9790
+      mmWidth = 98161
+      BandType = 0
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      mmLeading = 0
+    end
+    object ppLabel2: TppLabel
+      UserName = 'Label2'
+      Caption = 'RAP Demo - Global String'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold, fsItalic]
+      Transparent = True
+      mmHeight = 4763
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 51594
+      BandType = 0
+    end
+    object ppLine1: TppLine
+      UserName = 'Line1'
+      Pen.Color = clGray
+      ParentWidth = True
+      Position = lpBottom
+      Weight = 1
+      mmHeight = 3969
+      mmLeft = 0
+      mmTop = 41804
+      mmWidth = 203200
+      BandType = 0
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+    object ppLabel1: TppLabel
+      UserName = 'Label1'
+      Caption = 'Label1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5821
+      mmLeft = 4763
+      mmTop = 2646
+      mmWidth = 16404
+      BandType = 4
+    end
+  end
+  object ppFooterBand1: TppFooterBand
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+  end
+  object TraCodeModule
+    ProgramStream = {
+      01060F547261436F6E737450726F6772616D094368696C645479706502120B50
+      726F6772616D4E616D650609436F6E7374616E74730B50726F6772616D547970
+      65070B747450726F63656475726506536F75726365065670726F636564757265
+      20436F6E7374616E74733B0D0A636F6E73740D0A2020676343617074696F6E20
+      3D20274920616D206120676C6F62616C20737472696E67273B0D0A200D0A6265
+      67696E0D0A0D0A656E643B0D0A0001060F5472614576656E7448616E646C6572
+      0B50726F6772616D4E616D65060D4C6162656C314F6E5072696E740B50726F67
+      72616D54797065070B747450726F63656475726506536F75726365064770726F
+      636564757265204C6162656C314F6E5072696E743B0D0A626567696E0D0A2020
+      4C6162656C312E43617074696F6E203A3D20676343617074696F6E3B0D0A656E
+      643B0D0A0D436F6D706F6E656E744E616D6506064C6162656C31094576656E74
+      4E616D6506074F6E5072696E74074576656E74494402200000}
+  end
+  object TdaDataModule
+    object TdaBDEQueryDataView
+      Left = 10
+      Top = 10
+      Width = 274
+      Height = 607
+      UserName = 'Query_Clients'
+      AutoSearchTabOrder = 0
+      object plClients: TppChildBDEPipeline
+        AutoCreateFields = False
+        UserName = 'plClients'
+        object TppField
+          FieldAlias = 'Last_Name'
+          FieldName = 'LAST_NAME'
+          FieldLength = 20
+          DisplayWidth = 20
+          Position = 0
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'First_Name'
+          FieldName = 'FIRST_NAME'
+          FieldLength = 20
+          DisplayWidth = 20
+          Position = 1
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Acct_Nbr'
+          FieldName = 'ACCT_NBR'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 2
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Address_1'
+          FieldName = 'ADDRESS_1'
+          FieldLength = 20
+          DisplayWidth = 20
+          Position = 3
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'City'
+          FieldName = 'CITY'
+          FieldLength = 20
+          DisplayWidth = 20
+          Position = 4
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'State'
+          FieldName = 'STATE'
+          FieldLength = 2
+          DisplayWidth = 2
+          Position = 5
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Zip'
+          FieldName = 'ZIP'
+          FieldLength = 5
+          DisplayWidth = 5
+          Position = 6
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Telephone'
+          FieldName = 'TELEPHONE'
+          FieldLength = 12
+          DisplayWidth = 12
+          Position = 7
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Date_Open'
+          FieldName = 'DATE_OPEN'
+          FieldLength = 0
+          DataType = dtDate
+          DisplayWidth = 10
+          Position = 8
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Ss_Number'
+          FieldName = 'SS_NUMBER'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 9
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Picture'
+          FieldName = 'PICTURE'
+          FieldLength = 15
+          DisplayWidth = 15
+          Position = 10
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Birth_Date'
+          FieldName = 'BIRTH_DATE'
+          FieldLength = 0
+          DataType = dtDate
+          DisplayWidth = 10
+          Position = 11
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Risk_Level'
+          FieldName = 'RISK_LEVEL'
+          FieldLength = 8
+          DisplayWidth = 8
+          Position = 12
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Occupation'
+          FieldName = 'OCCUPATION'
+          FieldLength = 20
+          DisplayWidth = 20
+          Position = 13
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Objectives'
+          FieldName = 'OBJECTIVES'
+          FieldLength = 10
+          DisplayWidth = 10
+          Position = 14
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Interests'
+          FieldName = 'INTERESTS'
+          FieldLength = 120
+          DisplayWidth = 120
+          Position = 15
+          TableName = 'CLIENTS.DBF'
+        end
+        object TppField
+          FieldAlias = 'Image'
+          FieldName = 'IMAGE'
+          FieldLength = 1
+          DataType = dtBLOB
+          DisplayWidth = 10
+          Position = 16
+          TableName = 'CLIENTS.DBF'
+        end
+      end
+      object TdaSQL
+        DatabaseName = 'DBDEMOS'
+        DataPipelineName = 'plClients'
+        Description = 'Clients'
+        SQLText.Strings = (
+          'SELECT CLIENTS.LAST_NAME, CLIENTS.FIRST_NAME, '
+          '       CLIENTS.ACCT_NBR, CLIENTS.ADDRESS_1, '
+          '       CLIENTS.CITY, CLIENTS.STATE, CLIENTS.ZIP, '
+          '       CLIENTS.TELEPHONE, CLIENTS.DATE_OPEN, '
+          '       CLIENTS.SS_NUMBER, CLIENTS.PICTURE, '
+          '       CLIENTS.BIRTH_DATE, CLIENTS.RISK_LEVEL, '
+          '       CLIENTS.OCCUPATION, CLIENTS.OBJECTIVES, '
+          '       CLIENTS.INTERESTS, CLIENTS.IMAGE'
+          'FROM "CLIENTS.DBF" CLIENTS')
+        object TdaField
+          Alias = 'Last_Name'
+          FieldAlias = 'Last_Name'
+          FieldName = 'LAST_NAME'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'LAST_NAME'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'First_Name'
+          FieldAlias = 'First_Name'
+          FieldName = 'FIRST_NAME'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'FIRST_NAME'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Acct_Nbr'
+          DataType = dtDouble
+          FieldAlias = 'Acct_Nbr'
+          FieldName = 'ACCT_NBR'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'ACCT_NBR'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Address_1'
+          FieldAlias = 'Address_1'
+          FieldName = 'ADDRESS_1'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'ADDRESS_1'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'City'
+          FieldAlias = 'City'
+          FieldName = 'CITY'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'CITY'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'State'
+          FieldAlias = 'State'
+          FieldName = 'STATE'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'STATE'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Zip'
+          FieldAlias = 'Zip'
+          FieldName = 'ZIP'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'ZIP'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Telephone'
+          FieldAlias = 'Telephone'
+          FieldName = 'TELEPHONE'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'TELEPHONE'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Date_Open'
+          DataType = dtDate
+          FieldAlias = 'Date_Open'
+          FieldName = 'DATE_OPEN'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'DATE_OPEN'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Ss_Number'
+          DataType = dtDouble
+          FieldAlias = 'Ss_Number'
+          FieldName = 'SS_NUMBER'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'SS_NUMBER'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Picture'
+          FieldAlias = 'Picture'
+          FieldName = 'PICTURE'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'PICTURE'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Birth_Date'
+          DataType = dtDate
+          FieldAlias = 'Birth_Date'
+          FieldName = 'BIRTH_DATE'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'BIRTH_DATE'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Risk_Level'
+          FieldAlias = 'Risk_Level'
+          FieldName = 'RISK_LEVEL'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'RISK_LEVEL'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Occupation'
+          FieldAlias = 'Occupation'
+          FieldName = 'OCCUPATION'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'OCCUPATION'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Objectives'
+          FieldAlias = 'Objectives'
+          FieldName = 'OBJECTIVES'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'OBJECTIVES'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Interests'
+          FieldAlias = 'Interests'
+          FieldName = 'INTERESTS'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'INTERESTS'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaField
+          Alias = 'Image'
+          DataType = dtBLOB
+          FieldAlias = 'Image'
+          FieldName = 'IMAGE'
+          TableName = 'CLIENTS.DBF'
+          SQLFieldName = 'IMAGE'
+          TableAlias = 'Clients'
+          TableSQLAlias = 'CLIENTS'
+        end
+        object TdaTable
+          ChildType = 5
+          Alias = 'Clients'
+          TableAlias = 'Clients'
+          TableName = 'CLIENTS.DBF'
+          SQLAlias = 'CLIENTS'
+          JoinType = dajtNone
+        end
+      end
+    end
+  end
+end

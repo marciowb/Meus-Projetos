@@ -1,0 +1,154 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{0d00c88d-cf07-4299-9ec2-9513d7718fba}</ProjectGuid>
+			<MainSource>adsdxestudio.dpk</MainSource>
+			<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+			<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+			<DCC_DependencyCheckOutputName>C:\Documents and Settings\All Users\Documents\RAD Studio\8.0\Bpl\adsdxestudio.bpl</DCC_DependencyCheckOutputName>
+			<ProjectVersion>11.1</ProjectVersion>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_Release)'!=''">
+			<Cfg_Release>true</Cfg_Release>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_Debug)'!=''">
+			<Cfg_Debug>true</Cfg_Debug>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_DependencyCheckOutputName>C:\Documents and Settings\All Users\Documents\RAD Studio\8.0\Bpl\adsdxestudio.bpl</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DesignOnlyPackage>false</DesignOnlyPackage>
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Description>Advantage TDataSet Descendant Components</DCC_Description>
+			<RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+			<GenPackage>true</GenPackage>
+			<DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+			<GenDll>true</GenDll>
+			<DCC_WriteableConstants>true</DCC_WriteableConstants>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_Release)'!=''">
+			<Version>7.0</Version>
+			<DCC_DebugInformation>False</DCC_DebugInformation>
+			<DCC_WriteableConstants>True</DCC_WriteableConstants>
+			<DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_UnitAlias>WinTypes=Borland.Vcl.Windows;WinProcs=Borland.Vcl.Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;</DCC_UnitAlias>
+			<DCC_NameSpace>Borland.Vcl</DCC_NameSpace>
+			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_StackSize>4096,1048576</DCC_StackSize>
+			<DCC_Define>RELEASE</DCC_Define>
+			<DCC_UNSAFE_TYPE>True</DCC_UNSAFE_TYPE>
+			<DCC_UNSAFE_CODE>True</DCC_UNSAFE_CODE>
+			<DCC_UNSAFE_CAST>True</DCC_UNSAFE_CAST>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_Debug)'!=''">
+			<Version>7.0</Version>
+			<DCC_DebugInformation>False</DCC_DebugInformation>
+			<DCC_WriteableConstants>True</DCC_WriteableConstants>
+			<DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_UnitAlias>WinTypes=Borland.Vcl.Windows;WinProcs=Borland.Vcl.Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;</DCC_UnitAlias>
+			<DCC_NameSpace>Borland.Vcl</DCC_NameSpace>
+			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_StackSize>4096,1048576</DCC_StackSize>
+			<DCC_UNSAFE_TYPE>True</DCC_UNSAFE_TYPE>
+			<DCC_UNSAFE_CODE>True</DCC_UNSAFE_CODE>
+			<DCC_UNSAFE_CAST>True</DCC_UNSAFE_CAST>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="adsdxestudio.dpk">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="adscnnct.dcr"/>
+			<DCCReference Include="adsdictionary.dcr"/>
+			<DCCReference Include="adsset.dcr"/>
+			<DCCReference Include="adstable.dcr"/>
+			<DCCReference Include="adsbatchmove.dcr"/>
+			<DCCReference Include="vcl.dcp"/>
+			<DCCReference Include="VCLX.dcp"/>
+			<DCCReference Include="VCLDB.dcp"/>
+			<DCCReference Include="..\aceunpub.pas"/>
+			<DCCReference Include="Indexdlg.pas"/>
+			<DCCReference Include="infoexp.pas"/>
+			<DCCReference Include="InfoStru.pas"/>
+			<DCCReference Include="Adsstrng.pas"/>
+			<DCCReference Include="..\ace.pas"/>
+			<DCCReference Include="AdsData.pas"/>
+			<DCCReference Include="Adsfunc.pas"/>
+			<DCCReference Include="..\..\common\Adsver.pas"/>
+			<DCCReference Include="adscnnct.pas"/>
+			<DCCReference Include="adsdictionary.pas"/>
+			<DCCReference Include="adsset.pas"/>
+			<DCCReference Include="adstable.pas"/>
+			<DCCReference Include="AdsAEPSessionMgr.pas"/>
+			<DCCReference Include="AdsBatchMove.pas"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_Release</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_Debug</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType>Package</Borland.ProjectType>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">9</VersionInfo>
+						<VersionInfo Name="MinorVer">10</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">1</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">iAnywhere, Inc</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">Advantage TDataSet Descendant Run-time Components for RAD Studio XE</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">9.10.0.1</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName">Advantage TDataSet Descendant Run-time Components for RAD Studio XE</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalCopyright">Portions Copyright © 2005-2010, iAnywhere Solutions, Inc. Copyright © Extended Systems, Inc. 1996-2005</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">Advantage TDataSet Descendant Run-time Components for RAD Studio XE</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">9.10.0.1</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+						<VersionInfoKeys Name="PrivateBuild"/>
+						<VersionInfoKeys Name="SpecialBuild"/>
+					</VersionInfoKeys>
+					<Source>
+						<Source Name="MainSource">adsdxestudio.dpk</Source>
+					</Source>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

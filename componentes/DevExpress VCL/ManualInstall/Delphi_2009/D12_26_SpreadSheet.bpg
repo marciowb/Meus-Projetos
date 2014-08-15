@@ -1,0 +1,23 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = cxSpreadSheetD12.bpl dclcxSpreadSheetD12.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+cxSpreadSheetD12.bpl: ..\..\ExpressSpreadSheet\Packages\cxSpreadSheetD12.dpk
+  $(DCC)
+
+dclcxSpreadSheetD12.bpl: ..\..\ExpressSpreadSheet\Packages\dclcxSpreadSheetD12.dpk
+  $(DCC)
+
+

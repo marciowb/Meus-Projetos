@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="TSSUIC6.bpl"/>
+    <OBJFILES value="TSSUIC6.obj uSecuReg.obj uAboutUILSecurity.obj uChangePasswordDlg.obj 
+      uChangePasswordForm.obj uFormPolicyDesignerProp.obj uFormPolicyDlg.obj 
+      uLoginDlg.obj uLoginForm.obj uSecDlg.obj uSecDlgForm.obj"/>
+    <RESFILES value="TSSUIC6.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) uAboutUILSecurity.dfm uChangePasswordForm.dfm uLoginForm.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="bdecds.lib cds.lib ibxpress.lib vcldbx.lib bdertl.lib adortl.lib"/>
+    <SPARELIBS value="rtl.lib vcldb.lib adortl.lib bdertl.lib vcldbx.lib"/>
+    <PACKAGES value="rtl.bpi designide.bpi vcl.bpi dbrtl.bpi TSSCoreC6.bpi vcldb.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="TSSUIC6.cpp"/>
+    <INCLUDEPATH value="$(BCB)\Bin;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\tss"/>
+    <LIBPATH value="&quot;C:\Program Files\Intraweb 9.0\LibCB6&quot;;$(BCB)\TSS\Win;$(BCB)\Bin;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\tss;$(BCB)\projects\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\Bin -I$(BCB)\include -I$(BCB)\include\vcl -I$(BCB)\tss 
+      -src_suffix cpp -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tWM"/>
+    <PFLAGS value="-$YD -$W -$O- -$A8 -v -JPHNE -M -LUdesignide"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-D&quot;TMS Security System components&quot; -aa -Tpp -x -Gn -Gl -Gi -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="TSSUIC6.res" FORMNAME="" UNITNAME="TSSUIC6.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TSSUIC6.cpp" FORMNAME="" UNITNAME="TSSUIC6" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\Projects\Lib\rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uSecuReg.pas" FORMNAME="" UNITNAME="uSecuReg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uAboutUILSecurity.pas" FORMNAME="frmAboutUilUtilities" UNITNAME="uAboutUILSecurity" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uChangePasswordDlg.pas" FORMNAME="" UNITNAME="uChangePasswordDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uChangePasswordForm.pas" FORMNAME="uilChangePasswordForm" UNITNAME="uChangePasswordForm" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uFormPolicyDesignerProp.pas" FORMNAME="" UNITNAME="uFormPolicyDesignerProp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uFormPolicyDlg.pas" FORMNAME="" UNITNAME="uFormPolicyDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uLoginDlg.pas" FORMNAME="" UNITNAME="uLoginDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uLoginForm.pas" FORMNAME="uilLoginForm" UNITNAME="uLoginForm" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uSecDlg.pas" FORMNAME="" UNITNAME="uSecDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="uSecDlgForm.pas" FORMNAME="" UNITNAME="uSecDlgForm" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\Projects\Lib\designide.bpi" FORMNAME="" UNITNAME="designide" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\Projects\Lib\vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\Projects\Lib\dbrtl.bpi" FORMNAME="" UNITNAME="dbrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\Projects\Lib\TSSCoreC6.bpi" FORMNAME="" UNITNAME="TSSCoreC6" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\Projects\Lib\vcldb.bpi" FORMNAME="" UNITNAME="vcldb" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=2
+Item0=$(BCB)\Bin;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\tss
+Item1=$(BCB)\Bin;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=3
+Item0=C:\Program Files\Intraweb 9.0\LibCB6;$(BCB)\TSS\Win;$(BCB)\Bin;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\tss;$(BCB)\projects\lib
+Item1=C:\Program Files\Intraweb 9.0\LibCB6;$(BCB)\TSS\Win;$(BCB)\Bin;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\tss
+Item2=C:\Program Files\Intraweb 9.0\LibCB6;$(BCB)\TSS\Win;$(BCB)\Bin;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

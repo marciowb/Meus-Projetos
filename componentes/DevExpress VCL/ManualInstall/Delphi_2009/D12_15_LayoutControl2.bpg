@@ -1,0 +1,23 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dxLayoutControlD12.bpl dcldxLayoutControlD12.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dxLayoutControlD12.bpl: ..\..\ExpressLayout Control 2\Packages\dxLayoutControlD12.dpk
+  $(DCC)
+
+dcldxLayoutControlD12.bpl: ..\..\ExpressLayout Control 2\Packages\dcldxLayoutControlD12.dpk
+  $(DCC)
+
+

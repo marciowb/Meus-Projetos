@@ -1,0 +1,30 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = cxSchedulerD12.bpl cxSchedulerGridD12.bpl dclcxSchedulerD12.bpl \
+  dclcxSchedulerGridD12.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+cxSchedulerD12.bpl: ..\..\ExpressScheduler 3\Packages\cxSchedulerD12.dpk
+  $(DCC)
+
+cxSchedulerGridD12.bpl: ..\..\ExpressScheduler 3\Packages\cxSchedulerGridD12.dpk
+  $(DCC)
+
+dclcxSchedulerD12.bpl: ..\..\ExpressScheduler 3\Packages\dclcxSchedulerD12.dpk
+  $(DCC)
+
+dclcxSchedulerGridD12.bpl: ..\..\ExpressScheduler 3\Packages\dclcxSchedulerGridD12.dpk
+  $(DCC)
+
+

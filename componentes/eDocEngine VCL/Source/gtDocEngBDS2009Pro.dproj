@@ -1,0 +1,220 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{75C5A6B4-ECDD-4440-9C3D-6F517C24D3FF}</ProjectGuid>
+			<MainSource>gtDocEngBDS2009Pro.dpk</MainSource>
+			<ProjectVersion>12.0</ProjectVersion>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_Description>Gnostice eDocEngine</DCC_Description>
+			<RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+			<DCC_DependencyCheckOutputName>..\Lib\BDS2009\gtDocEngBDS2009Pro.bpl</DCC_DependencyCheckOutputName>
+			<DCC_BplOutput>..\Lib\BDS2009</DCC_BplOutput>
+			<DCC_UnitSearchPath>..\Lib\BDS2009;..\..\Shared\Lib\BDS2009;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_DcuOutput>..\Lib\BDS2009</DCC_DcuOutput>
+			<DCC_DcpOutput>..\Lib\BDS2009</DCC_DcpOutput>
+			<GenDll>true</GenDll>
+			<GenPackage>true</GenPackage>
+			<DesignOnlyPackage>false</DesignOnlyPackage>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<BRCC_IncludePath>C:\Applications\CodeGear\RAD Studio\6.0\Quickrep504;$(BRCC_IncludePath)</BRCC_IncludePath>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Platform>x86</DCC_Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="gtDocEngBDS2009Pro.dpk">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="vcl.dcp"/>
+			<DCCReference Include="gtRtlBDS2009.dcp"/>
+			<DCCReference Include="gtFiltersBDS2009.dcp"/>
+			<DCCReference Include="gtCompressionBDS2009.dcp"/>
+			<DCCReference Include="vclim.dcp"/>
+			<DCCReference Include="gtDocEngBDS2009.dcp"/>
+			<DCCReference Include="rtl.dcp"/>
+			<DCCReference Include="gtCryptBDS2009.dcp"/>
+			<DCCReference Include="gtFontBDS2009.dcp"/>
+			<DCCReference Include="inet.dcp"/>
+			<DCCReference Include="gtDocDlg.pas">
+				<Form>gtDocumentDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtSpdDlg.pas">
+				<Form>gtSpreadSheetDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtPlnDlg.pas">
+				<Form>gtPlainSheetDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtGfxDlg.pas">
+				<Form>gtGraphicsDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtHTMLEngDlg.pas"/>
+			<DCCReference Include="gtBMPEng.pas"/>
+			<DCCReference Include="gtBMPEngDlg.pas"/>
+			<DCCReference Include="gtClipboard.pas"/>
+			<DCCReference Include="gtCstGfxEng.pas"/>
+			<DCCReference Include="gtCstHTMLEng.pas"/>
+			<DCCReference Include="gtCstPDFEng.pas"/>
+			<DCCReference Include="gtCstPlnEng.pas"/>
+			<DCCReference Include="gtCstSpdEng.pas"/>
+			<DCCReference Include="gtCstXLSEng.pas"/>
+			<DCCReference Include="gtDIFEng.pas"/>
+			<DCCReference Include="gtDIFEngDlg.pas"/>
+			<DCCReference Include="gtEMFEng.pas"/>
+			<DCCReference Include="gtEMFEngDlg.pas"/>
+			<DCCReference Include="gtExHTMLEng.pas"/>
+			<DCCReference Include="gtExPDFEng.pas"/>
+			<DCCReference Include="gtExXLSEng.pas"/>
+			<DCCReference Include="gtGIFEng.pas"/>
+			<DCCReference Include="gtGIFEngDlg.pas">
+				<Form>gtGIFEngineDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtHTMLEng.pas"/>
+			<DCCReference Include="gtImgPrvwDlg.pas">
+				<Form>gtImgPrvwDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtJPEGEng.pas"/>
+			<DCCReference Include="gtJPEGEngDlg.pas">
+				<Form>gtJPEGEngineDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtLotusEng.pas"/>
+			<DCCReference Include="gtLotusEngDlg.pas"/>
+			<DCCReference Include="gtMetafileEng.pas"/>
+			<DCCReference Include="gtPDFEng.pas"/>
+			<DCCReference Include="gtPDFEngDlg.pas"/>
+			<DCCReference Include="gtPNGEng.pas"/>
+			<DCCReference Include="gtPNGEngDlg.pas">
+				<Form>gtPNGEngineDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtQProEng.pas"/>
+			<DCCReference Include="gtQProEngDlg.pas"/>
+			<DCCReference Include="gtRTFEng.pas"/>
+			<DCCReference Include="gtRTFEngDlg.pas">
+				<Form>gtRTFEngineDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtSLKEng.pas"/>
+			<DCCReference Include="gtSLKEngDlg.pas"/>
+			<DCCReference Include="gtSVGEng.pas"/>
+			<DCCReference Include="gtSVGEngDlg.pas">
+				<Form>gtSVGEngineDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtTIFFEng.pas"/>
+			<DCCReference Include="gtTIFFEngDlg.pas">
+				<Form>gtTIFFEngineDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtTXTEng.pas"/>
+			<DCCReference Include="gtTXTEngDlg.pas">
+				<Form>gtTextEngineDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtWMFEng.pas"/>
+			<DCCReference Include="gtWMFEngDlg.pas">
+				<Form>gtWMFEngineDlg</Form>
+			</DCCReference>
+			<DCCReference Include="gtXHTMLEng.pas"/>
+			<DCCReference Include="gtXHTMLEngDlg.pas"/>
+			<DCCReference Include="gtXLSEng.pas"/>
+			<DCCReference Include="gtXLSEngDlg.pas">
+				<Form>gtExcelEngineDlg</Form>
+			</DCCReference>
+			<DCCReference Include="vcli.dcp"/>
+			<DCCReference Include="vcljpg.dcp"/>
+			<DCCReference Include="gtFontBDS200.dcp"/>
+			<DCCReference Include="gtFontBDS2006.dcp"/>
+			<DCCReference Include="gtCryptBDS200.dcp"/>
+			<DCCReference Include="gtCryptBDS2006.dcp"/>
+			<DCCReference Include="gtDocEngBDS200.dcp"/>
+			<DCCReference Include="gtDocEngBDS2006.dcp"/>
+			<DCCReference Include="gtCompressionBDS200.dcp"/>
+			<DCCReference Include="gtCompressionBDS2006.dcp"/>
+			<DCCReference Include="gtFiltersBDS200.dcp"/>
+			<DCCReference Include="gtFiltersBDS2006.dcp"/>
+			<DCCReference Include="gtRtlBDS200.dcp"/>
+			<DCCReference Include="gtRtlBDS2006.dcp"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType>Package</Borland.ProjectType>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">gtDocEngBDS2009Pro.dpk</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">2</VersionInfo>
+						<VersionInfo Name="MinorVer">5</VersionInfo>
+						<VersionInfo Name="Release">1</VersionInfo>
+						<VersionInfo Name="Build">1</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">Gnostice Information Technologies Pvt Ltd.</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">2.5.1.1</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">Gnostice eDocEngine</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">2.5.1.1</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcboffice2k120.bpl">CodeGear C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcbofficexp120.bpl">CodeGear C++Builder Office XP Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k120.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp120.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

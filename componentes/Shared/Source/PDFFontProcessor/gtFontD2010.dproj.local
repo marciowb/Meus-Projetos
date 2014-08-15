@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008/10/24 11:31:40.121.dproj,D:\Documents and Settings\amaresha\My Documents\RAD Studio\Projects\Package1.dproj=D:\BDS2009Setup\Shared\Source\PDFFontProcessor\gtFontBDS2009.dproj</Transaction>
+    <Transaction>2009/08/14 09:56:13.996.dproj,H:\Sandeep\EDE_2010\EDE_PRO_VSS\Shared\Source\PDFFontProcessor\gtFontBDS2009.dproj=H:\Sandeep\EDE_2010\EDE_PRO_VSS\Shared\Source\PDFFontProcessor\gtFontBDS2010.dproj</Transaction>
+    <Transaction>2009/08/14 13:19:22.514.dproj,H:\Sandeep\EDE_2010\EDE_PRO_VSS\Shared\Source\PDFFontProcessor\gtFontBDS2010.dproj=H:\Sandeep\EDE_2010\EDE_PRO_VSS\Shared\Source\PDFFontProcessor\gtFontBDS2010.dproj</Transaction>
+    <Transaction>2009/08/17 14:43:22.892.dproj,H:\Sandeep\17_08_09\EDE_2010\EDE_PRO_VSS\Shared\Source\PDFFontProcessor\gtFontBDS2010.dproj=H:\Sandeep\17_08_09\EDE_2010\EDE_PRO_VSS\Shared\Source\PDFFontProcessor\gtFontD2010.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

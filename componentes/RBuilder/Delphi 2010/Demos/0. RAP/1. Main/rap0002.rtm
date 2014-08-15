@@ -1,0 +1,680 @@
+object TppReport
+  AutoStop = False
+  PrinterSetup.BinName = 'Auto Select'
+  PrinterSetup.DocumentName = 'ppReport1'
+  PrinterSetup.PaperName = 'Letter'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  PrinterSetup.PaperSize = 1
+  SaveAsTemplate = True
+  Template.FileName = 'C:\RBldr Examples\0. RAP\1. Main\rap0002.rtm'
+  Template.Format = ftASCII
+  DeviceType = 'Screen'
+  Language = lgEnglish
+  Version = '5.6'
+  mmColumnWidth = 0
+  DataPipelineName = 'plStock'
+  object ppTitleBand1: TppTitleBand
+    mmBottomOffset = 0
+    mmHeight = 81756
+    mmPrintPosition = 0
+    object ppMemo1: TppMemo
+      UserName = 'Memo1'
+      Caption = 'Memo1'
+      CharWrap = False
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = []
+      Lines.Strings = (
+        
+          'This report contains a variable in the detail band which calcula' +
+          'tes the cumumlative total of the '#39'current price'#39' field.'
+        ''
+        'A. To view the RAP code for this example from the Calc Dialog:'
+        ''
+        '1. Select Variable1 and press the right mouse button.'
+        '2. Select the Calculations menu option from the popup menu.'
+        ''
+        'B. To View the RAP code from the Calc Tab:'
+        ''
+        '1. Select the Calc tab'
+        '2. Select the View | Variables menu option or'
+        '    Select the View | Events menu option'
+        ''
+        '')
+      Transparent = True
+      mmHeight = 69056
+      mmLeft = 3175
+      mmTop = 9525
+      mmWidth = 120650
+      BandType = 1
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      mmLeading = 0
+    end
+    object ppLabel6: TppLabel
+      UserName = 'Label6'
+      Caption = 'RAP Demo - Cumulative Total'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Name = 'Arial'
+      Font.Size = 12
+      Font.Style = [fsBold, fsItalic]
+      Transparent = True
+      mmHeight = 4763
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 59531
+      BandType = 1
+    end
+  end
+  object ppHeaderBand1: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 16140
+    mmPrintPosition = 0
+    object ppLabel2: TppLabel
+      UserName = 'Label2'
+      Caption = 'Symbol'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clGray
+      Font.Name = 'Arial'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5821
+      mmLeft = 3175
+      mmTop = 7673
+      mmWidth = 18521
+      BandType = 0
+    end
+    object ppLabel1: TppLabel
+      UserName = 'Label1'
+      Caption = 'Recommendation'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clGray
+      Font.Name = 'Arial'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5821
+      mmLeft = 28840
+      mmTop = 7673
+      mmWidth = 42863
+      BandType = 0
+    end
+    object ppLabel3: TppLabel
+      UserName = 'Label3'
+      Caption = 'Current Price'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clGray
+      Font.Name = 'Arial'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 5821
+      mmLeft = 76465
+      mmTop = 7673
+      mmWidth = 32808
+      BandType = 0
+    end
+    object ppLabel4: TppLabel
+      UserName = 'Label4'
+      Caption = 'Cumulative Current Price'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clGray
+      Font.Name = 'Arial'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      WordWrap = True
+      mmHeight = 11642
+      mmLeft = 151607
+      mmTop = 1852
+      mmWidth = 32808
+      BandType = 0
+    end
+    object ppLabel5: TppLabel
+      UserName = 'Label5'
+      Caption = 'Cumulative Current Price'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clGray
+      Font.Name = 'Arial'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      WordWrap = True
+      mmHeight = 11642
+      mmLeft = 114565
+      mmTop = 1852
+      mmWidth = 32808
+      BandType = 0
+    end
+    object ppShape1: TppShape
+      UserName = 'Shape1'
+      Brush.Style = bsClear
+      ParentHeight = True
+      ParentWidth = True
+      Pen.Color = clGray
+      mmHeight = 16140
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 203200
+      BandType = 0
+    end
+  end
+  object ppStockListDetail: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 10054
+    mmPrintPosition = 0
+    object ppDBTextSymbol: TppDBText
+      UserName = 'ppDBTextSymbol'
+      DataField = 'SYMBOL'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Name = 'Wide Latin'
+      Font.Size = 14
+      Font.Style = [fsBold, fsItalic]
+      Transparent = True
+      DataPipelineName = 'plStock'
+      mmHeight = 6085
+      mmLeft = 3175
+      mmTop = 1852
+      mmWidth = 22225
+      BandType = 4
+    end
+    object ppDBText1: TppDBText
+      UserName = 'DBText1'
+      DataField = 'RCMNDATION'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      Transparent = True
+      DataPipelineName = 'plStock'
+      mmHeight = 5821
+      mmLeft = 28575
+      mmTop = 1852
+      mmWidth = 19050
+      BandType = 4
+    end
+    object ppVariable1: TppVariable
+      UserName = 'Variable1'
+      CalcOrder = 0
+      DataType = dtCurrency
+      DisplayFormat = '$#,0.00;($#,0.00)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Name = 'Arial'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      mmHeight = 5821
+      mmLeft = 161132
+      mmTop = 1852
+      mmWidth = 23019
+      BandType = 4
+    end
+    object ppDBText2: TppDBText
+      UserName = 'DBText2'
+      AutoSize = True
+      DataField = 'CUR_PRICE'
+      DisplayFormat = '$#,0.00;($#,0.00)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'plStock'
+      mmHeight = 5821
+      mmLeft = 85990
+      mmTop = 1852
+      mmWidth = 23283
+      BandType = 4
+    end
+    object ppDBCalc1: TppDBCalc
+      UserName = 'DBCalc1'
+      DataField = 'CUR_PRICE'
+      DisplayFormat = '$#,0.00;($#,0.00)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'plStock'
+      mmHeight = 5821
+      mmLeft = 119592
+      mmTop = 1852
+      mmWidth = 27781
+      BandType = 4
+    end
+  end
+  object raCodeModule1: TraCodeModule
+    ProgramStream = {
+      01060F5472614576656E7448616E646C65720B50726F6772616D4E616D65060F
+      5661726961626C65314F6E43616C630B50726F6772616D54797065070B747450
+      726F63656475726506536F75726365066B70726F636564757265205661726961
+      626C65314F6E43616C63287661722056616C75653A2056617269616E74293B0D
+      0A626567696E0D0A0D0A202056616C7565203A3D2056616C7565202B20706C53
+      746F636B5B274375725F5072696365275D3B0D0A0D0A656E643B0D0A0D436F6D
+      706F6E656E744E616D6506095661726961626C6531094576656E744E616D6506
+      064F6E43616C63074576656E74494402210000}
+  end
+  object daDataModule1: TdaDataModule
+    object daBDEQueryDataView1: TdaBDEQueryDataView
+      UserName = 'Query_Stock'
+      Height = 298
+      Left = 10
+      NameColumnWidth = 105
+      SizeColumnWidth = 35
+      SortMode = 0
+      Top = 10
+      TypeColumnWidth = 52
+      Width = 242
+      AutoSearchTabOrder = 0
+      object plStock: TppChildBDEPipeline
+        AutoCreateFields = False
+        UserName = 'plStock'
+        object ppField1: TppField
+          FieldAlias = 'Symbol'
+          FieldName = 'SYMBOL'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 0
+          TableName = 'MASTER'
+        end
+        object ppField2: TppField
+          FieldAlias = 'Co_Name'
+          FieldName = 'CO_NAME'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 1
+          TableName = 'MASTER'
+        end
+        object ppField3: TppField
+          FieldAlias = 'Exchange'
+          FieldName = 'EXCHANGE'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 2
+          TableName = 'MASTER'
+        end
+        object ppField4: TppField
+          FieldAlias = 'Cur_Price'
+          FieldName = 'CUR_PRICE'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 3
+          TableName = 'MASTER'
+        end
+        object ppField5: TppField
+          FieldAlias = 'Yrl_High'
+          FieldName = 'YRL_HIGH'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 4
+          TableName = 'MASTER'
+        end
+        object ppField6: TppField
+          FieldAlias = 'Yrl_Low'
+          FieldName = 'YRL_LOW'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 5
+          TableName = 'MASTER'
+        end
+        object ppField7: TppField
+          FieldAlias = 'P_E_Ratio'
+          FieldName = 'P_E_RATIO'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 6
+          TableName = 'MASTER'
+        end
+        object ppField8: TppField
+          FieldAlias = 'Beta'
+          FieldName = 'BETA'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 7
+          TableName = 'MASTER'
+        end
+        object ppField9: TppField
+          FieldAlias = 'Proj_Grth'
+          FieldName = 'PROJ_GRTH'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 8
+          TableName = 'MASTER'
+        end
+        object ppField10: TppField
+          FieldAlias = 'Industry'
+          FieldName = 'INDUSTRY'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 0
+          Position = 9
+          TableName = 'MASTER'
+        end
+        object ppField11: TppField
+          FieldAlias = 'Price_Chg'
+          FieldName = 'PRICE_CHG'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 0
+          Position = 10
+          TableName = 'MASTER'
+        end
+        object ppField12: TppField
+          FieldAlias = 'Safety'
+          FieldName = 'SAFETY'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 0
+          Position = 11
+          TableName = 'MASTER'
+        end
+        object ppField13: TppField
+          FieldAlias = 'Rating'
+          FieldName = 'RATING'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 12
+          TableName = 'MASTER'
+        end
+        object ppField14: TppField
+          FieldAlias = 'Rank'
+          FieldName = 'RANK'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 13
+          TableName = 'MASTER'
+        end
+        object ppField15: TppField
+          FieldAlias = 'Outlook'
+          FieldName = 'OUTLOOK'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 0
+          Position = 14
+          TableName = 'MASTER'
+        end
+        object ppField16: TppField
+          FieldAlias = 'Rcmndation'
+          FieldName = 'RCMNDATION'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 15
+          TableName = 'MASTER'
+        end
+        object ppField17: TppField
+          FieldAlias = 'Risk'
+          FieldName = 'RISK'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 16
+          TableName = 'MASTER'
+        end
+      end
+      object daSQL1: TdaSQL
+        DatabaseName = 'DBDEMOS'
+        DatabaseType = dtParadox
+        DataPipelineName = 'plStock'
+        LinkColor = clBlack
+        MaxSQLFieldAliasLength = 10
+        SQLText.Strings = (
+          'SELECT MASTER.SYMBOL, MASTER.CO_NAME, '
+          '       MASTER.EXCHANGE, MASTER.CUR_PRICE, '
+          '       MASTER.YRL_HIGH, MASTER.YRL_LOW, '
+          '       MASTER.P_E_RATIO, MASTER.BETA, '
+          '       MASTER.PROJ_GRTH, MASTER.INDUSTRY, '
+          '       MASTER.PRICE_CHG, MASTER.SAFETY, '
+          '       MASTER.RATING, MASTER.RANK, '
+          '       MASTER.OUTLOOK, MASTER.RCMNDATION, '
+          '       MASTER.RISK'
+          'FROM "MASTER.DBF" MASTER'
+          'ORDER BY MASTER.RCMNDATION')
+        SQLType = sqSQL2
+        object TdaField
+          Alias = 'Symbol'
+          DisplayWidth = 0
+          FieldAlias = 'Symbol'
+          FieldLength = 0
+          FieldName = 'SYMBOL'
+          SQLFieldName = 'SYMBOL'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Co_Name'
+          DisplayWidth = 0
+          FieldAlias = 'Co_Name'
+          FieldLength = 0
+          FieldName = 'CO_NAME'
+          SQLFieldName = 'CO_NAME'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Exchange'
+          DisplayWidth = 0
+          FieldAlias = 'Exchange'
+          FieldLength = 0
+          FieldName = 'EXCHANGE'
+          SQLFieldName = 'EXCHANGE'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Cur_Price'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Cur_Price'
+          FieldLength = 0
+          FieldName = 'CUR_PRICE'
+          SQLFieldName = 'CUR_PRICE'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Yrl_High'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Yrl_High'
+          FieldLength = 0
+          FieldName = 'YRL_HIGH'
+          SQLFieldName = 'YRL_HIGH'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Yrl_Low'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Yrl_Low'
+          FieldLength = 0
+          FieldName = 'YRL_LOW'
+          SQLFieldName = 'YRL_LOW'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'P_E_Ratio'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'P_E_Ratio'
+          FieldLength = 0
+          FieldName = 'P_E_RATIO'
+          SQLFieldName = 'P_E_RATIO'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Beta'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Beta'
+          FieldLength = 0
+          FieldName = 'BETA'
+          SQLFieldName = 'BETA'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Proj_Grth'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Proj_Grth'
+          FieldLength = 0
+          FieldName = 'PROJ_GRTH'
+          SQLFieldName = 'PROJ_GRTH'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Industry'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Industry'
+          FieldLength = 0
+          FieldName = 'INDUSTRY'
+          SQLFieldName = 'INDUSTRY'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Price_Chg'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Price_Chg'
+          FieldLength = 0
+          FieldName = 'PRICE_CHG'
+          SQLFieldName = 'PRICE_CHG'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Safety'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Safety'
+          FieldLength = 0
+          FieldName = 'SAFETY'
+          SQLFieldName = 'SAFETY'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Rating'
+          DisplayWidth = 0
+          FieldAlias = 'Rating'
+          FieldLength = 0
+          FieldName = 'RATING'
+          SQLFieldName = 'RATING'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Rank'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Rank'
+          FieldLength = 0
+          FieldName = 'RANK'
+          SQLFieldName = 'RANK'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Outlook'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Outlook'
+          FieldLength = 0
+          FieldName = 'OUTLOOK'
+          SQLFieldName = 'OUTLOOK'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Rcmndation'
+          DisplayWidth = 0
+          FieldAlias = 'Rcmndation'
+          FieldLength = 0
+          FieldName = 'RCMNDATION'
+          SQLFieldName = 'RCMNDATION'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          Alias = 'Risk'
+          DisplayWidth = 0
+          FieldAlias = 'Risk'
+          FieldLength = 0
+          FieldName = 'RISK'
+          SQLFieldName = 'RISK'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaField
+          ChildType = 2
+          Alias = 'Rcmndation'
+          DisplayWidth = 0
+          FieldAlias = 'Rcmndation'
+          FieldLength = 0
+          FieldName = 'RCMNDATION'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+          TableSQLAlias = 'MASTER'
+        end
+        object TdaTable
+          ChildType = 5
+          Alias = 'Master'
+          JoinType = dajtNone
+          SQLAlias = 'MASTER'
+          TableAlias = 'Master'
+          TableName = 'MASTER.DBF'
+        end
+      end
+    end
+  end
+end

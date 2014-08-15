@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2006/06/12 15:14:49.278.bdsgroup,C:\Documents and Settings\Servadmin\My Documents\Borland Studio Projects\ProjectGroup1.bdsgroup=E:\Gnostice\Bhamini\eDocEngineVCL\Source\FR\gtFRExpBDS2006.bdsgroup</Transaction>
+  </Transactions>
+  <Default.Personality>
+    <Projects ActiveProject="DCLgtFRExpBDS2006.bpl"/>
+  </Default.Personality>
+</BorlandProject>

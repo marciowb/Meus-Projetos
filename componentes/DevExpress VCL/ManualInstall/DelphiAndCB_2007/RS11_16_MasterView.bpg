@@ -1,0 +1,23 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dxMasterViewRS11.bpl dcldxMasterViewRS11.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dxMasterViewRS11.bpl: ..\..\ExpressMasterView\Packages\dxMasterViewRS11.dpk
+  $(DCC)
+
+dcldxMasterViewRS11.bpl: ..\..\ExpressMasterView\Packages\dcldxMasterViewRS11.dpk
+  $(DCC)
+
+

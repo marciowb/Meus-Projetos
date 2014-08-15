@@ -1,0 +1,67 @@
+package cxIFPascalScriptD7;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Innerfuse Pascal Script Engine III by Carlo Kok'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  vcl;
+
+contains
+  ifpicall,
+  ifpiclass,
+  ifpiclassruntime,
+  ifpidateutils,
+  ifpidateutilsr,
+  ifpidelphi,
+  ifpidelphiruntime,
+  ifpidll2,
+  ifpidll2runtime,
+  ifpii_classes,
+  ifpii_DB,
+  ifpii_graphics,
+  ifpiir_classes,
+  ifpiir_DB,
+  ifpiir_graphics,
+  ifps3,
+  ifps3common,
+  ifps3debug,
+  ifps3lib_std,
+  ifps3lib_stdr,
+  ifps3utl,
+  ifpscomp,
+  ifpii_std,
+  ifpiir_std;
+
+end.

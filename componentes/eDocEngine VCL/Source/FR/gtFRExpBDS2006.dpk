@@ -1,0 +1,53 @@
+package gtFRExpBDS2006;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Gnostice FRExportInterface'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  gtCryptBDS2006,
+  gtRtlBDS2006,
+  gtFontBDS2006,
+  gtDocEngBDS2006,
+  gtCompressionBDS2006,
+  gtFiltersBDS2006,
+  vcljpg,
+  tee,
+  bdertl,
+  dbrtl,
+  vcldb,
+  designide,
+  xmlrtl,
+  vclactnband,
+  vclx,
+  VclSmp,
+  gtDocEngBDS2006Pro;
+
+contains
+  gtFRXportIntf in 'gtFRXportIntf.pas';
+
+end.

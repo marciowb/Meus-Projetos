@@ -1,0 +1,26 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = gtGmSuiteExpD50.bpl gtGmSuiteExpD50.bat DCLgtGmSuiteExpD50.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+gtGmSuiteExpD50.bpl: gtGmSuiteExpD50.dpk
+  $(DCC)
+
+gtGmSuiteExpD50.bat: gtGmSuiteExpD50.bat
+  call $**
+
+DCLgtGmSuiteExpD50.bpl: DCLgtGmSuiteExpD50.dpk
+  $(DCC)
+
+

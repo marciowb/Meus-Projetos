@@ -1,0 +1,1384 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\froman\fprq2\fcharset0 Times New Roman;}{\f2\fnil\fcharset0 Times New Roman;}{\f3\fswiss\fcharset0 Arial;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\nowidctlpar\tx360\b\f0\fs32 ReportBuilder for Delphi 2010\par
+Enterprise Edition\par
+Release Notes\par
+\pard\nowidctlpar\fs20\par
+\b0\f1\fs24 Digital Metaphors Corporation\par
+4323 Gilbert Ave, #3\par
+Dallas, Texas 75219\par
+\pard\nowidctlpar\tx1800\par
+\pard\nowidctlpar\tx1440 E-Mail: \tab support@digital-metaphors.com\par
+Telephone:\tab 214.239.9471\par
+Facsimile:\tab 267.501.5740\par
+\pard\nowidctlpar Web-Site:\tab www.digital-metaphors.com\par
+\pard\nowidctlpar\tx360\b\f0\fs20\par
+\pard\nowidctlpar\qr\tx360\par
+\pard\nowidctlpar\tx360\b0\fs32 Version 12.0\fs24\par
+\f1 For information regarding what's new for this version, please see the 'What's New' section of the on-line help.\par
+\fs20\par
+\pard\nowidctlpar\b\fs28 Prior installations\par
+\b0\fs24 The installation program will automatically detect and delete any existing version of ReportBuilder for Delphi 6 installed on your system.  The entire root directory in which ReportBuilder is installed will be deleted.  It is therefore imperative that you backup any custom work that may reside in this directory before installing this version. The default install directory is now:\par
+\par
+\pard\nowidctlpar\li720 $(DELPHI)\\RBuilder\par
+\pard\nowidctlpar\par
+This directory is used regardless of whether you are installing ReportBuilder Standard, Professional, or Enterprise.  Note that it is still permitted to have multiple versions of ReportBuilder on the same machine if they are installed with separate Delphi versions.\par
+\par
+\pard\nowidctlpar\tx360\f0\fs32 Delphi 2010 Release Notes:\b\fs24\par
+\f1\fs28\par
+1. dbExpress support\par
+\b0\fs24\par
+ReportBuilder can be used with the dbExpress TSQLClientDataSet component. ReportBuilder does NOT support undirectional datasets and therefore cannot be used with TSQLDataSet, TSQLQuery, TSQLStoredProc, and TSQLTable.\par
+\par
+When using a TSQLClientDataSet with a ReportBuilder report, simply connect a DBPipeline to a standard Delphi DataSource component.\par
+\par
+In order to use the query tools available in the Data workspace of the Report Designer, the Designer component must be configured as shown in the end-user database example in: ...\\RBuilder\\Demos\\EndUser Databases\\Interbase\\dbExpress.\par
+\par
+\b\fs28 2. Issues with Frames\f0\fs20\par
+\b0\f1\fs24\par
+Frames (TFrame) in Delphi are containers that enable collections of components to be visually configured and re-used. Unlike form inheritance, however, Delphi does not permit new components to be added to frame descendants (i.e. frames embedded on forms or other frames). \par
+\par
+Therefore, if a Report object is placed on a frame, the report layout must be maintained entirely in the top level ancestor. You cannot access a form containing the frame and add report components, nor can new report layouts be loaded from templates. \par
+\par
+ReportBuilder's DBPipeline and BDEPipeline components cannot currently be used with frames. Both of these components automatically create Field components (i.e. AutoCreateFields) when a dataset is opened. This behavior will cause access violations if a data pipeline is placed in a descendant frame.\par
+\par
+\f0\fs32\par
+Installation Notes\b\fs20\par
+\b0\par
+\cf1\b\f1\fs28 1. Install ReportBuilder\f0\fs20\par
+\b0\f1\fs24 The installation program will copy files into the ...\\RBuilder directory, add the ReportBuilder components to a 'RBuilder' tab of the Delphi component palette, install the ReportBuilder help into the Delphi help system, and install TeeChart support (if you have TeeChart installed). \par
+\par
+If after installing ReportBuilder and launching Delphi, you do not see the RBuilder tab on the Delphi component palette, access the Component | Install Packages menu option, go to the bottom of the package list, and check each of the ReportBuilder packages.  If the packages are already checked, access the Component | Configure Palette\'85 menu option and move the RBuilder tab up the list, positioning it right before the 'Data Controls' tab.  This will allow you to see the RBuilder tab without scrolling right on the Delphi component palette.\par
+\f0\par
+\b\f1\fs28 2. Review the on-line help\f0\fs20\par
+\b0\f1\fs24 If it appears that ReportBuilder is not installed correctly, use the information in the on-line help to troubleshoot your installation.  The on-line help is located in the RBuilder.hlp file in the RBuilder\\Help directory.  From the table of contents, select 'Installing ReportBuilder'.\par
+\b\f0  \par
+\f1\fs28 3. Convert Reports\f0\fs20\par
+\b0\f1\fs24 ReportBuilder will convert reports that were created with previous versions. Please back-up your existing reports before beginning the conversion process.  Reports converted to the current version will not be useable by previous versions of ReportBuilder.\par
+\par
+The first time you open your reports, a conversion routine will run, assigning the values of discontinued properties to their new counterparts.  Simply opening and closing a form (and saying Yes to the Save Changes? dialog) is enough to convert the reports contained therein to the current format.  If you have reports in RTM files, load the RTMs into a report object at Delphi design-time and then save the RTM to file. Due to the nature of the conversion routine, it will take at least 1-2 seconds for the routine to run when converting reports created with a version previous to ReportBuilder 4.0.\par
+\par
+\ul\f0\fs28\par
+Enhancements\par
+\par
+\ulnone Version 12.0 - 5/11/2010\par
+\par
+\f2 International \fs24\par
+\f1  \bullet   \f2 New Extensible Language Architecture\par
+\par
+\fs28 Report Output Enhancements\fs24\par
+\f1  \bullet   \f2 New PDF Encryption\par
+\f1  \bullet   \f2 New PDF Unicode support\par
+\f1  \bullet   \f2 New PDF Font subsetting (embeds only chars used)\par
+\f1  \bullet   \f2 New RTF Device\par
+\f1  \bullet   \f2 New Doc Device\par
+\f1  \bullet   \f2 New XLSReport Device\par
+\f1  \bullet   \f2 New XLSData Device\par
+\f1  \bullet   \f2 New Bmp Device\par
+\f1  \bullet   \f2 New JPEG Device\par
+\f1  \bullet   \f2 New EMf Device\par
+\f1  \bullet   \f2 New Gif Device\par
+\f1  \bullet   \f2 New Png Device (D2009 & later)\par
+\f1  \bullet   \f2 New Tif Device (D2010 or freeware LibTifDelphi)\par
+\f1  \bullet   \f2 New TextFileDevice.DefaultBands property \par
+\f1  \bullet   \f2 New TextFileDevice default export of detail band elements\par
+\f1  \bullet   \f2 New Report.DefaultFileDeviceType property\par
+\f1  \bullet   \f2 New Printer rendering support for transparent RichText\par
+\par
+*PDF, RTF, Doc, XLS support Unicode for D2009 and later\par
+\par
+\fs28 Report Designer Enhancements\fs24\par
+\f1  \bullet   \f2 New Inspector multi-select support for embedded objects (Font, Border,..)\par
+\f1  \bullet   \f2 New drag-and-drop support for DBRichText\par
+\f1  \bullet   \f2 New ReportWizard support for DBRichText\par
+\f1  \bullet   \f2 New double-click chart invoke Chart editor\par
+\f1  \bullet   \f2 New Extensible International Language Architecture\par
+\par
+\fs28 Report Component Library (RCL) Enhancements\fs24\par
+\f1  \bullet   \f2 New BarCodeType: USPS Intelligent Barcode\par
+\f1  \bullet   \f2 New DetailBand Backgroun1/Background2 (color & gradient)\par
+\f1  \bullet   \f2 New Email by Group support\par
+\f1  \bullet   \f2 New MinimumHeight property for stretchables\par
+\f1  \bullet   \f2 New Gradient Fill support for Shapes\par
+\f1  \bullet   \f2 New DBImage AutoDetect graphic type support\par
+\f1  \bullet   \f2 New Anchor support for [Left, Right] & [Top, Bottom] combinations\par
+\f1  \bullet   \f2 New Parameter.Bindable property for hiding parameters from Query Designer\par
+\f1  \bullet   \f2 New OnOutlineNodeCreate event support for setting Node.Expanded state\par
+\f1  \bullet   \f2 New Text formatting with Ellipsis\par
+\f1  \bullet   New TeeChart 2010 support\f2\par
+\par
+\fs28 Data Access\fs24\par
+\f1  \bullet   \f2 New JITPipeline OnGetFieldAsStream event\par
+\f1  \bullet   \f2 New syntax support for DataPipeline['FieldAliasOrFieldName']\par
+ \par
+\fs28 ReportExplorer Enhancements\fs24\par
+\f1  \bullet   \f2 New support for multi-select and email \par
+\par
+\fs28 Visual Data Access Enhancements\fs24\par
+\f1  \bullet   \f2 New DatabaseType: dtFirebird\par
+\f1  \bullet   \f2 New Calc Expression support for :ParamName syntax\par
+\f1  \bullet   \f2 New Parameter.Bindable property for hiding parameters from Query Designer \par
+\f1  \bullet   \f2 New Query Designer support for Joins w/fields from multiple tables\par
+\f1  \bullet   \f2 New Query Designer support for Joins w/constant expressions\par
+\f1  \bullet   \f2 New SQLBuilder support for Joins w/fields from multiple tables\par
+\f1  \bullet   \f2 New SQLBuilder support for Joins w/constant expressions\par
+\par
+\fs28 RAP Enhancements\fs24\par
+\f1  \bullet   \f2 New functions: Ord, Min, Max, Floor, Ceiling, Odd\par
+\f1  \bullet   \f2 New RTTI support for setting Parameter['ParamName']\par
+\f1  \bullet   \f2 New RTTI support for using DataPipeline['FieldAliasOrFieldName']\par
+\par
+\fs28 Server Enhancements\fs24\par
+\f1  \bullet   \f2 New Server support for drill-down subreports\par
+\f1  \bullet   \f2 New WebTier support for Email\par
+\par
+\ul\f0\fs28 Fixes\par
+\par
+\ulnone Version 12.0 - 5/11/2010\par
+\par
+\f2 RCL\fs24\par
+\f1  \bullet   \f2 Memo. Updated ReportSaveNo to match TppCustomText\par
+\f1  \bullet   \f2 Engine. Fix when Summary.AlignToBottom True & Footer.PrintOnLastPage False\par
+\f1  \bullet   \f2 Printer. Rendering autosized text on Win 7 can result in truncation\par
+\f1  \bullet   \f2 DBText. Fix for SuppressRepeatedValues when only one record on first page \par
+\f1  \bullet   \f2 ppForms. D6/D7, do not assign parentwnd if csDestroying in ActiveForm.ComponentState \par
+\f1  \bullet   \f2 2DBarCode. PDF417 barcode needs to initialize pen object before rendering\par
+\f1  \bullet   \f2 TeeChart. Fix for reading/loading, when Series.DataSource is a function\par
+\f1  \bullet   \f2 InfoPower MailMerge support was not working correctly \par
+\par
+\fs28 Output\fs24\par
+\f1  \bullet   \f2 PDF. Lines in a tabbed memo without tabs present were duplicated\par
+\f1  \bullet   \f2 PDF. Enhanced font metric to support text highlighting \par
+\f1  \bullet   \f2 PDF. Updated font handling so only "PDF Standard" fonts are exported as Type 1\par
+\f1  \bullet   \f2 PDF. Increased vertical text position text accuracy\par
+\f1  \bullet   \f2 PDF. Increased horizontal text accuracy for case in which no printer installed \par
+\f1  \bullet   \f2 PDF. Added support for TOleGraphic images\par
+\f1  \bullet   \f2 PDF. Fix for processing metafiles that contain IntersectClipRect commands\par
+\par
+-----> Professional <----------\par
+\par
+\fs28 ReportExplorer\fs24\par
+\f1  \bullet   \f2 Mod to work around an issue with IBObjects\par
+\par
+\fs28 DADE\fs24\par
+\f1  \bullet   \f2 MagicSQL. When master includes outer joins, group by/order by sometimes incorrect\par
+\f1  \bullet   \f2 SQL. Fix for programmatically creating QueryDataView with manual SQL text.\par
+\par
+-----> Enterprise <------------\par
+\par
+\fs28 RAP\fs24\par
+\f1  \bullet   \f2 Fixed for memory leak in the RAP code toolbox, (LangInfo)\par
+\f1  \bullet   \f2 Fix for AV that can occur when calling a RAP global function\par
+\par
+\par
+\ul\f0\fs28 Enhancements\par
+\par
+\ulnone Version 11.08 - 3/12/2010\par
+\par
+\f2\fs24  \fs28 Viewer\fs24\par
+\f1  \bullet   \f2 Added OnHyperLinkClick event\f0\fs28\par
+\ul\par
+Fixes\par
+\par
+\ulnone Version 11.08 - 3/12/2010\par
+\par
+\f2 Designer\fs24\par
+\f1  \bullet   \f2 Fixed AV that can occur if component name is all caps. \par
+\f1  \bullet   \f2 Fix to internal tab changing logic from 10.08 (accidentally left behind) \par
+\par
+\fs28 RCL\fs24\par
+\f1  \bullet   \f2 PrinterSetup. Modifying properties, does not always set Report.Modified True. \par
+\f1  \bullet   \f2 Producer. When PrintToFile raises an exception, the CancelDialog was not freed. \par
+\f1  \bullet   \f2 DBText was ignoring Underline font style, due to HyperLink feature interfering. \par
+\f1  \bullet   \f2 Modified PrinterSetup Assign and SetDeviceSettings methods to initialize FDefaultBin\par
+\f1  \bullet   \f2 Engine, Fixed issue where AV was occurring when using left to right columns and labels.\par
+\f1  \bullet   \f2 Template. Unicode fix for saving/loading to Memo/Text fields.\par
+\f1  \bullet   \f2 Section subreport fix for case in which a NoData section appears between other sections\par
+\f1  \bullet   \f2 Fixed a TeeChart streaming issue for Series that use a function as a datasource\par
+\par
+\fs28 Parameters\fs24\par
+\f1  \bullet   \f2 AutoSearch. DateTimePicker fix for Windows 7, displaying empty date/time\par
+\f1  \bullet   \f2 AutoSearch. Backward compatibility, use LongTimeFormat\par
+\f1  \bullet   \f2 AutoSearch. Fix for floating point value when decimal separator is a comma\par
+\f1  \bullet   \f2 Setting AutoSearSettings.SearchExpression via code did not update AutoSearchField. \par
+\par
+\fs28 Output\fs24\par
+\f1  \bullet   \f2 Email. Fix to hide the autosearch dialog after an email has been sent \par
+\f1  \bullet   \f2 Email. Fix to assign the ArchiveFileName property if an archive file is being emailed.\par
+\f1  \bullet   \f2 PrintDialog, Added logic to validate the file path for the print to file name\par
+\f1  \bullet   \f2 PDF. MetaFile processor, fixed for scaling calculation to prevent divide by 0.\par
+\par
+-----> Professional <----------\par
+\par
+\fs28 DADE\fs24\par
+\f1  \bullet   \f2 SQL bug fix for backward compatibility for MagicSQL Group By.\par
+\f1  \bullet   \f2 SQLBuilder fix to RAP RTTI for CalcFields.AddExpression method\par
+\f1  \bullet   \f2 Optimized QueryDesigner Validation for case in which EditSQLAsText is true\par
+\par
+\fs28 Report Explorer\fs24\par
+\f1  \bullet   \f2 Mod to accommodate dbExpress with MS SQL Server\par
+\par
+-----> Enterprise <------------\par
+\par
+\fs28 RAP\fs24\par
+\f1  \bullet   \f2 Expressions that call a global function multiple times gave an incorrect result\par
+\f1  \bullet   \f2 Combining Char + String value gave an incorrect result\f1  \f2\par
+\f1  \ul\f0\fs28\par
+\par
+Enhancements\par
+\par
+\ulnone Version 11.07 - 1/8/2010\f1\fs24\par
+\par
+ \bullet   Template, new properties: IngoreErrors. SuppressErrorDialog \par
+ \bullet   PrintDialog, widened FileTypes combobox\par
+ \bullet   PageSetupDialog.TabSet is now a public property\par
+\par
+\ul\f0\fs28 Fixes\par
+\par
+\ulnone Version 11.07 - 1/8/2010\par
+\par
+\f2 Designer\fs24\par
+\f1  \bullet   \f2 The View | Show Data menu item status was not being updated.\par
+\f1  \bullet   \f2 Memo Dialog was incorrectly assigned the Memo.Font\par
+\f1  \bullet   \f2 Variable Dialog. When a combobox is disabled, need to disable the corresponding Label\par
+\f1  \bullet   \f2 Need to validate window dimensions from RBuilder.ini against screen dimensions.\par
+\f1  \bullet   \f2 IniStorage settings should not be applied at Delphi design-time\par
+\par
+RCL\par
+\f1  \bullet   \f2 Image. When AutoSize and designing, do not resize an empty image to 0,0.\par
+\f1  \bullet   \f2 Barcode. Fix for Code128 Unicode support (D2009/D2010)\par
+\f1  \bullet   \f2 Template. Unicode fix. When save to text format, need to convert UTF8 stream to Unicode.\par
+\f1  \bullet   \f2 Template. Loading a report definition does not honor the PDFSettings. \par
+\f1  \bullet   \f2 Groups. When creating groups via code, get an AV if report does not have a detail band.\par
+\f1  \bullet   \f2 SystemVariable. Should not be added to the CalcOrder list. \par
+\f1  \bullet   \f2 RichText. Fix for screen rendering. Sometimes underlined text does not appear underlined. \par
+\f1  \bullet   \f2 RichText. Modified SetSelText to handle RTF data (fix for Unicode VCL)\par
+\f1  \bullet   \f2 Memo. When wrapping text, need to trim leading spaces on subsequent lines (Backward compatibility)\par
+\f1  \bullet   \f2 RTTI. Modified SetPropValueAsString to not suppress exceptions. \par
+\f1  \bullet   \f2 PrinterSetup. Modified PrinterSetup.IsEqual to check the DevMode. \par
+\f1  \bullet   \f2 SummaryBand. Fix for AlignToBottom when PassSetting is psTwoPass. \par
+\f1  \bullet   \f2 DBText. Setting HyperLink value was ignored, due to conflict with auto-detect logic. \par
+\f1  \bullet   \f2 Crosstab. Fix for case when ColumnGrandTotal Visible is False. \par
+\par
+\fs28 DataPipeline\fs24\par
+\f1  \bullet   \f2 The GotoBookmark method was firing a traversal when it should not. \par
+    (Fix for Variable with calctype of veDataPipelineTraversal.) \par
+\f1  \bullet   \f2 Optimized to check DataSet.Active prior to calling DataSet.Open\par
+\f1  \bullet   \f2 Fix for ppGetFields routine to honor DataPipeline field visibility. \par
+\par
+\fs28 Parameters\fs24\par
+\f1  \bullet   \f2 Modifying AutoSearchSettings.SearchExpression did not always update Parameter.Value\par
+\f1  \bullet   \f2 Refined default value for DateTime, Date, and Time to use Now, Date, Time functions\par
+\f1  \bullet   \f2 Fix for parsing international DateTime and Numeric expressions\par
+\f1  \bullet   \f2 When using name-value pairs, the AutoSearch description display the name\par
+\par
+\fs28 Output Devices\par
+\f1\fs24  \bullet   \f2 Email. Modified SetArchiveFileName to not call Report.Reset when emailing archives.\par
+\f1  \bullet   \f2 PDF. Tab positions were not reset for each element.\par
+\f1  \bullet   \f2 PDF. Custom tab positions were not fully honored.\par
+\f1  \bullet   \f2 PDF. Last item in a tabbed text line was not showing up.\par
+\f1  \bullet   \f2 PDF. Simplified bitmap rendering to solve OutOfResources error.\par
+\f1  \bullet   \f2 TextSearch. Fixed AV when searching RichText objects.\par
+\par
+----> Professional <----------\par
+\par
+\fs28 DADE\fs24\par
+\f1  \bullet   \f2 dbExpress plug-in. Workaround for bug with MS SQL driver GetTableNames\par
+\f1  \bullet   \f2 Link Dialog. The link description was sometimes truncated. \par
+\f1  \bullet   \f2 DataView ToolWindws. Positions not restored correctly when scrollbar positions are non-zero\par
+\f1  \bullet   \f2 Magic SQL. Fix for linking on a field that is an Order By field for the master and the detail. \par
+\f1  \bullet   \f2 Magic SQL. Fix for Interbase/Firebird. Do not add non-aggregate Calc Fields to the Group By\par
+\f1  \bullet   \f2 SQL. Fix for List Index out of Bounds error that can occur when adding a Group Search Condition. \par
+\f1  \bullet   \f2 SQL. Fix to suppress error dialog when not executing in the main thread. \par
+\ul\f0\fs28\par
+\par
+Enhancements\par
+\par
+\ulnone Version 11.06 - 9/4/2009\f1\fs24  \par
+\par
+ \bullet  Added Delphi 2010 support!\par
+\par
+\par
+\ul\f0\fs28 Fixes\par
+\par
+\ulnone Version 11.06 - 9/4/2009\f1\fs24  \par
+\par
+\fs28 Designer\fs24\par
+ \bullet  InPlace Editor for text was not setting key to #0 when Enter key pressed \par
+ \bullet  Report Wizard, a caption on the last page was sometimes truncated\par
+ \bullet  Nudge and Size actions on empty selection resulted in list index out of bounds\par
+ \bullet  OnGetDisplayFormats event was not firing\par
+ \par
+\fs28 RCL\fs24\par
+ \bullet  Parameter, SetValue was not always updating AutoSearchSettings.SearchExpression\par
+ \bullet  AutoSearch, fix for autosearch date format\par
+ \bullet  TeeChart, added support for dtLargeInt\par
+ \par
+\fs28 Devices\fs24\par
+ \bullet  PDF, non-transparent RichText was not rendering correctly \par
+ \bullet  PDF, fix for metafiles that combine IntersectClipRect and ExtSelectClipRgn.\par
+ \bullet  PDF, fix for metafile processing, range check error\par
+ \bullet  PDF, Border was not supported for RichText, BarCode, 2DBarCode\par
+ \bullet  Email, archive files could not be sent via email\par
+ \bullet  File, separate file for each group feature did not allow custom file naming.  \par
+ \bullet  TextFile, empty crosstab values were not exported\par
+ \bullet  Printer, transparent rectangles with line thickness > 1 resulted in rounded endcaps\par
+\par
+\fs28 ArchiveReader\fs24\par
+ \bullet  PrintDialog settings not honored for Duplex, Collation, and Copies\par
+\par
+----> Professional <----------\par
+\par
+\fs28 DADE\fs24\par
+ \bullet  SQLBuilder, enhanced to accept operators 'In' or 'In List' \par
+ \bullet  QueryDesigner, Calc Page did not support using keyboard to scroll list items\par
+ \bullet  DataDictionaryBuilder, Join page omitted recently added tables (due to memory caching) \par
+\par
+\fs28 ReportExplorer\fs24\par
+ \bullet  Fix for saving templates - in some cases cannot rename a report. \par
+\par
+----> Enterprise <----------\par
+\par
+\fs28 RAP\fs24\par
+ \bullet  Compiler, improved support for using a typecast within If/then expressions\par
+\par
+----> Server <----------\par
+\par
+ \bullet  GetAutoSearchFields omitted items created by Parameters with AutoSearchSettings  enabled.\par
+\par
+\ul\f0\fs28\par
+Fixes\par
+\par
+\ulnone Version 11.05 - 6/26/2009\f1\fs24  \par
+\par
+\fs28 Designer\fs24\par
+ \bullet  Paste enhancement, if report does not have the same band, try using band at  mouse pos \par
+ \bullet  Fix for AV that can occur if programmatically load a childreport and then main  report\par
+ \bullet  Fix for AV that can occur when changing the Windows screen resolution\par
+ \bullet  Template loading, check InMainThread not IsMultiThread to decide whether to  suppress error dialog\par
+ \bullet  When Design page activated, need to refresh datafield combobox\par
+\par
+\fs28 Parameters/AutoSearch\fs24\par
+ \bullet  DateTimePicker fix for 24 hour time format, windows standard differs from Delphi  standard.\par
+ \bullet  Fix for lookup list name/value pairs, where the name is blank\par
+ \bullet  Backward compatibility for setting a DateTime SearchExpression to a string (i.e.  'Current_Date')\par
+ \bullet  Fix for SetSearchExpression for DateTime. Internally needs to access  ValueList.Values[]\par
+ \bullet  mod to work around D6 stringlist bug, fixes name/value pair lookup lists\par
+\par
+\fs28 RCL\fs24\par
+ \bullet  Save order of text objects was not being honored when loading templates\par
+ \bullet  Fix SuppressRepeatedValues, when last page contains a single record and last  page button pressed\par
+ \bullet  SystemVariable, AutoSearch description included CRLF characters when more than  one condition\par
+ \bullet  Metafile, added highlight text support for the MetaFileReader and PDF\par
+ \bullet  DBRichText, D2009/Unicode fix for loading plain unicode text\par
+ \bullet  Subreport, fix for AV when SubReport.Band is set to nil\par
+ \bullet  Subreport, fixed issue where multiple no-data section subreports were printing  an empty page\par
+ \bullet  Printable, backward compatibility when DataPipeline.AutoCreateFields is False  and there are no fields\par
+ \bullet  TeeChart installation for D6 was missing some files\par
+\par
+\fs28 Devices\fs24\par
+ \bullet  PDF, font names containing a paren were not showing any output (ex. "Textil- Symbole (CV)")\par
+ \bullet  PDF, fixed issue where image border was not lining up in PDF\par
+ \bullet  Printer, D2009/Unicode. Fix AV caused by some printer drivers for  DocumentProperties/BinName call\par
+ \bullet  Printer, restored PrinterSetup.CanGrayScale property (compatibility with RB 10)\par
+ \bullet  Preview, Fix for problem with call to OutlineViewer.Reset freeing the Show/Hide  popup menu \par
+ \bullet  Preview, Fix for syncing Splitter visibility with OutlineViewer visibility.\par
+ \bullet  TextFile, fix to remove all CRLF characters from wrapped text exported via the  TextFileDevice. \par
+ \bullet  PrintDialog, when print to file and file extension omitted, the overwrite file  warning does not display \par
+ \bullet  Email, modified Indy plug-in to allow access to the TIdSMTP object \par
+\par
+\fs28 DataPipelines\fs24\par
+ \bullet  Mod for Oracle support, convert ftOraClob to dtMemo rather than dtBinary \par
+ \bullet  Modified GetFieldDataType to call Open rather than OpenDataSet to support  pipeline events \par
+ \bullet  JITPipeline, when RecordCount or InitialIndex is changed, notify the report to  reset \par
+\par
+----> Professional <----------\par
+\par
+\fs28 DADE\fs24\par
+ \bullet  Query Designer, available field list sort was incorrect when de-selecting bottom  list items\par
+ \bullet  SQLBuilder, calling TdaSQLBuilder.SearchCriteria.Remove can sometimes result in  an AV \par
+ \bullet  SQL, mods to allow expressions such as CAST(FLOOR(CAST(OrdersSaleDate AS FLOAT))  AS DATETIME)\par
+ \bullet  SQL, mod to allow linking on fields from join table(s)\par
+ \bullet  SQL, fix to disallow sub-select calc fields in the Group By clause.\par
+ \bullet  SQL, MagicSQL fix for case in which SQL contains a Group by but no aggregate  calcs\par
+ \bullet  TdaSQLText, made this a replaceable class\par
+ \par
+\fs28 ReportExplorer\fs24\par
+ \bullet  ElevateDB example and plug-in, small updates to remove NexusDB references\par
+ \bullet  Oracle DOA example, updated locking and refresh options.\par
+\par
+----> Enterprise <----------\par
+\par
+\fs28 RAP \fs24\par
+ \bullet  Compiler, added support for Xor operator\par
+ \bullet  Compiler, fix to recognize invalid syntax for Component.'Name' \par
+\par
+----> Server <----------\par
+\par
+(no mods required)\par
+\ul\f0\fs28\par
+\par
+Enhancements\par
+\par
+\ulnone Version 11.04 - 4/9/2009\f1\fs24  \par
+\par
+\fs28 Designer\fs24\par
+ \bullet  DataFieldList, added combobox autocomplete support\par
+ \bullet  DataFieldList, allow DataField to be specified that does not exist in the DataPipeline\par
+ \bullet  ResourceManager, added support for registering a replacement class\par
+\par
+ \fs28 **RAP\fs24\par
+ \bullet  Add optimization to improve performance of expressions that use global vars. \par
+\par
+  **Enterprise Edition\par
+\par
+\ul\f0\fs28 Fixes\par
+\par
+\ulnone Version 11.04 - 4/9/2009\f1\fs24  \par
+\par
+\fs28 Designer\fs24\par
+ \bullet   Designer did not ask to save changes after running the report wizard and close. \par
+ \bullet   When DesignGuides turned off, resizing did not work correctly.\par
+ \bullet   PageSetupDialog, fixed tab order\par
+ \bullet   Fixed issue where trying to merge a TMainMenu with more menu items than the original caused a "List out of bounds" error.\par
+ \bullet   Added PaintBox to ShowComponents property  \par
+ \bullet   The Designer.EnableHelp and HelpFile properties were not being honored. \par
+\par
+\fs28 Parameters/AutoSearch\par
+\fs24  \bullet   When search operator is soBlank, do not auto-check ShowAllValues\par
+ \bullet   When Parameter.AutoSearchSettings.SearchExpression changes, need to update the corresponding AutoSearchField.SearchExpression if it exists.\par
+\par
+\fs28 RCL\fs24\par
+ \bullet   Memo, when text ends with soft return (#13#13#10), word wrap did not work correctly\par
+ \bullet   Printable, initialize default Font.Color to clBlack\par
+ \bullet   Printable, modified CheckPipelineData to return False when Field does not exist in the DataPipeline\par
+ \bullet   CustomText, email addresses with dots (.) in the name were not being recognized. \par
+ \bullet   DBImage, autosized nil DBImages were retaining the same size as the previously non-nil image\par
+ \bullet   CustomText, setting SaveOrder could sometimes result in list index of out bounds\par
+ \bullet   Group, added RTTI support for the Group.OnGetFileSuffix event.\par
+ \bullet   RTTI, setting a variant property value from a string value caused an exception. \par
+ \bullet   Fixed issue where loading a report from a stream caused an AV in the SetAlignToBottom routine of the Summary Band.\par
+ \bullet   Modified Template.LoadFromSource to handle loading text based templates for D2009. Need to convert to utf-8.\par
+ \bullet   ResourceManager, added support for registering a replacement class\par
+ \par
+\fs28 Devices\fs24\par
+ \bullet   PDF, added MaintainAspectRatio support for metafiles in a PDF.\par
+ \bullet   PDF, added metafile support for a clear pen object (TPen with Style property set to psClear).\par
+ \bullet   PDF, added metafile support for SaveDC, RestoreDC, and SetWindowOrg\par
+ \bullet   PDF, added metafile support for center, right, bottom aligned Images\par
+ \bullet   PDF, fixed metafile issue where FillRect still rendered even if the Brush was clear.\par
+ \bullet   PDF, updated metafile BitBlt logic to handle an empty source rectangle better.\par
+ \bullet   PDF, left justified wrapped text was displaying incorrectly if special characters were present\par
+ \bullet   PDF, lines with large widths were not lining up correctly in a PDF file.   \par
+ \bullet   Viewer, default Page.Color to clWhite\par
+ \bullet   Viewer, text search highlighter fix for multi-line label text\par
+ \bullet   PrintDialog, modified controls to use ParentFont = True\par
+\par
+----> Professional <----------\par
+\par
+\fs28 DADE\fs24\par
+ \bullet   SQL, added STDEV so it is recognized as a standard aggregate function. \par
+ \bullet   SQL, fix for case in which linked detail SQL has mix of aggregate/non-aggregate calc fields \par
+ \bullet   SQL, deselecting link fields that are Calcs was not working properly\par
+ \bullet   SQLBuilder was not assigning the Report.Parameters from the original SQL object\par
+ \bullet   SQLBuilder.OrderByFields.Remove method caused an AV\par
+ \bullet   SQLBuilder did not allow same table to be joined twice\par
+ \bullet   QueryDataView,  did not detect when TdaSQL was switched to manual edit mode. \par
+ \bullet   QueryDataView, fix for stack fault that can occur when using QueryDataView.OnBeforeGenerateSQL event to modify the SQL object. \par
+ \bullet   LinkDialog, deselecting Calc fields was not working properly. \par
+ \bullet   LinkDialog, when use the drop down to change the MasterSQL, need to update the link type\par
+ \bullet   BinaryCompareString function used for Oracle linking did always return correct result\par
+ \par
+\fs28 ReportExplorer\fs24\par
+ \bullet   ItemList was not sorted at start-up and when folder changes\par
+\par
+----> Enterprise <----------\par
+\par
+\fs28 RAP  \fs24\par
+ \bullet   Fix for case when an event-handler reference cannot be resolved. \par
+ \bullet   Fixed issue where expressions with a value outside parenthesis was not calculating correctly (ex. 25*(4+4/2)).\par
+ \bullet   RTTI support for the Border properties was not being registered or unregistered.\par
+\par
+----> Server <----------\par
+\par
+\fs28 WebTier\fs24\par
+ \bullet   Fix for autosearch on dtDate field type. \par
+ \bullet   Bug fix for D7/D6 error when using the Print button from browser \par
+ \bullet   Fix for autosearch date picker days of the week captions\par
+ \par
+\par
+\ul\f0\fs28 Enhancements\par
+\par
+\ulnone Version 11.03 - 2/13/2009\f1\fs24  \par
+\par
+\fs28  *DADE Oracle Support\fs24\par
+ \bullet   Updated DOA plugin to support Parameterized Linking\par
+ \bullet   New DataSettings.CollationType option: ctBinary\par
+ \bullet   New DataSettings.NullCollationType property (use ncNullsLast for Oracle)\par
+  \par
+    *Pro and Enterprise only\par
+\par
+\ul\f0\fs28 Fixes\par
+\par
+\ulnone Version 11.03 - 2/13/2009\f1\fs24  \par
+\f0\fs28\par
+\f1 Designer\fs24\par
+ \bullet   Field Editor, would not delete JITPipeline/TextPipeline fields on descendant form. \par
+ \bullet   Inspector, fix for AV that can occur when close report, close explorer then re-open both. \par
+ \bullet   TreeView, Fix for D7 Av that occurs when loading diff reports and toggle Preview to Calc\par
+ \bullet   TBX, moved initialization code that can cause an AV in ppIniStorage\par
+ \bullet   TBXSplitter, does not unregister theme notification, can cause AV \par
+ \bullet   TBXStatusbar, fixed range check error\par
+\par
+\fs28 AutoSearch\fs24\par
+ \bullet   Editing Date and Time requires separate calendar and time controls.\par
+ \bullet   DateTimePicker now shows a blank date if no data is selected \par
+ \bullet   Boolean AutoSearch. Need to support entry of Y/N, Yes/No, T/F, True/False, 1/0 \par
+\par
+\fs28 RCL\fs24\par
+ \bullet   Text, when AutoSize True, do not calc height/width as 0, force a min value (otherwise control disappears)\par
+ \bullet   Text, fix for case in which a Label inside a ShiftRelativeTo Region sometimes did not appear on the page. \par
+ \bullet   SummaryBand, fix for AlignToBottom case in which summary band overflows.\par
+\par
+\fs28 DataPipelines\fs24\par
+ \bullet   Modifying DataPipeline.Fields list can sometimes cause list index out of bounds\par
+\par
+\fs28 Devices\fs24\par
+ \bullet   PDF, justified RichText with reserved PDF characters was not spacing correctly.\par
+ \bullet   PDF, left aligned text was not showing up in the correct position in some cases.\par
+ \bullet   PDF, border for an auto-sized text object in PDF was not drawing in the correct position. \par
+ \bullet   PDF, 8bit images were always being exported to PDF in grayscale (8bit can also be color)\par
+ \bullet   PDF, added support for a clipping region in Metafile PDF export (sometimes used for TeeCharts)\par
+ \bullet   Printer, Fix/optimization for PrinterSetup.Assign to not trigger get devmode\par
+ \bullet   Printer, work around for xps document writer custom paper size\par
+\par
+\ul\f0\fs28 Enhancements\par
+\par
+\ulnone Version 11.02 - 12/15/2008\f1\fs24  \par
+\par
+ \bullet  New themed Statusbar (Designer, Preview, ReportExplorer, ..)\par
+ \bullet   PDF, optimized grayscale images to use 8-bit res to save space\par
+ \bullet  Hyperlink, added new HyperLinkEnabled property to Label, DBText\par
+ \bullet  Improved management of modal forms to support windows task switching\par
+ \bullet  *Query Designer, added ability to sort available fields list by clicking on any column\par
+ \bullet   **RAP, added support for enum integer values, improved conversion of enum to integer\par
+\par
+   *Pro and Enterprise only\par
+   ** Enterprise only\f0\fs28\par
+\par
+\ul Fixes\par
+\par
+\ulnone Version 11.02 - 12/15/2008\f1\fs24  \par
+\par
+\fs28 Designer\fs24\par
+ \bullet  Group dialog, adjusted MinHeight to support new RB 11 layout\par
+ \bullet  Group dialog, modified form elements to use ParentFont True\par
+ \bullet  RichText design-time rendering should not draw the caption when rtf data is present.\par
+ \bullet  Variable Popup Menu - added items for SuppressRepeatedValues, ReprintOnSubequent \par
+ \bullet  When Report.Units is utPrinterPixels, the horizontal ruler was not rendering accurately\par
+ \bullet  Added themed status bar\par
+\par
+\fs28 RCL\fs24\par
+ \bullet  RichText, work around for IP Studio support, loading rtf data results in formatting being lost\par
+ \bullet  RichText, sometimes setting the LeftMargin property is ignored.\par
+ \bullet  RichText, generating from an ArchiveFile to the printer caused an exception\par
+ \bullet  Subreport, setting Subreport.DataPipeline to nil during report generation caused an exception\par
+ \bullet  Printable, modified CheckDataPipeline to /not/ set DataField to blank when DataPipeline is nil\par
+ \bullet  AutoSearch Description sometimes displays a period in the middle of a compound description\par
+ \bullet  AutoSearch DateTime Picker - added code to replace mm with MM for windows format compatibility\par
+\par
+\fs28 DataPipelines\fs24\par
+ \bullet  When DataPipeline has static fields, the field index did not initialize correctly when loading.  \par
+ \par
+\fs28 Devices\fs24\par
+ \bullet  PDF, full justified text was not exporting correctly.\par
+ \bullet  PDF, sometimes non-latin characters were being displayed as symbols\par
+ \bullet  PDF, exporting a memo with no lines caused a list index out of bounds error\par
+ \bullet  File Groups, fix for case in which the first file already exists in the directory\par
+ \bullet  TextFile, added quote character escaping (i.e. "quote me" becomes ""quote me"")\par
+ \bullet  Email, when using the MAPI plug-in, the parent window sometimes displays behind other applications\par
+ \bullet  Printer, calling Printer.SetDevMode directly was not always working\par
+ \bullet  Printer, calling Printer.ShowSetupDialog with a non default printer did not work (D2009 only)\par
+ \bullet  Printer, stack fault could occur when switching printers or using printer pixel units. \par
+ \par
+\ul\f0\fs28 Enhancements\par
+\par
+\ulnone Version 11.01 - 11/4/2008\par
+\par
+\f1\fs24  \bullet  Designer, enable Snap-to-Guide/Snap-To-Grid to work independently for X, Y directions\par
+ \bullet  Designer, added BringForward/SendBackward to the format toolbar\par
+ \bullet  Designer, do not create a windows taskbar item at runtime\par
+ \bullet  Parameters, added support for dtDate, dtTime data types\par
+ \bullet  DBRichText, optimized performance\par
+ \bullet  DADE, search criteria with different search operators can share a common parameter. \par
+ \bullet  WebTier, added support for Safari and Chrome browsers\par
+\f0\fs28\par
+\ul Fixes\par
+\par
+\ulnone Version 11.01 - 11/4/2008\par
+\par
+\f1 Designer\fs24\par
+ \bullet  Office2003 Theme, fix for memory leak. \par
+ \bullet  When set Columns back to 1, the ColumnHeader/ColumnFooter were not removed.\par
+ \bullet  Group dialog was assigning FieldAlias rather than FieldName as the BreakValue\par
+ \bullet  View | Themes was changing the theme when any of the 3 submenu items were hovered.\par
+ \bullet  TextSearchSettings Dialog, cosmetic update\par
+ \bullet  RichText editor, updated the Bullets icon\par
+\par
+\fs28 RCL\fs24\par
+ \bullet  Params, fixes/enhancements for better data type support.\par
+ \bullet  Params, fix for list index out of bounds\par
+ \bullet  DBText, fix for SuppressRepeatedValues\par
+ \bullet  Label/DBText, HyperLink feature could assign wrong font attributes to std text. \par
+ \bullet  SystemVariable, "copy" and "copy #" language strings moved to rbPrint.res\par
+ \bullet  RichText, fixed range check error prop getter/setter\par
+ \bullet  RichText, fix for loading large RTF data \par
+ \bullet  RichText, fix for restoring mail merge stream (not in patch)\par
+ \bullet  2DBarcode, scaling for screen and pdf were incorrect\par
+ \bullet  2DBarcode, transparency was not honored\par
+ \bullet  2DBarcode, PDF 417 error when data begins w/a numeric compaction (> 13 numerics)\par
+ \bullet  DPTeechart, detect when field has been removed from the dataset. \par
+ \bullet  Band, adding at run-time, the width was not always resized \par
+\par
+\fs28 DataPipelines\fs24\par
+ \bullet  DBPipeline, removing fields can cause a list index out of bounds \par
+\par
+\fs28 Devices\fs24\par
+ \bullet  Printer, when Page.PrinterSetup changes, new settings were not honored \par
+ \bullet  Printer, when no printers installed, an AV can occur\par
+ \bullet  Printer, when TppPrinter.ShowSetupDialog changes the printer name, PrinterSetup was not updated. \par
+ \bullet  PDF, underlined text resulted in error when opening the PDF file in acrobat.\par
+ \bullet  PDF, text box was not printing at the correct location.\par
+ \bullet  PDF, added support for stretched metafiles\par
+ \bullet  PDF, improved metafile command support\par
+ \bullet  PDF, enhanced metafile support to work around D7, D6 vcl bugs\par
+ \bullet  Text, exporting multiple subreports on one page caused incorrect output.\par
+ \bullet  File groups, single group report did not receive a file suffix.\par
+ \bullet  File groups, if the first group was a single page, not all files were created.  \par
+\f0\fs28\par
+\par
+\ul Enhancements\par
+\ulnone\par
+Version 11.0 - 9/24/2008\par
+\par
+\f1\fs24  \bullet  Delphi 2009 support!\par
+ \bullet  Unicode support! (Delphi 2009 only)\par
+ \bullet  State of the art installer\par
+ \bullet  Complete Windows Vista compatibility\par
+\par
+\fs28 Unicode (Delphi 2009 only)\par
+\fs24  \bullet  Full Unicode VCL support\par
+ \bullet  Database access support for Unicode and Ansi databases\par
+ \bullet  Unicode Report Designer, RCL, Report Output\par
+ \bullet  Unicode String Translation Application\par
+ \bullet  TextPipeline supports Unicode and Ansi data (can autodetect or use Encoding property)\par
+ \bullet  TextFileDevice supports Unicode and Ansi export (Encoding and BOM properties)\par
+ \bullet  Unicode RAP CodeEditor \par
+ \bullet  Unicode Server uses UTF-8 encoding for TCP communication\par
+ \bullet  Unicode WebTier produces UTF-8 encoded XHTML web interface\par
+\par
+\fs28 Designer Enhancements\par
+\fs24  \bullet  Office2007, Outlook2007 adaptive themes to update the UI\par
+ \bullet  Theme support for Object Inspector, CodeToolbox\par
+ \bullet  Design Guides to quickly align and size objects\par
+ \bullet  "Edit in Place" support for Labels and Memos \par
+ \bullet  Design support for Parameters, AutoSearchSettings, Lookups\par
+ \bullet  BringForward/SendBackward options for fine tuning z-order\par
+ \bullet  Persistent Undo/Redo between Design/Preview for better iterative design\par
+ \bullet  IniStorage option, IniNone can be used to avoid ini storage\par
+ \bullet  IniFile default location (Local Settings\\Application Data) for Vista compatibility\par
+ \bullet  Name property support for Delphi design-time\par
+\par
+\fs28 Report Parameters and AutoSearch\par
+\fs24  \bullet  Powerful integrated architecture for Parameters, AutoSearch, Lookups, DADE\par
+ \bullet  Parameters design time support including AutoSearch and Lookups\par
+ \bullet  Parameters AutoSearchSettings property\par
+ \bullet  AutoSearch Lookups, LookupDataPipeline (name/value and value support)\par
+ \bullet  AutoSearch panels for Lookups (displays combobox with picklist)\par
+ \bullet  AutoSearch Calendar Date Picker for dates (windows, web)\par
+ \bullet  DADE search criteria can be bound to Parameters\par
+ \bullet  AutoSearch 'Or' logical operator support\par
+ \bullet  Include AutoSearch Description in Report with no code (SystemVariable)\par
+\par
+\fs28 Report Groups\par
+\fs24  \bullet  Group dialog, more intuitive design\par
+ \bullet  Group File option (print each group as sep file)\par
+ \bullet  Group StartOnOddPage option (great for duplex printing)\par
+ \bullet  GroupFooter option to Print only when > 1 detail (suppress totals)\par
+ \par
+\fs28 Report Summary\fs24\par
+\bullet  Summary AlignToBottom of page option (frequently requested)\par
+\par
+\fs28 Report Output Enhancements\par
+\fs24  \bullet  PDF embedded font support\par
+ \bullet  PDF RichText, TeeChart, Barcode, PaintBox support (converts to native PDF)\par
+ \bullet  PDF vector graphics support (converts metafiles to native PDF)\par
+ \bullet  PDF canvas architecture\par
+ \bullet  ArchiveReader.ArchiveStream property\par
+ \bullet  Print multiple reports to a single file (all FileDevice descendants)\par
+ \bullet  Generate multiple files with one report (one file per group)\par
+ \bullet  TextFile support for subreport elements\par
+ \bullet  TextFile support for crosstab data\par
+ \bullet  TextFile support for memos\par
+ \bullet  TextFile options for quoting strings\par
+ \bullet  Printer Escape support\par
+ \bullet  Printer PCL Language library built-in (simplifies escape commands)\par
+ \bullet  Printer DeviceSettings  - control any/all specialized printer settings\par
+ \bullet  Printer internal refactoring/architecture\par
+ \bullet  Printer.CheckDC method for improved error handling\par
+\par
+\fs28 Report Component Library (RCL) Enhancements\par
+\fs24  \bullet  Hyperlink property (viewer, PDF, WebViewer - supports url and email addresses)\par
+ \bullet  Paintbox component (including PDF export)\par
+ \bullet  SystemVariable options: AutoSearchDesc, CopyNo, CopyNoDesc\par
+ \bullet  Line component option for diagonal lines\par
+ \bullet  Image.Align property (left, Center, Right)\par
+ \bullet  Image context menu to Clear picture\par
+ \bullet  BarCode Alignment support for barcode symbol\par
+ \bullet  TppVariable SuppressRepeatedValues support\par
+ \bullet  RichText full justification\par
+ \bullet  RichText LeftMargin property\par
+ \bullet  RichText Transparent support\par
+ \bullet  RichText Editor support for Full Justify, Consistent Attributes\par
+ \bullet  RichText.Font property used to set DefAttributes\par
+ \bullet  DBRichText.MailMerge support\par
+ \bullet  Report.OnFileDeviceCreate event (use to configure devices)\par
+ \bullet  Report.OnPrinterDeviceCreate event (use to configure printer device)\par
+ \bullet  OnPrinterDeviceStateChange event (use to send Escape commands)\par
+ \bullet  Report.GetDataPipeline method \par
+\par
+\fs28 Report Explorer Enhancements\par
+\fs24  \bullet  Toolbar options for Open, Design\par
+\par
+\fs28 Visual Data Access Enhancements\par
+\fs24  \bullet  SQL Having clause support (QueryDesigner, SQLBuilder, SQL)\par
+ \bullet  EditSQL Text and AutoSearch support\par
+ \bullet  EditSQL Text and Link support\par
+ \bullet  Linking options: MagicSQL, Parameterized SQL, Manual\par
+ \bullet  Linking on calc fields (non-aggregate)\par
+ \bullet  Search Criteria allow SQL functions ex. Where SalesDate = GetDate()\par
+ \bullet  Search Criteria bind to Parameters (which can be autosearch or not)\par
+ \bullet  SQL Text Editor with syntax highlight support\par
+ \bullet  Group By allow calc fields (non-aggregate)\par
+ \bullet  Query Wizard table/field lists display horz scroll bar\par
+ \bullet  SQLBuilder support for Linking\par
+ \bullet  SQLBuilder support for adding calc expressions\par
+\par
+\fs28 RAP Enhancements\par
+\fs24  \bullet  RAP Unicode Editor for D2009\par
+ \bullet  RAP RTTI for TeeChart\par
+ \bullet  RAP RTTI for TCanvas (use RAP to draw to Paintbox.Canvas)\par
+ \bullet  RAP RTTI for TTextAttributes, TppParaAttributes (RichText)\par
+ \bullet  ECodeError properties for ProgramName, ProgramCode\par
+\ul\f0\fs28\par
+\par
+Enhancements\par
+\par
+\ulnone Version 10.09 - 06/27/2008\par
+\par
+\f1\fs24 *RB 10.09 for Delphi 2007 requires Update 3 or later. \par
+\fs28\par
+\par
+\ul\f0 Fixes\ulnone\par
+\par
+Version 10.09 - 06/27/2008\f1\par
+\par
+Designer\par
+\fs24  \bullet  RichText Editor. D7, D6 could not open form form because it was saved with D2007.\par
+ \bullet  RBuilder.ini was being saved in the application path  \par
+ \bullet  When New... is selected, report.Modified is not set to true.\par
+ \bullet  Mod to notebook tab change logic to better handle case in which a tab change is not allowed.\par
+ \bullet  Mods to better handle case in which designer is embedded in a parent\par
+ \bullet  Added support for CloseQuery method\par
+\par
+\fs28 RCL\fs24\par
+ \bullet  BarCode.IsValidData does not work properly unless rbIDE.res is included\par
+ \bullet  Label/DBText. When WordWrap True and Height < LineHeight, no text appears in preview/print.\par
+ \bullet  DBImage.PictureChanged should not call PropertyChange. \par
+ \bullet  TeeChart. Fix for Delphi design-time pasting\par
+ \bullet  Printable. When DataField reference is invalid, the property was being set to empty string.\par
+\par
+\fs28 Engine\fs24\par
+ \bullet  Fixed a destroy AV for case in which datapipelines are conditionally set to nil during generation.\par
+ \bullet  When dataset is empty and autosearch is used to modify it, sometimes the state gets out sync.\par
+\par
+\fs28 DataPipelines\fs24\par
+ \bullet  Sometimes autocreate fields not getting recreated and old fields have dtNotKnown dataype info. \par
+\par
+\fs28 Devices\fs24\par
+ \bullet  Email. For MDI apps, the active form was not always restored.\par
+ \bullet  Text Search. Fix for case in which goto page number exceeds number of pages.\par
+\par
+\fs28 DADE\fs24\par
+ \bullet  Designer. Loading a large number of dataviews, sometimes repositions them on top of each other.\par
+ \bullet  Designer. When Data workspace accessed, report.Modified was set to true. \par
+ \bullet  Query Designer. Fix for case in which all fields are selected for sorting. \par
+ \bullet  daSQL. A DB error occurs when search criteria contain a single quote.\par
+ \bullet  daSQL. Enhanced SQL Validation that removes invalid aliasing to solve a case submitted by a customer\par
+\par
+\fs28 RAP\fs24\par
+ \bullet  Fix for loading old reports in which childreports have RAP code but main report does not. \par
+ \bullet  When Calc workspace accessed, report.Modified was set to true. \par
+\par
+\fs28  \par
+\ul\f0 Enhancements\par
+\par
+\ulnone Version 10.08 - 04/25/2008\par
+\par
+\f1\fs24 *RB 10.08 for Delphi 2007 requires Update 3 or later. \fs28\par
+\par
+Performance enhancements to report generation\par
+\fs24  \bullet  Used a customer test case to identify and resolve several bottlenecks\fs28\par
+\par
+New Email plugin for Synapse\par
+\fs24  \bullet  For info on Synapse, \cf0 http://synapse.ararat.cz/doku.php/about\cf1\fs28\par
+\par
+RCL\par
+\fs24  \bullet  Enhanced Template.DBSettings to enable TemplateField to be a string containing a file name \par
+ \bullet  Optimized reading/loading logic related to BarCode and AutoSearch.  \fs28  \par
+\par
+Designer\par
+\fs24  \bullet  Inspector. Added Caption property editor with an auto update feature (like Delphi)\fs28\par
+\par
+Devices\par
+\fs24  \bullet  Viewer: Added virtual Viewer.CreateScreenDevice method; Draw methods are now virtual\fs28\par
+\par
+DADE\par
+\fs24  \bullet  QueryWizard listbox now displays horizontal scrollbar when table/field names are too long.\fs28\par
+\par
+RAP\par
+\fs24  \bullet  Added RAP RTTI for Report.Sendmail, TStrings.CommaText, DBSettings.FolderID \fs28\par
+\par
+\par
+\ul\f0 Fixes\par
+\par
+\ulnone Version 10.08 - 04/25/2008\f1\par
+\par
+Designer\par
+\fs24  \bullet  Using the Designer/Ruler menu to modify Units of a subreport did not work correctly.\par
+ \bullet  TextSearchSettings Dialog was not setting Set Report.Modified to True. \par
+ \bullet  When subreport, modified need to set childreport.Modified to true\par
+ \bullet  Fix for case in which preview endless page report and then return to design workspace.\par
+ \bullet  Fix for custom component's that need to display a toolbar value list of type integer. \par
+ \bullet  Modified the edit toolbar value list to not be editable.\par
+ \bullet  Improved management of the SaveLength edit box for FixedLength text file setup.\par
+ \bullet  Variable Dialog. Replaced Bevel with Group boxes to fix cosmetic issues.\par
+ \bullet  Modified Workspace Controller ComponentAdd to remove pppcCreating from DesignState\fs28\par
+\par
+RCL\par
+\fs24  \bullet  Using Label OnGetText with WordWrap set to true was not working correctly.\par
+ \bullet  Fixed issue where DBImage was not generating a unique identifier for each record.  \par
+ \bullet  Optimized Band.PropertyChange method to call inherited, prevents AfterPropertyChange firing twice. \par
+ \bullet  Variable. When using the Reset veGroupEnd, the OnReset does not fire correctly.\par
+ \bullet  RichText. Added support for using the Font property as the default font attributes when loading text. \par
+ \bullet  Region. Fixed issue where text was being overlapped by the region border when it was set to a high thickness and Stretch was set to True.\fs28\par
+\par
+Engine\par
+\fs24  \bullet  When main report Header.PrintOnLasPage is False and Section subreport prints the last page, the objects on the last page were not positioned correctly.\par
+ \bullet  Report outline updates the node caption for a child report incorrectly. \fs28\par
+\par
+Devices\par
+\fs24  \bullet  PDF. Fixed a memory leak when the report was being emailed using the PDF device. \par
+ \bullet  PDF. Fixed Image support for centered, stretched, maintain aspect ratio properties .\par
+ \bullet  PDF. Fixed index out of bounds error when exporting full justified text.\par
+ \bullet  Printer. When PrinterName is 'Screen' need to call ReleaseDC rather than FreeDC.\par
+ \bullet  Email. Fixed issue related to registering a SMTP plugin at runtime.\par
+ \bullet  Preview. Fix for AV that can occur when some reports have text search enabled and others do not.\par
+ \bullet  Preview. In some cases, the text search highlighter uses a font height that is one pixel to large. \par
+ \bullet  Printer. Enhanced Shape rendering for case in which pen width is > 0 and pen style is not solid.\fs28  \par
+\par
+Teechart\par
+\fs24  \bullet  Conditional mods to retain RB TeeChart 5.03 package compatibility for D6.\fs28\par
+\par
+DADE\par
+\fs24  \bullet  Date Search Criteria were not loading correctly for reports created with different regional settings.  \par
+ \bullet  Updated CreateAutoSearchField method to better handle calc field expressions\fs28\par
+\par
+ReportExplorer\par
+\fs24  \bullet  Using the DBExpress plug-in with Oracle, the Modified field was getting updated incorrectly.  \par
+ \bullet  The List | View popup menu was not getting updated when switching between List and Details. \fs28\par
+\par
+RAP\par
+\fs24  \bullet  RAP numeric expressions do not always correctly convert variant values such as myDataPipeline['FieldName'].\par
+ \bullet  Fixed issue where boolean comparisons were not correct for <> and > operators.\par
+ \bullet  Fixed bug where for loops iterating downto a value were not functioning. \par
+ \bullet  When childreport contains RAP code, but main report does not, the report definition was not being saved/restored before/after design preview. \par
+ \bullet  A custom system function that contains a compile error sometimes results in an AV.\fs28\par
+\ul\par
+\f0 Enhancements\par
+\par
+\ulnone Version 10.07 - 09/21/2007\par
+\par
+\f1 *RAD Studio/Delphi 2007 Update 3 Support!\fs24\par
+ \bullet  New build for RAD Studio/Delphi 2007 Update 3\par
+\fs22\par
+*note: RB 10.07 for Delphi 2007 requires Update 3\fs24\par
+\par
+\fs28 Developer's Guide, 4th Edition!\par
+\fs24  \bullet  Revised screen shots and content\par
+\par
+\fs28 TeeChart\fs24\par
+ \bullet  Added TeeChart 8 support\par
+\par
+\fs28 DADE\fs24\par
+ \bullet  Optimized DataDictionary support \par
+\par
+\par
+\ul\f0\fs28 Fixes\par
+\par
+\ulnone Version 10.07 - 09/21/2007\par
+\ul\par
+\ulnone\f1 Designer\par
+\fs24  \bullet  On Windows Vista, an AV occurred the 1st time Calc workspace was accessed. \par
+ \bullet  User was not prompted to save changes, when subreport's RAP code is modified\par
+ \bullet  ReportWizard was creating Shape components without assigning the Name property.\par
+\fs28\par
+RCL\par
+\fs24  \bullet  PageBreak: Fix for subreport case in which PageBreak is only element that prints on a page. \par
+ \bullet  Small fix for Group.SetBreakComponent, added check for BreakName <> '''\par
+\fs28\par
+Engine\par
+\fs24  \bullet  Fixed a Destroy AV that can occur when using lookup datapipelines\par
+\fs28\par
+Devices\par
+\fs24  \bullet  PDF: Added code to ensure thread-safety\par
+ \bullet  PDF: When no printers installed, right aligned text was sometimes truncated. \par
+ \bullet  PDF: Added the image optimize property to the Assign routine so it can be controlled from the report object.\par
+ \bullet  PDF: The \'fb character spacing was not exporting properly.\par
+ \bullet  PDF: A one line full justified memo was not showing up in the generated PDF file.\par
+ \bullet  Preview: When RichText.Color is clNone, there was some black appearing at the left and bottom. \par
+ \bullet  Preview: Textsearch & AutoSearch buttons were enabled when the report was generating\par
+ \bullet  Preview: Outline viewer was re-showing itself when returning to page 1\par
+ \bullet  Preview: The <FindText> string was not being translated when switching languages.\par
+ \bullet  Preview: DirectDrawImage needed to check for case in which image width & height are zero.\par
+ \bullet  Email: When using the Indy plug-in, the file attachments were not being cleared\par
+\par
+\fs28 Teechart\par
+\fs24  \bullet  Added TeeChart 8 support\par
+\fs28\par
+DADE\par
+\fs24  \bullet  QueryDesigner: Fixed case in which Calc expression contains multiple subselects with an aggregrate field  \par
+ \bullet  QueryDesigner: renaming a field alias and then subsequently adding a table resulted in an error. \par
+ \bullet  Advantage demo: Updated field names for the Item queries.\par
+ \bullet  DOA demo: Fixed issue where modifying and deleting reports from the item table (in the explorer) was failing.\par
+ \bullet  Added "count" to the reserved words list for Sybase ASA.\par
+\par
+\fs28 ReportExplorer\par
+\fs24  \bullet  Added logic to fire the CustomOpenDoc/SaveDoc events. \par
+\fs28\par
+RAP\par
+\fs24  \bullet  Memory leak fix. Compiling RAP code could sometimes result in a small leak.\par
+\par
+\ul\f0\fs28\par
+Enhancements\par
+\par
+\ulnone Version 10.06 - 03/28/2007\par
+\par
+\f1 Delphi 2007 Support!\fs24\par
+ \bullet  Added support for Delphi 2007\par
+\par
+\fs28 Installation\fs24\par
+ \bullet  Enhanced RB TeeChart Package Builder to display a progress dialog \par
+ \bullet  Enhanced RB TeeChart Builder to support more Windows versions\par
+\par
+\fs28 RCL\fs24\par
+ \bullet  Added ResetGroup support to DBMemo\par
+\par
+\fs28 DADE\fs24\par
+ \bullet  Added support for ElevateDB. The DADE plug-in for ElevateDB can be downloaded from\par
+\par
+     \cf0 http://www.digital-metaphors.com/download/dade_plugins.html\cf1\par
+\f0\fs28\par
+\ul\par
+Fixes\par
+\par
+\ulnone Version 10.06 - 03/28/2007\f1\fs24\par
+\par
+\fs28 Designer\fs24\par
+ \bullet  Unit consolidation, removed units: ppDesignerTools, ppIDE, ppToolbars, ppToolWn\par
+ \bullet  Fixed AV that occured when you select Preview, re-select Design, and then resize window\par
+ \bullet  Updated Duplex drop down list to display the items in the order corresponding to TppDuplexType\par
+\par
+\fs28 RCL\fs24\par
+ \bullet  Subreports. Page numbering fix for case in which a section in the main report has ResetPageNo set to True and contains a nested section with ResetPageNo set to False. \par
+ \bullet  RichText. Fixed MailMerge related issues. Using Band.BeforePrint to modify RichText was being ignored. Screen was flashing during preview. \par
+ \bullet  RichText. When Transparent set to True, the RichText was not rendered to the screen.\par
+ \bullet  2DBarcode. Fixed issue where barcodes were scanning with a duplicate character at the end of the data string.\par
+ \bullet  BackgroundPrintSettings property values were not getting loaded from templates\par
+\par
+\fs28 Devices\fs24\par
+ \bullet  Email. Autosearch dialog was not displayed when sending email outside the preview window.\par
+ \bullet  Email. Modified Mapi plugin to fix case in which Outlook Express dialog was disabled when opened.\par
+\par
+\fs28 TeeChart\fs24\par
+ \bullet  After editing a DPTeechart, Report Designer did not ask to save changes prior to close\par
+\par
+\fs28 DADE\fs24\par
+ \bullet  Delphi design-time error occured after using Query Designer to manually edit the SQL text.\par
+\par
+\fs28 Crosstab\fs24\par
+ \bullet  Caption Total was truncated for case in which caption is wider than widest column.\par
+\par
+\fs28 ReportExplorer\fs24\par
+ \bullet  Update ReportExplorer logic that initializes the Designer File | Menu items, to better support the MergeMenu property.\par
+\par
+\fs28 RAP\fs24\par
+ \bullet  Fix to enable drag and drop of text within the code editor\par
+ \bullet  Fix to move cursor to location of a syntax error, when double-clicked in the code editor\par
+\pard\cf0\f3\fs20\par
+\pard\nowidctlpar\tx360\cf1\f1\fs24\par
+\ul\f0\fs28 Enhancements\par
+\par
+\ulnone Version 10.05 - 01/16/2007\f1\fs24\par
+\par
+\fs28 TeeChart\fs24\par
+ \bullet  New RB TeeChart Package Builder!(for Delphi 7 and later). Builds and installs the RB TeeChart packages required to support the TeeChart version installed to your machine. Use this utility to rebuild the RB TeeChart binaries any time you install a different version of TeeChart. See RBuilder\\TeeChart\\ReadMe.doc. \par
+ \bullet  Added TeeChart 7.09 Std support for Delphi 2006 (TeeChart Std 7.09 is a special build that can be downloaded free from Borland)\par
+ \bullet  Published some of the newer properties available in TeeChart 7\par
+\par
+\fs28 Designer\fs24\par
+ \bullet  Enhanced Object Inspector Property Editors for PrinterSetup subproperties and some file properties\par
+ \bullet  Added Shift+Ctrl Arrow key support for moving objects 10 pixels\par
+ \bullet  Added DesignerWindow properties for DesignPageIndex and PreviewPageIndex\par
+\par
+\fs28 RCL\fs24\par
+ \bullet  Added Report.Email property to provide access to the TppEmail object\par
+ \bullet  Enhanced BarCode screen rendering quality (internally uses a metafile)\par
+\par
+\fs28 ReportExplorer\fs24\par
+ \bullet  New Email button enables reports to be emailed directly from the Report Explorer\par
+\par
+\fs28 RAP\fs24\par
+ \bullet  Added Editor support for Tabs and Block Indent for selected text\par
+ \bullet  Added RAP RTTI support for BringToFront and SendToBack\par
+\par
+\fs28 Server\fs24\par
+ \bullet  New Email button enables reports to be emailed directly from the Client Report Explorer\par
+\par
+\par
+\ul\f0\fs28 Fixes\par
+\par
+\ulnone Version 10.05 - 01/16/2007\f1\fs24\par
+\par
+\fs28 Designer\fs24\par
+ \bullet  ThemeManager needed to delay loading preferences until 1st toolbar is created \par
+ \bullet  Opening two designers at the same time in the Delphi IDE did not work correctly\par
+ \bullet  When Design tab is selected, need to restore workspace focus\par
+ \bullet  Improved International Language support for DataTree Layout page\par
+ \bullet  Modified ReportTree to enforce a min size of one pixel for the report outline\par
+ \bullet  Preview page now calls Report.InitializeParameters prior to calling Preview.BeforePreview\par
+ \bullet  Fixed destroy bug that is detected by FastMM\par
+ \bullet  Pasting a component to a report with a smaller band did not work correctly\par
+\par
+\fs28 RCL\fs24\par
+ \bullet  Modified Image Borders to follow the boundary of the image, rather than the component \par
+ \bullet  Fixed memory leak in the RichText.RetrieveMergeData routine\par
+ \bullet  2DBarCode did not always process non-visible characters correctly\par
+ \bullet  Report.OutlineSettings.Visible property was not persistent\par
+\par
+\fs28 Devices\fs24\par
+ \bullet  Printer. Enhanced to prevent 'floating point overflow error' caused by some drivers\par
+ \bullet  Printer. Fixed issues related to case in which no printers are installed\par
+ \bullet  Printer. Support for duplex Vertical and Horizontal was backwards\par
+ \bullet  Preview. When preview is cancelled and autosearch is used to generate another report, the preview tool buttons were not getting re-enabled.  \par
+ \bullet  PDF. Fixed issue where Memo.ForceJustifyLastLine was not being honored\par
+ \bullet  PDF. Fixed issue where German umlaut was causing align issues with justified text\par
+ \bullet  Email. AutoSearch dialog was displaying when emailing from the preview\par
+ \bullet  Email. Changing export file type from the email dialog was being ignored\par
+ \bullet  Email. Added profile support for the MAPI plugin\par
+ \bullet  Memory leak fix for Publisher.AddPageToCache method\par
+\par
+\fs28 TeeChart\fs24\par
+ \bullet  Editing a DPTeechart, report designer did not ask to save changes prior to close\par
+\par
+\fs28 DADE\fs24\par
+ \bullet  TdaSQL. Linking was removed if dataview is sorted on a non-aggregate calc field\par
+ \bullet  TdaSQL. Linking was being allowed if the dataview was sorted on an aggregate calc field.\par
+ \bullet  DOA demo. ItemUpdate query was not refreshing each time the parameter is modified.\par
+ \bullet  dbExpress demo. The .dtm files were not being loaded properly\par
+\par
+\fs28 RAP\fs24\par
+ \bullet  Added RAP RTTI support for TdaSQLBuilder.ApplyUpdates method\par
+ \bullet  Triggering RAP GlobalOnCreate event, needed to guard against report getting Reset.\par
+ \bullet  Fix for case statement\par
+\par
+\par
+\ul\f0\fs28 Enhancements\par
+\par
+\ulnone Version 10.04 - 07/28/2006\par
+\par
+\f1 TeeChart\par
+\fs24  \bullet  Added TeeChart 7.08 support for Delphi 2006\par
+\fs28\par
+Designer\par
+\fs24  \bullet  Custom colors added to color palette are now shared by all color buttons \par
+ \bullet  Custom colors added to color palette are now saved to RBuilder.ini\fs28\par
+\par
+RCL\par
+\fs24  \bullet  Added OnMailMerge event to update mail-merged richtext at runtime\fs28\par
+\par
+Devices\fs24  \par
+ \bullet  Enhanced printing duplexed copies, a new print job will be created for each copy\par
+ \bullet  Enhanced Email error handling capabilities.\par
+\par
+\ul\f0\fs28\par
+Fixes\par
+\par
+\ulnone Version 10.04 - 07/28/2006\par
+\ul\par
+\ulnone\f1 Designer\par
+\fs24  \bullet  When add a custom page to report designer, tab change events were not firing for the custom page.\par
+ \bullet  Multi-selection, setting a property from a popup menu only updates the first component.\par
+ \bullet  Fix for case in which an AV can sometimes can occur when the selection object is freed.\par
+ \bullet  DisplayFormat property editor did not support typing directly into the property box. \par
+ \bullet  Report | Landscape (and Portrait) menu options were not working properly\par
+ \bullet  An AV sometimes occurred in D2005 when a component inside a Region is deleted.\par
+ \bullet  RichText Editor, fixed design-time AV for D2006 Update2 when opening the editor\par
+\fs28\par
+RCL\par
+\fs24  \bullet  Rotated Text, fix for DBText Autosize and right or center aligned.\par
+ \bullet  TppVariable fix for case in which datatype is string & OnCalc is used to update other TppVariable value's. \par
+ \bullet  RichText, mail merge did use the currently registered TppDisplayFormat class\par
+\fs28\par
+Devices\par
+\fs24  \bullet  When PrinterName is longer than 80 characters, TppPrinter.ShowSetupDialog resulted in an error.\par
+ \bullet  when zoom setting is zsWholePage, the viewer sometimes displays a vertical scrollbar\par
+ \bullet  Fixed DrawImage so that white background is not displayed when image does not fill up the control.\par
+ \bullet  Screen device was not being disconnected when report was exported to a file before being emailed.\par
+ \bullet  Printer device shape rendering sometimes appear filled with a black background color if a brush pattern is used.\par
+\fs28\par
+Engine\par
+\fs24  \bullet  When TitleBand.NewPage is true and Visible is false, group header not generating correctly.\par
+ \bullet  TppVariable fix for case in which DataType is string and orphaned group appeared on the previous page. \par
+ \bullet  Fix for image draw command naming used by HTML and PDF export\par
+ \bullet  Modified OnCancel event to fire after engine has stopped and to fire when viewer is used. \par
+\fs28\par
+DADE\par
+\fs24  \bullet  NexusDB, corrected demo to work with optimized report explorer\par
+ \bullet  Direct Oracle Access (DOA), corrected demo to work with optimized report explorer \par
+ \bullet  dbExpress, added support for additional database types: MS SQL Server, Sybase ASA, Sybase ASE \par
+ \bullet  MS Access, added SESSION and MODULE to MS Access reserved words list.\par
+\fs28\par
+EndUser\par
+\fs24  \bullet  When merging datamodule's the datapipeline username may need to be updated to ensure uniqueness.\par
+\fs28\par
+RAP\par
+\fs24  \bullet  Returning to the Calc tab, the ListView is not always activated properly\par
+ \bullet  Loading a template and calling ShowModal repeatedly can sometimes AV in D6/D7 \par
+\fs28\par
+\ul\f0\par
+Enhancements\par
+\par
+\ulnone Version 10.03 - 05/15/2006\par
+\par
+\f1 Report Component Library (RCL) Enhancements\f0\par
+\f1\fs24  \bullet  support for TeeChart 7.07 (Delphi 2006, Delphi 2005, Delphi 7)\f0\fs28\par
+\pard\nowidctlpar\tx360\tx720\f1\fs24  \bullet  added ShowCancelDialog property to the Report Email Settings\par
+\par
+\fs28 Designer Enhancements\fs24\par
+\pard\nowidctlpar\tx360  \bullet  enhanced Object Inspector to support Parameters Editor\par
+ \bullet  enhanced Object Inspector to support Variant properties\par
+ \bullet  enhanced RAP Editor to prevent cursor from being positioned in the protected, grey, area\par
+\ul\f0\fs28\par
+\par
+Fixes\par
+\par
+\ulnone Version 10.03 - 05/15/2006\par
+\par
+\f1 Designer Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  modified to notify design modules of a close, prior to asking user whether to save changes\par
+ \bullet  statusbar was not getting updated immediately when Language changes\par
+ \bullet  modified timing of when a design module gets set to active - now occurs after tab changed\par
+ \bullet  ReportTreeWindow was not always rebuilding the report tree when a report template is loaded\par
+ \bullet  modified merge menu feature so that original menu items are not deleted when performing a merge\par
+ \bullet  turned off auto completion for FontSize combobox\par
+ \bullet  when copy/paste a region, the child controls need to maintain relative position\par
+ \bullet  when using Ctrl + mouse drag to select objects in a region, do not select the region\par
+\pard\nowidctlpar\tx360\fs28\par
+Report Component Library (RCL) Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  themes: fixed exceptions that can occur when using reports in a dll and the app is closed\par
+\pard\nowidctlpar\tx360  \bullet  modifying the UserName property did not set report.modified to True\fs28\par
+\par
+Report Output Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  preview: when OutlineSettings.Enabled is true and Visible is false, need to enable the popup menu\par
+\pard\nowidctlpar\tx360  \bullet  preview: modified to enable report generation to be cancelled\par
+ \bullet  PDF: fixed memory leak\par
+ \bullet  PDF: fixed spacing issues with a German Umlaut and fixed pitch fonts\par
+ \bullet  border weight was not being honored by the output screen and printer devices\par
+ \bullet  shapes: reverted back to the original way shapes were drawn (i.e. using TCanvas.Rectangle) due to some shape to shape alignment issues\par
+\fs28\par
+End User Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  ReportExplorer: some toolbar hints contained an accelator char (&)\par
+\pard\nowidctlpar\tx360  \bullet  ReportExplorer: File, View, Help items needed GroupIndex initialization\par
+ \bullet  ReportExplorer: setting form properties via code, could sometimes cause an AV\fs28\par
+\par
+Rap Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  Calc Dialog: pressing the enter key resulted in dialog closing, rather than a line feed in the editor\par
+\pard\nowidctlpar\tx360  \bullet  small language support fix for the case in which the Calc workspace has not been activated and the language is changed\fs28\par
+\ul\f0\par
+\par
+Enhancements\par
+\par
+\ulnone Version 10.02 - 03/16/2006\par
+\par
+\f1 Designer Enhancements\f0\par
+\f1\fs24  \bullet  new TppDesignerWindow.MenuDock property (can be used to move menu to a parent form)\f0\fs28\par
+\pard\nowidctlpar\tx360\tx720\f1\fs24  \bullet  added ShowComponents support for PageBreak and 2dBarCode components\par
+ \bullet  modified Paste so that it does not apply an offset when pasting to a different report\par
+\par
+\fs28 Dade Enhancements\fs24\par
+\pard\nowidctlpar\tx360  \bullet  improved generation of linking SQL (i.e. magic sql) to work for more complex cases\par
+\ul\f0\fs28\par
+Fixes\par
+\par
+\ulnone Version 10.02 - 03/16/2006\par
+\par
+\f1 Designer Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  changing Language did not update the interface immediately, a shut down was required\par
+ \bullet  menu short cuts did not work for international installations\par
+ \bullet  ShowComponents feature was not working\par
+ \bullet  closing Designer from the Preview workspace, did not support close query (i.e. ask user to save changes)\par
+ \bullet  importing a template file, did not support close query (for end-user applications)\par
+ \bullet  snap to grid support for sizing controls is sometimes one pixel off\par
+ \bullet  align toolbar options for Space Horizontally and Space Vertically did not work properly\par
+ \bullet  align top sometimes changes the z-order of the components\par
+\pard\nowidctlpar\tx360  \bullet  closing designer while subreport selected and then loading a new report, did not update workspace correctly\par
+\par
+\fs28 DataPipeline Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  an AV can sometimes occur when a DBPipeline is destroyed and FreeBookmark is called\par
+ \bullet  added support for Delphi 2006 TWideMemoField datatype\par
+ \bullet  fixed an issue with storing a template to an "ntext" field in SQL Server for Delphi D2006\par
+\pard\nowidctlpar\tx360\fs28\par
+Report Component Library (RCL) Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  fixed 2DBarCode PDF417 numerical encoding for sequences of digits longer than 13.\par
+\pard\nowidctlpar\tx360  \bullet  fixed 2DBarCode sizing calculations so that screen display and printing match\fs28\par
+\par
+Report Output Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  printer defaults for properties other than PrinterSetup (such as Quality) were not always used\par
+\pard\nowidctlpar\tx360  \bullet  cancel button was disabled when the viewer was busy calculating the first pass of a report\par
+ \bullet  fix for case in which autosearch defaults to an empty report\par
+ \bullet  when detail is zero height, the preview workspace does not get activated properly\par
+ \bullet  when report is two pass, sometimes switching back to calc or design causes an AV\par
+\par
+\fs28 Engine Fixes\par
+\fs24  \bullet  updated internal event notification related to freeing bookmarks when a datapipeline is closed\fs28\par
+\par
+Dade Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  Query Designer 'Edit SQL as Text' feature was not working properly\par
+\pard\nowidctlpar\tx360  \bullet  when visual data link deleted, the underlying field links were not always removed\fs28\par
+\par
+End User Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  fixed issues with IBExpress demo\par
+\pard\nowidctlpar\tx360  \bullet  fixed ReportExplorer MergeMenu to work with new MenuBar class\par
+ \bullet  added Menubar and Toolbar properties to the ReportExplorerForm class\fs28\par
+\par
+Rap Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  fixed Rap Interface Option hiding the Calc tab (riNotebookTab)\par
+\pard\nowidctlpar\tx360  \bullet  RAP Editor was incorrectly highlighting "//" as a comment (RAP compiler does not support this)\par
+ \bullet  fixed issued related to switching from a subreport Calc workspace to Preview, and then to Design\fs28\par
+\fs24\par
+\par
+\ul\f0\fs28 Enhancements\par
+\par
+\ulnone Version 10.01 - 02/24/2006\par
+\par
+\f1 Designer Enhancements\f0\par
+\f1\fs24  \bullet  added Theme support for Designer Notebook Tabs\f0\fs28\par
+\pard\nowidctlpar\tx360\tx720\f1\fs24  \bullet  Save/Restore Design selection when switch tabs\par
+ \bullet  added snap to grid support for Sizing a control\par
+\par
+\fs28 Report Component Library (RCL) Enhancements\fs24\par
+\pard\nowidctlpar\tx360  \bullet  PrintHumanReadable property added to the 2DBarCode component\par
+\par
+\fs28 String Translator Application\par
+\fs24  \bullet  updated for RB 10 strings\ul\f0\fs28\par
+\par
+Fixes\par
+\par
+\ulnone Version 10.01 - 02/24/2006\par
+\par
+\f1 Designer Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  edit toolbar now supports multi-selection  (edit box, combo boxes)\par
+ \bullet  ToolWindows now restore docked width\par
+ \bullet  sort field alias list that is displayed in the edit toolbar\par
+ \bullet  sort field alias list that is displayed in the report wizard\par
+ \bullet  edit toolbar combo boxes now support auto completion (i.e. Pipeline list, Field list).\par
+ \bullet  format toolbar buttons for center and right justify were switched\par
+ \bullet  improved Design Preview exception handling (exceptions that occur during report generation)\par
+ \bullet  when switching to subreport tabs in the designer, sometimes an AV occurs\par
+\pard\nowidctlpar\tx360  \bullet  fixed registration of rbIDE resource file used for international language support\par
+\pard\nowidctlpar\tx360\tx720  \bullet  TppDesigner.OnTabChange event passed incorrect NewTab value\par
+ \bullet  when using XPMan the spin controls did not look quite correct\par
+ \bullet  designer.MergeMenu did not properly clone Separator items\par
+ \bullet  past undo support was not working correctly\par
+ \bullet  group Header/footer menu does not display group dialog\par
+ \bullet  snap to grid for y pos is only accurate for the header band\par
+ \bullet  grid options Size does not immediately change the workspace\par
+ \bullet  rulers do not always stay in sync - when scrollable area changes\par
+\pard\nowidctlpar\tx360  \bullet  when workspace gets focus, it incorrectly auto scrolls to the top\fs28\par
+\par
+Report Component Library (RCL) Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  renamed Toolbar resource file to ensure uniqueness\par
+ \bullet  TmyCheckbox .dcu files were not installed correctly\par
+ \bullet  2DBarCode fix for PDF417 encoding in which Data contains a sequence of more than 13 digits\par
+\pard\nowidctlpar\tx360  \bullet  2DBarCode BarWidth and BarHeight changes are rendered correctly\fs28\par
+\par
+Report Output Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  fixed issue where shapes were filling with a black background color if a brush pattern was used\par
+\pard\nowidctlpar\tx360  \bullet  fixed issue where Right aligned text was being cut off when not autosized in PDF\fs28\par
+\par
+Dade Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  when using PostgreSQL database type, modified to use the AS operator for field aliasing\par
+\pard\nowidctlpar\tx360  \bullet  fix for case in which a query contains a field with the same name from two tables and both are used for autosearch\fs28\par
+\par
+End User Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  Advantage EndUser example update\par
+\pard\nowidctlpar\tx360  \bullet  modified Dynamic Load Subreport demo to suppress report explorer locate record event while loading the subreport template\fs28\par
+\par
+Rap Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  RAP calc dialog was not initialized properly\par
+\pard\nowidctlpar\tx360  \bullet  Renamed RAP Editor resource file\fs28\par
+\fs24\par
+\par
+\ul\f0\fs28 Enhancements\par
+\par
+\pard\nowidctlpar\tx360\tx720\ulnone Version 10.0 - 02/09/2006\b\f1\par
+\par
+\b0 Designer Enhancements\par
+\fs24  \bullet  new internal architecture - extensive rewrite\par
+ \bullet  new XP style toolbars (supports themes)\par
+ \bullet  new XP style menus (support themes)\par
+ \bullet  new XP style popup menu (supports themes)\par
+ \bullet  new XP style tabbed notebook\par
+ \bullet  new XP style dockable tool windows\par
+ \bullet  new XP style icons\par
+ \bullet  enhanced Object Inspector to support multi-selection\par
+ \bullet  enhanced popup menus to support multi-selection\par
+ \bullet  new RAP Code Editor\par
+\fs28\par
+Report Component Library (RCL) Enhancements\par
+ \fs24\bullet  new 2D BarCode component: PDF417 and MaxiCode\par
+ \bullet  support for TeeChart 7.06 (Delphi 2006, Delphi 2005, Delphi 7)\par
+ \bullet  enhanced shape and line alignment\par
+\fs28\par
+Report Output Enhancements\par
+\fs24  \bullet  XP style Previewer\par
+ \bullet  new built-in Email capability w/plug-in architecture including Outlook, MAPI, Indy plug-ins\par
+ \bullet  enhanced PDFDevice archtitecture to support registering "Renderer" classes for each DrawCommand class\par
+\par
+\fs28 Report Explorer Enhancements\par
+\fs24  \bullet  new XP style toolbars, menus, popup menus, icons\par
+ \bullet  optimized performance (new ItemTemplatePipeline property)\par
+ \bullet  enhanced to support Report Designer MRU (most recently used) Items\par
+\par
+\fs28 Visual Data Access Enhancements\par
+\fs24  \bullet  new XP style tabs, toolbars, tool windows, menus, popup menus, icons\par
+ \bullet  enhanced scrollable work space\par
+ \bullet  new stored procedure custom DataView example (RBuilder\\Demos\\EndUser Databases\\SQL Server\\ADO\\Stored Procedures)\par
+\fs28\par
+RAP Enhancements\par
+\fs24  \bullet  new XP style tabs, menus, popup menus, icons\par
+ \bullet  new professional style RAP code editor\ul\f0\fs28\par
+\pard\nowidctlpar\tx360\par
+}
+ 

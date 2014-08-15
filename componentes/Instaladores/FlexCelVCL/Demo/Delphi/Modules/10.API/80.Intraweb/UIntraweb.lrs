@@ -1,0 +1,96 @@
+LazarusResources.Add('TMainForm','FORMDATA',[
+  'TPF0'#9'TMainForm'#8'MainForm'#4'Left'#2#0#3'Top'#2#0#5'Width'#3'+'#2#6'Heig'
+  +'ht'#3#144#1#14'ConnectionMode'#7#5'cmAny'#17'SupportedBrowsers'#11#4'brIE'
+  +#11'brNetscape7'#7'brOpera'#11'brNetscape6'#0#15'AllowPageAccess'#9#20'Brows'
+  +'erSecurityCheck'#9#16'Background.Fixed'#8#10'HandleTabs'#8#11'LeftToRight'#9
+  +#15'LockUntilLoaded'#9#12'LockOnSubmit'#8#8'ShowHint'#9#7'XPTheme'#9#10'Desi'
+  +'gnLeft'#2#8#9'DesignTop'#2#8#0#9'TIWButton'#9'IWButton1'#4'Left'#2#16#3'Top'
+  +#2#14#5'Width'#3#169#0#6'Height'#2#25#6'Cursor'#7#6'crAuto'#8'IW50Hint'#8#14
+  +'ParentShowHint'#8#8'ShowHint'#9#6'ZIndex'#2#0#10'RenderSize'#9#29'StyleRend'
+  +'erOptions.RenderSize'#9'!StyleRenderOptions.RenderPosition'#9#29'StyleRende'
+  +'rOptions.RenderFont'#9#31'StyleRenderOptions.RenderZIndex'#9'#StyleRenderOp'
+  +'tions.RenderVisibility'#9#31'StyleRenderOptions.RenderStatus'#9#7'Caption'#6
+  +#10'See Report'#18'DoSubmitValidation'#9#5'Color'#7#9'clBtnFace'#10'Font.Col'
+  +'or'#7#6'clNone'#9'Font.Size'#2#10#10'Font.Style'#11#0#12'FriendlyName'#6#9
+  +'IWButton1'#12'ScriptEvents'#14#0#8'TabOrder'#2#0#7'OnClick'#7#14'IWButton1C'
+  +'lick'#0#0#9'TIWButton'#9'IWButton2'#4'Left'#2#16#3'Top'#2'O'#5'Width'#3#169
+  +#0#6'Height'#2#25#6'Cursor'#7#6'crAuto'#8'IW50Hint'#8#14'ParentShowHint'#8#8
+  +'ShowHint'#9#6'ZIndex'#2#0#10'RenderSize'#9#29'StyleRenderOptions.RenderSize'
+  +#9'!StyleRenderOptions.RenderPosition'#9#29'StyleRenderOptions.RenderFont'#9
+  +#31'StyleRenderOptions.RenderZIndex'#9'#StyleRenderOptions.RenderVisibility'
+  +#9#31'StyleRenderOptions.RenderStatus'#9#7'Caption'#6#15'Download Report'#18
+  +'DoSubmitValidation'#9#5'Color'#7#9'clBtnFace'#10'Font.Color'#7#6'clNone'#9
+  +'Font.Size'#2#10#10'Font.Style'#11#0#12'FriendlyName'#6#9'IWButton2'#12'Scri'
+  +'ptEvents'#14#0#8'TabOrder'#2#1#7'OnClick'#7#14'IWButton2Click'#0#0#8'TIWLab'
+  +'el'#8'IWLabel2'#4'Left'#2#16#3'Top'#2'n'#5'Width'#3''''#1#6'Height'#2#16#6
+  +'Cursor'#7#6'crAuto'#8'IW50Hint'#8#14'ParentShowHint'#8#8'ShowHint'#9#6'ZInd'
+  +'ex'#2#0#10'RenderSize'#9#29'StyleRenderOptions.RenderSize'#9'!StyleRenderOp'
+  +'tions.RenderPosition'#9#29'StyleRenderOptions.RenderFont'#9#31'StyleRenderO'
+  +'ptions.RenderZIndex'#9'#StyleRenderOptions.RenderVisibility'#9#31'StyleRend'
+  +'erOptions.RenderStatus'#9#9'Alignment'#7#13'taLeftJustify'#7'BGColor'#7#6'c'
+  +'lNone'#10'Font.Color'#7#6'clNone'#9'Font.Size'#2#10#10'Font.Style'#11#0#6'N'
+  +'oWrap'#8#13'ConvertSpaces'#8#11'HasTabOrder'#8#12'FriendlyName'#6#8'IWLabel'
+  +'2'#7'Caption'#6'.This will download the report to your computer'#7'RawText'
+  +#8#0#0#7'TIWText'#7'IWText1'#4'Left'#2#16#3'Top'#2'.'#5'Width'#3#193#1#6'Hei'
+  +'ght'#2#19#6'Cursor'#7#6'crAuto'#8'IW50Hint'#8#14'ParentShowHint'#8#8'ShowHi'
+  +'nt'#9#6'ZIndex'#2#0#10'RenderSize'#9#29'StyleRenderOptions.RenderSize'#9'!S'
+  +'tyleRenderOptions.RenderPosition'#9#29'StyleRenderOptions.RenderFont'#9#31
+  +'StyleRenderOptions.RenderZIndex'#9'#StyleRenderOptions.RenderVisibility'#9
+  +#31'StyleRenderOptions.RenderStatus'#9#7'BGColor'#7#6'clNone'#13'ConvertSpac'
+  +'es'#8#10'Font.Color'#7#6'clNone'#9'Font.Size'#2#10#10'Font.Style'#11#0#12'F'
+  +'riendlyName'#6#7'IWText1'#13'Lines.Strings'#1#6'EThis will show the report '
+  +'on the browser, if you have Excel installed'#0#7'RawText'#8#8'UseFrame'#8#11
+  +'WantReturns'#9#0#0#12'TIWRectangle'#12'IWRectangle1'#4'Left'#2#16#3'Top'#3
+  +#164#0#5'Width'#3#234#1#6'Height'#3#219#0#6'Cursor'#7#6'crAuto'#8'IW50Hint'#8
+  +#14'ParentShowHint'#8#8'ShowHint'#9#6'ZIndex'#2#0#10'RenderSize'#9#29'StyleR'
+  +'enderOptions.RenderSize'#9'!StyleRenderOptions.RenderPosition'#9#29'StyleRe'
+  +'nderOptions.RenderFont'#9#31'StyleRenderOptions.RenderZIndex'#9'#StyleRende'
+  +'rOptions.RenderVisibility'#9#31'StyleRenderOptions.RenderStatus'#9#10'Font.'
+  +'Color'#7#6'clNone'#9'Font.Size'#2#10#10'Font.Style'#11#0#19'BorderOptions.C'
+  +'olor'#7#10'clWebBLACK'#19'BorderOptions.Width'#2#1#12'FriendlyName'#6#12'IW'
+  +'Rectangle1'#5'Color'#7#6'clNone'#9'Alignment'#7#13'taLeftJustify'#6'VAlign'
+  +#7#8'vaMiddle'#0#0#7'TIWFile'#7'IWFile1'#4'Left'#2#24#3'Top'#3#224#0#5'Width'
+  +#3'A'#1#6'Height'#2')'#6'Cursor'#7#6'crAuto'#8'IW50Hint'#8#14'ParentShowHint'
+  +#8#8'ShowHint'#9#6'ZIndex'#2#0#10'RenderSize'#9#29'StyleRenderOptions.Render'
+  +'Size'#9'!StyleRenderOptions.RenderPosition'#9#29'StyleRenderOptions.RenderF'
+  +'ont'#9#31'StyleRenderOptions.RenderZIndex'#9'#StyleRenderOptions.RenderVisi'
+  +'bility'#9#31'StyleRenderOptions.RenderStatus'#9#8'TabOrder'#2#2#12'Friendly'
+  +'Name'#6#7'IWFile1'#10'Font.Color'#7#6'clNone'#9'Font.Size'#2#10#10'Font.Sty'
+  +'le'#11#0#7'BGColor'#7#6'clNone'#12'ButtonHeight'#2#21#12'FrameBGColor'#7#6
+  +'clNone'#20'StatusUpdateInterval'#3#232#3#0#0#9'TIWButton'#9'IWButton3'#4'Le'
+  +'ft'#2#24#3'Top'#3#15#1#5'Width'#3'A'#1#6'Height'#2#25#6'Cursor'#7#6'crAuto'
+  +#8'IW50Hint'#8#14'ParentShowHint'#8#8'ShowHint'#9#6'ZIndex'#2#0#10'RenderSiz'
+  +'e'#9#29'StyleRenderOptions.RenderSize'#9'!StyleRenderOptions.RenderPosition'
+  +#9#29'StyleRenderOptions.RenderFont'#9#31'StyleRenderOptions.RenderZIndex'#9
+  +'#StyleRenderOptions.RenderVisibility'#9#31'StyleRenderOptions.RenderStatus'
+  ,#9#7'Caption'#6#12'Show Cell A1'#18'DoSubmitValidation'#9#5'Color'#7#9'clBtn'
+  +'Face'#10'Font.Color'#7#6'clNone'#9'Font.Size'#2#10#10'Font.Style'#11#0#12'F'
+  +'riendlyName'#6#9'IWButton3'#12'ScriptEvents'#14#0#8'TabOrder'#2#3#7'OnClick'
+  +#7#14'IWButton3Click'#0#0#8'TIWLabel'#7'iwbitii'#4'Left'#2#24#3'Top'#3'.'#1#5
+  +'Width'#3#185#1#6'Height'#2#16#6'Cursor'#7#6'crAuto'#8'IW50Hint'#8#14'Parent'
+  +'ShowHint'#8#8'ShowHint'#9#6'ZIndex'#2#0#10'RenderSize'#9#29'StyleRenderOpti'
+  +'ons.RenderSize'#9'!StyleRenderOptions.RenderPosition'#9#29'StyleRenderOptio'
+  +'ns.RenderFont'#9#31'StyleRenderOptions.RenderZIndex'#9'#StyleRenderOptions.'
+  +'RenderVisibility'#9#31'StyleRenderOptions.RenderStatus'#9#9'Alignment'#7#13
+  +'taLeftJustify'#7'BGColor'#7#6'clNone'#10'Font.Color'#7#6'clNone'#9'Font.Siz'
+  +'e'#2#10#10'Font.Style'#11#0#6'NoWrap'#8#13'ConvertSpaces'#8#11'HasTabOrder'
+  +#8#12'FriendlyName'#6#7'iwbitii'#7'Caption'#6'ISelect an Excel file and pres'
+  +'s this button to see the contents of cell A1'#7'RawText'#8#0#0#8'TIWLabel'#8
+  +'IWLabel1'#4'Left'#2#24#3'Top'#3#176#0#5'Width'#2'd'#6'Height'#2#16#6'Cursor'
+  +#7#6'crAuto'#8'IW50Hint'#8#14'ParentShowHint'#8#8'ShowHint'#9#6'ZIndex'#2#0
+  +#10'RenderSize'#8#29'StyleRenderOptions.RenderSize'#9'!StyleRenderOptions.Re'
+  +'nderPosition'#9#29'StyleRenderOptions.RenderFont'#9#31'StyleRenderOptions.R'
+  +'enderZIndex'#9'#StyleRenderOptions.RenderVisibility'#9#31'StyleRenderOption'
+  +'s.RenderStatus'#9#9'Alignment'#7#13'taLeftJustify'#7'BGColor'#7#6'clNone'#10
+  +'Font.Color'#7#6'clNone'#9'Font.Size'#2#10#10'Font.Style'#11#0#6'NoWrap'#8#13
+  +'ConvertSpaces'#8#11'HasTabOrder'#8#12'FriendlyName'#6#8'IWLabel1'#7'Caption'
+  +#6#17'Read an xls file.'#7'RawText'#8#0#0#14'TFlexCelReport'#6'Report'#8'Tem'
+  +'plate'#6#21'Intraweb.Template.xls'#9'AutoClose'#8#7'Adapter'#7#10'XLSAdapte'
+  +'r'#14'DateTimeFormat'#6#16'mm/dd/yyyy hh:mm'#17'KeepEmptyPictures'#8#10'Dat'
+  +'aModule'#7#5'Owner'#4'Left'#3#24#1#3'Top'#2'H'#0#0#11'TXLSAdapter'#10'XLSAd'
+  +'apter'#21'AllowOverwritingFiles'#9#4'Left'#3#248#0#3'Top'#2'H'#0#0#6'TTable'
+  +#4'Cust'#12'DatabaseName'#6#7'DBDEMOS'#9'TableName'#6#11'customer.db'#4'Left'
+  +#3'8'#1#3'Top'#2'H'#0#0#11'TDataSource'#11'DataSource1'#7'DataSet'#7#4'Cust'
+  +#4'Left'#3'X'#1#3'Top'#2'H'#0#0#14'TFlexCelImport'#13'FlexCelImport'#7'Adapt'
+  +'er'#7#10'XLSAdapter'#4'Left'#3#24#1#3'Top'#2'h'#0#0#0
+]);

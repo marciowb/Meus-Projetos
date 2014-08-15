@@ -1,0 +1,222 @@
+package rbRCL1214;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ReportBuilder Components'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vclImg,
+  rbRTL1214;  
+
+contains
+  ppTmplat in 'ppTmplat.pas',
+  ppClass in 'ppClass.pas',
+  ppCtrls in 'ppCtrls.pas',
+  ppRotatedText in 'ppRotatedText.pas',
+  ppPageBreak in 'ppPageBreak.pas',
+  ppEngine in 'ppEngine.pas',
+  ppStrtch in 'ppStrtch.pas',
+  ppCache in 'ppCache.pas',
+  ppPrnDev in 'ppPrnDev.pas',
+  ppRichTx in 'ppRichTx.pas',
+  ppRegion in 'ppRegion.pas',
+  ppReport in 'ppReport.pas',
+  ppPrnabl in 'ppPrnabl.pas',
+  ppFilDev in 'ppFilDev.pas',
+  ppMemo in 'ppMemo.pas',
+  ppSubRpt in 'ppSubRpt.pas',
+  ppTmDlg in 'ppTmDlg.pas',
+  ppCmpReg in 'ppCmpReg.pas',
+  ppBarCod in 'ppBarCod.pas',
+  ppProd in 'ppProd.pas',
+  ppDrwCmd in 'ppDrwCmd.pas',
+  ppForms in 'ppForms.pas',
+  ppDB in 'ppDB.pas',
+  ppBands in 'ppBands.pas',
+  ppCDlg in 'ppCDlg.pas',
+  ppDevice in 'ppDevice.pas',
+  ppArchiv in 'ppArchiv.pas',
+  ppDBArchiv in 'ppDBArchiv.pas',
+  ppPDlg in 'ppPDlg.pas',
+  ppViewr in 'ppViewr.pas',
+  ppRuler in 'ppRuler.pas',
+  ppPrvDlg in 'ppPrvDlg.pas',
+  ppDBJIT in 'ppDBJIT.pas',
+  ppTxPipe in 'ppTxPipe.pas',
+  ppTmEDlg in 'ppTmEDlg.pas',
+  ppVar in 'ppVar.pas',
+  ppModule in 'ppModule.pas',
+  ppASDlg in 'ppASDlg.pas',
+  ppASCtrl in 'ppASCtrl.pas',
+  ppNoDataDlg in 'ppNoDataDlg.pas',
+  ppPlainText in 'ppPlainText.pas',
+  ppPreview in 'ppPreview.pas',
+  ppPreviewIcons in 'ppPreviewIcons.pas',
+  ppAsField in 'ppAsField.pas',
+  ppFormWrapper in 'ppFormWrapper.pas',
+  ppRptExpCommon in 'ppRptExpCommon.pas',
+  ppDBStorageSettings in 'ppDBStorageSettings.pas',
+  ppAttribTreeNode in 'ppAttribTreeNode.pas',
+  ppVerticalBandEngine in 'ppVerticalBandEngine.pas',
+  ppHorizontalBandEngine in 'ppHorizontalBandEngine.pas',
+  ppDetailBandEngine in 'ppDetailBandEngine.pas',
+  ppBandEngine in 'ppBandEngine.pas',
+  ppCheckTreeView in 'ppCheckTreeView.pas',
+  ppOUtline in 'ppOUtline.pas',
+  ppOutlineDrawCommand in 'ppOutlineDrawCommand.pas',
+  ppOutlineGroupNodeCreator in 'ppOutlineGroupNodeCreator.pas',
+  ppOutlineNode in 'ppOutlineNode.pas',
+  ppOutlineNodeCreator in 'ppOutlineNodeCreator.pas',
+  ppOutlineParticipant in 'ppOutlineParticipant.pas',
+  ppOutlineReportNodeCreator in 'ppOutlineReportNodeCreator.pas',
+  ppOutlineReportSettings in 'ppOutlineReportSettings.pas',
+  ppOutlineSettings in 'ppOutlineSettings.pas',
+  ppOutlineViewer in 'ppOutlineViewer.pas',
+  ppPreviewFormSettings in 'ppPreviewFormSettings.pas',
+  ppTextSearchCustomEngine in 'ppTextSearchCustomEngine.pas',
+  ppTextSearchCustomPreview in 'ppTextSearchCustomPreview.pas',
+  ppTextSearchDrawCommandHighlighter in 'ppTextSearchDrawCommandHighlighter.pas',
+  ppTextSearchDrawCommandHighlightRegistry in 'ppTextSearchDrawCommandHighlightRegistry.pas',
+  ppTextSearchOccurrence in 'ppTextSearchOccurrence.pas',
+  ppTextSearchHighlighter in 'ppTextSearchHighlighter.pas',
+  ppTextSearchRichTextHighlighter in 'ppTextSearchRichTextHighlighter.pas',
+  ppTextSearchSelectionHighlighter in 'ppTextSearchSelectionHighlighter.pas',
+  ppTextSearchPage in 'ppTextSearchPage.pas',
+  ppTextSearchPageList in 'ppTextSearchPageList.pas',
+  ppTextSearchRegistration in 'ppTextSearchRegistration.pas',
+  ppTextSearchError in 'ppTextSearchError.pas',
+  ppTextSearchPreview in 'ppTextSearchPreview.pas',
+  ppTextSearchPreviewIcons in 'ppTextSearchPreviewIcons.pas',
+  ppTextSearchEngineRegistry in 'ppTextSearchEngineRegistry.pas',
+  ppTextSearchEngine in 'ppTextSearchEngine.pas',
+  ppTextSearchRichTextEngine in 'ppTextSearchRichTextEngine.pas',
+  ppTextSearchSettings in 'ppTextSearchSettings.pas',
+  ppTextSearchToolbox in 'ppTextSearchToolbox.pas',
+  ppAutosearchRTTI in 'ppAutosearchRTTI.pas',
+  ppBackgroundContainerAdapter in 'ppBackgroundContainerAdapter.pas',
+  ppBackgroundPrintThread in 'ppBackgroundPrintThread.pas',
+  ppBackgroundThreadSync in 'ppBackgroundThreadSync.pas',
+  ppBackgroundPrintManager in 'ppBackgroundPrintManager.pas',
+  ppBackgroundPrintRequest in 'ppBackgroundPrintRequest.pas',
+  ppBackgroundPrintQueue in 'ppBackgroundPrintQueue.pas',
+  ppBackgroundPrintSettings in 'ppBackgroundPrintSettings.pas',
+  ppBackgroundReportGenerator in 'ppBackgroundReportGenerator.pas',
+  ppReportTemplateRTTI in 'ppReportTemplateRTTI.pas',
+  ppScrollBox in 'ppScrollBox.pas',
+  ppParameter in 'ppParameter.pas',
+  ppDesignerInterface in 'ppDesignerInterface.pas',
+  ppBarCodDrwCmd in 'ppBarCodDrwCmd.pas',
+  ppRichTxDrwCmd in 'ppRichTxDrwCmd.pas',
+  ppClasUt in 'ppClasUt.pas',
+  ppBarCode2d in 'ppBarCode2d.pas',
+  ppBarCode2DDrawCmd in 'ppBarCode2DDrawCmd.pas',
+  ppSt2DBarC in 'ppSt2DBarC.pas',
+  ppPopupMenuBase in 'ppPopupMenuBase.pas',
+
+  ppEmail in 'ppEmail.pas',
+  ppEmailSettings in 'ppEmailSettings.pas',
+  ppEmailDlg in 'ppEmailDlg.pas',
+  ppEmailLoginDlg in 'ppEmailLoginDlg.pas',
+  ppSMTPCustom in 'ppSMTPCustom.pas',
+  ppSMTPMapi in 'ppSMTPMapi.pas',
+  ppEmailMessage in 'ppEmailMessage.pas',
+
+  ppPDFDevice in 'ppPDFDevice.pas',
+  ppPDFSettings in 'ppPDFSettings.pas',
+  ppPDFRendererLine in 'ppPDFRendererLine.pas',
+  ppPDFRendererShape in 'ppPDFRendererShape.pas',
+  ppPDFRendererText in 'ppPDFRendererText.pas',
+  ppPDFRendererStandardText in 'ppPDFRendererStandardText.pas',
+  ppPDFRendererWrappedText in 'ppPDFRendererWrappedText.pas',
+  ppPDFRendererCustomText in 'ppPDFRendererCustomText.pas',
+  ppPDFRendererGeneric in 'ppPDFRendererGeneric.pas',
+  ppPDFRendererImage in 'ppPDFRendererImage.pas',
+  ppPDFProcSet in 'ppPDFProcSet.pas',
+  ppPDFInfo in 'ppPDFInfo.pas',
+  ppPDFCatalog in 'ppPDFCatalog.pas',
+  ppPDFPageTree in 'ppPDFPageTree.pas',
+  ppPDFContent in 'ppPDFContent.pas',
+  ppPDFPage in 'ppPDFPage.pas',
+  ppPDFGState in 'ppPDFGState.pas',
+  ppPDFRendererManager in 'ppPDFRendererManager.pas',
+  ppPDFRenderer in 'ppPDFRenderer.pas',
+  ppPDFXRef in 'ppPDFXRef.pas',
+  ppPDFImageManager in 'ppPDFImageManager.pas',
+  ppPDFImage in 'ppPDFImage.pas',
+  ppPDFFontManager in 'ppPDFFontManager.pas',
+  ppPDFFont in 'ppPDFFont.pas',
+  ppPDFFontDescriptor in 'ppPDFFontDescriptor.pas',
+  ppPDFFontWidths in 'ppPDFFontWidths.pas',
+  ppPDFXObject in 'ppPDFXObject.pas',
+  ppPDFUtils in 'ppPDFUtils.pas',
+  ppPDFObject in 'ppPDFObject.pas',
+
+  {RB 11}
+
+  ppMetaFileReader in 'ppMetaFileReader.pas',
+  ppMetaGraphicsPDF in 'ppMetaGraphicsPDF.pas',
+  ppMetaGraphics in 'ppMetaGraphics.pas',
+  ppPaintBox in 'ppPaintBox.pas',
+  ppPCL in 'ppPCL.pas',
+  ppPDFAction in 'ppPDFAction.pas',
+  ppPDFCanvas in 'ppPDFCanvas.pas',
+  ppPDFFontFile in 'ppPDFFontFile.pas',
+  ppPDFEncoding in 'ppPDFEncoding.pas',
+
+  {RB 12}
+
+  ppGraphicsDevice in 'ppGraphicsDevice.pas',
+  ppPDFEncrypt in 'ppPDFEncrypt.pas',
+  ppWinEmbedFont in 'ppWinEmbedFont.pas',
+  ppOneCode in 'ppOneCode.pas',
+
+  ppXLSDevice in 'ppXLSDevice.pas',
+  ppXLSRecordBif in 'ppXLSRecordBif.pas',
+  ppXLSRecordMso in 'ppXLSRecordMso.pas',
+  ppXLSRenderer in 'ppXLSRenderer.pas',
+  ppXLSRendererManager in 'ppXLSRendererManager.pas',
+  ppXLSWorkbook in 'ppXLSWorkbook.pas',
+  ppXLSWriter in 'ppXLSWriter.pas',
+  ppXLSSettings in 'ppXLSSettings.pas',
+  ppFormatStyles in 'ppFormatStyles.pas',
+  ppStructuredStorage in 'ppStructuredStorage.pas',
+
+  ppRTFDevice in 'ppRTFDevice.pas',
+  ppRTFDocument in 'ppRTFDocument.pas',
+  ppRTFObject in 'ppRTFObject.pas',
+  ppRTFPage in 'ppRTFPage.pas',
+  ppRTFRenderer in 'ppRTFRenderer.pas',
+  ppRTFRendererGeneric in 'ppRTFRendererGeneric.pas',
+  ppRTFRendererImage in 'ppRTFRendererImage.pas', 
+  ppRTFRendererLine in 'ppRTFRendererLine.pas',
+  ppRTFRendererManager in 'ppRTFRendererManager.pas',
+  ppRTFRendererShape in 'ppRTFRendererShape.pas',
+  ppRTFRendererText in 'ppRTFRendererText.pas',
+  ppRTFSettings in 'ppRTFSettings.pas',
+
+  ppImageDevice in 'ppImageDevice.pas',
+  ppWICDevice in 'ppWICDevice.pas';  //Delphi 2010
+
+end.

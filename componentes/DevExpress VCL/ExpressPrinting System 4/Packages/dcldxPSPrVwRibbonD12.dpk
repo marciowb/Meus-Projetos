@@ -1,0 +1,54 @@
+package dcldxPSPrVwRibbonD12;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressPrinting System 4 Ribbon Preview Window by Developer Express Inc.'}
+{$IMPLICITBUILD OFF}
+{$DESIGNONLY}
+
+requires
+  cxEditorsD12,
+  cxExtEditorsD12,
+  cxPageControlD12,
+  rtl,
+  designide,
+  dxPSCoreD12,
+  dcldxCoreD12,
+  dcldxPSCoreD12,
+  dclcxLibraryD12,
+  dxPSPrVwRibbonD12,  
+  dxBarD12,
+  dxRibbonD12,
+  dxBarExtItemsD12;
+
+contains
+  dxPSPrVwRibbonReg;
+
+end.

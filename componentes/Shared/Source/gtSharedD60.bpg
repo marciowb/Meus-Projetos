@@ -1,0 +1,36 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = gtRtlD60.bpl gtCompressionD60.bpl gtFiltersD60.bpl gtCryptD60.bpl \
+  gtFontD60.bpl gtSharedD60.bat
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+gtRtlD60.bpl: Rtl\gtRtlD60.dpk
+  $(DCC)
+
+gtCompressionD60.bpl: Compression\gtCompressionD60.dpk
+  $(DCC)
+
+gtFiltersD60.bpl: Filters\gtFiltersD60.dpk
+  $(DCC)
+
+gtCryptD60.bpl: PDFCrypt\gtCryptD60.dpk
+  $(DCC)
+
+gtFontD60.bpl: PDFFontProcessor\gtFontD60.dpk
+  $(DCC)
+
+gtSharedD60.bat: gtSharedD60.bat
+  call $**
+
+

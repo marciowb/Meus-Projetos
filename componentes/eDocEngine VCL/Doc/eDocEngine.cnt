@@ -1,0 +1,239 @@
+:TITLE Gnostice eDocEngine VCL Professional Reference
+:BASE eDocEngine.hlp
+1 Gnostice eDocEngine 2
+2 What' s New in eDocEngine 2
+3 What's new=Whatsnew@eDocEngine.hlp>Main
+2 Introduction
+3 Overview=Overview@eDocEngine.hlp>Main
+3 eDocEngine Architecture=EDocEngineArchitecture@eDocEngine.hlp>Main
+3 Class Hierarchy=ClassHierarchy@eDocEngine.hlp>Main
+3 Engine Components=Components@eDocEngine.hlp>Main
+3 Additionals (Export Interfaces)=ExportInterfaces@eDocEngine.hlp>Main
+3 About this Guide
+4 Audience=Audience@eDocEngine.hlp>Main
+4 Document Organization=DocumentOrganization@eDocEngine.hlp>Main
+4 Document Conventions=DocumentConventions@eDocEngine.hlp>Main
+4 Customer Support Information=CustomerSupportInformation@eDocEngine.hlp>Main
+2 Installation
+3 Installing eDocEngine=InstallationOverview@eDocEngine.hlp>Main
+3 Hardware and Software Requirements=HardwareandSoftwareRequirem@eDocEngine.hlp>Main
+3 Re-Compiling/Re-Installing eDocEngine - Registered Edition
+4 Overview - Re-Compiling/Re-Installing=RecompilingOverview@eDocEngine.hlp>Main
+4 Re-Compiling/Re-Installing eDocEngine - Delphi 5=Re-CompilingRe-InstallingDel5@eDocEngine.hlp>Main
+4 Re-Compiling/Re-Installing eDocEngine - Delphi 6=Re-CompilingRe-InstallingDel6@eDocEngine.hlp>Main
+4 Re-Compiling/Re-Installing eDocEngine - Delphi 7=Re-CompilingRe-InstallingDel7@eDocEngine.hlp>Main
+4 Re-Compiling/Re-Installing eDocEngine - Delphi 2005=Re-CompilingRe-InstallingeDo@eDocEngine.hlp>Main
+4 Re-Compiling/Re-Installing eDocEngine - Delphi 2009=Re-CompilingRe-InstallingC6_2@eDocEngine.hlp>Main
+4 Re-Compiling/Re-Installing eDocEngine - BDS 2006, Turbo Delphi, Turbo C++ and Delphi 2007=Re-CompilingRe-InstallingeDo06@eDocEngine.hlp>Main
+4 Re-Compiling/Re-Installing eDocEngine - C++Builder 5=Re-CompilingRe-InstallingC5@eDocEngine.hlp>Main
+4 Re-Compiling/Re-Installing eDocEngine - C++Builder 6=Re-CompilingRe-InstallingC6@eDocEngine.hlp>Main
+3 Installing and Re-Compiling eDocEngine Additionals
+4 Overview - Installing / Re-Compiling eDocEngine Additionals=Overview-InstallingRe-Com@eDocEngine.hlp>Main
+4 AceReporter Export Interface=AcereportExportInterface@eDocEngine.hlp>Main
+4 FastReport Export Interface=FastreportExportInterface@eDocEngine.hlp>Main
+4 FastReport3 Export Interface=FastReport3ExportInterface@eDocEngine.hlp>Main
+4 QuickReport Export Interface=QuickReportExportInterface@eDocEngine.hlp>Main
+4 Rave Reports Export Interface=RaveReportExportInterface@eDocEngine.hlp>Main
+4 ReportBuilder Export Interface=ReportBuilderExportInterfac@eDocEngine.hlp>Main
+4 GmPrintSuite Export Interface=GmSuiteExportInterface@eDocEngine.hlp>Main
+4 DevExpress Export Interface=DevExpressExportInterface@eDocEngine.hlp>Main
+4 RichView Export Interface=RichViewExportInterface@eDocEngine.hlp>Main
+4 HTMLView Export Interface=HTMLViewExportInterface@eDocEngine.hlp>Main
+4 TMS AdvGrid Export Interface=TMSAdvGridExportInterface@eDocEngine.hlp>Main
+4 PageProducer=Producer@eDocEngine.hlp>Main
+3 Shared Packages
+4 Compiling Shared Packages=RTLPackage@eDocEngine.hlp>Main
+2 UnInstalling eDocEngine=Un-Installation2@eDocEngine.hlp>Main
+2 Getting Started
+3 Getting Started - Overview=Overview-gettingstarted@eDocEngine.hlp>Main
+3 Using eDocEngine components - Delphi=UsingeDocEnginecomponents-@eDocEngine.hlp>Main
+3 Using eDocEngine components - C++Builder=UsingeDocEnginecomponents-2@eDocEngine.hlp>Main
+2 Programming with eDocEngine
+3 Working with... 
+4 Working with eDocEngine Components=WorkingwitheDocEngineCompon@eDocEngine.hlp>Main
+4 Working with eDocEngine Additionals (Export Interfaces)=WorkingwitheDocEngineAdditi@eDocEngine.hlp>Main
+3 Alphabetical list of Engine Components
+4 TgtBMPEngine=TgtBMPEngine@eDocEngine.hlp>Main
+4 TgtClipboard=TgtClipboard@eDocEngine.hlp>Main
+4 TgtDIFEngine=TgtDIFEngine@eDocEngine.hlp>Main
+4 TgtDocSettings=TgtDocSettings@eDocEngine.hlp>Main
+4 TgtEMFEngine=TgtEMFEngine@eDocEngine.hlp>Main
+4 TgtExcelEngine=TgtExcelEngine@eDocEngine.hlp>Main
+4 TgtGIFEngine=TgtGIFEngine@eDocEngine.hlp>Main
+4 TgtHTMLEngine=TgtHTMLEngine@eDocEngine.hlp>Main
+4 TgtPDFEngine=TgtPDFEngine@eDocEngine.hlp>Main
+4 TgtPNGEngine=TgtPNGEngine@eDocEngine.hlp>Main
+4 TgtJPEGEngine=TgtJPEGEngine@eDocEngine.hlp>Main
+4 TgtLotusEngine=TgtLotusEngine@eDocEngine.hlp>Main
+4 TgtQuattroProEngine=TgtQuattroProEngine@eDocEngine.hlp>Main
+4 TgtRTFEngine=TgtRTFEngine@eDocEngine.hlp>Main
+4 TgtSVGEngine=TgtSVGEngine@eDocEngine.hlp>Main
+4 TgtSYLKEngine=TgtSYLKEngine@eDocEngine.hlp>Main
+4 TgtTextEngine=TgtTextEngine@eDocEngine.hlp>Main
+4 TgtTIFFEngine=TgtTIFFEngine@eDocEngine.hlp>Main
+4 TgtWMFEngine=TgtWMFEngine@eDocEngine.hlp>Main
+4 TgtXHTMLEngine=TgtXHTMLEngine2@eDocEngine.hlp>Main
+3 Alphabetical list of Export Interfaces
+4 TgtAceExportInterface=TgtAceExportInterface@eDocEngine.hlp>Main
+4 TgtFRExportInterface=TgtFRExportInterface@eDocEngine.hlp>Main
+4 TgtFR3ExportInterface=TgtFR3ExportInterface@eDocEngine.hlp>Main
+4 TgtQRExportInterface=TgtQRExportInterface@eDocEngine.hlp>Main
+4 TgtDocProducer=TgtProducer@eDocEngine.hlp>Main
+4 TgtRBExportInterface=TgtRBExportInterface@eDocEngine.hlp>Main
+4 TgtRaveExportInterface=TgtRaveExportInterface@eDocEngine.hlp>Main
+4 TgtGmSuiteInterface=TgtGmSuiteInterface@eDocEngine.hlp>Main
+4 TgtXPressPrntInterface=TgtXPressPrntInterface@eDocEngine.hlp>Main
+4 TgtRichViewInterface=TgtRichViewInterface@eDocEngine.hlp>Main
+4 TgtHtmlViewInterface=TgtHtmlViewInterface@eDocEngine.hlp>Main
+4 TgtAdvGridExportInterface=TgtAdvGridExportInterface@eDocEngine.hlp>Main
+3 Helper Classes
+4 TgtHTMLCustomMetaInfo=TgtHTMLCustomMetaInfo@eDocEngine.hlp>Main
+4 TgtAnnotAction=TgtAnnotAction@eDocEngine.hlp>Main
+4 TgtAnnotBrush=TgtAnnotBrush@eDocEngine.hlp>Main
+4 TgtAnnotGoToAction=TgtAnnotGoToAction@eDocEngine.hlp>Main
+4 TgtAnnotJSAction=TgtAnnotJSAction@eDocEngine.hlp>Main
+4 TgtAnnotLaunchAction=TgtAnnotLaunchAction@eDocEngine.hlp>Main
+4 TgtAnnotLinkAction=TgtAnnotLinkAction@eDocEngine.hlp>Main
+4 TgtAnnotNamedAction=TgtAnnotNamedAction@eDocEngine.hlp>Main
+4 TgtAnnotRemoteGotoAction=TgtAnnotRemoteGotoAction@eDocEngine.hlp>Main
+4 TgtCellBorder=TgtCellBorder@eDocEngine.hlp>Main
+4 TgtColumn=TgtColumn@eDocEngine.hlp>Main
+4 TgtCompression=TgtCompression@eDocEngine.hlp>Main
+4 TgtDocEventJSAction=TgtDocEventJSAction@eDocEngine.hlp>Main
+4 TgtDocInfo=TgtDocInfo@eDocEngine.hlp>Main
+4 TgtEMailSettings=TgtEMailSettings@eDocEngine.hlp>Main
+4 TgtExcelPreferences=TgtExcelPreferences@eDocEngine.hlp>Main
+4 TgtExportOptions=TgtExportOptions@eDocEngine.hlp>Main
+4 TgtFrame=TgtFrame@eDocEngine.hlp>Main
+4 TgtHTMLNavigator=TgtHTMLNavigator@eDocEngine.hlp>Main
+4 TgtHTMLPreferences=TgtHTMLPreferences@eDocEngine.hlp>Main
+4 TgtImageSettings=TgtImageSettings@eDocEngine.hlp>Main
+4 TgtLine=TgtLine@eDocEngine.hlp>Main
+4 TgtPageEventAction=TgtPageEventAction@eDocEngine.hlp>Main
+4 TgtPageSettings=TgtPageSettings@eDocEngine.hlp>Main
+4 TgtPDFAnnot=TgtPDFAnnot@eDocEngine.hlp>Main
+4 TgtPDFCaretAnnot=TgtPDFCaretAnnot@eDocEngine.hlp>Main
+4 TgtPDFCircleAnnot=TgtPDFCircleAnnot@eDocEngine.hlp>Main
+4 TgtPDFCustomDocInfo=TgtPDFCustomDocInfo@eDocEngine.hlp>Main
+4 TgtPDFEncryptionSettings=TgtPDFEncryptionSettings@eDocEngine.hlp>Main
+4 TgtPDFFileAttachmentAnnot=TgtPDFFileAttachmentAnnot@eDocEngine.hlp>Main
+4 TgtPDFFormCheckBox=TgtPDFFormCheckBox@eDocEngine.hlp>Main
+4 TgtPDFFormComboBox=TgtPDFFormComboBox@eDocEngine.hlp>Main
+4 TgtPDFFormPushButton=TgtPDFFormPushButton@eDocEngine.hlp>Main
+4 TgtPDFFormField=TgtPDFFormField@eDocEngine.hlp>Main
+4 TgtPDFFormListBox=TgtPDFFormListBox@eDocEngine.hlp>Main
+4 TgtPDFFormRadioButton=TgtPDFFormRadioButton@eDocEngine.hlp>Main
+4 TgtPDFFormRadioItem=TgtPDFFormRadionItem@eDocEngine.hlp>Main
+4 TgtPDFFormTextField=TgtPDFFormTextField@eDocEngine.hlp>Main
+4 TgtPDFFreeTextAnnot=TgtPDFFreeTextAnnot@eDocEngine.hlp>Main
+4 TgtPDFInkAnnot=TgtPDFInkAnnot@eDocEngine.hlp>Main
+4 TgtPDFLineAnnot=TgtPDFLineAnnot@eDocEngine.hlp>Main
+4 TgtPDFLinkAnnot=TgtPDFLinkAnnot@eDocEngine.hlp>Main
+4 TgtPDFPolygonAnnot=TgtPDFPolygonAnnot@eDocEngine.hlp>Main
+4 TgtPDFPolylineAnnot=TgtPDFPolylineAnnot@eDocEngine.hlp>Main
+4 TgtPDFPreferences=TgtPDFPreferences@eDocEngine.hlp>Main
+4 TgtPDFSquareAnnot=TgtPDFSquareAnnot@eDocEngine.hlp>Main
+4 TgtPDFStampAnnot=TgtPDFStampAnnot@eDocEngine.hlp>Main
+4 TgtPDFTextAnnot=TgtPDFTextAnnot@eDocEngine.hlp>Main
+4 TgtPDFTextMarkupAnnot=TgtPDFTextMarkupAnnot@eDocEngine.hlp>Main
+4 TgtPlainSheetPreferences=TgtPlainSheetPreferences@eDocEngine.hlp>Main
+4 TgtPNGPixelDimensions=TgtPNGPixelDimensions@eDocEngine.hlp>Main
+4 TgtPNGTransparency=TgtPNGTransparency@eDocEngine.hlp>Main
+4 TgtPreferences=TgtPreferences@eDocEngine.hlp>Main
+4 TgtPresentationMode=TgtPresentationMode@eDocEngine.hlp>Main
+4 TgtRTFPreferences=TgtRTFPreferences@eDocEngine.hlp>Main
+4 TgtSheetFormatting=TgtSheetFormatting@eDocEngine.hlp>Main
+4 TgtSpreadSheetPreferences=TgtSpreadSheetPreferences@eDocEngine.hlp>Main
+4 TgtTableSettings=TgtTableSettings@eDocEngine.hlp>Main
+4 TgtTextEffects=TgtTextEffects@eDocEngine.hlp>Main
+4 TgtTextFormatting=TgtTextFormatting@eDocEngine.hlp>Main
+4 TgtTOCPageSettings=TgtTOCPageSettings@eDocEngine.hlp>Main
+4 TgtViewerPreferences=TgtViewerPreferences@eDocEngine.hlp>Main
+3 Runtime Setup Dialogs
+4 PNG, GIF, BMP, JPEG,TIFF - Runtime Setup Dialogs=BMP-RuntimeSetupDialogs@eDocEngine.hlp>Main
+4 HTML, XHTML - Runtime Setup Dialogs=HTML-RuntimeSetupDialogs@eDocEngine.hlp>Main
+4 PDF - Runtime Setup Dialog=PDF-RuntimeSetupDialogs@eDocEngine.hlp>Main
+4 WMF, EMF - Runtime Setup Dialogs=WMF-RuntimeSetupDialogs@eDocEngine.hlp>Main
+4 RTF- Runtime Setup Dialog=RTF-RuntimeSetupDialogs@eDocEngine.hlp>Main
+4 Excel - Runtime Setup Dialog=Excel-RuntimeSetupDialogs@eDocEngine.hlp>Main
+4 DIF, SYLK, Lotus - Runtime Setup Dialogs=DIFSYLKLotus-RuntimeSet@eDocEngine.hlp>Main
+4 QuattroPro - Runtime Setup Dialog=QuattroPro-RuntimeSetupDia@eDocEngine.hlp>Main
+4 SVG- Runtime Setup Dialog=SVG-RuntimeSetupDialogs@eDocEngine.hlp>Main
+4 Text- Runtime Setup Dialog=Text-RuntimeSetupDialogs@eDocEngine.hlp>Main
+3 Exceptions
+4 Exception Hierarchy=ExceptionHierarchy@eDocEngine.hlp>Main
+2 Localization=Localization@eDocEngine.hlp>Main
+2 Tutorials
+3 Tutorials Overview=TutorialsOverview@eDocEngine.hlp>Main
+3 Tutorial - General
+4 Tutorial - Variables / Placeholders=Tutorial-VariablesPlaceho@eDocEngine.hlp>Main
+4 Tutorial - Auto Pagination=Tutorial-AutoPagination@eDocEngine.hlp>Main
+3 Tutorials eDocEngine Components
+4 Tutorial - Using PDF Engine=Tutorial-UsingPDFEngine@eDocEngine.hlp>Main
+4 Tutorial - Using Excel Engine=Tutorial-UsingExcelEngine@eDocEngine.hlp>Main
+3 Tutorials - eDocEngine Additionals (Export Interfaces)
+4 Tutorial - Using Gnostice AceReporter Export Interface=Tutorial-AceReporterExport@eDocEngine.hlp>Main
+4 Tutorial - Using Gnostice Fast Report Export Interface=Tutorial-FastReportExport@eDocEngine.hlp>Main
+4 Tutorial - Using Gnostice Quick Report Export Interface=Tutorial-QuickReportExport@eDocEngine.hlp>Main
+4 Tutorial - Using Gnostice Rave Report Export Interface=Tutorial-RaveReportExport@eDocEngine.hlp>Main
+4 Tutorial - Using Gnostice ReportBuilder Export Interface=Tutorial-ReportBuilderExpor@eDocEngine.hlp>Main
+4 Tutorial - Using Gnostice TMS AdvGrid Export Interface=Tutorial-TMSAdvGridExport@eDocEngine.hlp>Main
+4 Tutorial - Using Gnostice HTMLView Export Interface=Tutorial-HTMLViewExportInt@eDocEngine.hlp>Main
+4 Tutorial - Using Gnostice DevExpress Export Interface=UsingDevExpressExportInterf@eDocEngine.hlp>Main
+4 Tutorial - Using Gnostice RichView Export Interface=Tutorial-RichViewExportInt@eDocEngine.hlp>Main
+4 Tutorial - Using Gnostice GmSuite Export Interface=Tutorial-GmSuiteExportInte@eDocEngine.hlp>Main
+3 Tutorials - Runtime creation of Components
+4 Tutorial - Create individual eDocEngine components at runtime=Tutorial-Runtimecreationof@eDocEngine.hlp>Main
+4 Tutorial - Dynamically create multiple eDocEngine components=Tutorial-b)Dynamicallycreat@eDocEngine.hlp>Main
+3 Tutorials - e-Mail, Stream to Memory and Web
+4 Tutorial - Using eDocEngine to store outputs in Memory=Tutorial-UsingeDocEngineto@eDocEngine.hlp>Main
+4 Tutorial - Output to Web (Using Gnostice Producer)=Tutorial-OutputtoWeb@eDocEngine.hlp>Main
+4 Tutorial - e-Mailing Exported documents=Email@eDocEngine.hlp>Main
+3 More Examples...
+4 Example - Text Annotation=PDFTextAnnotExample@eDocEngine.hlp>Main
+4 Example - Link Annotation=PDFLinkAnnotExample@eDocEngine.hlp>Main
+4 Example - Thumbnails=AddThumbnails@eDocEngine.hlp>Main
+4 Example - Table of Contents=AddTOC@eDocEngine.hlp>Main
+4 Example - Image Rendering=DrawImages@eDocEngine.hlp>Main
+4 Example - Using Custom Setup dialog box=ActivateSetupdialogbox@eDocEngine.hlp>Main
+4 Example - Stamping=Stamping@eDocEngine.hlp>Main
+4 Example - Watermark=Watermark@eDocEngine.hlp>Main
+4 Example - Textout=Textout@eDocEngine.hlp>Main
+4 Example - Create New Page=NewPage@eDocEngine.hlp>Main
+4 Example - Draw Metafile=DrawMetafile@eDocEngine.hlp>Main
+4 Example - Set Working Page=SetPageNumbers@eDocEngine.hlp>Main
+4 Example - Add Image as Resource=Addimageasresource@eDocEngine.hlp>Main
+4 Example - TgtPreferences=UserStreamExample@eDocEngine.hlp>Main
+4 Example - TgtDocInfo=TgtDocInfoExample@eDocEngine.hlp>Main
+4 Example - TgtEmailSettings=TgtEmailSettingsExample@eDocEngine.hlp>Main
+4 Example - PDFFormCheckBox=PDFFormCheckBoxExample@eDocEngine.hlp>Main
+4 Example - PDFFormListBox=PDFFormListExample@eDocEngine.hlp>Main
+4 Example - PDFFormPushButton=PDFFormPushButtonExample@eDocEngine.hlp>Main
+4 Example - PDFFormComboBox=PDFFormComboExample@eDocEngine.hlp>Main
+4 Example - PDFFormRadioButton=PDFFormRadioButtonExample@eDocEngine.hlp>Main
+4 Example - PDFFormTextField=PDFFormTextFieldExample@eDocEngine.hlp>Main
+4 Example - TgtExcelEngine=TgtExcelEngineExample@eDocEngine.hlp>Main
+4 Example - BeginTable, EndTable=BeginTableEndTableExample@eDocEngine.hlp>Main
+4 Example -  Reference Point=ReferencePoint@eDocEngine.hlp>Main
+4 Example - EngineState=EngineStateExample@eDocEngine.hlp>Main
+4 Example - BeginDoc, EndDoc=BeginDocEndDocExample@eDocEngine.hlp>Main
+4 Example - TgtRTFEngine=TgtRTFEngineExample@eDocEngine.hlp>Main
+4 Example - Header=HeaderExample@eDocEngine.hlp>Main
+4 Example - Footer=FooterExample@eDocEngine.hlp>Main
+4 Example - Paragraph=ParagraphExample@eDocEngine.hlp>Main
+4 Example - Include Stylesheet=Includestylesheet@eDocEngine.hlp>Main
+4 Example - TgtTextEngine=TgtTextEngineExample@eDocEngine.hlp>Main
+4 Example - PDFViewerPreferences=PDFViewerPreferencesExample@eDocEngine.hlp>Main
+4 Example - TgtTableSettings=TgtTableSettingsExample@eDocEngine.hlp>Main
+4 Example - PDFCompression=PDFCompressionExample@eDocEngine.hlp>Main
+4 Example - PDFEncryption=PDFEncryptionExample@eDocEngine.hlp>Main
+4 Example - ImageSettings=ImageSettingsExample@eDocEngine.hlp>Main
+4 Example - Shapes=ShapesExample@eDocEngine.hlp>Main
+4 Example - TgtTextFormatting=TgtTextFormattingExample@eDocEngine.hlp>Main
+2 Frequently Asked  Questions
+3 Frequently Asked Questions=FAQs@eDocEngine.hlp>Main
+2 References
+3 Configuring eDocEngine=ConfiguringeDocEngine@eDocEngine.hlp>Main
+3 Configuring Additional Interfaces=ConfiguringAdditionalInterfa@eDocEngine.hlp>Main
+3 Stray files=Strayfiles@eDocEngine.hlp>Main
+3 Directory Structure=DirectoryStructure@eDocEngine.hlp>Main

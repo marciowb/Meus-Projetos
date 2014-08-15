@@ -1,0 +1,32 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dxOrgCRS15.bpl dxDBOrRS15.bpl dxOrgChartAdvancedCustomizeFormRS15.bpl dcldxOrgCRS15.bpl dcldxDBOrRS15.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dxOrgCRS15.bpl: ..\..\ExpressOrgChart\Packages\dxOrgCRS15.dpk
+  $(DCC)
+
+dxDBOrRS15.bpl: ..\..\ExpressOrgChart\Packages\dxDBOrRS15.dpk
+  $(DCC)
+
+dxOrgChartAdvancedCustomizeFormRS15.bpl: ..\..\ExpressOrgChart\Packages\dxOrgChartAdvancedCustomizeFormRS15.dpk
+  $(DCC)
+
+dcldxOrgCRS15.bpl: ..\..\ExpressOrgChart\Packages\dcldxOrgCRS15.dpk
+  $(DCC)
+
+dcldxDBOrRS15.bpl: ..\..\ExpressOrgChart\Packages\dcldxDBOrRS15.dpk
+  $(DCC)
+
+

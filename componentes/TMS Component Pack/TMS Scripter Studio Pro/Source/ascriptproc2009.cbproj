@@ -1,0 +1,496 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{A724225F-82F9-48ED-B099-DCDD6754F835}</ProjectGuid>
+			<ProjectType>CppPackage</ProjectType>
+			<MainSource>ascriptproc2009.cpp</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<ProjectVersion>12.0</ProjectVersion>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DesignOnlyPackage>false</DesignOnlyPackage>
+			<LinkPackageStatics>vcldbx.lib;ibxpress.lib;dsnap.lib;dsnapcon.lib;teeui.lib;teedb.lib;tee.lib;inetdbbde.lib;inetdbxpress.lib;dbexpress.lib;bcbie.lib;soaprtl.lib;dbxcds.lib;indycore.lib;indysystem.lib;VclSmp.lib</LinkPackageStatics>
+			<IncludePath>advmemo;designer;$(IncludePath)</IncludePath>
+			<LinkPackageImports>rtl.bpi;vcldb.bpi;adortl.bpi;bdertl.bpi;bcbsmp.bpi;vcl.bpi;dbrtl.bpi</LinkPackageImports>
+			<BRCC_Defines>_DEBUG;$(BRCC_Defines)</BRCC_Defines>
+			<TASM_Defines>_DEBUG;$(TASM_Defines)</TASM_Defines>
+			<BCC_PCHCache>true</BCC_PCHCache>
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<DCC_UnitSearchPath>imports\delphi2006;designer;advmemo;.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<ILINK_AppType>Windows</ILINK_AppType>
+			<DCC_ResourcePath>imports\delphi2006;designer;advmemo;$(DCC_ResourcePath)</DCC_ResourcePath>
+			<BRCC_IncludePath>imports\delphi2006;designer;advmemo;$(BDS)\Automa\Scripter\advmemo;$(BDS)\Projects;$(BDS)\Automa\Scripter;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware;$(BRCC_IncludePath)</BRCC_IncludePath>
+			<BRCC_UserSuppliedOptions> -I$(BDS)\Automa\Scripter\advmemo;$(BDS)\Projects;$(BDS)\Automa\Scripter;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_UserSuppliedOptions>
+			<ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+			<BCC_IncludePath>imports\delphi2006;designer;advmemo;$(BDS)\Automa\Scripter\advmemo;$(BDS)\Projects;$(BDS)\Automa\Scripter;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware;$(BCC_IncludePath)</BCC_IncludePath>
+			<TASM_IncludePath>$(BDS)\Automa\Scripter\advmemo;$(BDS)\Projects;$(BDS)\Automa\Scripter;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware;$(TASM_IncludePath)</TASM_IncludePath>
+			<UsePackages>true</UsePackages>
+			<ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+			<DCC_IncludePath>imports\delphi2006;designer;advmemo;.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
+			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+			<BCC_GenerateMultithreaded>true</BCC_GenerateMultithreaded>
+			<OutputExt>bpl</OutputExt>
+			<FinalOutputDir>.</FinalOutputDir>
+			<AllPackageLibs>rtl.lib;vcldb.lib;adortl.lib;bdertl.lib;vcldbx.lib;ibxpress.lib;dsnap.lib;dsnapcon.lib;teeui.lib;teedb.lib;tee.lib;dsnapcon.lib;bcbsmp.lib;inetdbbde.lib;inetdbxpress.lib;dbexpress.lib;bcbie.lib;soaprtl.lib;dbxcds.lib;indycore.lib;indysystem.lib;VclSmp.lib;vcl.lib;dbrtl.lib</AllPackageLibs>
+			<ILINK_WinAppType>Package</ILINK_WinAppType>
+			<TASM_AdditionalSwitches> /w2</TASM_AdditionalSwitches>
+			<ILINK_Description>Scripter Studio Pro Components</ILINK_Description>
+			<ILINK_ObjectSearchPath>imports\delphi2006;designer;advmemo;$(ILINK_ObjectSearchPath)</ILINK_ObjectSearchPath>
+			<DCC_ObjPath>imports\delphi2006;designer;advmemo;$(DCC_ObjPath)</DCC_ObjPath>
+			<ILINK_LibraryPath>imports\delphi2006;designer;advmemo;C:\Program Files\Intraweb 8.0\LibCB6;$(BDS)\Automa\Scripter\advmemo;C:\Program Files\IntraWeb\CBuilder\LibCB6;$(BDS)\Projects\Lib;$(BDS)\Projects;$(BDS)\Automa\Scripter;$(BDS)\lib\obj;$(BDS)\lib;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<BCC_Defines>NO_STRICT;$(BCC_Defines)</BCC_Defines>
+			<BCC_UserSuppliedOptions> -Vx -r- -k -Ve</BCC_UserSuppliedOptions>
+			<Multithreaded>true</Multithreaded>
+			<DCC_AdditionalSwitches> -LUdesignide -M</DCC_AdditionalSwitches>
+			<DynamicRTL>true</DynamicRTL>
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<BCC_Defines>_DEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+			<ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<IntermediateOutputDir>Debug_Build</IntermediateOutputDir>
+			<DCC_Define>DEBUG;$(DCC_Define);$(DCC_Define)</DCC_Define>
+			<ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+			<TASM_Debugging>Full</TASM_Debugging>
+			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
+			<BCC_UserSuppliedOptions> -Vx -r- -k -Ve -r</BCC_UserSuppliedOptions>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<IntermediateOutputDir>Release_Build</IntermediateOutputDir>
+			<DCC_AdditionalSwitches> -LUdesignide -M -$O+</DCC_AdditionalSwitches>
+			<TASM_Debugging>None</TASM_Debugging>
+			<ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath);$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="designer\designeroptionsdialog.pas">
+				<BuildOrder>52</BuildOrder>
+				<BuildOrder>0</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\designersizedialog.pas">
+				<BuildOrder>53</BuildOrder>
+				<BuildOrder>1</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\DesignerAlignPalette.pas">
+				<BuildOrder>50</BuildOrder>
+				<BuildOrder>2</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\DesignerControlsEditor.pas">
+				<BuildOrder>51</BuildOrder>
+				<BuildOrder>3</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\DesignerTabOrderDialog.pas">
+				<BuildOrder>54</BuildOrder>
+				<BuildOrder>4</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\fObjectInspector.pas">
+				<BuildOrder>57</BuildOrder>
+				<BuildOrder>5</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\FormDesigner.pas">
+				<BuildOrder>6</BuildOrder>
+				<BuildOrder>58</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\dIDEActions.pas">
+				<BuildOrder>7</BuildOrder>
+				<BuildOrder>55</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\fIDEEditor.pas">
+				<BuildOrder>8</BuildOrder>
+				<BuildOrder>56</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\DesignerAlignDialog.pas">
+				<BuildOrder>9</BuildOrder>
+				<BuildOrder>49</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="advmemo\advstyleif.pas">
+				<BuildOrder>42</BuildOrder>
+				<BuildOrder>10</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="advmemo\RTFEngine.pas">
+				<BuildOrder>43</BuildOrder>
+				<BuildOrder>11</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="advmemo\advmemostylermanager.pas">
+				<BuildOrder>40</BuildOrder>
+				<BuildOrder>12</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="advmemo\advmps.pas">
+				<BuildOrder>41</BuildOrder>
+				<BuildOrder>13</BuildOrder>
+			</DelphiCompile>
+			<PackageImport Include="bcbsmp.bpi">
+				<BuildOrder>44</BuildOrder>
+				<BuildOrder>14</BuildOrder>
+			</PackageImport>
+			<DelphiCompile Include="designer\componentinspector.pas">
+				<BuildOrder>47</BuildOrder>
+				<BuildOrder>15</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\DesignerAddControls.pas">
+				<BuildOrder>48</BuildOrder>
+				<BuildOrder>16</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\TreeViewInspEditor.pas">
+				<BuildOrder>45</BuildOrder>
+				<BuildOrder>17</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\CollectionInspEditor.pas">
+				<BuildOrder>46</BuildOrder>
+				<BuildOrder>18</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\fSelectLanguage.pas">
+				<BuildOrder>59</BuildOrder>
+				<BuildOrder>19</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\PropertyInspEditors.pas">
+				<BuildOrder>72</BuildOrder>
+				<BuildOrder>20</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\PropertyList.pas">
+				<BuildOrder>73</BuildOrder>
+				<BuildOrder>21</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\MenuInspIDEEditor.pas">
+				<BuildOrder>70</BuildOrder>
+				<BuildOrder>22</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\PictureInspEditor.pas">
+				<BuildOrder>71</BuildOrder>
+				<BuildOrder>23</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\StringsInspEditor.pas">
+				<BuildOrder>74</BuildOrder>
+				<BuildOrder>24</BuildOrder>
+			</DelphiCompile>
+			<PackageImport Include="adortl.bpi">
+				<BuildOrder>77</BuildOrder>
+				<BuildOrder>25</BuildOrder>
+			</PackageImport>
+			<PackageImport Include="bdertl.bpi">
+				<BuildOrder>78</BuildOrder>
+				<BuildOrder>26</BuildOrder>
+			</PackageImport>
+			<PackageImport Include="dbrtl.bpi">
+				<BuildOrder>75</BuildOrder>
+				<BuildOrder>27</BuildOrder>
+			</PackageImport>
+			<PackageImport Include="vcldb.bpi">
+				<BuildOrder>76</BuildOrder>
+				<BuildOrder>28</BuildOrder>
+			</PackageImport>
+			<DelphiCompile Include="designer\MenuInspEditor.pas">
+				<BuildOrder>69</BuildOrder>
+				<BuildOrder>29</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\fWatches.pas">
+				<BuildOrder>62</BuildOrder>
+				<BuildOrder>30</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\IDEDialog.pas">
+				<BuildOrder>63</BuildOrder>
+				<BuildOrder>31</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\fSelectUnit.pas">
+				<BuildOrder>60</BuildOrder>
+				<BuildOrder>32</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\fToolPalette.pas">
+				<BuildOrder>61</BuildOrder>
+				<BuildOrder>33</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\idemain.pas">
+				<BuildOrder>64</BuildOrder>
+				<BuildOrder>34</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\InspectorControls.pas">
+				<BuildOrder>67</BuildOrder>
+				<BuildOrder>35</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\ListViewInspEditor.pas">
+				<BuildOrder>68</BuildOrder>
+				<BuildOrder>36</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\IDEReg.pas">
+				<BuildOrder>65</BuildOrder>
+				<BuildOrder>37</BuildOrder>
+			</DelphiCompile>
+			<ResFiles Include="designer\IDEReg.dcr">
+				<BuildOrder>-1</BuildOrder>
+				<BuildOrder>66</BuildOrder>
+			</ResFiles>
+			<DelphiCompile Include="advmemo\AdvMemoDE.pas">
+				<BuildOrder>39</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atMemoInterface.pas">
+				<BuildOrder>40</BuildOrder>
+				<BuildOrder>12</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atparser.pas">
+				<BuildOrder>41</BuildOrder>
+				<BuildOrder>13</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atBasic.pas">
+				<BuildOrder>42</BuildOrder>
+				<BuildOrder>10</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atHTMLParse.pas">
+				<BuildOrder>43</BuildOrder>
+				<BuildOrder>11</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atPascal.pas">
+				<BuildOrder>44</BuildOrder>
+				<BuildOrder>14</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atscriptdebugform.pas">
+				<BuildOrder>45</BuildOrder>
+				<BuildOrder>17</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atscripter.pas">
+				<BuildOrder>46</BuildOrder>
+				<BuildOrder>18</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atscript.pas">
+				<BuildOrder>47</BuildOrder>
+				<BuildOrder>15</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="ATSCRIPTDEBUG.pas">
+				<BuildOrder>48</BuildOrder>
+				<BuildOrder>16</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="UVBSCRIPTLIBRARY.pas">
+				<BuildOrder>9</BuildOrder>
+				<BuildOrder>49</BuildOrder>
+			</DelphiCompile>
+			<PackageImport Include="rtl.bpi">
+				<BuildOrder>50</BuildOrder>
+				<BuildOrder>2</BuildOrder>
+			</PackageImport>
+			<DelphiCompile Include="RegScrpt.pas">
+				<BuildOrder>51</BuildOrder>
+				<BuildOrder>3</BuildOrder>
+			</DelphiCompile>
+			<ResFiles Include="ascriptproc2009.res">
+				<BuildOrder>-1</BuildOrder>
+				<BuildOrder>0</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="ascriptproc2009.cpp">
+				<BuildOrder>-1</BuildOrder>
+				<BuildOrder>1</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="RegScrpt.dcr">
+				<BuildOrder>-1</BuildOrder>
+				<BuildOrder>4</BuildOrder>
+			</ResFiles>
+			<DelphiCompile Include="advmemo\AdvMemoReg.pas">
+				<BuildOrder>7</BuildOrder>
+				<BuildOrder>55</BuildOrder>
+			</DelphiCompile>
+			<ResFiles Include="advmemo\AdvMemoReg.dcr">
+				<BuildOrder>-1</BuildOrder>
+				<BuildOrder>8</BuildOrder>
+			</ResFiles>
+			<PackageImport Include="designide.bpi">
+				<BuildOrder>57</BuildOrder>
+				<BuildOrder>5</BuildOrder>
+			</PackageImport>
+			<PackageImport Include="vcl.bpi">
+				<BuildOrder>6</BuildOrder>
+				<BuildOrder>58</BuildOrder>
+			</PackageImport>
+			<DelphiCompile Include="atWebScripter.pas">
+				<BuildOrder>59</BuildOrder>
+				<BuildOrder>19</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="advmemo\uMemoEdit.pas">
+				<BuildOrder>60</BuildOrder>
+				<BuildOrder>32</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="advmemo\AdvCodeHint.pas">
+				<BuildOrder>61</BuildOrder>
+				<BuildOrder>33</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="uSystemLibrary.pas">
+				<BuildOrder>62</BuildOrder>
+				<BuildOrder>30</BuildOrder>
+			</DelphiCompile>
+			<PackageImport Include="inet.bpi">
+				<BuildOrder>63</BuildOrder>
+				<BuildOrder>31</BuildOrder>
+			</PackageImport>
+			<DelphiCompile Include="advmemo\AdvCodeList.pas">
+				<BuildOrder>64</BuildOrder>
+				<BuildOrder>34</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="advmemo\advmemo.pas">
+				<BuildOrder>65</BuildOrder>
+				<BuildOrder>37</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="advmemo\AdvMemoAC.pas">
+				<BuildOrder>66</BuildOrder>
+				<BuildOrder>38</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="advmemo\AdvCodeListLib.pas">
+				<BuildOrder>67</BuildOrder>
+				<BuildOrder>35</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="advmemo\advmbs.pas">
+				<BuildOrder>68</BuildOrder>
+				<BuildOrder>36</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="ucalldll.pas">
+				<BuildOrder>69</BuildOrder>
+				<BuildOrder>29</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="EditScript.pas">
+				<BuildOrder>70</BuildOrder>
+				<BuildOrder>22</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="FormScript.pas">
+				<BuildOrder>71</BuildOrder>
+				<BuildOrder>23</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="atWebScriptPP.pas">
+				<BuildOrder>72</BuildOrder>
+				<BuildOrder>20</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="dispatchlib.pas">
+				<BuildOrder>73</BuildOrder>
+				<BuildOrder>21</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fSimplifiedCode.pas">
+				<BuildOrder>74</BuildOrder>
+				<BuildOrder>24</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fWatchViewer.pas">
+				<BuildOrder>75</BuildOrder>
+				<BuildOrder>27</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="ScriptCtrls.pas">
+				<BuildOrder>76</BuildOrder>
+				<BuildOrder>28</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fSyntaxTree.pas">
+				<BuildOrder>77</BuildOrder>
+				<BuildOrder>25</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="fWatchProperties.pas">
+				<BuildOrder>78</BuildOrder>
+				<BuildOrder>26</BuildOrder>
+			</DelphiCompile>
+			<DelphiCompile Include="designer\ImageListEditor.pas">
+				<Form>fmImageListEditor</Form>
+				<BuildOrder>79</BuildOrder>
+			</DelphiCompile>
+			<FormResources Include="designer\ImageListEditor.dfm"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppPackage</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">2067</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+					</VersionInfoKeys>
+					<HistoryLists_hlIncludePath>
+						<HistoryLists_hlIncludePath Name="Count">1</HistoryLists_hlIncludePath>
+						<HistoryLists_hlIncludePath Name="Item0">$(BCB)\Projects;$(BCB)\Automa\Scripter;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+					</HistoryLists_hlIncludePath>
+					<HistoryLists_hlLibraryPath>
+						<HistoryLists_hlLibraryPath Name="Count">1</HistoryLists_hlLibraryPath>
+						<HistoryLists_hlLibraryPath Name="Item0">C:\Program Files\IntraWeb\CBuilder\LibCB6;$(BCB)\Projects\Lib;$(BCB)\Projects;$(BCB)\Automa\Scripter;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+					</HistoryLists_hlLibraryPath>
+					<HistoryLists_hlDebugSourcePath>
+						<HistoryLists_hlDebugSourcePath Name="Count">1</HistoryLists_hlDebugSourcePath>
+						<HistoryLists_hlDebugSourcePath Name="Item0">$(BCB)\source\vcl</HistoryLists_hlDebugSourcePath>
+					</HistoryLists_hlDebugSourcePath>
+					<HistoryLists_hlConditionals>
+						<HistoryLists_hlConditionals Name="Count">1</HistoryLists_hlConditionals>
+						<HistoryLists_hlConditionals Name="Item0">_DEBUG</HistoryLists_hlConditionals>
+					</HistoryLists_hlConditionals>
+					<Debugging>
+						<Debugging Name="DebugSourceDirs">$(BCB)\source\vcl</Debugging>
+					</Debugging>
+					<Parameters>
+						<Parameters Name="RunParams"/>
+						<Parameters Name="Launcher"/>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="DebugCWD"/>
+						<Parameters Name="HostApplication"/>
+						<Parameters Name="RemoteHost"/>
+						<Parameters Name="RemotePath"/>
+						<Parameters Name="RemoteParams"/>
+						<Parameters Name="RemoteLauncher"/>
+						<Parameters Name="UseRemoteLauncher">False</Parameters>
+						<Parameters Name="RemoteCWD"/>
+						<Parameters Name="RemoteDebug">False</Parameters>
+						<Parameters Name="Debug Symbols Search Path"/>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<Source>
+						<Source Name="MainSource">ascriptproc2009.cpp</Source>
+					</Source>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+				</CPlusPlusBuilder.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

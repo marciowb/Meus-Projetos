@@ -1,0 +1,48 @@
+//Delphi 6
+{$IFDEF VER140}
+  {$DEFINE Tee40}
+{$ENDIF}
+
+//Delphi 7
+{$IFDEF VER150}
+  {$DEFINE Tee40}
+{$ENDIF}
+
+//Delphi 2005
+{$IFDEF VER170}
+  {$DEFINE Tee40}
+{$ENDIF}
+
+//Delphi 2006
+{$IFDEF VER180}
+  {$DEFINE Tee40}
+{$ENDIF}
+
+//Delphi 2007
+{$IFDEF VER185}
+  {$DEFINE Tee40}
+  {$DEFINE Tee50}
+  {$DEFINE Tee52}
+  {$DEFINE Tee60}
+  {$DEFINE Tee70}
+{$ENDIF}
+
+//Delphi 2009
+{$IFDEF VER200}
+  {$DEFINE Tee40}
+  {$DEFINE Tee50}
+  {$DEFINE Tee52}
+  {$DEFINE Tee60}
+  {$DEFINE Tee70}
+  {$DEFINE Tee80}
+{$ENDIF}
+
+//Delphi 2010
+{$IFDEF VER210}
+  {$DEFINE Tee40}
+  {$DEFINE Tee50}
+  {$DEFINE Tee52}
+  {$DEFINE Tee60}
+  {$DEFINE Tee70}
+  {$DEFINE Tee80}
+{$ENDIF}

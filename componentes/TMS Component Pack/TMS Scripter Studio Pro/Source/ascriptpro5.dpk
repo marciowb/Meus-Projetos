@@ -1,0 +1,115 @@
+package ascriptpro5;
+
+{$R *.RES}
+{$R 'Regscrpt.dcr'}
+{$R 'advmemo\AdvMemoReg.dcr'}
+{$R 'designer\IDEReg.dcr'}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'TMS Scripter Studio Pro components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl50,
+  Inet50,
+  Vclx50,
+  Vclmid50,
+  Vcldb50,
+  VclAdo50,
+  VclBde50;
+
+contains
+  uSystemLibrary in 'uSystemLibrary.pas',
+  atParser in 'atparser.pas',
+  atScript in 'atScript.pas',
+  EditScript in 'EditScript.pas' {ScriptEditForm},
+  atScriptDebug in 'atScriptDebug.pas',
+  atScriptDebugForm in 'atScriptDebugForm.pas' {DebugForm},
+  FormScript in 'FormScript.pas',
+  atPascal in 'atPascal.pas',
+  atBasic in 'atbasic.pas',
+  DispatchLib in 'DispatchLib.pas',
+  ap_Classes in 'Imports\Delphi5\ap_Classes.pas',
+  ap_Windows in 'Imports\Delphi5\ap_Windows.pas',
+  ap_System in 'Imports\Delphi5\ap_System.pas',
+  RegScrpt in 'RegScrpt.pas',
+  atWebScripter in 'atWebScripter.pas',
+  atHTMLParse in 'atHTMLParse.pas',
+  atWebScriptPP in 'atWebScriptPP.pas',
+  atMemoInterface in 'atMemoInterface.pas',
+  fWatchProperties in 'fWatchProperties.pas' {fmWatchProperties},
+  fWatchViewer in 'fWatchViewer.pas' {fmWatchViewer},
+  fSimplifiedCode in 'fSimplifiedCode.pas' {fmSimplifiedCode},
+  AdvMemo in 'advmemo\AdvMemo.pas',
+  RTFEngine in 'advmemo\RTFEngine.pas',
+  AdvmBS in 'advmemo\advmbs.pas',
+  AdvmPS in 'advmemo\advmps.pas',
+  AdvMemoReg in 'advmemo\AdvMemoReg.pas',
+  AdvCodeListLib in 'advmemo\AdvCodeListLib.pas',
+  AdvMemoStylerManager in 'advmemo\advmemostylermanager.pas',
+  AdvCodeHint in 'advmemo\AdvCodeHint.pas',
+  AdvCodeList in 'advmemo\AdvCodeList.pas',
+  AdvCodeListDD in 'advmemo\AdvCodeListDD.pas',
+  uMemoEdit in 'advmemo\uMemoEdit.pas' {TMSMemoEdit},
+  AdvMemoAC in 'advmemo\AdvMemoAC.pas' {MemoAC},
+  AdvMemoDE in 'advmemo\AdvMemoDE.pas',
+  AdvStyleIF in 'advmemo\advstyleif.pas',
+  uCallDLL in 'uCallDLL.pas',
+  ScriptCtrls in 'ScriptCtrls.pas',
+  fSyntaxTree in 'fSyntaxTree.pas' {fmSyntaxTree},
+  uVBScriptLibrary in 'uVBScriptLibrary.pas',
+  TreeViewInspEditor in 'designer\TreeViewInspEditor.pas' {frmTreeEditor},
+  CollectionInspEditor in 'designer\CollectionInspEditor.pas' {frmCollectionEditor},
+  ComponentInspector in 'designer\componentinspector.pas',
+  DesignerAddControls in 'designer\DesignerAddControls.pas' {frmDesignerAddControls},
+  DesignerAlignDialog in 'designer\DesignerAlignDialog.pas' {frmAlign},
+  DesignerAlignPalette in 'designer\DesignerAlignPalette.pas' {frmAlignmentPalette},
+  DesignerControlsEditor in 'designer\DesignerControlsEditor.pas' {frmDesignerControlsEditor},
+  DesignerOptionsDialog in 'designer\designeroptionsdialog.pas' {frmDesignerOptions},
+  DesignerSizeDialog in 'designer\DesignerSizeDialog.pas' {frmSize},
+  DesignerTabOrderDialog in 'designer\DesignerTabOrderDialog.pas' {frmTabOrder},
+  FormDesigner in 'designer\FormDesigner.pas',
+  IDEMain in 'designer\idemain.pas',
+  IDEReg in 'designer\IDEReg.pas',
+  InspectorControls in 'designer\InspectorControls.pas',
+  ListViewInspEditor in 'designer\ListViewInspEditor.pas' {frmListViewEditor},
+  MenuInspEditor in 'designer\MenuInspEditor.pas' {frmMenuEditor},
+  PictureInspEditor in 'designer\PictureInspEditor.pas' {frmPicture},
+  PropertyInspEditors in 'designer\PropertyInspEditors.pas',
+  PropertyList in 'designer\propertylist.pas',
+  StringsInspEditor in 'designer\StringsInspEditor.pas' {frmStrings},
+  atScripter in 'atScripter.pas',
+  fSelectUnit in 'designer\fSelectUnit.pas' {fmSelectUnit},
+  fSelectLanguage in 'designer\fSelectLanguage.pas' {fmSelectLanguage},
+  fObjectInspector in 'designer\fObjectInspector.pas' {fmObjectInspector},
+  fWatches in 'designer\fWatches.pas' {fmWatches},
+  fIDEEditor in 'designer\fIDEEditor.pas' {IDEEditorForm},
+  dIDEActions in 'designer\dIDEActions.pas' {dmIDEActions: TDataModule},
+  IDEDialog in 'designer\IDEDialog.pas',
+  ImageListEditor in 'designer\ImageListEditor.pas',
+  MenuInspIDEEditor in 'designer\MenuInspIDEEditor.pas' {frmMenuIDEEditor},
+  DatasetFieldsEditor in 'designer\DatasetFieldsEditor.pas' {fmDatasetFieldsEditor},
+  DFENewField in 'designer\DFENewField.pas' {fmDFENewField},
+  DFEAddFields in 'designer\DFEAddFields.pas' {fmDFEAddFields};
+
+end.

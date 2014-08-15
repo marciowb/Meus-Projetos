@@ -1,0 +1,93 @@
+package gtDocEngD50Pro;
+
+{$R *.RES}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Gnostice eDocEngine'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  vcl50,
+  vcljpg50,
+  gtDocEngD50,
+  gtCompressionD50,
+  gtCryptD50,
+  gtFiltersD50,
+  gtFontD50,
+  gtRtlD50;
+
+contains
+  gtDocDlg in 'gtDocDlg.pas' {gtDocumentDlg},
+  gtGfxDlg in 'gtGfxDlg.pas' {gtGraphicsDlg},
+  gtPlnDlg in 'gtPlnDlg.pas' {gtPlainSheetDlg},
+  gtSpdDlg in 'gtSpdDlg.pas' {gtSpreadSheetDlg},
+  gtHTMLEngDlg in 'gtHTMLEngDlg.pas' {gtHTMLEngineDlg},
+  gtBMPEng in 'gtBMPEng.pas',
+  gtBMPEngDlg in 'gtBMPEngDlg.pas' {gtBMPEngineDlg},
+  gtClipboard in 'gtClipboard.pas',
+  gtCstGfxEng in 'gtCstGfxEng.pas',
+  gtCstHTMLEng in 'gtCstHTMLEng.pas',
+  gtCstPDFEng in 'gtCstPDFEng.pas',
+  gtCstPlnEng in 'gtCstPlnEng.pas',
+  gtCstSpdEng in 'gtCstSpdEng.pas',
+  gtCstXLSEng in 'gtCstXLSEng.pas',
+  gtDIFEng in 'gtDIFEng.pas',
+  gtDIFEngDlg in 'gtDIFEngDlg.pas' {gtDIFEngineDlg},
+  gtEMFEng in 'gtEMFEng.pas',
+  gtEMFEngDlg in 'gtEMFEngDlg.pas' {gtEMFEngineDlg},
+  gtGIFEng in 'gtGIFEng.pas',
+  gtGIFEngDlg in 'gtGIFEngDlg.pas' {gtGIFEngineDlg},
+  gtHTMLEng in 'gtHTMLEng.pas',
+  gtImgPrvwDlg in 'gtImgPrvwDlg.pas' {gtImgPrvwDlg},
+  gtJPEGEng in 'gtJPEGEng.pas',
+  gtJPEGEngDlg in 'gtJPEGEngDlg.pas' {gtJPEGEngineDlg},
+  gtLotusEng in 'gtLotusEng.pas',
+  gtLotusEngDlg in 'gtLotusEngDlg.pas' {gtLotusEngineDlg},
+  gtMetafileEng in 'gtMetafileEng.pas',
+  gtPDFEng in 'gtPDFEng.pas',
+  gtPDFEngDlg in 'gtPDFEngDlg.pas' {gtPDFEngineDlg},
+  gtQProEng in 'gtQProEng.pas',
+  gtQProEngDlg in 'gtQProEngDlg.pas' {gtQuattroProEngineDlg},
+  gtRTFEng in 'gtRTFEng.pas',
+  gtRTFEngDlg in 'gtRTFEngDlg.pas' {gtRTFEngineDlg},
+  gtSLKEng in 'gtSLKEng.pas',
+  gtSLKEngDlg in 'gtSLKEngDlg.pas' {gtSYLKEngineDlg},
+  gtTXTEng in 'gtTXTEng.pas',
+  gtTXTEngDlg in 'gtTXTEngDlg.pas' {gtTextEngineDlg},
+  gtWMFEng in 'gtWMFEng.pas',
+  gtWMFEngDlg in 'gtWMFEngDlg.pas' {gtWMFEngineDlg},
+  gtXHTMLEng in 'gtXHTMLEng.pas',
+  gtXHTMLEngDlg in 'gtXHTMLEngDlg.pas' {gtXHTMLEngineDlg},
+  gtXLSEng in 'gtXLSEng.pas',
+  gtXLSEngDlg in 'gtXLSEngDlg.pas' {gtExcelEngineDlg},
+  gtExHTMLEng in 'gtExHTMLEng.pas',
+  gtExPDFEng in 'gtExPDFEng.pas',
+  gtExXLSEng in 'gtExXLSEng.pas',
+  gtPNGEngDlg in 'gtPNGEngDlg.pas' {gtPNGEngineDlg},
+  gtPNGEng in 'gtPNGEng.pas',
+  gtSVGEng in 'gtSVGEng.pas',
+  gtSVGEngDlg in 'gtSVGEngDlg.pas' {gtSVGEngineDlg},
+  gtTIFFEng in 'gtTIFFEng.pas',
+  gtTIFFEngDlg in 'gtTIFFEngDlg.pas' {gtTIFFEngineDlg};
+
+end.

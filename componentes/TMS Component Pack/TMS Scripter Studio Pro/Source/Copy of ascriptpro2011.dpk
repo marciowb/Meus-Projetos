@@ -1,0 +1,135 @@
+package ascriptpro2011;
+
+{$R *.res}
+{$R 'RegScrpt.dcr'}
+{$R 'advmemo\AdvMemoReg.dcr'}
+{$R 'designer\IDEReg.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Scripter Studio Pro components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  designide,
+  rtl,
+  vclactnband,
+  vclx,
+  inet,
+  dbrtl,
+  vcldb,
+  VclSmp,
+  xmlrtl,
+  dsnap,
+  adortl,
+  bdertl;
+
+contains
+  uSystemLibrary in 'uSystemLibrary.pas',
+  atScript in 'atScript.pas',
+  atPascal in 'atPascal.pas',
+  DispatchLib in 'DispatchLib.pas',
+  RegScrpt in 'RegScrpt.pas',
+  FormScript in 'FormScript.pas',
+  atbasic in 'atbasic.pas',
+  atScriptDebug in 'atScriptDebug.pas',
+  atScriptDebugForm in 'atScriptDebugForm.pas' {DebugForm},
+  EditScript in 'EditScript.pas' {ScriptEditForm},
+  atParser in 'atParser.pas',
+  atWebScripter in 'atWebScripter.pas',
+  atHTMLParse in 'atHTMLParse.pas',
+  atMemoInterface in 'atMemoInterface.pas',
+  atWebScriptPP in 'atWebScriptPP.pas',
+  fWatchProperties in 'fWatchProperties.pas' {fmWatchProperties},
+  fWatchViewer in 'fWatchViewer.pas' {fmWatchViewer},
+  fSimplifiedCode in 'fSimplifiedCode.pas' {fmSimplifiedCode},
+  ap_Windows in 'Imports\Delphi2011\ap_Windows.pas',
+  ap_Classes in 'Imports\Delphi2011\ap_Classes.pas',
+  ap_System in 'Imports\Delphi2011\ap_System.pas',
+  ap_Types in 'Imports\Delphi2011\ap_Types.pas',
+  uMemoEdit in 'advmemo\uMemoEdit.pas',
+  AdvCodeHint in 'advmemo\AdvCodeHint.pas',
+  AdvCodeList in 'advmemo\AdvCodeList.pas',
+  AdvCodeListDD in 'advmemo\AdvCodeListDD.pas',
+  AdvCodeListLib in 'advmemo\AdvCodeListLib.pas',
+  advmbs in 'advmemo\advmbs.pas',
+  AdvMemo in 'advmemo\AdvMemo.pas',
+  AdvMemoAC in 'advmemo\AdvMemoAC.pas',
+  AdvMemoDE in 'advmemo\AdvMemoDE.pas',
+  AdvMemoReg in 'advmemo\AdvMemoReg.pas',
+  advmemostylermanager in 'advmemo\advmemostylermanager.pas',
+  advmps in 'advmemo\advmps.pas',
+  RTFEngine in 'advmemo\RTFEngine.pas',
+  uCallDLL in 'uCallDLL.pas',
+  advstyleif in 'advmemo\advstyleif.pas',
+  ScriptCtrls in 'ScriptCtrls.pas',
+  fSyntaxTree in 'fSyntaxTree.pas' {fmSyntaxTree},
+  uVBScriptLibrary in 'uVBScriptLibrary.pas',
+  TreeViewInspEditor in 'designer\TreeViewInspEditor.pas',
+  CollectionInspEditor in 'designer\CollectionInspEditor.pas',
+  componentinspector in 'designer\componentinspector.pas',
+  DesignerAddControls in 'designer\DesignerAddControls.pas',
+  DesignerAlignDialog in 'designer\DesignerAlignDialog.pas',
+  DesignerAlignPalette in 'designer\DesignerAlignPalette.pas',
+  DesignerControlsEditor in 'designer\DesignerControlsEditor.pas',
+  designeroptionsdialog in 'designer\designeroptionsdialog.pas',
+  DesignerSizeDialog in 'designer\DesignerSizeDialog.pas',
+  DesignerTabOrderDialog in 'designer\DesignerTabOrderDialog.pas',
+  FormDesigner in 'designer\FormDesigner.pas',
+  idemain in 'designer\idemain.pas',
+  IDEReg in 'designer\IDEReg.pas',
+  InspectorControls in 'designer\InspectorControls.pas',
+  ListViewInspEditor in 'designer\ListViewInspEditor.pas',
+  MenuInspEditor in 'designer\MenuInspEditor.pas',
+  MenuInspIDEEditor in 'designer\MenuInspIDEEditor.pas',
+  PictureInspEditor in 'designer\PictureInspEditor.pas',
+  PropertyInspEditors in 'designer\PropertyInspEditors.pas',
+  propertylist in 'designer\propertylist.pas',
+  StringsInspEditor in 'designer\StringsInspEditor.pas',
+  atScripter in 'atScripter.pas',
+  fSelectLanguage in 'designer\fSelectLanguage.pas',
+  fSelectUnit in 'designer\fSelectUnit.pas',
+  IDEDialog in 'designer\IDEDialog.pas',
+  dIDEActions in 'designer\dIDEActions.pas',
+  fideeditor in 'designer\fideeditor.pas',
+  fObjectInspector in 'designer\fObjectInspector.pas',
+  ImageListEditor in 'designer\ImageListEditor.pas',
+  fToolPalette in 'designer\fToolPalette.pas',
+  fWatches in 'designer\fWatches.pas',
+  ap_StdCtrls in 'imports\delphi2011\ap_StdCtrls.pas',
+  ap_Buttons in 'imports\delphi2011\ap_Buttons.pas',
+  ap_ComCtrls in 'imports\delphi2011\ap_ComCtrls.pas',
+  ap_CommDlg in 'imports\delphi2011\ap_CommDlg.pas',
+  ap_Controls in 'imports\delphi2011\ap_Controls.pas',
+  ap_Dialogs in 'imports\delphi2011\ap_Dialogs.pas',
+  ap_Forms in 'imports\delphi2011\ap_Forms.pas',
+  ap_Graphics in 'imports\delphi2011\ap_Graphics.pas',
+  ap_Menus in 'imports\delphi2011\ap_Menus.pas',
+  ap_Messages in 'imports\delphi2011\ap_Messages.pas',
+  ap_ExtCtrls in 'imports\delphi2011\ap_ExtCtrls.pas',
+  DatasetFieldsEditor in 'designer\DatasetFieldsEditor.pas' {fmDatasetFieldsEditor},
+  DFENewField in 'designer\DFENewField.pas' {fmDFENewField},
+  DFEAddFields in 'designer\DFEAddFields.pas' {fmDFEAddFields};
+
+end.
+

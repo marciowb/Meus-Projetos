@@ -1,0 +1,282 @@
+{\rtf1\ansi\ansicpg1251\deff0\deftab708{\fonttbl{\f0\froman\fprq2\fcharset204{\*\fname Times New Roman;}Times New Roman CYR;}{\f1\froman\fprq2\fcharset0 Times New Roman;}{\f2\fswiss\fprq2\fcharset204 Tahoma;}}
+{\*\generator Msftedit 5.41.15.1515;}\viewkind4\uc1\pard\lang1049\ul\b\f0\fs24 WELCOME TO DEVRACE FIBPLUS 6.9.\lang1033\f1 9\lang1049\f0  FULL\ulnone\b0\par
+\par
+FIBPlus 6.9.\lang1033\f1 9\lang1049\f0  installation notes and issues for Delphi 5-7, Delphi 2005-2007, C++ Builder 5-6, C++ Builder 2006-2007.\par
+\par
+\b INSTALLING FIBPlus 6.9.\lang1033\f1 9\lang1049\b0\f0\par
+\par
+The first step in using FIBPlus is to install it in Delphi or C++Builder. However, before using FIBPlus be sure to read over the License Agreement. \par
+\pard\qr\par
+\pard FIBPlus 6.9.\lang1033\f1 9\lang1049\f0  may be used in Delphi 5.0-7.0, Delphi 2005-2007, C++Builder 5.0-6.0, C++ Builder 2006-2007.\par
+\par
+1.\tab Downloading FIBPlus 6.9.9\par
+2.\tab Remove the previous FIBPlus versions.\par
+3.\tab Delphi 2007 installation / upgrade.\par
+4.\tab Delphi 2006 installation / upgrade.\par
+5.\tab Delphi 2005 installation / upgrade. \par
+6.\tab Delphi 7.0 installation / upgrade.\par
+7.\tab Delphi 6.0 installation / upgrade.\par
+8.\tab Delphi 5.0 installation / upgrade\par
+9.\tab C++Builder 2007 installation / upgrade. \par
+10.\tab C++Builder 2006 installation / upgrade. \par
+11.\tab C++Builder 6.0 installation / upgrade. \par
+12.\lang1033\f1\tab\lang1049\f0 C++Builder 5.0 installation / upgrade. \par
+13.\tab FIBPlusTools installation.\par
+\pard\li360\par
+\pard\ul\b 1. Downloading FIBPlus 6.9.\lang1033\f1 9\lang1049\f0\par
+\ulnone\b0\par
+Full sources of FIBPlus 6.9.\lang1033\f1 9\lang1049\f0  are in online Devrace Customer\rquote s Center:\par
+\ul\i http://www.devrace.com/cgi-bin/user/user.pl\par
+\ulnone\i0\par
+After FIBPlus order processing our system sends the login and password to every customer. In order to get a full version the customer should visit the link and register the login and password. There will be a list of full FIBPlus versions there.\par
+\par
+To install FIBPlus 6.9.\lang1033\f1 9\lang1049\f0  it\rquote s necessary to download \b Basic FIBPlus sources (fibplus_6_9_\lang1033\f1 9\lang1049\f0 _basic_delphi_and_builder.zip)\b0 , and also files \b FIBDatabase.pas\b0 , \b FIBDataset.pas\b0 , \b FIBQuery.pas\b0  and \b FIBSQLMonitor.pas\b0 .\par
+\par
+\b Important\b0 : Before installing FIBPlus 6.9.\lang1033\f1 9\lang1049\f0  please be sure that you removed all previous FIBPlus versions (or FIBPlus 6.9.\lang1033\f1 9\lang1049\f0  Trial) from your system:\par
+\ul\b\par
+\ulnone 2. Remove the previous FIBPlus version.\b0\par
+\b\par
+\b0 1.\tab If you used install.exe from the previous FIBPlus version (or FIBPlus 6.9.9 Trial), go to Control Panel -> Add or Remove Programs and uninstall FIBPlus.\par
+\par
+2.\tab Remove the directory, in which the previous FIBPlus version was installed. You can find the path to this directory into your Library Path setting: \par
+a) Delphi 5-7(C++ Builder 5-6)  "Tools" | "Environment Options..." | \ldblquote Library" | "Library path"\par
+b) Delphi 2005-2007 "Tools | "Options" | "Environment Options..." | "Delphi Options" | "Library \endash  Win-32" | "Library path"\par
+c) C++ Builder 2006-2007 "Tools | "Options"  | "Environment Options..." | "C++ Options" | "path and Directories" | "Library path"\par
+\par
+3.\tab Delete the path to the old FIBPlus version in your Library Path setting:\par
+\'e0) Delphi 5-7(C++ Builder 5-6) "Tools" | "Environment Options..." | \ldblquote Library" | "Library path"\par
+b) Delphi 2005-2007" "Tools | "Options" | "Environment Options..." |  "Delphi Options" | "Library - Win-32" "Library path"and remove the full path of your old FIBPlus Sources directory from the Library path.\par
+c) C++ Builder 2006-2007 "Tools | "Options"  | "Environment Options..." | "C++ Options" | "path and Directories" | "Library path"\par
+\par
+4.\tab If you are not sure, you can search for any previous FIBPlus versions on your computer. For example, try to find FIBPlus.inc file on your hard drive. If you have found it, please, remove this FIBPlus version as it can cause further installation problems\par
+\par
+\ul\b 3. Delphi 2007 installation / upgrade.\par
+\ulnone\b0\par
+a) Unzip \b fibplus_6_9_\lang1033\f1 9\lang1049\f0 _basic_delphi_and_builder.zip \b0 to your FIBPlus Sources directory (for example, \ldblquote\i c:\\fibplus\i0\rdblquote ).\par
+\par
+b) Place downloaded FIBDatabase.pas, FIBDataset.pas, FIBQuery.pas and FIBSQLMonitor.pas to \ldblquote\\sources\rdblquote  sub-directory (for example, \ldblquote\i c:\\\i0  \i Documents and Settings/User/My Documents/Borland Studio Projects/FIBPlus/\i0\rdblquote ).\par
+\par
+c) Select "Tools" | "Options\'85" | "Environment Options" | "Delphi Options" on the menu bar. Go to "Library \endash  Win 32" \f2 menu item\f0  and add the full path of your FIBPlus Sources directory to the Library Path if you have not already done so. The Library Path field should then look similar to this:\par
+\par
+\pard\fi708\i $(BDS)\\Lib; c:\\\i0  \i Documents and Settings/User/My Documents/Borland Studio Projects/fibplus/sources; c:\\\i0  \i Documents and Settings/User/My Documents/Borland Studio Projects/fibplus/sources/Editors\i0\par
+\pard\par
+Click OK.\par
+\par
+d) Select "File" | "Open..." on the menu bar. Set "Type of files" to Delphi package source, locate and select the \i FIBPlus2007.dpk\i0  package source file in your FIBPlus Sources directory, and click "Open".\par
+\par
+e) A package editor window will appear. Click "Compile", then click "Install".\par
+\par
+\pard\tx0 f) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\pard\par
+j) Repeat steps d) through f) with the \i FIBPlusEditors2007.dpk\i0  package.\par
+\par
+h) Repeat steps d) through f) with the \i FIBDBMidas2007.dpk\i0  package.\par
+\par
+\b NOTE:\b0  The order in which you install the three packages is important; if you install them in the wrong order, Delphi will probably complain about not being able to find \i FIBPlus2007.bpl\i0  the next time it is started. To fix this, select "Component" | "Install Packages", remove the three packages, and reinstall them by repeating the above steps.\par
+\ul\b\par
+\ulnone 4. Delphi 2006 installation / upgrade.\b0\par
+\par
+a) Unzip \b fibplus_6_9_\lang1033\f1 9\lang1049\f0 _basic_delphi_and_builder.zip \b0 to your FIBPlus Sources directory (for example, \ldblquote\i c:\\fibplus\i0\rdblquote ).\par
+\par
+b) Place downloaded FIBDatabase.pas, FIBDataset.pas, FIBQuery.pas and FIBSQLMonitor.pas to \ldblquote\\sources\rdblquote  sub-directory (for example, \ldblquote\i c:\\\i0  \i Documents and Settings/User/My Documents/Borland Studio Projects/FIBPlus/\i0\rdblquote ).\par
+\par
+c) Select "Tools" | "Options\'85" | "Environment Options" | "Delphi Options" on the menu bar. Go to "Library \endash  Win 32" \f2 menu item\f0  and add the full path of your FIBPlus Sources directory to the Library Path if you have not already done so. The Library Path field should then look similar to this:\par
+\par
+\pard\fi708\i $(BDS)\\Lib; c:\\\i0  \i Documents and Settings/User/My Documents/Borland Studio Projects/fibplus/sources; c:\\\i0  \i Documents and Settings/User/My Documents/Borland Studio Projects/fibplus/sources/Editors\i0\par
+\pard\par
+Click OK.\par
+\par
+d) Select "File" | "Open..." on the menu bar. Set "Type of files" to Delphi package source, locate and select the \i FIBPlus2006.dpk\i0  package source file in your FIBPlus Sources directory, and click "Open".\par
+\par
+e) A package editor window will appear. Click "Compile", then click "Install".\par
+\par
+f) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\par
+g) Repeat steps d) through f) with the \i FIBPlusEditors2006.dpk\i0  package.\par
+\par
+h) Repeat steps d) through f) with the \i FIBDBMidas2006.dpk\i0  package.\par
+\par
+\b NOTE:\b0  The order in which you install the three packages is important; if you install them in the wrong order, Delphi will probably complain about not being able to find \i FIBPlus2006.bpl\i0  the next time it is started. To fix this, select "Component" | "Install Packages", remove the three packages, and reinstall them by repeating the above steps.\par
+\par
+\ul\b 5. Delphi 2005 installation / upgrade.\par
+\ulnone\b0\par
+a) Unzip \b fibplus_6_9_\lang1033\f1 9\lang1049\f0 _basic_delphi_and_builder.zip \b0 to your FIBPlus Sources directory (for example, \ldblquote\i c:\\fibplus\i0\rdblquote ).\par
+\par
+b) Place downloaded FIBDatabase.pas, FIBDataset.pas, FIBQuery.pas and FIBSQLMonitor.pas to \ldblquote\\sources\rdblquote  sub-directory (for example, \ldblquote\i c:\\\i0  \i Documents and Settings/User/My Documents/Borland Studio Projects/FIBPlus/\i0\rdblquote ).\par
+\par
+c) Select "Tools" | "Options\'85" | "Environment Options" | "Delphi Options" on the menu bar. Go to "Library \endash  Win 32" \f2 menu item\f0  and add the full path of your FIBPlus Sources directory to the Library Path if you have not already done so. The Library Path field should then look similar to this:\par
+\par
+\pard\fi708\i $(BDS)\\Lib; c:\\\i0  \i Documents and Settings/User/My Documents/Borland Studio Projects/fibplus/sources; c:\\\i0  \i Documents and Settings/User/My Documents/Borland Studio Projects/fibplus/sources/Editors\i0\par
+\pard\par
+Click OK.\par
+\par
+d) Select "File" | "Open..." on the menu bar. Set "Type of files" to Delphi package source, locate and select the \i FIBPlus2005.dpk\i0  package source file in your FIBPlus Sources directory, and click "Open".\par
+\par
+e) A package editor window will appear. Click "Compile", then click "Install".\par
+\par
+f) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\par
+g) Repeat steps d) through f) with the \i FIBPlusEditors2005.dpk\i0  package.\par
+\par
+h) Repeat steps d) through f) with the \i FIBDBMidas2005.dpk\i0  package.\par
+\par
+\b NOTE:\b0  The order in which you install the three packages is important; if you install them in the wrong order, Delphi will probably complain about not being able to find \i FIBPlus2005.bpl\i0  the next time it is started. To fix this, select "Component" | "Install Packages", remove the three packages, and reinstall them by repeating the above steps.\par
+\par
+\ul\b 6. Delphi 7.0 installation / upgrade.\par
+\ulnone\b0\par
+a) Unzip \b fibplus_6_9_\lang1033\f1 9\lang1049\f0 _basic_delphi_and_builder.zip \b0 to your FIBPlus Sources directory (for example, \ldblquote\i c:\\fibplus\i0\rdblquote ).\par
+\par
+b) Place downloaded FIBDatabase.pas, FIBDataset.pas, FIBQuery.pas and FIBSQLMonitor.pas to \ldblquote\\sources\rdblquote  sub-directory (for example, \ldblquote\i c:\\fibplus\\sources\i0\rdblquote ).\par
+\par
+c) Select "Tools" | "Environment Options..." on the menu bar. Go to "Library" tab and add the full path of your FIBPlus Sources directory to the Library Path if you have not already done so. The Library Path field should then look similar to this:\par
+\par
+\pard\fi708\i $(DELPHI)\\Lib;c:\\fibplus\\sources; c:\\fibplus\\sources\\Editors\par
+\pard\i0\par
+Click OK.\par
+\par
+d) Select "File" | "Open..." on the menu bar. Set "Type of files" to Delphi package source, locate and select the \i FIBPlus7.dpk\i0  package source file in your FIBPlus Sources directory, and click "Open".\par
+\par
+e) A package editor window will appear. Click "Compile", then click "Install".\par
+\par
+f) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\par
+g) Repeat steps d) through f) with the \i FIBPlusEditors7.dpk\i0  package.\par
+\par
+h) Repeat steps d) through f) with the \i FIBDBMidas7.dpk\i0  package.\par
+\par
+\b NOTE:\b0  The order in which you install the three packages is important; if you install them in the wrong order, Delphi will probably complain about not being able to find \i FIBPlus7.bpl\i0  the next time it is started. To fix this, select "Component" | "Install Packages", remove the three packages, and reinstall them by repeating the above steps.\par
+\par
+\ul\b 7. Delphi 6.0 installation / upgrade.\par
+\ulnone\b0\par
+a) Unzip \b fibplus_6_9_\lang1033\f1 9\lang1049\f0 _basic_delphi_and_builder.zip \b0 to your FIBPlus Sources directory (for example, \ldblquote\i c:\\fibplus\i0\rdblquote ).\par
+\par
+b) Place downloaded FIBDatabase.pas, FIBDataset.pas, FIBQuery.pas and FIBSQLMonitor.pas to \ldblquote\\sources\rdblquote  sub-directory (for example, \ldblquote\i c:\\fibplus\\sources\i0\rdblquote ).\par
+\par
+c) Select "Tools" | "Environment Options..." on the menu bar. Go to "Library" tab and add the full path of your FIBPlus Sources directory to the Library Path if you have not already done so. The Library Path field should then look similar to this:\par
+\par
+\pard\fi708\i $(DELPHI)\\Lib;c:\\fibplus\\sources; c:\\fibplus\\sources\\Editors\par
+\pard\i0\par
+Click OK.\par
+\par
+d) Select "File" | "Open..." on the menu bar. Set "Type of files" to Delphi package source, locate and select the \i FIBPlus6.dpk\i0  package source file in your FIBPlus Sources directory, and click "Open".\par
+\par
+e) A package editor window will appear. Click "Compile", then click "Install".\par
+\par
+f) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\par
+g) Repeat steps d) through f) with the \i FIBPlusEditors6.dpk\i0  package.\par
+\par
+h) Repeat steps d) through f) with the \i FIBDBMidas6.dpk\i0  package.\par
+\par
+\b NOTE:\b0  The order in which you install the three packages is important; if you install them in the wrong order, Delphi will probably complain about not being able to find \i FIBPlus6.bpl\i0  the next time it is started. To fix this, select "Component" | "Install Packages", remove the three packages, and reinstall them by repeating the above steps.\par
+\par
+\ul\b 8. Delphi 5.0 installation / upgrade.\par
+\ulnone\b0\par
+a) Unzip \b fibplus_6_9_\lang1033\f1 9\lang1049\f0 _basic_delphi_and_builder.zip \b0 to your FIBPlus Sources directory (for example, \ldblquote\i c:\\fibplus\i0\rdblquote ).\par
+\par
+b) Place downloaded FIBDatabase.pas, FIBDataset.pas, FIBQuery.pas and FIBSQLMonitor.pas to \ldblquote\\sources\rdblquote  sub-directory (for example, \ldblquote\i c:\\fibplus\\sources\i0\rdblquote ).\par
+\par
+c) Select "Tools" | "Environment Options..." on the menu bar. Go to "Library" tab and add the full path of your FIBPlus Sources directory to the Library Path if you have not already done so. The Library Path field should then look similar to this:\par
+\par
+\pard\fi708\i $(DELPHI)\\Lib;c:\\fibplus\\sources; c:\\fibplus\\sources\\Editors\par
+\pard\i0\par
+Click OK.\par
+\par
+d) Select "File" | "Open..." on the menu bar. Set "Type of files" to Delphi package source, locate and select the \i FIBPlus5.dpk\i0  package source file in your FIBPlus Sources directory, and click "Open".\par
+\par
+e) A package editor window will appear. Click "Compile", then click "Install".\par
+\par
+f) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\par
+g) Repeat steps d) through f) with the \i FIBPlusEditors5.dpk\i0  package.\par
+\par
+h) Repeat steps d) through f) with the \i FIBDBMidas5.dpk\i0  package.\par
+\par
+\b NOTE:\b0  The order in which you install the three packages is important; if you install them in the wrong order, Delphi will probably complain about not being able to find \i FIBPlus6.bpl\i0  the next time it is started. To fix this, select "Component" | "Install Packages", remove the three packages, and reinstall them by repeating the above steps.\par
+\par
+\ul\b 9. C++Builder 2007 installation / upgrade.\par
+\ulnone\b0\f2\fs20\par
+\fs24 Read Delphi 2007 installation/upgrade, but use packages FIBPlus_CB2007.cbproj, FIBPlusEditors_CB2007.cbproj and FIBDBMidas_CB2007.cbproj.\par
+\fs20\par
+\ul\b\f0\fs24 10. C++Builder 2006 installation / upgrade.\par
+\ulnone\b0\f2\fs20\par
+\fs24 Read Delphi 2006 installation/upgrade, but use packages FIBPlus_CB2006.cbproj, FIBPlusEditors_CB2006.cbproj and FIBDBMidas_CB2006.cbproj.\par
+\f0\par
+\ul\b 11. C++Builder 6.0 installation / upgrade.\par
+\ulnone\b0\par
+a) Unzip \b fibplus_6_9_\lang1033\f1 9\lang1049\f0 _basic_delphi_and_builder.zip \b0 to your FIBPlus Sources directory (for example, \ldblquote\i c:\\fibplus\i0\rdblquote ).\par
+\par
+b) Place downloaded FIBDatabase.pas, FIBDataset.pas, FIBQuery.pas and FIBSQLMonitor.pas to \ldblquote\\sources\rdblquote  sub-directory (for example, \ldblquote\i c:\\fibplus\\sources\i0\rdblquote ).\par
+\par
+c) Select "Tools" | "Environment Options..." on the menu bar. Go to "Library" tab and add the full path of your FIBPlus Sources directory to the Library Path if you have not already done so. The Library Path field should then look similar to this:\par
+\par
+\pard\fi708\i $(BCB)\\Lib;$(BCB)\\Lib\\Obj$(BCB)\\fibplus\\sources;$(BCB)\\fibplus\\sources\\Editors\par
+\pard\i0\par
+Click OK.\par
+\par
+d) Select "File" | "Open..." on the menu bar. Set "Type of files" to C++ Builder package source, locate and select the \i FIBPlus_CB6.bpk\i0  package source file in your FIBPlus Sources directory, and click "Open".\par
+\par
+e) A package editor window will appear. Click "Compile", then click "Install".\par
+\par
+f) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\par
+g) Repeat steps d) through f) with the \i FIBPlusEditors_CB6.bpk\i0  package.\par
+\par
+h) Repeat steps d) through f) with the \i FIBDBMidas_CB6.bpk\i0  package.\par
+\par
+\b NOTE:\b0  The order in which you install the three packages is important; if you install them in the wrong order, C++ Builder will probably complain about not being able to find \i FIBPlus_CB6.bpl\i0  the next time it is started. To fix this, select "Component" | "Install Packages", remove the three packages, and reinstall them by repeating the above steps.\par
+\par
+\ul\b 12. C++Builder 5.0 installation / upgrade.\par
+\ulnone\b0\par
+a) Unzip \b fibplus_6_9_\lang1033\f1 9\lang1049\f0 _basic_delphi_and_builder.zip \b0 to your FIBPlus Sources directory (for example, \ldblquote\i c:\\fibplus\i0\rdblquote ).\par
+\par
+b) Place downloaded FIBDatabase.pas, FIBDataset.pas, FIBQuery.pas and FIBSQLMonitor.pas to \ldblquote\\sources\rdblquote  sub-directory (for example, \ldblquote\i c:\\fibplus\\sources\i0\rdblquote ).\par
+\par
+c) Select "Tools" | "Environment Options..." on the menu bar. Go to "Library" tab and add the full path of your FIBPlus Sources directory to the Library Path if you have not already done so. The Library Path field should then look similar to this:\par
+\par
+\pard\fi708\i $(BCB)\\Lib;$(BCB)\\Lib\\Obj$(BCB)\\fibplus\\sources;$(BCB)\\fibplus\\sources\\Editors\par
+\pard\i0\par
+Click OK.\par
+\par
+d) Select "File" | "Open..." on the menu bar. Set "Type of files" to C++ Builder package source, locate and select the \i FIBPlus_CB5.bpk\i0  package source file in your FIBPlus Sources directory, and click "Open".\par
+\par
+e) A package editor window will appear. Click "Compile", then click "Install".\par
+\par
+f) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\par
+g) Repeat steps d) through f) with the \i FIBPlusEditors_CB5.bpk\i0  package.\par
+\par
+h) Repeat steps d) through f) with the \i FIBDBMidas_CB5.bpk\i0  package.\par
+\par
+\b NOTE:\b0  The order in which you install the three packages is important; if you install them in the wrong order, C++ Builder will probably complain about not being able to find \i FIBPlus_CB5.bpl\i0  the next time it is started. To fix this, select "Component" | "Install Packages", remove the three packages, and reinstall them by repeating the above steps.\par
+\par
+\ul\b 13. FIBPlusTools installation.\par
+\ulnone\b0\par
+\pard\fi-11\li11 1) Delphi 5-7(C++ Builder 5-6)\par
+\pard\li284 a) Select "File" | "Open..." on the menu bar. Set "Type of files" to Delphi or C++ Builder package source, locate and select the necessary FIBPlusTools package source file in the "\\tools" subdirectory of your FIBPlus Packages directory, and click "Open".\par
+\pard\par
+\pard\li284 b) A package editor window will appear. Click "Compile", then click "Install".\par
+\pard\par
+\pard\li284 c) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\pard\fi-11\li11\par
+\pard 2) Delphi 2005-2007\par
+\pard\li284 a) Select "File" | "Open..." on the menu bar. Set "Type of files" to "Borland Developer Studio Project", locate and select the pFIBPlusTools2005.bdsproj, pFIBPlusTools2006.bdsproj package or pFIBPlusTools2007.bdsproj source file in your FIBPlus Sources\\Tools directory, and click "Open".\par
+\pard\par
+\pard\li284 b) A package editor window will appear. Click "Compile", then click "Install".\par
+\pard\par
+\pard\li284 c) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\pard\par
+3) C++ Builder 2006-2007\par
+\pard\li284 a) Select "File" | "Open..." on the menu bar. Set "Type of files" to "Borland Developer Studio Project", locate and select the pFIBPlusTools2006.bdsproj package or pFIBPlusTools2007.bdsproj source file in your FIBPlus Sources\\Tools directory, and click "Open".\par
+\pard\par
+\pard\li284 b) A package editor window will appear. Click "Compile", then click "Install".\par
+\pard\par
+\pard\li284 c) Close the package editor window. If you are asked if you want to save changes to the package, answer "No".\par
+\pard\par
+FIBPlusTools experts will add "FIBPlus" item in the main menu bar.\par
+\par
+_______________________________\par
+Copyright (c) 2009 Devrace Company\par
+All rights reserved.\par
+}
+ 

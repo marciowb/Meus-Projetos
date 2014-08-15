@@ -1,0 +1,89 @@
+************************************************************************************
+* TMS Security System v2.4.3.1                                                     * 
+* for Delphi 6,7,2005,2006,2007,2009,2010,XE & C++Builder 6,2006,2007,2009,2010,XE *
+* © by tmssoftware.com © 1999-2010                                                 *
+************************************************************************************
+
+v2.4.3.1
+- Fixed : Issue with group policy handling
+
+
+v2.4.3.0
+- Support for RAD Studio XE added
+
+v2.4.2.2
+- Fixed : Issue with designer for group permissions
+
+v2.4.2.1
+- Fixed : Issue with OnFilterComponent event not always correct handled
+
+v2.4.2.0
+- Improved : handling of popup menu in form policy designer dialog
+
+v2.4.1.2
+- Fixed : issue with case sensitive username login for certain database types
+
+v2.4.1.1
+- Fixed : issue when deleting all policies of a form with table storage
+
+
+v2.4.0.2
+- New : demo for PostgreSQL included
+
+v2.4.0.1
+- Fixed : small issue with collaps all/expand all popup menu in policy dialog
+
+v2.4
+- New : CanAddUser, CanEditUser, CanDeleteUser properties added for TuilSecurityDlg
+- New : CanAddGroup, CanEditGroup, CanDeleteGroup properties added for TuilSecurityDlg
+- New : Persistence of form policy dialog size & splitter position
+- New : Persistence of security dialog splitter position
+- New : List components that have ReadOnly property in policy dialog 
+- New : Multiform demo
+- New : Full expand / full collaps options in policy dialog
+- Improved : Package structure
+
+v2.3.0
+- New : uilSecurityManager.OnFailedLoginDetail event added
+- New : uilSecurityManager.LoginTriesRemaining property added
+- New : uilSecurityManager.LoginTryNumber property added
+- New : uilSecurityDialog.OnUserAdded, OnUserEdited, OnUserDeleted events added
+- New : uilSecurityDialog.OnGroupAdded, OnGroupEdited, OnGroupDeleted events added
+- New : uilChangePasswordDialog added
+- New : OnFilterComponent added in uilFormPolicyDlg component
+- New : extension to offer better support for components like TAdvOfficePager
+- Improved : maximize, minimize buttons added in form policy dialog
+- Various smaller fixes & code improvements 
+
+v2.2.3
+- New : Support for Delphi 2006 / C++Builder 2006
+- Improved : solution implemented for issue with Borland ADO master/detail handling 
+
+v2.2.2
+- Improved : handling for login with blank usernames
+- Improved : delete policy handling in database persisted policies
+
+v2.2.1
+- Improved : allows to use the security system to work with databases that have no boolean field support
+- Improved : handling of form policy dialog policies when no policy is selected
+
+v2.2.0
+- New : Delphi 2005 support added
+- New : FormPolicyDialog IgnoreList added, to allow to exclude component of being edited by the runtime form policy editor
+- New : User password change dialog and method SecurityManager.ChangePassword
+- Improved : handling of multiform runtime policies
+
+v2.1.2
+- New : TUilProxy component added for interfacing with components / component properties that do not have standard Enabled, Visible, ReadOnly exposed
+- Improved : runtime policy editing / policy database read/write
+
+v2.1.0
+- FormPolicy can be edited at runtime
+- Event to encrypt passwords in db
+- Custom security policy with event
+- Read Only security policy
+- PageControl tabsheet show/hide support
+- Active property for TuilFormPolicy to enable/disable security system on form level
+- Active property for TuilSecurityManager to enable/disable security system on application level
+- Added demo for ADO
+

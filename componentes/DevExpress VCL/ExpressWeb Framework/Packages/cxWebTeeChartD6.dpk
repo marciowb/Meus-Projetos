@@ -1,0 +1,68 @@
+package cxWebTeeChartD6;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'WebTeeChart for EWF by Developer Express Inc.'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vcljpg,
+  dbrtl,
+  inet,
+  cxWebD6,
+{$IFNDEF TEEPRO}  
+  tee,
+  teedb;
+{$ELSE}  
+{$IFDEF TEE5}
+  tee,
+  teedb;
+{$ENDIF}
+{$IFDEF TEE6}
+  tee66,
+  teedb66;
+{$ENDIF}
+{$IFDEF TEE7}
+  tee76,
+  teedb76;
+{$ENDIF}
+{$IFDEF TEE8}
+  tee86,
+  teedb86;
+{$ENDIF}
+{$ENDIF}
+
+contains
+  cxWebTeeChart;
+
+end.

@@ -1,0 +1,42 @@
+package pFIBPlusTools5;
+
+{$R *.RES}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'FIBPlus Projects Tools'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  FIBPlus5,
+  VclSmp50,
+  FIBPlusEditors5;
+
+contains
+  RegFIBPlusUtils in 'RegFIBPlusUtils.pas',
+  pFIBPreferences in 'pFIBPreferences.pas' {frmFIBPreferences},
+  pFIBDsgnViewSQLs in 'pFIBDsgnViewSQLs.pas' {frmSaveSQLs},
+  uFrmSearchResult in 'uFrmSearchResult.pas' {frmCompSearchResult},
+  FindCmp in 'FindCmp.pas',
+  FIBToolsConsts in 'FIBToolsConsts.pas';
+
+end.

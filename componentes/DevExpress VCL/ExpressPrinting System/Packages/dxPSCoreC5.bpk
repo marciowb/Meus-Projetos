@@ -1,0 +1,176 @@
+# ---------------------------------------------------------------------------
+!if !$d(BCB)
+BCB = $(MAKEDIR)\..
+!endif
+
+!ifdef DXDEBUGMODE
+DEBUGOPTIONS = -$D+ -$L+ -$W+ -$O-
+!else
+DEBUGOPTIONS = -$D- -$L- -$W- -$O+
+!endif
+
+# ---------------------------------------------------------------------------
+# IDE SECTION
+# ---------------------------------------------------------------------------
+# The following section of the project makefile is managed by the BCB IDE.
+# It is recommended to use the IDE to change any of the values in this
+# section.
+# ---------------------------------------------------------------------------
+
+VERSION = BCB.05.03
+# ---------------------------------------------------------------------------
+PROJECT = dxPSCorec5.bpl
+OBJFILES = dxPSPrVwStd.obj dxPSRes.obj dxFEFDlg.obj dxBrhDlg.obj dxBase.obj \
+  dxPrnPg.obj dxPSGlbl.obj dxfmClr.obj dxPcPrVw.obj dxPrnDlg.obj dxPreVw.obj \
+  dxPSCore.obj dxPPAttr.obj dxPrnDev.obj dxBkgnd.obj dxWrap.obj dxPSUtl.obj \
+  dxFmMnPg.obj dxfmZoom.obj dxPgSDlg.obj dxPSImgs.obj dxPSPrVwOpt.obj dxPSfmLnkAdd.obj \
+  dxPSfmttl.obj dxPSPopupMan.obj dxfmpnfmt.obj dxfmDTFmt.obj dxPSfmEditDesc.obj \
+  dxfmDfnStl.obj dxPSEvnt.obj dxPSESys.obj dxPSEngn.obj dxPSPrVw.obj dxPSForm.obj \
+  dxPSGraphicLnk.obj dxPSCompsProvider.obj dxPSCPDsg.obj dxPSfmCompositionAdd.obj \
+  dxPSfmCompositionDsg.obj dxPSPgsMnuBld.obj dxfmChFN.obj dxExtCtrlsStrs.obj \
+  dxExtctrls.obj dxPSBaseGridLnk.obj dxPSEdgePatterns.obj \
+  dxPSFillPatterns.obj dxPSContainerLnk.obj dxPSDBBasedXplorer.obj dxPSExtDlgs.obj \
+  dxPSFileBasedXplorer.obj dxPSfmReportProperties.obj dxPSShapes.obj dxPSTextLnk.obj \
+  dxPSStandardFillPatterns.obj dxPSXplorerTreeView.obj dxPSSngltn.obj dxPSHFToolbarBld.obj \
+  dxPSFMAutoHFTextFmt.obj dxPSAutoHFTextMNUBld.obj dxPSCoreC5.obj
+RESFILES = dxPSCoreC5.res
+DEFFILE =
+RESDEPEN = $(RESFILES) dxPSPrVwStd.dfm dxFEFDlg.dfm dxfmClr.dfm dxPrnDlg.dfm \
+  dxfmZoom.dfm dxPgsDlg.dfm dxBrhDlg.dfm dxfmChFN.dfm dxfmpnfmt.dfm dxfmDTFmt.dfm \
+  dxfmDfnStl.dfm dxPSPrVwOpt.dfm dxPSfmttl.dfm dxPSfmEditDesc.dfm dxPSfmLnkAdd.dfm \
+  dxPSCPDsg.dfm dxPSfmCompositionAdd.dfm dxPSfmCompositionDsg.dfm dxPSContainerLnk.dfm \
+  dxPSTextLnk.dfm dxPSfmReportProperties.dfm dxPSExtDlgs.res 
+LIBFILES =
+LIBRARIES =
+SPARELIBS = VCL50.lib
+PACKAGES = VCL50.bpi vcldb50.bpi dxcomnc5.bpi cxLibraryVCLC5.bpi vclx50.bpi vcljpg50.bpi
+# ---------------------------------------------------------------------------
+PATHCPP = .;
+PATHASM = .;
+PATHPAS = .;
+PATHRC = .;
+DEBUGLIBPATH = $(BCB)\lib\debug
+RELEASELIBPATH = $(BCB)\lib\release
+SYSDEFINES = NO_STRICT;_RTLDLL;USEPACKAGES
+USERDEFINES =
+# ---------------------------------------------------------------------------
+CFLAG1 = -I$(BCB)\include;$(BCB)\include\vcl -O2 -Hc -H=$(BCB)\lib\vcl50.csm -w -Ve -a8 \
+  -k- -vi -c -b- -w-par -w-inl -Vx -tWM -D$(SYSDEFINES);$(USERDEFINES)
+PFLAGS = -DBCB -U"$(SEARCHPATH)";$(LIBDIR);$(BCB)\lib\obj;$(BCB)\lib;$(RELEASELIBPATH) \
+  -I$(BCB)\include;$(BCB)\include\vcl -$Y- $(DEBUGOPTIONS) -$C- -v -JPHNE -M -LUdclstd50
+RFLAGS = -i$(BCB)\include;$(BCB)\include\vcl
+AFLAGS = /i$(BCB)\include /i$(BCB)\include\vcl /mx /w2 /zn
+LFLAGS = -L"$(SEARCHPATH)";$(LIBDIR);$(BCB)\lib\obj;$(BCB)\lib;$(RELEASELIBPATH) \
+  -D"ExpressPrinting System by Developer Express Inc." -aa -Tpp -x -Gn -Gpr -Gl -Gi
+# ---------------------------------------------------------------------------
+ALLOBJ = c0pkg32.obj Memmgr.Lib $(PACKAGES) sysinit.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib
+# ---------------------------------------------------------------------------
+!ifdef IDEOPTIONS
+
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=1
+Locale=1033
+CodePage=1252
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+InMemoryExe=0
+ShowInfoMsgs=0
+
+!endif
+
+# ---------------------------------------------------------------------------
+# MAKE SECTION
+# ---------------------------------------------------------------------------
+# This section of the project file is not used by the BCB IDE.  It is for
+# the benefit of building from the command-line using the MAKE utility.
+# ---------------------------------------------------------------------------
+
+.autodepend
+# ---------------------------------------------------------------------------
+!if !$d(BCC32)
+BCC32 = bcc32
+!endif
+
+!if !$d(DCC32)
+DCC32 = dcc32
+!endif
+
+!if !$d(TASM32)
+TASM32 = tasm32
+!endif
+
+!if !$d(LINKER)
+LINKER = ilink32
+!endif
+
+!if !$d(BRCC32)
+BRCC32 = brcc32
+!endif
+# ---------------------------------------------------------------------------
+!if $d(PATHCPP)
+.PATH.CPP = $(PATHCPP)
+.PATH.C   = $(PATHCPP)
+!endif
+
+!if $d(PATHPAS)
+.PATH.PAS = $(PATHPAS)
+!endif
+
+!if $d(PATHASM)
+.PATH.ASM = $(PATHASM)
+!endif
+
+!if $d(PATHRC)
+.PATH.RC  = $(PATHRC)
+!endif
+# ---------------------------------------------------------------------------
+$(PROJECT): $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+    $(BCB)\BIN\$(LINKER) @&&!
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT),, +
+    $(ALLLIB), +
+    $(DEFFILE), +
+    $(ALLRES)
+!
+# ---------------------------------------------------------------------------
+.pas.hpp:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.pas.obj:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.cpp.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.c.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.asm.obj:
+    $(BCB)\BIN\$(TASM32) $(AFLAGS) $<, $@
+
+.rc.res:
+    $(BCB)\BIN\$(BRCC32) $(RFLAGS) -fo$@ $<
+# ---------------------------------------------------------------------------

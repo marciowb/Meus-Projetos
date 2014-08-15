@@ -1,0 +1,74 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{8d2e9b7a-8bcc-4d14-964f-9651ac94da7c}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="Compression\gtCompressionRAD2007.dproj" />
+    <Projects Include="Filters\gtFiltersRAD2007.dproj" />
+    <Projects Include="PDFCrypt\gtCryptRAD2007.dproj" />
+    <Projects Include="PDFFontProcessor\gtFontRAD2007.dproj" />
+    <Projects Include="Rtl\gtRtlRAD2007.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="gtRtlRAD2007">
+    <MSBuild Projects="Rtl\gtRtlRAD2007.dproj" Targets="" />
+  </Target>
+  <Target Name="gtRtlRAD2007:Clean">
+    <MSBuild Projects="Rtl\gtRtlRAD2007.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="gtRtlRAD2007:Make">
+    <MSBuild Projects="Rtl\gtRtlRAD2007.dproj" Targets="Make" />
+  </Target>
+  <Target Name="gtCompressionRAD2007">
+    <MSBuild Projects="Compression\gtCompressionRAD2007.dproj" Targets="" />
+  </Target>
+  <Target Name="gtCompressionRAD2007:Clean">
+    <MSBuild Projects="Compression\gtCompressionRAD2007.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="gtCompressionRAD2007:Make">
+    <MSBuild Projects="Compression\gtCompressionRAD2007.dproj" Targets="Make" />
+  </Target>
+  <Target Name="gtFiltersRAD2007">
+    <MSBuild Projects="Filters\gtFiltersRAD2007.dproj" Targets="" />
+  </Target>
+  <Target Name="gtFiltersRAD2007:Clean">
+    <MSBuild Projects="Filters\gtFiltersRAD2007.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="gtFiltersRAD2007:Make">
+    <MSBuild Projects="Filters\gtFiltersRAD2007.dproj" Targets="Make" />
+  </Target>
+  <Target Name="gtFontRAD2007">
+    <MSBuild Projects="PDFFontProcessor\gtFontRAD2007.dproj" Targets="" />
+  </Target>
+  <Target Name="gtFontRAD2007:Clean">
+    <MSBuild Projects="PDFFontProcessor\gtFontRAD2007.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="gtFontRAD2007:Make">
+    <MSBuild Projects="PDFFontProcessor\gtFontRAD2007.dproj" Targets="Make" />
+  </Target>
+  <Target Name="gtCryptRAD2007">
+    <MSBuild Projects="PDFCrypt\gtCryptRAD2007.dproj" Targets="" />
+  </Target>
+  <Target Name="gtCryptRAD2007:Clean">
+    <MSBuild Projects="PDFCrypt\gtCryptRAD2007.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="gtCryptRAD2007:Make">
+    <MSBuild Projects="PDFCrypt\gtCryptRAD2007.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="gtRtlRAD2007;gtCompressionRAD2007;gtFiltersRAD2007;gtFontRAD2007;gtCryptRAD2007" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="gtRtlRAD2007:Clean;gtCompressionRAD2007:Clean;gtFiltersRAD2007:Clean;gtFontRAD2007:Clean;gtCryptRAD2007:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="gtRtlRAD2007:Make;gtCompressionRAD2007:Make;gtFiltersRAD2007:Make;gtFontRAD2007:Make;gtCryptRAD2007:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

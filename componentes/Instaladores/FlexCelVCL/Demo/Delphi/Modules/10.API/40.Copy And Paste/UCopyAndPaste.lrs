@@ -1,0 +1,26 @@
+LazarusResources.Add('TFCopyAndPaste','FORMDATA',[
+  'TPF0'#14'TFCopyAndPaste'#13'FCopyAndPaste'#4'Left'#2#0#3'Top'#2#0#7'Caption'
+  +#6#14'Copy And Paste'#12'ClientHeight'#3'&'#1#11'ClientWidth'#3'2'#2#5'Color'
+  +#7#9'clBtnFace'#12'Font.Charset'#7#15'DEFAULT_CHARSET'#10'Font.Color'#7#12'c'
+  +'lWindowText'#11'Font.Height'#2#245#9'Font.Name'#6#6'Tahoma'#10'Font.Style'
+  +#11#0#14'OldCreateOrder'#8#10'DesignSize'#1#3'2'#2#3'&'#1#0#13'PixelsPerInch'
+  +#2'`'#10'TextHeight'#2#13#0#5'TMemo'#5'Memo1'#4'Left'#2#8#3'Top'#2#8#5'Width'
+  +#3#209#1#6'Height'#2#25#7'Anchors'#11#6'akLeft'#5'akTop'#7'akRight'#0#13'Lin'
+  +'es.Strings'#1#6'"1) Begin by creating a new file...'#0#8'ReadOnly'#9#8'TabO'
+  +'rder'#2#0#0#0#7'TButton'#10'btnNewFile'#4'Left'#2#8#3'Top'#2''''#5'Width'#2
+  +'y'#6'Height'#2#25#7'Caption'#6#17'Create a New File'#8'TabOrder'#2#1#7'OnCl'
+  +'ick'#7#15'btnNewFileClick'#0#0#5'TMemo'#5'Memo2'#4'Left'#2#8#3'Top'#2'X'#5
+  +'Width'#3#209#1#6'Height'#2')'#7'Anchors'#11#6'akLeft'#5'akTop'#7'akRight'#0
+  +#13'Lines.Strings'#1#6'B2) Now go to Excel, copy some cells and Press the "P'
+  +'aste" button. '#6#0#0#8'ReadOnly'#9#8'TabOrder'#2#2#0#0#7'TButton'#8'btnPas'
+  +'te'#4'Left'#2#8#3'Top'#3#135#0#5'Width'#2'y'#6'Height'#2#25#7'Caption'#6#5
+  +'Paste'#8'TabOrder'#2#3#7'OnClick'#7#13'btnPasteClick'#0#0#5'TMemo'#5'Memo3'
+  +#4'Left'#2#8#3'Top'#3#192#0#5'Width'#3#209#1#6'Height'#2')'#7'Anchors'#11#6
+  +'akLeft'#5'akTop'#7'akRight'#0#13'Lines.Strings'#1#6'?2) After Pasting, you '
+  +'can now copy the results back into Excel.'#6#0#0#8'ReadOnly'#9#8'TabOrder'#2
+  +#4#0#0#7'TButton'#7'btnCopy'#4'Left'#2#8#3'Top'#3#239#0#5'Width'#2'y'#6'Heig'
+  +'ht'#2#25#7'Caption'#6#4'Copy'#8'TabOrder'#2#5#7'OnClick'#7#12'btnCopyClick'
+  +#0#0#14'TFlexCelImport'#3'Xls'#7'Adapter'#7#11'XLSAdapter1'#4'Left'#3#224#1#3
+  +'Top'#2#8#0#0#11'TXLSAdapter'#11'XLSAdapter1'#21'AllowOverwritingFiles'#9#4
+  +'Left'#3#224#1#3'Top'#2'('#0#0#0
+]);

@@ -1,0 +1,18 @@
+LazarusResources.Add('TIWServerController','FORMDATA',[
+  'TPF0'#19'TIWServerController'#18'IWServerController'#14'OldCreateOrder'#8#20
+  +'AuthBeforeNewSession'#8#15'AllowSubFolders'#8#7'AppName'#6#5'MyApp'#11'Cach'
+  +'eExpiry'#2#2#17'ComInitialization'#7#6'ciNone'#19'Compression.Enabled'#8#17
+  +'Compression.Level'#2#6#11'Description'#6#23'My IntraWeb Application'#9'Debu'
+  +'gHTML'#8#3'Log'#7#6'loNone'#18'EnableImageToolbar'#8#20'ExceptionDisplayMod'
+  +'e'#7#7'smAlert'#7'ExecCmd'#6#4'EXEC'#14'HistoryEnabled'#9#16'InternalFilesU'
+  +'RL'#6#1'/ Browser32Behaviour.Netscape4As32'#9' Browser32Behaviour.Netscape6'
+  +'As32'#9'!Browser32Behaviour.IExplorer4As32'#9#15'PageTransitions'#8#4'Port'
+  +#3#184'" ReEntryOptions.AutoCreateSession'#8#11'RestrictIPs'#8#14'RestrictSu'
+  +'bnet'#8#16'RedirectMsgDelay'#2#0#19'ServerResizeTimeout'#2#0#21'SessionTrac'
+  +'kingMethod'#7#5'tmURL'#17'ShowResyncWarning'#8#14'SessionTimeout'#2#10#17'S'
+  +'upportedBrowsers'#11#4'brIE'#11'brNetscape7'#7'brOpera'#11'brNetscape6'#0#24
+  +'SSLOptions.NonSSLRequest'#7#8'nsAccept'#15'SSLOptions.Port'#2#0#14'ThreadPo'
+  +'olSize'#2' '#20'UnknownBrowserAction'#7#8'ubReject'#7'Version'#6#6'9.0.17'
+  +#12'OnNewSession'#7' IWServerControllerBaseNewSession'#6'Height'#3'6'#1#5'Wi'
+  +'dth'#3'V'#1#0#0
+]);

@@ -1,0 +1,79 @@
+MANUAL INSTALLATION
+
+Add to the Library Path the following folders:
+
+\ExpressBars 6\Sources
+\ExpressCommon Library\Sources
+\ExpressCore Library\Sources
+\ExpressDataController\Sources
+\ExpressDBTree Suite\Sources
+\ExpressDocking Library\Sources
+\ExpressEditors Library 3\Sources
+\ExpressEditors Library 5\Sources
+\ExpressExport Library\Sources
+\ExpressFlowChart\Sources
+\ExpressGDI+ Library\Sources
+\ExpressLayout Control 2\Sources
+\ExpressLibrary\Sources
+\ExpressMasterView\Sources		// Supported till 2007
+\ExpressMemData\Sources
+\ExpressNavBar 2\Sources
+\ExpressOrgChart\Sources
+\ExpressPageControl 2\Sources
+\ExpressPivotGrid 2\Sources
+\ExpressPrinting System 4\Sources
+\ExpressQuantumGrid 6\Sources
+\ExpressQuantumTreeList 5\Sources
+\ExpressScheduler 3\Sources
+\ExpressSideBar\Sources
+\ExpressSkins Library\Sources
+\ExpressSpellChecker 2\Sources
+\ExpressSpreadSheet\Sources		
+\ExpressVerticalGrid\Sources
+\XP Theme Manager\Sources
+
+
+
+
+In Delphi/CB, select File -> Open, browse in \Install\*\, and, one by one, open all the project group files respecting the order.
+If you don't see the package files, click View -> Project Manager.
+Firstly Build all the RunTime packages (the ones which start with "dx" or "cx").
+Then Install all the DesignTime packages (the ones wich start with "dcl").
+From Delphi/CB 2007 you can select and Build/Install more than one package at a time.
+
+
+
+
+*_01_Core.bpg			ExpressCore Library
+*_02_GDI.bpg			ExpressGDI+ Library
+*_03_XPTheme.bpg		XP Theme Manager
+*_04_Common.bpg			ExpressCommon Library
+*_05_DataController.bpg		ExpressDataController
+*_06_Library.bpg		ExpressLibrary
+*_07_Editors5.bpg		ExpressEditors Library 5
+*_08_MemData.bpg		ExpressMemData
+*_09_Export.bpg			ExpressExport Library
+*_10_Bars6.bpg			ExpressBars 6
+*_11_DBTree.bpg			ExpressDBTree Suite
+*_12_Docking.bpg		ExpressDocking Library
+*_13_FlowChart.bpg		ExpressFlowChart
+*_14_PageControl2.bpg		ExpressPageControl 2
+*_15_LayoutControl2.bpg		ExpressLayout Control 2
+*_16_MasterView.bpg		ExpressMasterView			// Supported till 2007
+*_17_NavBar2.bpg		ExpressNavBar 2
+*_18_OrgChart.bpg		ExpressOrgChart
+*_19_QuantumGrid6.bpg		ExpressQuantumGrid 6
+*_20_PivotGrid2.bpg		ExpressPivotGrid 2
+*_21_QuantumTreeList5.bpg	ExpressQuantumTreeList 5
+*_22_Scheduler3.bpg		ExpressScheduler 3
+*_23_SideBar.bpg		ExpressSideBar
+*_24_Skins.bpg			ExpressSkins Library
+*_25_SpellChecker2.bpg		ExpressSpellChecker 2
+*_26_SpreadSheet.bpg		ExpressSpreadSheet
+*_27_VerticalGrid.bpg		ExpressVerticalGrid
+*_28_Printing4.bpg		ExpressPrinting System 4
+
+
+
+
+\\ DarkRapt0r

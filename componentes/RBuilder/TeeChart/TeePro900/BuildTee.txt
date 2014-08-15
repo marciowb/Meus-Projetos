@@ -1,0 +1,31 @@
+
+
+REM Building dcu's...
+
+Copy ..\..\Source\ppIfDef.pas . /y
+
+%DCC% BuildTee.dpr -B 
+
+REM Building packages...
+
+%DCC% rbTC%PACKSUFFIX%.dpk 
+
+%DCC% rbTCUI%PACKSUFFIX%.dpk 
+
+%DCC% rbTDBC%PACKSUFFIX%.dpk 
+
+%DCC% dclRBC%PACKSUFFIX%.dpk 
+
+REM Copy packages and source
+
+Copy *.pas ..\..\Source /y
+Copy *.dpk ..\..\Source /y
+Copy *.dfm ..\..\Source /y
+
+Copy *.dcu ..\..\Lib /y
+Copy *.dcp ..\..\Lib /y
+Copy *.dfm ..\..\Lib /y
+
+copy dcl*.bpl ..\..\Lib /y
+
+copy rb*.bpl %SYSTEMDIR% /y

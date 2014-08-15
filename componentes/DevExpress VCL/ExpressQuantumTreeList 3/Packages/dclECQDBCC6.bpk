@@ -1,0 +1,136 @@
+# ---------------------------------------------------------------------------
+!if !$d(BCB)
+BCB = $(MAKEDIR)\..
+!endif
+
+!ifdef DXDEBUGMODE
+DEBUGOPTIONS = -$D+ -$L+ -$W+ -$O-
+!else
+DEBUGOPTIONS = -$D- -$L- -$W- -$O+
+!endif
+
+# ---------------------------------------------------------------------------
+# IDE SECTION
+# ---------------------------------------------------------------------------
+# The following section of the project makefile is managed by the BCB IDE.
+# It is recommended to use the IDE to change any of the values in this
+# section.
+# ---------------------------------------------------------------------------
+
+VERSION = BCB.06.00
+# ---------------------------------------------------------------------------
+PROJECT = dclECQDBCC6.bpl
+OBJFILES = dxGrImEd.obj dclECQDBCC6.obj
+RESFILES = dclECQDBCC6.res
+DEFFILE =
+RESDEPEN = $(RESFILES)
+LIBFILES =
+LIBRARIES =
+SPARELIBS = rtl.lib vcl.lib dbrtl.lib vcldb.lib
+PACKAGES = rtl.bpi vcl.bpi designide.bpi dbrtl.bpi vcldb.bpi dxEdtrC6.bpi ECQDBCC6.bpi
+# ---------------------------------------------------------------------------
+PATHCPP = .;
+PATHASM = .;
+PATHPAS = .;
+PATHRC = .;
+DEBUGLIBPATH = $(BCB)\lib\debug
+RELEASELIBPATH = $(BCB)\lib\release
+SYSDEFINES = USEPACKAGES
+USERDEFINES =
+# ---------------------------------------------------------------------------
+CFLAG1 = -I$(BCB)\include;$(BCB)\include\vcl -O2 -Hc -H=$(BCB)\lib\vcl40.csm -w -Ve -a8 \
+  -k- -vi -c -b- -w-par -w-inl -Vx
+CFLAG2 = -D_RTLDLL;USEPACKAGES -I$(BCB)\include;$(BCB)\include\vcl -H=$(BCB)\lib\vcl60.csm
+CFLAG3 = -Tkh30000
+PFLAGS = -U"$(SEARCHPATH)";$(LIBDIR);$(BCB)\lib\obj;$(BCB)\lib;$(RELEASELIBPATH) \
+  -I$(BCB)\include;$(BCB)\include\vcl -$YD $(DEBUGOPTIONS) -$C- -v -JPHNE -M -LUdclstd
+RFLAGS = -i$(BCB)\include;$(BCB)\include\vcl
+AFLAGS = /i$(BCB)\include /i$(BCB)\include\vcl /mx /w2 /zn /d_RTLDLL /dUSEPACKAGES
+LFLAGS = -L"$(SEARCHPATH)";$(LIBDIR);$(BCB)\lib\obj;$(BCB)\lib;$(RELEASELIBPATH) \
+  -D"ExpressCustomQuantumDBControl by Developer Express Inc." -aa -Tpp -x -Gn -Gpd -Gl \
+  -Gi
+IFLAGS =
+# ---------------------------------------------------------------------------
+ALLOBJ = c0pkg32.obj $(PACKAGES) sysinit.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib
+# ---------------------------------------------------------------------------
+!ifdef IDEOPTIONS
+
+
+!endif
+
+# ---------------------------------------------------------------------------
+# MAKE SECTION
+# ---------------------------------------------------------------------------
+# This section of the project file is not used by the BCB IDE.  It is for
+# the benefit of building from the command-line using the MAKE utility.
+# ---------------------------------------------------------------------------
+
+.autodepend
+# ---------------------------------------------------------------------------
+!if !$d(BCC32)
+BCC32 = bcc32
+!endif
+
+!if !$d(DCC32)
+DCC32 = dcc32
+!endif
+
+!if !$d(TASM32)
+TASM32 = tasm32
+!endif
+
+!if !$d(LINKER)
+LINKER = ilink32
+!endif
+
+!if !$d(BRCC32)
+BRCC32 = brcc32
+!endif
+# ---------------------------------------------------------------------------
+!if $d(PATHCPP)
+.PATH.CPP = $(PATHCPP)
+.PATH.C   = $(PATHCPP)
+!endif
+
+!if $d(PATHPAS)
+.PATH.PAS = $(PATHPAS)
+!endif
+
+!if $d(PATHASM)
+.PATH.ASM = $(PATHASM)
+!endif
+
+!if $d(PATHRC)
+.PATH.RC  = $(PATHRC)
+!endif
+# ---------------------------------------------------------------------------
+$(PROJECT): $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+    $(BCB)\BIN\$(LINKER) @&&!
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT),, +
+    $(ALLLIB), +
+    $(DEFFILE), +
+    $(ALLRES)
+!
+# ---------------------------------------------------------------------------
+.pas.hpp:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.pas.obj:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.cpp.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.c.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.asm.obj:
+    $(BCB)\BIN\$(TASM32) $(AFLAGS) $<, $@
+
+.rc.res:
+    $(BCB)\BIN\$(BRCC32) $(RFLAGS) -fo$@ $<
+# ---------------------------------------------------------------------------

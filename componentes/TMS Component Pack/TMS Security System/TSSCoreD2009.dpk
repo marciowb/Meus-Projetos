@@ -1,0 +1,46 @@
+package TSSCoreD2009;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'TMS Security System core'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  dbrtl,
+  vcldb;
+
+contains
+  uBindary in 'uBindary.pas',
+  uSecControl in 'uSecControl.pas',
+  usmGlobals in 'usmGlobals.pas',
+  uFormPolicy in 'uFormPolicy.pas',
+  uProxy in 'uProxy.pas',
+  uSecDlgForm in 'uSecDlgForm.pas',
+  uEditGroupForm in 'uEditGroupForm.pas',
+  uEditUserForm in 'uEditUserForm.pas',
+  uFormPolicyDesigner in 'uFormPolicyDesigner.pas',
+  USecCoreReg in 'USecCoreReg.pas';
+
+end.

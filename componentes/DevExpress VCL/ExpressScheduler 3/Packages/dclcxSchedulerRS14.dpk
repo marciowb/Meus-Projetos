@@ -1,0 +1,61 @@
+package dclcxSchedulerRS14;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$R cxSchedulerReg.dcr}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressScheduler 3 by Developer Express Inc.'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  designide,
+  rtl,
+  vcl,
+  vcldb,
+  vclimg,
+  vclx,
+  dxCoreRS14,
+  dxThemeRS14,
+  cxDataRS14,
+  dxGDIPlusRS14,
+  cxLibraryRS14,
+  cxEditorsRS14,
+  cxExportRS14,
+  cxExtEditorsRS14,
+  cxSchedulerRS14,
+  dcldb,
+  dcldxCoreRS14,
+  dclcxLibraryRS14,
+  dclcxEditorsRS14;
+
+contains
+  cxSchedulerReg;
+
+end.

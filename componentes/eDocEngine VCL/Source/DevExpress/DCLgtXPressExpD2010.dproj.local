@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008/10/24 19:04:46.109.dproj,D:\Documents and Settings\amaresha\My Documents\RAD Studio\Projects\Package1.dproj=D:\BDS2009Setup\Rainbow\Source\DevExpress\DCLgtXPressExpBDS2009.dproj</Transaction>
+    <Transaction>2009/08/14 17:36:32.659.dproj,H:\Sandeep\EDE_2010\EDE_PRO_VSS\EDE\Source\DevExpress\DCLgtXPressExpBDS2009.dproj=H:\Sandeep\EDE_2010\EDE_PRO_VSS\EDE\Source\DevExpress\DCLgtXPressExpBDS2010.dproj</Transaction>
+    <Transaction>2009/08/17 15:42:20.841.dproj,H:\Sandeep\17_08_09\EDE_2010\EDE_PRO_VSS\EDE\Source\DevExpress\DCLgtXPressExpBDS2010.dproj=H:\Sandeep\17_08_09\EDE_2010\EDE_PRO_VSS\EDE\Source\DevExpress\DCLgtXPressExpD2010.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

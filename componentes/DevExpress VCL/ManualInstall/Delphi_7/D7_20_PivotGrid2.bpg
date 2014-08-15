@@ -1,0 +1,36 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = cxPivotGridD7.bpl cxPivotGridChartD7.bpl cxPivotGridOLAPD7.bpl \
+  dclcxPivotGridD7.bpl dclcxPivotGridChartD7.bpl dclcxPivotGridOLAPD7.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+cxPivotGridD7.bpl: ..\..\ExpressPivotGrid 2\Packages\cxPivotGridD7.dpk
+  $(DCC)
+
+cxPivotGridChartD7.bpl: ..\..\ExpressPivotGrid 2\Packages\cxPivotGridChartD7.dpk
+  $(DCC)
+
+cxPivotGridOLAPD7.bpl: ..\..\ExpressPivotGrid 2\Packages\cxPivotGridOLAPD7.dpk
+  $(DCC)
+
+dclcxPivotGridD7.bpl: ..\..\ExpressPivotGrid 2\Packages\dclcxPivotGridD7.dpk
+  $(DCC)
+
+dclcxPivotGridChartD7.bpl: ..\..\ExpressPivotGrid 2\Packages\dclcxPivotGridChartD7.dpk
+  $(DCC)
+
+dclcxPivotGridOLAPD7.bpl: ..\..\ExpressPivotGrid 2\Packages\dclcxPivotGridOLAPD7.dpk
+  $(DCC)
+
+

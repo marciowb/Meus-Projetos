@@ -1,0 +1,447 @@
+[strings]
+SAfter=depois
+SAggregationFunctionNotAllowed=Função de agregação "%s" não permitida para o tipo de dados "%s"
+SAlias=apelido
+SAmbiguousError=Erro ambíguo
+SAnd=E
+SAndNot=E não
+SAnyFile=Todos os arquivos
+SAs=como
+SAscending=crescente
+SAutomaticListEditor=Editor de lista automática
+SAvg=Média de
+SBefore=antes
+SBring=Obter
+SCancel=Cancelar
+SCannotClearParser=Não é possível limpar o parser durante o processamento
+SCapabilityNotSupportedJoins=Recurso não suportado em condições de junção ligando a tabela "%s" à "%s"
+SCheckListEditor=Editor de lista de marcação
+SChooseListEditor=Editor de lista de escolha
+SCompareFieldToAnother=Comparar um campo a outro campo
+SCompareFieldToParametricValue=Comparar um campo a um valor paramétrico
+SCompareFieldToSpecificValue=Comparar um campo a um valor específico
+SConditionExpressionNotSpecified=Expressão da condição não especificada
+SConditionRightSideNotSpecified=Lado direito da condição não especificado
+SConfirmChangeLogicalConnector=Confirma modificação do conector lógico das condições agrupadas?
+SConfirmClearAllItems=Limpar todos os itens?
+SConfirmDeleteSelectedItems=Deseja realmente excluir os itens selecionados?
+SConfirmExcludeAllDefinitions=Confirma exclusão de todas as definições da consulta "%s"?
+SConfirmUpdatingMetaSQL=Confirma atualização do componente MetaSQL com a sentença SQL atual?
+SContaining=contendo
+SCount=Quantidade
+SCustomExpression=Expressão personalizada
+SCustomExpressionSQLSyntax=Expressão personalizada (sintaxe SQL)
+SDatabaseNameNotInformed=Nome do banco de dados não informado
+SDataFields=Campos de dados
+SDataTypeNotIndicated=Tipo de dados não indicado
+SDate=data
+SDay=dia
+SDeleteThisQuery=&Excluir esta consulta
+SDescending=decrescente
+SDifferent=diferente
+SDropdownAutomatic=Lista automática
+SDropdownCheck=Lista de marcação
+SDropdownChoose=Lista de escolha
+SDropdownQuery=Lista de consulta
+SDuplicateThisQuery=Du&plicar esta consulta como...
+SEditMetaSQL=Editar Meta SQL
+SEditParameterEditorTitled=Editar parâmetro:%s com editor %s, título "%s"
+SEmpty=vazio
+SEndingWith=terminando com
+SEnterTableAlias=Informe o apelido da tabela:
+SEqual=igual
+SErrorOpeningQueryCombo=Erro abrindo query interna do TatQueryCombo:
+SErroSintaxeLinhaColuna=Erro de sintaxe na linha %d, coluna %d do Meta SQL:
+SExportQueriesToFile=Exportar consultas para arquivo
+SExpression=Expressão
+SExpressionAliasTitled=Expressão %s apelido %s, título "%s"
+SExpressionFieldNotSpecified=Campo da expressão não especificado
+SExpressionOperatorNotSpecified=Operador da expressão não especificado
+SFalse=Não
+SField=campo
+SFieldAliasNotIndicated=Apelido do campo não indicado
+SFieldAliasNotUnique=Apelido do campo não é único no Meta SQL
+SFieldCalculatedByAnExpression=Campo calculado por uma expressão
+SFieldComparing=Comparação de campos
+SFieldExpressionNotIndicated=Expressão do campo não indicada
+SFieldKindAvg=Média de (calcula a média do valor do campo em um conjunto de registros)
+SFieldKindBring=Obter (retorna os valores individuais do campo de uma tabela do banco de dados)
+SFieldKindCount=Quantidade (conta o número de ocorrências do valor do campo em um conjunto de registros)
+SFieldKindMax=Máximo de (retorna o valor máximo do campo em um conjunto de registros)
+SFieldKindMin=Mínimo de (retorna o valor mínimo do campo em um conjunto de registros)
+SFieldKindSum=Soma de (calcula a soma dos valores do campo em um conjunto de registros)
+SFieldNameNotIndicated=Nome do campo não indicado
+SFieldNotIndicated=Campo não indicado
+SFilterConditions=Condições de filtro
+SFreeTyping=edição livre
+SFreeTypingEditor=Editor de edição livre
+SGreaterOrEqual=maior ou igual a
+SGreaterThan=maior que
+SGroupingFields=Campos para agrupamento
+SImportQueriesFromFile=Importar consultas de arquivo
+SImportQueryFromTargetDataset=Importar consulta do Dataset
+SImportQueryFromTargetMetaSQL=Importar consulta do Meta SQL
+SInclude=Incluir
+SIncludeANewItem=incluir um novo item
+SIncorrectGrammarLiteralString=Gramática incorreta. String literal não terminada em "%s"
+SIncorrectGrammarSubexpressionEmpty=Gramática incorreta. Subexpressão está vazia em "%s"
+SIncorrectGrammarSubexpressionNotTerminated=Gramática incorreta. Subexpressão não terminada em "%s"
+SIndexOutOfBounds=Índice fora da faixa
+SInvalidFieldType=Tipo de campo inválido
+SInvalidIncludedInputBuffer=Buffer de leitura incluído inválido. Cada nó deve iniciar e terminar no mesmo buffer
+SInvalidMetaSQL=Meta SQL inválido:
+SInvalidSQLForQueryCombo=SQL inválida para query interna do TatQueryCombo
+SInvalidQueryFirstSecondFields=Consulta inválida. O primeiro campo deve ser a chave e o segundo a legenda
+SItemSets=item "%s" define
+SJoinConditionEmpty=Condição de junção está vazia
+SJoinConditionError=Erro na condição de junção:
+SLessOrEqual=menor ou igual a
+SLessThan=menor que
+SLike=similar a
+SMainConditions=Condições principais
+SMax=Máximo de
+SMin=Mínimo de
+SMonth=mês
+SNaoPossivelInserirSubstring=Não é possível inserir uma substring no nó "%s", porque ela pertence a seu sub-nó %d ("%s")
+SNaoPossivelModificarSubstring=Não é possível modificar a substring "%s" do nó "%s", porque ela pertence a seu sub-nó %d ("%s")
+SNestedConditions=Condições aninhadas...
+SNestedSubconditions=Subcondições aninhadas
+SNewCheckItem=novo item de marcação
+SNewChooseItem=novo item de escolha
+SNewCondition=nova condição
+SNewEditor=novo editor
+SNewField=novo campo
+SNewGroupField=novo campo de agrupamento
+SNewOrderField=novo campo de ordenação
+SNewParameterAssignment=nova atribuição de parâmetro
+SNewQuery=&Nova consulta...
+SNewTable=nova tabela
+SNewVisualQueryTitle=(Nova consulta visual)
+SNone=(nenhum)
+SNotEnoughTableLinks=Uma ou mais tabelas não ligadas
+SNotImplemented=Não implementado
+SNow=agora
+SNull=nulo
+SNullNode=Nó nulo
+SOff=inativo
+SOK=OK
+SOr=Ou
+SOrderingFields=Campos de ordenação
+SOrNot=Ou não
+SParamCaptionNotSpecified=Legenda do parâmetro não especificada
+SParameter=parâmetro
+SParameterEditors=Editores de parâmetro
+SParameterTo=parameter: %s para "%s"
+SParamNameNotIndicated=Nome do parâmetro não indicado
+SParamNameNotReferFieldComparingCondition=Nome do parâmetro não se refere a uma condição de comparação de campos
+SParamNameNotValid=Nome do parâmetro é inválido.
+SQueryAlreadyExists=Consulta "%s" já existe. Deseja sobrescrever?
+SQueryDefinitionFile=Arquivo de definições de consulta
+SQueryEditorForParameter=Editor para o parâmetro: %s
+SQueryListEditor=Editor de lista de consulta
+SQueryTitle=Título da consulta
+SSaveCurrentQuery=Salvar consulta atual na lista de consultas
+SSelectDirectory=Selecionar diretório
+SSetContinueOnRemarksShouldOnlyBeCalled=Erro interno
+SSetCurrentInputPosShouldOnlyBeCalled=Erro interno
+SSetCurrentMaxInputPosShouldOnlyBeCalled=Erro interno
+SSetTableAlias=Definir apelido da tabela
+SShowSQL=Exibir SQL
+SSingleField=Campo individual
+SSingleTable=Tabela individual
+SSourceTables=Tabelas de origem
+SSQLIs=SQL é:
+SStartingWith=começando com
+SSum=Soma de
+SSyntaxErrorAtRow=Erro de sintaxe na linha %d caracter %d
+SSyntaxOK=Sintaxe OK!
+STable=Tabela
+STableAliasAlreadyIncluded=Apelido "%s" já foi incluído em outra tabela no Meta SQL
+STableAliasEmpty=Apelido da tabela está vazio
+STableAliasJoinedConditioned=%s apelido %s com junção %s das tabelas acima, condicionada por
+STableJoinHandlingFailure=Falha na manipulação de junção de tabelas
+STableLinkedToAnother=Tabela ligada a outra
+STableNameEmpty=Nome da tabela está vazio
+STableNotIndicated=Tabela não indicada
+STargetDatasetNotSupported=Dataset destino não compatível com o componente TatDatabase corrente.
+STentativaAcessarPosicaoInexistente=Tentativa de acessar uma posição inexistente no fonte
+STentativaInserirSubstring=Tentativa de inserir uma substring fora do nó "%s"
+STentativaModificarSubstring=Tentativa de modificar uma substring não pertinente ao nó "%s"
+STitled=título
+SToday=hoje
+STokenDoesNotContainSubnode="%s" não contém o sub-nó %d
+STokenIsNotNode="%s" não é um nó %s
+STrue=Sim
+SUndefinedValue=indefinido
+SValue=valor
+SValuesAppliedNoItemSelected=Valores a aplicar quando nenhum item estiver selecionado:
+SValuesAppliedItemSelected=Valores a aplicar quando o item "%s" estiver selecionado:
+SVisualQueryEditor=Editor de consulta visual
+SWhen=Quando
+SWhenNot=Quando não
+SWith=comum
+SYear=ano
+SYouMustCompleteUndefinedItem=Você deve completar a definição do item indefinido para incluir um novo
+SYouMustSpecifyTargetDataset=Você deve especificar a propriedade TargetDataset para importar a consulta
+SYouMustSpecifyTargetMetaSQL=Você deve especificar a propriedade TargetMetaSQL para importar a consulta
+
+[atMetaSQLConditionEditor]
+fmMetaSQLConditionEditor.Label2.Caption=Valor
+fmMetaSQLConditionEditor.lbLinkType.Caption=Operador
+fmMetaSQLConditionEditor.Label1.Caption=Apelido do campo
+fmMetaSQLConditionEditor.Label3.Caption=Nome da condição
+fmMetaSQLConditionEditor.Label8.Caption=Tipo da condição
+fmMetaSQLConditionEditor.Label7.Caption=Expressão
+fmMetaSQLConditionEditor.Label4.Caption=Operador das subcondições
+fmMetaSQLConditionEditor.lvItems.Items0.Caption=Nome da condição
+fmMetaSQLConditionEditor.lvItems.Items1.Caption=Apelido do campo
+fmMetaSQLConditionEditor.lvItems.Items2.Caption=Operador
+fmMetaSQLConditionEditor.lvItems.Items3.Caption=Valor
+fmMetaSQLConditionEditor.lvItems.Items4.Caption=Conector
+fmMetaSQLConditionEditor.lvItems.Items5.Caption=Tipo da condição
+fmMetaSQLConditionEditor.lvItems.Items6.Caption=Expressão
+
+[atMetaSQLConditionForm]
+fmMetaSQLConditionForm.Self.Caption=Editor de condições
+
+[atmetasqlcustomeditor]
+fmMetaSQLCustomEditor.btInsert.Caption=&Salvar
+fmMetaSQLCustomEditor.acNew.Caption=&Novo
+fmMetaSQLCustomEditor.acInsert.Caption=&Inserir
+fmMetaSQLCustomEditor.acCancel.Caption=&Cancelar
+fmMetaSQLCustomEditor.acEdit.Caption=&Editar
+fmMetaSQLCustomEditor.acClearItems.Caption=Limpar todos os itens
+fmMetaSQLCustomEditor.acDelete.Caption=E&xcluir
+
+[atMetaSQLFieldEditor]
+fmMetaSQLFieldEditor.Label1.Caption=Legenda
+fmMetaSQLFieldEditor.Label2.Caption=Apelido da tabela
+fmMetaSQLFieldEditor.Label3.Caption=Nome do campo
+fmMetaSQLFieldEditor.Label4.Caption=Função de agrupamento
+fmMetaSQLFieldEditor.Label5.Caption=Tipo de dado
+fmMetaSQLFieldEditor.Label6.Caption=Apelido do campo
+fmMetaSQLFieldEditor.Label7.Caption=Expressão do campo
+fmMetaSQLFieldEditor.Label8.Caption=Tipo da expressão
+fmMetaSQLFieldEditor.Label10.Caption=Visível
+fmMetaSQLFieldEditor.lbOptions.Caption=Opções
+fmMetaSQLFieldEditor.lvItems.Items0.Caption=Apelido do campo
+fmMetaSQLFieldEditor.lvItems.Items1.Caption=Apelido da tabela
+fmMetaSQLFieldEditor.lvItems.Items2.Caption=Nome do campo
+fmMetaSQLFieldEditor.lvItems.Items3.Caption=Tipo de dado
+fmMetaSQLFieldEditor.lvItems.Items4.Caption=Legenda
+fmMetaSQLFieldEditor.lvItems.Items5.Caption=Função de agrupamento
+fmMetaSQLFieldEditor.lvItems.Items6.Caption=Expressão
+fmMetaSQLFieldEditor.lvItems.Items7.Caption=Expressão do campo
+fmMetaSQLFieldEditor.lvItems.Items8.Caption=Visível
+fmMetaSQLFieldEditor.lvItems.Items9.Caption=Oculto para o usuário
+fmMetaSQLFieldEditor.lvItems.Items10.Caption=Sempre na consulta
+fmMetaSQLFieldEditor.lvItems.Items11.Caption=Pode ordenar por
+fmMetaSQLFieldEditor.lvItems.Items12.Caption=Pode usar em condições
+fmMetaSQLFieldEditor.acAppendDataset.Caption=&Acrescenter do dataset
+fmMetaSQLFieldEditor.acAppendTable.Caption=Acrescentar da &tabela
+fmMetaSQLFieldEditor.acTableAlias.Caption=Definir apelido da tabela
+fmMetaSQLFieldEditor.ldPickDataset.CancelCaption=Cancelar
+fmMetaSQLFieldEditor.ldPickDataset.OkCaption=OK
+fmMetaSQLFieldEditor.ldPickDataset.Title=Escolher dataset
+
+[atMetaSQLForm]
+fmMetaSQLEditor.Self.Caption=Editor de Meta SQL
+fmMetaSQLEditor.TabControl1.Tabs0=Tabelas
+fmMetaSQLEditor.TabControl1.Tabs1=Campos
+fmMetaSQLEditor.TabControl1.Tabs2=Junções
+fmMetaSQLEditor.TabControl1.Tabs3=Condições
+fmMetaSQLEditor.TabControl1.Tabs4=Ordenação
+fmMetaSQLEditor.TabControl1.Tabs5=Agrupamento
+fmMetaSQLEditor.TabControl1.Tabs6=SQL
+fmMetaSQLEditor.TabControl1.Tabs7=Dados
+fmMetaSQLEditor.Label1.Caption=&Banco de dados:
+fmMetaSQLEditor.cbSaveDB.Caption=&Salvar o último banco de dados usado
+fmMetaSQLEditor.acNextTab.Caption=Próxima aba
+fmMetaSQLEditor.acPreviousTab.Caption=Aba anterior
+fmMetaSQLEditor.acImportFromSQL.Caption=Importar da SQL
+
+[atMetaSQLGroupEditor]
+fmMetaSQLGroupEditor.Label2.Caption=Agrupar pelo campo
+fmMetaSQLGroupEditor.lvItems.Items0.Caption=Agrupar pelo campo
+fmMetaSQLGroupEditor.lvItems.Items1.Caption=
+
+[atmetasqljoineditor]
+fmMetaSQLJoinEditor.Label2.Caption=Apelido da tabela relacionada
+fmMetaSQLJoinEditor.Label4.Caption=Tipo de ligação
+fmMetaSQLJoinEditor.Label1.Caption=Apelido da tabela primária
+fmMetaSQLJoinEditor.cbLinkType.Items0=Interna (inner join)
+fmMetaSQLJoinEditor.cbLinkType.Items1=Esquerda (left join)
+fmMetaSQLJoinEditor.cbLinkType.Items2=Direita (right join)
+fmMetaSQLJoinEditor.lvItems.Items0.Caption=Tabela primária
+fmMetaSQLJoinEditor.lvItems.Items1.Caption=Tabela relacionada
+fmMetaSQLJoinEditor.lvItems.Items2.Caption=Descrição da ligação
+fmMetaSQLJoinEditor.lvItems.Items3.Caption=Subcondições
+fmMetaSQLJoinEditor.acSubConditions.Caption=Editar &subcondições
+
+[atMetaSQLOrderEditor]
+fmMetaSQLOrderEditor.Label2.Caption=Ordenar pelo campo
+fmMetaSQLOrderEditor.Label4.Caption=Tipo de ordenação
+fmMetaSQLOrderEditor.cbSortType.Items0=crescente
+fmMetaSQLOrderEditor.cbSortType.Items1=decrescente
+fmMetaSQLOrderEditor.lvItems.Items0.Caption=Ordenar pelo campo
+fmMetaSQLOrderEditor.lvItems.Items1.Caption=Tipo de ordenação
+
+[atMetaSQLTableEditor]
+fmMetaSQLTableEditor.Label1.Caption=Nome da tabela
+fmMetaSQLTableEditor.Label2.Caption=Apelido da tabela
+fmMetaSQLTableEditor.lvItems.Columns0.Caption=Nome da tabela
+fmMetaSQLTableEditor.lvItems.Columns1.Caption=Apelido da tabela
+
+[atVisualQueryEditor]
+fmVisualQueryEditor.Self.Caption=Editando a consulta visual
+fmVisualQueryEditor.TabSheet1.Caption=&Visualizar consulta visual
+fmVisualQueryEditor.atVisualQuery1.MetaSqlDefs0.Title=(Nova consulta visual)
+fmVisualQueryEditor.Button1.Caption=&OK
+fmVisualQueryEditor.Button2.Caption=&Cancelar
+
+[fCheckListParamEditor]
+fmCheckListParamEditor.Self.Caption=Editor de parâmetro lista de marcação
+fmCheckListParamEditor.lbInfo.Caption=Este parâmetro permite ao usuário selecionar um ou mais itens em uma lista suspensa.\#13#10Cada item selecionado aplica todos os valores de parâmetro correspondentes à consulta. \#13#10Itens desmarcados desativam os parâmetros associados da consulta.
+
+[fChooseListParamEditor]
+fmChooseListParamEditor.Self.Caption=Editor de parâmetro lista de escolha
+fmChooseListParamEditor.lbInfo.Caption=Este parâmetro permite ao usuário selecionar um entre vários itens em uma lista suspensa.\#13#10O único item selecionado aplica todos os valores de parâmetro correspondentes à consulta.\#13#10Itens desmarcados desativam os parâmetros associados da consulta.
+
+[fCompareConditionEditor]
+fmCompareConditionEditor.Self.Caption=Condição de comparação
+fmCompareConditionEditor.Label1.Caption=Expressão:
+fmCompareConditionEditor.lbInfo.Caption=Esta condição representa uma comparação simples entre duas informações.\#13#10Um campo do banco de dados pode ser comparado a outro campo, a um valor individual ou a um parâmetro.
+
+[fCustomConditionEditor]
+fmCustomConditionEditor.Self.Caption=Editor de condição
+fmCustomConditionEditor.Label3.Caption=Conector:
+fmCustomConditionEditor.edLogicOper.Items0=Campo 1
+fmCustomConditionEditor.edLogicOper.Items1=Campo 2
+fmCustomConditionEditor.edLogicOper.Items2=Campo exemplo
+
+[fcustomeditor]
+fmCustomEditor.Self.Caption=fmCustomEditor
+fmCustomEditor.btOk.Caption=&OK
+fmCustomEditor.btCancel.Caption=&Cancelar
+fmCustomEditor.lbInfo.Caption=
+
+[fCustomFieldEditor]
+fmCustomFieldEditor.Self.Caption=Editor de campo
+
+[fCustomGroupEditor]
+fmCustomGroupEditor.Self.Caption=Campo de agrupamento
+fmCustomGroupEditor.Label2.Caption=Expressão do campo:
+fmCustomGroupEditor.lbInfo.Caption=Este campo será usado para separar funções de agregação. Geralmente, todos os campos visívels que não possuem função de agregação devem ser agrupados assim.
+
+[fCustomListParamEditor]
+fmCustomListParamEditor.Self.Caption=Editor de parâmetro lista
+fmCustomListParamEditor.lbParamValues.Caption=Parâmetros de condição correspondentes:
+fmCustomListParamEditor.Label2.Caption=Lista de escolha:
+fmCustomListParamEditor.edParamValues.Items0.Caption=Valor
+fmCustomListParamEditor.edParamValues.Items1.Caption=Nome do parâmetro
+fmCustomListParamEditor.edListItems.Items0.Caption=Texto do item
+fmCustomListParamEditor.lbInfo.Caption=
+
+[fCustomOrderEditor]
+fmCustomOrderEditor.Self.Caption=Campo de ordenação
+fmCustomOrderEditor.Label2.Caption=Expressão do campo:
+fmCustomOrderEditor.Label4.Caption=Direção da ordenação:
+fmCustomOrderEditor.edAggregation.Items0=Crescente
+fmCustomOrderEditor.edAggregation.Items1=Decrescente
+fmCustomOrderEditor.lbInfo.Caption=Este campo pode estar sozinho ou combinado com outros para especificar um critério de ordenação sobre o resultado da consulta.
+
+[fCustomParamEditor]
+fmCustomParamEditor.Self.Caption=Editor de parâmetro
+fmCustomParamEditor.Label5.Caption=Caption:
+
+[fCustomTableEditor]
+fmCustomTableEditor.Self.Caption=Tabela da consulta
+fmCustomTableEditor.Label1.Caption=Nome da tabela:
+fmCustomTableEditor.Label2.Caption=Apelido da tabela:
+fmCustomTableEditor.Label4.Caption=Tipo de junção:
+fmCustomTableEditor.edJoinType.Items0=(sem junção)
+fmCustomTableEditor.edJoinType.Items1=Interna (inner join)
+fmCustomTableEditor.edJoinType.Items2=Esquerda (left join)
+fmCustomTableEditor.edJoinType.Items3=Direita (right join)
+fmCustomTableEditor.Label3.Caption=Condição de junção:
+fmCustomTableEditor.lbInfo.Caption=A tabela indicada aqui é uma fonte de dados para a consulta. Uma ou mais tabelas podem ser ligadas entre si para construir uma consulta.\#13#10Condição de junção é usada para ligar esta tabela a outras relacionadas.
+
+[fDistinctListParamEditor]
+fmDistinctListParamEditor.Self.Caption=Editor de parâmetro lista distinta
+fmDistinctListParamEditor.Label2.Caption=Nome do parâmetro:
+fmDistinctListParamEditor.lbInfo.Caption=Este parâmetro retorna ao usuário uma lista de todos os valores distintos contidos na tabela relacionada. A tabela usada é a que contém o campo comparado a este parâmetro.
+
+[fExpressionConditionEditor]
+fmExpressionConditionEditor.Self.Caption=Condição de expressão
+fmExpressionConditionEditor.Label5.Caption=Expressão:
+fmExpressionConditionEditor.lbInfo.Caption=Esta condição pode ser representada por qualquer expressão lógica válida no Meta SQL. Nomes de parâmetros podem ser usados, prefixados por dois-pontos.
+
+[fExpressionFieldEditor]
+fmExpressionFieldEditor.Self.Caption=Campo de expressão
+fmExpressionFieldEditor.Label4.Caption=Agregação:
+fmExpressionFieldEditor.edAggregation.Items0=(nenhum)
+fmExpressionFieldEditor.edAggregation.Items1=Quantidade
+fmExpressionFieldEditor.edAggregation.Items2=Soma
+fmExpressionFieldEditor.edAggregation.Items3=Máximo
+fmExpressionFieldEditor.edAggregation.Items4=Mínimo
+fmExpressionFieldEditor.edAggregation.Items5=Média
+fmExpressionFieldEditor.Label6.Caption=Expressão:
+fmExpressionFieldEditor.Label3.Caption=Apelido do campo:
+fmExpressionFieldEditor.Label5.Caption=Legenda:
+fmExpressionFieldEditor.Label7.Caption=Tipo de dado:
+fmExpressionFieldEditor.edDataType.Items0=(nenhum)
+fmExpressionFieldEditor.edDataType.Items1=Quantidade
+fmExpressionFieldEditor.edDataType.Items2=Soma
+fmExpressionFieldEditor.edDataType.Items3=Máximo
+fmExpressionFieldEditor.edDataType.Items4=Mínimo
+fmExpressionFieldEditor.edDataType.Items5=Média
+fmExpressionFieldEditor.lbInfo.Caption=Este campo atua como uma informação calculada, e sua expres~sao pode ser qualquer expressão de campo válida no Meta SQL.
+
+[fFreeEditParamEditor]
+fmFreeEditParamEditor.Self.Caption=Editor de parâmetro livre
+fmFreeEditParamEditor.Label2.Caption=Nome do parâmetro:
+fmFreeEditParamEditor.lbInfo.Caption=Este editor permite ao usuário digitar valores correspondentes aos parâmetros usados pelas condições da consulta.
+
+[fQueryEditor]
+fmQueryEditor.Self.Caption=Consulta para editor de parâmetro
+fmQueryEditor.VisualQuery.MetaSqlDefs0.Title=(Nova consulta visual)
+fmQueryEditor.Button1.Caption=&OK
+fmQueryEditor.Button2.Caption=&Cancel
+
+[fQueryListParamEditor]
+fmQueryListParamEditor.Self.Caption=Editor de parâmetro lista de consulta
+fmQueryListParamEditor.Label2.Caption=Nome do parâmetro:
+fmQueryListParamEditor.Label1.Caption=Meta SQL:
+fmQueryListParamEditor.btMetaSql.Caption=Assistente >>
+fmQueryListParamEditor.lbInfo.Caption=Este parâmetro permite ao usuário selecionar um valor de uma lista suspensa. Os itens listados são obtidos desta consulta Meta SQL. O primeiro campo da consulta deve corresponder ao campo associado com este parâmetro.
+
+[fSingleFieldEditor]
+fmSingleFieldEditor.Self.Caption=Campo individual
+fmSingleFieldEditor.Label1.Caption=Tabela:
+fmSingleFieldEditor.Label2.Caption=Nome do campo:
+fmSingleFieldEditor.Label4.Caption=Agregação:
+fmSingleFieldEditor.edAggregation.Items0=(nenhum)
+fmSingleFieldEditor.edAggregation.Items1=Quantidade
+fmSingleFieldEditor.edAggregation.Items2=Soma
+fmSingleFieldEditor.edAggregation.Items3=Máximo
+fmSingleFieldEditor.edAggregation.Items4=Mínimo
+fmSingleFieldEditor.edAggregation.Items5=Média
+fmSingleFieldEditor.Label3.Caption=Apelido do campo:
+fmSingleFieldEditor.Label5.Caption=Legenda:
+fmSingleFieldEditor.Label7.Caption=Tipo de dado:
+fmSingleFieldEditor.edDataType.Items0=(nenhum)
+fmSingleFieldEditor.edDataType.Items1=Quantidade
+fmSingleFieldEditor.edDataType.Items2=Soma
+fmSingleFieldEditor.edDataType.Items3=Máximo
+fmSingleFieldEditor.edDataType.Items4=Mínimo
+fmSingleFieldEditor.edDataType.Items5=Média
+fmSingleFieldEditor.lbInfo.Caption=Este campo é uma expressão simples para uma informação.\#13#10Apenas um campo do banco de dados pode ser indicado aqui.
+
+[fSubconditionsEditor]
+fmSubconditionsEditor.Self.Caption=Coleção de condições
+fmSubconditionsEditor.lbInfo.Caption=Esta condição é um grupo de outras subcondições.\#13#10A avaliação de suas subcondições depende desta condição.
+
+[ShowSQLForm]
+fmShowSQL.Self.Caption=Exibir SQL
+fmShowSQL.Button1.Caption=Fechar
+

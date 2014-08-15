@@ -1,0 +1,56 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dxBarD12.bpl dxBarDBNavD12.bpl dxBarExtDBItemsD12.bpl \
+  dxBarExtItemsD12.bpl dxRibbonD12.bpl cxBarEditItemD12.bpl dcldxBarD12.bpl \
+  dcldxBarDBNavD12.bpl dcldxBarExtDBItemsD12.bpl dcldxBarExtItemsD12.bpl \
+  dcldxRibbonD12.bpl dclcxBarEditItemD12.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dxBarD12.bpl: ..\..\ExpressBars 6\Packages\dxBarD12.dpk
+  $(DCC)
+
+dxBarDBNavD12.bpl: ..\..\ExpressBars 6\Packages\dxBarDBNavD12.dpk
+  $(DCC)
+
+dxBarExtDBItemsD12.bpl: ..\..\ExpressBars 6\Packages\dxBarExtDBItemsD12.dpk
+  $(DCC)
+
+dxBarExtItemsD12.bpl: ..\..\ExpressBars 6\Packages\dxBarExtItemsD12.dpk
+  $(DCC)
+
+dxRibbonD12.bpl: ..\..\ExpressBars 6\Packages\dxRibbonD12.dpk
+  $(DCC)
+
+cxBarEditItemD12.bpl: ..\..\ExpressBars 6\Packages\cxBarEditItemD12.dpk
+  $(DCC)
+
+dcldxBarD12.bpl: ..\..\ExpressBars 6\Packages\dcldxBarD12.dpk
+  $(DCC)
+
+dcldxBarDBNavD12.bpl: ..\..\ExpressBars 6\Packages\dcldxBarDBNavD12.dpk
+  $(DCC)
+
+dcldxBarExtDBItemsD12.bpl: ..\..\ExpressBars 6\Packages\dcldxBarExtDBItemsD12.dpk
+  $(DCC)
+
+dcldxBarExtItemsD12.bpl: ..\..\ExpressBars 6\Packages\dcldxBarExtItemsD12.dpk
+  $(DCC)
+
+dcldxRibbonD12.bpl: ..\..\ExpressBars 6\Packages\dcldxRibbonD12.dpk
+  $(DCC)
+
+dclcxBarEditItemD12.bpl: ..\..\ExpressBars 6\Packages\dclcxBarEditItemD12.dpk
+  $(DCC)
+
+

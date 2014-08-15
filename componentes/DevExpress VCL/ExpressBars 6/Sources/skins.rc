@@ -1,0 +1,8 @@
+LANGUAGE 0, 0
+FORMBLACK         RCDATA "form_black.png"
+FORMBLUE          RCDATA "form_blue.png"
+FORMSILVER        RCDATA "form_silver.png"
+RIBBONCOMMON      RCDATA "ribbon_common.png"
+RIBBONBLACK       RCDATA "ribbon_black.png"
+RIBBONBLUE        RCDATA "ribbon_blue.png"
+RIBBONSILVER      RCDATA "ribbon_silver.png"

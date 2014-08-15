@@ -1,0 +1,53 @@
+package gtFRExpD2010;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Gnostice FRExportInterface'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  gtCryptD2010,
+  gtRtlD2010,
+  gtFontD2010,
+  gtDocEngD2010,
+  gtCompressionD2010,
+  gtFiltersD2010,
+  vclimg,
+  tee,
+  bdertl,
+  dbrtl,
+  vcldb,
+  designide,
+  xmlrtl,
+  vclactnband,
+  vclx,
+  VclSmp,
+  gtDocEngD2010Pro;
+
+contains
+  gtFRXportIntf in 'gtFRXportIntf.pas';
+
+end.

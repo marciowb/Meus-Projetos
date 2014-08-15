@@ -1,0 +1,56 @@
+package dxSkinscxScheduler3PainterRS14;
+
+{$R *.res}
+{$IFDEF DXDEBUGMODE}
+  {$DEBUGINFO ON}
+  {$LOCALSYMBOLS ON}
+  {$OPTIMIZATION OFF}
+  {$STACKFRAMES ON}
+{$ELSE}
+  {$DEBUGINFO OFF}
+  {$LOCALSYMBOLS OFF}
+  {$OPTIMIZATION ON}
+  {$STACKFRAMES OFF}
+{$ENDIF}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressSkins Library Painter for Scheduler 3 by Developer Express Inc.'}
+{$IMPLICITBUILD OFF}
+
+requires
+  dbrtl,
+  rtl,
+  vcl,
+  vcldb,
+  vclimg,
+  vclx,
+  dxCoreRS14,
+  dxThemeRS14,
+  cxDataRS14,
+  dxGDIPlusRS14,
+  cxLibraryRS14,
+  cxEditorsRS14,
+  cxExportRS14,
+  dxSkinsCoreRS14,
+  cxExtEditorsRS14,
+  cxSchedulerRS14;
+
+contains
+  dxSkinscxScheduler3Painter;
+
+end.

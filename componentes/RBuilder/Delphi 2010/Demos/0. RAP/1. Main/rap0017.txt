@@ -1,0 +1,26 @@
+RAP Frequently Asked Questions
+
+The Calc tab appears just fine when I'm in Delphi, but when I run the app the tab does not appear. How can I make the Calc tab appear in my running application?
+
+The Calc tab appears in Delphi because the RAP design-time package is installed — therefore ReportBuilder is aware of the RAP IDE. If you want your application to display the Calc workspace, you will need to add raIDE to your uses clause. Additionally, make sure that riNotebookTab is in the
+RAPInterface property of the Designer. See Defining Your Users' View for more information.
+
+How can I make the Calculations... menu option appear for variable components in my application?
+
+Add raIDE to your uses clause, and make sure that the RAPInterface property of the Designer includes riDialog. See Defining Your Users' View for more information.
+
+What does this message mean: "A Delphi installation has been detected on this machine, but no installation of ReportBuilder Enterprise can be found..."?
+
+This is a licensing issue. Each developer who uses RAP must have a valid ReportBuilder Enterprise license. Our definition of a developer is someone who has Delphi installed on the machine. Therefore, if you have Delphi installed, you will also need ReportBuilder Enterprise installed in order to work with RAP.
+
+What if the same event handler is assigned twice? In other words, if I have assigned MyVariable's OnCalc event in Delphi, then a user assigns the OnCalc event in RAP, what happens?
+
+In Delphi, when you preview a report at design-time, you will see only the code in the RAP event handler. However, at run-time, both events will fire, first the Delphi event, then the RAP event.
+
+What are those little red and green triangles in the Code Explorer's tree view?
+
+Those are Compilation State Indicators. They show you where your code resides, and whether or not it has compiled successfully. See The Events View for more information.
+
+When descending new TraRTTI classes, do I need to create a new class for every ancestor, or just for the new class?
+
+It's optional. For example, if you wish to register TMyComponent with RAP and there are three levels of hierarchy separating TMyComponent from TComponent, it is unnecessary to declare a new TraRTTI descendant for each of the parents of TMyComponent, unless you wish to make RAP aware of some of the public properties or methods in these levels. See Extending the RAP RTTI for more information.

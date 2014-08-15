@@ -1,0 +1,436 @@
+object TppReport
+  DataPipeline = plReservations
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.Orientation = poLandscape
+  PrinterSetup.PaperName = 'Letter 8 ½ x 11 in'
+  PrinterSetup.PrinterName = 'Lexmark Optra Se 3455'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 215900
+  PrinterSetup.mmPaperWidth = 279401
+  SaveAsTemplate = True
+  Template.FileName = 'C:\RBLDR5\DEMOS\2. CROSSTABS\ct135.rtm'
+  Template.Format = ftASCII
+  UserName = 'Report'
+  DeviceType = 'Screen'
+  Version = '4.24 Pro'
+  mmColumnWidth = 0
+  object ppHeaderBand2: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 12700
+    mmPrintPosition = 0
+    object ppLabel1: TppLabel
+      UserName = 'Label1'
+      Alignment = taCenter
+      Caption = 'Case 135: One Column Dimension (Boolean)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 98954
+      mmTop = 4233
+      mmWidth = 68527
+      BandType = 0
+    end
+    object ppLabel2: TppLabel
+      UserName = 'Label2'
+      Caption = 'ReportBuilder Crosstab'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 265
+      mmTop = 0
+      mmWidth = 35454
+      BandType = 0
+    end
+  end
+  object ppDetailBand2: TppDetailBand
+    PrintHeight = phDynamic
+    mmBottomOffset = 0
+    mmHeight = 5027
+    mmPrintPosition = 0
+    object ppCrossTab1: TppCrossTab
+      UserName = 'CrossTab1'
+      Caption = 'ppCrossTab1'
+      DataPipeline = plReservations
+      Stretch = True
+      Style = 'Standard'
+      mmHeight = 5027
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 266701
+      BandType = 4
+      mmBottomOffset = 0
+      mmOverFlowOffset = 0
+      mmStopPosition = 0
+      object TppGrandTotal
+        ChildType = 6
+        object TppTotalCaptionDef
+          ChildType = 4
+          Alignment = taRightJustify
+          Color = clWhite
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+        end
+        object TppTotalDef
+          ChildType = 3
+          Color = clWhite
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+        end
+      end
+      object TppGrandTotal
+        ChildType = 7
+        object TppTotalCaptionDef
+          ChildType = 4
+          Color = clWhite
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+        end
+        object TppTotalDef
+          ChildType = 3
+          Color = clWhite
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+        end
+      end
+      object TppColumnDef
+        FieldAlias = 'Paid'
+        FieldName = 'Paid'
+        Color = clWhite
+        DisplayFormat = 'Yes;No'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        SortType = soDescending
+        object TppSubTotal
+          ChildType = 5
+          object TppTotalCaptionDef
+            ChildType = 4
+            Color = clWhite
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Style = []
+          end
+          object TppTotalDef
+            ChildType = 3
+            Color = clWhite
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Style = []
+          end
+        end
+      end
+      object TppValueDef
+        ChildType = 2
+        FieldAlias = 'Resno'
+        FieldName = 'ResNo'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        object TppValueCaptionDef
+          ChildType = 8
+          CalcType = dcCount
+          Color = clWhite
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+        end
+      end
+    end
+  end
+  object ppFooterBand2: TppFooterBand
+    mmBottomOffset = 0
+    mmHeight = 12700
+    mmPrintPosition = 0
+    object ppSystemVariable1: TppSystemVariable
+      UserName = 'SystemVariable1'
+      Alignment = taCenter
+      VarType = vtPageSetDesc
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 4233
+      mmLeft = 124354
+      mmTop = 4233
+      mmWidth = 17463
+      BandType = 8
+    end
+  end
+  object TdaDataModule
+    object TdaBDEQueryDataView
+      UserName = 'Query_Reservations'
+      Left = 10
+      Top = 10
+      Width = 242
+      Height = 305
+      AutoSearchTabOrder = 0
+      object plReservations: TppChildBDEPipeline
+        AutoCreateFields = False
+        UserName = 'plReservations'
+        object TppField
+          FieldAlias = 'Resno'
+          FieldName = 'ResNo'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 10
+          Position = 0
+          TableName = 'RESERVAT.DB'
+        end
+        object TppField
+          FieldAlias = 'Eventno'
+          FieldName = 'EventNo'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 10
+          Position = 1
+          TableName = 'RESERVAT.DB'
+        end
+        object TppField
+          FieldAlias = 'Custno'
+          FieldName = 'CustNo'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 10
+          Position = 2
+          TableName = 'RESERVAT.DB'
+        end
+        object TppField
+          FieldAlias = 'Numtickets'
+          FieldName = 'NumTickets'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 10
+          Position = 3
+          TableName = 'RESERVAT.DB'
+        end
+        object TppField
+          FieldAlias = 'Amt_Paid'
+          FieldName = 'Amt_Paid'
+          FieldLength = 0
+          DataType = dtCurrency
+          DisplayWidth = 10
+          Position = 4
+          TableName = 'RESERVAT.DB'
+        end
+        object TppField
+          FieldAlias = 'Pay_Method'
+          FieldName = 'Pay_Method'
+          FieldLength = 10
+          DisplayWidth = 10
+          Position = 5
+          TableName = 'RESERVAT.DB'
+        end
+        object TppField
+          FieldAlias = 'Card_No'
+          FieldName = 'Card_No'
+          FieldLength = 20
+          DisplayWidth = 20
+          Position = 6
+          TableName = 'RESERVAT.DB'
+        end
+        object TppField
+          FieldAlias = 'Card_Exp'
+          FieldName = 'Card_Exp'
+          FieldLength = 0
+          DataType = dtDate
+          DisplayWidth = 10
+          Position = 7
+          TableName = 'RESERVAT.DB'
+        end
+        object TppField
+          FieldAlias = 'Pay_Notes'
+          FieldName = 'Pay_Notes'
+          FieldLength = 30
+          DataType = dtMemo
+          DisplayWidth = 10
+          Position = 8
+          TableName = 'RESERVAT.DB'
+        end
+        object TppField
+          FieldAlias = 'Purge_Date'
+          FieldName = 'Purge_Date'
+          FieldLength = 0
+          DataType = dtDate
+          DisplayWidth = 10
+          Position = 9
+          TableName = 'RESERVAT.DB'
+        end
+        object TppField
+          FieldAlias = 'Paid'
+          FieldName = 'Paid'
+          FieldLength = 0
+          DataType = dtBoolean
+          DisplayWidth = 5
+          Position = 10
+          TableName = 'RESERVAT.DB'
+        end
+      end
+      object TdaSQL
+        DatabaseName = 'DBDEMOS'
+        DataPipelineName = 'plReservations'
+        Description = 'Reservations'
+        SQLText.Strings = (
+          'SELECT RESERVAT.ResNo, RESERVAT.EventNo, '
+          '       RESERVAT.CustNo, RESERVAT.NumTickets, '
+          '       RESERVAT.Amt_Paid, RESERVAT.Pay_Method, '
+          '       RESERVAT.Card_No, RESERVAT.Card_Exp, '
+          '       RESERVAT.Pay_Notes, RESERVAT.Purge_Date, '
+          '       RESERVAT.Paid'
+          'FROM "RESERVAT.DB" RESERVAT')
+        object TdaField
+          Alias = 'Resno'
+          DataType = dtInteger
+          FieldAlias = 'Resno'
+          FieldName = 'ResNo'
+          TableName = 'RESERVAT.DB'
+          SQLFieldName = 'ResNo'
+          TableAlias = 'Reservat'
+          TableSQLAlias = 'RESERVAT'
+        end
+        object TdaField
+          Alias = 'Eventno'
+          DataType = dtInteger
+          FieldAlias = 'Eventno'
+          FieldName = 'EventNo'
+          TableName = 'RESERVAT.DB'
+          SQLFieldName = 'EventNo'
+          TableAlias = 'Reservat'
+          TableSQLAlias = 'RESERVAT'
+        end
+        object TdaField
+          Alias = 'Custno'
+          DataType = dtInteger
+          FieldAlias = 'Custno'
+          FieldName = 'CustNo'
+          TableName = 'RESERVAT.DB'
+          SQLFieldName = 'CustNo'
+          TableAlias = 'Reservat'
+          TableSQLAlias = 'RESERVAT'
+        end
+        object TdaField
+          Alias = 'Numtickets'
+          DataType = dtInteger
+          FieldAlias = 'Numtickets'
+          FieldName = 'NumTickets'
+          TableName = 'RESERVAT.DB'
+          SQLFieldName = 'NumTickets'
+          TableAlias = 'Reservat'
+          TableSQLAlias = 'RESERVAT'
+        end
+        object TdaField
+          Alias = 'Amt_Paid'
+          DataType = dtCurrency
+          FieldAlias = 'Amt_Paid'
+          FieldName = 'Amt_Paid'
+          TableName = 'RESERVAT.DB'
+          SQLFieldName = 'Amt_Paid'
+          TableAlias = 'Reservat'
+          TableSQLAlias = 'RESERVAT'
+        end
+        object TdaField
+          Alias = 'Pay_Method'
+          FieldAlias = 'Pay_Method'
+          FieldName = 'Pay_Method'
+          TableName = 'RESERVAT.DB'
+          SQLFieldName = 'Pay_Method'
+          TableAlias = 'Reservat'
+          TableSQLAlias = 'RESERVAT'
+        end
+        object TdaField
+          Alias = 'Card_No'
+          FieldAlias = 'Card_No'
+          FieldName = 'Card_No'
+          TableName = 'RESERVAT.DB'
+          SQLFieldName = 'Card_No'
+          TableAlias = 'Reservat'
+          TableSQLAlias = 'RESERVAT'
+        end
+        object TdaField
+          Alias = 'Card_Exp'
+          DataType = dtDate
+          FieldAlias = 'Card_Exp'
+          FieldName = 'Card_Exp'
+          TableName = 'RESERVAT.DB'
+          SQLFieldName = 'Card_Exp'
+          TableAlias = 'Reservat'
+          TableSQLAlias = 'RESERVAT'
+        end
+        object TdaField
+          Alias = 'Pay_Notes'
+          DataType = dtMemo
+          FieldAlias = 'Pay_Notes'
+          FieldName = 'Pay_Notes'
+          TableName = 'RESERVAT.DB'
+          SQLFieldName = 'Pay_Notes'
+          TableAlias = 'Reservat'
+          TableSQLAlias = 'RESERVAT'
+        end
+        object TdaField
+          Alias = 'Purge_Date'
+          DataType = dtDate
+          FieldAlias = 'Purge_Date'
+          FieldName = 'Purge_Date'
+          TableName = 'RESERVAT.DB'
+          SQLFieldName = 'Purge_Date'
+          TableAlias = 'Reservat'
+          TableSQLAlias = 'RESERVAT'
+        end
+        object TdaField
+          Alias = 'Paid'
+          DataType = dtBoolean
+          FieldAlias = 'Paid'
+          FieldName = 'Paid'
+          TableName = 'RESERVAT.DB'
+          SQLFieldName = 'Paid'
+          TableAlias = 'Reservat'
+          TableSQLAlias = 'RESERVAT'
+        end
+        object TdaTable
+          ChildType = 5
+          Alias = 'Reservat'
+          TableAlias = 'Reservat'
+          TableName = 'RESERVAT.DB'
+          SQLAlias = 'RESERVAT'
+          JoinType = dajtNone
+        end
+      end
+    end
+  end
+end

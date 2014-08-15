@@ -1,0 +1,24 @@
+LazarusResources.Add('TFGettingStarted','FORMDATA',[
+  'TPF0'#16'TFGettingStarted'#15'FGettingStarted'#4'Left'#2#0#3'Top'#2#0#7'Capt'
+  +'ion'#6#15'Getting Started'#12'ClientHeight'#3#168#0#11'ClientWidth'#3#241#0
+  +#5'Color'#7#9'clBtnFace'#12'Font.Charset'#7#15'DEFAULT_CHARSET'#10'Font.Colo'
+  +'r'#7#12'clWindowText'#11'Font.Height'#2#245#9'Font.Name'#6#6'Tahoma'#10'Fon'
+  +'t.Style'#11#0#14'OldCreateOrder'#8#10'DesignSize'#1#3#241#0#3#168#0#0#13'Pi'
+  +'xelsPerInch'#2'`'#10'TextHeight'#2#13#0#7'TButton'#13'btnCreateFile'#4'Left'
+  +#2'P'#3'Top'#2#127#5'Width'#2'K'#6'Height'#2#25#7'Anchors'#11#6'akLeft'#8'ak'
+  +'Bottom'#0#7'Caption'#6#12'Create File!'#8'TabOrder'#2#0#7'OnClick'#7#18'btn'
+  +'CreateFileClick'#11'ExplicitTop'#3#133#0#0#0#5'TMemo'#5'Memo1'#4'Left'#2#24
+  +#3'Top'#2#16#5'Width'#3#183#0#6'Height'#2'K'#7'Anchors'#11#6'akLeft'#5'akTop'
+  +#7'akRight'#8'akBottom'#0#13'Lines.Strings'#1#6'$A first demo on how to crea'
+  +'te basic '#6#24'things with FlexCel API.'#0#8'ReadOnly'#9#8'TabOrder'#2#1#13
+  +'ExplicitWidth'#3#185#0#14'ExplicitHeight'#2'Q'#0#0#9'TCheckBox'#10'cbAutoOp'
+  +'en'#4'Left'#2#24#3'Top'#2'a'#5'Width'#3#193#0#6'Height'#2#17#7'Anchors'#11#6
+  +'akLeft'#8'akBottom'#0#7'Caption'#6#31'AutoOpen file without saving it'#8'Ta'
+  +'bOrder'#2#2#11'ExplicitTop'#2'g'#0#0#11'TSaveDialog'#10'SaveDialog'#10'Defa'
+  +'ultExt'#6#3'xls'#6'Filter'#6#17'Excel Files|*.xls'#7'Options'#11#17'ofOverw'
+  +'ritePrompt'#14'ofHideReadOnly'#15'ofPathMustExist'#14'ofEnableSizing'#0#5'T'
+  +'itle'#6#15'Save file to...'#4'Left'#3#192#0#3'Top'#3#136#0#0#0#14'TFlexCelI'
+  +'mport'#3'Xls'#7'Adapter'#7#11'XLSAdapter1'#4'Left'#2#8#3'Top'#2#8#0#0#11'TX'
+  +'LSAdapter'#11'XLSAdapter1'#21'AllowOverwritingFiles'#9#4'Left'#2#8#3'Top'#2
+  +'('#0#0#0
+]);

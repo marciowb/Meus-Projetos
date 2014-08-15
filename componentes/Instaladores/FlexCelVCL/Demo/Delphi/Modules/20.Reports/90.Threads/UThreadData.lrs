@@ -1,0 +1,20 @@
+LazarusResources.Add('TThreadData','FORMDATA',[
+  'TPF0'#11'TThreadData'#10'ThreadData'#14'OldCreateOrder'#8#6'Height'#3#224#1#5
+  +'Width'#3#184#2#0#14'TFlexCelReport'#6'FlxRep'#8'Template'#6#20'Threads.temp'
+  +'late.xls'#9'AutoClose'#8#7'Adapter'#7#10'XLSAdapter'#14'DateTimeFormat'#6#16
+  +'mm/dd/yyyy hh:mm'#17'KeepEmptyPictures'#8#10'DataModule'#7#5'Owner'#15'Calc'
+  +'RecordCount'#7#7'cr_None'#4'Left'#2'('#3'Top'#2#24#0#0#11'TXLSAdapter'#10'X'
+  +'LSAdapter'#21'AllowOverwritingFiles'#8#4'Left'#2'x'#3'Top'#2#24#0#0#12'TFlx'
+  +'MemTable'#5'Items'#7'Columns'#14#1#4'Name'#6#6'PartNo'#0#1#4'Name'#6#7'Orde'
+  +'rNo'#0#1#4'Name'#6#11'Description'#0#1#4'Name'#6#3'Qty'#0#1#4'Name'#6#9'Sel'
+  +'lPrice'#0#1#4'Name'#6#10'DiscountPc'#0#1#4'Name'#6#8'ExtPrice'#0#0#11'Maste'
+  +'rTable'#7#6'Orders'#11'MasterField'#6#7'OrderNo'#4'Left'#3#144#0#3'Top'#2'`'
+  +#0#0#12'TFlxMemTable'#4'Cust'#7'Columns'#14#1#4'Name'#6#6'CustNo'#0#1#4'Name'
+  +#6#5'Addr1'#0#1#4'Name'#6#5'Addr2'#0#1#4'Name'#6#4'City'#0#1#4'Name'#6#5'Sta'
+  +'te'#0#1#4'Name'#6#3'Zip'#0#1#4'Name'#6#7'Country'#0#1#4'Name'#6#7'Company'#0
+  +#0#4'Left'#2'0'#3'Top'#2'`'#0#0#12'TFlxMemTable'#6'Orders'#7'Columns'#14#1#4
+  +'Name'#6#7'OrderNo'#0#1#4'Name'#6#6'CustNo'#0#1#4'Name'#6#11'SalesPerson'#0#1
+  +#4'Name'#6#8'SaleDate'#0#1#4'Name'#6#8'ShipDate'#0#1#4'Name'#6#7'ShipVia'#0#1
+  +#4'Name'#6#7'Freight'#0#0#11'MasterTable'#7#4'Cust'#11'MasterField'#6#6'Cust'
+  +'No'#4'Left'#2'`'#3'Top'#2'`'#0#0#0
+]);

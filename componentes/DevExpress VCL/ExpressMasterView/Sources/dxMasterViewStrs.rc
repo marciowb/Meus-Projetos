@@ -1,0 +1,30 @@
+STRINGTABLE DISCARDABLE 
+BEGIN
+    39600                   "Confirm"
+    39601                   "Delete record from %s?"
+    39602                   "Delete all selected records from %s?"
+    39603                   "Drag a column header here to group by that column"
+    39604                   "Customize"
+    39605                   "Columns"
+    39606                   "Options"
+    39607                   "(no fields available)"
+    39608                   "Caption"
+    39609                   "Footer"
+    39610                   "Grid"
+    39611                   "Grid with Preview"
+    39612                   "GroupBy Box"
+    39613                   "Header"
+    39614                   "Header for the First Node"
+    39615                   "Header for the First Visible Node"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    39616                   "Header after Expanded Node"
+    39617                   "Columns Occupy the Rest Space"
+    39618                   "Preview"
+    39619                   "Horizontal"
+    39620                   "Value"
+    39621                   "ImageIndex"
+    39622                   "Description"
+END

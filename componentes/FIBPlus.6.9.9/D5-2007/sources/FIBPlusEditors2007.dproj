@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{ff48eab1-ce8d-45ff-9b6b-3d949b000333}</ProjectGuid>
+    <MainSource>FIBPlusEditors2007.dpk</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>..\..\..\..\..\All Users\Документы\RAD Studio\5.0\Bpl\FIBPlusEditors2007.bpl</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_WriteableConstants>True</DCC_WriteableConstants>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+    <DCC_UnitSearchPath>..</DCC_UnitSearchPath>
+    <DCC_ResourcePath>..</DCC_ResourcePath>
+    <DCC_ObjPath>..</DCC_ObjPath>
+    <DCC_IncludePath>..</DCC_IncludePath>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_WriteableConstants>True</DCC_WriteableConstants>
+    <DCC_UnitSearchPath>editors\</DCC_UnitSearchPath>
+    <DCC_ResourcePath>editors\</DCC_ResourcePath>
+    <DCC_ObjPath>editors\</DCC_ObjPath>
+    <DCC_IncludePath>editors\</DCC_IncludePath>
+    <DCC_DcuOutput>d2007</DCC_DcuOutput>
+    <DCC_ObjOutput>d2007</DCC_ObjOutput>
+    <DCC_HppOutput>d2007</DCC_HppOutput>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>Package</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><Package_Options><Package_Options Name="PackageDescription">FIBPlus Property Editors</Package_Options><Package_Options Name="ImplicitBuild">False</Package_Options><Package_Options Name="DesigntimeOnly">True</Package_Options><Package_Options Name="RuntimeOnly">False</Package_Options></Package_Options><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1049</VersionInfo><VersionInfo Name="CodePage">1251</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">FIBPlusEditors2007.dpk</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="FIBPlusEditors2007.dpk">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\..\..\..\dbrtl.dcp" />
+    <DCCReference Include="..\..\..\..\designide.dcp" />
+    <DCCReference Include="..\..\..\..\FIBPlus2007.dcp" />
+    <DCCReference Include="..\..\..\..\rtl.dcp" />
+    <DCCReference Include="..\..\..\..\vcl.dcp" />
+    <DCCReference Include="..\..\..\..\vclactnband.dcp" />
+    <DCCReference Include="..\..\..\..\vcldb.dcp" />
+    <DCCReference Include="..\..\..\..\vclx.dcp" />
+    <DCCReference Include="Editors\EdDataSetInfo.pas">
+      <Form>frmEdDataSetInfo</Form>
+    </DCCReference>
+    <DCCReference Include="Editors\EdErrorInfo.pas">
+      <Form>frmErrors</Form>
+    </DCCReference>
+    <DCCReference Include="Editors\EdFieldInfo.pas">
+      <Form>frmFields</Form>
+    </DCCReference>
+    <DCCReference Include="Editors\EdParamToFields.pas">
+      <Form>frmEdParamToFields</Form>
+    </DCCReference>
+    <DCCReference Include="Editors\FIBDataSQLEditor.pas">
+      <Form>frmDstSQLedit</Form>
+    </DCCReference>
+    <DCCReference Include="Editors\FIBSQLEditor.pas">
+      <Form>frmSQLEdit</Form>
+    </DCCReference>
+    <DCCReference Include="Editors\fraAutoUpdEditor.pas">
+      <Form>fAutoUpdateOptionForm</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="Editors\fraConditionsEdit.pas">
+      <Form>fraEdConditions</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="Editors\fraDSSQLEdit.pas">
+      <Form>fDSSQLEdit</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="Editors\fraSQLEdit.pas">
+      <Form>fSQLEdit</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="Editors\pFIBAutoUpdEditor.pas">
+      <Form>pFIBAutoUpdateOptionForm</Form>
+    </DCCReference>
+    <DCCReference Include="Editors\pFIBConditionsEdit.pas">
+      <Form>frmEditCheckStrings</Form>
+    </DCCReference>
+    <DCCReference Include="Editors\pFIBDataSetOptions.pas">
+      <Form>FPDataSetOptionsForm</Form>
+    </DCCReference>
+    <DCCReference Include="Editors\pFIBDBEdit.pas">
+      <Form>DBEditForm</Form>
+    </DCCReference>
+    <DCCReference Include="Editors\pFIBTrEdit.pas">
+      <Form>frmTransEdit</Form>
+    </DCCReference>
+    <DCCReference Include="Editors\RegFIBPlusEditors.pas" />
+    <DCCReference Include="Editors\ToCodeEditor.pas" />
+    <DCCReference Include="Editors\ToCodeEditorIntfs.pas" />
+  </ItemGroup>
+</Project>

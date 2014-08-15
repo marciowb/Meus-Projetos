@@ -1,0 +1,171 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Verdana;}{\f1\froman\fprq2\fcharset0 Times New Roman;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\nowidctlpar\f0\fs28 Gnostice eDocEngine 2.5.2 VCL\par
+\fs16 Copyright \'a9 2002-2009 Gnostice Information Technologies Private Limited\par
+\fs20\par
+\pard\nowidctlpar\tx900\tx1080 Support\tab :\tab\cf1\ul support@gnostice.com\cf0\ulnone\par
+Sales\tab :\tab\cf1\ul sales@gnostice.com\cf0\ulnone\par
+\par
+Web\tab :\tab\cf1\ul http://www.gnostice.com\cf0\ulnone\par
+\pard\nowidctlpar\par
+\b\fs24 Introduction\par
+\pard\nowidctlpar\ri24\b0\fs20 Gnostice eDocEngine is a generic electronic document creation component suite for Borland\'ae Delphi\'99 and Borland\'ae C++Builder\'99. eDocEngine enables developers to deliver information straight from the applications they develop, to over 20 popular electronic document formats. Rich content can be easily formatted to the precise look and feel required and delivered directly to users\rquote  web browsers, sent as email attachments or saved to disk. eDocEngine currently supports the creation of documents in PDF, RTF, HTML, XHTML, EXCEL, TEXT, CSV, Quattro Pro, LOTUS 1-2-3, DIF, SYLK, TIFF, PNG, SVG (XML based vector graphics), JPEG, GIF, BMP, EMF and WMF formats. Metafile, BMP, DIFF, SYLK and Text can be directly output to the Windows\'ae Clipboard.\par
+\pard\nowidctlpar\par
+This ReadMe file contains late-breaking information that may not be contained anywhere else. The ReadMe file also contains information on where to start and get access to additional resources to get the best out of Gnostice eDocEngine. We strongly recommend that you read this ReadMe file before you get started.\par
+\par
+\b\fs24 Contents of ReadMe\par
+\b0\fs20 1. Installation and Getting Started\par
+2. Known Issues\par
+3. Important resources\par
+4. Ordering\par
+5. Uninstalling\par
+\par
+\b 1. Installation and Getting Started\par
+\b0 The Gnostice eDocEngine Setup program is designed to install eDocEngine and register components automatically into your programming environment - Delphi or C++Builder. To recompile eDocEngine, install the Report Export Interfaces and additional components provided please see below. \par
+\par
+To get a quick overview of how to create your own documents using eDocEngine, take a look at the Frequently Asked Questions sections in the eDocEngine Help file. The Help file can be found on the Start menu at:\par
+\ul Start > Programs > Gnostice > eDocEngine VCL > eDocEngine Help\par
+\ulnone\par
+To see sample code in action, launch Delphi or C++Builder and open the samples project from:\par
+For Delphi \ul <eDocEngine InstallDir>\\Demos\\Delphi\\1. DocumentCreationSamples\\DocCreate\par
+\ulnone For C++Builder \ul <eDocEngine InstallDir>\\Demos\\CBuilder\\1. DocumentCreationSamples\\DocCreate\par
+\ulnone\par
+For help on recompiling the registered version, please refer to the help file at:\par
+\ul Start > Programs > Gnostice > eDocEngine VCL > eDocEngine Help\ulnone\par
+Help Topic: Installation | Re-Compiling/Re-Installing - Registered Edition \par
+\par
+To facilitate the creation of PDF, HTML, RTF Excel and other documents from reporting tools such as QuickReport, ReportBuilder, FastReport, Rave, Express PrintingSystem and other VCL components, eDocEngine provides Export Interface components. Export Interface components need to be installed manually after eDocEngine installs.\par
+For help on installing the Export Interface components, please refer to the help file at:\par
+\ul Start > Programs > Gnostice > eDocEngine VCL > eDocEngine Help\ulnone\par
+\b Help Topic: Installation | Installing and Re-Compiling eDocEngine Additionals\par
+\par
+\b0\par
+\b 2. Known Issues\par
+\b0 The following is a list of features or functionality that was changed, not supported or has limitations in the final release of Gnostice eDocEngine 2.5.2. These limitations could be due to the feature not being supported in the document format itself.\par
+\ul\par
+PDF Engine\par
+\pard{\pntext\f0 1\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270\ulnone Hyperlinking of rotated text is not supported\par
+{\pntext\f0 2\tab}Some Annotation types require Adobe Acrobat Professional to be installed to work\par
+{\pntext\f0 3\tab}Unicode in Form Fields not supported\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\par
+\ul RTF Engine\ulnone\par
+\pard{\pntext\f0 4\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270 Image rotation is not supported\par
+{\pntext\f0 5\tab}Rotated text items are stored as images\par
+{\pntext\f0 6\tab}Arcs, Pies, and Chords are stored as images\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\par
+\ul HTML Engine\par
+\pard{\pntext\f0 7\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270\ulnone B\cf2 rush styles other than bsSolid and bsClear are not supported\par
+{\pntext\f0 8\tab}Pen styles other then psSolid, psClear and psDash are not supported\par
+{\pntext\f0 9\tab}Image rotation is not supported\par
+{\pntext\f0 10\tab}Line spacing for paragraphs are not visible in viewers but can be noticed in FrontPage\cf0\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\par
+\ul Excel Engine\par
+\pard{\pntext\f0 11\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270\ulnone Image rotation is not supported\par
+{\pntext\f0 12\tab}Frames for Images are not supported\par
+{\pntext\f0 13\tab}Rotation of frames is not supported\par
+{\pntext\f0 14\tab}Text rotation is not supported\par
+{\pntext\f0 15\tab}Unicode characters not supported\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\par
+\ul Quattro Pro Engine\par
+\pard{\pntext\f0 16\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270\ulnone Images and Shapes are not supported\par
+{\pntext\f0 17\tab}Text rotation is not supported\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\par
+\ul DIF, SYLK and Lotus 1-2-3 Engines\par
+\pard{\pntext\f0 18\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270\ulnone Font attribute and text rotation are not supported\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\par
+\ul SVG Engine\ulnone\par
+\pard{\pntext\f0 19\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270 Multi-byte character sets and non-ANSI characters are not supported by viewers\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\par
+\ul All Graphic Engines\ulnone\par
+\pard{\pntext\f0 20\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270 Pen Style is always solid for pen widths greater than 1\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\b\par
+\ul\b0 All Engines\ulnone\par
+\pard{\pntext\f0 21\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270 Hebrew/Arabic Right-to-Left characters not supported\par
+{\pntext\f0 22\tab}Unicode Support for exporting through Export Interface components may not be always possible\par
+{\pntext\f0 23\tab}ACE v1.70 is not supported by eDocEngine. Please use ACE v1.71 which fixes an incompatibility problem in v1.70\par
+\cf2{\pntext\f0 24\tab}Rendering documents with 120 dpi systems (large fonts settings) has known issues\cf0\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\b\par
+\ul\b0 Metafile rendering\ulnone\par
+\pard{\pntext\f0 25\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270 Clipping of regions not supported\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\b\par
+3. Important Resources\par
+\b0 The following is a list of resources to helps you get information on eDocEngine, fast:\par
+\par
+\pard{\pntext\f0 26\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270\tx270 The eDocEngine web pages at \cf1\ul www.gnostice.com\ulnone  \cf0 always contain the latest information please keep a watch here: \cf1\ul http://www.gnostice.com/edoc_engine.asp\cf0\ulnone\par
+\pard{\pntext\f0 27\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270 The FAQs on the eDocEngine web pages and the included help file give you specific answers fast. Access the help file on the Start menu at:\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270\tx270\b\tab\ul\b0 Start > Programs > Gnostice > eDocEngine VCL > eDocEngine Help\ulnone\b\par
+\pard{\pntext\f0 28\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270\b0 The included code samples and demos are a practical way of getting to know how to use eDocEngine. Open the sample projects within Delphi or C++Builder from here:\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270\tx270\b\tab\b0 For Delphi \ul <eDocEngine InstallDir>\\Demos\\Delphi\\\par
+\ulnone\tab For C++Builder \ul <eDocEngine InstallDir>\\Demos\\CBuilder\\\par
+\pard{\pntext\f0 29\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270\ulnone To know about the current status of eDocEngine and what specific features were added or addressed in a specific version or update, you can access the eDocEngine History page at \cf1\ul www.gnostice.com\cf0\ulnone . The page is located at:\par
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270\tx270\cf1\tab\ul http://www.gnostice.com/edochistory.asp\cf0\ulnone\par
+\pard{\pntext\f0 30\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec }
+\nowidctlpar\fi-270\li270 If you have specific questions and can\rquote t find answers to them, do not wait any longer. Go to the support page at \cf1\ul www.gnostice.com\ulnone  \cf0 and follow the instructions given to get quick answers to your queries. The support page is located at:\par
+\pard\nowidctlpar\fi-270\li270\tx270\cf1\tab\ul http://www.gnostice.com/support.asp\cf0\ulnone\par
+\pard\nowidctlpar\par
+\b 4. Ordering\par
+\b0 The fastest way to order Gnostice eDocEngine and start enjoying the benefits of the registered version is to order it from our \b Secure Online Store\b0  (hosted at ShareIt). There may also be special offers and special pricing available. To learn of the special offers and to order online please go to:\par
+\cf1\ul http://www.gnostice.com/buynow.asp\cf0\ulnone\par
+\par
+You can also order Gnostice eDocEngine over \b phone, fax, email\b0  or postal mail. Please see the included Order Form for details. The Order Form can be accessed from the Start menu at:\par
+\ul Start > Programs > Gnostice > eDocEngine VCL > eDocEngine Order Form\par
+\ulnone\par
+Gnostice eDocEngine is delivered electronically. As soon as your payment is authorized you will receive an email with details on how to get access to the registered version. \b IMPORTANT\b0 : When you submit your order please make sure the email you have provided is valid and presently working.\par
+\par
+Gnostice eDocEngine is also available for \b OEM Licensing\b0 . Please send your enquiries about OEM licensing to, \cf1\ul sales@gnostice.com\cf0\ulnone .\par
+\par
+\b 5. Uninstalling\par
+\b0 To remove Library path and Browsing path information:\par
+\par
+1. Open Delphi or C++Builder\par
+2. Choose Component | Install Packages \par
+3. Select Gnostice eDocEngine packages installed and click Remove. Repeat this step for all Gnostice eDocEngine packages.\par
+4. Choose Tools | Environment Options...\par
+5. Select the Library tab\par
+6. Remove Gnostice eDocEngine path information from Library Path\par
+7. Remove Gnostice eDocEngine path information from Browsing Path\par
+\par
+To remove the installed files:\par
+\par
+1. Go to Start | Settings | Control Panel\par
+2. Open 'Add/Remove Programs'\par
+3. Remove 'Gnostice eDocEngine' from the list\par
+4. Un-install will complete\par
+\par
+The Un-install program may not remove newly created files or folders. Check and manually delete the folder where you installed Gnostice eDocEngine if required.\par
+\par
+====================================================\par
+Copyright \'a9 2002-2009 Gnostice Information Technologies Private Limited. All rights reserved.\par
+\par
+All Gnostice brand and product names are trademarks or registered trademarks of Gnostice Information Technologies Private Limited. All other names and trademarks are the property of their respective owners.\par
+====================================================\par
+\f1\fs24\par
+}
+ 

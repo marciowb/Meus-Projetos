@@ -1,0 +1,32 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dxOrgCD11.bpl dxDBOrD11.bpl dxOrgChartAdvancedCustomizeFormD11.bpl dcldxOrgCD11.bpl dcldxDBOrD11.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dxOrgCD11.bpl: ..\..\ExpressOrgChart\Packages\dxOrgCD11.dpk
+  $(DCC)
+
+dxDBOrD11.bpl: ..\..\ExpressOrgChart\Packages\dxDBOrD11.dpk
+  $(DCC)
+
+dxOrgChartAdvancedCustomizeFormD11.bpl: ..\..\ExpressOrgChart\Packages\dxOrgChartAdvancedCustomizeFormD11.dpk
+  $(DCC)
+
+dcldxOrgCD11.bpl: ..\..\ExpressOrgChart\Packages\dcldxOrgCD11.dpk
+  $(DCC)
+
+dcldxDBOrD11.bpl: ..\..\ExpressOrgChart\Packages\dcldxDBOrD11.dpk
+  $(DCC)
+
+

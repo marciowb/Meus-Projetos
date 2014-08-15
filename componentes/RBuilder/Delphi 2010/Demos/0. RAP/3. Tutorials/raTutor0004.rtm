@@ -1,0 +1,662 @@
+object TppReport
+  AutoStop = False
+  DataPipeline = BDEQueryDataView1.plCustomer
+  PrinterSetup.BinName = 'Auto Select'
+  PrinterSetup.DocumentName = 'ppCustomerList'
+  PrinterSetup.Orientation = poLandscape
+  PrinterSetup.PaperName = 'Letter 8 ½ x 11 in'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 215900
+  PrinterSetup.mmPaperWidth = 279401
+  PrinterSetup.PaperSize = 1
+  SaveAsTemplate = True
+  Template.FileName = 
+    'C:\Program Files\Borland\Delphi5\RBuilder\Demos\0. RAP\3. Tutori' +
+    'als\raTutor0004.rtm'
+  Template.Format = ftASCII
+  DeviceType = 'Screen'
+  Version = '6.03'
+  mmColumnWidth = 0
+  DataPipelineName = 'plCustomer'
+  object ppCustomerListHeader: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 23283
+    mmPrintPosition = 0
+    object ppCustomerListShape8: TppShape
+      UserName = 'ppCustomerListShape8'
+      Brush.Color = clNavy
+      Pen.Color = clWhite
+      mmHeight = 8731
+      mmLeft = 0
+      mmTop = 14817
+      mmWidth = 265642
+      BandType = 0
+    end
+    object ppCustomerListLabel1: TppLabel
+      UserName = 'ppCustomerListLabel1'
+      AutoSize = False
+      Caption = 'Marine Adventures & Sunken Treasures Co.'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Algerian'
+      Font.Size = 14
+      Font.Style = [fsBold]
+      mmHeight = 5556
+      mmLeft = 71438
+      mmTop = 1323
+      mmWidth = 129382
+      BandType = 0
+    end
+    object ppCustomerListLabel2: TppLabel
+      UserName = 'ppCustomerListLabel2'
+      Caption = 'Customer List'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsBold, fsItalic]
+      mmHeight = 5027
+      mmLeft = 2381
+      mmTop = 1323
+      mmWidth = 24871
+      BandType = 0
+    end
+    object ppCustomerListLabel3: TppLabel
+      UserName = 'ppCustomerListLabel3'
+      Caption = 'Company'
+      Color = clNavy
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      mmHeight = 5027
+      mmLeft = 794
+      mmTop = 17198
+      mmWidth = 16669
+      BandType = 0
+    end
+    object ppCustomerListLabel4: TppLabel
+      UserName = 'ppCustomerListLabel4'
+      Caption = 'State'
+      Color = clNavy
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      mmHeight = 5027
+      mmLeft = 239448
+      mmTop = 17198
+      mmWidth = 9260
+      BandType = 0
+    end
+    object ppCustomerListLabel6: TppLabel
+      UserName = 'ppCustomerListLabel6'
+      Caption = 'Contact'
+      Color = clNavy
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      mmHeight = 5027
+      mmLeft = 57944
+      mmTop = 17198
+      mmWidth = 13758
+      BandType = 0
+    end
+    object ppCustomerListLabel7: TppLabel
+      UserName = 'ppCustomerListLabel7'
+      Caption = 'Phone'
+      Color = clNavy
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      mmHeight = 5027
+      mmLeft = 100013
+      mmTop = 17198
+      mmWidth = 10848
+      BandType = 0
+    end
+    object ppCustomerListLabel8: TppLabel
+      UserName = 'ppCustomerListLabel8'
+      Caption = 'Address'
+      Color = clNavy
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      mmHeight = 5027
+      mmLeft = 137319
+      mmTop = 17198
+      mmWidth = 14552
+      BandType = 0
+    end
+    object ppCustomerListLabel9: TppLabel
+      UserName = 'ppCustomerListLabel9'
+      Caption = 'City'
+      Color = clNavy
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsBold]
+      mmHeight = 5027
+      mmLeft = 195527
+      mmTop = 17198
+      mmWidth = 7408
+      BandType = 0
+    end
+  end
+  object ppCustomerListDetail: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 6085
+    mmPrintPosition = 0
+    object ppCustomerListShape1: TppShape
+      UserName = 'ppCustomerListShape1'
+      Brush.Style = bsClear
+      Pen.Width = 0
+      mmHeight = 6350
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 57150
+      BandType = 4
+    end
+    object ppCustomerListDBText2: TppDBText
+      UserName = 'ppCustomerListDBText2'
+      DataField = 'Company'
+      DataPipeline = BDEQueryDataView1.plCustomer
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      DataPipelineName = 'plCustomer'
+      mmHeight = 3969
+      mmLeft = 794
+      mmTop = 1058
+      mmWidth = 55827
+      BandType = 4
+    end
+    object ppCustomerListShape5: TppShape
+      UserName = 'ppCustomerListShape5'
+      Brush.Style = bsClear
+      Pen.Width = 0
+      mmHeight = 6350
+      mmLeft = 193940
+      mmTop = 0
+      mmWidth = 40746
+      BandType = 4
+    end
+    object ppCustomerListDBText8: TppDBText
+      UserName = 'ppCustomerListDBText8'
+      DataField = 'City'
+      DataPipeline = BDEQueryDataView1.plCustomer
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      DataPipelineName = 'plCustomer'
+      mmHeight = 3969
+      mmLeft = 195527
+      mmTop = 1058
+      mmWidth = 36248
+      BandType = 4
+    end
+    object ppCustomerListShape4: TppShape
+      UserName = 'ppCustomerListShape4'
+      Brush.Style = bsClear
+      Pen.Width = 0
+      mmHeight = 6350
+      mmLeft = 135732
+      mmTop = 0
+      mmWidth = 58473
+      BandType = 4
+    end
+    object ppCustomerListShape6: TppShape
+      UserName = 'ppCustomerListShape6'
+      Brush.Style = bsClear
+      Pen.Width = 0
+      mmHeight = 6350
+      mmLeft = 234421
+      mmTop = 0
+      mmWidth = 30692
+      BandType = 4
+    end
+    object ppCustomerListShape3: TppShape
+      UserName = 'ppCustomerListShape3'
+      Brush.Style = bsClear
+      Pen.Width = 0
+      mmHeight = 6350
+      mmLeft = 98425
+      mmTop = 0
+      mmWidth = 37571
+      BandType = 4
+    end
+    object ppCustomerListShape2: TppShape
+      UserName = 'ppCustomerListShape2'
+      Brush.Style = bsClear
+      Pen.Width = 0
+      mmHeight = 6350
+      mmLeft = 56886
+      mmTop = 0
+      mmWidth = 41804
+      BandType = 4
+    end
+    object ppCustomerListDBText3: TppDBText
+      UserName = 'ppCustomerListDBText3'
+      DataField = 'Contact'
+      DataPipeline = BDEQueryDataView1.plCustomer
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      DataPipelineName = 'plCustomer'
+      mmHeight = 3969
+      mmLeft = 57944
+      mmTop = 1058
+      mmWidth = 38365
+      BandType = 4
+    end
+    object ppCustomerListDBText4: TppDBText
+      UserName = 'ppCustomerListDBText4'
+      DataField = 'Phone'
+      DataPipeline = BDEQueryDataView1.plCustomer
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      DataPipelineName = 'plCustomer'
+      mmHeight = 3969
+      mmLeft = 100013
+      mmTop = 1058
+      mmWidth = 34131
+      BandType = 4
+    end
+    object ppCustomerListDBText5: TppDBText
+      UserName = 'ppCustomerListDBText5'
+      DataField = 'Addr1'
+      DataPipeline = BDEQueryDataView1.plCustomer
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      DataPipelineName = 'plCustomer'
+      mmHeight = 3969
+      mmLeft = 137319
+      mmTop = 1058
+      mmWidth = 55298
+      BandType = 4
+    end
+    object ppCustomerListDBText6: TppDBText
+      UserName = 'ppCustomerListDBText6'
+      DataField = 'State'
+      DataPipeline = BDEQueryDataView1.plCustomer
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      DataPipelineName = 'plCustomer'
+      mmHeight = 3969
+      mmLeft = 237067
+      mmTop = 1323
+      mmWidth = 26194
+      BandType = 4
+    end
+  end
+  object ppCustomerListFooter: TppFooterBand
+    mmBottomOffset = 0
+    mmHeight = 10583
+    mmPrintPosition = 0
+    object ppCustomerListCalc1: TppSystemVariable
+      UserName = 'CustomerListCalc1'
+      VarType = vtPrintDateTime
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      mmHeight = 3969
+      mmLeft = 2381
+      mmTop = 5821
+      mmWidth = 26194
+      BandType = 8
+    end
+    object ppCustomerListCalc3: TppSystemVariable
+      UserName = 'CustomerListCalc3'
+      VarType = vtPageSetDesc
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      TextAlignment = taRightJustified
+      mmHeight = 3969
+      mmLeft = 250296
+      mmTop = 5821
+      mmWidth = 15346
+      BandType = 8
+    end
+  end
+  object daDataModule1: TdaDataModule
+    object BDEQueryDataView1: TdaBDEQueryDataView
+      UserName = 'Query_Customer'
+      Height = 298
+      Left = 10
+      NameColumnWidth = 105
+      SizeColumnWidth = 35
+      SortMode = 0
+      Top = 10
+      TypeColumnWidth = 52
+      Width = 220
+      AutoSearchTabOrder = 0
+      object plCustomer: TppChildBDEPipeline
+        AutoCreateFields = False
+        UserName = 'plCustomer'
+        object ppField1: TppField
+          FieldAlias = 'Customer No.'
+          FieldName = 'CustNo'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 0
+          TableName = 'customer'
+        end
+        object ppField2: TppField
+          FieldAlias = 'Company'
+          FieldName = 'Company'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 1
+          TableName = 'customer'
+        end
+        object ppField3: TppField
+          FieldAlias = 'Address Line 1'
+          FieldName = 'Addr1'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 2
+          TableName = 'customer'
+        end
+        object ppField4: TppField
+          FieldAlias = 'Address Line 2'
+          FieldName = 'Addr2'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 3
+          TableName = 'customer'
+        end
+        object ppField5: TppField
+          FieldAlias = 'City'
+          FieldName = 'City'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 4
+          TableName = 'customer'
+        end
+        object ppField6: TppField
+          FieldAlias = 'State'
+          FieldName = 'State'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 5
+          TableName = 'customer'
+        end
+        object ppField7: TppField
+          FieldAlias = 'Zip Code'
+          FieldName = 'Zip'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 6
+          TableName = 'customer'
+        end
+        object ppField8: TppField
+          FieldAlias = 'Country'
+          FieldName = 'Country'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 7
+          TableName = 'customer'
+        end
+        object ppField9: TppField
+          FieldAlias = 'Phone No.'
+          FieldName = 'Phone'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 8
+          TableName = 'customer'
+        end
+        object ppField10: TppField
+          FieldAlias = 'Fax No.'
+          FieldName = 'FAX'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 9
+          TableName = 'customer'
+        end
+        object ppField11: TppField
+          FieldAlias = 'Tax Rate'
+          FieldName = 'TaxRate'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 10
+          TableName = 'customer'
+        end
+        object ppField12: TppField
+          FieldAlias = 'Contact Name'
+          FieldName = 'Contact'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 11
+          TableName = 'customer'
+        end
+        object ppField13: TppField
+          FieldAlias = 'Last Invoice Date'
+          FieldName = 'LastInvoiceDate'
+          FieldLength = 0
+          DataType = dtDateTime
+          DisplayWidth = 0
+          Position = 12
+          TableName = 'customer'
+        end
+      end
+      object daSQL1: TdaSQL
+        DatabaseName = 'DBDEMOS'
+        DatabaseType = dtParadox
+        DataPipelineName = 'plCustomer'
+        LinkColor = clBlack
+        MaxSQLFieldAliasLength = 25
+        SQLText.Strings = (
+          'SELECT customer.CustNo, customer.Company, '
+          '       customer.Addr1, customer.Addr2, '
+          '       customer.City, customer.State, '
+          '       customer.Zip, customer.Country, '
+          '       customer.Phone, customer.FAX, '
+          '       customer.TaxRate, customer.Contact, '
+          '       customer.LastInvoiceDate'
+          'FROM "customer.db" customer')
+        SQLType = sqSQL1
+        object TdaField
+          Alias = 'Customer No.'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Customer No.'
+          FieldLength = 0
+          FieldName = 'CustNo'
+          SQLFieldName = 'CustNo'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Company'
+          DisplayWidth = 0
+          FieldAlias = 'Company'
+          FieldLength = 0
+          FieldName = 'Company'
+          SQLFieldName = 'Company'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Address Line 1'
+          DisplayWidth = 0
+          FieldAlias = 'Address Line 1'
+          FieldLength = 0
+          FieldName = 'Addr1'
+          SQLFieldName = 'Addr1'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Address Line 2'
+          DisplayWidth = 0
+          FieldAlias = 'Address Line 2'
+          FieldLength = 0
+          FieldName = 'Addr2'
+          SQLFieldName = 'Addr2'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'City'
+          DisplayWidth = 0
+          FieldAlias = 'City'
+          FieldLength = 0
+          FieldName = 'City'
+          SQLFieldName = 'City'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'State'
+          DisplayWidth = 0
+          FieldAlias = 'State'
+          FieldLength = 0
+          FieldName = 'State'
+          SQLFieldName = 'State'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Zip Code'
+          DisplayWidth = 0
+          FieldAlias = 'Zip Code'
+          FieldLength = 0
+          FieldName = 'Zip'
+          SQLFieldName = 'Zip'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Country'
+          DisplayWidth = 0
+          FieldAlias = 'Country'
+          FieldLength = 0
+          FieldName = 'Country'
+          SQLFieldName = 'Country'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Phone No.'
+          DisplayWidth = 0
+          FieldAlias = 'Phone No.'
+          FieldLength = 0
+          FieldName = 'Phone'
+          SQLFieldName = 'Phone'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Fax No.'
+          DisplayWidth = 0
+          FieldAlias = 'Fax No.'
+          FieldLength = 0
+          FieldName = 'FAX'
+          SQLFieldName = 'FAX'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Tax Rate'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Tax Rate'
+          FieldLength = 0
+          FieldName = 'TaxRate'
+          SQLFieldName = 'TaxRate'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Contact Name'
+          DisplayWidth = 0
+          FieldAlias = 'Contact Name'
+          FieldLength = 0
+          FieldName = 'Contact'
+          SQLFieldName = 'Contact'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaField
+          Alias = 'Last Invoice Date'
+          DataType = dtDateTime
+          DisplayWidth = 0
+          FieldAlias = 'Last Invoice Date'
+          FieldLength = 0
+          FieldName = 'LastInvoiceDate'
+          SQLFieldName = 'LastInvoiceDate'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+          TableSQLAlias = 'customer'
+        end
+        object TdaTable
+          ChildType = 5
+          Alias = 'Customer'
+          JoinType = dajtNone
+          SQLAlias = 'customer'
+          TableAlias = 'Customer'
+          TableName = 'customer.db'
+        end
+      end
+    end
+  end
+  object raCodeModule1: TraCodeModule
+    ProgramStream = {
+      01060F5472614576656E7448616E646C65720B50726F6772616D4E616D650611
+      5265706F72744265666F72655072696E740B50726F6772616D54797065070B74
+      7450726F63656475726506536F75726365068070726F63656475726520526570
+      6F72744265666F72655072696E743B0D0A7661720D0A20206C537472696E673A
+      20537472696E673B0D0A626567696E0D0A20206C537472696E67203A3D204170
+      706C69636174696F6E46696C656E616D653B0D0A202053686F774D6573736167
+      65286C537472696E67293B0D0A656E643B0D0A0D436F6D706F6E656E744E616D
+      6506065265706F7274094576656E744E616D65060B4265666F72655072696E74
+      074576656E74494402010000}
+  end
+end

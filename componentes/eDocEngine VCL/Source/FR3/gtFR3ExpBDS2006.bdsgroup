@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{BD65512D-C319-47DC-A7A7-A4566031C6CC}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="gtFR3ExpBDS2006.bpl">gtFR3ExpBDS2006.bdsproj</Projects>
+      <Projects Name="DCLgtFR3ExpBDS2006.bpl">DCLgtFR3ExpBDS2006.bdsproj</Projects>
+      <Projects Name="Targets">gtFR3ExpBDS2006.bpl DCLgtFR3ExpBDS2006.bpl</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+	<StarTeamAssociation></StarTeamAssociation>
+	<StarTeamNonRelativeFiles></StarTeamNonRelativeFiles>
+</BorlandProject>

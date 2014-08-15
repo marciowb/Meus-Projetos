@@ -1,0 +1,200 @@
+initialization
+  UsuarioLogado.MensagemEmail := TMensagemEmail.Create;
+  UsuarioSenha.MensagemEmail := TMensagemEmail.Create;
+  TransDesc.TransactionID := 0;
+  TransDesc.IsolationLevel := xilREADCOMMITTED;
+  DataServidor := Trunc(now);
+  UsuarioLogado.CPLUSANTIGO := False;
+  AcertaPadroesData;
+  MyAcessos := TControleAcessosCPlus.Create;
+  {Traduz o Developer Express}
+  cxSetResourceString(@ScxGridGroupByBoxCaption,'Para agrupar, arraste o título da coluna para este painel.');
+  cxSetResourceString(@scxGridNoDataInfoText,'Nenhum registro a ser exibido.');
+  cxSetResourceString(@scxGridFilterRowInfoText,'Clique aqui para definir o filtro.');
+  cxSetResourceString(@scxGridFilterIsEmpty,'<O Filtro está vazio>');
+  cxSetResourceString(@scxGridFilterCustomizeButtonCaption,'Personalizar filtro...');
+  cxSetResourceString(@scxGridFilterApplyButtonCaption,'Aplicar filtro');
+  cxSetResourceString(@scxGridColumnsQuickCustomizationHint,'Clique aqui para mostrar/ocultar/mover colunas');
+
+  cxSetResourceString(@scxGridYesterday,'Ontem');
+  cxSetResourceString(@scxGridToday, 'Hoje');
+  cxSetResourceString(@scxGridTomorrow, 'Amanhã');
+  cxSetResourceString(@scxGridLast30Days, 'Últimos 30 dias');
+  cxSetResourceString(@scxGridLast14Days, 'Últimos 14 dias');
+  cxSetResourceString(@scxGridLast7Days, 'Últimos 7 dias');
+  cxSetResourceString(@scxGridNext7Days, 'Próximos 7 dias');
+  cxSetResourceString(@scxGridNext14Days, 'Próximos 14 dias');
+  cxSetResourceString(@scxGridNext30Days, 'Próximos 30 dias');
+  cxSetResourceString(@scxGridLastTwoWeeks, 'Últimas duas semanas');
+  cxSetResourceString(@scxGridLastWeek, 'Semana passada');
+  cxSetResourceString(@scxGridThisWeek, 'Essa semana');
+  cxSetResourceString(@scxGridNextWeek, 'Próxima semana');
+  cxSetResourceString(@scxGridNextTwoWeeks, 'Próximas 2 semanas');
+  cxSetResourceString(@scxGridLastMonth, 'Mês passado');
+  cxSetResourceString(@scxGridThisMonth, 'Este mês');
+  cxSetResourceString(@scxGridNextMonth, 'Próximo mês');
+  cxSetResourceString(@scxGridLastYear, 'Ano passado');
+  cxSetResourceString(@scxGridThisYear, 'Este ano');
+  cxSetResourceString(@scxGridNextYear, 'Próximo ano');
+  cxSetResourceString(@scxGridFuture, 'Futuro');
+
+
+  cxSetResourceString(@cxSFilterOperatorEqual,'igual a');
+  cxSetResourceString(@cxSFilterOperatorNotEqual,'diferente de');
+  cxSetResourceString(@cxSFilterOperatorLess,'é menor que');
+  cxSetResourceString(@cxSFilterOperatorLessEqual,'é menor ou igual a');
+  cxSetResourceString(@cxSFilterOperatorGreater,'é maior que');
+  cxSetResourceString(@cxSFilterOperatorGreaterEqual,'é maior ou igual a');
+  cxSetResourceString(@cxSFilterOperatorLike,'contêm');
+  cxSetResourceString(@cxSFilterOperatorNotLike,'não contêm');
+  cxSetResourceString(@cxSFilterOperatorBetween,'está entre');
+  cxSetResourceString(@cxSFilterOperatorNotBetween,'não está entre');
+  cxSetResourceString(@cxSFilterOperatorInList,'está na lista');
+  cxSetResourceString(@cxSFilterOperatorNotInList,'não está na lista');
+
+  cxSetResourceString(@cxSFilterOperatorYesterday,'foi ontem');
+  cxSetResourceString(@cxSFilterOperatorToday,'é hoje');
+  cxSetResourceString(@cxSFilterOperatorTomorrow,'é amanhã');
+
+  cxSetResourceString(@cxSFilterOperatorLast7Days,'is last 7 days');
+  cxSetResourceString(@cxSFilterOperatorLastWeek,'is last week');
+  cxSetResourceString(@cxSFilterOperatorLast14Days,'is last 14 days');
+  cxSetResourceString(@cxSFilterOperatorLastTwoWeeks,'is last two weeks');
+  cxSetResourceString(@cxSFilterOperatorLast30Days,'is last 30 days');
+  cxSetResourceString(@cxSFilterOperatorLastMonth,'is last month');
+  cxSetResourceString(@cxSFilterOperatorLastYear,'is last year');
+  cxSetResourceString(@cxSFilterOperatorPast,'is past');
+
+  cxSetResourceString(@cxSFilterOperatorThisWeek,'is this week');
+  cxSetResourceString(@cxSFilterOperatorThisMonth,'is this month');
+  cxSetResourceString(@cxSFilterOperatorThisYear,'is this year');
+  cxSetResourceString(@cxSFilterOperatorNext7Days,'is next 7 days');
+  cxSetResourceString(@cxSFilterOperatorNextWeek,'is next week');
+  cxSetResourceString(@cxSFilterOperatorNext14Days,'is next 14 days');
+  cxSetResourceString(@cxSFilterOperatorNextTwoWeeks,'is next two weeks');
+  cxSetResourceString(@cxSFilterOperatorNext30Days,'is next 30 days');
+  cxSetResourceString(@cxSFilterOperatorNextMonth,'is next month');
+  cxSetResourceString(@cxSFilterOperatorNextYear,'is next year');
+  cxSetResourceString(@cxSFilterOperatorFuture,'é futuro');
+
+  cxSetResourceString(@cxSFilterAndCaption,'e');
+  cxSetResourceString(@cxSFilterOrCaption,'ou');
+  cxSetResourceString(@cxSFilterNotCaption,'não');
+  cxSetResourceString(@cxSFilterBlankCaption,'vazio');
+
+  // derived
+  cxSetResourceString(@cxSFilterOperatorIsNull,'é vazio');
+  cxSetResourceString(@cxSFilterOperatorIsNotNull,'não é vazio');
+  cxSetResourceString(@cxSFilterOperatorBeginsWith,'inicia com');
+  cxSetResourceString(@cxSFilterOperatorDoesNotBeginWith,'não inicia com');
+  cxSetResourceString(@cxSFilterOperatorEndsWith,'termina com');
+  cxSetResourceString(@cxSFilterOperatorDoesNotEndWith,'não termina com');
+  cxSetResourceString(@cxSFilterOperatorContains,'contêm');
+  cxSetResourceString(@cxSFilterOperatorDoesNotContain,'não contêm');
+  // filter listbox's values
+  cxSetResourceString(@cxSFilterBoxAllCaption,'(Todos)');
+  cxSetResourceString(@cxSFilterBoxCustomCaption,'(Filtro...)');
+  cxSetResourceString(@cxSFilterBoxBlanksCaption,'(Vazios)');
+  cxSetResourceString(@cxSFilterBoxNonBlanksCaption,'(Não Vazios)');
+
+  // cxFilterBoolOperator
+  cxSetResourceString(@cxSFilterBoolOperatorAnd,'E');        // all
+  cxSetResourceString(@cxSFilterBoolOperatorOr,'OU');          // any
+  cxSetResourceString(@cxSFilterBoolOperatorNotAnd,'E NAO'); // not all
+  cxSetResourceString(@cxSFilterBoolOperatorNotOr,'OU NAO');   // not any
+
+  cxSetResourceString(@cxSFilterRootButtonCaption,'Filtro');
+  cxSetResourceString(@cxSFilterAddCondition,'Adicionar &Condição');
+  cxSetResourceString(@cxSFilterAddGroup,'Adicionar &Grupo');
+  cxSetResourceString(@cxSFilterRemoveRow,'&Remover Linha');
+  cxSetResourceString(@cxSFilterClearAll,'Limp&ar tudo');
+  cxSetResourceString(@cxSFilterFooterAddCondition,'clique aqui para adicionar uma nova condição');
+
+  cxSetResourceString(@cxSFilterGroupCaption,'aplicar as seguintes condições');
+  cxSetResourceString(@cxSFilterRootGroupCaption,'<root>');
+  cxSetResourceString(@cxSFilterControlNullString,'<vazio>');
+
+  cxSetResourceString(@cxSFilterErrorBuilding,'Impossível construir filtro a partir desta fonte');
+  //FilterDialog
+  cxSetResourceString(@cxSFilterDialogCaption,'Filtro personalizado');
+  cxSetResourceString(@cxSFilterDialogInvalidValue,'Valor inválido');
+  cxSetResourceString(@cxSFilterDialogUse,'Use');
+  cxSetResourceString(@cxSFilterDialogSingleCharacter,'para representar qualquer caracter único');
+  cxSetResourceString(@cxSFilterDialogCharactersSeries,'para representar qualquer série de caracteres');
+  cxSetResourceString(@cxSFilterDialogOperationAnd,'E');
+  cxSetResourceString(@cxSFilterDialogOperationOr,'OU');
+  cxSetResourceString(@cxSFilterDialogRows,'Mostrar registros onde:');
+  // FilterControlDialog
+  cxSetResourceString(@cxSFilterControlDialogCaption,'Construtor de filtros');
+  cxSetResourceString(@cxSFilterControlDialogNewFile,'semtitulo.flt');
+  cxSetResourceString(@cxSFilterControlDialogOpenDialogCaption,'Abrir um filtro existente');
+  cxSetResourceString(@cxSFilterControlDialogSaveDialogCaption,'Salvar o filtro atual em arquivo');
+  cxSetResourceString(@cxSFilterControlDialogActionSaveCaption,'&Salvar como...');
+  cxSetResourceString(@cxSFilterControlDialogActionOpenCaption,'A&brir...');
+  cxSetResourceString(@cxSFilterControlDialogActionApplyCaption,'&Aplicar');
+  cxSetResourceString(@cxSFilterControlDialogActionOkCaption,'OK');
+  cxSetResourceString(@cxSFilterControlDialogActionCancelCaption,'Cancelar');
+  cxSetResourceString(@cxSFilterControlDialogFileExt,'flt');
+  cxSetResourceString(@cxSFilterControlDialogFileFilter,'Filtros (*.flt)|*.flt');
+
+  //Tradução do Scheduler
+  cxSetResourceString(@scxMinute,'Minuto');
+  cxSetResourceString(@scxMinutes,'Minutos');
+  cxSetResourceString(@scxHour,'');
+  cxSetResourceString(@scxHours,'');
+  cxSetResourceString(@scxOneDay,'');
+
+  //Dialogos Scheduler
+  cxSetResourceString(@scxGoToDateDialogCaption,'Ir até a data');
+  cxSetResourceString(@scxDate,'Data');
+  cxSetResourceString(@scxShowIn,'Mostrar o');
+  cxSetResourceString(@scxDayCalendar,'Dia');
+  cxSetResourceString(@scxWeekCalendar,'Semana');
+  cxSetResourceString(@scxMonthCalendar,'Mês');
+  cxSetResourceString(@scxWorkWeekCalendar,'Semana de trabalho');
+  cxSetResourceString(@scxOk,'OK');
+  cxSetResourceString(@scxCancel,'Cancelar');
+  cxSetResourceString(@scxClose,'Fechar');
+  cxSetResourceString(@scxDown,'Abaixo');
+  cxSetResourceString(@scxUp,'Acima');
+  cxSetResourceString(@scxResourceLayoutCaption,'Editor de layout');
+
+  cxSetResourceString(@scxpmToday,'Hoje');
+  cxSetResourceString(@scxpmGotoThisDay,'Ir até data de hoje');
+  cxSetResourceString(@scxpmGoToDate,'Ir até a Data...');
+  cxSetResourceString(@scxpmResourcesLayout,'Editor de layout...');
+
+  cxSetResourceString(@scxFirstButtonHint,'Primeiro');
+  cxSetResourceString(@scxPrevPageButtonHint,'Página anterior');
+  cxSetResourceString(@scxPrevButtonHint,'Anterior');
+  cxSetResourceString(@scxNextButtonHint,'Próximo');
+  cxSetResourceString(@scxNextPageButtonHint,'Próxima página');
+  cxSetResourceString(@scxLastButtonHint,'Último');
+
+  cxSetResourceString(@secxYes,'Sim');
+  cxSetResourceString(@secxNo,'Não');
+
+  cxSetResourceString(@scxpm60Minutes,'60 minutos');
+  cxSetResourceString(@scxpm30Minutes,'30 minutos');
+  cxSetResourceString(@scxpm15Minutes,'15 minutos');
+  cxSetResourceString(@scxpm10Minutes,'10 minutos');
+  cxSetResourceString(@scxpm6Minutes,'6 minutos');
+  cxSetResourceString(@scxpm5Minutes,'5 minutos');
+
+  cxSetResourceString(@scxTime0m,'0 minutos');
+  cxSetResourceString(@scxTime5m,'5 minutos');
+  cxSetResourceString(@scxTime10m,'10 minutos');
+  cxSetResourceString(@scxTime15m,'15 minutos');
+  cxSetResourceString(@scxTime20m,'20 minutos');
+  cxSetResourceString(@scxTime30m,'30 minutos');
+  cxSetResourceString(@scxTime1h,'1 hora');
+  cxSetResourceString(@scxTime2h,'2 hora');
+  cxSetResourceString(@scxTime3h,'3 hora');
+  cxSetResourceString(@scxTime4h,'4 hora');
+  cxSetResourceString(@scxTime5h,'5 hora');
+  cxSetResourceString(@scxTime6h,'6 hora');
+
+  //Edit Controls
+                   
+  cxSetResourceString(@cxSDatePopupToday,'Hoje');
+  cxSetResourceString(@cxSDatePopupToday,'Hoje');

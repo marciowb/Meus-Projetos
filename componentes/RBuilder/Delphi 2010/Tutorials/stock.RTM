@@ -1,0 +1,972 @@
+object rbStock: TppReport
+  DataPipeline = plStock
+  PassSetting = psTwoPass
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'rbStock'
+  PrinterSetup.PaperName = 'Letter 8 1/2 x 11 in'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  Template.FileName = 'P:\RBldr4\Tutorial\Complete\stock.RTM'
+  Template.Format = ftASCII
+  UserName = 'Report'
+  DeviceType = 'Screen'
+  Left = 115
+  Top = 8
+  Version = '4.0 Pro Beta Build 3'
+  mmColumnWidth = 0
+  object ppHeaderBand1: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 25400
+    mmPrintPosition = 0
+    object ppLabel2: TppLabel
+      UserName = 'Label1'
+      Caption = 'Gekko Investment'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 20
+      Font.Style = [fsBold, fsItalic]
+      Transparent = True
+      mmHeight = 8202
+      mmLeft = 1058
+      mmTop = 1058
+      mmWidth = 54240
+      BandType = 0
+    end
+    object ppLabel1: TppLabel
+      UserName = 'Label2'
+      Caption = 'Stock Portfolio Analysis'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 12
+      Font.Style = [fsBold, fsItalic]
+      Transparent = True
+      mmHeight = 5027
+      mmLeft = 1058
+      mmTop = 10319
+      mmWidth = 42863
+      BandType = 0
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    BeforeGenerate = ppDetailBand1BeforeGenerate
+    mmBottomOffset = 0
+    mmHeight = 47890
+    mmPrintPosition = 0
+    object ppLabel4: TppLabel
+      UserName = 'Label4'
+      AutoSize = False
+      Caption = 'EXCHANGE'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 31221
+      mmTop = 8996
+      mmWidth = 17727
+      BandType = 4
+    end
+    object ppDBText2: TppDBText
+      UserName = 'DBText1'
+      DataField = 'EXCHANGE'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 31221
+      mmTop = 14288
+      mmWidth = 17727
+      BandType = 4
+    end
+    object ppLabel5: TppLabel
+      UserName = 'Label5'
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'INDUSTRY'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 50271
+      mmTop = 8996
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppDBText3: TppDBText
+      UserName = 'DBText2'
+      Alignment = taRightJustify
+      DataField = 'INDUSTRY'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 50271
+      mmTop = 14288
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppLabel6: TppLabel
+      UserName = 'Label6'
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'PROJ_GRTH'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 71173
+      mmTop = 8996
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppDBText4: TppDBText
+      UserName = 'DBText3'
+      Alignment = taRightJustify
+      DataField = 'PROJ_GRTH'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 71173
+      mmTop = 14288
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppLabel7: TppLabel
+      UserName = 'Label7'
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'OUTLOOK'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 96044
+      mmTop = 8996
+      mmWidth = 15875
+      BandType = 4
+    end
+    object ppDBText5: TppDBText
+      UserName = 'DBText4'
+      Alignment = taRightJustify
+      DataField = 'OUTLOOK'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 92340
+      mmTop = 14288
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppLine3: TppLine
+      UserName = 'Line2'
+      Pen.Width = 2
+      Weight = 1.5
+      mmHeight = 3970
+      mmLeft = 31222
+      mmTop = 5291
+      mmWidth = 80698
+      BandType = 4
+    end
+    object ppLabel8: TppLabel
+      UserName = 'Label8'
+      Alignment = taCenter
+      Caption = 'General'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold, fsItalic]
+      mmHeight = 4233
+      mmLeft = 63765
+      mmTop = 3704
+      mmWidth = 11642
+      BandType = 4
+    end
+    object ppLabel9: TppLabel
+      UserName = 'Label9'
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'P_E_RATIO'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 31221
+      mmTop = 30163
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppDBText6: TppDBText
+      UserName = 'DBText5'
+      Alignment = taRightJustify
+      DataField = 'P_E_RATIO'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 31221
+      mmTop = 35454
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppLabel10: TppLabel
+      UserName = 'Label10'
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'RANK'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 52123
+      mmTop = 30163
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppDBText7: TppDBText
+      UserName = 'DBText6'
+      Alignment = taRightJustify
+      DataField = 'RANK'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 52123
+      mmTop = 35454
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppLabel11: TppLabel
+      UserName = 'Label11'
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'RATING'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 73025
+      mmTop = 30163
+      mmWidth = 12435
+      BandType = 4
+    end
+    object ppDBText8: TppDBText
+      UserName = 'DBText7'
+      DataField = 'RATING'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 73025
+      mmTop = 35454
+      mmWidth = 12435
+      BandType = 4
+    end
+    object ppLabel12: TppLabel
+      UserName = 'Label12'
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'BETA'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 97631
+      mmTop = 30163
+      mmWidth = 8731
+      BandType = 4
+    end
+    object ppDBText9: TppDBText
+      UserName = 'DBText8'
+      Alignment = taRightJustify
+      DataField = 'BETA'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 86784
+      mmTop = 35454
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppLine1: TppLine
+      UserName = 'Line3'
+      Pen.Width = 2
+      Weight = 1.5
+      mmHeight = 3969
+      mmLeft = 31221
+      mmTop = 26458
+      mmWidth = 80698
+      BandType = 4
+    end
+    object ppLabel3: TppLabel
+      UserName = 'Label13'
+      Alignment = taCenter
+      Caption = 'Vital Stats'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold, fsItalic]
+      mmHeight = 4233
+      mmLeft = 63765
+      mmTop = 24606
+      mmWidth = 15346
+      BandType = 4
+    end
+    object ppLabel14: TppLabel
+      UserName = 'Label14'
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'CUR_PRICE'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 117475
+      mmTop = 8996
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppDBText10: TppDBText
+      UserName = 'DBText9'
+      Alignment = taRightJustify
+      DataField = 'CUR_PRICE'
+      DataPipeline = plStock
+      DisplayFormat = '$#,0.00;($#,0.00)'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 117740
+      mmTop = 14288
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppLabel15: TppLabel
+      UserName = 'Label15'
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'YRL_HIGH'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 138377
+      mmTop = 8996
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppDBText11: TppDBText
+      UserName = 'DBText10'
+      Alignment = taRightJustify
+      DataField = 'YRL_HIGH'
+      DataPipeline = plStock
+      DisplayFormat = '$#,0.00;($#,0.00)'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 138377
+      mmTop = 14288
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppLabel16: TppLabel
+      UserName = 'Label16'
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'YRL_LOW'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 159279
+      mmTop = 8996
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppDBText12: TppDBText
+      UserName = 'DBText11'
+      Alignment = taRightJustify
+      DataField = 'YRL_LOW'
+      DataPipeline = plStock
+      DisplayFormat = '$#,0.00;($#,0.00)'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 159279
+      mmTop = 14288
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppLabel17: TppLabel
+      UserName = 'Label17'
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'PRICE_CHG'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 182298
+      mmTop = 8996
+      mmWidth = 17463
+      BandType = 4
+    end
+    object ppDBText13: TppDBText
+      UserName = 'DBText12'
+      Alignment = taRightJustify
+      DataField = 'PRICE_CHG'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 180182
+      mmTop = 14288
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppLine4: TppLine
+      UserName = 'Line4'
+      Pen.Width = 2
+      Weight = 1.5
+      mmHeight = 3969
+      mmLeft = 117475
+      mmTop = 5292
+      mmWidth = 80698
+      BandType = 4
+    end
+    object ppLabel13: TppLabel
+      UserName = 'Label18'
+      Alignment = taCenter
+      Caption = 'Pricing'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold, fsItalic]
+      mmHeight = 4233
+      mmLeft = 152665
+      mmTop = 3440
+      mmWidth = 10848
+      BandType = 4
+    end
+    object ppLabel19: TppLabel
+      UserName = 'Label19'
+      AutoSize = False
+      Caption = 'RCMNDATION'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 117475
+      mmTop = 30163
+      mmWidth = 22754
+      BandType = 4
+    end
+    object dbtRecommendation: TppDBText
+      UserName = 'DBText13'
+      DataField = 'RCMNDATION'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 117475
+      mmTop = 35454
+      mmWidth = 22754
+      BandType = 4
+    end
+    object ppLabel20: TppLabel
+      UserName = 'Label20'
+      AutoSize = False
+      Caption = 'RISK'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 141552
+      mmTop = 30163
+      mmWidth = 8467
+      BandType = 4
+    end
+    object ppDBText15: TppDBText
+      UserName = 'DBText14'
+      DataField = 'RISK'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 141552
+      mmTop = 35454
+      mmWidth = 8467
+      BandType = 4
+    end
+    object ppLabel21: TppLabel
+      UserName = 'Label21'
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'SAFETY'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 158486
+      mmTop = 30163
+      mmWidth = 12435
+      BandType = 4
+    end
+    object ppDBText16: TppDBText
+      UserName = 'DBText15'
+      Alignment = taRightJustify
+      DataField = 'SAFETY'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3969
+      mmLeft = 151342
+      mmTop = 35454
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppLine5: TppLine
+      UserName = 'Line5'
+      Pen.Width = 2
+      Weight = 1.5
+      mmHeight = 3969
+      mmLeft = 117475
+      mmTop = 26458
+      mmWidth = 80698
+      BandType = 4
+    end
+    object ppLabel18: TppLabel
+      UserName = 'Label22'
+      Alignment = taCenter
+      Caption = 'Recommendation'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = [fsBold, fsItalic]
+      mmHeight = 4233
+      mmLeft = 144992
+      mmTop = 24606
+      mmWidth = 25665
+      BandType = 4
+    end
+    object dbtSymbol: TppDBText
+      UserName = 'DBText16'
+      AutoSize = True
+      DataField = 'SYMBOL'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 14
+      Font.Style = [fsBold, fsItalic]
+      Transparent = True
+      mmHeight = 5821
+      mmLeft = 0
+      mmTop = 5292
+      mmWidth = 13494
+      BandType = 4
+    end
+    object dbtCompany: TppDBText
+      UserName = 'DBText17'
+      DataField = 'CO_NAME'
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3704
+      mmLeft = 0
+      mmTop = 12435
+      mmWidth = 25400
+      BandType = 4
+    end
+  end
+  object ppFooterBand1: TppFooterBand
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+    object ppSystemVariable2: TppSystemVariable
+      UserName = 'SystemVariable1'
+      VarType = vtPrintDateTime
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3970
+      mmLeft = 2380
+      mmTop = 5822
+      mmWidth = 26195
+      BandType = 8
+    end
+    object ppSystemVariable3: TppSystemVariable
+      UserName = 'SystemVariable2'
+      Alignment = taRightJustify
+      VarType = vtPageSetDesc
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3970
+      mmLeft = 185210
+      mmTop = 5822
+      mmWidth = 15347
+      BandType = 8
+    end
+  end
+  object ppReport1SummaryBand1: TppSummaryBand
+    NewPage = True
+    mmBottomOffset = 0
+    mmHeight = 86520
+    mmPrintPosition = 0
+    object ppLabel23: TppLabel
+      UserName = 'Label23'
+      Caption = 'Summary Page'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 16
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 6350
+      mmLeft = 0
+      mmTop = 795
+      mmWidth = 36248
+      BandType = 7
+    end
+    object ppLabel24: TppLabel
+      UserName = 'Label24'
+      Caption = 'Recommendations'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 16
+      Font.Style = []
+      Transparent = True
+      mmHeight = 6085
+      mmLeft = 41275
+      mmTop = 16933
+      mmWidth = 40746
+      BandType = 7
+    end
+    object ppLabel25: TppLabel
+      UserName = 'Label25'
+      Alignment = taRightJustify
+      Caption = 'Buy'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Name = 'Times New Roman'
+      Font.Size = 16
+      Font.Style = []
+      Transparent = True
+      mmHeight = 6085
+      mmLeft = 73025
+      mmTop = 26194
+      mmWidth = 8996
+      BandType = 7
+    end
+    object ppLabel26: TppLabel
+      UserName = 'Label26'
+      Alignment = taRightJustify
+      Caption = 'Hold'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clGreen
+      Font.Name = 'Times New Roman'
+      Font.Size = 16
+      Font.Style = []
+      Transparent = True
+      mmHeight = 6085
+      mmLeft = 70908
+      mmTop = 38629
+      mmWidth = 11113
+      BandType = 7
+    end
+    object ppLabel27: TppLabel
+      UserName = 'Label27'
+      Alignment = taRightJustify
+      Caption = 'Sell'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlue
+      Font.Name = 'Times New Roman'
+      Font.Size = 16
+      Font.Style = []
+      Transparent = True
+      mmHeight = 6085
+      mmLeft = 73554
+      mmTop = 51065
+      mmWidth = 8467
+      BandType = 7
+    end
+    object ppLabel28: TppLabel
+      UserName = 'Label28'
+      Alignment = taRightJustify
+      Caption = 'Total Number of Stocks Analyzed'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 16
+      Font.Style = []
+      Transparent = True
+      mmHeight = 6085
+      mmLeft = 7673
+      mmTop = 63236
+      mmWidth = 74348
+      BandType = 7
+    end
+    object vrBuyTotal: TppVariable
+      UserName = 'Variable1'
+      Alignment = taRightJustify
+      CalcOrder = 0
+      CalcComponent = ppDetailBand1
+      DataType = dtInteger
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Name = 'Times New Roman'
+      Font.Size = 16
+      Font.Style = []
+      OnCalc = vrBuyTotalCalc
+      ResetComponent = rbStock
+      Transparent = True
+      mmHeight = 6085
+      mmLeft = 90223
+      mmTop = 26194
+      mmWidth = 21696
+      BandType = 7
+    end
+    object vrHoldTotal: TppVariable
+      UserName = 'Variable2'
+      Alignment = taRightJustify
+      CalcOrder = 1
+      CalcComponent = ppDetailBand1
+      DataType = dtInteger
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clGreen
+      Font.Name = 'Times New Roman'
+      Font.Size = 16
+      Font.Style = []
+      OnCalc = vrHoldTotalCalc
+      ResetComponent = rbStock
+      Transparent = True
+      mmHeight = 6085
+      mmLeft = 90223
+      mmTop = 38629
+      mmWidth = 21696
+      BandType = 7
+    end
+    object vrSellTotal: TppVariable
+      UserName = 'Variable3'
+      Alignment = taRightJustify
+      CalcOrder = 2
+      CalcComponent = ppDetailBand1
+      DataType = dtInteger
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlue
+      Font.Name = 'Times New Roman'
+      Font.Size = 16
+      Font.Style = []
+      OnCalc = vrSellTotalCalc
+      ResetComponent = rbStock
+      Transparent = True
+      mmHeight = 6085
+      mmLeft = 90223
+      mmTop = 51065
+      mmWidth = 21696
+      BandType = 7
+    end
+    object ppDBCalc2: TppDBCalc
+      UserName = 'DBCalc1'
+      Alignment = taRightJustify
+      DataPipeline = plStock
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Times New Roman'
+      Font.Size = 16
+      Font.Style = [fsBold]
+      Transparent = True
+      DBCalcType = dcCount
+      mmHeight = 6350
+      mmLeft = 90223
+      mmTop = 63236
+      mmWidth = 21696
+      BandType = 7
+    end
+    object ppLine7: TppLine
+      UserName = 'Line6'
+      Style = lsDouble
+      Weight = 0.75
+      mmHeight = 3970
+      mmLeft = 90224
+      mmTop = 59530
+      mmWidth = 21697
+      BandType = 7
+    end
+  end
+  object ppGroup2: TppGroup
+    BreakName = 'RCMNDATION'
+    DataPipeline = plStock
+    NewPage = True
+    mmNewColumnThreshold = 0
+    mmNewPageThreshold = 0
+    object ppGroupHeaderBand1: TppGroupHeaderBand
+      BeforePrint = ppGroupHeaderBand1BeforePrint
+      mmBottomOffset = 0
+      mmHeight = 16403
+      mmPrintPosition = 0
+      object rlRecommendation: TppLabel
+        UserName = 'Label3'
+        Caption = 'Label3'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Times New Roman'
+        Font.Size = 14
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 5822
+        mmLeft = 1059
+        mmTop = 2380
+        mmWidth = 14816
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLine2: TppLine
+        UserName = 'Line1'
+        Pen.Width = 2
+        ParentWidth = True
+        Position = lpBottom
+        Weight = 1.5
+        mmHeight = 3969
+        mmLeft = 0
+        mmTop = 12435
+        mmWidth = 203200
+        BandType = 3
+        GroupNo = 0
+      end
+    end
+    object ppGroupFooterBand2: TppGroupFooterBand
+      mmBottomOffset = 0
+      mmHeight = 0
+      mmPrintPosition = 0
+    end
+  end
+end

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008/10/27 12:16:30.664.groupproj,D:\Documents and Settings\amaresha\My Documents\RAD Studio\Projects\ProjectGroup1.groupproj=D:\BDS2009Setup\Rainbow\Source\Rave\gtRaveExpBDS2009.groupproj</Transaction>
+    <Transaction>2009/08/14 14:07:00.759.groupproj,H:\Sandeep\EDE_2010\EDE_PRO_VSS\EDE\Source\Rave\gtRaveExpBDS2009.groupproj=H:\Sandeep\EDE_2010\EDE_PRO_VSS\EDE\Source\Rave\gtRaveExpBDS2010.groupproj</Transaction>
+    <Transaction>2009/08/17 16:41:19.517.groupproj,H:\Sandeep\17_08_09\EDE_2010\EDE_PRO_VSS\EDE\Source\Rave\gtRaveExpBDS2010.groupproj=H:\Sandeep\17_08_09\EDE_2010\EDE_PRO_VSS\EDE\Source\Rave\gtRaveExpD2010.groupproj</Transaction>
+  </Transactions>
+	<Default.Personality>
+		<Projects ActiveProject="gtRaveExpD2010.bpl"/>
+	</Default.Personality>
+</BorlandProject>

@@ -1,0 +1,30 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = cxDataRS14.bpl cxADOAdaptersRS14.bpl cxBDEAdaptersRS14.bpl \
+  cxIBXAdaptersRS14.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+cxADOAdaptersRS14.bpl: ..\..\ExpressDataController\Packages\cxADOAdaptersRS14.dpk
+  $(DCC)
+
+cxBDEAdaptersRS14.bpl: ..\..\ExpressDataController\Packages\cxBDEAdaptersRS14.dpk
+  $(DCC)
+
+cxDataRS14.bpl: ..\..\ExpressDataController\Packages\cxDataRS14.dpk
+  $(DCC)
+
+cxIBXAdaptersRS14.bpl: ..\..\ExpressDataController\Packages\cxIBXAdaptersRS14.dpk
+  $(DCC)
+
+

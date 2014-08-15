@@ -1,0 +1,55 @@
+1221	Kauai Dive Shoppe	Erica Norman	4-976 Sugarloaf Hwy	Suite 103	Kapaa Kauai	HI	94766-1234	US	808-555-0269	808-555-0278	8.5	2/2/95 1:05:03 AM
+1231	Unisco	George Weathers	PO Box Z-547		Freeport			Bahamas	809-555-3915	809-555-4958	0	11/17/94 2:10:33 PM
+1351	Sight Diver	Phyllis Spooner	1 Neptune Lane		Kato Paphos			Cyprus	357-6-876708	357-6-870943	0	10/18/94 7:20:30 PM
+1354	Cayman Divers World Unlimited	Joe Bailey	PO Box 541		Grand Cayman			British West Indies	011-5-697044	011-5-697064	0	1/30/92 2:00:56 AM
+1356	Tom Sawyer Diving Centre	Chris Thomas	632-1 Third Frydenhoj		Christiansted	St. Croix	00820	US Virgin Islands	504-798-3022	504-798-7772	0	3/20/92 9:35:40 AM
+1380	Blue Jack Aqua Center	Ernest Barratt	23-738 Paddington Lane	Suite 310	Waipahu	HI	99776	US	401-609-7623	401-609-9403	0	11/8/94 11:22:08 PM
+1384	VIP Divers Club	Russell Christopher	32 Main St.		Christiansted	St. Croix	02800	US Virgin Islands	809-453-5976	809-453-5932	0	2/1/95 6:45:23 PM
+1510	Ocean Paradise	Paul Gardner	PO Box 8745		Kailua-Kona	HI	94756	US	808-555-8231	808-555-8450	0	11/9/94 1:22:22 AM
+1513	Fantastique Aquatica	Susan Wong	Z32 999 #12A-77 A.A.		Bogota			Columbia	057-1-773434	057-1-773421	0	7/18/94 5:17:01 PM
+1551	Marmot Divers Club	Joyce Marsh	872 Queen St.		Kitchener	Ontario	G3N 2E1	Canada	416-698-0399	426-698-0399	0	7/7/90 4:20:58 AM
+1560	The Depth Charge	Sam Witherspoon	15243 Underwater Fwy.		Marathon	FL	35003	US	800-555-3798	800-555-0353	0	4/9/94 8:14:52 AM
+1563	Blue Sports	Theresa Kunec	203 12th Ave. Box 746		Giribaldi	OR	91187	US	610-772-6704	610-772-6898	0	5/9/91 12:05:42 PM
+1624	Makai SCUBA Club	Donna Siaus	PO Box 8534		Kailua-Kona	HI	94756	US	317-649-9098	317-649-6787	0	1/7/95 1:55:30 PM
+1645	Action Club	Michael Spurling	PO Box 5451-F		Sarasota	FL	32274	US	813-870-0239	813-870-0282	0	10/18/93 2:18:06 PM
+1651	Jamaica SCUBA Centre	Barbara Harvey	PO Box 68		Negril	Jamaica		West Indies	011-3-697043	011-3-697043	0	8/25/92 12:19:50 AM
+1680	Island Finders	Desmond Ortega	6133 1/3 Stone Avenue		St Simons Isle	GA	32521	US	713-423-5675	713-423-5676	0	1/2/95 9:33:40 AM
+1984	Adventure Undersea	Gloria Gonzales	PO Box 744		Belize City			Belize	011-34-09054	011-34-09064	0	11/6/94 4:35:42 PM
+2118	Blue Sports Club	Harry Bathbone	63365 Nez Perce Street		Largo	FL	34684	US	612-897-0342	612-897-0348	0	6/8/90 11:21:06 AM
+2135	Frank's Divers Supply	Lloyd Fellows	1455 North 44th St.		Eugene	OR	90427	US	503-555-2778	503-555-2769	0	6/24/89 10:29:46 AM
+2156	Davy Jones' Locker	Tanya Wagner	246 South 16th Place		Vancouver	BC	K8V 9P1	Canada	803-509-0112	803-509-0553	0	11/5/91 12:20:30 AM
+2163	SCUBA Heaven	Robert Michelind	PO Box Q-8874		Nassau			Bahamas	011-32-09485	011-32-09485	0	12/24/90 7:18:52 PM
+2165	Shangri-La Sports Center	Frank Paniagua	PO Box D-5495		Freeport			Bahamas	011-32-08574	011-32-44938	0	7/3/89 3:32:49 PM
+2315	Divers of Corfu, Inc.	Charles Lopez	Marmoset Place 54		Ayios Matthaios	Corfu		Greece	30-661-88364	30-661-05943	0	6/13/94 8:20:32 AM
+2354	Kirk Enterprises	Rudolph Claus	42 Aqua Lane		Houston	TX	77079	US	713-556-6437	713-556-1073	0	2/8/94 2:37:45 PM
+2975	George Bean & Co.	Bill Wyers	#73 King Salmon Way		Lugoff	NC	29078	US	803-438-2771	803-438-3003	0	4/6/94 12:20:54 AM
+2984	Professional Divers, Ltd.	Shirley Mathers	4734 Melinda St.		Hoover	AL	32145	US	205-555-8333	205-555-4054	0	5/5/94 5:18:11 PM
+3041	Divers of Blue-green	Nancy Bean	634 Complex Ave.		Pelham	AL	32145	US	205-555-7184	205-555-6059	0	2/28/94 7:29:34 PM
+3042	Gold Coast Supply	Elaine Falls	223-B Houston Place		Mobile	AL	30696	US	205-555-2640	205-555-4094	0	7/12/94 2:01:44 AM
+3051	San Pablo Dive Center	Patricia O'Brien	1701-D N Broadway		Santa Maria	CA	95443	US	823-044-2910	823-044-2990	0	7/21/94 8:40:05 AM
+3052	Underwater Sports Co.	Dave Walling	351-A Sarasota St.		San Jose	CA	92195	US	408-867-0594	408-867-0094	0	9/24/94 3:07:24 PM
+3053	American SCUBA Supply	Lynn Cinciripini	1739 Atlantic Avenue		Lomita	CA	91770	US	213-654-0092	213-654-0095	0	1/4/95 1:38:47 PM
+3054	Catamaran Dive Club	Nicole Dupont	Box 264 Pleasure Point		Catalina Island	CA	90740	US	213-223-0941	213-223-2324	0	10/20/94 12:00:28 AM
+3055	Diver's Grotto	Peter Owen	24601 Universal Lane		Downey	CA	94220	US	213-432-0093	213-432-4821	0	11/26/94 5:38:49 PM
+3151	Fisherman's Eye	Bethan Lewis	PO Box 7542		Grand Cayman			British West Indies	809-555-4680	809-555-4689	0	8/1/94 4:39:24 AM
+3158	Action Diver Supply	Marianne Miles	Blue Spar Box #3		St. Thomas		00820	US Virgin Islands	22-44-500211	22-44-500596	0	8/29/93 2:50:55 AM
+3615	Marina SCUBA Center	Stephen Bryant	PO Box 82438 Zulu 7831		Caracas			Venezuela	58-33-66222	58-33-66049	0	5/11/93 8:24:30 PM
+3984	Blue Glass Happiness	Christine Taylor	6345 W. Shore Lane		Santa Monica	CA	90410	US	213-555-1984	213-555-1995	0	12/2/94 12:00:07 AM
+4312	Divers of Venice	Simone Green	220 Elm Street		Venice	FL	39224	US	813-443-2356	813-443-9842	0	10/25/93 8:22:30 PM
+4531	On-Target SCUBA	Bram Phillips	7-73763 Nanakawa Road		Winnipeg	Manitoba	J2R 5T3	Canada	416-445-0988	416-445-0223	0	1/9/94 4:32:48 AM
+4652	Jamaica Sun, Inc.	Jonathan West	PO Box 643		Runaway Bay	Jamaica		West Indies	809-555-2746	809-555-0929	0	12/16/94 5:30:33 AM
+4684	Underwater Fantasy	Grant Ainsworth	PO Box 842		Ocho Rios	Jamaica		West Indies	809-555-2214	809-555-2234	0	8/25/94 6:50:42 PM
+5132	Princess Island SCUBA	Anne Mariachi	PO Box 32 Waiyevo		Taveuni			Fiji	679-311923	679-311203	0	12/30/89 9:20:17 AM
+5151	Central Underwater Supplies	Maria Eventosh	PO Box 737		Johannesburg		2042	Republic So. Africa	27-11-4432458	27-11-4433259	0	11/13/94 1:40:23 AM
+5163	Safari Under the Sea	Anna Rack	PO Box 7456		Grand Cayman			British West Indies	809-409-4233	809-409-3002	0	9/15/93 6:35:30 PM
+5165	Larry's Diving School	Isabelle Neece	3562 NW Bruce Street		Milwaukie	OR	96277	US	503-403-7777	503-403-0059	0	5/21/94 11:02:57 PM
+5384	Tora Tora Tora	Kevin Rider	PO Box H-4573		Nassau			Bahamas	809-898-0043	809-898-9864	0	2/5/95 5:40:46 AM
+5412	Vashon Ventures	Susan Smith	743 Keyhole Court		Honolulu	HI	92856	US	532-099-0423	532-099-6654	0	1/18/94 1:45:50 AM
+5432	Divers-for-Hire	Joe Hatter	G.O. P Box 91		Suva			Fiji	679-804576	679-059345	0	1/28/94 8:02:48 PM
+5515	Ocean Adventures	Paul Still	PO Box 466 Kihei		Maui	HI	95736	US	776-868-9334	776-868-9553	0	1/8/95 4:35:40 PM
+6215	Underwater SCUBA Company	Michael Grossman	PO Box Sn 91		Somerset		SXBN	Bermuda	809-555-1225	809-555-2445	0	4/7/94 11:32:50 PM
+6312	Aquatic Drama	Gillian Owen	921 Everglades Way		Tampa	FL	30643	US	613-442-7654	613-442-7678	0	3/25/89 4:42:52 AM
+6516	The Diving Company	Brian Miles	PO Box 8535		St. Thomas		00820	US Virgin Islands	22-44-50098	22-44-09878	0	1/15/94 12:40:50 PM
+6582	Norwest'er SCUBA Limited	Angela Jones	PO Box 6834		Paget		PSBZ	Bermuda	778-123-0745	778-123-9705	0	2/3/95 6:47:30 AM
+6812	Waterspout SCUBA Center	Richard Houser	7865 NE Barber Ct.		Portland	OR	99271	US	503-654-2434	503-654-9986	0	10/11/94 10:11:33 AM
+9841	Neptune's Trident Supply	Louise Franks	PO Box 129		Negril	Jamaica		West Indies	778-897-3546	778-897-6643	0	11/1/95 6:32:05 AM

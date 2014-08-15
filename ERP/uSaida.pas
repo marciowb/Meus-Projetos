@@ -191,7 +191,7 @@ var
 implementation
 
 uses UDmConexao, Comandos, MinhasClasses, uDlg_SaidaItem, udlgCondicaoPagamento,
-  uRegras, uLibERP, uConfiguracaoOS;
+  uRegras,  uConfiguracaoOS;
 
 {$R *.dfm}
 procedure TfrmSaida.AbreVenda(IdVenda: String);

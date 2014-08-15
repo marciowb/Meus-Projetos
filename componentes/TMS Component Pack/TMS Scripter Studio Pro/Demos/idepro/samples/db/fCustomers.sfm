@@ -1,0 +1,57 @@
+object Form2: TScriptForm
+  Left = 5
+  Top = 5
+  Caption = 'Customers'
+  ClientHeight = 273
+  ClientWidth = 523
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesigned
+  SaveProps.Strings = (
+    'Visible=False'
+    'Position=poScreenCenter')
+  DesignSize = (
+    523
+    273)
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBNavigator1: TDBNavigator
+    Left = 9
+    Top = 8
+    Width = 240
+    Height = 25
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 40
+    Width = 505
+    Height = 225
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    DataSource = DataSource1
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object DataSource1: TDataSource
+    DataSet = Table1
+    Left = 336
+    Top = 8
+  end
+  object Table1: TTable
+    Active = True
+    DatabaseName = 'DBDEMOS'
+    TableName = 'CUSTOMER'
+    Left = 368
+    Top = 8
+  end
+end

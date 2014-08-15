@@ -1,0 +1,30 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = cxEditorsD12.bpl cxExtEditorsD12.bpl dclcxEditorsD12.bpl \
+  dclcxExtEditorsD12.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+cxEditorsD12.bpl: ..\..\ExpressEditors Library 5\Packages\cxEditorsD12.dpk
+  $(DCC)
+
+cxExtEditorsD12.bpl: ..\..\ExpressEditors Library 5\Packages\cxExtEditorsD12.dpk
+  $(DCC)
+
+dclcxEditorsD12.bpl: ..\..\ExpressEditors Library 5\Packages\dclcxEditorsD12.dpk
+  $(DCC)
+
+dclcxExtEditorsD12.bpl: ..\..\ExpressEditors Library 5\Packages\dclcxExtEditorsD12.dpk
+  $(DCC)
+
+
