@@ -1,0 +1,26 @@
+var
+  lFieldLink: TppMasterFieldLink;
+  PagamentosLnk  : TppMasterFieldLink;
+begin                                                                            
+  {define the master/detail pipeline relationship}
+  DBDetalhes.MasterDataPipeline := DbMaster;
+  CdsPagamentos.MasterDataPipeline := DbMaster;                                       
+  
+  CdsPagamentos.SkipWhennoRecords := False;                                                               
+  DBDetalhes.SkipWhennoRecords := False;           
+  {create a new field link }
+  lFieldLink := TppMasterFieldLink.Create(nil);
+  PagamentosLnk := TppMasterFieldLink.Create(nil);
+  lFieldLink.Parent := DBDetalhes;
+  PagamentosLnk.Parent := CdsPagamentos;
+  
+  {assign the detail field name}
+  lFieldLink.DetailFieldName := 'IDSERVICO';
+  {assign the master field name}
+  lFieldLink.MasterFieldName := 'IDSERVICO';
+  
+  {assign the detail field name}
+  PagamentosLnk.DetailFieldName := 'IDSERVICO';
+  {assign the master field name}
+  PagamentosLnk.MasterFieldName := 'IDSERVICO';
+  

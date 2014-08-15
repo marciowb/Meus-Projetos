@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2014/07/26 13:19:52.043.pas,C:\Users\Raphael\Documents\RAD Studio\Projects\Unit1.pas=D:\Meus Projetos\Kriptografia\uPrinipal.pas</Transaction>
+    <Transaction>2014/07/26 13:19:52.043.dfm,C:\Users\Raphael\Documents\RAD Studio\Projects\Unit1.dfm=D:\Meus Projetos\Kriptografia\uPrinipal.dfm</Transaction>
+    <Transaction>2014/07/26 13:19:59.640.dproj,C:\Users\Raphael\Documents\RAD Studio\Projects\Project1.dproj=D:\Meus Projetos\Kriptografia\Kriptografia.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
