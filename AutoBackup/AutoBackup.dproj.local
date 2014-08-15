@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2010/03/21 20:24:39.284.pas,C:\Users\Raphael\Documents\RAD Studio\Projects\Unit1.pas=C:\Meus Projetos\AutoBackup\uServiceBackup.pas</Transaction>
+    <Transaction>2010/03/21 20:24:39.284.dfm,C:\Users\Raphael\Documents\RAD Studio\Projects\Unit1.dfm=C:\Meus Projetos\AutoBackup\uServiceBackup.dfm</Transaction>
+    <Transaction>2010/03/21 20:24:48.949.dproj,C:\Users\Raphael\Documents\RAD Studio\Projects\Project1.dproj=C:\Meus Projetos\AutoBackup\AutoBackup.dproj</Transaction>
+    <Transaction>2010/03/21 20:33:31.920.pas,C:\Meus Projetos\AutoBackup\Unit1.pas=C:\Meus Projetos\AutoBackup\uLibBackup.pas</Transaction>
+    <Transaction>2010/04/13 20:15:21.628.pas,C:\Meus Projetos\AutoBackup\uServiceBackup.pas=</Transaction>
+    <Transaction>2010/04/13 20:15:21.628.dfm,C:\Meus Projetos\AutoBackup\uServiceBackup.dfm=</Transaction>
+    <Transaction>2010/04/13 20:16:01.416.pas,C:\Meus Projetos\AutoBackup\Unit1.pas=C:\Meus Projetos\AutoBackup\uPrincipal_AutoBackup.pas</Transaction>
+    <Transaction>2010/04/13 20:16:01.416.dfm,C:\Meus Projetos\AutoBackup\Unit1.dfm=C:\Meus Projetos\AutoBackup\uPrincipal_AutoBackup.dfm</Transaction>
+    <Transaction>2010/04/13 20:50:40.672.pas,C:\Meus Projetos\AutoBackup\Unit1.pas=C:\Meus Projetos\AutoBackup\Cad_Horario.pas</Transaction>
+    <Transaction>2010/04/13 20:50:40.672.dfm,C:\Meus Projetos\AutoBackup\Unit1.dfm=C:\Meus Projetos\AutoBackup\Cad_Horario.dfm</Transaction>
+    <Transaction>2010/04/15 22:22:10.386.pas,C:\Meus Projetos\Global\uFormPadrao.pas=</Transaction>
+    <Transaction>2010/04/15 22:22:10.386.dfm,C:\Meus Projetos\Global\uFormPadrao.dfm=</Transaction>
+    <Transaction>2010/04/15 22:22:10.433.pas,C:\Meus Projetos\Global\Dlg_Cadastro.pas=</Transaction>
+    <Transaction>2010/04/15 22:22:10.433.dfm,C:\Meus Projetos\Global\Dlg_Cadastro.dfm=</Transaction>
+    <Transaction>2010/04/15 22:43:39.061.pas,C:\Meus Projetos\AutoBackup\Unit1.pas=C:\Meus Projetos\AutoBackup\Cad_Locais.pas</Transaction>
+    <Transaction>2010/04/15 22:43:39.061.dfm,C:\Meus Projetos\AutoBackup\Unit1.dfm=C:\Meus Projetos\AutoBackup\Cad_Locais.dfm</Transaction>
+    <Transaction>2014/06/14 08:49:58.270.xml,D:\Meus Projetos\AutoBackup\UAC.manifest.xml=</Transaction>
+  </Transactions>
+</BorlandProject>
