@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008/06/13 10:41:57.015.dproj,C:\Documents and Settings\Raphael\Meus documentos\RAD Studio\Projects\Package1.dproj=C:\Documents and Settings\Raphael\Meus documentos\RAD Studio\Projects\AqPesquisaMasckEdit.dproj</Transaction>
+    <Transaction>2008/06/13 10:47:46.484.dproj,C:\Documents and Settings\Raphael\Meus documentos\RAD Studio\Projects\AqPesquisaMasckEdit.dproj=C:\Meus Projetos\Componentes\PesquisaMaskEdit\AqPesquisaMasckEdit.dproj</Transaction>
+    <Transaction>2008/06/13 11:54:12.578.pas,C:\Meus Projetos\Kimera\Geral\uSQL.pas=</Transaction>
+    <Transaction>2008/06/13 11:54:12.593.pas,C:\Meus Projetos\Kimera\Geral\MinhasClasses.pas=</Transaction>
+    <Transaction>2008/06/13 11:54:12.609.pas,C:\Meus Projetos\Kimera\Geral\uDmConexao.pas=</Transaction>
+    <Transaction>2008/06/13 11:54:12.609.dfm,C:\Meus Projetos\Kimera\Geral\uDmConexao.dfm=</Transaction>
+    <Transaction>2008/07/29 21:40:33.078.dproj,C:\Meus Projetos\Pan\Componentes\PesquisaMaskEdit\AqPesquisaMasckEdit.dproj=C:\Meus Projetos\Pan\Componentes\PesquisaMaskEdit_Pan\PesquisaMasckEdit_Pan.dproj</Transaction>
+    <Transaction>2008/07/29 21:40:46.375.pas,C:\Meus Projetos\Pan\Componentes\PesquisaMaskEdit\PesquisaMaskEdit.pas=</Transaction>
+    <Transaction>2008/07/29 21:40:46.421.pas,C:\Meus Projetos\Pan\FONTES\uPesquisa.pas=</Transaction>
+    <Transaction>2008/07/29 21:40:46.421.dfm,C:\Meus Projetos\Pan\FONTES\uPesquisa.dfm=</Transaction>
+    <Transaction>2008/07/29 21:40:46.468.pas,C:\Meus Projetos\Pan\FONTES\Classes_Pan.pas=</Transaction>
+    <Transaction>2008/07/29 21:40:46.500.pas,C:\Meus Projetos\Pan\FONTES\uDMConexao_Pan.pas=</Transaction>
+    <Transaction>2008/07/29 21:40:46.500.dfm,C:\Meus Projetos\Pan\FONTES\uDMConexao_Pan.dfm=</Transaction>
+    <Transaction>2008/07/29 21:43:01.828.pas,C:\Meus Projetos\Pan\FONTES\uPesquisa.pas=</Transaction>
+    <Transaction>2008/07/29 21:43:01.828.dfm,C:\Meus Projetos\Pan\FONTES\uPesquisa.dfm=</Transaction>
+    <Transaction>2008/07/29 21:43:01.859.pas,C:\Meus Projetos\Pan\FONTES\Classes_Pan.pas=</Transaction>
+    <Transaction>2008/07/29 21:43:01.875.pas,C:\Meus Projetos\Pan\FONTES\Comandos.pas=</Transaction>
+    <Transaction>2008/07/29 21:43:01.906.pas,C:\Meus Projetos\Pan\FONTES\uDMConexao_Pan.pas=</Transaction>
+    <Transaction>2008/07/29 21:43:01.906.dfm,C:\Meus Projetos\Pan\FONTES\uDMConexao_Pan.dfm=</Transaction>
+    <Transaction>2008/07/29 21:43:01.921.pas,C:\Meus Projetos\Pan\FONTES\uFormPadrao_Pan.pas=</Transaction>
+    <Transaction>2008/07/29 21:43:01.921.dfm,C:\Meus Projetos\Pan\FONTES\uFormPadrao_Pan.dfm=</Transaction>
+    <Transaction>2008/07/29 21:48:33.093.pas,C:\Meus Projetos\Pan\FONTES\uPesquisa.pas=</Transaction>
+    <Transaction>2008/07/29 21:48:33.093.dfm,C:\Meus Projetos\Pan\FONTES\uPesquisa.dfm=</Transaction>
+    <Transaction>2008/07/29 21:48:33.125.pas,C:\Meus Projetos\Pan\FONTES\Classes_Pan.pas=</Transaction>
+    <Transaction>2008/07/29 21:48:33.156.pas,C:\Meus Projetos\Pan\FONTES\Comandos.pas=</Transaction>
+    <Transaction>2008/07/29 21:48:33.187.pas,C:\Meus Projetos\Pan\FONTES\uDMConexao_Pan.pas=</Transaction>
+    <Transaction>2008/07/29 21:48:33.187.dfm,C:\Meus Projetos\Pan\FONTES\uDMConexao_Pan.dfm=</Transaction>
+    <Transaction>2008/07/29 21:48:33.234.pas,C:\Meus Projetos\Pan\FONTES\uFormPadrao_Pan.pas=</Transaction>
+    <Transaction>2008/07/29 21:48:33.234.dfm,C:\Meus Projetos\Pan\FONTES\uFormPadrao_Pan.dfm=</Transaction>
+  </Transactions>
+</BorlandProject>

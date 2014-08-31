@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008/08/07 22:01:45.015.pas,C:\Meus Projetos\Pan\FONTES\Unit1.pas=C:\Meus Projetos\Pan\FONTES\Lst_Cadastro.pas</Transaction>
+    <Transaction>2008/08/07 22:01:45.015.dfm,C:\Meus Projetos\Pan\FONTES\Unit1.dfm=C:\Meus Projetos\Pan\FONTES\Lst_Cadastro.dfm</Transaction>
+    <Transaction>2008/08/10 20:46:13.828.pas,C:\Meus Projetos\Pan\FONTES\Unit1.pas=C:\Meus Projetos\Pan\FONTES\Lst_Textos.pas</Transaction>
+    <Transaction>2008/08/10 20:46:13.828.dfm,C:\Meus Projetos\Pan\FONTES\Unit1.dfm=C:\Meus Projetos\Pan\FONTES\Lst_Textos.dfm</Transaction>
+    <Transaction>2008/08/11 21:00:03.015.pas,C:\Meus Projetos\Pan\FONTES\Unit1.pas=C:\Meus Projetos\Pan\FONTES\Dlg_Regiao.pas</Transaction>
+    <Transaction>2008/08/11 21:00:03.015.dfm,C:\Meus Projetos\Pan\FONTES\Unit1.dfm=C:\Meus Projetos\Pan\FONTES\Dlg_Regiao.dfm</Transaction>
+    <Transaction>2008/08/18 20:33:06.250.pas,C:\Meus Projetos\Pan\FONTES\Unit1.pas=C:\Meus Projetos\Pan\FONTES\uSplash.pas</Transaction>
+    <Transaction>2008/08/18 20:33:06.250.dfm,C:\Meus Projetos\Pan\FONTES\Unit1.dfm=C:\Meus Projetos\Pan\FONTES\uSplash.dfm</Transaction>
+    <Transaction>2008/08/28 21:15:24.578.pas,C:\Meus Projetos\Pan\FONTES\Unit1.pas=C:\Meus Projetos\Pan\FONTES\SQLConsole.pas</Transaction>
+    <Transaction>2008/08/28 21:15:24.593.dfm,C:\Meus Projetos\Pan\FONTES\Unit1.dfm=C:\Meus Projetos\Pan\FONTES\SQLConsole.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

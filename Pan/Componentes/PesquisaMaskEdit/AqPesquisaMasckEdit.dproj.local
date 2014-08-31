@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008/06/13 10:41:57.015.dproj,C:\Documents and Settings\Raphael\Meus documentos\RAD Studio\Projects\Package1.dproj=C:\Documents and Settings\Raphael\Meus documentos\RAD Studio\Projects\AqPesquisaMasckEdit.dproj</Transaction>
+    <Transaction>2008/06/13 10:47:46.484.dproj,C:\Documents and Settings\Raphael\Meus documentos\RAD Studio\Projects\AqPesquisaMasckEdit.dproj=C:\Meus Projetos\Componentes\PesquisaMaskEdit\AqPesquisaMasckEdit.dproj</Transaction>
+    <Transaction>2008/06/13 11:54:12.578.pas,C:\Meus Projetos\Kimera\Geral\uSQL.pas=</Transaction>
+    <Transaction>2008/06/13 11:54:12.593.pas,C:\Meus Projetos\Kimera\Geral\MinhasClasses.pas=</Transaction>
+    <Transaction>2008/06/13 11:54:12.609.pas,C:\Meus Projetos\Kimera\Geral\uDmConexao.pas=</Transaction>
+    <Transaction>2008/06/13 11:54:12.609.dfm,C:\Meus Projetos\Kimera\Geral\uDmConexao.dfm=</Transaction>
+  </Transactions>
+</BorlandProject>

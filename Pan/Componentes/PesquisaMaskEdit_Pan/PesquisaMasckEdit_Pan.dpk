@@ -1,0 +1,61 @@
+package PesquisaMasckEdit_Pan;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD ON}
+
+requires
+  vclx,
+  vcl,
+  rtl,
+  vclimg,
+  dbrtl,
+  dsnap,
+  vcldb,
+  Jcl,
+  JvCore,
+  JvSystem,
+  JvCmp,
+  JvCrypt,
+  JvWizards,
+  dxCoreD14,
+  cxLibraryD14,
+  dxThemeD14,
+  dxGDIPlusD14,
+  cxEditorsD14,
+  cxDataD14,
+  cxExtEditorsD14,
+  cxPageControlD14,
+  cxGridD14,
+  cxSchedulerD14,
+  ZCore,
+  ZPlain,
+  ZParseSql,
+  ZDbc,
+  ZComponent,
+  WinSkinD2010;
+
+contains
+  PesquisaMaskEdit_Pan in 'PesquisaMaskEdit_Pan.pas';
+
+end.

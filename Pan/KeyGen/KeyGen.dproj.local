@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008/08/03 20:03:19.796.pas,C:\Documents and Settings\Raphael\Meus documentos\RAD Studio\Projects\Unit1.pas=C:\Meus Projetos\Pan\KeyGen\uPrincipal.pas</Transaction>
+    <Transaction>2008/08/03 20:03:19.796.dfm,C:\Documents and Settings\Raphael\Meus documentos\RAD Studio\Projects\Unit1.dfm=C:\Meus Projetos\Pan\KeyGen\uPrincipal.dfm</Transaction>
+    <Transaction>2008/08/03 20:03:23.343.dproj,C:\Documents and Settings\Raphael\Meus documentos\RAD Studio\Projects\Project1.dproj=C:\Meus Projetos\Pan\KeyGen\KeyGen.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
