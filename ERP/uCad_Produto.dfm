@@ -13,10 +13,10 @@ inherited frmCad_Produto: TfrmCad_Produto
   end
   inherited pnlTree: TPanel
     Height = 369
-    ExplicitHeight = 363
+    ExplicitHeight = 369
     inherited TreeItens: TcxTreeView
       Height = 363
-      ExplicitHeight = 357
+      ExplicitHeight = 363
     end
   end
   inherited Panel3: TPanel
@@ -29,6 +29,7 @@ inherited frmCad_Produto: TfrmCad_Produto
       Width = 518
       Height = 321
       TabOrder = 1
+      ExplicitTop = 48
       ExplicitWidth = 518
       ExplicitHeight = 363
       ClientRectBottom = 320
@@ -1418,6 +1419,9 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet1: TcxTabSheet
         Caption = 'Adicionais'
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
         ExplicitHeight = 341
         object GroupBox1: TGroupBox
           Left = 0
@@ -1464,7 +1468,6 @@ inherited frmCad_Produto: TfrmCad_Produto
             Properties.ScrollBars = ssBoth
             Properties.WantTabs = True
             TabOrder = 0
-            ExplicitHeight = 179
             Height = 137
             Width = 310
           end
@@ -1489,7 +1492,6 @@ inherited frmCad_Produto: TfrmCad_Produto
             Properties.ImmediatePost = True
             Properties.Stretch = True
             TabOrder = 0
-            ExplicitHeight = 179
             Height = 137
             Width = 198
           end
@@ -1498,6 +1500,9 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet4: TcxTabSheet
         Caption = 'Outros'
         ImageIndex = 2
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
         ExplicitHeight = 341
         object GroupBox5: TGroupBox
           Left = 0
@@ -2050,11 +2055,17 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet8: TcxTabSheet
         Caption = 'Estoque'
         ImageIndex = 3
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
         ExplicitHeight = 341
       end
       object cxTabSheet7: TcxTabSheet
         Caption = 'Seriais'
         ImageIndex = 3
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
         ExplicitHeight = 341
         object cxGrid2: TcxGrid
           Left = 0
@@ -2101,6 +2112,9 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet2: TcxTabSheet
         Caption = 'Processos/procedimentos'
         ImageIndex = 5
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
         ExplicitHeight = 341
         object grpProcesso: TGroupBox
           Left = 0

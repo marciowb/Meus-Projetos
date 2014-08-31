@@ -2,6 +2,7 @@ inherited frmCad_Contrato: TfrmCad_Contrato
   Caption = 'Cadastro de contratos'
   ClientHeight = 462
   ClientWidth = 834
+  ExplicitTop = -67
   ExplicitWidth = 850
   ExplicitHeight = 501
   PixelsPerInch = 96
@@ -26,6 +27,7 @@ inherited frmCad_Contrato: TfrmCad_Contrato
     inherited PageControl: TcxPageControl
       Width = 649
       Height = 432
+      ActivePage = cxTabSheet1
       ExplicitWidth = 649
       ExplicitHeight = 432
       ClientRectBottom = 431
@@ -1225,11 +1227,8 @@ inherited frmCad_Contrato: TfrmCad_Contrato
             ClientRectRight = 647
             ClientRectTop = 23
             object tsEquipamentos: TcxTabSheet
-              Caption = 'Produtos do cliente [F12]'
+              Caption = 'Servi'#231'os prestados [F12]'
               ImageIndex = 2
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object Panel5: TPanel
                 Left = 522
                 Top = 0
@@ -1280,29 +1279,42 @@ inherited frmCad_Contrato: TfrmCad_Contrato
                 TabOrder = 1
                 object cxGridDBTableView1: TcxGridDBTableView
                   NavigatorButtons.ConfirmDelete = False
-                  DataController.DataSource = DataEquipamento
+                  DataController.DataSource = DataServicos
                   DataController.Summary.DefaultGroupSummaryItems = <>
                   DataController.Summary.FooterSummaryItems = <
                     item
                       Format = '##,##00.00'
                       Kind = skSum
+                      Column = cxGridDBTableView1Column3
                     end>
                   DataController.Summary.SummaryGroups = <>
+                  OptionsView.Footer = True
                   OptionsView.GroupByBox = False
                   object cxGridDBTableView1Column1: TcxGridDBColumn
-                    Caption = 'Descri'#231#227'o'
-                    DataBinding.FieldName = 'DESCRICAOEQUIPAMENTO'
-                    Width = 250
+                    Caption = 'C'#243'digo'
+                    DataBinding.FieldName = 'CODIGO'
+                    Width = 60
                   end
                   object cxGridDBTableView1Column2: TcxGridDBColumn
-                    Caption = 'Identificador'
+                    Caption = 'Servi'#231'o'
+                    DataBinding.FieldName = 'NOMEPRODUTO'
+                    Width = 120
+                  end
+                  object cxGridDBTableView1Column4: TcxGridDBColumn
+                    Caption = 'Identificador equipamento'
                     DataBinding.FieldName = 'IDENTIFICADOR'
-                    Width = 150
+                    Width = 140
+                  end
+                  object cxGridDBTableView1Column5: TcxGridDBColumn
+                    Caption = 'Descri'#231#227'o equipamento'
+                    DataBinding.FieldName = 'DESCRICAOEQUIPAMENTO'
+                    Width = 120
                   end
                   object cxGridDBTableView1Column3: TcxGridDBColumn
-                    Caption = 'Periodicidade'
-                    DataBinding.FieldName = 'DESCRICAOPERIODICIDADE'
-                    Width = 80
+                    Caption = 'Total'
+                    DataBinding.FieldName = 'VALORTOTAL'
+                    HeaderAlignmentHorz = taRightJustify
+                    Width = 70
                   end
                 end
                 object cxGridLevel1: TcxGridLevel
@@ -1313,9 +1325,6 @@ inherited frmCad_Contrato: TfrmCad_Contrato
             object tsObs: TcxTabSheet
               Caption = 'Observa'#231#245'es [Ctrl+Q]'
               ImageIndex = 2
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object cxDBMemo1: TcxDBMemo
                 Left = 0
                 Top = 0
@@ -1327,6 +1336,95 @@ inherited frmCad_Contrato: TfrmCad_Contrato
                 TabOrder = 0
                 Height = 194
                 Width = 647
+              end
+            end
+          end
+        end
+      end
+      object cxTabSheet1: TcxTabSheet
+        Caption = 'Compet'#234'ncias'
+        ImageIndex = 1
+        object GroupBox1: TGroupBox
+          Left = 0
+          Top = 0
+          Width = 647
+          Height = 410
+          Align = alClient
+          Caption = 'Compet'#234'ncias'
+          TabOrder = 0
+          ExplicitLeft = 205
+          ExplicitTop = 80
+          ExplicitWidth = 185
+          ExplicitHeight = 105
+          object pnlCompetencias: TPanel
+            Left = 2
+            Top = 15
+            Width = 643
+            Height = 393
+            Align = alClient
+            TabOrder = 0
+            ExplicitHeight = 194
+            object cxGrid1: TcxGrid
+              Left = 1
+              Top = 1
+              Width = 527
+              Height = 391
+              Align = alClient
+              TabOrder = 0
+              ExplicitLeft = 96
+              ExplicitTop = 16
+              ExplicitWidth = 250
+              ExplicitHeight = 200
+              object cxGrid1DBTableView1: TcxGridDBTableView
+                NavigatorButtons.ConfirmDelete = False
+                DataController.DataSource = DataCompetencia
+                DataController.Summary.DefaultGroupSummaryItems = <>
+                DataController.Summary.FooterSummaryItems = <>
+                DataController.Summary.SummaryGroups = <>
+                OptionsView.GroupByBox = False
+                object cxGrid1DBTableView1Column1: TcxGridDBColumn
+                  Caption = 'Compet'#234'ncia'
+                  DataBinding.FieldName = 'COMPETENCIA'
+                  Width = 80
+                end
+                object cxGrid1DBTableView1Column2: TcxGridDBColumn
+                  Caption = 'Valor'
+                  DataBinding.FieldName = 'VALOR'
+                  Width = 70
+                end
+              end
+              object cxGrid1Level1: TcxGridLevel
+                GridView = cxGrid1DBTableView1
+              end
+            end
+            object Panel4: TPanel
+              Left = 528
+              Top = 1
+              Width = 114
+              Height = 391
+              Align = alRight
+              TabOrder = 1
+              object BitBtn1: TBitBtn
+                Left = 14
+                Top = 32
+                Width = 91
+                Height = 25
+                Caption = 'Agendamentos'
+                DoubleBuffered = True
+                ParentDoubleBuffered = False
+                TabOrder = 0
+                OnClick = BitBtn1Click
+              end
+              object BitBtn2: TBitBtn
+                Left = 14
+                Top = 63
+                Width = 91
+                Height = 25
+                Caption = 'O.S.'
+                DoubleBuffered = True
+                ParentDoubleBuffered = False
+                TabOrder = 1
+                OnClick = BitBtn2Click
               end
             end
           end
@@ -1370,6 +1468,7 @@ inherited frmCad_Contrato: TfrmCad_Contrato
     Filter = 'flagedicao <> '#39'D'#39
     Filtered = True
     Params = <>
+    AfterOpen = CdsServicosAfterOpen
     BeforePost = CdsServicosBeforePost
     OnNewRecord = CdsServicosNewRecord
     Left = 32
@@ -1390,5 +1489,16 @@ inherited frmCad_Contrato: TfrmCad_Contrato
     DataSet = CdsEquipamentos
     Left = 128
     Top = 272
+  end
+  object CdsCompetencia: TpFIBClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 104
+    Top = 336
+  end
+  object DataCompetencia: TDataSource
+    DataSet = CdsCompetencia
+    Left = 32
+    Top = 336
   end
 end

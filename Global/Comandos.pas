@@ -499,13 +499,13 @@ Begin
            Begin
              StrSQL :=
                'DELETE FROM '+NomeTabela+
-               ' WHERE '+CampoChave + ' = '+ Cds.FieldByName(CampoChave).AsString;
+               ' WHERE '+CampoChave + ' = '+ IfThen(InfoSistema.UsaGuidChave,QuotedStr(Cds.FieldByName(CampoChave).AsString),Cds.FieldByName(CampoChave).AsString);
            End;
         taModifica:
           Begin
             StrSQL :=
               'UPDATE '+NomeTabela+' SET '+ StrParam+
-              ' WHERE '+CampoChave +' = ' + Cds.FieldByName(CampoChave).AsString;
+              ' WHERE '+CampoChave +' = ' + IfThen(InfoSistema.UsaGuidChave,QuotedStr(Cds.FieldByName(CampoChave).AsString),Cds.FieldByName(CampoChave).AsString);
           End;
         taInsertOrUpdate :
           Begin
@@ -645,9 +645,10 @@ Begin
     if InfoSistema.UsaGuidChave then
     begin
       StrSQL :=
-        'SELECT VALOR '+
-        '  FROM GERACHAVE('+NomeSEQ+')';
+        'SELECT RESULT '+
+        '  FROM GERACHAVE('+QuotedStr(NomeSEQ)+')';
       Result :=  GetValorCds(StrSQL);
+      Exit;
     end;
   end else
     Inc := 0;
@@ -2078,7 +2079,7 @@ var
   StrSQL: String;
 begin
   StrSQL :=
-    'SELECT SELECT CURRENT_CONNECTION '+
+    'SELECT CURRENT_CONNECTION '+
     '  FROM RDB$DATABASE ';
   Result := StrToInt(GetValorCds(StrSQL));
 end;

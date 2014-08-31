@@ -2,7 +2,6 @@ inherited frmCad_Cliente: TfrmCad_Cliente
   Caption = 'Cadastro de clientes'
   ClientHeight = 498
   ClientWidth = 773
-  ExplicitTop = -103
   ExplicitWidth = 789
   ExplicitHeight = 537
   PixelsPerInch = 96
@@ -558,6 +557,10 @@ inherited frmCad_Cliente: TfrmCad_Cliente
       object cxTabSheet1: TcxTabSheet
         Caption = 'Dados Adicionais'
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Panel2: TPanel
           Left = 0
           Top = 0
@@ -753,6 +756,10 @@ inherited frmCad_Cliente: TfrmCad_Cliente
       object cxTabSheet2: TcxTabSheet
         Caption = ' Equipamentos '
         ImageIndex = 2
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox3: TGroupBox
           Left = 0
           Top = 0

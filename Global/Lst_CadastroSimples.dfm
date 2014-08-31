@@ -4,7 +4,7 @@ inherited frmLstCadastroSimples: TfrmLstCadastroSimples
   ClientHeight = 373
   ClientWidth = 642
   ExplicitWidth = 658
-  ExplicitHeight = 411
+  ExplicitHeight = 412
   PixelsPerInch = 96
   TextHeight = 13
   object Status: TStatusBar
@@ -59,6 +59,7 @@ inherited frmLstCadastroSimples: TfrmLstCadastroSimples
         CorPrincipal = clWhite
         CorSecundaria = 11592447
         GravaEsteCampo = True
+        AsInteger = 0
       end
       object Panel4: TPanel
         Left = 0

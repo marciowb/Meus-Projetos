@@ -1021,6 +1021,10 @@ inherited frmCad_CadastroPai: TfrmCad_CadastroPai
       object TsPrincipal: TcxTabSheet
         Caption = 'Geral'
         ImageIndex = 0
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object pnlGeral: TPanel
           Left = 0
           Top = 0

@@ -1551,6 +1551,13 @@ begin
         Campos.Add('Razao social', 'RAZAOSOCIAL', tcString,
           tsCampoPesquisaGrid, 200);
       End;
+    tpERPPeridicidade:
+      Begin
+        Titulo := 'Periodicidade';
+        Campos.Add('Nº de dias', 'NUMDIAS', tcString, tsCampoPesquisaGrid);
+        Campos.Add('Descrição', 'DESCRICAOPERIODICIDADE', tcString,
+          tsCampoPesquisaGrid, 200);
+      End;
     tpERPTipoContrato:
       Begin
         Titulo := 'Tipo de contrato';
@@ -1594,6 +1601,12 @@ begin
         Campos.Add('Razao social', 'RAZAOSOCIAL', tcString,tsCampoPesquisaGrid, 200);
         Campos.Add('Nome fantasia', 'NOMEFANTASIA', tcString,tsCampoPesquisaGrid, 200);
         Campos.Add('CNPJ', 'CNPJ', tcCNPJ,tsCampoPesquisaGrid,100);
+      End;
+     tpERPCompetenciaContrato:
+      Begin
+        Titulo := 'Contrato/copetências';
+        Campos.Add('Nº contrato', 'NUMEROCONTRATO', tcString, tsCampoPesquisaGrid);
+        Campos.Add('Compência', 'COMPETENCIA', tcString,tsMostraGrid, 200);
       End;
   {$EndRegion}
 

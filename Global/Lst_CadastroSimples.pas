@@ -455,7 +455,12 @@ begin
   inherited;
   TipoAlteracao := taInsere;
   if UsaChave then
-    CdsCadastro.FieldByName(CampoChave).AsString := GetCodigo(TipoPesquisa, ttcCodigo); //Não incrementar
+  begin
+    if InfoSistema.UsaGuidChave then
+      CdsCadastro.FieldByName(CampoChave).AsString := GetCodigo(TipoPesquisa, ttcChave)
+    else
+      CdsCadastro.FieldByName(CampoChave).AsString := GetCodigo(TipoPesquisa, ttcCodigo); //Não incrementar
+  end;
   if UsaCampoCodigo then
      CdsCadastro.FieldByName(CampoCodigo).AsString := GetCodigo(TipoPesquisa, ttcCodigo,pUsaMaxParaCodigo);
 end;

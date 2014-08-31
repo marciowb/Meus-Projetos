@@ -49,14 +49,15 @@ var
 
 implementation
 
-uses Comandos, MinhasClasses, uForms;
+uses Comandos, MinhasClasses, uForms, uLibERP;
 
 {$R *.dfm}
 
 procedure TfrmCad_Agenda.btnOkClick(Sender: TObject);
 var
   CdsClone: TpFIBClientDataSet;
-  I,Id: Integer;
+  I: Integer;
+  Id: TipoCampoChave;
   Procedure PreencheDataSet;
   var
     x: Integer;

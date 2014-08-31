@@ -56,6 +56,7 @@ inherited frmLst_OS: TfrmLst_OS
     ClientRectBottom = 423
     ClientRectRight = 873
     inherited tsListagem: TcxTabSheet
+      ExplicitTop = 20
       ExplicitWidth = 873
       ExplicitHeight = 403
       inherited cxGrid1: TcxGrid

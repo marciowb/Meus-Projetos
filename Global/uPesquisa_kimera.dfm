@@ -185,7 +185,7 @@ inherited frmPesquisa: TfrmPesquisa
       object lblTIpoPesquisa: TJvLabel
         Left = 0
         Top = 0
-        Width = 157
+        Width = 788
         Height = 28
         Align = alTop
         Alignment = taCenter
@@ -204,6 +204,7 @@ inherited frmPesquisa: TfrmPesquisa
         HotTrackFont.Height = -24
         HotTrackFont.Name = 'Times New Roman'
         HotTrackFont.Style = []
+        ExplicitWidth = 157
       end
     end
   end
@@ -400,10 +401,6 @@ inherited frmPesquisa: TfrmPesquisa
     object tsGrid: TcxTabSheet
       Caption = 'tsGrid'
       ImageIndex = 0
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel3: TPanel
         Left = 0
         Top = 0
@@ -502,10 +499,6 @@ inherited frmPesquisa: TfrmPesquisa
     object TsTree: TcxTabSheet
       Caption = 'TsTree'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object TvTree: TcxDBTreeList
         Left = 0
         Top = 0

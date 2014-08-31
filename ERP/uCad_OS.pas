@@ -56,6 +56,7 @@ type
     actExcluirEquipamento: TAction;
     DataSerialOS: TDataSource;
     CdsSerialOS: TpFIBClientDataSet;
+    EdtCompetenciaContrato: TEditPesquisa;
     procedure actIncluirEquipamentoExecute(Sender: TObject);
     procedure actAlterarEquipamentoExecute(Sender: TObject);
     procedure actExcluirEquipamentoExecute(Sender: TObject);
@@ -80,21 +81,24 @@ type
     procedure CdsProdutoServicoEquipamentoAfterEdit(DataSet: TDataSet);
     procedure CdsCadastroNewRecord(DataSet: TDataSet);
     procedure CdsCadastroBeforePost(DataSet: TDataSet);
+    procedure edtClienteRegAchado(const ValoresCamposEstra: array of Variant);
+    procedure EdtCompetenciaContratoRegAchado(
+      const ValoresCamposEstra: array of Variant);
   private
     FIdProposta: TipoCampoChave;
     FIdContrato: TipoCampoChave;
-    FIdAgenda: TipoCampoChave;
+
     { Private declarations }
     Procedure AddSerial;
     procedure SetIdProposta(const Value: TipoCampoChave);
     procedure SetIdContrato(const Value: TipoCampoChave);
     procedure ImportaContrato;
-    procedure SetIdAgenda(const Value: TipoCampoChave);
+
   public
     { Public declarations }
     property IdProposta: TipoCampoChave read FIdProposta write SetIdProposta;
     property IdContrato: TipoCampoChave read FIdContrato write SetIdContrato;
-    property IdAgenda: TipoCampoChave read FIdAgenda write SetIdAgenda;
+
   end;
 
 var
@@ -113,7 +117,7 @@ var
   NaoIniciou: Boolean;
 begin
   inherited;
-  if NovoReg then
+  if  (NovoReg) and (IdContrato = SemID) then
   begin
     Try
       frmDlg_EquipamentoOS := TfrmDlg_EquipamentoOS.Create(nil);
@@ -214,7 +218,7 @@ var
   NaoIniciou: Boolean;
 begin
   inherited;
-  if NovoReg then
+  if (NovoReg) and (IdContrato = SemID)  then
   begin
     Try
       frmDlg_EquipamentoOS := TfrmDlg_EquipamentoOS.Create(nil);
@@ -338,24 +342,24 @@ begin
   inherited;
   Try
     Self.CdsEquipamento.AfterScroll := nil;
-    SetCds(Self.CdsEquipamento,tpERPEquipamentoOS,' IDOS = '+ValorChave);
+    SetCds(Self.CdsEquipamento,tpERPEquipamentoOS,' IDOS = '+TipoCampoChaveToStr(ValorChave));
 
     StrSQL:=
        '  EXISTS(SELECT 1  '+
        '           FROM EQUIPAMENTOSOS E  '+
-       '          WHERE E.IDOS =   '+ValorChave+
+       '          WHERE E.IDOS =   '+TipoCampoChaveToStr(ValorChave)+
        '            AND E.IDEQUIPAMENTOSOS = S.IDEQUIPAMENTOSOS) ';
 
     SetCds(Self.CdsServicoEquipamento,tpERPServicoEquipamentoOS,StrSQL);
 
-    SetCds(Self.CdsSerialOS,tpERPSerialProdutoOS,'os.idos = '+ValorChave);
+    SetCds(Self.CdsSerialOS,tpERPSerialProdutoOS,'os.idos = '+TipoCampoChaveToStr(ValorChave));
     StrSQL:=
        ' EXISTS(SELECT 1   '+
        '         FROM SERVICOOS S  '+
        '        WHERE S.IDSERVICOOS =PS.IDSERVICOOS  '+
        '          AND EXISTS(SELECT 1  '+
        '                       FROM EQUIPAMENTOSOS E  '+
-       '                      WHERE E.IDOS =   '+ValorChave+
+       '                      WHERE E.IDOS =   '+TipoCampoChaveToStr(ValorChave)+
        '                        AND E.IDEQUIPAMENTOSOS = S.IDEQUIPAMENTOSOS) '+
        '                         ) ';
     SetCds(Self.CdsProdutoServicoEquipamento,tpERPProdutoServicoOS,StrSQL);
@@ -377,8 +381,7 @@ begin
   inherited;
   if (not NovoReg) and (CdsCadastro.FieldByName('IDSTATUSOS').AsString = COnfiguracaoOS.GetConfiguracao(tpcERPStatusOSAberta)) then
    CdsCadastro.FieldByName('IDSTATUSOS').AsString := COnfiguracaoOS.GetConfiguracao(tpcERPStatusOSExecucao);
-  if IdAgenda <> SemID then
-    CdsCadastro.FieldByName('IDAGENDA').Value := IdAgenda;
+
 end;
 
 procedure TfrmCad_OS.CdsCadastroNewRecord(DataSet: TDataSet);
@@ -398,7 +401,7 @@ begin
   else
     IdEquipamento := SemID;
 
-  CdsServicoEquipamento.Filter := '(FLAGEDICAO <>''D'') and IDEQUIPAMENTOSOS = '+TipoCampoChave(IdEquipamento);
+  CdsServicoEquipamento.Filter := '(FLAGEDICAO <>''D'') and IDEQUIPAMENTOSOS = '+TipoCampoChaveToStr(IdEquipamento);
   CdsServicoEquipamento.Filtered := True;
 
 end;
@@ -562,12 +565,32 @@ begin
   CdsServicoEquipamento.FieldByName('HORAINICIO').AsString := GetHoraServidor;
 end;
 
+procedure TfrmCad_OS.edtClienteRegAchado(
+  const ValoresCamposEstra: array of Variant);
+begin
+  inherited;
+  EdtCompetenciaContrato.SQLComp := '  exists (select 1 '+
+                                    '               from contrato c '+
+                                    '              where c.idcontrato =contratocompetencia.idcontrato '+
+                                    '                and c.idcliente = '+TipoCampoChaveToStr(edtCliente.ValorChaveString)+')';
+end;
+
+procedure TfrmCad_OS.EdtCompetenciaContratoRegAchado(
+  const ValoresCamposEstra: array of Variant);
+begin
+  inherited;
+  EdtCompetenciaContrato.Display.Text :=
+      GetValorCds(tpERPCompetenciaContrato,
+                  'idcontratocompetencia = '+TipoCampoChaveToStr(EdtCompetenciaContrato.ValorChaveString),
+                  'COMPETENCIA');
+end;
+
 procedure TfrmCad_OS.FormCreate(Sender: TObject);
 begin
   inherited;
   TipoPesquisa := tpERPOS;
   IdContrato:=SemID;
-  IdAgenda :=SemID;
+  IdProposta := SemID;
 end;
 
 procedure TfrmCad_OS.FormShow(Sender: TObject);
@@ -577,6 +600,8 @@ begin
   ConfiguraEditPesquisa(edtTipoOS, CdsCadastro, tpERPTipoOS,True);
   ConfiguraEditPesquisa(edtStatusOS, CdsCadastro, tpERPStatusOS,True);
   ConfiguraEditPesquisa(edtCliente, CdsCadastro, tpERPCliente,True);
+  EdtCompetenciaContrato.Join:= ' INNER JOIN CONTRATO C ON (C.IDCONTRATO = CONTRATOCOMPETENCIA.IDCONTRATO) ';
+  ConfiguraEditPesquisa(EdtCompetenciaContrato, CdsCadastro, tpERPCompetenciaContrato);
 
   if FIdProposta <> SemID then
   begin
@@ -590,7 +615,10 @@ begin
   end;
 
   if IdContrato <> SemID then
-    ImportaContrato;
+  begin
+   if TRegrasOS.ImportaContrato(IdContrato,CdsCadastro,CdsEquipamento,CdsServicoEquipamento) Then
+     ModalResult := mrOK;
+  end;
 
 end;
 
@@ -604,8 +632,8 @@ begin
     CdsServicosContrato := TpFIBClientDataSet.Create(nil);
     CdsEquipamentoContrato := TpFIBClientDataSet.Create(nil);
     SetCds(CdsCOntrato,tpERPContrato,'idcontrato= '+IdContrato);
-    SetCds(CdsEquipamentoContrato,tpERPClienteEquipamentoContrato,'idcontrato= '+IdContrato);
-
+//    SetCds(CdsEquipamentoContrato,tpERPClienteEquipamentoContrato,'idcontrato= '+IdContrato);
+                                  { TODO : rever }
 //    CdsCadastro.Append;
     CdsCadastro.FieldByName('idcliente').Value := CdsCOntrato.FieldByName('idcliente').Value;
     CdsCadastro.FieldByName('idempresa').Value := CdsCOntrato.FieldByName('idempresa').Value;
@@ -657,10 +685,6 @@ begin
 
 end;
 
-procedure TfrmCad_OS.SetIdAgenda(const Value: TipoCampoChave);
-begin
-  FIdAgenda := Value;
-end;
 
 procedure TfrmCad_OS.SetIdContrato(const Value: TipoCampoChave);
 begin

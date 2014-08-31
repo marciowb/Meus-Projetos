@@ -79,7 +79,7 @@ begin
          Versao20 := False;
          Select :=
               'SELECT A.IDAGENDA, A.DATACOMPROMISSO, A.HORA, A.ASSUNTO,A.DATACRIACAO,A.FLAGPARTICULAR,A.IDFUNCIONARIO,'+
-              '       A.TEXTO, A.FLAGBAIXADO,C.NOMECLIENTE,C.IDCLIENTE , A.NUMREPETICAO,A.IDAGENDAREF,A.idcontrato,'+
+              '       A.TEXTO, A.FLAGBAIXADO,C.NOMECLIENTE,C.IDCLIENTE , A.NUMREPETICAO,A.IDAGENDAREF,A.IDCONTRATOCOMPETENCIA,'+
               '       ''0'' TYPE,''3'' OPTIONS,'+
               '       CAST(A.DATACOMPROMISSO+ A.HORA AS TIMESTAMP)DATA_HORAINI,'+
               '       CAST(A.DATACOMPROMISSO+ A.HORA AS TIMESTAMP)DATA_HORAFIM, '+
@@ -368,7 +368,7 @@ begin
           DescricaoCampoDisplay := 'Nº de dias';
           DescricaoTabela := 'Periodicidade';
           CampoCodigo := 'NUMDIAS';
-          Versao20 := True;
+          Versao20 := False;
           Select :=
             'SELECT IDPERIODICIDADE, DESCRICAOPERIODICIDADE,NUMDIAS '+
             '  FROM PERIODICIDADE '+
@@ -468,11 +468,11 @@ begin
           DescricaoTabela := 'Propósta(Itens)';
           Versao20 := False;
           CampoCodigo := '';
-          DesconsiderarCampos := 'UNIDADE;FLAGEDICAO;DESCRICAO;CODIGO';
+          DesconsiderarCampos := 'UNIDADE;FLAGEDICAO;NOMEPRODUTO;CODIGO';
           Select :=
             'SELECT IP.IDITEMPROPOSTA, IP.IDPROPOSTA, IP.IDPRODUTO,'+
             '       IP.QUANTIDADE, IP.VALORUNITARIO, IP.SUBTOTAL, IP.VALORDESCONTO,'+
-            '       IP.VALORACRESCIMO,IP.ALIQDESCONTO,IP.OBS,'+
+            '       IP.VALORACRESCIMO,IP.ALIQDESCONTO,IP.OBS,IP.IDCLIENTEEQUIPAMENTOS,'+
             '       IP.ALIQACRESCIMO, IP.VALORTOTAL, U.CODIGO UNIDADE,''N'' FLAGEDICAO, '+
             '       P.NOMEPRODUTO, P.CODIGO'+
             '  FROM ITEMPROPOSTA IP'+
@@ -574,15 +574,17 @@ begin
           CampoCodigo := '';
           Versao20 := False;
           UsaMaxParaCodigo := True;
-          DesconsiderarCampos := 'CODIGO;NOMEPRODUTO;FLAGEDICAO;QUANTIDADE';
+          DesconsiderarCampos := 'CODIGO;NOMEPRODUTO;FLAGEDICAO;QUANTIDADE;IDENTIFICADOR;DESCRICAOEQUIPAMENTO';
           Select :=
-            'SELECT CP.IDCONTRATOPRODUTOS, CP.IDCONTRATOEQUIPAMENTOCLIENTE, CP.IDPRODUTO, '+
+            'SELECT CP.IDCONTRATOPRODUTOS, CP.IDCONTRATO, CP.IDPRODUTO, '+
             '       CP.VALORUNITARIO, CP.VALORDESCONTO, CP.VALORACRESCIMO, '+
-            '       CP.VALORTOTAL, CP.OBS, CP.ALIQDESCONTO, CP.ALIQACRESCIMO, '+
-            '       CP.SUBTOTAL,P.CODIGO, P.NOMEPRODUTO,''N'' FLAGEDICAO, CAST(1 AS VALOR) QUANTIDADE '+
+            '       CP.VALORTOTAL, CP.OBS, CP.ALIQDESCONTO, CP.ALIQACRESCIMO, CP.IDEQUIPAMENTOCLIENTE,'+
+            '       CP.SUBTOTAL,P.CODIGO, P.NOMEPRODUTO,''N'' FLAGEDICAO, CAST(1 AS VALOR) QUANTIDADE,CE.IDENTIFICADOR,CE.DESCRICAOEQUIPAMENTO '+
             '  FROM CONTRATOPRODUTOS CP '+
             ' INNER JOIN PRODUTO P '+
             '    ON (P.IDPRODUTO = CP.IDPRODUTO) '+
+            '  LEFT JOIN CLIENTEEQUIPAMENTOS CE'+
+            '    ON (CE.IDCLIENTEEQUIPAMENTOS = CP.IDEQUIPAMENTOCLIENTE)'+
             ' WHERE 1=1 '+Complemento;
        end;
       tpERPClienteEquipamento:
@@ -603,7 +605,7 @@ begin
            '   FROM CLIENTEEQUIPAMENTOS CE    '+
             ' WHERE 1=1 '+Complemento;
        End;
-       tpERPClienteEquipamentoContrato:
+       {tpERPClienteEquipamentoContrato:
        Begin
           CampoChave := 'IDCONTRATOEQUIPAMENTOCLIENTE';
           CampoDisplay := '';
@@ -625,7 +627,7 @@ begin
             '    LEFT JOIN PERIODICIDADE P'+
             '      ON (P.IDPERIODICIDADE = CEC.IDPERIODICIADEVISITA)'+
             '   WHERE 1=1 '+Complemento;
-       End;
+       End;}
        tpERPTipoOS:
        begin
           CampoChave := 'IDTIPOOS';
@@ -669,7 +671,7 @@ begin
             '        O.IDUSUARIO, O.IDEMPRESA, O.DATA, O.HORA, O.IDCLIENTE,'+
             '        O.IDTIPOOS,O.IDSTATUSOS, O.VALORTOTAL, O.OBS,O.FLAGBAIXADA,'+
             '        O.DATAINICIO,O.HORAINICIO, O.DATATERMINO, O.HORATERMINO ,O.IDAGENDA, '+
-            '        O.IDCONTRATO ,O.IDPROPOSTA, O.FLAGFATURADA, C.CODIGO CODIGOCLIENTE,'+
+            '        O.IDCONTRATOCOMPETENCIA ,O.IDPROPOSTA, O.FLAGFATURADA, C.CODIGO CODIGOCLIENTE,'+
             '        C.NOMECLIENTE, T.NOMETIPOOS,S.NOMESTATUSOS,S.COR,'+
             '        CO.NUMEROCONTRATO'+
             '   FROM OS O'+
@@ -679,8 +681,10 @@ begin
             '     ON (T.IDTIPOOS = O.IDTIPOOS)'+
             '   LEFT JOIN STATUSOS S'+
             '     ON (S.IDSTATUSOS = O.IDSTATUSOS)'+
+            '   LEFT JOIN CONTRATOCOMPETENCIA CC'+
+            '     ON (CC.IDCONTRATOCOMPETENCIA = O.IDCONTRATOCOMPETENCIA)'+
             '   LEFT JOIN CONTRATO CO'+
-            '     ON (CO.IDCONTRATO = O.IDCONTRATO)'+
+            '     ON (CO.IDCONTRATO = CC.IDCONTRATO)'+
             '  WHERE 1=1 '+Complemento;
        end;
        tpERPEquipamentoOS:
@@ -1106,6 +1110,24 @@ begin
           '      SUSPEND;'+
           '    END '+
           'END';
+      end;
+      tpERPCompetenciaContrato:
+      begin
+        NomeTabela := 'CONTRATOCOMPETENCIA';
+        CampoChave := 'IDCONTRATOCOMPETENCIA';
+        CampoCodigo := 'NUMEROCONTRATO';
+        CampoDisplay := 'ANO ';
+        DescricaoCampoDisplay := 'Competência';
+        DescricaoTabela :='Competências do contrato';
+        Versao20 := false;
+        Select :=
+          'SELECT CONTRATOCOMPETENCIA.IDCONTRATOCOMPETENCIA, CONTRATOCOMPETENCIA.IDCONTRATO, CONTRATOCOMPETENCIA.MES, CONTRATOCOMPETENCIA.ANO,'+
+          '       CONTRATOCOMPETENCIA.VALOR, CONTRATOCOMPETENCIA.FLAGMOVIMENTADO, '+
+          '       LPAD(CAST(CONTRATOCOMPETENCIA.MES AS VARCHAR(2)),2,''0'') ||''/''||CONTRATOCOMPETENCIA.ANO COMPETENCIA, C.NUMEROCONTRATO'+
+          '  FROM CONTRATOCOMPETENCIA '+
+          ' INNER JOIN CONTRATO C     '+
+          '    ON (C.IDCONTRATO = CONTRATOCOMPETENCIA.IDCONTRATO) '+
+          ' where 1=1 '+Complemento;
       end;
     end;
 

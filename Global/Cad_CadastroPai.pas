@@ -407,7 +407,10 @@ end;
 
 procedure TfrmCad_CadastroPai.CdsCadastroNewRecord(DataSet: TDataSet);
 begin
-  CdsCadastro.FieldByName(CampoChave).Value := GetCodigo(TipoPesquisa, ttcCodigo);
+  if InfoSistema.UsaGuidChave then
+    CdsCadastro.FieldByName(CampoChave).Value := GetCodigo(TipoPesquisa, ttcChave)
+  else
+    CdsCadastro.FieldByName(CampoChave).Value := GetCodigo(TipoPesquisa, ttcCodigo);
   ValorChave := CdsCadastro.FieldByName(CampoChave).AsString;
   if CampoCodigo <> '' then
     CdsCadastro.FieldByName(CampoCodigo).Value := GetCodigo(TipoPesquisa, ttcCodigo,pUsaMaxParaCodigo); //FormatFloat('000000',CdsCadastro.FieldByName(CampoChave).AsInteger);
@@ -477,8 +480,12 @@ end;
 
 function TfrmCad_CadastroPai.GetValorChave(TipoPasso : TTipoPasso = psPrimeiro): String;
 var
-  StrSQL : String;
+  StrSQL, vValorChave : String;
 begin
+    if InfoSistema.UsaGuidChave then
+      vValorChave := QuotedStr(ValorChave)
+    else
+      vValorChave := ValorChave;
     case TipoPasso of
     psPrimeiro:
       Begin
@@ -492,7 +499,7 @@ begin
         StrSQL :=
           'select first 1 '+ CampoChave +' campo '+
           '  from '+ NomeTabela+
-          ' where '+CampoChave + ' > '+ IfThen(ValorChave = '', '1', ValorChave)+
+          ' where '+CampoChave + ' > '+ IfThen(ValorChave = '', '1', vValorChave)+
           IfThen(CampoOrdem <> '',' order by '+ CampoOrdem, '' ) ;
       End;
     psUltimo:
@@ -507,7 +514,7 @@ begin
         StrSQL :=
           'select first 1 '+ CampoChave +' campo '+
           '  from '+ NomeTabela+
-          ' where '+CampoChave + ' < '+ IfThen(ValorChave = '', '1', ValorChave)+
+          ' where '+CampoChave + ' < '+ IfThen(ValorChave = '', '1', vValorChave)+
           IfThen(CampoOrdem <> '',' order by '+ CampoOrdem, '' ) +' desc ';
       End;
     psIgual :
@@ -515,7 +522,7 @@ begin
         StrSQL :=
           'select '+ CampoChave +' campo '+
           '  from '+ NomeTabela+
-          ' where '+CampoChave + ' = '+ IfThen(ValorChave = '', '1', ValorChave);
+          ' where '+CampoChave + ' = '+ IfThen(ValorChave = '', '1', vValorChave);
       End;
 
   end;
@@ -529,6 +536,7 @@ begin
       Result :=  '-1';
   End;
   ValorChave := Result;
+
 end;
 
 procedure TfrmCad_CadastroPai.MontaArvore;
@@ -639,6 +647,8 @@ begin
     if Campo = '' then
       Campo := CampoChave;
     Valor := GetValorChave(TipoPasso);
+    if InfoSistema.UsaGuidChave then
+      Valor := QuotedStr(Valor);
     SetCds(CdsCadastro, GetSelect(TipoPesquisa, Campo+' = '+Valor));
   Finally
     Self.CdsCadastro.AfterScroll := vAfterScroll;

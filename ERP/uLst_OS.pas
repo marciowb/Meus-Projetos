@@ -17,7 +17,7 @@ uses
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, DB, cxDBData, DBClient,
   pFIBClientDataSet, ActnList, cxGridLevel, cxClasses, cxGridCustomView,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxPC,
-  StdCtrls, Buttons, dxStatusBar, ExtCtrls, Menus;
+  StdCtrls, Buttons, dxStatusBar, ExtCtrls, Menus,uLibERP;
 
 type
   TfrmLst_OS = class(TfrmListagemPadraoERP)
@@ -40,9 +40,12 @@ type
     procedure actFaturarOSExecute(Sender: TObject);
     procedure BitBtn11Click(Sender: TObject);
   private
+    FIdCompetenciaContrato: TipoCampoChave;
+    procedure SetIdCompetenciaContrato(const Value: TipoCampoChave);
     { Private declarations }
   public
     { Public declarations }
+    property IdCompetenciaContrato: TipoCampoChave read FIdCompetenciaContrato write SetIdCompetenciaContrato;
   end;
 
 var
@@ -66,7 +69,7 @@ begin
       '  FROM EQUIPAMENTOSOS E'+
       ' INNER JOIN CLIENTEEQUIPAMENTOS C'+
       '    ON (C.IDCLIENTEEQUIPAMENTOS = E.IDEQUIPAMENTOCLIENTE)'+
-      ' WHERE E.IDOS = '+CdsListagem.FieldByName('IDOS').AsString +
+      ' WHERE E.IDOS = '+TipoCampoChaveToStr(CdsListagem.FieldByName('IDOS').AsString) +
       '   AND E.SOLUCAO IS NULL';
 
     StrSQL:= GetValorCds(StrSQL);
@@ -159,6 +162,7 @@ begin
   end;
   CampoOrdem := 'NUMEROOS desc';
   AtuDados;
+  FIdCompetenciaContrato := SemID;
 end;
 
 procedure TfrmLst_OS.FormShow(Sender: TObject);
@@ -166,6 +170,17 @@ begin
   inherited;
   Self.FormCadastro :=  frmCad_OS;
   Self.ClasseCadPai := TfrmCad_OS;
+  if FIdCompetenciaContrato <> SemID then
+  begin
+    Filtros := 'o.IDCONTRATOCOMPETENCIA = '+TipoCampoChaveToStr(FIdCompetenciaContrato);
+    AtuDados;
+  end;
+
+end;
+
+procedure TfrmLst_OS.SetIdCompetenciaContrato(const Value: TipoCampoChave);
+begin
+  FIdCompetenciaContrato := Value;
 end;
 
 procedure TfrmLst_OS.TvListagemStylesGetContentStyle(

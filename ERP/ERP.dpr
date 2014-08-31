@@ -1,6 +1,7 @@
 program ERP;
 
 uses
+  ExceptionLog,
   Forms,
   SysUtils,
   uPrincipal in 'uPrincipal.pas' {frmPrincipal},
@@ -92,7 +93,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
 
-  InfoSistema.UsaGuidChave := False;
+  InfoSistema.UsaGuidChave := True;
   InfoSistema.LocalBancoDados := 'D:\Meus Projetos\Bancos\Erp.fdb';
   if not FileExists(InfoSistema.LocalBancoDados) then
     InfoSistema.LocalBancoDados := ExtractFilePath(Application.ExeName)+'Erp.fdb';

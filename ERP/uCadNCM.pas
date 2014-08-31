@@ -63,7 +63,7 @@ var
 
 implementation
 
-uses MinhasClasses, Comandos;
+uses MinhasClasses, Comandos, uLibERP;
 
 {$R *.dfm}
 
@@ -76,7 +76,7 @@ end;
 procedure TfrmCad_NCM.CdsCadastroAfterScroll(DataSet: TDataSet);
 begin
   inherited;
-  SetCds(CdsTributacoes, tpERPNCMTributacao, 'IDNCM = '+ValorChave);
+  SetCds(CdsTributacoes, tpERPNCMTributacao, 'IDNCM = '+TipoCampoChaveToStr(ValorChave));
 end;
 
 procedure TfrmCad_NCM.CdsTributacoesAfterOpen(DataSet: TDataSet);

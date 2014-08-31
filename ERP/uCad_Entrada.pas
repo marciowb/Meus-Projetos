@@ -101,7 +101,7 @@ var
 
 implementation
 
-uses Comandos, MinhasClasses, uRegras, Inc_ProdutoEntrada;
+uses Comandos, MinhasClasses, uRegras, Inc_ProdutoEntrada, uLibERP;
 
 
 
@@ -184,8 +184,8 @@ end;
 procedure TfrmCad_Entrada.CdsCadastroAfterScroll(DataSet: TDataSet);
 begin
   inherited;
-  SetCds(CdsProdutos, tpERPEntradaProduto,'e.identrada = '+ValorChave);
-  SetCds(CdsSeriais, tpERPSerialProdutoEntrada,' exists(select 1 from ENTRADAPRODUTO p where p.IDENTRADAPRODUTO = ES.IDENTRADAPRODUTO and p.identrada = '+ValorChave+')');
+  SetCds(CdsProdutos, tpERPEntradaProduto,'e.identrada = '+TipoCampoChaveToStr(ValorChave));
+  SetCds(CdsSeriais, tpERPSerialProdutoEntrada,' exists(select 1 from ENTRADAPRODUTO p where p.IDENTRADAPRODUTO = ES.IDENTRADAPRODUTO and p.identrada = '+TipoCampoChaveToStr(ValorChave)+')');
 
 end;
 
@@ -223,7 +223,7 @@ procedure TfrmCad_Entrada.CdsProdutosAfterScroll(DataSet: TDataSet);
 begin
   inherited;
   if CdsProdutos.FieldByName('IDENTRADAPRODUTO').AsString <> '' then
-    CdsSeriais.Filter := 'FLAGEDICAO <> ''D'' AND IDENTRADAPRODUTO = '+CdsProdutos.FieldByName('IDENTRADAPRODUTO').AsString;
+    CdsSeriais.Filter := 'FLAGEDICAO <> ''D'' AND IDENTRADAPRODUTO = '+TipoCampoChaveToStr(CdsProdutos.FieldByName('IDENTRADAPRODUTO').AsString);
   CdsSeriais.Filtered := True;
 
 end;

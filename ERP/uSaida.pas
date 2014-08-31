@@ -196,17 +196,17 @@ uses UDmConexao, Comandos, MinhasClasses, uDlg_SaidaItem, udlgCondicaoPagamento,
 {$R *.dfm}
 procedure TfrmSaida.AbreVenda(IdVenda: String);
 begin
-  SetCds(CdsSaida,tpERPSaida,'IDSAIDA = '+IdVenda);
-  SetCds(CdsItens,tpERPSaidaProduto,'Sp.IDSAIDA = '+IdVenda);
-  SetCds(CdsCondicaoPagamento,tpERPSaidaCondicaoPagamento,'SC.IDSAIDA = '+IdVenda);
+  SetCds(CdsSaida,tpERPSaida,'IDSAIDA = '+TipoCampoChaveToStr(IdVenda));
+  SetCds(CdsItens,tpERPSaidaProduto,'Sp.IDSAIDA = '+TipoCampoChaveToStr(IdVenda));
+  SetCds(CdsCondicaoPagamento,tpERPSaidaCondicaoPagamento,'SC.IDSAIDA = '+TipoCampoChaveToStr(IdVenda));
   SetCds(CdsParcelamentos,tpERPSaidaCondicaoPagamentoParcelas, ' EXISTS(SELECT 1 '+
                                                                '          FROM SAIDACONDICAOPAGAMENTO SC '+
                                                                '         WHERE SC.IDSAIDACONDICAOPAGAMENTO =PS.IDSAIDACONDICAOPAGAMENTO '+
-                                                               '           AND SC.IDSAIDA = '+IdVenda+')');
+                                                               '           AND SC.IDSAIDA = '+TipoCampoChaveToStr(IdVenda)+')');
   SetCds(CdsSeriais,tpERPSaidaSerialProduto,'EXISTS(SELECT 1 '+
                                             '         FROM SAIDAPRODUTO SP '+
                                             '        WHERE SP.IDSAIDAPRODUTO= SSP.IDSAIDAPRODUTO '+
-                                            '          AND SP.IDSAIDA ='+IdVenda+') ');
+                                            '          AND SP.IDSAIDA ='+TipoCampoChaveToStr(IdVenda)+') ');
   if IdVenda <> '-1' then
     CdsSaida.Edit;
 end;
@@ -453,16 +453,16 @@ procedure TfrmSaida.CdsCondicaoPagamentoAfterScroll(DataSet: TDataSet);
 begin
   inherited;
   if CdsCondicaoPagamento.FieldByName('IDSAIDACONDICAOPAGAMENTO').AsString <>  '' then
-    CdsParcelamentos.Filter := 'FLAGEDICAO<> ''D'' AND IDSAIDACONDICAOPAGAMENTO = '+ CdsCondicaoPagamento.FieldByName('IDSAIDACONDICAOPAGAMENTO').AsString;
+    CdsParcelamentos.Filter := 'FLAGEDICAO<> ''D'' AND IDSAIDACONDICAOPAGAMENTO = '+ TipoCampoChaveToStr(CdsCondicaoPagamento.FieldByName('IDSAIDACONDICAOPAGAMENTO').AsString);
   CdsParcelamentos.Filtered := True;
 end;
 
 procedure TfrmSaida.CdsCondicaoPagamentoNewRecord(DataSet: TDataSet);
 begin
   inherited;
-  CdsCondicaoPagamento.FieldByName('IDSAIDACONDICAOPAGAMENTO').AsString := FormatDateTime('ddmmyyyyhhnnsszzz',StrToDateTime(GetDataServidor+GetHoraServidor));
+  CdsCondicaoPagamento.FieldByName('IDSAIDACONDICAOPAGAMENTO').AsString := GetCodigo(tpERPSaidaCondicaoPagamento);
   CdsCondicaoPagamento.FieldByName('FLAGEDICAO').AsString := 'I';
-  CdsCondicaoPagamento.FieldByName('IDSAIDA').AsString := CdsSaida.FieldByName('IDSAIDA').AsString ;
+  CdsCondicaoPagamento.FieldByName('IDSAIDA').Value := CdsSaida.FieldByName('IDSAIDA').Value ;
 end;
 
 procedure TfrmSaida.CdsItensAfterOpen(DataSet: TDataSet);
@@ -487,13 +487,13 @@ begin
   inherited;
   if (CdsItens.FieldByName('flagedicao').AsString = 'I') or
      (CdsItens.FieldByName('flagedicao').AsString = 'E')   then
-    TRegrasSaidaProduto.BloqueiaQuantidadeProduto(CdsItens.FieldByName('idsaida').Value,
-                                                  CdsItens.FieldByName('idproduto').Value,
-                                                  CdsSaida.FieldByName('idempresa').Value ,
-                                                  CdsItens.FieldByName('idcor').Value,
-                                                  CdsItens.FieldByName('idtamanho').Value,
-                                                  CdsItens.FieldByName('NUMITEM').Value,
-                                                  CdsItens.FieldByName('IDALMOXARIFADO').Value,
+    TRegrasSaidaProduto.BloqueiaQuantidadeProduto(CdsItens.FieldByName('idsaida').AsString,
+                                                  CdsItens.FieldByName('idproduto').AsString,
+                                                  CdsSaida.FieldByName('idempresa').AsString ,
+                                                  CdsItens.FieldByName('idcor').AsString,
+                                                  CdsItens.FieldByName('idtamanho').AsString,
+                                                  CdsItens.FieldByName('NUMITEM').AsString,
+                                                  CdsItens.FieldByName('IDALMOXARIFADO').AsString,
                                                   CdsItens.FieldByName('quantidade').AsFloat);
 end;
 
@@ -502,7 +502,7 @@ begin
   inherited;
   if CdsItens.FieldByName('IDSAIDAPRODUTO').AsString <> '' then
   begin
-    CdsSeriais.Filter := 'FLAGEDICAO <> ''D'' AND IDSAIDAPRODUTO = '+CdsItens.FieldByName('IDSAIDAPRODUTO').AsString;
+    CdsSeriais.Filter := 'FLAGEDICAO <> ''D'' AND IDSAIDAPRODUTO = '+TipoCampoChaveToStr( CdsItens.FieldByName('IDSAIDAPRODUTO').AsString);
   end;
   CdsSeriais.Filtered := True;
 end;

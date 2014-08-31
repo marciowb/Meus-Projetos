@@ -23,6 +23,7 @@ uses
 type
   TfrmLst_Periodicidade = class(TfrmLstCadastroSimplesERP)
     LabelDBEdit2: TLabelDBEdit;
+    LabelDBEdit1: TLabelDBEdit;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
@@ -45,6 +46,8 @@ begin
   inherited;
 
   TipoPesquisa := tpERPPeridicidade;
+  CriaColuna('DESCRICAOPERIODICIDADE','Descriçao',120);
+  CriaColuna('NUMDIAS','Nº de dias');
 end;
 
 procedure TfrmLst_Periodicidade.FormShow(Sender: TObject);

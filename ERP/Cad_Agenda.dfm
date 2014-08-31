@@ -2,6 +2,7 @@ inherited frmCad_Agenda: TfrmCad_Agenda
   Caption = 'Cadastro de eventos'
   ClientHeight = 397
   ClientWidth = 441
+  ExplicitTop = -30
   ExplicitWidth = 457
   ExplicitHeight = 436
   PixelsPerInch = 96
@@ -10,15 +11,15 @@ inherited frmCad_Agenda: TfrmCad_Agenda
     Top = 356
     Width = 441
     TabOrder = 1
-    ExplicitTop = 324
+    ExplicitTop = 356
     ExplicitWidth = 441
     inherited btnOk: TBitBtn
-      Left = 223
-      ExplicitLeft = 223
+      Left = 219
+      ExplicitLeft = 219
     end
     inherited btnCancelar: TBitBtn
-      Left = 314
-      ExplicitLeft = 314
+      Left = 310
+      ExplicitLeft = 310
     end
   end
   inherited Panel2: TPanel
@@ -26,7 +27,7 @@ inherited frmCad_Agenda: TfrmCad_Agenda
     Height = 356
     TabOrder = 0
     ExplicitWidth = 441
-    ExplicitHeight = 324
+    ExplicitHeight = 356
     object Panel3: TPanel
       Left = 0
       Top = 0
@@ -499,8 +500,6 @@ inherited frmCad_Agenda: TfrmCad_Agenda
       Align = alClient
       Caption = ' Obs '
       TabOrder = 1
-      ExplicitTop = 137
-      ExplicitHeight = 219
       object mmObs: TDBMemo
         Left = 2
         Top = 15

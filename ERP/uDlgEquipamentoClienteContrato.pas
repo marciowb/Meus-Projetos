@@ -80,7 +80,7 @@ begin
     frmDlg_ServicoContrato.IdCliente := IdCliente;
     frmDlg_ServicoContrato.IdEmpresa := IdEmpresa;
     frmDlg_ServicoContrato.Data := Data;
-    frmDlg_ServicoContrato.pDataSet := FDataSetServicos;
+    frmDlg_ServicoContrato.pDataSet := DataSetServicos;
     frmDlg_ServicoContrato.FechaEGrava := False;
     frmDlg_ServicoContrato.pDataSet.Append;
     frmDlg_ServicoContrato.ShowModal;

@@ -62,11 +62,14 @@ type
     { Private declarations }
     Ta: TTipoAlteracao;
     FIdAgenda: TipoCampoChave;
+    FIdCOmpetenciaContrato: TipoCampoChave;
     procedure SetIdAgenda(const Value: TipoCampoChave);
+    procedure SetIdCOmpetenciaContrato(const Value: TipoCampoChave);
   public
     { Public declarations }
     Procedure AtuDados;
     Property IdAgenda: TipoCampoChave read FIdAgenda write SetIdAgenda;
+    property IdCOmpetenciaContrato: TipoCampoChave read FIdCOmpetenciaContrato write SetIdCOmpetenciaContrato;
   end;
 
 var
@@ -74,7 +77,7 @@ var
 
 implementation
 
-uses UDmConexao, Comandos, Cad_Agenda , uCad_OS;
+uses UDmConexao, Comandos, Cad_Agenda , uCad_OS, uRegras;
 
 {$R *.dfm}
 
@@ -141,9 +144,12 @@ begin
   frmCad_OS := TfrmCad_OS.Create(nil);
   Try
     frmCad_OS.NovoReg := True;
-    frmCad_OS.IdContrato := CdsAgenda.FieldByName('idcontrato').AsString;
-    frmCad_OS.IdAgenda := CdsAgenda.FieldByName('IDAGENDA').AsString;
-    frmCad_OS.ShowModal
+    frmCad_OS.IdContrato := CdsAgenda.FieldByName('IDCONTRATOCOMPETENCIA').AsString;
+    if frmCad_OS.ShowModal = mrOK Then
+    begin
+      TRegrasAgenda.BaixaCompromisso(CdsAgenda.FieldByName('IDAGENDA').AsString);
+      AtuDados;
+    end;
   Finally
     FreeAndNil(frmCad_OS);
   End;
@@ -153,7 +159,7 @@ procedure TfrmAgenda.ActionList1Update(Action: TBasicAction;
   var Handled: Boolean);
 begin
   inherited;
-  actGerarOS.Enabled := (CdsAgenda.Active) and (not CdsAgenda.FieldByName('idcontrato').IsNull);
+  actGerarOS.Enabled := (CdsAgenda.Active) and (not CdsAgenda.FieldByName('IDCONTRATOCOMPETENCIA').IsNull);
 
 end;
 
@@ -198,6 +204,8 @@ begin
     Filtro := Filtro+ ' AND A.IDCLIENTE = '+edtCliente.ValorChaveString;
   if not edtFuncionario.IsNull then
     Filtro := Filtro+ ' AND A.IDFUNCIONARIO = '+edtFuncionario.ValorChaveString;
+  if IdCOmpetenciaContrato <> SemID then
+    Filtro := Filtro+ ' AND A.IDCONTRATOCOMPETENCIA = '+TipoCampoChaveToStr(IdCOmpetenciaContrato);
 
   SetCds(CdsAgenda,tpERPAGenda,Filtro);
 
@@ -228,13 +236,6 @@ begin
   Try
     StartTrans;
     AlteraBanco(Ta,CdsAgenda,'AGENDA','IDAGENDA');
-//    if Ta = taInsere then
-//      RegistraAuditoria('Criou um novo registro em '+Self.Caption,'O Usuário '+USuarioLogado.Login+' criou um novo registro ',
-//                        'AGENDA',Self.Name,Self.Caption,CdsAgenda.FieldByName('IDAGENDA').AsString, toIncluir,CdsAgenda,  False, False );
-//    if Ta = taModifica then
-//      RegistraAuditoria('Editou um  registro em '+Self.Caption,'O Usuário '+USuarioLogado.Login+' editou um registro ',
-//                        'AGENDA',Self.Name,Self.Caption,CdsAgenda.FieldByName('IDAGENDA').AsString, toEditar,CdsAgenda,
-//                         False, False );
     Commit;
   Except
     on e: Exception do
@@ -270,6 +271,7 @@ begin
   inherited;
   ConfiguraEditPesquisa(edtCliente,nil,tpERPCliente);
   ConfiguraEditPesquisa(edtFuncionario,nil,tpERPFuncionario);
+  IdCOmpetenciaContrato := SemID;
 end;
 
 procedure TfrmAgenda.FormShow(Sender: TObject);
@@ -311,6 +313,11 @@ procedure TfrmAgenda.SetIdAgenda(const Value: TipoCampoChave);
 begin
   FIdAgenda := Value;
 
+end;
+
+procedure TfrmAgenda.SetIdCOmpetenciaContrato(const Value: TipoCampoChave);
+begin
+  FIdCOmpetenciaContrato := Value;
 end;
 
 end.

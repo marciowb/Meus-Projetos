@@ -5,7 +5,6 @@ inherited frmSaida: TfrmSaida
   ClientWidth = 1225
   Position = poDesigned
   WindowState = wsMaximized
-  ExplicitTop = -83
   ExplicitWidth = 1241
   ExplicitHeight = 623
   PixelsPerInch = 96
@@ -1667,8 +1666,6 @@ inherited frmSaida: TfrmSaida
       object cxTabSheet3: TcxTabSheet
         Caption = 'Adicionais'
         ImageIndex = 1
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object GroupPagamento: TGroupBox
           Left = 737
           Top = 0

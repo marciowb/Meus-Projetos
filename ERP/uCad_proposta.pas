@@ -138,7 +138,13 @@ begin
     frmDlg_ItensProposta.IdCliente :=  CdsCadastro.FieldByName('IDCLIENTE').Value;
     frmDlg_ItensProposta.IdEmpresa :=  CdsCadastro.FieldByName('IDEMPRESA').Value;
     frmDlg_ItensProposta.Data :=  CdsCadastro.FieldByName('DATA').AsDateTime;
-    frmDlg_ItensProposta.SomenteServicos := CdsCadastro.FieldByName('FINALIDADEPROPOSTA').AsString = 'O';
+    if CdsCadastro.FieldByName('FINALIDADEPROPOSTA').AsString = 'O' then
+      frmDlg_ItensProposta.FinalidadeProposta := tfOS;
+    if CdsCadastro.FieldByName('FINALIDADEPROPOSTA').AsString = 'C' then
+      frmDlg_ItensProposta.FinalidadeProposta := tfContrato;
+    if CdsCadastro.FieldByName('FINALIDADEPROPOSTA').AsString = 'V' then
+      frmDlg_ItensProposta.FinalidadeProposta := tfVenda;
+
     frmDlg_ItensProposta.FechaEGrava := True;
     frmDlg_ItensProposta.pDataSet.Edit;
     frmDlg_ItensProposta.ShowModal;
@@ -222,7 +228,13 @@ begin
     frmDlg_ItensProposta.IdCliente :=  CdsCadastro.FieldByName('IDCLIENTE').Value;
     frmDlg_ItensProposta.IdEmpresa :=  CdsCadastro.FieldByName('IDEMPRESA').Value;
     frmDlg_ItensProposta.Data :=  CdsCadastro.FieldByName('DATA').AsDateTime;
-    frmDlg_ItensProposta.SomenteServicos := CdsCadastro.FieldByName('FINALIDADEPROPOSTA').AsString = 'O';
+    if CdsCadastro.FieldByName('FINALIDADEPROPOSTA').AsString = 'O' then
+      frmDlg_ItensProposta.FinalidadeProposta := tfOS;
+    if CdsCadastro.FieldByName('FINALIDADEPROPOSTA').AsString = 'C' then
+      frmDlg_ItensProposta.FinalidadeProposta := tfContrato;
+    if CdsCadastro.FieldByName('FINALIDADEPROPOSTA').AsString = 'V' then
+      frmDlg_ItensProposta.FinalidadeProposta := tfVenda;
+
     frmDlg_ItensProposta.FechaEGrava := False;
     frmDlg_ItensProposta.pDataSet.Append;
     frmDlg_ItensProposta.ShowModal;
@@ -341,11 +353,23 @@ begin
 end;
 
 procedure TfrmCad_Proposta.CdsCadastroAfterScroll(DataSet: TDataSet);
+var
+  IdPagamento: TipoCampoChave;
 begin
   inherited;
   HabilitaObjetos;
-  SetCds(CdsItens,tpERPItemProposta,'IP.Idproposta = '+ValorChave);
-  SetCds(CdsPagamento,tpERPCondicaoPagamentoProposta,'CPP.IDPROPOSTA = '+ValorChave);
+  SetCds(CdsItens,tpERPItemProposta,'IP.Idproposta = '+TipoCampoChaveToStr(ValorChave));
+  SetCds(CdsPagamento,tpERPCondicaoPagamentoProposta,'CPP.IDPROPOSTA = '+TipoCampoChaveToStr(ValorChave));
+  SetCds(CdsParcelasPagamento,tpERPParcelaCondicaoPagamentoProposta,'  EXISTS(SELECT 1 '+
+                                                                    '              FROM CONDICAOPAGAMENTOPROPOSTA CP '+
+                                                                    '             WHERE CP.IDCONDICAOPAGAMENTOPROPOSTA = PARCCONDPAGAMENTOPROPOSTA.IDCONDICAOPAGAMENTOPROPOSTA '+
+                                                                    '               AND CP.IDPROPOSTA = '+TipoCampoChaveToStr(ValorChave)+') ');
+
+  if TotalPagamentos=0 then
+  begin
+    CalculaTotal;
+    CalculaTotalPagamentos;
+  end;
 end;
 
 procedure TfrmCad_Proposta.CdsCadastroNewRecord(DataSet: TDataSet);
@@ -384,19 +408,8 @@ begin
 end;
 
 procedure TfrmCad_Proposta.CdsPagamentoAfterOpen(DataSet: TDataSet);
-var
-  IdPagamento: TipoCampoChave;
 begin
   inherited;
-  if CdsPagamento.FieldByName('IDCONDICAOPAGAMENTOPROPOSTA').AsString = '' then
-    IdPagamento:= SemID
-  else
-    IdPagamento:= CdsPagamento.FieldByName('IDCONDICAOPAGAMENTOPROPOSTA').AsString;
-
-  SetCds(CdsParcelasPagamento,tpERPParcelaCondicaoPagamentoProposta,'IDCONDICAOPAGAMENTOPROPOSTA = '+IdPagamento);
-
-
-  CalculaTotalPagamentos;
   FormataMascara(CdsPagamento.FieldByName('VALOR'),tcMoeda);
 end;
 
@@ -410,7 +423,7 @@ begin
   else
     IdPagamento:= CdsPagamento.FieldByName('IDCONDICAOPAGAMENTOPROPOSTA').AsString;
 
-  CdsParcelasPagamento.Filter := 'FLAGEDICAO <> ''D'' AND  IDCONDICAOPAGAMENTOPROPOSTA = '+IdPagamento;
+  CdsParcelasPagamento.Filter := 'FLAGEDICAO <> ''D'' AND  IDCONDICAOPAGAMENTOPROPOSTA = '+TipoCampoChaveToStr(IdPagamento);
   CdsParcelasPagamento.Filtered := True;
 
 end;
@@ -484,12 +497,13 @@ end;
 procedure TfrmCad_Proposta.FormShow(Sender: TObject);
 begin
   inherited;
-
   ConfiguraEditPesquisa(edtEmpresa,CdsCadastro,tpERPEmpresa,True);
   ConfiguraEditPesquisa(edtCliente,CdsCadastro,tpERPCliente,True);
   ConfiguraEditPesquisa(edtPeriodoVigenciaContrato,CdsCadastro,tpERPPeridicidade,False,'','','CODIGO','IDPERIDOVIGENCIACONTRATO');
   ConfiguraEditPesquisa(edtPeriodoVisitaContrato,CdsCadastro,tpERPPeridicidade,False,'','','CODIGO','IDPERIODICIDADEVISITACONTRATO');
+
   edtEmpresa.SetFocus;
+
 end;
 
 procedure TfrmCad_Proposta.grpFinalidadePropostaPropertiesChange(

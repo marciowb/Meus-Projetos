@@ -51,12 +51,27 @@ type
     cxGridLevel1: TcxGridLevel;
     CdsEquipamentos: TpFIBClientDataSet;
     DataEquipamento: TDataSource;
-    cxGridDBTableView1Column1: TcxGridDBColumn;
-    cxGridDBTableView1Column2: TcxGridDBColumn;
-    cxGridDBTableView1Column3: TcxGridDBColumn;
     actIncluirEquipamento: TAction;
     actEditarEquipamento: TAction;
     acExcluirEquipamento: TAction;
+    cxGridDBTableView1Column1: TcxGridDBColumn;
+    cxGridDBTableView1Column2: TcxGridDBColumn;
+    cxGridDBTableView1Column3: TcxGridDBColumn;
+    cxGridDBTableView1Column4: TcxGridDBColumn;
+    cxGridDBTableView1Column5: TcxGridDBColumn;
+    CdsCompetencia: TpFIBClientDataSet;
+    cxTabSheet1: TcxTabSheet;
+    GroupBox1: TGroupBox;
+    pnlCompetencias: TPanel;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    DataCompetencia: TDataSource;
+    Panel4: TPanel;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    cxGrid1DBTableView1Column1: TcxGridDBColumn;
+    cxGrid1DBTableView1Column2: TcxGridDBColumn;
     procedure actIncluirServicoExecute(Sender: TObject);
     procedure actAlterarServicoExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -76,6 +91,9 @@ type
     procedure edtPeriodoVigenciaContratoRegAchado(
       const ValoresCamposEstra: array of Variant);
     procedure CdsEquipamentosAfterScroll(DataSet: TDataSet);
+    procedure CdsServicosAfterOpen(DataSet: TDataSet);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
   private
     FidProposta: TipoCampoChave;
     procedure SetidProposta(const Value: TipoCampoChave);
@@ -92,7 +110,7 @@ var
 implementation
 
 uses UDmConexao, Comandos, uForms, MinhasClasses, uRegras, uDlg_ServicoContrato,
-  uDlgEquipamentoClienteContrato;
+  uDlgEquipamentoClienteContrato, uLst_OS;
 {$R *.dfm}
 
 procedure TfrmCad_Contrato.acExcluirEquipamentoExecute(Sender: TObject);
@@ -101,9 +119,9 @@ begin
   if ConfirmaDel then
   begin
     MudaEstado;
-    CdsEquipamentos.Edit;
-    CdsEquipamentos.FieldByName('FLAGEDICAO').AsString := 'D';
-    CdsEquipamentos.Post;
+    CdsServicos.Edit;
+    CdsServicos.FieldByName('FLAGEDICAO').AsString := 'D';
+    CdsServicos.Post;
   end;
 end;
 
@@ -118,15 +136,17 @@ procedure TfrmCad_Contrato.actEditarEquipamentoExecute(Sender: TObject);
 begin
   inherited;
   MudaEstado;
-  frmDlg_EquipamentoClienteContrato := TfrmDlg_EquipamentoClienteContrato.Create(NIL);
+  frmDlg_ServicoContrato := tfrmDlg_ServicoContrato.Create(NIL);
   try
-    frmDlg_EquipamentoClienteContrato.IdCliente := edtCliente.ValorChave;
-    frmDlg_EquipamentoClienteContrato.pDataSet := CdsEquipamentos;
-    frmDlg_EquipamentoClienteContrato.FechaEGrava := False;
-    frmDlg_EquipamentoClienteContrato.pDataSet.Edit;
-    frmDlg_EquipamentoClienteContrato.ShowModal;
+    frmDlg_ServicoContrato.IdCliente := edtCliente.ValorChave;
+    frmDlg_ServicoContrato.IdEmpresa := edtEmpresa.ValorChave;
+    frmDlg_ServicoContrato.Data := CdsCadastro.FieldByName('data').AsDateTime;
+    frmDlg_ServicoContrato.pDataSet := Self.CdsServicos;
+    frmDlg_ServicoContrato.FechaEGrava := True;
+    frmDlg_ServicoContrato.pDataSet.Edit;
+    frmDlg_ServicoContrato.ShowModal;
   finally
-    FreeAndNil(frmDlg_EquipamentoClienteContrato);
+    FreeAndNil(frmDlg_ServicoContrato);
   end;
 
 end;
@@ -145,11 +165,11 @@ begin
     Avisa('Deve ser informado palo menos um serviço.');
     Exit;
   end;
-  if CdsEquipamentos.IsEmpty then
-  begin
-    if Pergunta('Não foi informado um produto do cliente. Deseja continuar? ') Then
-      Exit;
-  end;
+//  if CdsEquipamentos.IsEmpty then
+//  begin
+//    if Pergunta('Não foi informado um produto do cliente. Deseja continuar? ') Then
+//      Exit;
+//  end;
   Tot := 0;
   CdsServicos.First;
   while not CdsServicos.Eof do
@@ -166,19 +186,17 @@ procedure TfrmCad_Contrato.actIncluirEquipamentoExecute(Sender: TObject);
 begin
   inherited;
   MudaEstado;
-  frmDlg_EquipamentoClienteContrato := TfrmDlg_EquipamentoClienteContrato.Create(NIL);
+  frmDlg_ServicoContrato := tfrmDlg_ServicoContrato.Create(NIL);
   try
-    frmDlg_EquipamentoClienteContrato.IdCliente := edtCliente.ValorChave;
-    frmDlg_EquipamentoClienteContrato.IdEmpresa :=edtEmpresa.ValorChave;
-    frmDlg_EquipamentoClienteContrato.Data := CdsCadastro.FieldByName('data').AsDateTime;
-    frmDlg_EquipamentoClienteContrato.pDataSet := CdsEquipamentos;
-    frmDlg_EquipamentoClienteContrato.DataSetServicos := Self.CdsServicos;
-
-    frmDlg_EquipamentoClienteContrato.FechaEGrava := False;
-    frmDlg_EquipamentoClienteContrato.pDataSet.Append;
-    frmDlg_EquipamentoClienteContrato.ShowModal;
+    frmDlg_ServicoContrato.IdCliente := edtCliente.ValorChave;
+    frmDlg_ServicoContrato.IdEmpresa := edtEmpresa.ValorChave;
+    frmDlg_ServicoContrato.Data := CdsCadastro.FieldByName('data').AsDateTime;
+    frmDlg_ServicoContrato.pDataSet := Self.CdsServicos;
+    frmDlg_ServicoContrato.FechaEGrava := False;
+    frmDlg_ServicoContrato.pDataSet.Append;
+    frmDlg_ServicoContrato.ShowModal;
   finally
-    FreeAndNil(frmDlg_EquipamentoClienteContrato);
+    FreeAndNil(frmDlg_ServicoContrato);
   end;
 
 end;
@@ -190,22 +208,38 @@ begin
  
 end;
 
+procedure TfrmCad_Contrato.BitBtn1Click(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreAgenda(SemID,CdsCompetencia.FieldByName('IDCONTRATOCOMPETENCIA').AsString);
+end;
+
+procedure TfrmCad_Contrato.BitBtn2Click(Sender: TObject);
+begin
+  inherited;
+  Try
+    frmLst_OS := TfrmLst_OS.Create(nil);
+    frmLst_OS.IdCompetenciaContrato := CdsCompetencia.FieldByName('IDCONTRATOCOMPETENCIA').AsString;
+    frmLst_OS.ShowModal;
+  Finally
+    FreeAndNil(frmLst_OS);
+  End;
+end;
+
 procedure TfrmCad_Contrato.CdsCadastroAfterPost(DataSet: TDataSet);
 begin
   inherited;
-  SetRegistros(CdsEquipamentos, tpERPClienteEquipamentoContrato);
+//  SetRegistros(CdsEquipamentos, tpERPClienteEquipamentoContrato);
   SetRegistros(CdsServicos, tpERPServicoContrato);
 end;
 
 procedure TfrmCad_Contrato.CdsCadastroAfterScroll(DataSet: TDataSet);
 begin
   inherited;
-  SetCds(CdsEquipamentos, tpERPClienteEquipamentoContrato, 'IDCONTRATO = ' + ValorChave);
+//  SetCds(CdsEquipamentos, tpERPClienteEquipamentoContrato, 'IDCONTRATO = ' +TipoCampoChaveToStr( ValorChave));
   SetCds(CdsServicos, tpERPServicoContrato,
-            ' EXISTS(SELECT 1' +
-            '          FROM CONTRATOEQUIPAMENTOCLIENTE C '+
-            '         WHERE CP.IDCONTRATOEQUIPAMENTOCLIENTE = C.IDCONTRATOEQUIPAMENTOCLIENTE '+
-            '           AND C.IDCONTRATO = ' + ValorChave+')');
+            ' IDCONTRATO = ' + TipoCampoChaveToStr(ValorChave));
+ SetCds(CdsCompetencia,tpERPCompetenciaContrato,'CONTRATOCOMPETENCIA.IDCONTRATO = '+TipoCampoChaveToStr(ValorChave));
 
 end;
 
@@ -214,7 +248,7 @@ begin
   inherited;
   if CdsEquipamentos.FieldByName('IDCONTRATOEQUIPAMENTOCLIENTE').AsString <> '' then
   begin
-    CdsServicos.Filter := 'IDCONTRATOEQUIPAMENTOCLIENTE = '+CdsEquipamentos.FieldByName('IDCONTRATOEQUIPAMENTOCLIENTE').AsString ;
+    CdsServicos.Filter := 'IDCONTRATOEQUIPAMENTOCLIENTE = '+TipoCampoChaveToStr( CdsEquipamentos.FieldByName('IDCONTRATOEQUIPAMENTOCLIENTE').AsString );
     CdsServicos.Filtered := True;
   end;
 end;
@@ -230,11 +264,17 @@ end;
 procedure TfrmCad_Contrato.CdsEquipamentosNewRecord(DataSet: TDataSet);
 begin
   inherited;
-  CdsEquipamentos.FieldByName('idcontrato').Value := ValorChave;
-  CdsEquipamentos.FieldByName('IDCONTRATOEQUIPAMENTOCLIENTE').AsString := GetCodigo(tpERPClienteEquipamentoContrato);
-  CdsEquipamentos.FieldByName('FLAGEDICAO').AsString := 'I';
-  CdsEquipamentos.FieldByName('IDPERIODICIADEVISITA').AsString :=  CdsCadastro.FieldByName('IDPERIODICIDADEVISITA').AsString;
+//  CdsEquipamentos.FieldByName('idcontrato').Value := ValorChave;
+//  CdsEquipamentos.FieldByName('IDCONTRATOEQUIPAMENTOCLIENTE').AsString := GetCodigo(tpERPClienteEquipamentoContrato);
+//  CdsEquipamentos.FieldByName('FLAGEDICAO').AsString := 'I';
+//  CdsEquipamentos.FieldByName('IDPERIODICIADEVISITA').AsString :=  CdsCadastro.FieldByName('IDPERIODICIDADEVISITA').AsString;
 
+end;
+
+procedure TfrmCad_Contrato.CdsServicosAfterOpen(DataSet: TDataSet);
+begin
+  inherited;
+  FormataMascara(CdsServicos.FieldByName('VALORTOTAL'),tcReal);
 end;
 
 procedure TfrmCad_Contrato.CdsServicosBeforePost(DataSet: TDataSet);
@@ -247,7 +287,7 @@ end;
 procedure TfrmCad_Contrato.CdsServicosNewRecord(DataSet: TDataSet);
 begin
   inherited;
-  CdsServicos.FieldByName('IDCONTRATOEQUIPAMENTOCLIENTE').Value := CdsEquipamentos.FieldByName('IDCONTRATOEQUIPAMENTOCLIENTE').AsString;
+  CdsServicos.FieldByName('IDCONTRATO').Value := CdsCadastro.FieldByName('IDCONTRATO').AsString;  //CdsEquipamentos.FieldByName('IDCONTRATOEQUIPAMENTOCLIENTE').AsString;
   CdsServicos.FieldByName('IDCONTRATOPRODUTOS').AsString := GetCodigo(tpERPServicoContrato);
   CdsServicos.FieldByName('FLAGEDICAO').AsString := 'I';
   CdsServicos.FieldByName('QUANTIDADE').AsCurrency := 1;
@@ -276,7 +316,7 @@ begin
       CdsServicos.Append;
       CdsServicos.FieldByName('IDPRODUTO').Value := CdsTemp.FieldByName('IDPRODUTO').Value;
       CdsServicos.FieldByName('CODIGO').Value := CdsTemp.FieldByName('CODIGO').Value;
-      CdsServicos.FieldByName('DESCRICAO').Value := CdsTemp.FieldByName('DESCRICAO').Value;
+      CdsServicos.FieldByName('NOMEPRODUTO').Value := CdsTemp.FieldByName('NOMEPRODUTO').Value;
       CdsServicos.FieldByName('VALORUNITARIO').Value := CdsTemp.FieldByName('VALORUNITARIO').Value;
       CdsServicos.FieldByName('VALORDESCONTO').Value := CdsTemp.FieldByName('VALORDESCONTO').Value;
       CdsServicos.FieldByName('VALORACRESCIMO').Value := CdsTemp.FieldByName('VALORACRESCIMO').Value;
@@ -346,7 +386,7 @@ begin
     tpERPPeridicidade, False, '', '', 'CODIGO', 'IDPERIODICIDADEVISITA');
   ConfiguraEditPesquisa(edtTipoContrato, CdsCadastro, tpERPTipoContrato);
   ConfiguraEditPesquisa(edtCondPagamento, CdsCadastro, tpERPCondicaoPagamento);
-  if (NovoReg) and (idProposta = SemID )  then
+  if (NovoReg) and (idProposta <> SemID )  then
     ConverteProposta;
   edtEmpresa.SetFocus;
 end;

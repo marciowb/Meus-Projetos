@@ -48,7 +48,7 @@ interface
       class function AbreInclusaoOS(pIdProposta: TipoCampoChave = '-1'): CampoChave;
       class function AbreCentralOS: CampoChave;
       class procedure AbreEntradaProduto;
-      class procedure AbreAgenda(IdAgenda: TipoCampoChave = '-1');
+      class procedure AbreAgenda(IdAgenda: TipoCampoChave = '-1';IdConratoCOmpetencia: TipoCampoChave = '-1');
       class function AbreCadastroOperacaoEstoque(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
       class Procedure AbreListagemEntrada;
       CLASS procedure AbreVenda(IdVenda: Int64 = - 1);
@@ -71,7 +71,7 @@ uses uCadNCM, Lst_Empresa, Cad_Cliente, Cad_usuario, uCad_Funcionario,
   uAgenda, uPrincipal, uEntrada, Lst_OperacaoEstoque, uLst_Entrada, uSaida,
   uCad_Transportadora, uLst_Saidas, uCadConfiguracoes;
 
-class procedure TrotinasForms.AbreAgenda(IdAgenda: TipoCampoChave = '-1');
+class procedure TrotinasForms.AbreAgenda(IdAgenda: TipoCampoChave = '-1';IdConratoCOmpetencia: TipoCampoChave = '-1');
 begin
   Try
     frmAgenda := TfrmAgenda.Create(nil);

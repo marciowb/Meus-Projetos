@@ -2,6 +2,7 @@ inherited frmCad_NCM: TfrmCad_NCM
   Caption = 'Cadastro de NCM'
   ClientWidth = 629
   ExplicitWidth = 645
+  ExplicitHeight = 240
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
@@ -53,6 +54,7 @@ inherited frmCad_NCM: TfrmCad_NCM
               CorPrincipal = clWhite
               CorSecundaria = 11592447
               GravaEsteCampo = True
+              AsInteger = 0
             end
             object DBMemo1: TDBMemo
               Left = 135
@@ -314,7 +316,6 @@ inherited frmCad_NCM: TfrmCad_NCM
   inherited ActionList1: TActionList
     inherited actImprimir: TAction
       Enabled = False
-      Visible = False
     end
   end
   inherited CdsCadastro: TpFIBClientDataSet

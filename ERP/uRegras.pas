@@ -44,7 +44,12 @@ interface
     TRegrasOS = class
       class function BaixaOS(IdOS: String): Boolean;
       class function ReabrirOS(IdOS: String): Boolean;
+      class function ImportaContrato(Const IdContratoCompetencia: TipoCampoChave; var DataSetOS,DataSetEquipamentos,DataSetServicos: TpFIBClientDataSet): Boolean;
     end;
+   TRegrasAgenda =class
+     class Procedure BaixaCompromisso(IdAgenda: TipoCampoChave);
+   end;
+
 
 implementation
 
@@ -366,8 +371,8 @@ begin
     begin
       StrSQL:=
        'update os '+
-       '   set IDSTATUSOS = ' + COnfiguracaoOS.GetConfiguracao(tpcERPStatusOSFaturada)+
-       ' where idos = '+DataSetSaida.FieldByName('idOS').AsString  ;
+       '   set IDSTATUSOS = ' +TipoCampoChaveToStr( COnfiguracaoOS.GetConfiguracao(tpcERPStatusOSFaturada))+
+       ' where idos = '+TipoCampoChaveToStr(DataSetSaida.FieldByName('idOS').AsString)  ;
       Exec_SQL(StrSQL);
     end;
 
@@ -395,15 +400,15 @@ begin
                '       FLAGBAIXADA= ''Y'', '+
                '       DATATERMINO = CURRENT_DATE, '+
                '       HORATERMINO = CURRENT_TIME, '+
-               '       IDSTATUSOS = '+ COnfiguracaoOS.GetConfiguracao(tpcERPStatusOSFinalizada)+
-               ' WHERE IDOS = '+IDOS);
+               '       IDSTATUSOS = '+ TipoCampoChaveToStr(COnfiguracaoOS.GetConfiguracao(tpcERPStatusOSFinalizada))+
+               ' WHERE IDOS = '+TipoCampoChaveToStr(IDOS));
 
       Exec_SQL('UPDATE SERVICOOS S SET '+
                '       DATATERMINO = CURRENT_DATE, '+
                '       HORATERMINO = CURRENT_TIME '+
                ' WHERE EXISTS(SELECT 1  '+
                '                FROM EQUIPAMENTOSOS E  '+
-               '               WHERE E.IDOS =   '+IDOS+
+               '               WHERE E.IDOS =   '+TipoCampoChaveToStr(IDOS)+
                '                 AND E.IDEQUIPAMENTOSOS = S.IDEQUIPAMENTOSOS) '+
                '   AND ((DATATERMINO IS NULL) OR (HORATERMINO IS NULL)) ');
       Commit;
@@ -419,6 +424,76 @@ begin
 
 end;
 
+class function TRegrasOS.ImportaContrato(Const IdContratoCompetencia: TipoCampoChave;
+               var DataSetOS,DataSetEquipamentos,DataSetServicos: TpFIBClientDataSet): Boolean;
+var
+  StrSQL:String;
+  CdsTemp,CdsServicosOS: TpFIBClientDataSet;
+begin
+  Result := True;
+  Try
+    CdsTemp := TpFIBClientDataSet.Create(nil);
+    CdsServicosOS := TpFIBClientDataSet.Create(nil);
+    StrSQL :=
+      'SELECT DISTINCT C.IDEMPRESA,C.IDCLIENTE, CP.IDEQUIPAMENTOCLIENTE,CE.DESCRICAOEQUIPAMENTO,CE.IDENTIFICADOR'+
+      '  FROM CONTRATOCOMPETENCIA CC'+
+      ' INNER JOIN CONTRATO C'+
+      '    ON (C.IDCONTRATO = CC.IDCONTRATO)'+
+      ' INNER JOIN CONTRATOPRODUTOS CP'+
+      '    ON (CP.IDCONTRATO= C.IDCONTRATO)'+
+      ' INNER JOIN CLIENTEEQUIPAMENTOS CE '+
+      '    ON (CE.IDCLIENTEEQUIPAMENTOS = CP.IDEQUIPAMENTOCLIENTE) '+
+      ' WHERE CC.IDCONTRATOCOMPETENCIA = '+TipoCampoChaveToStr(IdContratoCompetencia);
+    SetCds(CdsTemp,StrSQL);
+    CdsTemp.First;
+
+    DataSetOS.FieldByName('IDEMPRESA').Value := CdsTemp.FieldByName('IDEMPRESA').Value;
+    DataSetOS.FieldByName('IDCLIENTE').Value := CdsTemp.FieldByName('IDCLIENTE').Value;
+    DataSetOS.FieldByName('IDCONTRATOCOMPETENCIA').Value := IdContratoCompetencia;
+
+    while not CdsTemp.Eof do
+    begin
+      DataSetEquipamentos.Append;
+      DataSetEquipamentos.FieldByName('IDEQUIPAMENTOCLIENTE').Value := CdsTemp.FieldByName('IDEQUIPAMENTOCLIENTE').Value ;
+      DataSetEquipamentos.FieldByName('DESCRICAOEQUIPAMENTO').Value := CdsTemp.FieldByName('DESCRICAOEQUIPAMENTO').Value ;
+      DataSetEquipamentos.FieldByName('IDENTIFICADOR').Value := CdsTemp.FieldByName('IDENTIFICADOR').Value ;
+      StrSQL :=
+        'SELECT CP.IDPRODUTO, CP.VALORUNITARIO, CP.SUBTOTAL, P.CODIGO, P.NOMEPRODUTO'+
+        '  FROM CONTRATOCOMPETENCIA CC'+
+        ' INNER JOIN CONTRATO C'+
+        '    ON (C.IDCONTRATO = CC.IDCONTRATO)'+
+        ' INNER JOIN CONTRATOPRODUTOS CP'+
+        '    ON (CP.IDCONTRATO= C.IDCONTRATO)'+
+        ' INNER JOIN PRODUTO P'+
+        '    ON (P.IDPRODUTO  = CP.IDPRODUTO) '+
+        ' WHERE CC.IDCONTRATOCOMPETENCIA =  '+TipoCampoChaveToStr(IdContratoCompetencia)+
+        '   AND CP.IDEQUIPAMENTOCLIENTE= '+TipoCampoChaveToStr(CdsTemp.FieldByName('IDEQUIPAMENTOCLIENTE').Value);
+      SetCds(CdsServicosOS,StrSQL);
+      CdsServicosOS.First;
+      while not CdsServicosOS.Eof do
+      begin
+        DataSetServicos.Append;
+        DataSetServicos.FieldByName('IDPRODUTO').Value := CdsServicosOS.FieldByName('IDPRODUTO').Value;
+        DataSetServicos.FieldByName('VALORSERVICO').Value := CdsServicosOS.FieldByName('VALORUNITARIO').Value;
+        DataSetServicos.FieldByName('VALORTOTAL').Value := CdsServicosOS.FieldByName('SUBTOTAL').Value;
+        DataSetServicos.FieldByName('CODIGOSERVICO').Value := CdsServicosOS.FieldByName('CODIGO').Value;
+        DataSetServicos.FieldByName('DESCRICAOSERVICO').Value := CdsServicosOS.FieldByName('NOMEPRODUTO').Value;
+        DataSetServicos.Post;
+        CdsServicosOS.Next;
+      end;
+
+
+      DataSetEquipamentos.Post;
+      CdsTemp.Next;
+    end;
+
+
+  Finally
+    FreeAndNil(CdsTemp);
+    FreeAndNil(CdsServicosOS);
+  End;
+end;
+
 class function TRegrasOS.ReabrirOS(IdOS: String): Boolean;
 begin
   Try
@@ -428,7 +503,7 @@ begin
                '       FLAGBAIXADA= ''N'', '+
                '       DATATERMINO = null, '+
                '       HORATERMINO = null '+
-               ' WHERE IDOS = '+IDOS);
+               ' WHERE IDOS = '+TipoCampoChaveToStr(IDOS));
       Commit;
     except
       on e:Exception do
@@ -440,6 +515,29 @@ begin
 
     End;
 
+end;
+
+{ TRegrasAgenda }
+
+class procedure TRegrasAgenda.BaixaCompromisso(IdAgenda: TipoCampoChave);
+var
+  StrSQL: String;
+begin
+  StrSQL :=
+    'update agenda '+
+    '   set flagbaixado = ''Y'' '+
+    ' where idagenda = '+TipoCampoChaveToStr(IdAgenda);
+  Try
+    StartTrans;
+    Exec_SQL(StrSQL);
+    Commit;
+  Except
+    on E: Exception do
+    begin
+      RollBack();
+      Raise;
+    end;
+  End;
 end;
 
 end.

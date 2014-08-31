@@ -116,7 +116,7 @@ var
 
 implementation
 
-uses MinhasClasses, Comandos, uRegras, uForms;
+uses MinhasClasses, Comandos, uRegras, uForms, uLibERP;
 
 {$R *.dfm}
 
@@ -170,8 +170,8 @@ procedure TfrmCad_Produto.CdsCadastroAfterScroll(DataSet: TDataSet);
 begin
   inherited;
   SetControlesServico;
-  SetCds(CdsProcessos,tpERPProdutoProcessosservico,'PS.IDPRODUTO = '+ValorChave);
-  SetCds(CdsSeriais,tpERPSerialProduto,'IDPRODUTO = '+ValorChave);
+  SetCds(CdsProcessos,tpERPProdutoProcessosservico,'PS.IDPRODUTO = '+TipoCampoChaveToStr(ValorChave));
+  SetCds(CdsSeriais,tpERPSerialProduto,'IDPRODUTO = '+TipoCampoChaveToStr(ValorChave));
 end;
 
 

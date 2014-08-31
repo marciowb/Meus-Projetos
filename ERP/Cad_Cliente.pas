@@ -107,7 +107,8 @@ var
 
 implementation
 
-uses  Comandos, UDmConexao, uPesquisa_kimera , uForms, uDlg_EquipamentoCliente;
+uses  Comandos, UDmConexao, uPesquisa_kimera , uForms, uDlg_EquipamentoCliente,
+  uLibERP;
 
 {$R *.dfm}
 
@@ -219,7 +220,7 @@ end;
 procedure TfrmCad_Cliente.CdsCadastroAfterScroll(DataSet: TDataSet);
 begin
   inherited;
-  SetCds(CdsEquipamentos,tpERPClienteEquipamento,'idcliente = '+ValorChave);
+  SetCds(CdsEquipamentos,tpERPClienteEquipamento,'idcliente = '+TipoCampoChaveToStr(ValorChave));
 end;
 
 procedure TfrmCad_Cliente.CdsCadastroNewRecord(DataSet: TDataSet);

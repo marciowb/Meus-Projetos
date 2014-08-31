@@ -193,11 +193,11 @@ interface
                      tpERPGrupo, tpERPLinha, tpERPLocalizacao,tpERPProduto,tpERPFabricante,tpERPCodigoMunicipalServico,
                      tpERPProcessosservico,tpERPProdutoProcessosservico,tpERPPeridicidade,tpERPBanco,tpERPContaBancaria,tpERPCondicaoPagamento,
                      tpERPProposta,tpERPItemProposta,tpERPCondicaoPagamentoProposta,tpERPParcelaCondicaoPagamentoProposta,tpERPTipoContrato,
-                     tpERPContrato,tpERPServicoContrato,tpERPClienteEquipamento,tpERPClienteEquipamentoContrato,tpERPTipoOS,tpERPStatusOS,
+                     tpERPContrato,tpERPServicoContrato,tpERPClienteEquipamento,{tpERPClienteEquipamentoContrato,}tpERPTipoOS,tpERPStatusOS,
                      tpERPOS,tpERPEquipamentoOS,tpERPServicoEquipamentoOS,tpERPProdutoServicoOS,tpERPEntrada,
                      tpERPEntradaProduto,tpERPModeloNota, tpERPOperacao,tpERPOperacaoEntrada,tpERPOperacaoSaida,tpERPSerialProduto,
                      tpERPSerialProdutoEntrada,tpERPSerialProdutoAtivo,tpERPSerialProdutoOS,tpERPSaida,tpERPSaidaProduto,tpERPSaidaCondicaoPagamento,
-                     tpERPSaidaCondicaoPagamentoParcelas,tpERPTransportadora,tpERPAlmoxarifado,tpERPSaidaSerialProduto,tpERPCEP
+                     tpERPSaidaCondicaoPagamentoParcelas,tpERPTransportadora,tpERPAlmoxarifado,tpERPSaidaSerialProduto,tpERPCEP,tpERPCompetenciaContrato
 
 
                      );

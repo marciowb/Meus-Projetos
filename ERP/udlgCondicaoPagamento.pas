@@ -77,7 +77,7 @@ begin
   Rest := GetValorRestante;
   lblTotalRestante.Caption := 'Falta: '+FormatFloat(MascaraMoeda,Rest);
   if (pDataSet.State = dsEdit) and (Rest <> 0) then
-    lblTotalRestante.Caption := lblTotalRestante.Caption +' Total: '+ FormatFloat(MascaraMoeda,edtValor.AsCurrency+Rest )+' ('+edtValor.Text+' + '+FormatFloat(MascaraMoeda,Rest)+' )';
+    lblTotalRestante.Caption := lblTotalRestante.Caption +' Total: '+ FormatFloat(MascaraMoeda,FValorTotal )+' ('+edtValor.Text+' + '+FormatFloat(MascaraMoeda,Rest)+' )';
 end;
 
 procedure TfrmdlgCondicaoPagamento.AtulizaDados;

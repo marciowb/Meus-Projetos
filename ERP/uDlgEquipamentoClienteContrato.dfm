@@ -10,24 +10,22 @@ inherited frmDlg_EquipamentoClienteContrato: TfrmDlg_EquipamentoClienteContrato
   inherited Panel1: TPanel
     Top = 264
     Width = 634
-    ExplicitTop = 115
-    ExplicitWidth = 401
+    ExplicitTop = 264
+    ExplicitWidth = 634
     inherited btnOk: TBitBtn
-      Left = 364
-      ExplicitLeft = 131
+      Left = 360
+      ExplicitLeft = 360
     end
     inherited btnCancelar: TBitBtn
-      Left = 455
-      ExplicitLeft = 222
+      Left = 451
+      ExplicitLeft = 451
     end
   end
   inherited Panel2: TPanel
     Width = 634
     Height = 264
-    ExplicitLeft = 72
-    ExplicitTop = -16
-    ExplicitWidth = 715
-    ExplicitHeight = 370
+    ExplicitWidth = 634
+    ExplicitHeight = 264
     object GroupBox1: TGroupBox
       Left = 0
       Top = 57
@@ -36,9 +34,6 @@ inherited frmDlg_EquipamentoClienteContrato: TfrmDlg_EquipamentoClienteContrato
       Align = alClient
       Caption = ' Servi'#231'os '
       TabOrder = 0
-      ExplicitLeft = -8
-      ExplicitTop = 88
-      ExplicitHeight = 176
       object Panel4: TPanel
         Left = 507
         Top = 15
@@ -46,10 +41,11 @@ inherited frmDlg_EquipamentoClienteContrato: TfrmDlg_EquipamentoClienteContrato
         Height = 190
         Align = alRight
         TabOrder = 0
-        ExplicitHeight = 247
+        ExplicitLeft = 513
+        ExplicitTop = 14
         object BitBtn1: TBitBtn
-          Left = 5
-          Top = 53
+          Left = 6
+          Top = 58
           Width = 115
           Height = 25
           Caption = 'Incluir [Ins]'
@@ -88,7 +84,6 @@ inherited frmDlg_EquipamentoClienteContrato: TfrmDlg_EquipamentoClienteContrato
         Height = 190
         Align = alClient
         TabOrder = 1
-        ExplicitHeight = 247
         object cxGrid1DBTableView1: TcxGridDBTableView
           NavigatorButtons.ConfirmDelete = False
           DataController.DataSource = DataServicos
@@ -133,7 +128,6 @@ inherited frmDlg_EquipamentoClienteContrato: TfrmDlg_EquipamentoClienteContrato
       Height = 57
       Align = alTop
       TabOrder = 1
-      ExplicitWidth = 715
       object edtEquipamentoCliente: TEditPesquisa
         Left = 23
         Top = 24
