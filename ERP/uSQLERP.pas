@@ -1129,6 +1129,79 @@ begin
           '    ON (C.IDCONTRATO = CONTRATOCOMPETENCIA.IDCONTRATO) '+
           ' where 1=1 '+Complemento;
       end;
+      tpERPContasReceber:
+       Begin
+          CampoChave := 'IDCONTARECEBER';
+          CampoDisplay := '';
+          NomeTabela := 'CONTARECEBER';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'Contas a receber';
+          Versao20 := False;
+          DesconsiderarCampos := 'CODIGOCLIENTE;NOMECLIENTE;NOMEBANCO;AGENCIA;CONTA;NOMEPLANOCONTA;LOGIN;CODIGOEMPRESA;STATUS';
+          CampoCodigo := '';
+          Select :=
+            ' SELECT CR.IDCONTARECEBER, CR.DATAGERACAO, CR.HORAGERACAO, CR.NUMERODOCUMENTO,'+
+            '        CR.DATA, CR.DATAVENCIMENTO, CR.IDCLIENTE,'+
+            '        CR.IDSAIDA, CR.VALOR, CR.VALORPAGO, CR.FLAGSTATUS,'+
+            '        CR.IDPLANOCONTA, CR.VALORJUROSTOTAL,CR.PARCELA,'+
+            '        CR.VALORMORA, CR.VALORORIGINAL, CR.ALIQJUROS, CR.IDUSUARIO,'+
+            '        CR.IDUSUARIOCANCELAMENTO, CR.DATACANCELAMENTO,'+
+            '        CR.IDEMPRESA, CR.OBS, CR.DESCONTOFINANCEIRO,CR.VALORRESTANTE,'+
+            '        C.CODIGO CODIGOCLIENTE, C.NOMECLIENTE,CR.IDCONTABANCARIA,CR.IDCONDICAOPAGAMENTO,'+
+            '        U.LOGIN,E.CODIGO CODIGOEMPRESA,B.NOMEBANCO, CB.AGENCIA, CB.CONTA,'+
+            '        CASE WHEN CR.FLAGSTATUS= ''A'' THEN ''Aberto'' '+
+            '             WHEN CR.FLAGSTATUS= ''C'' THEN ''Cancelado'' '+
+            '             WHEN CR.FLAGSTATUS= ''F'' THEN ''Finalizada'' END STATUS '+
+            '   FROM CONTARECEBER CR'+
+            '  INNER JOIN CLIENTE C'+
+            '     ON (CR.IDCLIENTE = C.IDCLIENTE)'+
+            '  INNER JOIN EMPRESA E '+
+            '     ON (E.IDEMPRESA = CR.IDEMPRESA)'+
+            '   LEFT JOIN PLANOCONTA PC'+
+            '     ON (PC.IDPLANOCONTA =CR.IDPLANOCONTA)'+
+            '   LEFT JOIN CONTABANCARIA CB'+
+            '     ON (CB.IDCONTABANCARIA = CR.IDCONTABANCARIA)'+
+            '   LEFT JOIN BANCO B'+
+            '     ON (B.IDBANCO =CB.IDBANCO)'+
+            '   LEFT JOIN USUARIO U'+
+            '     ON (U.IDUSUARIO = CR.IDUSUARIO)'+
+            '  WHERE 1=1 '+Complemento;
+       End;
+       tpERPPlanoContas:
+       begin
+          CampoChave := 'IDPLANOCONTA';
+          CampoDisplay := 'NOMEPLANOCONTA';
+          NomeTabela := 'PLANOCONTA';
+          DescricaoCampoDisplay := 'Descrição';
+          DescricaoTabela := 'Planos de conta';
+          Versao20 := True;
+          DesconsiderarCampos := '';
+          TipoForm := tfTree;
+          UsaMaxParaCodigo := True;
+          Select :=
+            'SELECT IDPLANOCONTA, CODIGO, NOMEPLANOCONTA, CODPAI, CLASSIFICACAO,FLAGTIPO '+
+            '  FROM PLANOCONTA '+
+            ' WHERE 1=1 '+Complemento;
+       end;
+       tpERPContasReceberRecebimentos:
+        begin
+          CampoChave := 'IDCONTARECEBERRECIMENTOS';
+          CampoDisplay := '';
+          NomeTabela := 'CONTARECEBERRECIMENTOS';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'Recebimentos do contas a receber';
+          Versao20 := False;
+          DesconsiderarCampos := 'LOGIN;FLAGEDICAO';
+          Select :=
+            'SELECT CR.IDCONTARECEBERRECIMENTOS, CR.IDCONTARECEBER, CR.ALIQJUROS, CR.VALORJUROS, '+
+            '       CR.VALORMORA, CR.VALORRECEBIDO, CR.DATARECEBIDO, CR.DESCONTOFINANCEIRO,CR.IDUSUARIO, '+
+            '       U.LOGIN, ''N'' FLAGEDICAO'+
+            '  FROM CONTARECEBERRECIMENTOS CR '+
+            '  LEFT JOIN USUARIO U'+
+            '    ON (U.IDUSUARIO = CR.IDUSUARIO)'+
+            ' WHERE 1=1 '+Complemento;
+        end;
+
     end;
 
   End;

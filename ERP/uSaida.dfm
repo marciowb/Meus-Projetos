@@ -1666,6 +1666,8 @@ inherited frmSaida: TfrmSaida
       object cxTabSheet3: TcxTabSheet
         Caption = 'Adicionais'
         ImageIndex = 1
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupPagamento: TGroupBox
           Left = 737
           Top = 0

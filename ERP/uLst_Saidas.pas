@@ -17,18 +17,27 @@ uses
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, DB, cxDBData, DBClient,
   pFIBClientDataSet, ActnList, cxGridLevel, cxClasses, cxGridCustomView,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxPC,
-  StdCtrls, Buttons, dxStatusBar, ExtCtrls;
+  StdCtrls, Buttons, dxStatusBar, ExtCtrls,uLibErp;
 
 type
   TfrmLst_Saidas = class(TfrmListagemPadraoERP)
+    actContasReceber: TAction;
+    BitBtn11: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure actNovoExecute(Sender: TObject);
     procedure actEditarExecute(Sender: TObject);
+    procedure actContasReceberExecute(Sender: TObject);
   private
+    FIdCliente: TipoCampoChave;
+    FIdOS: TipoCampoChave;
+    procedure SetIdCliente(const Value: TipoCampoChave);
+    procedure SetIdOS(const Value: TipoCampoChave);
     { Private declarations }
   public
     { Public declarations }
+    property IdCliente: TipoCampoChave read FIdCliente write SetIdCliente;
+    property IdOS: TipoCampoChave read FIdOS write SetIdOS;
   end;
 
 var
@@ -40,10 +49,16 @@ uses MinhasClasses, uForms;
 
 {$R *.dfm}
 
+procedure TfrmLst_Saidas.actContasReceberExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreContasReceber(semid,CdsListagem.FieldByName('idsaida').Value);
+end;
+
 procedure TfrmLst_Saidas.actEditarExecute(Sender: TObject);
 begin
   inherited;
-  TrotinasForms.AbreVenda(CdsListagem.FieldByName('idsaida').AsLargeInt);
+  TrotinasForms.AbreVenda(CdsListagem.FieldByName('idsaida').Value);
 end;
 
 procedure TfrmLst_Saidas.actNovoExecute(Sender: TObject);
@@ -67,12 +82,29 @@ begin
   CriaColuna('STATUS_NOTA','Status',80,tcString);
   CriaColuna('USUARIO','Usuário',80,tcString);
   CampoOrdem := 'NUMEROSAIDA desc';
+  IdCliente := SemID;
+  FIdOS:= SemID;
 end;
 
 procedure TfrmLst_Saidas.FormShow(Sender: TObject);
 begin
   inherited;
+  if IdCliente <> SemID then
+    Filtros :='S.IDCLiente = '+TipoCampoChaveToStr(IdCliente);
+  if IdOS <> SemID then
+    Filtros :='S.IDOS = '+TipoCampoChaveToStr(IdOS);
+
   AtuDados;
+end;
+
+procedure TfrmLst_Saidas.SetIdCliente(const Value: TipoCampoChave);
+begin
+  FIdCliente := Value;
+end;
+
+procedure TfrmLst_Saidas.SetIdOS(const Value: TipoCampoChave);
+begin
+  FIdOS := Value;
 end;
 
 end.

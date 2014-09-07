@@ -17,7 +17,7 @@ interface
       class Procedure AbreFormCadastroPai<MyForm: TfrmCad_CadastroPaiERP  >(TipoOperacaoForm: TTipoOperacaoForm);
       class Procedure AbreFormListagemPadrao<MyForm: TfrmListagemPadraoERP >;
       class procedure AbreFormSimples(aForm: TfrmLstCadastroSimplesERP; aClasse: TClasseCadastroSimples;TipoOperacao: TTipoOperacaoForm = toNada);
-      class procedure AbreFormSimplesPeloTipoPesquisa(aTipoPesquisa: TTipoPesquisa;TipoOperacaoForm: TTipoOperacaoForm = toNada);
+      class Function AbreFormSimplesPeloTipoPesquisa(aTipoPesquisa: TTipoPesquisa;TipoOperacaoForm: TTipoOperacaoForm = toNada): TipoCampoChave;
       class Function AbreCadastroNCM(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
       class Function AbreCadastroEmpresa(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
       class Function AbreCadastroCliente(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
@@ -46,16 +46,18 @@ interface
       class function AbreCadastroTipoOS(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
       class function AbreCadastroStatusOS(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
       class function AbreInclusaoOS(pIdProposta: TipoCampoChave = '-1'): CampoChave;
-      class function AbreCentralOS: CampoChave;
+      class function AbreCentralOS(IdCliente: TipoCampoChave = '-1'): CampoChave;
       class procedure AbreEntradaProduto;
       class procedure AbreAgenda(IdAgenda: TipoCampoChave = '-1';IdConratoCOmpetencia: TipoCampoChave = '-1');
       class function AbreCadastroOperacaoEstoque(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
       class Procedure AbreListagemEntrada;
-      CLASS procedure AbreVenda(IdVenda: Int64 = - 1);
+      CLASS procedure AbreVenda(IdVenda: TipoCampoChave = '-1');
       class function AbreCadastroTransportadora(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
       class function AbreCadastroAlmoxarifado(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
-      class procedure AbreListagemSaida;
+      class procedure AbreListagemSaida(IDCLiente:TipoCampoChave =  '-1'; IdOs:TipoCampoChave =  '-1' );
       class Procedure AbreConfiguracoes;
+      class procedure AbreContasReceber(IdCliente: TipoCampoChave = '-1'; IdSaida: TipoCampoChave = '-1');
+      class function AbreCadastroPlanoContas(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
   private
 
     end;
@@ -69,7 +71,7 @@ uses uCadNCM, Lst_Empresa, Cad_Cliente, Cad_usuario, uCad_Funcionario,
   uLst_CondicaoPagamento, uLst_Proposta, uLst_TipoContrato, uLst_Contratos,
   uDlg_EquipamentoCliente, uLst_TipoOS, uLst_StatusOS, uLst_OS, uCad_OS,
   uAgenda, uPrincipal, uEntrada, Lst_OperacaoEstoque, uLst_Entrada, uSaida,
-  uCad_Transportadora, uLst_Saidas, uCadConfiguracoes;
+  uCad_Transportadora, uLst_Saidas, uCadConfiguracoes, uLst_ContasReceber;
 
 class procedure TrotinasForms.AbreAgenda(IdAgenda: TipoCampoChave = '-1';IdConratoCOmpetencia: TipoCampoChave = '-1');
 begin
@@ -179,6 +181,11 @@ begin
   AbreFormSimples(frmLst_Periodicidade,TfrmLst_Periodicidade,TipoOperacao);
 end;
 
+class function TrotinasForms.AbreCadastroPlanoContas(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
+begin
+  Result := AbreFormSimplesPeloTipoPesquisa(tpERPPlanoContas,TipoOperacao);
+end;
+
 class function TrotinasForms.AbreCadastroProcessoServico(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
 begin
   AbreFormSimplesPeloTipoPesquisa(tpERPProcessosservico,TipoOperacao);
@@ -222,9 +229,17 @@ begin
   AbreFormCadastroPai<TfrmCad_usuario>(TipoOperacao);
 end;
 
-class function TrotinasForms.AbreCentralOS: CampoChave;
+class function TrotinasForms.AbreCentralOS(IdCliente: TipoCampoChave = '-1'): CampoChave;
 begin
-  AbreFormListagemPadrao<TfrmLst_OS>
+   if frmLst_OS = nil then
+    frmLst_OS := TfrmLst_OS.Create(nil);
+  frmLst_OS.IdCliente := IdCliente;
+
+  if frmLst_OS.Showing then
+    frmLst_OS.BringToFront
+  else
+    frmLst_OS.Show ;
+
 end;
 
 class procedure TrotinasForms.AbreConfiguracoes;
@@ -235,6 +250,18 @@ begin
   Finally
     FreeAndNil(frmCadConfiguracao);
   End;
+end;
+
+class procedure TrotinasForms.AbreContasReceber(IdCliente: TipoCampoChave = '-1'; IdSaida: TipoCampoChave = '-1');
+begin
+  if frmLst_ContasReceber = nil then
+    frmLst_ContasReceber := TfrmLst_ContasReceber.Create(nil);
+  frmLst_ContasReceber.IdCliente := IdCliente;
+  frmLst_ContasReceber.IdSaida := IdSaida;
+  if frmLst_ContasReceber.Showing then
+    frmLst_ContasReceber.BringToFront
+  else
+    frmLst_ContasReceber.Show ;
 end;
 
 class function TrotinasForms.AbreContratos(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
@@ -269,7 +296,7 @@ class procedure TrotinasForms. AbreFormSimples(aForm: TfrmLstCadastroSimplesERP;
     End;
   end;
 
-class procedure TrotinasForms.AbreFormSimplesPeloTipoPesquisa(aTipoPesquisa: TTipoPesquisa;TipoOperacaoForm: TTipoOperacaoForm);
+class Function TrotinasForms.AbreFormSimplesPeloTipoPesquisa(aTipoPesquisa: TTipoPesquisa;TipoOperacaoForm: TTipoOperacaoForm): TipoCampoChave;
   var
     aForm : TfrmLstCadastroSimplesERP;
   begin
@@ -283,7 +310,9 @@ class procedure TrotinasForms.AbreFormSimplesPeloTipoPesquisa(aTipoPesquisa: TTi
         toIncluir:
           aForm.NovoReg := True ;
       end;
-      aForm.ShowModal;
+      if aForm.ShowModal = mrOK Then
+       result := aForm.ValorChave
+
     Finally
       FreeAndNil(aForm);
     End;
@@ -307,9 +336,16 @@ begin
   AbreFormListagemPadrao<TfrmLst_Entrada>;
 end;
 
-class procedure TrotinasForms.AbreListagemSaida;
+class procedure TrotinasForms.AbreListagemSaida(IDCLiente:TipoCampoChave =  '-1'; IdOs:TipoCampoChave =  '-1');
 begin
-  AbreFormListagemPadrao<TfrmLst_Saidas>;
+  if frmLst_Saidas = nil Then
+    frmLst_Saidas := TfrmLst_Saidas.Create(nil);
+  frmLst_Saidas.idCliente  := IDCliente;
+  frmLst_Saidas.IdOS  := IdOS;
+  if frmLst_Saidas.showing Then
+    frmLst_Saidas.BringToFront
+  else
+    frmLst_Saidas.Show;
 end;
 
 class function TrotinasForms.AbreManutencaoEquipamentoCliente(pIdCliente: TipoCampoChave;TipoOperacao: TTipoOperacaoForm): CampoChave;
@@ -337,12 +373,12 @@ begin
 end;
 
 
-class procedure TrotinasForms.AbreVenda(IdVenda: Int64);
+class procedure TrotinasForms.AbreVenda(IdVenda: TipoCampoChave);
 begin
   if not Assigned(frmSaida) Then
     frmSaida := TfrmSaida.Create(nil);
-  if IdVenda > -1 then
-    frmSaida.AbreVenda(IntToStr(IdVenda));
+  if IdVenda <> SemID then
+    frmSaida.AbreVenda(IdVenda);
   if frmSaida.Showing Then
     frmSaida.BringToFront
   else

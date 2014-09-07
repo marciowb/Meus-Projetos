@@ -29,6 +29,8 @@ type
     Reabrir1: TMenuItem;
     actFaturarOS: TAction;
     actFaturarOS1: TMenuItem;
+    actSaidas: TAction;
+    BitBtn12: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure actBaixaOSExecute(Sender: TObject);
@@ -39,13 +41,17 @@ type
     procedure ActionList1Update(Action: TBasicAction; var Handled: Boolean);
     procedure actFaturarOSExecute(Sender: TObject);
     procedure BitBtn11Click(Sender: TObject);
+    procedure actSaidasExecute(Sender: TObject);
   private
     FIdCompetenciaContrato: TipoCampoChave;
+    FIdCliente: TipoCampoChave;
     procedure SetIdCompetenciaContrato(const Value: TipoCampoChave);
+    procedure SetIdCliente(const Value: TipoCampoChave);
     { Private declarations }
   public
     { Public declarations }
     property IdCompetenciaContrato: TipoCampoChave read FIdCompetenciaContrato write SetIdCompetenciaContrato;
+    property IdCliente: TipoCampoChave read FIdCliente write SetIdCliente;
   end;
 
 var
@@ -53,7 +59,7 @@ var
 
 implementation
 
-uses MinhasClasses, uCad_OS, Comandos, uRegras, uSaida;
+uses MinhasClasses, uCad_OS, Comandos, uRegras, uSaida, uForms;
 
 {$R *.dfm}
 
@@ -138,6 +144,12 @@ begin
 
 end;
 
+procedure TfrmLst_OS.actSaidasExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreListagemSaida(semID,CdsListagem.FieldByName('idos').Value );
+end;
+
 procedure TfrmLst_OS.BitBtn11Click(Sender: TObject);
 begin
   inherited;
@@ -161,7 +173,7 @@ begin
    VisibleForCustomization := False;
   end;
   CampoOrdem := 'NUMEROOS desc';
-  AtuDados;
+  IdCliente := SemID;
   FIdCompetenciaContrato := SemID;
 end;
 
@@ -170,12 +182,22 @@ begin
   inherited;
   Self.FormCadastro :=  frmCad_OS;
   Self.ClasseCadPai := TfrmCad_OS;
+  Filtros:= '1=1';
   if FIdCompetenciaContrato <> SemID then
   begin
-    Filtros := 'o.IDCONTRATOCOMPETENCIA = '+TipoCampoChaveToStr(FIdCompetenciaContrato);
-    AtuDados;
+    Filtros := ' and o.IDCONTRATOCOMPETENCIA = '+TipoCampoChaveToStr(FIdCompetenciaContrato);
   end;
+  if IdCliente <> SemID then
+    Filtros :=Filtros+ ' and o.IdCliente = '+TipoCampoChaveToStr(IdCliente);
 
+  AtuDados;
+
+
+end;
+
+procedure TfrmLst_OS.SetIdCliente(const Value: TipoCampoChave);
+begin
+  FIdCliente := Value;
 end;
 
 procedure TfrmLst_OS.SetIdCompetenciaContrato(const Value: TipoCampoChave);

@@ -1,7 +1,6 @@
 program ERP;
 
 uses
-  ExceptionLog,
   Forms,
   SysUtils,
   uPrincipal in 'uPrincipal.pas' {frmPrincipal},
@@ -85,7 +84,11 @@ uses
   uCadConfiguracoes in 'uCadConfiguracoes.pas' {frmCadConfiguracao},
   uGerenteConfiguracao in 'uGerenteConfiguracao.pas',
   uConfiguracaoFaturamento in 'uConfiguracaoFaturamento.pas',
-  uConfiguracaoOS in 'uConfiguracaoOS.pas';
+  uConfiguracaoOS in 'uConfiguracaoOS.pas',
+  uLst_ContasReceber in 'uLst_ContasReceber.pas' {frmLst_ContasReceber},
+  uCad_ContasReceber in 'uCad_ContasReceber.pas' {frmCad_ContasReceber},
+  uDlg_RecebimentosContasReceber in 'uDlg_RecebimentosContasReceber.pas' {frmDlg_RecebimentosContasReceber},
+  uConfiguracaoFinanceiro in 'uConfiguracaoFinanceiro.pas';
 
 {$R *.res}
 
@@ -103,6 +106,8 @@ begin
   InfoSistema.Sistema := sERP;
   InfoSistema.VerificaLicenca := False;
   InfoSistema.SQLs := TSQLERP.Create;
+
+  USuarioLogado.Id := 1;
 
   Application.Title := 'ERP';
 

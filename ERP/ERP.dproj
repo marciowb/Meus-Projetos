@@ -38,7 +38,7 @@
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
 			<DCC_MapFile>3</DCC_MapFile>
-			<DCC_Define>DEBUG;EUREKALOG;EUREKALOG_VER6;$(DCC_Define)</DCC_Define>
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
 		</PropertyGroup>
 		<ItemGroup>
 			<DelphiCompile Include="ERP.dpr">
@@ -258,6 +258,16 @@
 			<DCCReference Include="uGerenteConfiguracao.pas"/>
 			<DCCReference Include="uConfiguracaoFaturamento.pas"/>
 			<DCCReference Include="uConfiguracaoOS.pas"/>
+			<DCCReference Include="uLst_ContasReceber.pas">
+				<Form>frmLst_ContasReceber</Form>
+			</DCCReference>
+			<DCCReference Include="uCad_ContasReceber.pas">
+				<Form>frmCad_ContasReceber</Form>
+			</DCCReference>
+			<DCCReference Include="uDlg_RecebimentosContasReceber.pas">
+				<Form>frmDlg_RecebimentosContasReceber</Form>
+			</DCCReference>
+			<DCCReference Include="uConfiguracaoFinanceiro.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>
@@ -320,7 +330,7 @@
 <!-- EurekaLog First Line
 [Exception Log]
 EurekaLog Version=6020
-Activate=1
+Activate=0
 Activate Handle=1
 Save Log File=1
 Foreground Tab=0

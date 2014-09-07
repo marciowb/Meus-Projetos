@@ -9,11 +9,11 @@ interface
     TUserLogado = packed record
       Login : String;
       Senha : String;
-      IdLoja : Integer;
+      IdLoja : Variant;
       NomeMaquina : String;
-      Id : Integer;
+      Id : variant;
       Conexao : Integer;
-      IdPerfil : Integer;
+      IdPerfil : Variant;
       TipoCaracter :TTipoCaracter;
       Administrador: Boolean;
    end;
@@ -197,7 +197,8 @@ interface
                      tpERPOS,tpERPEquipamentoOS,tpERPServicoEquipamentoOS,tpERPProdutoServicoOS,tpERPEntrada,
                      tpERPEntradaProduto,tpERPModeloNota, tpERPOperacao,tpERPOperacaoEntrada,tpERPOperacaoSaida,tpERPSerialProduto,
                      tpERPSerialProdutoEntrada,tpERPSerialProdutoAtivo,tpERPSerialProdutoOS,tpERPSaida,tpERPSaidaProduto,tpERPSaidaCondicaoPagamento,
-                     tpERPSaidaCondicaoPagamentoParcelas,tpERPTransportadora,tpERPAlmoxarifado,tpERPSaidaSerialProduto,tpERPCEP,tpERPCompetenciaContrato
+                     tpERPSaidaCondicaoPagamentoParcelas,tpERPTransportadora,tpERPAlmoxarifado,tpERPSaidaSerialProduto,tpERPCEP,tpERPCompetenciaContrato,
+                     tpERPContasReceber,tpERPPlanoContas,tpERPContasReceberRecebimentos
 
 
                      );
@@ -298,6 +299,13 @@ interface
                           ,tpcERPStatusOSExecucao
                           ,tpcERPStatusOSFaturada
                           ,tpcERPOperacaoFaturarOS
+                          ,tpcERPAliqJurosDia
+                          ,tpcERPAliqMoraDia
+                          ,tpcERPAliqMoraMax
+                          ,tpcERPPlanoContasFaturamentoDireto
+                          ,tpcERPPlanoContasFaturamentoDeOS
+                          ,tpcERPPlanoContasFaturamentoContrato
+
                          {$EndRegion}
 
 

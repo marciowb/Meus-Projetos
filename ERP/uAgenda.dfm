@@ -73,7 +73,7 @@ inherited frmAgenda: TfrmAgenda
       Align = alLeft
       Caption = ' Visualizar por '
       Columns = 3
-      ItemIndex = 0
+      ItemIndex = 2
       Items.Strings = (
         'Dia'
         'Semana'

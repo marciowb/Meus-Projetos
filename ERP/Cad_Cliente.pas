@@ -75,6 +75,13 @@ type
     BitBtn3: TBitBtn;
     actAlterar: TAction;
     actExcluir: TAction;
+    MainMenu1: TMainMenu;
+    actContasReceber: TAction;
+    Integrao1: TMenuItem;
+    Serviosdessecliente1: TMenuItem;
+    ContasaReceber1: TMenuItem;
+    actNotasFiscais: TAction;
+    Saidasparaessecliente1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure CdsCadastroAfterOpen(DataSet: TDataSet);
     procedure CdsCadastroNewRecord(DataSet: TDataSet);
@@ -93,6 +100,9 @@ type
     procedure CdsEquipamentosBeforePost(DataSet: TDataSet);
     procedure CdsCadastroAfterPost(DataSet: TDataSet);
     procedure edtPesqCEPClick(Sender: TObject);
+    procedure actContasReceberExecute(Sender: TObject);
+    procedure actIntServicosExecute(Sender: TObject);
+    procedure actNotasFiscaisExecute(Sender: TObject);
   private
     { Private declarations }
 
@@ -150,6 +160,12 @@ begin
   End;
 end;
 
+procedure TfrmCad_Cliente.actContasReceberExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreContasReceber(ValorChave);
+end;
+
 procedure TfrmCad_Cliente.actExcluirExecute(Sender: TObject);
 begin
   inherited;
@@ -165,6 +181,18 @@ procedure TfrmCad_Cliente.actIntegracaoExecute(Sender: TObject);
 begin
   inherited;
   //
+end;
+
+procedure TfrmCad_Cliente.actIntServicosExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreCentralOS(ValorChave);
+end;
+
+procedure TfrmCad_Cliente.actNotasFiscaisExecute(Sender: TObject);
+begin
+  inherited;
+   TrotinasForms.AbreListagemSaida(ValorChave);
 end;
 
 procedure TfrmCad_Cliente.actNovoEquipamentoExecute(Sender: TObject);

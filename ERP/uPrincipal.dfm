@@ -200,6 +200,9 @@ inherited frmPrincipal: TfrmPrincipal
         object CondiodePagamento1: TMenuItem
           Action = actCondicaoPagamento
         end
+        object PlanosdeConta1: TMenuItem
+          Action = actPlanoConta
+        end
       end
       object Contrato1: TMenuItem
         Action = actCadContrato
@@ -266,6 +269,12 @@ inherited frmPrincipal: TfrmPrincipal
       end
       object CentralOS1: TMenuItem
         Action = actCentralOS
+      end
+    end
+    object Financeiro2: TMenuItem
+      Action = actFinanceiro
+      object CentralOS2: TMenuItem
+        Action = actContasReceber
       end
     end
     object Agenda1: TMenuItem
@@ -520,6 +529,21 @@ inherited frmPrincipal: TfrmPrincipal
     object actConfiguracoes: TAction
       Caption = 'Configura'#231#245'es'
       OnExecute = actConfiguracoesExecute
+    end
+    object actFinanceiro: TAction
+      Category = 'Financeiro'
+      Caption = 'Financeiro'
+      OnExecute = actFinanceiroExecute
+    end
+    object actContasReceber: TAction
+      Category = 'Financeiro'
+      Caption = 'Contas a Receber'
+      OnExecute = actContasReceberExecute
+    end
+    object actPlanoConta: TAction
+      Category = 'Cadastro'
+      Caption = 'Planos de Conta'
+      OnExecute = actPlanoContaExecute
     end
   end
   object dxDockingManager1: TdxDockingManager

@@ -2,8 +2,9 @@ inherited frmCad_Cliente: TfrmCad_Cliente
   Caption = 'Cadastro de clientes'
   ClientHeight = 498
   ClientWidth = 773
+  Menu = MainMenu1
   ExplicitWidth = 789
-  ExplicitHeight = 537
+  ExplicitHeight = 557
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
@@ -557,10 +558,6 @@ inherited frmCad_Cliente: TfrmCad_Cliente
       object cxTabSheet1: TcxTabSheet
         Caption = 'Dados Adicionais'
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object Panel2: TPanel
           Left = 0
           Top = 0
@@ -756,10 +753,6 @@ inherited frmCad_Cliente: TfrmCad_Cliente
       object cxTabSheet2: TcxTabSheet
         Caption = ' Equipamentos '
         ImageIndex = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object GroupBox3: TGroupBox
           Left = 0
           Top = 0
@@ -943,11 +936,14 @@ inherited frmCad_Cliente: TfrmCad_Cliente
   inherited ActionList1: TActionList
     Images = DMConexao.ImageList16_16
     object actIntegracao: TAction
+      Category = 'Integracao'
       Caption = 'Integra'#231#227'o'
       OnExecute = actIntegracaoExecute
     end
     object actIntServicos: TAction
+      Category = 'Integracao'
       Caption = 'Servi'#231'os desse cliente'
+      OnExecute = actIntServicosExecute
     end
     object actNovoEquipamento: TAction
       Category = 'Equipamento'
@@ -969,6 +965,16 @@ inherited frmCad_Cliente: TfrmCad_Cliente
       ImageIndex = 16
       OnExecute = actExcluirExecute
     end
+    object actContasReceber: TAction
+      Category = 'Integracao'
+      Caption = 'Contas a Receber'
+      OnExecute = actContasReceberExecute
+    end
+    object actNotasFiscais: TAction
+      Category = 'Integracao'
+      Caption = 'Sa'#237'das para esse cliente'
+      OnExecute = actNotasFiscaisExecute
+    end
   end
   inherited CdsCadastro: TpFIBClientDataSet
     AfterScroll = CdsCadastroAfterScroll
@@ -987,5 +993,21 @@ inherited frmCad_Cliente: TfrmCad_Cliente
     OnNewRecord = CdsEquipamentosNewRecord
     Left = 32
     Top = 176
+  end
+  object MainMenu1: TMainMenu
+    Left = 40
+    Top = 256
+    object Integrao1: TMenuItem
+      Action = actIntegracao
+      object Serviosdessecliente1: TMenuItem
+        Action = actIntServicos
+      end
+      object Saidasparaessecliente1: TMenuItem
+        Action = actNotasFiscais
+      end
+      object ContasaReceber1: TMenuItem
+        Action = actContasReceber
+      end
+    end
   end
 end

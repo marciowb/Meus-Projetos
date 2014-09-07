@@ -17,9 +17,10 @@ uses
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, DB, cxDBData, DBClient,
   pFIBClientDataSet, ActnList, cxGridLevel, cxClasses, cxGridCustomView,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxPC,
-  StdCtrls, Buttons, dxStatusBar, ExtCtrls;
+  StdCtrls, Buttons, dxStatusBar, ExtCtrls,Generics.Collections;
 
 type
+
   TfrmListagemPadraoERP = class(TfrmListagemPadrao)
   private
     { Private declarations }
@@ -33,5 +34,6 @@ var
 implementation
 
 {$R *.dfm}
+
 
 end.

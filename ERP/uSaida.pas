@@ -181,7 +181,7 @@ type
     procedure SetIdOS(const Value: TipoCampoChave);
   public
     { Public declarations }
-    Procedure AbreVenda(IdVenda: String);
+    Procedure AbreVenda(IdVenda: TipoCampoChave);
     property IdOS: TipoCampoChave read FIdOS write SetIdOS;
   end;
 
@@ -194,7 +194,7 @@ uses UDmConexao, Comandos, MinhasClasses, uDlg_SaidaItem, udlgCondicaoPagamento,
   uRegras,  uConfiguracaoOS;
 
 {$R *.dfm}
-procedure TfrmSaida.AbreVenda(IdVenda: String);
+procedure TfrmSaida.AbreVenda(IdVenda: TipoCampoChave);
 begin
   SetCds(CdsSaida,tpERPSaida,'IDSAIDA = '+TipoCampoChaveToStr(IdVenda));
   SetCds(CdsItens,tpERPSaidaProduto,'Sp.IDSAIDA = '+TipoCampoChaveToStr(IdVenda));

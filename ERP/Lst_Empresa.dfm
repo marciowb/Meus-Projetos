@@ -164,8 +164,6 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         object cxTabSheet1: TcxTabSheet
           Caption = 'Endere'#231'o'
           ImageIndex = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object GroupBox1: TGroupBox
             Left = 0
             Top = 0

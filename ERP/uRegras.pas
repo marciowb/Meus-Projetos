@@ -1,7 +1,8 @@
 unit uRegras;
 
 interface
-  Uses MinhasClasses, uSQLERP,Comandos,Classes,SysUtils, Math,DB,pFIBClientDataSet, StrUtils,ulibERP;
+  Uses MinhasClasses, uSQLERP,Comandos,Classes,SysUtils, Math,DB,pFIBClientDataSet,
+       StrUtils,ulibERP, DateUtils;
   Type
     TParcela = record
       NumParcela: Integer;
@@ -50,10 +51,18 @@ interface
      class Procedure BaixaCompromisso(IdAgenda: TipoCampoChave);
    end;
 
+   TRegrasContasReceber = class
+      class function DiasAtraso(DataRecebimento,DataVencimento: TDate): SmallInt;
+      class function CalculaMora(Valor: Currency; DataRecebimento,DataVencimento: TDate): Currency;
+      class function CalculaJuros(Valor: Currency; DataRecebimento,DataVencimento: TDate): Currency;
+      class function CalculaAliqJuros(DataRecebimento,DataVencimento: TDate): Currency;
+      class Function GeraContaReceberDeSaida(IdSaida : TipoCampoChave;UsaTrancaoPropria: Boolean = False ): Boolean;
+   end;
+
 
 implementation
 
-uses uConstantes, uConfiguracaoOS;
+uses uConstantes, uConfiguracaoOS, uConfiguracaoFinanceiro;
 
 { TRegrasCondicaoPagamento }
 
@@ -375,7 +384,7 @@ begin
        ' where idos = '+TipoCampoChaveToStr(DataSetSaida.FieldByName('idOS').AsString)  ;
       Exec_SQL(StrSQL);
     end;
-
+    TRegrasContasReceber.GeraContaReceberDeSaida(DataSetSaida.FieldByName('idsaida').Value, False);
     Commit;
     Result := True;
   Except
@@ -538,6 +547,183 @@ begin
       Raise;
     end;
   End;
+end;
+
+{ TRegrasContasReceber }
+
+class function TRegrasContasReceber.CalculaAliqJuros(DataRecebimento,
+  DataVencimento: TDate): Currency;
+var
+  Dias: Integer;
+  JurosDia: Currency;
+begin
+  Result := 0;
+  Dias :=  TRegrasContasReceber.DiasAtraso(DataRecebimento,DataVencimento);
+  if Dias <= 0 then
+    Exit;
+
+  JurosDia := ConfiguracaoFinanceiro.GetConfiguracao(tpcERPAliqJurosDia);
+  Result := JurosDia * Dias;
+
+end;
+
+class function TRegrasContasReceber.CalculaJuros(Valor: Currency;
+  DataRecebimento, DataVencimento: TDate): Currency;
+begin
+  Result := (Valor * TRegrasContasReceber.CalculaAliqJuros(DataRecebimento, DataVencimento) )/ 100;
+end;
+
+class function TRegrasContasReceber.CalculaMora(Valor: Currency;
+  DataRecebimento, DataVencimento: TDate): Currency;
+var
+  Dias: Integer;
+  MoraDia,MoraMax,ValorMora: Currency;
+begin
+  Result := 0;
+  Dias :=  TRegrasContasReceber.DiasAtraso(DataRecebimento, DataVencimento);
+  if Dias <= 0 then
+    Exit;
+
+  MoraDia := ConfiguracaoFinanceiro.GetConfiguracao(tpcERPAliqMoraDia);
+  MoraMax := ConfiguracaoFinanceiro.GetConfiguracao(tpcERPAliqMoraMax);
+
+  MoraDia := MoraDia * Dias;
+  if MoraDia > MoraMax then
+    MoraDia := MoraMax;
+
+  ValorMora := (Valor * MoraDia)/ 100;
+  Result := ValorMora;
+
+end;
+
+class function TRegrasContasReceber.DiasAtraso(DataRecebimento,
+  DataVencimento: TDate): SmallInt;
+begin
+  Result :=  DaysBetween(DataVencimento,DataRecebimento);
+  if DataVencimento > DataRecebimento then
+    Result := Result * -1;
+end;
+
+class function TRegrasContasReceber.GeraContaReceberDeSaida(IdSaida : TipoCampoChave;UsaTrancaoPropria: Boolean = False ): Boolean;
+var
+  StrSQL : String;
+begin
+  StrSQL :=
+    'EXECUTE BLOCK AS'+
+    '    DECLARE VARIABLE IDVENDA CHAVE;'+
+    '    DECLARE VARIABLE DATA DATE;'+
+    '    DECLARE VARIABLE IDEMPRESA CHAVE;'+
+    '    DECLARE VARIABLE IDCLIENTE CHAVE;'+
+    '    DECLARE VARIABLE NUMEROSAIDA VARCHAR(10);'+
+    '    DECLARE VARIABLE IDUSUARIO CHAVE;'+
+    '    DECLARE VARIABLE VALOR VALOR;'+
+    '    DECLARE VARIABLE NUMTOTALPARCELAS INTEGER;'+
+    '    DECLARE VARIABLE PARCELA INTEGER;'+
+    '    DECLARE VARIABLE IDCONTARECEBER CHAVE;'+
+    '    DECLARE VARIABLE VENCIMENTO DATE;'+
+    '    DECLARE VARIABLE TIPOPAGAMENTO SMALLINT ;'+
+    '    DECLARE VARIABLE STRPARCELA VARCHAR(7);'+
+    '    DECLARE VARIABLE IDCONTABANCARIA CHAVE;'+
+    '    DECLARE VARIABLE IDCONDICAOPAGAMENTO CHAVE;'+
+    '    DECLARE VARIABLE SEQ INTEGER;'+
+    '    DECLARE VARIABLE IDPLANOCONTA CHAVE;'+
+    'BEGIN'+
+    '  IDVENDA = '+TipoCampoChaveToStr(IdSaida)+';'+
+    '  SEQ = 0;'+
+    ''+
+    '  FOR'+
+    '      SELECT S.DATA,S.IDEMPRESA, S.IDCLIENTE,S.NUMEROSAIDA,S.IDUSUARIO,'+
+    '             SC.VALOR, COALESCE(SC.NUMTOTALPARCELAS,1) NUMTOTALPARCELAS,'+
+    '             CP.FLAGTIPOPAGAMENTO, CP.IDCONTABANCARIA,CP.IDCONDICAOPAGAMENTO,'+
+    '             CASE WHEN S.IDOS IS NULL THEN (SELECT VALOR   FROM CONFIGURACOES WHERE NOMESECAO = ''FINANCEIRO'' AND NOMECONFIGURACAO = ''PLANOCONTASFATURAMENTODEOS'')'+
+    '                  WHEN OS.IDCONTRATOCOMPETENCIA IS NOT NULL THEN (SELECT VALOR   FROM CONFIGURACOES WHERE NOMESECAO = ''FINANCEIRO'' AND NOMECONFIGURACAO = ''PLANOCONTASFATURAMENTOCONTRATO'')'+
+    '                  WHEN OS.IDCONTRATOCOMPETENCIA IS NULL THEN (SELECT VALOR   FROM CONFIGURACOES WHERE NOMESECAO = ''FINANCEIRO'' AND NOMECONFIGURACAO = ''PLANOCONTASFATURAMENTODEOS'') END IDPLANOCONTAS'+
+    '        FROM SAIDA S'+
+    '       INNER JOIN SAIDACONDICAOPAGAMENTO SC'+
+    '          ON (SC.IDSAIDA = S.IDSAIDA)'+
+    '       INNER JOIN OPERACAOESTOQUE O'+
+    '          ON (O.IDOPERACAOESTOQUE = S.IDOPERACAOESTOQUE)'+
+    '       INNER JOIN CONDICAOPAGAMENTO CP'+
+    '          ON (CP.IDCONDICAOPAGAMENTO = SC.IDCONDICAOPAGAMENTO)'+
+    '        LEFT JOIN OS'+
+    '          ON (OS.IDOS= S.IDOS)'+
+    '       WHERE S.IDSAIDA = :IDVENDA'+
+    '         AND COALESCE(O.FLAGGERAFINANCEIRO,''N'') = ''Y'''+
+    '         AND CP.FLAGTIPOPAGAMENTO <> 5'+
+    '        INTO :DATA, :IDEMPRESA,:IDCLIENTE,:NUMEROSAIDA,:IDUSUARIO,'+
+    '             :VALOR, :NUMTOTALPARCELAS, :TIPOPAGAMENTO,:IDCONTABANCARIA,'+
+    '             :IDCONDICAOPAGAMENTO, :IDPLANOCONTA'+
+    '   DO'+
+    '   BEGIN'+
+    '     PARCELA = 1;'+
+    ''+
+    '     WHILE (PARCELA <= :NUMTOTALPARCELAS) DO'+
+    '     BEGIN'+
+    '        SEQ = :SEQ +1;'+
+    '        SELECT RESULT'+
+    '          FROM GERACHAVE(''SEQ_IDCONTARECEBER'')'+
+    '          INTO :IDCONTARECEBER;'+
+    ''+
+    '       VENCIMENTO = DATEADD( :PARCELA MONTH TO :DATA);'+
+    '       STRPARCELA = LPAD(:PARCELA,3,''0'')||''/''||LPAD(:NUMTOTALPARCELAS,3,''0'');'+
+    ''+
+    ''+
+    ''+
+    '       UPDATE OR  INSERT INTO CONTARECEBER (IDCONTARECEBER, DATAGERACAO, HORAGERACAO, NUMERODOCUMENTO, DATA, DATAVENCIMENTO, IDCLIENTE,'+
+    '                           IDSAIDA, VALOR, VALORPAGO, FLAGSTATUS, IDPLANOCONTA, VALORJUROSTOTAL, VALORMORA,'+
+    '                           VALORORIGINAL, ALIQJUROS, IDUSUARIO, IDUSUARIOCANCELAMENTO, DATACANCELAMENTO, IDEMPRESA, OBS,'+
+    '                           DESCONTOFINANCEIRO, VALORRESTANTE, PARCELA, IDCONTABANCARIA, IDCONDICAOPAGAMENTO)'+
+    '       VALUES (:IDCONTARECEBER, CURRENT_DATE, CURRENT_TIME, :NUMEROSAIDA||''-''||LPAD(:SEQ,3,''0''), :DATA,'+
+    '               CASE WHEN :TIPOPAGAMENTO = 0 THEN :DATA ELSE :VENCIMENTO END , :IDCLIENTE, :IDVENDA,'+
+    '                 :VALOR, CASE WHEN :TIPOPAGAMENTO = 0 THEN :VALOR ELSE NULL END , CASE WHEN :TIPOPAGAMENTO = 0 THEN ''F'' ELSE ''A'' END,'+
+    '                 :IDPLANOCONTA, NULL, NULL, :VALOR, NULL,'+
+    '                 :IDUSUARIO, NULL, NULL, :IDEMPRESA, NULL, NULL, NULL,'+
+    '                 :STRPARCELA, :IDCONTABANCARIA, :IDCONDICAOPAGAMENTO) MATCHING(IDEMPRESA,NUMERODOCUMENTO, IDCLIENTE ) ;'+
+    ''+
+    '      IF (:TIPOPAGAMENTO = 0) THEN'+
+    '      BEGIN'+
+    '          DELETE FROM CONTARECEBERRECIMENTOS'+
+    '           WHERE IDCONTARECEBER = :IDCONTARECEBER;'+
+    ''+
+    '          INSERT INTO CONTARECEBERRECIMENTOS (IDCONTARECEBERRECIMENTOS, IDCONTARECEBER, ALIQJUROS, VALORJUROS, VALORMORA,'+
+    '                                                              VALORRECEBIDO, DATARECEBIDO, DESCONTOFINANCEIRO, IDUSUARIO)'+
+    '                          VALUES ((SELECT RESULT FROM GERACHAVE(''SEQ_IDCONTARECEBERRECIMENTOS'')), :IDCONTARECEBER, NULL,'+
+    '                                  NULL, NULL, :VALOR, :DATA,'+
+    '                                  NULL, :IDUSUARIO) ;'+
+    '      END'+
+    ''+
+    '       PARCELA = :PARCELA+ 1;'+
+    ''+
+    '     END'+
+    ''+
+    '   END  '+
+    ''+
+    'END';
+
+
+
+  try
+    Result := True;
+    if UsaTrancaoPropria then
+      StartTrans;
+     Exec_SQL(StrSQL);
+    if UsaTrancaoPropria then
+     Commit();
+
+  except
+    on E: Exception do
+    begin
+      if UsaTrancaoPropria then
+      begin
+        RollBack;
+      end;
+      Result := False;
+      raise;
+
+
+    end;
+  end;
+
 end;
 
 end.

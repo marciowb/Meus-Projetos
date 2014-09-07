@@ -280,7 +280,7 @@ begin
 //  actNovo.Visible := GetPermissao(IdAgendaNovo);
 //  actEditar.Visible := GetPermissao(IdAgendaEditar);
 //  actExcluir.Visible := GetPermissao(IdAgendaExcluir);
-
+  grpTipoViewClick(nil);
   if IdAgenda <> SemID then
   Begin
     CdsAgenda.Locate('IDAGENDA', IdAgenda,[]);

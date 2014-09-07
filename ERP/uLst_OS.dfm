@@ -14,7 +14,7 @@ inherited frmLst_OS: TfrmLst_OS
     Width = 873
     ExplicitWidth = 873
     inherited BitBtn1: TBitBtn
-      Left = 702
+      Left = 809
       ExplicitLeft = 702
     end
     inherited BitBtn9: TBitBtn
@@ -32,6 +32,18 @@ inherited frmLst_OS: TfrmLst_OS
       ParentDoubleBuffered = False
       TabOrder = 10
       OnClick = BitBtn11Click
+    end
+    object BitBtn12: TBitBtn
+      Left = 702
+      Top = 0
+      Width = 107
+      Height = 31
+      Action = actSaidas
+      Align = alLeft
+      Caption = 'Faturamento'
+      DoubleBuffered = True
+      ParentDoubleBuffered = False
+      TabOrder = 11
     end
   end
   inherited Status: TdxStatusBar
@@ -56,7 +68,6 @@ inherited frmLst_OS: TfrmLst_OS
     ClientRectBottom = 423
     ClientRectRight = 873
     inherited tsListagem: TcxTabSheet
-      ExplicitTop = 20
       ExplicitWidth = 873
       ExplicitHeight = 403
       inherited cxGrid1: TcxGrid
@@ -88,6 +99,11 @@ inherited frmLst_OS: TfrmLst_OS
       Caption = 'Faturar O.S.'
       ImageIndex = 44
       OnExecute = actFaturarOSExecute
+    end
+    object actSaidas: TAction
+      Caption = 'Faturamento'
+      ImageIndex = 12
+      OnExecute = actSaidasExecute
     end
   end
   object PopOperacoes: TPopupMenu

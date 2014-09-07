@@ -9,7 +9,7 @@ uses
 
 type
   iFormPadrao = interface
-
+     ['{C870B0D1-C9E6-464B-A85F-48655F063709}']
   end;
   TfrmPadrao = class(TForm,iFormPadrao)
     procedure FormKeyPress(Sender: TObject; var Key: Char);

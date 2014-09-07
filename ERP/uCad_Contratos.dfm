@@ -2,7 +2,6 @@ inherited frmCad_Contrato: TfrmCad_Contrato
   Caption = 'Cadastro de contratos'
   ClientHeight = 462
   ClientWidth = 834
-  ExplicitTop = -67
   ExplicitWidth = 850
   ExplicitHeight = 501
   PixelsPerInch = 96
@@ -27,7 +26,6 @@ inherited frmCad_Contrato: TfrmCad_Contrato
     inherited PageControl: TcxPageControl
       Width = 649
       Height = 432
-      ActivePage = cxTabSheet1
       ExplicitWidth = 649
       ExplicitHeight = 432
       ClientRectBottom = 431
@@ -1352,10 +1350,6 @@ inherited frmCad_Contrato: TfrmCad_Contrato
           Align = alClient
           Caption = 'Compet'#234'ncias'
           TabOrder = 0
-          ExplicitLeft = 205
-          ExplicitTop = 80
-          ExplicitWidth = 185
-          ExplicitHeight = 105
           object pnlCompetencias: TPanel
             Left = 2
             Top = 15
@@ -1363,7 +1357,6 @@ inherited frmCad_Contrato: TfrmCad_Contrato
             Height = 393
             Align = alClient
             TabOrder = 0
-            ExplicitHeight = 194
             object cxGrid1: TcxGrid
               Left = 1
               Top = 1
@@ -1371,10 +1364,6 @@ inherited frmCad_Contrato: TfrmCad_Contrato
               Height = 391
               Align = alClient
               TabOrder = 0
-              ExplicitLeft = 96
-              ExplicitTop = 16
-              ExplicitWidth = 250
-              ExplicitHeight = 200
               object cxGrid1DBTableView1: TcxGridDBTableView
                 NavigatorButtons.ConfirmDelete = False
                 DataController.DataSource = DataCompetencia

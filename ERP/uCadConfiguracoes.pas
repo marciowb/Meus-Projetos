@@ -14,7 +14,8 @@ uses
   dxSkinOffice2010Silver, dxSkinPumpkin, dxSkinSeven, dxSkinSharp, dxSkinSilver,
   dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008, dxSkinsDefaultPainters,
   dxSkinValentine, dxSkinXmas2008Blue, dxSkinscxPCPainter, cxPC, Mask,
-  EditPesquisa,Generics.Collections,MinhasClasses,uGerenteConfiguracao;
+  EditPesquisa,Generics.Collections,MinhasClasses,uGerenteConfiguracao,
+  cxContainer, cxEdit, cxTextEdit, cxCurrencyEdit;
 
 type
   TObjCOnfig = class
@@ -44,6 +45,18 @@ type
     edtConfigOsStatusFinalizada: TEditPesquisa;
     edtConfigOsStatusFaturada: TEditPesquisa;
     edtOperacaoFaturamento: TEditPesquisa;
+    tsFinanceiro: TcxTabSheet;
+    cxPageControl1: TcxPageControl;
+    tsContasReceber: TcxTabSheet;
+    Label1: TLabel;
+    edtJurosDia: TcxCurrencyEdit;
+    edtMoraDia: TcxCurrencyEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    edtMaxMora: TcxCurrencyEdit;
+    edtPlanoContaFaturamentoDireto: TEditPesquisa;
+    edtPlanoContasFaturamentoDeOS: TEditPesquisa;
+    edtPlanoContasFaturamentoContrato: TEditPesquisa;
     procedure edtConfigOsStatusAbertaBtnNovoClick(Sender: TObject);
     procedure edtOperacaoFaturamentoBtnNovoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -53,6 +66,7 @@ type
     procedure btnGaravarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnCancelarClick(Sender: TObject);
+    procedure edtPlanCOntaFaturamentoDiretoBtnNovoClick(Sender: TObject);
   private
     { Private declarations }
      FMapConfiguracoes: TDictionary<TTipoConfiguracao,TObjCOnfig>;
@@ -72,7 +86,7 @@ var
 
 implementation
 
-uses uForms, Comandos, uConfiguracaoOS;
+uses uForms, Comandos, uConfiguracaoOS, uConfiguracaoFinanceiro;
 
 
 
@@ -100,6 +114,14 @@ begin
   AddObjetos(COnfiguracaoOS,tpcERPOperacaoFaturarOS, edtOperacaoFaturamento);
   {$EndRegion}
 
+  {$Region 'Financeiro'}
+  AddObjetos(ConfiguracaoFinanceiro,tpcERPAliqJurosDia,edtJurosDia);
+  AddObjetos(ConfiguracaoFinanceiro,tpcERPAliqMoraDia,edtMoraDia);
+  AddObjetos(ConfiguracaoFinanceiro,tpcERPAliqMoraMax,edtMaxMora);
+  AddObjetos(ConfiguracaoFinanceiro,tpcERPPlanoContasFaturamentoDireto,edtPlanoCOntaFaturamentoDireto);
+  AddObjetos(ConfiguracaoFinanceiro,tpcERPPlanoContasFaturamentoDeOS,edtPlanoContasFaturamentoDeOS);
+  AddObjetos(ConfiguracaoFinanceiro,tpcERPPlanoContasFaturamentoContrato,edtPlanoContasFaturamentoContrato);
+  {$EndRegion}
 end;
 
 procedure TfrmCadConfiguracao.btnCancelarClick(Sender: TObject);
@@ -137,6 +159,15 @@ begin
      (Obj As TEditPesquisa).ValorChave := Valor;
      (Obj As TEditPesquisa).Localiza;
    end;
+
+   if Obj is TcxCurrencyEdit then
+   begin
+    if VarIsNull(Valor) then
+      (Obj As TcxCurrencyEdit).Value := 0
+    else
+      (Obj As TcxCurrencyEdit).Value := Valor;
+   end;
+
 end;
 
 procedure TfrmCadConfiguracao.ConfiguraObjetos;
@@ -145,8 +176,12 @@ begin
    ConfiguraEditPesquisa(edtConfigOsStatusExecucao,nil,tpERPStatusOS);
    ConfiguraEditPesquisa(edtConfigOsStatusFinalizada,nil,tpERPStatusOS);
    ConfiguraEditPesquisa(edtConfigOsStatusFaturada,nil,tpERPStatusOS);
-   ConfiguraEditPesquisa(edtOperacaoFaturamento,nil,tpERPOperacaoSaida);
    edtOperacaoFaturamento.CamposExtraPesquisa := 'FLAGMOVIMENTAESTOQUE';
+   ConfiguraEditPesquisa(edtOperacaoFaturamento,nil,tpERPOperacaoSaida);
+
+   ConfiguraEditPesquisa(edtPlanoContaFaturamentoDireto,nil,tpERPPlanoContas);
+   ConfiguraEditPesquisa(edtPlanoContasFaturamentoDeOS,nil,tpERPPlanoContas);
+   ConfiguraEditPesquisa(edtPlanoContasFaturamentoContrato,nil,tpERPPlanoContas);
 end;
 
 procedure TfrmCadConfiguracao.edtConfigOsStatusAbertaBtnNovoClick(
@@ -173,6 +208,13 @@ begin
      edtOperacaoFaturamento.Clear;
   end;
 
+end;
+
+procedure TfrmCadConfiguracao.edtPlanCOntaFaturamentoDiretoBtnNovoClick(
+  Sender: TObject);
+begin
+  inherited;
+  (Sender as TEditPesquisa).ValorChave := TrotinasForms.AbreCadastroPlanoContas;
 end;
 
 procedure TfrmCadConfiguracao.FormClose(Sender: TObject;
@@ -216,6 +258,9 @@ function TfrmCadConfiguracao.ObjectToCfg(Obj: TObject): Variant;
 begin
    if Obj is TEditPesquisa then
     Result := (Obj As TEditPesquisa).ValorChave;
+   if Obj is TcxCurrencyEdit then
+    Result := (Obj As TcxCurrencyEdit).Value;
+
 end;
 
 { TObjCOnfig }

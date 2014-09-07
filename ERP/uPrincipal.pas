@@ -134,6 +134,12 @@ type
     Listagemdesadas1: TMenuItem;
     actConfiguracoes: TAction;
     Configuraes1: TMenuItem;
+    actFinanceiro: TAction;
+    actContasReceber: TAction;
+    Financeiro2: TMenuItem;
+    CentralOS2: TMenuItem;
+    actPlanoConta: TAction;
+    PlanosdeConta1: TMenuItem;
     procedure actCadastroExecute(Sender: TObject);
     procedure actCFOPExecute(Sender: TObject);
     procedure actNCMExecute(Sender: TObject);
@@ -185,6 +191,9 @@ type
     procedure actAlmoxarifadoExecute(Sender: TObject);
     procedure actListagemSaidasExecute(Sender: TObject);
     procedure actConfiguracoesExecute(Sender: TObject);
+    procedure actFinanceiroExecute(Sender: TObject);
+    procedure actContasReceberExecute(Sender: TObject);
+    procedure actPlanoContaExecute(Sender: TObject);
   private
     { Private declarations }
     Procedure AtualizaAgenda;
@@ -292,6 +301,12 @@ begin
   TrotinasForms.AbreCadastroContaBancaria;
 end;
 
+procedure TfrmPrincipal.actContasReceberExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreContasReceber
+end;
+
 procedure TfrmPrincipal.actContratoExecute(Sender: TObject);
 begin
   inherited;
@@ -332,6 +347,12 @@ procedure TfrmPrincipal.actFabricanteExecute(Sender: TObject);
 begin
   inherited;
   TrotinasForms.AbreCadastroFabricante;
+end;
+
+procedure TfrmPrincipal.actFinanceiroExecute(Sender: TObject);
+begin
+  inherited;
+   //
 end;
 
 procedure TfrmPrincipal.actFornecedorExecute(Sender: TObject);
@@ -410,6 +431,12 @@ procedure TfrmPrincipal.actPeriodicidadeExecute(Sender: TObject);
 begin
   inherited;
   TrotinasForms.AbreCadastroPeridicidade;
+end;
+
+procedure TfrmPrincipal.actPlanoContaExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreCadastroPlanoContas
 end;
 
 procedure TfrmPrincipal.actClientesExecute(Sender: TObject);
