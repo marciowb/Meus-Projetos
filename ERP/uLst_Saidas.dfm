@@ -15,9 +15,11 @@ inherited frmLst_Saidas: TfrmLst_Saidas
     ExplicitWidth = 880
     inherited BitBtn1: TBitBtn
       Left = 766
+      ExplicitLeft = 766
     end
     inherited BitBtn9: TBitBtn
       Left = 675
+      ExplicitLeft = 675
     end
     object BitBtn11: TBitBtn
       Left = 536
@@ -30,8 +32,6 @@ inherited frmLst_Saidas: TfrmLst_Saidas
       DoubleBuffered = True
       ParentDoubleBuffered = False
       TabOrder = 10
-      ExplicitLeft = 518
-      ExplicitTop = 3
     end
   end
   inherited Status: TdxStatusBar

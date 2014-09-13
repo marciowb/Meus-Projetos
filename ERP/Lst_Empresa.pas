@@ -26,7 +26,7 @@ type
   TfrmLst_Empresa = class(TfrmLstCadastroSimplesERP)
     LabelDBEdit1: TLabelDBEdit;
     LabelDBEdit2: TLabelDBEdit;
-    LabelDBEdit3: TLabelDBEdit;
+    edtCNPJ: TLabelDBEdit;
     LabelDBEdit4: TLabelDBEdit;
     LabelDBEdit5: TLabelDBEdit;
     LabelDBEdit6: TLabelDBEdit;
@@ -82,6 +82,12 @@ uses MinhasClasses, Comandos, uSQL, uLibERP;
 procedure TfrmLst_Empresa.actGravarExecute(Sender: TObject);
 begin
   VerificaEdit(edtCEP,'Informe o cep');
+  if not Verifica_CNPJ(CdsCadastro.FieldByName('CNPJ').AsString) Then
+  begin
+    Avisa('Informe um CNPJ válido');
+    edtCNPJ.SetFocus;
+    Exit;
+  end;
   inherited;
 
 end;

@@ -21,7 +21,7 @@ inherited frmLst_Empresa: TfrmLst_Empresa
       ExplicitHeight = 486
       inherited Panel4: TPanel
         Top = 445
-        TabOrder = 8
+        TabOrder = 9
         ExplicitTop = 445
         inherited BitBtn1: TBitBtn
           Width = 105
@@ -68,7 +68,7 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         GravaEsteCampo = True
         AsInteger = 0
       end
-      object LabelDBEdit3: TLabelDBEdit
+      object edtCNPJ: TLabelDBEdit
         Left = 16
         Top = 146
         Width = 142
@@ -115,7 +115,7 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         Height = 21
         DataField = 'Telefone'
         DataSource = DataCadastro
-        TabOrder = 5
+        TabOrder = 6
         Titulo.Left = 16
         Titulo.Top = 205
         Titulo.Width = 42
@@ -135,7 +135,7 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         Height = 21
         DataField = 'FAX'
         DataSource = DataCadastro
-        TabOrder = 6
+        TabOrder = 7
         Titulo.Left = 168
         Titulo.Top = 205
         Titulo.Width = 18
@@ -156,7 +156,7 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         ActivePage = cxTabSheet1
         Align = alBottom
         Style = 10
-        TabOrder = 7
+        TabOrder = 8
         TabPosition = tpBottom
         ClientRectBottom = 174
         ClientRectRight = 323
@@ -687,7 +687,7 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         Height = 21
         DataField = 'IM'
         DataSource = DataCadastro
-        TabOrder = 9
+        TabOrder = 5
         Titulo.Left = 16
         Titulo.Top = 167
         Titulo.Width = 92

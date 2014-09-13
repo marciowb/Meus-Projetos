@@ -38,7 +38,7 @@
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
 			<DCC_MapFile>3</DCC_MapFile>
-			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+			<DCC_Define>DEBUG;EUREKALOG;EUREKALOG_VER6;$(DCC_Define)</DCC_Define>
 		</PropertyGroup>
 		<ItemGroup>
 			<DelphiCompile Include="ERP.dpr">
@@ -330,7 +330,7 @@
 <!-- EurekaLog First Line
 [Exception Log]
 EurekaLog Version=6020
-Activate=0
+Activate=1
 Activate Handle=1
 Save Log File=1
 Foreground Tab=0
@@ -341,13 +341,13 @@ SMTP Host=
 SMTP Port=25
 SMTP UserID=
 SMTP Password=
-Append to Log=0
+Append to Log=1
 TerminateBtn Operation=2
 Errors Number=32
 Errors Terminate=3
-Email Address=
-Email Object=
-Email Send Options=0
+Email Address=desenvolvimentohrm@gmail.com
+Email Object=Erro ERP
+Email Send Options=1
 Output Path=
 Encrypt Password=
 AutoCloseDialogSecs=0
@@ -393,7 +393,8 @@ PostSuccessfulBuildEvent=
 PostFailureBuildEvent=
 ExceptionDialogType=2
 Count=0
-EMail Message Line Count=0
+EMail Message Line Count=1
+Line0="Ocorreu um erro no ERP"
 loNoDuplicateErrors=0
 loAppendReproduceText=0
 loDeleteLogAtVersionChange=0

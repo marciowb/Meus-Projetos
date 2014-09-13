@@ -173,6 +173,7 @@ type
     UfEmpresa: String;
     TotalPagamentos: Currency;
     FIdOS: TipoCampoChave;
+    GeraFinanceiro: Boolean;
     Procedure RestartaVenda;
     procedure CalculaTotalPagamentos;
     Procedure CalculaTotais(SemDesconAcrescimo: Boolean=False);
@@ -324,7 +325,8 @@ begin
     Exit;
   end;
   CalculaTotalPagamentos;
-  if TotalPagamentos <> CdsSaida.FieldByName('VALORTOTALNOTA').AsCurrency then
+
+  if (not GeraFinanceiro) and (TotalPagamentos <> CdsSaida.FieldByName('VALORTOTALNOTA').AsCurrency) then
   begin
     avisa('O total dos pagamentos difere do total da nota');
     Exit;
@@ -635,13 +637,15 @@ begin
     edtPessoa.LblTitulo.Caption :='Cliente';
   end;
 
+  GeraFinanceiro := ValoresCamposEstra[1] = 'Y'; //FLAGGERAFINANCEIRO
+  GroupPagamento.Enabled := GeraFinanceiro;
 end;
 
 procedure TfrmSaida.FormCreate(Sender: TObject);
 begin
   inherited;
   EdtEmpresa.CamposExtraPesquisa := 'UF';
-  edtOperacao.CamposExtraPesquisa := 'FLAGTIPOPESSOA';
+  edtOperacao.CamposExtraPesquisa := 'FLAGTIPOPESSOA,FLAGGERAFINANCEIRO';
   ConfiguraEditPesquisa(edtEmpresa,CdsSaida,tpERPEmpresa);
   edtOperacao.SQLComp := ' FLAGTIPOOPERACAO =''S''';
   ConfiguraEditPesquisa(edtOperacao,CdsSaida,tpERPOperacaoSaida);

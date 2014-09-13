@@ -651,7 +651,9 @@ Begin
       Exit;
     end;
   end else
-    Inc := 0;
+  begin
+      Inc := 0;
+  end;
   R := GetValSeq(NomeSEQ, Inc);
   Result := IntToStr(R);
   if UsaMaxParaCodigo then
@@ -661,7 +663,7 @@ Begin
          'SELECT MAX(CAST('+GetCampoCodigo(TipoPesquisa)+' AS INTEGER) )CAMPO '+
          '  FROM '+GetTabela(TipoPesquisa);
       NomeSEQ := GetValorCds(StrSQL);
-      R := StrToInt(NomeSEQ)+1;;
+      R := StrToIntDef(NomeSEQ,0)+1;;
     except
       //R := Result;
     end;
@@ -796,7 +798,7 @@ Procedure VerificaEdit(Edit : TEditPesquisa;  MsgVazio : String) ;overload;
  end;
 
 Begin
-  if Edit.ValorChave < 0 then
+  if Edit.IsNull  then
   Begin
     Avisa(MsgVazio);
     AtivaTabSeet;
@@ -1734,7 +1736,7 @@ End;
 
 Procedure AdicionaListaPesquisa(Var Cds: TpFIBClientDataSet; aTipoPesquisa: TTipoPesquisa;MsgExistente : String; Filtro: String = '');
 var
-  ID : Integer;
+  ID : Variant;
 begin
   frmPesquisa := TfrmPesquisa.Create(nil);
   Try
@@ -1745,7 +1747,7 @@ begin
       AbreListando := Filtro <> '' ;
       if ShowModal = mrOk then
       Begin
-        Id := CdsPesquisa.FieldByName(GetCampoChave(aTipoPesquisa)).AsInteger;
+        Id := CdsPesquisa.FieldByName(GetCampoChave(aTipoPesquisa)).Value;
         if Cds.Locate(GetCampoChave(aTipoPesquisa), id, []) then
         Begin
           Avisa(MsgExistente);

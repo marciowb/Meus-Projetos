@@ -6,20 +6,11 @@ inherited frmLst_StatusOS: TfrmLst_StatusOS
   TextHeight = 13
   inherited Panel1: TPanel
     inherited Panel3: TPanel
-      inherited Panel4: TPanel
-        inherited BitBtn1: TBitBtn
-          Glyph.Data = {00000000}
-        end
-        inherited BitBtn2: TBitBtn
-          Glyph.Data = {00000000}
-        end
-      end
       object cxDBColorComboBox1: TcxDBColorComboBox
         Left = 16
         Top = 121
         DataBinding.DataField = 'COR'
         DataBinding.DataSource = DataCadastro
-        Properties.ColorDialogType = cxcdtCustom
         Properties.ColorValueFormat = cxcvHexadecimal
         Properties.CustomColors = <>
         Properties.DefaultDescription = 'Cor n'#227'o selecionada'

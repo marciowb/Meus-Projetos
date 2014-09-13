@@ -116,7 +116,7 @@ begin
   if UsaDataSetInterno then
   BEGIN
     pDataSet := TpFIBClientDataSet.Create(nil);
-    SetCds(pDataSet,tpERPClienteEquipamento,'idcliente = '+IdCliente);
+    SetCds(pDataSet,tpERPClienteEquipamento,'idcliente = '+TipoCampoChaveToStr(IdCliente));
     pDataSet.AfterPost := AfterPost;
   END;
   if NovoReg then

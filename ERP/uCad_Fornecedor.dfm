@@ -12,6 +12,10 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
     TabOrder = 0
     inherited PageControl: TcxPageControl
       inherited TsPrincipal: TcxTabSheet
+        ExplicitLeft = 1
+        ExplicitTop = 21
+        ExplicitWidth = 517
+        ExplicitHeight = 321
         inherited pnlGeral: TPanel
           object Label1: TLabel
             Left = 468
@@ -38,6 +42,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit2: TLabelDBEdit
             Left = 143
@@ -57,6 +62,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit3: TLabelDBEdit
             Left = 415
@@ -79,6 +85,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit4: TLabelDBEdit
             Left = 16
@@ -98,6 +105,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit5: TLabelDBEdit
             Left = 239
@@ -117,6 +125,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit6: TLabelDBEdit
             Left = 363
@@ -136,6 +145,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit7: TLabelDBEdit
             Left = 16
@@ -155,6 +165,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit8: TLabelDBEdit
             Left = 239
@@ -174,6 +185,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit9: TLabelDBEdit
             Left = 16
@@ -193,6 +205,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit10: TLabelDBEdit
             Left = 287
@@ -212,6 +225,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit11: TLabelDBEdit
             Left = 343
@@ -231,6 +245,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit12: TLabelDBEdit
             Left = 16
@@ -250,6 +265,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit13: TLabelDBEdit
             Left = 230
@@ -269,6 +285,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit14: TLabelDBEdit
             Left = 384
@@ -288,6 +305,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object GroupBox1: TGroupBox
             Left = 0
@@ -296,7 +314,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
             Height = 105
             Align = alBottom
             Caption = ' OBS '
-            TabOrder = 14
+            TabOrder = 15
             object DBMemo1: TDBMemo
               Left = 2
               Top = 15
@@ -346,7 +364,7 @@ inherited frmCad_Fornecedor: TfrmCad_Fornecedor
               'SE'
               'TO'
               'EX')
-            TabOrder = 15
+            TabOrder = 14
           end
         end
       end

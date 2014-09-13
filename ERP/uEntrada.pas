@@ -125,7 +125,7 @@ var
 
 implementation
 
-uses uForms, uRegras;
+uses uForms, uRegras, uLibERP;
 
 {$R *.dfm}
 
@@ -214,7 +214,7 @@ begin
     if CdsEntrada.State = dsBrowse then
       CdsEntrada.Edit;
 
-    CdsEntrada.FieldByName('IDENTRADA').AsInteger := GetValSeq('SEQ_IDENTRADA',1);
+    CdsEntrada.FieldByName('IDENTRADA').AsString := GetCodigo(tpERPEntrada);
     AlteraBanco(taInsere, CdsEntrada,tpERPEntrada);
     CdsProdutos.First;
     while not CdsProdutos.Eof do
@@ -235,11 +235,11 @@ begin
         '                            QUANTIDADE, VALORUNITARIO, VALORACRESCIMO, VALORDESCONTO, '+
         '                            BASEICMS, ALIQICMS, VALORICMS, ALIQIPI, VALORIPI, VALORTOTAL,'+
         '                            VALORTOTALBRUTO, STITUACAOTRIBUTARIA, VALORFRETERATEADO, VALORSEGURORATEADO, '+
-        '                            VALOROUTROSRATEADO, IDUNIDADE, NUMITEM,QUANTIDADERECEBIDA,FATORMULTIPLICADOR) VALUES '+
-        '                           ('+IDProdutoEntrada+','+
-                                    CdsEntrada.FieldByName('IDENTRADA').AsString+','+
-                                    CdsProdutos.FieldByName('IDCFOP').AsString+','+
-                                    CdsProdutos.FieldByName('IDPRODUTO').AsString+','+
+        '                            VALOROUTROSRATEADO, IDUNIDADE, NUMITEM,QUANTIDADERECEBIDA,FATORMULTIPLICADOR,IDCFOPENTRADA) VALUES '+
+        '                           ('+TipoCampoChaveToStr(IDProdutoEntrada)+','+
+                                    TipoCampoChaveToStr(CdsEntrada.FieldByName('IDENTRADA').AsString)+','+
+                                    TipoCampoChaveToStr(CdsProdutos.FieldByName('IDCFOP').AsString)+','+
+                                    TipoCampoChaveToStr(CdsProdutos.FieldByName('IDPRODUTO').AsString)+','+
                                     GetNumber(CdsProdutos.FieldByName('QUANTIDADE').AsCurrency)+','+
                                     GetNumber(CdsProdutos.FieldByName('VALORUNITARIO').AsCurrency)+','+
                                     GetNumber(CdsProdutos.FieldByName('VALORACRESCIMO').AsCurrency)+','+
@@ -255,10 +255,11 @@ begin
                                     GetNumber(ValorFreteRatiado)+','+
                                     GetNumber(ValorSeguroRatiado)+','+
                                     GetNumber(ValorOutrosRatiado)+','+
-                                    CdsProdutos.FieldByName('IDUNIDADE').AsString+','+
+                                    TipoCampoChaveToStr(CdsProdutos.FieldByName('IDUNIDADE').AsString)+','+
                                     IntToStr(CdsProdutos.RecNo)+','+
                                     GetNumber(CdsProdutos.FieldByName('QUANTIDADERECEBIDA').AsCurrency)+','+
-                                    GetNumber(CdsProdutos.FieldByName('FATORMULTIPLICADOR').AsCurrency)+')';
+                                    GetNumber(CdsProdutos.FieldByName('FATORMULTIPLICADOR').AsCurrency)+','+
+                                    TipoCampoChaveToStr(CdsProdutos.FieldByName('IDCFOPENTRADA').AsString)+')';
       Exec_SQL(StrSQL);
 
       CdsSerial.First;
@@ -267,14 +268,14 @@ begin
         IdSerialProduto := GetCodigo(tpERPSerialProduto);
         StrSQL :=
            'INSERT INTO SERIALPRODUTO (IDSERIALPRODUTO, IDPRODUTO, IDEMPRESA, SERIAL, DATAENTRADA,  FLAGATIVO) '+
-           ' VALUES ('+IdSerialProduto+', '+CdsProdutos.FieldByName('IDPRODUTO').AsString+', '+EdtEmpresa.ValorChaveString+', '+
+           ' VALUES ('+TipoCampoChaveToStr(IdSerialProduto)+', '+TipoCampoChaveToStr(CdsProdutos.FieldByName('IDPRODUTO').AsString)+', '+TipoCampoChaveToStr(EdtEmpresa.ValorChaveString)+', '+
            GetStr(CdsSerial.FieldByName('SERIAL').AsString)+','+
            GetData(edtData.Date)+',''Y'')';
         Exec_SQL(StrSQL);
 
         StrSQL:=
           ' INSERT INTO ENTRADAPRODUTOSERIAL (IDENTRADAPRODUTOSERIAL, IDENTRADAPRODUTO, IDSERIALPRODUTO) '+
-          '   VALUES (GEN_ID(SEQ_IDENTRADAPRODUTOSERIAL,1), '+IDProdutoEntrada+', '+IdSerialProduto+') ';
+          '   VALUES ((SELECT RESULT FROM GERACHAVE(''SEQ_IDENTRADAPRODUTOSERIAL'')), '+TipoCampoChaveToStr(IDProdutoEntrada)+', '+TipoCampoChaveToStr(IdSerialProduto)+') ';
         Exec_SQL(StrSQL);
 
         CdsSerial.Next;
@@ -283,15 +284,15 @@ begin
       StrSQL :=
         'EXECUTE BLOCK AS'+
         '    DECLARE VARIABLE CODIGOPRODFORN VARCHAR(20);'+
-        '    DECLARE VARIABLE  IDFORNECEDOR INTEGER ;'+
-        '    DECLARE VARIABLE IDENTRADA INTEGER;'+
-        '    DECLARE VARIABLE IDPRODUTO INTEGER;'+
+        '    DECLARE VARIABLE  IDFORNECEDOR CHAVE ;'+
+        '    DECLARE VARIABLE IDENTRADA CHAVE;'+
+        '    DECLARE VARIABLE IDPRODUTO CHAVE;'+
         '    DECLARE VARIABLE VALORUNITARIO VALOR;'+
-        '    DECLARE VARIABLE IDPRODUTOFORNECEDOR INTEGER; '+
+        '    DECLARE VARIABLE IDPRODUTOFORNECEDOR CHAVE; '+
         '    DECLARE VARIABLE DESCRICAOPRODUTO NOME ;'+
         ' BEGIN'+
-        '   IDFORNECEDOR = '+edtCodigoFornecedor.ValorChaveString+';'+
-        '   IDPRODUTO = '+CdsProdutos.FieldByName('IDPRODUTO').AsString+';'+
+        '   IDFORNECEDOR = '+TipoCampoChaveToStr(edtCodigoFornecedor.ValorChaveString)+';'+
+        '   IDPRODUTO = '+TipoCampoChaveToStr(CdsProdutos.FieldByName('IDPRODUTO').AsString)+';'+
         '   CODIGOPRODFORN = '+GetStr(CdsProdutos.FieldByName('CODIGOPRODUTOFORNECEDOR').AsString)+';'+
         '   DESCRICAOPRODUTO ='+ GetStr(CdsProdutos.FieldByName('NOME_PRODUTO').AsString)+';'+
         '   SELECT PF.IDPRODUTOFORNECEDOR'+
@@ -403,7 +404,7 @@ begin
   inherited;
 //  CdsProdutos.FieldByName('IDENTRADA').AsInteger := CdsEntrada.FieldByName('IDENTRADA').AsInteger;
 //  CdsProdutos.FieldByName('IDENTRADAPRODUTO').AsInteger := GetValSeq('SEQ_IDENTRADAPRODUTO',0);
-  CdsProdutos.FieldByName('IDCFOP').AsInteger := CdsEntrada.FieldByName('IDCFOP').AsInteger;
+  CdsProdutos.FieldByName('IDCFOP').Value := CdsEntrada.FieldByName('IDCFOP').Value;
   CdsProdutos.FieldByName('NUMITEM').AsInteger := CdsProdutos.RecordCount+1;
 end;
 
@@ -420,7 +421,7 @@ begin
     Avisa('O srial '+CdsSerial.FieldByName('serial').AsString+' já existe nessa nota');
     Abort ;
   end;
-  IF GetTableCount('SERIALPRODUTO','*','IDPRODUTO = '+CdsProdutos.FieldByName('IDPRODUTO').AsString+
+  IF GetTableCount('SERIALPRODUTO','*','IDPRODUTO = '+TipoCampoChaveToStr(CdsProdutos.FieldByName('IDPRODUTO').AsString)+
                    ' AND SERIAL = '+GetStr(CdsSerial.FieldByName('serial').AsString)+' and FLAGATIVO = ''Y''') > 0 Then
   begin
     Avisa('O srial '+CdsSerial.FieldByName('serial').AsString+' já existe no banco de dados');

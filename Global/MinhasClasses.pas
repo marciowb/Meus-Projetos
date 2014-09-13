@@ -198,7 +198,7 @@ interface
                      tpERPEntradaProduto,tpERPModeloNota, tpERPOperacao,tpERPOperacaoEntrada,tpERPOperacaoSaida,tpERPSerialProduto,
                      tpERPSerialProdutoEntrada,tpERPSerialProdutoAtivo,tpERPSerialProdutoOS,tpERPSaida,tpERPSaidaProduto,tpERPSaidaCondicaoPagamento,
                      tpERPSaidaCondicaoPagamentoParcelas,tpERPTransportadora,tpERPAlmoxarifado,tpERPSaidaSerialProduto,tpERPCEP,tpERPCompetenciaContrato,
-                     tpERPContasReceber,tpERPPlanoContas,tpERPContasReceberRecebimentos
+                     tpERPContasReceber,tpERPPlanoContas,tpERPContasReceberRecebimentos,tpERPEstoque,tpERPMovimentacaoEstoque
 
 
                      );

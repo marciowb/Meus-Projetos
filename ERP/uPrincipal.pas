@@ -90,8 +90,6 @@ type
     DockAgenda: TdxDockPanel;
     dxDockSite1: TdxDockSite;
     dxLayoutDockSite1: TdxLayoutDockSite;
-    dxDockPanel1: TdxDockPanel;
-    dxLayoutDockSite2: TdxLayoutDockSite;
     pnlAgenda: TPanel;
     cxGrid1DBTableView1: TcxGridDBTableView;
     cxGrid1Level1: TcxGridLevel;

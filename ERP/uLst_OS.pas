@@ -185,7 +185,7 @@ begin
   Filtros:= '1=1';
   if FIdCompetenciaContrato <> SemID then
   begin
-    Filtros := ' and o.IDCONTRATOCOMPETENCIA = '+TipoCampoChaveToStr(FIdCompetenciaContrato);
+    Filtros :=Filtros+ ' and o.IDCONTRATOCOMPETENCIA = '+TipoCampoChaveToStr(FIdCompetenciaContrato);
   end;
   if IdCliente <> SemID then
     Filtros :=Filtros+ ' and o.IdCliente = '+TipoCampoChaveToStr(IdCliente);

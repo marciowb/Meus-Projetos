@@ -4,7 +4,7 @@ inherited frmEntradaEstoque: TfrmEntradaEstoque
   ClientWidth = 1042
   Position = poDesigned
   WindowState = wsMaximized
-  ExplicitTop = -190
+  ExplicitTop = -46
   ExplicitWidth = 1058
   ExplicitHeight = 579
   PixelsPerInch = 96
@@ -1318,14 +1318,14 @@ inherited frmEntradaEstoque: TfrmEntradaEstoque
           AsInteger = 0
         end
         object LabelDBEdit11: TLabelDBEdit
-          Left = 405
+          Left = 396
           Top = 64
           Width = 121
           Height = 21
           DataField = 'VALOROUTRAS'
           DataSource = DataEntrada
           TabOrder = 9
-          Titulo.Left = 405
+          Titulo.Left = 396
           Titulo.Top = 49
           Titulo.Width = 81
           Titulo.Height = 13
@@ -1338,14 +1338,14 @@ inherited frmEntradaEstoque: TfrmEntradaEstoque
           AsInteger = 0
         end
         object LabelDBEdit12: TLabelDBEdit
-          Left = 532
+          Left = 523
           Top = 65
           Width = 121
           Height = 21
           DataField = 'VALORDESCONTO'
           DataSource = DataEntrada
           TabOrder = 10
-          Titulo.Left = 532
+          Titulo.Left = 523
           Titulo.Top = 50
           Titulo.Width = 45
           Titulo.Height = 13
@@ -1358,14 +1358,14 @@ inherited frmEntradaEstoque: TfrmEntradaEstoque
           AsInteger = 0
         end
         object edtTotalnota: TLabelDBEdit
-          Left = 659
+          Left = 658
           Top = 65
           Width = 121
           Height = 21
           DataField = 'VALORTOTALNOTA'
           DataSource = DataEntrada
           TabOrder = 11
-          Titulo.Left = 659
+          Titulo.Left = 658
           Titulo.Top = 50
           Titulo.Width = 89
           Titulo.Height = 13

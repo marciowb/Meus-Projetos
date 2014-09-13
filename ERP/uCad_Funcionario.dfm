@@ -1,4 +1,5 @@
 inherited frmCadFuncionario: TfrmCadFuncionario
+  ActiveControl = LabelDBEdit1
   Caption = 'Cadastro de funcionarios'
   ClientHeight = 357
   ClientWidth = 714
@@ -58,6 +59,7 @@ inherited frmCadFuncionario: TfrmCadFuncionario
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit2: TLabelDBEdit
             Left = 135
@@ -77,6 +79,7 @@ inherited frmCadFuncionario: TfrmCadFuncionario
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit3: TLabelDBEdit
             Left = 8
@@ -96,6 +99,7 @@ inherited frmCadFuncionario: TfrmCadFuncionario
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object LabelDBEdit4: TLabelDBEdit
             Left = 214
@@ -115,6 +119,7 @@ inherited frmCadFuncionario: TfrmCadFuncionario
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object pnlFoto: TPanel
             Left = 385
@@ -157,6 +162,7 @@ inherited frmCadFuncionario: TfrmCadFuncionario
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
           object edtUsuario: TEditPesquisa
             Left = 280
@@ -418,7 +424,6 @@ inherited frmCadFuncionario: TfrmCadFuncionario
             BtnPesquisa.NumGlyphs = 2
             BtnPesquisa.ParentShowHint = False
             BtnPesquisa.ShowHint = True
-            BtnPesquisa.OnClick = edtDeparetamentoBtnPesquisaClick
             BtnNovo.Left = 348
             BtnNovo.Top = 144
             BtnNovo.Width = 25
@@ -621,7 +626,6 @@ inherited frmCadFuncionario: TfrmCadFuncionario
             BtnPesquisa.NumGlyphs = 2
             BtnPesquisa.ParentShowHint = False
             BtnPesquisa.ShowHint = True
-            BtnPesquisa.OnClick = edtCargoBtnPesquisaClick
             BtnNovo.Left = 100
             BtnNovo.Top = 144
             BtnNovo.Width = 25
@@ -745,6 +749,7 @@ inherited frmCadFuncionario: TfrmCadFuncionario
             CorPrincipal = clWhite
             CorSecundaria = 11592447
             GravaEsteCampo = True
+            AsInteger = 0
           end
         end
       end

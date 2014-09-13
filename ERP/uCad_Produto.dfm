@@ -1,47 +1,50 @@
 inherited frmCad_Produto: TfrmCad_Produto
   ActiveControl = LabelDBEdit1
   Caption = 'Cadastro de produto'
-  ClientHeight = 399
-  ClientWidth = 703
-  ExplicitWidth = 719
-  ExplicitHeight = 438
+  ClientHeight = 400
+  ClientWidth = 715
+  ExplicitWidth = 731
+  ExplicitHeight = 439
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
-    Width = 703
-    ExplicitWidth = 703
+    Width = 715
+    ExplicitWidth = 715
   end
   inherited pnlTree: TPanel
-    Height = 369
-    ExplicitHeight = 369
+    Height = 370
+    ExplicitHeight = 371
     inherited TreeItens: TcxTreeView
-      Height = 363
-      ExplicitHeight = 363
+      Height = 364
+      ExplicitHeight = 365
     end
   end
   inherited Panel3: TPanel
-    Width = 518
-    Height = 369
-    ExplicitWidth = 518
-    ExplicitHeight = 363
+    Width = 530
+    Height = 370
+    ExplicitWidth = 530
+    ExplicitHeight = 371
     inherited PageControl: TcxPageControl
       Top = 48
-      Width = 518
-      Height = 321
+      Width = 530
+      Height = 322
+      ActivePage = cxTabSheet8
       TabOrder = 1
       ExplicitTop = 48
-      ExplicitWidth = 518
-      ExplicitHeight = 363
-      ClientRectBottom = 320
-      ClientRectRight = 517
+      ExplicitWidth = 530
+      ExplicitHeight = 323
+      ClientRectBottom = 321
+      ClientRectRight = 529
       inherited TsPrincipal: TcxTabSheet
-        ExplicitWidth = 516
-        ExplicitHeight = 341
+        ExplicitLeft = 1
+        ExplicitTop = 21
+        ExplicitWidth = 528
+        ExplicitHeight = 301
         inherited pnlGeral: TPanel
-          Width = 516
-          Height = 299
-          ExplicitWidth = 516
-          ExplicitHeight = 341
+          Width = 528
+          Height = 300
+          ExplicitWidth = 528
+          ExplicitHeight = 301
           object btnAjustaEstoque: TSpeedButton
             Left = 468
             Top = 208
@@ -1298,13 +1301,12 @@ inherited frmCad_Produto: TfrmCad_Produto
           end
           object GroupBox4: TGroupBox
             Left = 0
-            Top = 234
-            Width = 516
+            Top = 235
+            Width = 528
             Height = 65
             Align = alBottom
             TabOrder = 19
-            ExplicitLeft = 145
-            ExplicitTop = 228
+            ExplicitTop = 236
             object LabelDBEdit7: TLabelDBEdit
               Left = 10
               Top = 28
@@ -1419,14 +1421,11 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet1: TcxTabSheet
         Caption = 'Adicionais'
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 341
+        ExplicitHeight = 301
         object GroupBox1: TGroupBox
           Left = 0
           Top = 0
-          Width = 516
+          Width = 528
           Height = 145
           Align = alTop
           Caption = '  Descri'#231#227'o detalhada '
@@ -1444,18 +1443,18 @@ inherited frmCad_Produto: TfrmCad_Produto
             Properties.WantTabs = True
             TabOrder = 0
             Height = 128
-            Width = 512
+            Width = 524
           end
         end
         object GroupBox2: TGroupBox
           Left = 0
           Top = 145
-          Width = 314
-          Height = 154
+          Width = 326
+          Height = 155
           Align = alClient
           Caption = ' Observa'#231#245'es '
           TabOrder = 1
-          ExplicitHeight = 196
+          ExplicitHeight = 156
           object cxDBRichEdit2: TcxDBRichEdit
             Left = 2
             Top = 15
@@ -1468,19 +1467,20 @@ inherited frmCad_Produto: TfrmCad_Produto
             Properties.ScrollBars = ssBoth
             Properties.WantTabs = True
             TabOrder = 0
-            Height = 137
-            Width = 310
+            ExplicitHeight = 139
+            Height = 138
+            Width = 322
           end
         end
         object GroupBox3: TGroupBox
-          Left = 314
+          Left = 326
           Top = 145
           Width = 202
-          Height = 154
+          Height = 155
           Align = alRight
           Caption = ' Imagem '
           TabOrder = 2
-          ExplicitHeight = 196
+          ExplicitHeight = 156
           object cxDBImage1: TcxDBImage
             Left = 2
             Top = 15
@@ -1492,7 +1492,8 @@ inherited frmCad_Produto: TfrmCad_Produto
             Properties.ImmediatePost = True
             Properties.Stretch = True
             TabOrder = 0
-            Height = 137
+            ExplicitHeight = 139
+            Height = 138
             Width = 198
           end
         end
@@ -1500,14 +1501,11 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet4: TcxTabSheet
         Caption = 'Outros'
         ImageIndex = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 341
+        ExplicitHeight = 301
         object GroupBox5: TGroupBox
           Left = 0
           Top = 0
-          Width = 516
+          Width = 528
           Height = 114
           Align = alTop
           Caption = ' Tributa'#231#245'es '
@@ -2044,37 +2042,293 @@ inherited frmCad_Produto: TfrmCad_Produto
         object GroupBox7: TGroupBox
           Left = 0
           Top = 114
-          Width = 516
-          Height = 185
+          Width = 528
+          Height = 186
           Align = alClient
           Caption = ' Fornecedores '
           TabOrder = 1
-          ExplicitHeight = 227
+          ExplicitHeight = 187
         end
       end
       object cxTabSheet8: TcxTabSheet
         Caption = 'Estoque'
         ImageIndex = 3
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 341
+        ExplicitHeight = 301
+        object GroupBox6: TGroupBox
+          Left = 0
+          Top = 0
+          Width = 528
+          Height = 145
+          Align = alTop
+          Caption = ' Estoque '
+          TabOrder = 0
+          object cxGrid3: TcxGrid
+            Left = 2
+            Top = 15
+            Width = 524
+            Height = 128
+            Align = alClient
+            TabOrder = 0
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 528
+            ExplicitHeight = 301
+            object tvEstoque: TcxGridDBTableView
+              Tag = 99
+              NavigatorButtons.ConfirmDelete = False
+              DataController.DataSource = DataEstoque
+              DataController.Summary.DefaultGroupSummaryItems = <>
+              DataController.Summary.FooterSummaryItems = <
+                item
+                  Format = '#,##0.00'
+                  Kind = skSum
+                  Column = tvEstoqueColumn7
+                end>
+              DataController.Summary.SummaryGroups = <
+                item
+                  Links = <
+                    item
+                      Column = tvEstoqueColumn1
+                    end
+                    item
+                      Column = tvEstoqueColumn2
+                    end
+                    item
+                      Column = tvEstoqueCor
+                    end
+                    item
+                      Column = tvEstoqueDescCor
+                    end
+                    item
+                      Column = tvEstoqueTamanho
+                    end
+                    item
+                      Column = tvEstoqueDescTamanho
+                    end>
+                  SummaryItems = <
+                    item
+                      Format = '#,##0.00'
+                      Kind = skSum
+                      Column = tvEstoqueColumn7
+                    end>
+                end>
+              OptionsData.Deleting = False
+              OptionsData.Editing = False
+              OptionsData.Inserting = False
+              OptionsSelection.CellSelect = False
+              OptionsView.Footer = True
+              OptionsView.GroupFooters = gfAlwaysVisible
+              OptionsView.GroupSummaryLayout = gslAlignWithColumns
+              object tvEstoqueColumn1: TcxGridDBColumn
+                Caption = 'Empresa'
+                DataBinding.FieldName = 'EMPRESA'
+                Width = 60
+              end
+              object tvEstoqueColumn2: TcxGridDBColumn
+                Caption = 'Almoxarifado'
+                DataBinding.FieldName = 'NOMEALMOXARIFADO'
+                Width = 100
+              end
+              object tvEstoqueCor: TcxGridDBColumn
+                Caption = 'Cor'
+                DataBinding.FieldName = 'COR'
+                Width = 60
+              end
+              object tvEstoqueDescCor: TcxGridDBColumn
+                Caption = 'Descri'#231#227'o cor'
+                DataBinding.FieldName = 'DESCRICAOCOR'
+                Width = 75
+              end
+              object tvEstoqueTamanho: TcxGridDBColumn
+                Caption = 'Tamanho'
+                DataBinding.FieldName = 'TAMANHO'
+                Width = 50
+              end
+              object tvEstoqueDescTamanho: TcxGridDBColumn
+                Caption = 'Desc. tamanho'
+                DataBinding.FieldName = 'DESCRICAOTAMANHO'
+                Width = 90
+              end
+              object tvEstoqueColumn7: TcxGridDBColumn
+                Caption = 'Quantidade'
+                DataBinding.FieldName = 'QUANTIDADE'
+                Width = 80
+              end
+            end
+            object cxGrid3Level1: TcxGridLevel
+              GridView = tvEstoque
+            end
+          end
+        end
+        object GroupBox8: TGroupBox
+          Left = 0
+          Top = 153
+          Width = 528
+          Height = 147
+          Align = alClient
+          Caption = ' Movimenta'#231#227'o '
+          TabOrder = 1
+          ExplicitLeft = 24
+          ExplicitTop = 128
+          ExplicitWidth = 185
+          ExplicitHeight = 105
+          object cxGrid4: TcxGrid
+            Left = 2
+            Top = 15
+            Width = 524
+            Height = 130
+            Align = alClient
+            TabOrder = 0
+            ExplicitLeft = 0
+            ExplicitTop = 14
+            ExplicitHeight = 178
+            object TvMovimentacao: TcxGridDBTableView
+              Tag = 99
+              NavigatorButtons.ConfirmDelete = False
+              DataController.DataSource = DataMovimentacao
+              DataController.Summary.DefaultGroupSummaryItems = <
+                item
+                  Format = '#,##0.00'
+                  Kind = skSum
+                  Column = TvMovimentacaoQuantidade
+                end>
+              DataController.Summary.FooterSummaryItems = <
+                item
+                  Format = '#,##0.00'
+                  Kind = skSum
+                  Column = TvMovimentacaoQuantidade
+                end>
+              DataController.Summary.SummaryGroups = <
+                item
+                  Links = <
+                    item
+                      Column = TvMovimentacaoColumn1
+                    end
+                    item
+                      Column = TvMovimentacaoColumn2
+                    end
+                    item
+                      Column = TvMovimentacaoColumn3
+                    end
+                    item
+                      Column = TvMovimentacaoColumn4
+                    end
+                    item
+                      Column = TvMovimentacaoColumn5
+                    end
+                    item
+                      Column = TvMovimentacaoColumn6
+                    end
+                    item
+                      Column = TvMovimentacaoCor
+                    end
+                    item
+                      Column = TvMovimentacaoDescCor
+                    end
+                    item
+                      Column = TvMovimentacaoTamanho
+                    end
+                    item
+                      Column = TvMovimentacaoDescTamanho
+                    end>
+                  SummaryItems = <
+                    item
+                      Format = '#,##0.00'
+                      Kind = skSum
+                      Column = TvMovimentacaoQuantidade
+                    end>
+                end>
+              OptionsData.Deleting = False
+              OptionsData.Editing = False
+              OptionsData.Inserting = False
+              OptionsSelection.CellSelect = False
+              OptionsView.Footer = True
+              OptionsView.GroupFooters = gfAlwaysVisible
+              OptionsView.GroupSummaryLayout = gslAlignWithColumns
+              object TvMovimentacaoColumn1: TcxGridDBColumn
+                Caption = 'Empresa'
+                DataBinding.FieldName = 'CODIGOEMPRESA'
+                Width = 60
+              end
+              object TvMovimentacaoColumn2: TcxGridDBColumn
+                Caption = 'Almoxarifado'
+                DataBinding.FieldName = 'NOMEALMOXARIFADO'
+                Width = 100
+              end
+              object TvMovimentacaoColumn3: TcxGridDBColumn
+                Caption = 'Opera'#231#227'o'
+                DataBinding.FieldName = 'NOMEOPERACAOESTOQUE'
+                Width = 80
+              end
+              object TvMovimentacaoColumn4: TcxGridDBColumn
+                Caption = 'M'#243'dulo'
+                DataBinding.FieldName = 'LOCALMOVIMENTO'
+                Width = 70
+              end
+              object TvMovimentacaoColumn5: TcxGridDBColumn
+                Caption = 'N'#186' documento'
+                DataBinding.FieldName = 'NUMERO_MOVIMENTO'
+                Width = 80
+              end
+              object TvMovimentacaoColumn6: TcxGridDBColumn
+                Caption = 'Data'
+                DataBinding.FieldName = 'DATA'
+                Width = 60
+              end
+              object TvMovimentacaoCor: TcxGridDBColumn
+                Caption = 'Cor'
+                DataBinding.FieldName = 'CODIGO_COR'
+                Width = 50
+              end
+              object TvMovimentacaoDescCor: TcxGridDBColumn
+                Caption = 'Descri'#231#227'o cor'
+                DataBinding.FieldName = 'DESCRICAOCOR'
+                Width = 80
+              end
+              object TvMovimentacaoTamanho: TcxGridDBColumn
+                Caption = 'Tamanho'
+                DataBinding.FieldName = 'CODIGOTAMANHO'
+                Width = 60
+              end
+              object TvMovimentacaoDescTamanho: TcxGridDBColumn
+                Caption = 'Desc. Tamanho'
+                DataBinding.FieldName = 'DESCRICAOTAMANHO'
+                Width = 80
+              end
+              object TvMovimentacaoQuantidade: TcxGridDBColumn
+                Caption = 'Quantidade'
+                DataBinding.FieldName = 'QUANTIDADE'
+                Width = 70
+              end
+            end
+            object cxGridLevel1: TcxGridLevel
+              GridView = TvMovimentacao
+            end
+          end
+        end
+        object cxSplitter1: TcxSplitter
+          Left = 0
+          Top = 145
+          Width = 528
+          Height = 8
+          HotZoneClassName = 'TcxMediaPlayer9Style'
+          AlignSplitter = salTop
+          ExplicitTop = 105
+          ExplicitWidth = 195
+        end
       end
       object cxTabSheet7: TcxTabSheet
         Caption = 'Seriais'
         ImageIndex = 3
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 341
+        ExplicitHeight = 301
         object cxGrid2: TcxGrid
           Left = 0
           Top = 0
-          Width = 516
-          Height = 299
+          Width = 528
+          Height = 300
           Align = alClient
           TabOrder = 0
-          ExplicitHeight = 341
+          ExplicitHeight = 301
           object cxGrid2DBTableView1: TcxGridDBTableView
             NavigatorButtons.ConfirmDelete = False
             DataController.DataSource = DataSeriais
@@ -2112,27 +2366,24 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet2: TcxTabSheet
         Caption = 'Processos/procedimentos'
         ImageIndex = 5
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 341
+        ExplicitHeight = 301
         object grpProcesso: TGroupBox
           Left = 0
           Top = 0
-          Width = 516
-          Height = 299
+          Width = 528
+          Height = 300
           Align = alClient
           Caption = ' Processos/procedimentos'
           TabOrder = 0
-          ExplicitHeight = 341
+          ExplicitHeight = 301
           object cxGrid1: TcxGrid
             Left = 2
             Top = 15
-            Width = 512
-            Height = 282
+            Width = 524
+            Height = 283
             Align = alClient
             TabOrder = 0
-            ExplicitHeight = 324
+            ExplicitHeight = 284
             object cxGrid1DBTableView1: TcxGridDBTableView
               Tag = 99
               NavigatorButtons.OnButtonClick = cxGrid1DBTableView1NavigatorButtonsButtonClick
@@ -2175,7 +2426,7 @@ inherited frmCad_Produto: TfrmCad_Produto
     object Panel2: TPanel
       Left = 0
       Top = 0
-      Width = 518
+      Width = 530
       Height = 48
       Align = alTop
       BevelOuter = bvNone
@@ -2274,5 +2525,27 @@ inherited frmCad_Produto: TfrmCad_Produto
     Params = <>
     Left = 112
     Top = 232
+  end
+  object DataEstoque: TDataSource
+    DataSet = CdsEstoque
+    Left = 104
+    Top = 288
+  end
+  object CdsEstoque: TpFIBClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 40
+    Top = 296
+  end
+  object DataMovimentacao: TDataSource
+    DataSet = CdsMovimentacao
+    Left = 288
+    Top = 312
+  end
+  object CdsMovimentacao: TpFIBClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 224
+    Top = 272
   end
 end

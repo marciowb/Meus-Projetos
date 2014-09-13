@@ -5,6 +5,7 @@ interface
          uGerenteConfiguracao;
     type
       TCOnfiguracaoOS =class(TConfiguracao)
+      private
         Function GetRegistroConfiguracao(Cfg: TTipoConfiguracao): IRegistroConfiguracao;override;
       end;
 var

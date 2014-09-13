@@ -68,6 +68,7 @@ procedure TfrmCad_Fornecedor.CdsCadastroAfterOpen(DataSet: TDataSet);
 begin
   inherited;
   FormataMascara(cdsCadastro.FieldByName('CNPJ'), tcCNPJ);
+  FormataMascara(cdsCadastro.FieldByName('CEP'), tcCEP);
 end;
 
 procedure TfrmCad_Fornecedor.CdsCadastroNewRecord(DataSet: TDataSet);

@@ -26,6 +26,7 @@ inherited frmCad_Contrato: TfrmCad_Contrato
     inherited PageControl: TcxPageControl
       Width = 649
       Height = 432
+      ActivePage = cxTabSheet1
       ExplicitWidth = 649
       ExplicitHeight = 432
       ClientRectBottom = 431
@@ -1409,11 +1410,22 @@ inherited frmCad_Contrato: TfrmCad_Contrato
                 Top = 63
                 Width = 91
                 Height = 25
-                Caption = 'O.S.'
+                Caption = 'Listar O.S.'
                 DoubleBuffered = True
                 ParentDoubleBuffered = False
                 TabOrder = 1
                 OnClick = BitBtn2Click
+              end
+              object BitBtn3: TBitBtn
+                Left = 14
+                Top = 95
+                Width = 91
+                Height = 25
+                Caption = 'Criar O.S.'
+                DoubleBuffered = True
+                ParentDoubleBuffered = False
+                TabOrder = 2
+                OnClick = BitBtn3Click
               end
             end
           end

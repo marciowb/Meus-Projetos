@@ -72,6 +72,7 @@ type
     BitBtn2: TBitBtn;
     cxGrid1DBTableView1Column1: TcxGridDBColumn;
     cxGrid1DBTableView1Column2: TcxGridDBColumn;
+    BitBtn3: TBitBtn;
     procedure actIncluirServicoExecute(Sender: TObject);
     procedure actAlterarServicoExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -94,6 +95,7 @@ type
     procedure CdsServicosAfterOpen(DataSet: TDataSet);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
   private
     FidProposta: TipoCampoChave;
     procedure SetidProposta(const Value: TipoCampoChave);
@@ -110,7 +112,7 @@ var
 implementation
 
 uses UDmConexao, Comandos, uForms, MinhasClasses, uRegras, uDlg_ServicoContrato,
-  uDlgEquipamentoClienteContrato, uLst_OS;
+  uDlgEquipamentoClienteContrato, uLst_OS, uCad_OS;
 {$R *.dfm}
 
 procedure TfrmCad_Contrato.acExcluirEquipamentoExecute(Sender: TObject);
@@ -223,6 +225,19 @@ begin
     frmLst_OS.ShowModal;
   Finally
     FreeAndNil(frmLst_OS);
+  End;
+end;
+
+procedure TfrmCad_Contrato.BitBtn3Click(Sender: TObject);
+begin
+  inherited;
+  frmCad_OS := TfrmCad_OS.Create(nil);
+  Try
+    frmCad_OS.NovoReg := True;
+    frmCad_OS.IdContrato := CdsCompetencia.FieldByName('IDCONTRATOCOMPETENCIA').AsString;
+    frmCad_OS.ShowModal;
+  Finally
+    FreeAndNil(frmCad_OS);
   End;
 end;
 

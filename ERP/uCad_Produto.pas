@@ -19,7 +19,7 @@ uses
   cxDBEdit, cxTextEdit, cxMemo, cxRichEdit, cxDBRichEdit, cxImage, cxMaskEdit,
   cxDropDownEdit, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage,
   cxDBData, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
-  cxGridLevel, cxClasses, cxGridCustomView, cxGrid;
+  cxGridLevel, cxClasses, cxGridCustomView, cxGrid, cxSplitter;
 
 type
   TfrmCad_Produto = class(TfrmCad_CadastroPaiERP)
@@ -83,6 +83,37 @@ type
     LabelDBEdit1: TLabelDBEdit;
     LabelDBEdit2: TLabelDBEdit;
     LabelDBEdit3: TLabelDBEdit;
+    DataEstoque: TDataSource;
+    CdsEstoque: TpFIBClientDataSet;
+    GroupBox6: TGroupBox;
+    cxGrid3: TcxGrid;
+    tvEstoque: TcxGridDBTableView;
+    tvEstoqueColumn1: TcxGridDBColumn;
+    tvEstoqueColumn2: TcxGridDBColumn;
+    tvEstoqueCor: TcxGridDBColumn;
+    tvEstoqueDescCor: TcxGridDBColumn;
+    tvEstoqueTamanho: TcxGridDBColumn;
+    tvEstoqueDescTamanho: TcxGridDBColumn;
+    tvEstoqueColumn7: TcxGridDBColumn;
+    cxGrid3Level1: TcxGridLevel;
+    GroupBox8: TGroupBox;
+    cxGrid4: TcxGrid;
+    TvMovimentacao: TcxGridDBTableView;
+    cxGridLevel1: TcxGridLevel;
+    DataMovimentacao: TDataSource;
+    CdsMovimentacao: TpFIBClientDataSet;
+    TvMovimentacaoColumn1: TcxGridDBColumn;
+    TvMovimentacaoColumn2: TcxGridDBColumn;
+    TvMovimentacaoColumn3: TcxGridDBColumn;
+    TvMovimentacaoColumn4: TcxGridDBColumn;
+    TvMovimentacaoColumn5: TcxGridDBColumn;
+    TvMovimentacaoColumn6: TcxGridDBColumn;
+    TvMovimentacaoCor: TcxGridDBColumn;
+    TvMovimentacaoDescCor: TcxGridDBColumn;
+    TvMovimentacaoTamanho: TcxGridDBColumn;
+    TvMovimentacaoDescTamanho: TcxGridDBColumn;
+    TvMovimentacaoQuantidade: TcxGridDBColumn;
+    cxSplitter1: TcxSplitter;
     procedure CdsCadastroAfterScroll(DataSet: TDataSet);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -107,6 +138,7 @@ type
   private
     { Private declarations }
     Procedure SetControlesServico;
+    Procedure SetGrade(UsaCor, UsaTamanho:Boolean);
   public
     { Public declarations }
   end;
@@ -172,6 +204,8 @@ begin
   SetControlesServico;
   SetCds(CdsProcessos,tpERPProdutoProcessosservico,'PS.IDPRODUTO = '+TipoCampoChaveToStr(ValorChave));
   SetCds(CdsSeriais,tpERPSerialProduto,'IDPRODUTO = '+TipoCampoChaveToStr(ValorChave));
+  SetCds(CdsEstoque,tpERPEstoque,'IDPRODUTO = '+TipoCampoChaveToStr(ValorChave));
+  SetCds(CdsMovimentacao,tpERPMovimentacaoEstoque,'IDPRODUTO = '+TipoCampoChaveToStr(ValorChave));
 end;
 
 
@@ -212,6 +246,7 @@ begin
   edtNCM.AutoCompletar := False;
 
   SetControlesServico;
+  SetGrade(False,False);
 
 end;
 
@@ -252,6 +287,21 @@ begin
   edtEstoqueMinimo.Enabled :=  Produto;
   grpProcesso.Enabled :=  not Produto;
 
+
+
+end;
+
+procedure TfrmCad_Produto.SetGrade(UsaCor, UsaTamanho: Boolean);
+begin
+  tvEstoqueCor.Visible :=UsaCor;
+  tvEstoqueDescCor.Visible :=UsaCor;
+  tvEstoqueDescTamanho.Visible := UsaTamanho;
+  tvEstoqueTamanho.Visible := UsaTamanho;
+
+  TvMovimentacaoCor.Visible :=UsaCor;
+  TvMovimentacaoDescCor.Visible :=UsaCor;
+  TvMovimentacaoDescTamanho.Visible := UsaTamanho;
+  TvMovimentacaoTamanho.Visible := UsaTamanho;
 
 end;
 

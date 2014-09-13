@@ -16,7 +16,7 @@ begin
   Result.CampoCodigo := 'CODIGO' ;
   Result := inherited;
   Result.Versao20 := True;
-  Result.UsaMaxParaCodigo := False;
+  Result.UsaMaxParaCodigo := True;
   Result.TipoForm := TfGrid;
   with Result do
   Begin
@@ -187,6 +187,7 @@ begin
          DescricaoCampoDisplay := 'Nome completo';
          DescricaoTabela := 'Funcionários';
          Versao20 := False;
+         UsaMaxParaCodigo := True;
          DesconsiderarCampos := 'CARGO;USUARIO;NOMEDEPARTAMENTO';
          Select :=
             'SELECT F.IDFUNCIONARIO, F.CODIGO, F.NOMEFUNCIONARIO, F.IDCARGO,'+
@@ -276,6 +277,7 @@ begin
         DescricaoTabela := 'Produto';
         DesconsiderarCampos := 'NOMELINHA;NOMEGRUPO;RAZAOSOCIAL;NOMELOCALIZACAO;NOMEFABRICANTE;CODIGOMUNICIPALSERVICO';
         Versao20 := False;
+        UsaMaxParaCodigo := True;
         Select :=
           'SELECT P.IDPRODUTO, P.CODIGO, P.NOMEPRODUTO, P.DESCRICAODETALHADA, P.TIPOPRODUTO, P.IDGRUPO, P.IDLINHA, P.IDLOCALIZACAO,'+
           '       P.IMAGEMPRINCIPAL, P.OBS, P.IDNCM, P.IDCODIGOMUNICIPALSERVICO, P.CODIGOSERVFEDERAL, P.CUSTOATUAL, P.CUSTOMEDIO,'+
@@ -807,7 +809,7 @@ begin
           DescricaoTabela := 'Entrada de Produtos(Itens) ';
           Versao20 := False;
           CampoCodigo := '';
-          DesconsiderarCampos := 'CODIGO_PRODUTO;NOME_PRODUTO;CFOP;UNIDADE;UNIDADE_COMPRA;CODIGOPRODUTOFORNECEDOR;FLAGEDICAO';
+          DesconsiderarCampos := 'CODIGO_PRODUTO;NOME_PRODUTO;CFOP;UNIDADE;UNIDADE_COMPRA;CODIGOPRODUTOFORNECEDOR;FLAGEDICAO;CFOPENTRADA;NOMEALMOXARIFADO';
           Select :=
             'SELECT EP.IDENTRADAPRODUTO, EP.IDENTRADA, EP.IDCFOP, EP.IDPRODUTO,'+
             '       EP.QUANTIDADE, EP.VALORUNITARIO, EP.VALORACRESCIMO,'+
@@ -816,21 +818,25 @@ begin
             '       EP.VALORTOTALBRUTO, EP.STITUACAOTRIBUTARIA, EP.VALORFRETERATEADO,'+
             '       EP.VALORSEGURORATEADO, EP.VALOROUTROSRATEADO,'+
             '       EP.IDUNIDADE, EP.NUMITEM, EP.VALORST, EP.BASEST, EP.MVA,'+
-            '       EP.REDUCAOBASE, EP.IDUNIDADECOMPRA,EP.CST,'+
+            '       EP.REDUCAOBASE, EP.IDUNIDADECOMPRA,EP.CST,EP.IDCFOPENTRADA,EP.IDALMOXARIFADO,'+
             '       EP.FATORMULTIPLICADOR, EP.QUANTIDADERECEBIDA, P.CODIGO CODIGO_PRODUTO,'+
-            '       P.NOMEPRODUTO NOME_PRODUTO,C.CFOP,U.CODIGO UNIDADE,UC.CODIGO UNIDADE_COMPRA,'+
-            '       PF.CODIGOPRODUTO CODIGOPRODUTOFORNECEDOR,''N'' FLAGEDICAO'+
+            '       P.NOMEPRODUTO NOME_PRODUTO,C.CFOP,CE.CFOP CFOPENTRADA,U.CODIGO UNIDADE,UC.CODIGO UNIDADE_COMPRA,'+
+            '       PF.CODIGOPRODUTO CODIGOPRODUTOFORNECEDOR,''N'' FLAGEDICAO, A.NOMEALMOXARIFADO'+
             '  FROM ENTRADA E '+
             ' INNER JOIN ENTRADAPRODUTO EP '+
             '    ON (EP.IDENTRADA = E.IDENTRADA)'+
             ' INNER JOIN PRODUTO P'+
             '    ON (P.IDPRODUTO = EP.IDPRODUTO)'+
-            ' INNER JOIN CFOP C'+
+            '  LEFT JOIN CFOP C'+
             '    ON (C.IDCFOP = EP.IDCFOP)'+
+            '  LEFT JOIN CFOP CE'+
+            '    ON (CE.IDCFOP = EP.IDCFOPENTRADA)'+
             '  LEFT JOIN UNIDADE U'+
             '    ON (U.IDUNIDADE = EP.IDUNIDADE)'+
             '  LEFT JOIN UNIDADE UC'+
             '    ON (UC.IDUNIDADE = EP.IDUNIDADECOMPRA)'+
+            '  LEFT JOIN ALMOXARIFADO A '+
+            '    ON (A.IDALMOXARIFADO = EP.IDALMOXARIFADO)'+
             '  LEFT JOIN PRODUTOFORNECEDOR PF '+
             '    ON (PF.IDPRODUTO = P.IDPRODUTO AND PF.IDFORNECEDOR = E.IDFORNECEDOR) '+
             ' WHERE 1=1 '+Complemento;
@@ -1151,7 +1157,7 @@ begin
             '        U.LOGIN,E.CODIGO CODIGOEMPRESA,B.NOMEBANCO, CB.AGENCIA, CB.CONTA,'+
             '        CASE WHEN CR.FLAGSTATUS= ''A'' THEN ''Aberto'' '+
             '             WHEN CR.FLAGSTATUS= ''C'' THEN ''Cancelado'' '+
-            '             WHEN CR.FLAGSTATUS= ''F'' THEN ''Finalizada'' END STATUS '+
+            '             WHEN CR.FLAGSTATUS= ''F'' THEN ''Finalizada'' END STATUS,PC.NOMEPLANOCONTA '+
             '   FROM CONTARECEBER CR'+
             '  INNER JOIN CLIENTE C'+
             '     ON (CR.IDCLIENTE = C.IDCLIENTE)'+
@@ -1201,7 +1207,43 @@ begin
             '    ON (U.IDUSUARIO = CR.IDUSUARIO)'+
             ' WHERE 1=1 '+Complemento;
         end;
-
+       tpERPEstoque:
+       Begin
+          CampoChave := 'IDESTOQUE';
+          CampoDisplay := 'NOMEPRODUTO';
+          NomeTabela := 'VW_ESTOQUE';
+          DescricaoCampoDisplay := 'Produto';
+          DescricaoTabela := 'Estoque';
+          Versao20 := False;
+          DesconsiderarCampos := '';
+          CampoCodigo := 'Codigo';
+          Select :=
+            'SELECT IDESTOQUE,IDPRODUTO,IDEMPRESA,IDCOR,IDTAMANHO,IDALMOXARIFADO,' +
+            '       QUANTIDADE,CODIGO,NOMEPRODUTO,EMPRESA,NOMEALMOXARIFADO,DESCRICAOCOR, '+
+            '       DESCRICAOTAMANHO,COR,TAMANHO '+
+            '  FROM VW_ESTOQUE '+
+            ' WHERE 1=1 '+Complemento;
+       End;
+      tpERPMovimentacaoEstoque:
+       Begin
+          CampoChave := 'IDESTOQUE';
+          CampoDisplay := 'NOMEPRODUTO';
+          NomeTabela := 'VW_ESTOQUE';
+          DescricaoCampoDisplay := 'Produto';
+          DescricaoTabela := 'Estoque';
+          Versao20 := False;
+          DesconsiderarCampos := '';
+          CampoCodigo := 'Codigo';
+          Select :=
+            'SELECT IDEMPRESA,IDPRODUTO,CODIGOPRODUTO,NOMEPRODUTO, '+
+            '       TIPOPRODUTO,CODIGOEMPRESA,EMPRESA,IDCOR,DESCRICAOCOR, '+
+            '       CODIGO_COR,IDTAMANHO,CODIGOTAMANHO,DESCRICAOTAMANHO, '+
+            '       IDALMOXARIFADO,NOMEALMOXARIFADO,OPERACAO, '+
+            '       QUANTIDADE,NOMEOPERACAOESTOQUE,LOCALMOVIMENTO, '+
+            '       NUMERO_MOVIMENTO,DATA '+
+            '  FROM VW_MOVIMENTACAO_PRODUTO '+
+            ' WHERE 1=1 '+Complemento;
+       End;
     end;
 
   End;

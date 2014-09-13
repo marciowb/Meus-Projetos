@@ -1,4 +1,5 @@
 inherited frmCad_Cliente: TfrmCad_Cliente
+  ActiveControl = LabelDBEdit1
   Caption = 'Cadastro de clientes'
   ClientHeight = 498
   ClientWidth = 773
@@ -32,6 +33,7 @@ inherited frmCad_Cliente: TfrmCad_Cliente
       Top = 49
       Width = 588
       Height = 419
+      TabOrder = 1
       ExplicitTop = 49
       ExplicitWidth = 588
       ExplicitHeight = 419
@@ -847,7 +849,7 @@ inherited frmCad_Cliente: TfrmCad_Cliente
       Height = 49
       Align = alTop
       BevelOuter = bvNone
-      TabOrder = 1
+      TabOrder = 0
       object LabelDBEdit1: TLabelDBEdit
         Left = 10
         Top = 24

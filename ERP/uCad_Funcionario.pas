@@ -35,9 +35,7 @@ type
     LabelDBEdit6: TLabelDBEdit;
     procedure FormCreate(Sender: TObject);
     procedure edtDeparetamentoBtnNovoClick(Sender: TObject);
-    procedure edtDeparetamentoBtnPesquisaClick(Sender: TObject);
     procedure edtCargoBtnNovoClick(Sender: TObject);
-    procedure edtCargoBtnPesquisaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,22 +57,10 @@ begin
   TrotinasForms.AbreCadastroCargos(toIncluir)
 end;
 
-procedure TfrmCadFuncionario.edtCargoBtnPesquisaClick(Sender: TObject);
-begin
-  inherited;
-  TrotinasForms.AbreCadastroCargos(toEditar)
-end;
-
 procedure TfrmCadFuncionario.edtDeparetamentoBtnNovoClick(Sender: TObject);
 begin
   inherited;
   TrotinasForms.AbreCadastroDepartamento(toIncluir)
-end;
-
-procedure TfrmCadFuncionario.edtDeparetamentoBtnPesquisaClick(Sender: TObject);
-begin
-  inherited;
-  TrotinasForms.AbreCadastroDepartamento(toEditar)
 end;
 
 procedure TfrmCadFuncionario.FormCreate(Sender: TObject);

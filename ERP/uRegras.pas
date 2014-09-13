@@ -511,7 +511,8 @@ begin
       Exec_SQL('UPDATE OS SET '+
                '       FLAGBAIXADA= ''N'', '+
                '       DATATERMINO = null, '+
-               '       HORATERMINO = null '+
+               '       HORATERMINO = null, '+
+               '       IDSTATUSOS = '+TipoCampoChaveToStr(COnfiguracaoOS.GetConfiguracao(tpcERPStatusOSExecucao))+
                ' WHERE IDOS = '+TipoCampoChaveToStr(IDOS));
       Commit;
     except

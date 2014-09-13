@@ -89,6 +89,7 @@ end;
 procedure TfrmLst_Saidas.FormShow(Sender: TObject);
 begin
   inherited;
+  Filtros := '';
   if IdCliente <> SemID then
     Filtros :='S.IDCLiente = '+TipoCampoChaveToStr(IdCliente);
   if IdOS <> SemID then

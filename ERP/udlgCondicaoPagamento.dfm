@@ -13,12 +13,12 @@ inherited frmdlgCondicaoPagamento: TfrmdlgCondicaoPagamento
     ExplicitTop = 248
     ExplicitWidth = 517
     inherited btnOk: TBitBtn
-      Left = 227
-      ExplicitLeft = 227
+      Left = 223
+      ExplicitLeft = 223
     end
     inherited btnCancelar: TBitBtn
-      Left = 318
-      ExplicitLeft = 318
+      Left = 314
+      ExplicitLeft = 314
     end
   end
   inherited Panel2: TPanel
@@ -29,7 +29,7 @@ inherited frmdlgCondicaoPagamento: TfrmdlgCondicaoPagamento
     object lblTotalRestante: TLabel
       Left = 0
       Top = 70
-      Width = 124
+      Width = 517
       Height = 18
       Align = alBottom
       Caption = 'lblTotalRestante'
@@ -39,6 +39,7 @@ inherited frmdlgCondicaoPagamento: TfrmdlgCondicaoPagamento
       Font.Name = 'Tahoma'
       Font.Style = [fsBold, fsItalic]
       ParentFont = False
+      ExplicitWidth = 124
     end
     object edtCondicaoPagamento: TEditPesquisa
       Left = 19

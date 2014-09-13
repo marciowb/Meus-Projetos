@@ -46,7 +46,7 @@ var
 
 implementation
 
-uses MinhasClasses, Comandos, uSQL;
+uses MinhasClasses, Comandos, uSQL, uLibERP;
 
 {$R *.dfm}
 
@@ -61,7 +61,7 @@ procedure TfrmCad_Transportadora.edtCEPRegAchado(
   const ValoresCamposEstra: array of Variant);
 begin
   inherited;
-  with getCds(GetSelect(tpERPCEP,'idcep = '+edtCEP.ValorChaveString)) do
+  with getCds(GetSelect(tpERPCEP,'idcep = '+TipoCampoChaveToStr(edtCEP.ValorChaveString))) do
   Begin
     edtBairro.Text := FieldByName('BAIRRO').AsString;
     edtCidade.Text := FieldByName('CIDADE').AsString;

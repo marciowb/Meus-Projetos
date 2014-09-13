@@ -28,6 +28,8 @@ type
     LabelDBEdit1: TLabelDBEdit;
     LabelDBEdit2: TLabelDBEdit;
     btnSerial: TBitBtn;
+    edtCFOPEntrada: TEditPesquisa;
+    EdtAlmoxarifado: TEditPesquisa;
     procedure FormShow(Sender: TObject);
     procedure edtCodigoFornecedorExit(Sender: TObject);
     procedure btnOkClick(Sender: TObject);
@@ -71,13 +73,19 @@ begin
   DataProdutoEntrada.DataSet := pDataSet;
   ConfiguraEditPesquisa(edtCodigoProduto, pDataSet, tpERPProduto);
   ConfiguraEditPesquisa(edtCodigoCFOP, pDataSet, tpERPCFOP);
+  ConfiguraEditPesquisa(edtCFOPEntrada, pDataSet, tpERPCFOP,True,'','','CFOP','IDCFOPENTRADA');
+
   ConfiguraEditPesquisa(edtUnidade, pDataSet, tpERPUnidade);
   ConfiguraEditPesquisa(edtUnidadeCompra, pDataSet, tpERPUnidade,True,'','','','IDUNIDADECOMPRA');
+
+  ConfiguraEditPesquisa(EdtAlmoxarifado, pDataSet, tpERPAlmoxarifado);
 
   edtCodigoProduto.SQLComp := 'TIPOPRODUTO <> '+QuotedStr(TipoProdutoServico);
 
   edtCodigoCFOP.TamanhoCodigo := 4;
   edtCodigoCFOP.AutoPesquisa := True;
+  edtCFOPEntrada.TamanhoCodigo := 4;
+  edtCFOPEntrada.AutoPesquisa := True;
 end;
 
 procedure TfrmInc_ProdutoEntrada.SetDataSetSerial(

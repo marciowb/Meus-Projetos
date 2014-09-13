@@ -15,7 +15,7 @@ inherited frmLst_OS: TfrmLst_OS
     ExplicitWidth = 873
     inherited BitBtn1: TBitBtn
       Left = 809
-      ExplicitLeft = 702
+      ExplicitLeft = 809
     end
     inherited BitBtn9: TBitBtn
       Left = 611

@@ -1,8 +1,10 @@
 program ERP;
 
 uses
+  ExceptionLog,
   Forms,
   SysUtils,
+  MidasLib,
   uPrincipal in 'uPrincipal.pas' {frmPrincipal},
   uFormPadrao in '..\Global\uFormPadrao.pas' {frmPadrao},
   Cad_CadastroPai in '..\Global\Cad_CadastroPai.pas' {frmCad_CadastroPai},

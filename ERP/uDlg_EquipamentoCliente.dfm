@@ -9,12 +9,12 @@ inherited frmDlg_EquipamentoCliente: TfrmDlg_EquipamentoCliente
     Top = 255
     ExplicitTop = 255
     inherited btnOk: TBitBtn
-      Left = 152
-      ExplicitLeft = 152
+      Left = 148
+      ExplicitLeft = 148
     end
     inherited btnCancelar: TBitBtn
-      Left = 243
-      ExplicitLeft = 243
+      Left = 239
+      ExplicitLeft = 239
     end
   end
   inherited Panel2: TPanel
