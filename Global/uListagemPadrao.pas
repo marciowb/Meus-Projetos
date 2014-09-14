@@ -149,15 +149,20 @@ end;
 
 procedure TfrmListagemPadrao.actExcluirExecute(Sender: TObject);
 Var
-  StrSQL : String;
+  StrSQL, ID : String;
 begin
   inherited;
+
   if not PodeExcluir then
     Avisa('Esse registro possui dependências.  '+#13+#10+
           ' Ao excluir esse registros outros registros poderão ser excluídos!');
   if (ConfirmaDel) then
   Begin
     try
+      if InfoSistema.UsaGuidChave then
+        ID := GetStr(CdsListagem.FieldByName(CampoChave).AsString)
+      else
+        ID:= CdsListagem.FieldByName(CampoChave).AsString;
       StartTrans;
       StrSQL :=
         'EXECUTE BLOCK AS '+
@@ -165,13 +170,13 @@ begin
         'BEGIN'+
         '  FOR' +
         '    SELECT X.TABELA'+
-        '      FROM VW_DEPENDENCIAS('+GetStr(Tabela)+','+CdsListagem.FieldByName(CampoChave).AsString+') X'+
+        '      FROM VW_DEPENDENCIAS('+GetStr(Tabela)+','+ID+') X'+
         '      INTO :TABELA'+
         '    DO'+
         '    BEGIN'+
         '      EXECUTE STATEMENT' +
         '        ''DELETE FROM ''||:TABELA||' +
-        '        '' WHERE ''||'+GetStr(CampoChave)+'||'' = ''||'+CdsListagem.FieldByName(CampoChave).AsString+';'+
+        '        '' WHERE ''||'+GetStr(CampoChave)+'||'' = ''||'+ID+';'+
         '    END '+
         'END';
       Exec_SQL(StrSQL);
@@ -380,11 +385,15 @@ end;
 
 function TfrmListagemPadrao.PodeExcluir: Boolean;
 Var
-  StrSQL : String;
+  StrSQL,ID : String;
 begin
+  if InfoSistema.UsaGuidChave then
+    ID := GetStr(CdsListagem.FieldByName(CampoChave).AsString)
+  else
+    ID:= CdsListagem.FieldByName(CampoChave).AsString;
   StrSQL :=
     'SELECT SUM(QTD) QTD  '+
-    '  FROM VW_DEPENDENCIAS('+QuotedStr(Tabela)+', '+CdsListagem.FieldByName(CampoChave).AsString+')';
+    '  FROM VW_DEPENDENCIAS('+QuotedStr(Tabela)+', '+ID+')';
   Result := StrToIntDef(GetValorCds(StrSQL),0) = 0;
 
 end;

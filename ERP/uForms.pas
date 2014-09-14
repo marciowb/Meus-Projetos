@@ -56,7 +56,7 @@ interface
       class function AbreCadastroAlmoxarifado(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
       class procedure AbreListagemSaida(IDCLiente:TipoCampoChave =  '-1'; IdOs:TipoCampoChave =  '-1' );
       class Procedure AbreConfiguracoes;
-      class procedure AbreContasReceber(IdCliente: TipoCampoChave = '-1'; IdSaida: TipoCampoChave = '-1');
+      class procedure AbreContasReceber(IdCliente: TipoCampoChave = '-1'; IdSaida: TipoCampoChave = '-1'; IdContratoCompetencia: TipoCampoChave = '-1');
       class function AbreCadastroPlanoContas(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
   private
 
@@ -78,6 +78,7 @@ begin
   Try
     frmAgenda := TfrmAgenda.Create(nil);
     frmAgenda.IdAgenda := IdAgenda;
+    frmAgenda.IdCOmpetenciaContrato := IdConratoCOmpetencia;
     frmAgenda.ShowModal;
   Finally
     FreeAndNil(frmAgenda);
@@ -252,12 +253,13 @@ begin
   End;
 end;
 
-class procedure TrotinasForms.AbreContasReceber(IdCliente: TipoCampoChave = '-1'; IdSaida: TipoCampoChave = '-1');
+class procedure TrotinasForms.AbreContasReceber(IdCliente: TipoCampoChave = '-1'; IdSaida: TipoCampoChave = '-1'; IdContratoCompetencia: TipoCampoChave = '-1');
 begin
   if frmLst_ContasReceber = nil then
     frmLst_ContasReceber := TfrmLst_ContasReceber.Create(nil);
   frmLst_ContasReceber.IdCliente := IdCliente;
   frmLst_ContasReceber.IdSaida := IdSaida;
+  frmLst_ContasReceber.IdContratoCompetencia := IdContratoCompetencia;
   if frmLst_ContasReceber.Showing then
     frmLst_ContasReceber.BringToFront
   else

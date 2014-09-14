@@ -62,6 +62,13 @@ inherited frmCad_Contrato: TfrmCad_Contrato
               Height = 13
               Caption = 'Validade do contrato'
             end
+            object Label3: TLabel
+              Left = 432
+              Top = 47
+              Width = 72
+              Height = 13
+              Caption = 'Dia pagamento'
+            end
             object edtData: TcxDBDateEdit
               Left = 16
               Top = 24
@@ -452,20 +459,20 @@ inherited frmCad_Contrato: TfrmCad_Contrato
               BtnEditar.Visible = False
               Display.Left = 133
               Display.Top = 64
-              Display.Width = 394
+              Display.Width = 287
               Display.Height = 21
               Display.TabStop = False
               Display.Color = clSkyBlue
               Display.ReadOnly = True
               Display.TabOrder = 2
-              TamanhoDisplay = 394
+              TamanhoDisplay = 287
             end
             object edtPeriodoVigenciaContrato: TEditPesquisa
               Left = 16
               Top = 112
               Width = 62
               Height = 21
-              TabOrder = 8
+              TabOrder = 9
               TipoPesquisa = 0
               TamanhoCodigo = 0
               AutoPesquisa = True
@@ -640,7 +647,7 @@ inherited frmCad_Contrato: TfrmCad_Contrato
               Display.TabStop = False
               Display.Color = clSkyBlue
               Display.ReadOnly = True
-              Display.TabOrder = 11
+              Display.TabOrder = 12
               TamanhoDisplay = 60
             end
             object edtPeriodoVisitaContrato: TEditPesquisa
@@ -648,7 +655,7 @@ inherited frmCad_Contrato: TfrmCad_Contrato
               Top = 112
               Width = 65
               Height = 21
-              TabOrder = 9
+              TabOrder = 10
               TipoPesquisa = 0
               TamanhoCodigo = 0
               AutoPesquisa = True
@@ -822,7 +829,7 @@ inherited frmCad_Contrato: TfrmCad_Contrato
               Display.TabStop = False
               Display.Color = clSkyBlue
               Display.ReadOnly = True
-              Display.TabOrder = 12
+              Display.TabOrder = 13
               TamanhoDisplay = 50
             end
             object edtValidadeContrato: TcxDBDateEdit
@@ -832,7 +839,7 @@ inherited frmCad_Contrato: TfrmCad_Contrato
               DataBinding.DataField = 'DATATERMINO'
               DataBinding.DataSource = DataCadastro
               Properties.PostPopupValueOnTab = True
-              TabOrder = 10
+              TabOrder = 11
               Width = 97
             end
             object edtTipoContrato: TEditPesquisa
@@ -840,7 +847,7 @@ inherited frmCad_Contrato: TfrmCad_Contrato
               Top = 151
               Width = 62
               Height = 21
-              TabOrder = 13
+              TabOrder = 14
               TipoPesquisa = 0
               TamanhoCodigo = 0
               AutoPesquisa = True
@@ -1022,7 +1029,7 @@ inherited frmCad_Contrato: TfrmCad_Contrato
               Top = 151
               Width = 62
               Height = 21
-              TabOrder = 14
+              TabOrder = 15
               TipoPesquisa = 0
               TamanhoCodigo = 0
               AutoPesquisa = True
@@ -1199,10 +1206,21 @@ inherited frmCad_Contrato: TfrmCad_Contrato
               Display.TabOrder = 3
               TamanhoDisplay = 160
             end
+            object cxDBSpinEdit1: TcxDBSpinEdit
+              Left = 432
+              Top = 64
+              DataBinding.DataField = 'DIAPAGAMENTO'
+              DataBinding.DataSource = DataCadastro
+              Properties.ImmediatePost = True
+              Properties.MaxValue = 28.000000000000000000
+              Properties.MinValue = 1.000000000000000000
+              TabOrder = 8
+              Width = 97
+            end
           end
           object DBCheckBox1: TDBCheckBox
-            Left = 428
-            Top = 115
+            Left = 432
+            Top = 114
             Width = 97
             Height = 17
             Caption = 'Indeterminado?'
@@ -1426,6 +1444,17 @@ inherited frmCad_Contrato: TfrmCad_Contrato
                 ParentDoubleBuffered = False
                 TabOrder = 2
                 OnClick = BitBtn3Click
+              end
+              object BitBtn7: TBitBtn
+                Left = 14
+                Top = 126
+                Width = 91
+                Height = 25
+                Caption = 'Contas a receber'
+                DoubleBuffered = True
+                ParentDoubleBuffered = False
+                TabOrder = 3
+                OnClick = BitBtn7Click
               end
             end
           end

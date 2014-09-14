@@ -205,7 +205,11 @@ begin
   if not edtFuncionario.IsNull then
     Filtro := Filtro+ ' AND A.IDFUNCIONARIO = '+edtFuncionario.ValorChaveString;
   if IdCOmpetenciaContrato <> SemID then
+  begin
     Filtro := Filtro+ ' AND A.IDCONTRATOCOMPETENCIA = '+TipoCampoChaveToStr(IdCOmpetenciaContrato);
+    grpTipoView.ItemIndex := 0;
+
+  end;
 
   SetCds(CdsAgenda,tpERPAGenda,Filtro);
 
@@ -284,6 +288,10 @@ begin
   if IdAgenda <> SemID then
   Begin
     CdsAgenda.Locate('IDAGENDA', IdAgenda,[]);
+    Agenda.GoToDate(CdsAgenda.FieldByName('DATA_HORAINI').AsDateTime);
+  End;
+  if IdCOmpetenciaContrato <> SemID then
+  Begin
     Agenda.GoToDate(CdsAgenda.FieldByName('DATA_HORAINI').AsDateTime);
   End;
 

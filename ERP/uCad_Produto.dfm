@@ -13,10 +13,10 @@ inherited frmCad_Produto: TfrmCad_Produto
   end
   inherited pnlTree: TPanel
     Height = 370
-    ExplicitHeight = 371
+    ExplicitHeight = 370
     inherited TreeItens: TcxTreeView
       Height = 364
-      ExplicitHeight = 365
+      ExplicitHeight = 364
     end
   end
   inherited Panel3: TPanel
@@ -1421,6 +1421,9 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet1: TcxTabSheet
         Caption = 'Adicionais'
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
         ExplicitHeight = 301
         object GroupBox1: TGroupBox
           Left = 0
@@ -1467,7 +1470,6 @@ inherited frmCad_Produto: TfrmCad_Produto
             Properties.ScrollBars = ssBoth
             Properties.WantTabs = True
             TabOrder = 0
-            ExplicitHeight = 139
             Height = 138
             Width = 322
           end
@@ -1492,7 +1494,6 @@ inherited frmCad_Produto: TfrmCad_Produto
             Properties.ImmediatePost = True
             Properties.Stretch = True
             TabOrder = 0
-            ExplicitHeight = 139
             Height = 138
             Width = 198
           end
@@ -1501,6 +1502,9 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet4: TcxTabSheet
         Caption = 'Outros'
         ImageIndex = 2
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
         ExplicitHeight = 301
         object GroupBox5: TGroupBox
           Left = 0
@@ -2053,6 +2057,9 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet8: TcxTabSheet
         Caption = 'Estoque'
         ImageIndex = 3
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
         ExplicitHeight = 301
         object GroupBox6: TGroupBox
           Left = 0
@@ -2309,10 +2316,11 @@ inherited frmCad_Produto: TfrmCad_Produto
         object cxSplitter1: TcxSplitter
           Left = 0
           Top = 145
-          Width = 528
+          Width = 8
           Height = 8
           HotZoneClassName = 'TcxMediaPlayer9Style'
           AlignSplitter = salTop
+          Control = GroupBox6
           ExplicitTop = 105
           ExplicitWidth = 195
         end
@@ -2320,6 +2328,9 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet7: TcxTabSheet
         Caption = 'Seriais'
         ImageIndex = 3
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
         ExplicitHeight = 301
         object cxGrid2: TcxGrid
           Left = 0
@@ -2366,6 +2377,9 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet2: TcxTabSheet
         Caption = 'Processos/procedimentos'
         ImageIndex = 5
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
         ExplicitHeight = 301
         object grpProcesso: TGroupBox
           Left = 0

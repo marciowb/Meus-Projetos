@@ -2300,6 +2300,7 @@ inherited frmSaida: TfrmSaida
     Filtered = True
     Params = <>
     AfterOpen = CdsItensAfterOpen
+    BeforePost = CdsItensBeforePost
     AfterPost = CdsItensAfterPost
     AfterScroll = CdsItensAfterScroll
     OnNewRecord = CdsItensNewRecord

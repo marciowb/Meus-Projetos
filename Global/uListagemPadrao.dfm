@@ -112,6 +112,8 @@ inherited frmListagemPadrao: TfrmListagemPadrao
       DoubleBuffered = True
       ParentDoubleBuffered = False
       TabOrder = 5
+      ExplicitLeft = 348
+      ExplicitTop = -2
     end
     object BitBtn7: TBitBtn
       Left = 259

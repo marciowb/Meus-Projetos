@@ -19,7 +19,7 @@ uses
   cxMaskEdit, cxDropDownEdit, cxCalendar, cxDBEdit, cxStyles, cxCustomData,
   cxFilter, cxData, cxDataStorage, cxDBData, cxMemo, cxGridLevel,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxClasses,
-  cxGridCustomView, cxGrid,ulibERP;
+  cxGridCustomView, cxGrid,ulibERP, cxSpinEdit;
 
 type
   TfrmCad_Contrato = class(TfrmCad_CadastroPaiERP)
@@ -73,6 +73,9 @@ type
     cxGrid1DBTableView1Column1: TcxGridDBColumn;
     cxGrid1DBTableView1Column2: TcxGridDBColumn;
     BitBtn3: TBitBtn;
+    cxDBSpinEdit1: TcxDBSpinEdit;
+    Label3: TLabel;
+    BitBtn7: TBitBtn;
     procedure actIncluirServicoExecute(Sender: TObject);
     procedure actAlterarServicoExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -96,6 +99,7 @@ type
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
+    procedure BitBtn7Click(Sender: TObject);
   private
     FidProposta: TipoCampoChave;
     procedure SetidProposta(const Value: TipoCampoChave);
@@ -239,6 +243,12 @@ begin
   Finally
     FreeAndNil(frmCad_OS);
   End;
+end;
+
+procedure TfrmCad_Contrato.BitBtn7Click(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreContasReceber(semid,semid,CdsCompetencia.FieldByName('IDCONTRATOCOMPETENCIA').AsString);
 end;
 
 procedure TfrmCad_Contrato.CdsCadastroAfterPost(DataSet: TDataSet);

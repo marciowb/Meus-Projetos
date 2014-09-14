@@ -26,13 +26,16 @@ type
   private
     FIdCliente: TipoCampoChave;
     FIdSaida: TipoCampoChave;
+    FIdContratoCompetencia: TipoCampoChave;
     procedure SetIdCliente(const Value: TipoCampoChave);
     procedure SetIdSaida(const Value: TipoCampoChave);
+    procedure SetIdContratoCompetencia(const Value: TipoCampoChave);
     { Private declarations }
   public
     { Public declarations }
     property IdCliente: TipoCampoChave read FIdCliente write SetIdCliente;
     property IdSaida: TipoCampoChave  read FIdSaida write SetIdSaida;
+    property IdContratoCompetencia: TipoCampoChave read FIdContratoCompetencia write SetIdContratoCompetencia;
   end;
 
 var
@@ -61,6 +64,7 @@ begin
   CampoOrdem := 'CR.FLAGSTATUS, CR.DATAVENCIMENTO asc ,CR.IDCLIENTE';
   FIdCliente := SemID;
   FIdSaida := SemID;
+  FIdContratoCompetencia := SemID;
 end;
 
 procedure TfrmLst_ContasReceber.FormShow(Sender: TObject);
@@ -73,12 +77,21 @@ begin
     Filtros := Filtros+' and CR.IDCLIENTE  = '+TipoCampoChaveToStr(FIdCliente);
   if FIdSaida <> SemID then
     Filtros := Filtros+' and CR.IDSAIDA  = '+TipoCampoChaveToStr(FIdSaida);
+  if FIdContratoCompetencia <> SemID then
+    Filtros := Filtros+' and CR.IDCONTRATOCOMPETENCIA  = '+TipoCampoChaveToStr(FIdContratoCompetencia);
+
   AtuDados;
 end;
 
 procedure TfrmLst_ContasReceber.SetIdCliente(const Value: TipoCampoChave);
 begin
   FIdCliente := Value;
+end;
+
+procedure TfrmLst_ContasReceber.SetIdContratoCompetencia(
+  const Value: TipoCampoChave);
+begin
+  FIdContratoCompetencia := Value;
 end;
 
 procedure TfrmLst_ContasReceber.SetIdSaida(const Value: TipoCampoChave);

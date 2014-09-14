@@ -168,6 +168,7 @@ type
     procedure CdsItensAfterOpen(DataSet: TDataSet);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure CdsItensAfterScroll(DataSet: TDataSet);
+    procedure CdsItensBeforePost(DataSet: TDataSet);
   private
     { Private declarations }
     UfEmpresa: String;
@@ -507,6 +508,13 @@ begin
     CdsSeriais.Filter := 'FLAGEDICAO <> ''D'' AND IDSAIDAPRODUTO = '+TipoCampoChaveToStr( CdsItens.FieldByName('IDSAIDAPRODUTO').AsString);
   end;
   CdsSeriais.Filtered := True;
+end;
+
+procedure TfrmSaida.CdsItensBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  if CdsItens.FieldByName('FLAGEDICAO').AsString = 'N' then
+    CdsItens.FieldByName('FLAGEDICAO').AsString := 'E';
 end;
 
 procedure TfrmSaida.CdsItensNewRecord(DataSet: TDataSet);
