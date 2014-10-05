@@ -23,6 +23,7 @@ uses
 type
   TfrmLst_TipoOS = class(TfrmLstCadastroSimplesERP)
     edtLayot: TEditPesquisa;
+    DBRadioGroup1: TDBRadioGroup;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }

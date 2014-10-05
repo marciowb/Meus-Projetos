@@ -308,6 +308,9 @@ inherited frmListagemPadrao: TfrmListagemPadrao
     object tsListagem: TcxTabSheet
       Caption = 'Listagem'
       ImageIndex = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object cxGrid1: TcxGrid
         Left = 0
         Top = 0

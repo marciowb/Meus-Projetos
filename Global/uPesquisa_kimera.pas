@@ -1608,6 +1608,38 @@ begin
         Campos.Add('Nº contrato', 'NUMEROCONTRATO', tcString, tsCampoPesquisaGrid);
         Campos.Add('Compência', 'COMPETENCIA', tcString,tsMostraGrid, 200);
       End;
+     tpERPTipoPatrimonio:
+      Begin
+        Titulo := 'Tipo patrimônio';
+        Campos.Add('Código', 'CODIGO', tcString, tsCampoPesquisaGrid);
+        Campos.Add('Descrição', 'NOMETIPOPATRIMONIO', tcString,tsCampoPesquisaGrid, 200);
+      End;
+     tpERPTipoEventos:
+      Begin
+        Titulo := 'Tipo eventos';
+        Campos.Add('Código', 'TE.CODIGO', tcString, tsCampoPesquisaGrid);
+        Campos.Add('Evento', 'NOMETIPOEVENTOPATRIMONIO', tcString,tsCampoPesquisaGrid, 200);
+      End;
+     tpERPPatrimonio,tpERPPatrimonioDisponivel:
+      Begin
+        Titulo := 'Patrimônio';
+        Campos.Add('Código', 'P.CODIGO', tcString, tsCampoPesquisaGrid);
+        Campos.Add('Descrição', 'NOMEPATRIMONIO', tcString,tsCampoPesquisaGrid, 200);
+        Campos.Add('Serial', 'SERIAL', tcString,tsCampoPesquisaGrid, 200);
+        Campos.Add('Tipo de patrimônio', 'NOMETIPOPATRIMONIO', tcString,tsMostraGrid, 200);
+        Campos.Add('Fabricante', 'NOMEFABRICANTE', tcString,tsMostraGrid, 200);
+        Campos.Add('Empresa', 'EMPRESA', tcString,tsMostraGrid, 80);
+
+      End;
+     tpERPPatrimonioManutencaoTerceiros:
+      begin
+         Titulo := 'Manutenção de patrimônio de terceiros ';
+        Campos.Add('Código do patrimônio', 'CODIGOPATRIMONIO', tcString, tsCampoPesquisaGrid,100,nil,'P.CODIGO');
+        Campos.Add('Patrimônio', 'P.NOMEPATRIMONIO', tcString,tsCampoPesquisaGrid, 200);
+        Campos.Add('Fornecedor', 'F.RAZAOSOCIAL', tcString,tsCampoPesquisaGrid, 200);
+        Campos.Add('Data', 'PM.DATA', tcString,tsCampoPesquisaGrid, 80);
+        Campos.Add('Nota', 'E.NUMERONOTA', tcString,tsCampoPesquisaGrid, 100);
+      end;
   {$EndRegion}
 
   end;

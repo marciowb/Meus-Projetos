@@ -59,7 +59,8 @@ var
 
 implementation
 
-uses MinhasClasses, uCad_OS, Comandos, uRegras, uSaida, uForms;
+uses MinhasClasses, uCad_OS, Comandos, uRegras, uSaida, uForms,
+  uGerenteConfiguracao, uConstantes, uConfiguracaoOS;
 
 {$R *.dfm}
 
@@ -101,8 +102,16 @@ begin
   inherited;
   if (CdsListagem.FieldByName('FLAGBAIXADA').AsString <> 'Y') then
   begin
-    Avisa('A O.S. deve estar baixada para fazer o faturamento.');
-    Exit;
+    if COnfiguracaoOS.GetConfiguracao(tpcERPBloqueiaFaturamentoParaOSNaoBaixada) = CfgOSBloqueiaFaturamentoParaOSNaoBaixadaNaoPermite then
+    begin
+      Avisa('A O.S. deve estar baixada para fazer o faturamento.');
+      Exit;
+    end;
+    if COnfiguracaoOS.GetConfiguracao(tpcERPBloqueiaFaturamentoParaOSNaoBaixada) = CfgOSBloqueiaFaturamentoParaOSNaoBaixadaPergunta then
+    begin
+      if not Pergunta('A O.S. não foi baixada ainda, deseja faturar assim mesmo?') then
+        Exit;
+    end;
   end;
   if (CdsListagem.FieldByName('FLAGFATURADA').AsString = 'Y') then
   begin

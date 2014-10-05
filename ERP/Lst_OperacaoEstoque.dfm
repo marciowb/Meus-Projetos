@@ -1,7 +1,6 @@
 inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
   Caption = 'Opera'#231#227'o de estoque'
   ClientHeight = 434
-  ExplicitWidth = 658
   ExplicitHeight = 473
   PixelsPerInch = 96
   TextHeight = 13
@@ -93,7 +92,7 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
           'C')
       end
       object cxDBCheckBox2: TcxDBCheckBox
-        Left = 91
+        Left = 143
         Top = 280
         Caption = 'Gera financeiro'
         DataBinding.DataField = 'FLAGGERAFINANCEIRO'
@@ -139,6 +138,18 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
           '2'
           '3'
           '4')
+      end
+      object cxDBCheckBox4: TcxDBCheckBox
+        Left = 143
+        Top = 307
+        Caption = 'Movimenta patrim'#244'nio'
+        DataBinding.DataField = 'FLAGMOVPATRIMONIO'
+        DataBinding.DataSource = DataCadastro
+        Properties.ValueChecked = 'Y'
+        Properties.ValueGrayed = 'N'
+        Properties.ValueUnchecked = 'N'
+        TabOrder = 9
+        Width = 137
       end
     end
     inherited ToolBar1: TToolBar
@@ -194,14 +205,10 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
           ExplicitWidth = 293
           ExplicitHeight = 355
           inherited pnlTree: TPanel
-            Width = 293
             Height = 355
-            ExplicitWidth = 293
             ExplicitHeight = 355
             inherited TvTree: TcxDBTreeList
-              Width = 293
               Height = 355
-              ExplicitWidth = 293
               ExplicitHeight = 355
             end
           end

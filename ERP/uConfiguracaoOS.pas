@@ -12,6 +12,8 @@ var
   COnfiguracaoOS: TCOnfiguracaoOS;
 implementation
 
+uses uConstantes;
+
 { TCOnfiguracaoOS }
 
 function TCOnfiguracaoOS.GetRegistroConfiguracao(
@@ -47,6 +49,14 @@ begin
       Result.NomeConfiguracao :='OperacaoFaturarOS';
       Result.Descricao := 'Operação para faturar O.S.'
     end ;
+    tpcERPBloqueiaFaturamentoParaOSNaoBaixada:
+    begin
+      Result.NomeConfiguracao :='BloqueiaFaturamentoParaOSNaoBaixada';
+      Result.Descricao := 'Bloqueia o faturamento para O.S. não baixada';
+      Result.TipoCampo := tcInt;
+      Result.ValorPadrao := CfgOSBloqueiaFaturamentoParaOSNaoBaixadaNaoPermite;
+    end ;
+
 
   end;
 end;

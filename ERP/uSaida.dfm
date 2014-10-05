@@ -1063,7 +1063,7 @@ inherited frmSaida: TfrmSaida
             Width = 70
           end
           object TvItensNOMEPRODUTO: TcxGridDBColumn
-            Caption = 'Produto'
+            Caption = 'Produto/Patrim'#244'nio'
             DataBinding.FieldName = 'NOMEPRODUTO'
             Width = 175
           end
@@ -1227,7 +1227,7 @@ inherited frmSaida: TfrmSaida
         end
         object BitBtn2: TBitBtn
           Left = 16
-          Top = 53
+          Top = 55
           Width = 121
           Height = 25
           Action = actEditarItem

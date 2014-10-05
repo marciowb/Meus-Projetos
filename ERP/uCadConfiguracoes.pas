@@ -57,6 +57,7 @@ type
     edtPlanoContaFaturamentoDireto: TEditPesquisa;
     edtPlanoContasFaturamentoDeOS: TEditPesquisa;
     edtPlanoContasFaturamentoContrato: TEditPesquisa;
+    grpBloqFaturamentoOSNaoBaixada: TRadioGroup;
     procedure edtConfigOsStatusAbertaBtnNovoClick(Sender: TObject);
     procedure edtOperacaoFaturamentoBtnNovoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -112,6 +113,7 @@ begin
   AddObjetos(COnfiguracaoOS,tpcERPStatusOSExecucao, edtConfigOsStatusExecucao);
   AddObjetos(COnfiguracaoOS,tpcERPStatusOSFaturada, edtConfigOsStatusFaturada);
   AddObjetos(COnfiguracaoOS,tpcERPOperacaoFaturarOS, edtOperacaoFaturamento);
+  AddObjetos(COnfiguracaoOS,tpcERPBloqueiaFaturamentoParaOSNaoBaixada, grpBloqFaturamentoOSNaoBaixada);
   {$EndRegion}
 
   {$Region 'Financeiro'}
@@ -167,6 +169,11 @@ begin
     else
       (Obj As TcxCurrencyEdit).Value := Valor;
    end;
+   if Obj is TRadioGroup then
+   begin
+      (Obj As TRadioGroup).ItemIndex := Valor;
+   end;
+
 
 end;
 
@@ -260,6 +267,8 @@ begin
     Result := (Obj As TEditPesquisa).ValorChave;
    if Obj is TcxCurrencyEdit then
     Result := (Obj As TcxCurrencyEdit).Value;
+   if Obj is TRadioGroup then
+    Result := (Obj As TRadioGroup).ItemIndex;
 
 end;
 

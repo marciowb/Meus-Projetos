@@ -172,6 +172,7 @@ type
   private
     { Private declarations }
     UfEmpresa: String;
+    FTipoMovimento: TTipoMovimento;
     TotalPagamentos: Currency;
     FIdOS: TipoCampoChave;
     GeraFinanceiro: Boolean;
@@ -222,6 +223,7 @@ begin
     frmDlg_SaidaItem.DataSetSeriais := CdsSeriais;
     frmDlg_SaidaItem.pDataSet.Edit;
     frmDlg_SaidaItem.FechaEGrava := True;
+    frmDlg_SaidaItem.TipoMovimento := FTipoMovimento;
     frmDlg_SaidaItem.ShowModal;
     CalculaTotais;
   Finally
@@ -285,6 +287,7 @@ begin
     frmDlg_SaidaItem.DataSetSeriais := CdsSeriais;
     frmDlg_SaidaItem.pDataSet.Append;
     frmDlg_SaidaItem.FechaEGrava := False;
+    frmDlg_SaidaItem.TipoMovimento := FTipoMovimento;
     frmDlg_SaidaItem.ShowModal;
     CalculaTotais;
   Finally
@@ -327,7 +330,7 @@ begin
   end;
   CalculaTotalPagamentos;
 
-  if (not GeraFinanceiro) and (TotalPagamentos <> CdsSaida.FieldByName('VALORTOTALNOTA').AsCurrency) then
+  if (GeraFinanceiro) and (TotalPagamentos <> CdsSaida.FieldByName('VALORTOTALNOTA').AsCurrency) then
   begin
     avisa('O total dos pagamentos difere do total da nota');
     Exit;
@@ -488,8 +491,9 @@ end;
 procedure TfrmSaida.CdsItensAfterPost(DataSet: TDataSet);
 begin
   inherited;
-  if (CdsItens.FieldByName('flagedicao').AsString = 'I') or
-     (CdsItens.FieldByName('flagedicao').AsString = 'E')   then
+  if ((CdsItens.FieldByName('flagedicao').AsString = 'I') or
+      (CdsItens.FieldByName('flagedicao').AsString = 'E') ) and
+      (FTipoMovimento = tmProduto) then
     TRegrasSaidaProduto.BloqueiaQuantidadeProduto(CdsItens.FieldByName('idsaida').AsString,
                                                   CdsItens.FieldByName('idproduto').AsString,
                                                   CdsSaida.FieldByName('idempresa').AsString ,
@@ -647,13 +651,19 @@ begin
 
   GeraFinanceiro := ValoresCamposEstra[1] = 'Y'; //FLAGGERAFINANCEIRO
   GroupPagamento.Enabled := GeraFinanceiro;
+
+  if ValoresCamposEstra[1] = 'N' then //FLAGMOVPATRIMONIO
+    FTipoMovimento := tmProduto
+  else
+    FTipoMovimento := tmPatrimonio;
+
 end;
 
 procedure TfrmSaida.FormCreate(Sender: TObject);
 begin
   inherited;
   EdtEmpresa.CamposExtraPesquisa := 'UF';
-  edtOperacao.CamposExtraPesquisa := 'FLAGTIPOPESSOA,FLAGGERAFINANCEIRO';
+  edtOperacao.CamposExtraPesquisa := 'FLAGTIPOPESSOA,FLAGGERAFINANCEIRO,FLAGMOVPATRIMONIO';
   ConfiguraEditPesquisa(edtEmpresa,CdsSaida,tpERPEmpresa);
   edtOperacao.SQLComp := ' FLAGTIPOOPERACAO =''S''';
   ConfiguraEditPesquisa(edtOperacao,CdsSaida,tpERPOperacaoSaida);

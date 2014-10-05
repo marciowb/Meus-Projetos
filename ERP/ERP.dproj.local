@@ -103,5 +103,13 @@
     <Transaction>2014/09/06 07:15:24.162.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uDlg_RecebimentosContasReceber.pas</Transaction>
     <Transaction>2014/09/06 07:15:24.162.dfm,D:\Meus Projetos\ERP\Unit1.dfm=D:\Meus Projetos\ERP\uDlg_RecebimentosContasReceber.dfm</Transaction>
     <Transaction>2014/09/06 07:42:37.588.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uConfiguracaoFinanceiro.pas</Transaction>
+    <Transaction>2014/09/20 07:06:58.443.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uLst_TipoPatrimonio.pas</Transaction>
+    <Transaction>2014/09/20 07:06:58.443.dfm,D:\Meus Projetos\ERP\Unit1.dfm=D:\Meus Projetos\ERP\uLst_TipoPatrimonio.dfm</Transaction>
+    <Transaction>2014/09/20 08:01:20.915.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uCad_Patrimonio.pas</Transaction>
+    <Transaction>2014/09/20 08:01:20.915.dfm,D:\Meus Projetos\ERP\Unit1.dfm=D:\Meus Projetos\ERP\uCad_Patrimonio.dfm</Transaction>
+    <Transaction>2014/09/21 05:22:19.806.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uLst_TipoEvento.pas</Transaction>
+    <Transaction>2014/09/21 05:22:19.806.dfm,D:\Meus Projetos\ERP\Unit1.dfm=D:\Meus Projetos\ERP\uLst_TipoEvento.dfm</Transaction>
+    <Transaction>2014/10/05 06:09:55.475.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uLst_ManutencaoPatrimonio.pas</Transaction>
+    <Transaction>2014/10/05 06:09:55.475.dfm,D:\Meus Projetos\ERP\Unit1.dfm=D:\Meus Projetos\ERP\uLst_ManutencaoPatrimonio.dfm</Transaction>
   </Transactions>
 </BorlandProject>

@@ -4,7 +4,7 @@ inherited frmEntradaEstoque: TfrmEntradaEstoque
   ClientWidth = 1042
   Position = poDesigned
   WindowState = wsMaximized
-  ExplicitTop = -46
+  ExplicitTop = -190
   ExplicitWidth = 1058
   ExplicitHeight = 579
   PixelsPerInch = 96
@@ -1029,7 +1029,7 @@ inherited frmEntradaEstoque: TfrmEntradaEstoque
           DataBinding.FieldName = 'CODIGO_PRODUTO'
         end
         object vEntaradaColumn2: TcxGridDBColumn
-          Caption = 'Produto'
+          Caption = 'Produto/Patrim'#244'nio'
           DataBinding.FieldName = 'NOME_PRODUTO'
           Width = 273
         end

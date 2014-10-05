@@ -19,55 +19,69 @@ uses
   DB, cxDBData, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
   cxGridLevel, cxClasses, cxGridCustomView, cxGrid, cxSpinEdit, cxTimeEdit,
   cxMaskEdit, cxDropDownEdit, cxCalendar, cxDBLookupComboBox, DBClient,
-  pFIBClientDataSet,ulibERP;
+  pFIBClientDataSet,ulibERP, cxPC;
 
 type
   TfrmDlg_ServicoEquipamentoOS = class(TfrmDlg_CadastroERP)
     Panel3: TPanel;
     edtServico: TEditPesquisa;
     Panel4: TPanel;
-    GroupBox2: TGroupBox;
-    tvProduto: TcxGridDBTableView;
-    GridProdutoLevel1: TcxGridLevel;
-    GridProduto: TcxGrid;
-    GroupBox1: TGroupBox;
-    mmDefeito: TcxDBMemo;
     edtFuncionario: TEditPesquisa;
     Panel5: TPanel;
     Label1: TLabel;
     cxDBDateEdit1: TcxDBDateEdit;
     Label2: TLabel;
     cxDBTimeEdit1: TcxDBTimeEdit;
-    GridProdutoLevel2: TcxGridLevel;
-    GridProdutoDBTableView1: TcxGridDBTableView;
     DataAlmoxarifado: TDataSource;
     CdsAlmoxarifado: TpFIBClientDataSet;
-    edtAlmoxarifado: TEditPesquisa;
     DataProdutos: TDataSource;
     DataSerial: TDataSource;
-    GridProdutoDBTableView1Column1: TcxGridDBColumn;
+    Page: TcxPageControl;
+    cxTabSheet1: TcxTabSheet;
+    GroupBox1: TGroupBox;
+    mmDefeito: TcxDBMemo;
+    Panel6: TPanel;
+    edtAlmoxarifado: TEditPesquisa;
+    GridProduto: TcxGrid;
+    tvProduto: TcxGridDBTableView;
     tvProdutoColumn1: TcxGridDBColumn;
     tvProdutoColumn2: TcxGridDBColumn;
     tvProdutoColumn3: TcxGridDBColumn;
     tvProdutoColumn4: TcxGridDBColumn;
     tvProdutoColumn5: TcxGridDBColumn;
     tvProdutoColumn6: TcxGridDBColumn;
+    GridProdutoDBTableView1: TcxGridDBTableView;
+    GridProdutoDBTableView1Column1: TcxGridDBColumn;
+    GridProdutoLevel1: TcxGridLevel;
+    GridProdutoLevel2: TcxGridLevel;
+    cxTabSheet2: TcxTabSheet;
+    DataPatrimonio: TDataSource;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    cxGrid1DBTableView1Column1: TcxGridDBColumn;
+    cxGrid1DBTableView1Column2: TcxGridDBColumn;
+    cxGrid1DBTableView1Column3: TcxGridDBColumn;
     procedure FormShow(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure edtServicoRegAchado(const ValoresCamposEstra: array of Variant);
     procedure btnOkClick(Sender: TObject);
+    procedure cxGrid1DBTableView1NavigatorButtonsButtonClick(Sender: TObject;
+      AButtonIndex: Integer; var ADone: Boolean);
   private
     FIdCliente: TipoCampoChave;
     FIdEmpresa: TipoCampoChave;
     FData: TDate;
     FDataSetProdutos: TpFIBClientDataSet;
     FDataSetProdutosSerial: TpFIBClientDataSet;
+    FDataSetPatrimonio: TpFIBClientDataSet;
     procedure SetIdCliente(const Value: TipoCampoChave);
     procedure SetData(const Value: TDate);
     procedure SetIdEmpresa(const Value: TipoCampoChave);
     Function TotalProdutos: Currency;
     procedure SetDataSetProdutos(const Value: TpFIBClientDataSet);
     procedure SetDataSetProdutosSerial(const Value: TpFIBClientDataSet);
+    procedure SetDataSetPatrimonio(const Value: TpFIBClientDataSet);
     { Private declarations }
   public
     { Public declarations }
@@ -76,6 +90,7 @@ type
     property Data: TDate read FData write SetData;
     property DataSetProdutos: TpFIBClientDataSet read FDataSetProdutos write SetDataSetProdutos;
     property DataSetProdutosSerial: TpFIBClientDataSet read FDataSetProdutosSerial write SetDataSetProdutosSerial;
+    property DataSetPatrimonio: TpFIBClientDataSet read FDataSetPatrimonio write SetDataSetPatrimonio;
   end;
 
 var
@@ -98,6 +113,18 @@ begin
       pDataSet.FieldByName('VALORTOTALPRODUTOS').AsCurrency +
       edtServico.DataSet.FieldByName('VALORSERVICO').AsCurrency;
   inherited;
+
+end;
+
+procedure TfrmDlg_ServicoEquipamentoOS.cxGrid1DBTableView1NavigatorButtonsButtonClick(
+  Sender: TObject; AButtonIndex: Integer; var ADone: Boolean);
+begin
+  inherited;
+  if AButtonIndex = 6 then
+  begin
+     AdicionaListaPesquisa(FDataSetPatrimonio,tpERPPatrimonio,'Esse patrimônio já foi adicionado');
+     ADone := True;
+  end;
 
 end;
 
@@ -142,11 +169,18 @@ begin
   edtServico.SQLComp :='TIPOPRODUTO= '+QuotedStr(TipoProdutoServico);
   DataSerial.DataSet := DataSetProdutosSerial;
   DataProdutos.DataSet := DataSetProdutos;
+  DataPatrimonio.DataSet := DataSetPatrimonio;
 end;
 
 procedure TfrmDlg_ServicoEquipamentoOS.SetData(const Value: TDate);
 begin
   FData := Value;
+end;
+
+procedure TfrmDlg_ServicoEquipamentoOS.SetDataSetPatrimonio(
+  const Value: TpFIBClientDataSet);
+begin
+  FDataSetPatrimonio := Value;
 end;
 
 procedure TfrmDlg_ServicoEquipamentoOS.SetDataSetProdutos(

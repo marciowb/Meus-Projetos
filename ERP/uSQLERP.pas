@@ -5,6 +5,7 @@ interface
    Type
      TSQLERP = class(TSQLs)
        Function GetMySQL(TipoPesquisa : TTipoPesquisa ; Complemento : String; Join: String = '') :TSQL;override;
+       Function GetTSQL(TipoPesquisa : TTipoPesquisa ; Complemento : String; Join: String = '') :TSQL;
      end;
 implementation
 
@@ -640,7 +641,7 @@ begin
           Versao20 := True;
           UsaMaxParaCodigo := True;
           Select :=
-            'SELECT IDTIPOOS, CODIGO, NOMETIPOOS,IDLAYOUT '+
+            'SELECT IDTIPOOS, CODIGO, NOMETIPOOS,IDLAYOUT, FLAGTIPOMOVIMENTO '+
             '  FROM TIPOOS'+
             ' WHERE 1=1 '+Complemento;
        end;
@@ -702,11 +703,15 @@ begin
           Select :=
             '  SELECT E.IDEQUIPAMENTOSOS, E.IDEQUIPAMENTOCLIENTE,'+
             '         E.IDOS, E.DETALHEDEFEITO,'+
-            '         E.VALORTOTALEQUIPAMENTO,E.SOLUCAO,E.IDFUNCIONARIOSOLUCAO,'+
-            '         C.DESCRICAOEQUIPAMENTO,C.IDENTIFICADOR,''N'' FLAGEDICAO '+
+            '         E.VALORTOTALEQUIPAMENTO,E.SOLUCAO,E.IDFUNCIONARIOSOLUCAO,E.CONTADORPATRIMONIO,'+
+            '         E.IDPATRIMONIO,  '+
+            '         COALESCE(C.DESCRICAOEQUIPAMENTO,P.NOMEPATRIMONIO)DESCRICAOEQUIPAMENTO, '+
+            '         COALESCE(C.IDENTIFICADOR,P.SERIAL) IDENTIFICADOR, ''N'' FLAGEDICAO '+
             '    FROM EQUIPAMENTOSOS E'+
-            '   INNER JOIN CLIENTEEQUIPAMENTOS C'+
+            '    LEFT JOIN CLIENTEEQUIPAMENTOS C'+
             '      ON (C.IDCLIENTEEQUIPAMENTOS = E.IDEQUIPAMENTOCLIENTE)'+
+            '    LEFT JOIN PATRIMONIO P '+
+            '      ON (P.IDPATRIMONIO  = E.IDPATRIMONIO) '+
             '   WHERE 1=1 '+Complemento;
 
        end;
@@ -758,13 +763,13 @@ begin
       tpERPEntrada:
         begin
           CampoChave := 'IDENTRADA';
-          CampoDisplay := '';
+          CampoDisplay := 'NUMERONOTA';
           NomeTabela := 'ENTRADA';
           DescricaoCampoDisplay := '';
           DescricaoTabela := 'Entrada de Produtos ';
           Versao20 := False;
-          CampoCodigo := '';
-          DesconsiderarCampos := 'NOMEOPERACAOESTOQUE;PESSOA;TIPOPESSOA;LOGIN;IDCFOP;CODIGOEMPRESA;ESTACANCELADA';
+          CampoCodigo := 'NUMERONOTA';
+          DesconsiderarCampos := 'NOMEOPERACAOESTOQUE;PESSOA;TIPOPESSOA;LOGIN;IDCFOP;CODIGOEMPRESA;ESTACANCELADA;DESCTIPOPESSOA';
           Select :=
             'SELECT IDENTRADA,DATA,IDOPERACAOESTOQUE,IDFORNECEDOR,NUMERONOTA,SERIE,MODELO,'+
             '       VALORTOTALPRODUTOS,BASEICMS,VALORICMS,BASEIPI,VALORIPI,BASEST,'+
@@ -772,7 +777,7 @@ begin
             '       FLAGCANCELADA,OBS,VALORDESCONTO,IDEMPRESA,'+
             '       FRETEPORCONTA,IDUSUARIO,DATACRIACAO,IDCLIENTE,'+
             '       NOMEOPERACAOESTOQUE,PESSOA,TIPOPESSOA,LOGIN,'+
-            '       IDCFOP,CODIGOEMPRESA,ESTACANCELADA'+
+            '       IDCFOP,CODIGOEMPRESA,ESTACANCELADA,DESCTIPOPESSOA'+
             ' FROM ('+
             '        SELECT E.IDENTRADA, E.DATA, E.IDOPERACAOESTOQUE, E.IDFORNECEDOR,'+
             '               E.NUMERONOTA, E.SERIE, E.MODELO, E.VALORTOTALPRODUTOS,'+
@@ -784,6 +789,7 @@ begin
             '               O.NOMEOPERACAOESTOQUE,'+
             '               COALESCE(F.RAZAOSOCIAL,C.NOMECLIENTE) PESSOA,'+
             '               CASE WHEN E.IDFORNECEDOR IS NULL THEN ''C'' ELSE ''F'' END TIPOPESSOA,'+
+            '               CASE WHEN E.IDFORNECEDOR IS NULL THEN ''Cliente'' ELSE ''Fornecedor'' END DESCTIPOPESSOA,'+
             '               U.LOGIN,CAST(NULL AS CHAVE) IDCFOP,EP.CODIGO CODIGOEMPRESA,'+
             '               CASE WHEN COALESCE(E.FLAGCANCELADA,''N'') = ''Y'' THEN ''SIM'' ELSE ''NÃO'' END ESTACANCELADA '+
             '          FROM ENTRADA E'+
@@ -819,13 +825,13 @@ begin
             '       EP.VALORSEGURORATEADO, EP.VALOROUTROSRATEADO,'+
             '       EP.IDUNIDADE, EP.NUMITEM, EP.VALORST, EP.BASEST, EP.MVA,'+
             '       EP.REDUCAOBASE, EP.IDUNIDADECOMPRA,EP.CST,EP.IDCFOPENTRADA,EP.IDALMOXARIFADO,'+
-            '       EP.FATORMULTIPLICADOR, EP.QUANTIDADERECEBIDA, P.CODIGO CODIGO_PRODUTO,'+
-            '       P.NOMEPRODUTO NOME_PRODUTO,C.CFOP,CE.CFOP CFOPENTRADA,U.CODIGO UNIDADE,UC.CODIGO UNIDADE_COMPRA,'+
+            '       EP.FATORMULTIPLICADOR, EP.QUANTIDADERECEBIDA,EP.IDPATRIMONIO,EP.CONTADORPATRIMONIO,COALESCE(P.CODIGO,PT.CODIGO) CODIGO_PRODUTO,'+
+            '       COALESCE(P.NOMEPRODUTO,PT.NOMEPATRIMONIO) NOME_PRODUTO,C.CFOP,CE.CFOP CFOPENTRADA,U.CODIGO UNIDADE,UC.CODIGO UNIDADE_COMPRA,'+
             '       PF.CODIGOPRODUTO CODIGOPRODUTOFORNECEDOR,''N'' FLAGEDICAO, A.NOMEALMOXARIFADO'+
             '  FROM ENTRADA E '+
             ' INNER JOIN ENTRADAPRODUTO EP '+
             '    ON (EP.IDENTRADA = E.IDENTRADA)'+
-            ' INNER JOIN PRODUTO P'+
+            '  LEFT JOIN PRODUTO P'+
             '    ON (P.IDPRODUTO = EP.IDPRODUTO)'+
             '  LEFT JOIN CFOP C'+
             '    ON (C.IDCFOP = EP.IDCFOP)'+
@@ -839,6 +845,8 @@ begin
             '    ON (A.IDALMOXARIFADO = EP.IDALMOXARIFADO)'+
             '  LEFT JOIN PRODUTOFORNECEDOR PF '+
             '    ON (PF.IDPRODUTO = P.IDPRODUTO AND PF.IDFORNECEDOR = E.IDFORNECEDOR) '+
+            '  LEFT JOIN PATRIMONIO PT '+
+            '    ON (PT.IDPATRIMONIO = EP.IDPATRIMONIO) '+
             ' WHERE 1=1 '+Complemento;
 
        end;
@@ -872,7 +880,7 @@ begin
           Select :=
             ' SELECT IDOPERACAOESTOQUE, CODIGO, NOMEOPERACAOESTOQUE, '+
             '        FLAGTIPOOPERACAO, FLAGVENDA, FLAGTIPOPESSOA, FLAGGERAFINANCEIRO, '+
-            '        FLAGMOVIMENTAESTOQUE,FLAGDOCUMENTO '+
+            '        FLAGMOVIMENTAESTOQUE,FLAGDOCUMENTO,FLAGMOVPATRIMONIO '+
             '   FROM OPERACAOESTOQUE'+
             '  WHERE  '+IfThen(TipoPesquisa = tpERPOperacaoEntrada,' FLAGTIPOOPERACAO =''E'' ',
                                  IfThen(TipoPesquisa = tpERPOperacaoSaida,' FLAGTIPOOPERACAO =''S'' ', ' 1=1 '))+   Complemento;
@@ -1002,12 +1010,14 @@ begin
           '        SP.BASEIPI, SP.ALIQIPI, SP.VALORIPI, SP.BASEICMSST, SP.ALIQST, SP.MVA, SP.VALORST, SP.BASEPISCOFINS, SP.ALIQPIS,'+
           '        SP.ALIQCOFINS, SP.VALORPIS, SP.VALORCOFINS, SP.BASEISS, SP.ALIQISS, SP.VALORISS, SP.BASECSLL, SP.ALIQCSLL,'+
           '        SP.VALORCSLL, SP.IDCFOP, SP.IDNCM, SP.IDCODIGOMUNICIPAL, SP.CST, SP.CSOSN, SP.CUSTOMEDIO, SP.CUSTOESTOQUE,'+
-          '        SP.CUSTOCONTABIL, SP.EAN, SP.MARCKUP, SP.VALORLUCRO, SP.VALORFRETERATEADO, SP.VALORSEGURORATEADO,'+
-          '        SP.VALOROUTRASDESPESASRATEADO, SP.SUBTOTAL, SP.VALORTOTAL,SP.OBS,SP.IDALMOXARIFADO, P.CODIGO ,'+
-          '        P.NOMEPRODUTO,U.CODIGO UNIDADE,C.CFOP,''N'' FLAGEDICAO'+
+          '        SP.CUSTOCONTABIL, SP.EAN, SP.MARCKUP, SP.VALORLUCRO, SP.VALORFRETERATEADO, SP.VALORSEGURORATEADO,SP.IDPATRIMONIO, SP.CONTADORPATRIMONIO,'+
+          '        SP.VALOROUTRASDESPESASRATEADO, SP.SUBTOTAL, SP.VALORTOTAL,SP.OBS,SP.IDALMOXARIFADO, COALESCE(P.CODIGO , PT.CODIGO) CODIGO,'+
+          '        COALESCE(P.NOMEPRODUTO,PT.NOMEPATRIMONIO) NOMEPRODUTO, U.CODIGO UNIDADE,C.CFOP,''N'' FLAGEDICAO'+
           '   FROM SAIDAPRODUTO SP'+
-          '  INNER JOIN PRODUTO P'+
+          '   LEFT JOIN PRODUTO P'+
           '     ON (SP.IDPRODUTO = P.IDPRODUTO)'+
+          '   LEFT JOIN PATRIMONIO PT' +
+          '     ON (PT.IDPATRIMONIO = SP.IDPATRIMONIO) '+
           '   LEFT JOIN UNIDADE U'+
           '     ON (SP.IDUNIDADE =  U.IDUNIDADE)'+
           '   LEFT JOIN CFOP C '+
@@ -1244,8 +1254,184 @@ begin
             '  FROM VW_MOVIMENTACAO_PRODUTO '+
             ' WHERE 1=1 '+Complemento;
        End;
+      tpERPTipoPatrimonio:
+       begin
+          CampoChave := 'IDTIPOPATRIMONIO';
+          CampoDisplay := 'NOMETIPOPATRIMONIO';
+          NomeTabela := 'TIPOPATRIMONIO';
+          DescricaoCampoDisplay := 'Descrição';
+          DescricaoTabela := 'Tipo de patrimônio';
+          DesconsiderarCampos := '';
+          UsaMaxParaCodigo := True;
+          Versao20:= False;
+          Select :=
+            'SELECT IDTIPOPATRIMONIO, CODIGO, NOMETIPOPATRIMONIO, '+
+            '       FLAGCONTROLACONTADOR, IDUNIDADECONTADOR '+
+            '  FROM TIPOPATRIMONIO '+
+            ' WHERE 1=1 '+Complemento;
+       end;
+      tpERPPatrimonio,tpERPPatrimonioDisponivel:
+       begin
+          CampoChave := 'IDPATRIMONIO';
+          CampoDisplay := 'NOMEPATRIMONIO';
+          NomeTabela := 'PATRIMONIO';
+          DescricaoCampoDisplay := 'Descrição';
+          DescricaoTabela := 'Patrimônio';
+          DesconsiderarCampos := 'EMPRESA;NOMETIPOPATRIMONIO;FLAGCONTROLACONTADOR;NOMEUNIDADE;NCM;NOMEFABRICANTE';
+          UsaMaxParaCodigo := True;
+          Versao20:= False;
+          Select :=
+            'SELECT P.IDPATRIMONIO, P.CODIGO, P.NOMEPATRIMONIO, P.OBS, P.DATAAQUISICAO,'+
+            '       P.VALORAQUISICAO, P.DATACADASTRO, P.CONTADOR,'+
+            '       P.SERIAL, P.IDEMPRESA, P.IDTIPOPATRIMONIO, P.FLAGINATIVO, P.IDENTRADA, P.IDVENDA, P.IDNCM, P.IDFABRICANTE,'+
+            '       P.LASTCHANGE, P.FLAGDISPONIVEL,P.PRECOSAIDA, E.CODIGO EMPRESA,TP.NOMETIPOPATRIMONIO, TP.FLAGCONTROLACONTADOR,'+
+            '       U.NOMEUNIDADE,NCM.CODIGO NCM,F.NOMEFABRICANTE'+
+            '  FROM PATRIMONIO P'+
+            ' INNER JOIN EMPRESA E'+
+            '    ON (P.IDEMPRESA = E.IDEMPRESA)'+
+            ' INNER JOIN TIPOPATRIMONIO TP'+
+            '    ON (P.IDTIPOPATRIMONIO = TP.IDTIPOPATRIMONIO)'+
+            '  LEFT JOIN UNIDADE U'+
+            '    ON (TP.IDUNIDADECONTADOR =  U.IDUNIDADE )'+
+            '  LEFT JOIN NCM'+
+            '    ON (P.IDNCM = NCM.IDNCM)'+
+            '  LEFT JOIN FABRICANTE F'+
+            '    ON (P.IDFABRICANTE = F.IDFABRICANTE)'+
+            ' WHERE '+IfThen(TipoPesquisa = tpERPPatrimonioDisponivel, ' COALESCE(P.FLAGDISPONIVEL,''Y'') =''Y'' ',' 1=1 ')+Complemento;
+
+       end;
+      tpERPTipoEventos:
+        begin
+          CampoChave := 'IDTIPOEVENTOPATRIMONIO';
+          CampoDisplay := 'NOMETIPOEVENTOPATRIMONIO';
+          NomeTabela := 'TIPOEVENTOPATRIMONIO';
+          DescricaoCampoDisplay := 'Evento';
+          DescricaoTabela := 'Tipo de evento patrimônio';
+          DesconsiderarCampos := 'DESCRICAOPERIODICIDADE;NUMDIAS;PRODUTO;NOMEPRODUTO';
+          UsaMaxParaCodigo := True;
+          Versao20:= False;
+          Select :=
+           ' SELECT TE.IDTIPOEVENTOPATRIMONIO,TE.CODIGO, TE.NOMETIPOEVENTOPATRIMONIO,TE.FLAGFORMACONTROLE, TE.IDPERIODICIDADE,TE.IDPRODUTO,' +
+           '        TE.OBS,TE.VALORCONTADOR, PE.DESCRICAOPERIODICIDADE,PE.NUMDIAS, P.CODIGO PRODUTO, P.NOMEPRODUTO '+
+           '   FROM TIPOEVENTOPATRIMONIO TE' +
+           '   LEFT JOIN PERIODICIDADE PE' +
+           '     ON (PE.IDPERIODICIDADE= TE.IDPERIODICIDADE)'+
+           '   LEFT JOIN PRODUTO P' +
+           '     ON (P.IDPRODUTO = TE.IDPRODUTO) '+
+           '  WHERE 1=1 '+Complemento;
+        end;
+      tpERPTipoPatrimonioTipoEventos:
+        begin
+          CampoChave := 'IDTIPOPATRIMONIOTIPOEVENTO';
+          CampoDisplay := '';
+          NomeTabela := 'TIPOPATRIMONIOTIPOEVENTO';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'Eventos do tipo de patrimônio';
+          DesconsiderarCampos := 'CODIGO;NOMETIPOEVENTOPATRIMONIO;FLAGEDICAO';
+          Versao20:= False;
+          Select :=
+            'SELECT TI.IDTIPOPATRIMONIOTIPOEVENTO, TI.IDTIPOPATRIMONIO,'+
+            '       TI.IDTIPOEVENTOPATRIMONIO,TE.CODIGO, TE.NOMETIPOEVENTOPATRIMONIO,''N'' FLAGEDICAO '+
+            '  FROM TIPOPATRIMONIOTIPOEVENTO TI '+
+            ' INNER JOIN TIPOEVENTOPATRIMONIO TE '+
+            '    ON (TE.IDTIPOEVENTOPATRIMONIO = TI.IDTIPOEVENTOPATRIMONIO)  '+
+            ' WHERE 1=1 '+Complemento;
+        end;
+      tpERPPatrimoniosEventos:
+        begin
+          CampoChave := 'IDPATRIMONIOEVENTO';
+          CampoDisplay := '';
+          NomeTabela := 'PATRIMONIOEVENTO';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'Eventos do patrimônio';
+          DesconsiderarCampos := 'IDTIPOPATRIMONIO;CODIGO;NOMETIPOEVENTOPATRIMONIO;FLAGEDICAO';
+          Versao20:= False;
+          Select :=
+            'SELECT IDPATRIMONIO,IDTIPOPATRIMONIO,IDPATRIMONIOEVENTO,'+
+            '       IDTIPOEVENTOPATRIMONIO,CODIGO,NOMETIPOEVENTOPATRIMONIO,'+
+            '       FLAGEDICAO'+
+            '  FROM ('+
+            '        SELECT CAST(NULL AS CHAVE) IDPATRIMONIO, TI.IDTIPOPATRIMONIO,'+
+            '               CAST(NULL AS CHAVE)  IDPATRIMONIOEVENTO, TE.IDTIPOEVENTOPATRIMONIO,'+
+            '               TE.CODIGO, TE.NOMETIPOEVENTOPATRIMONIO,''N'' FLAGEDICAO'+
+            '          FROM TIPOPATRIMONIOTIPOEVENTO TI'+
+            '         INNER JOIN TIPOEVENTOPATRIMONIO TE'+
+            '            ON (TE.IDTIPOEVENTOPATRIMONIO = TI.IDTIPOEVENTOPATRIMONIO)'+
+            '         UNION'+
+            '        SELECT PE.IDPATRIMONIO, P.IDTIPOPATRIMONIO,'+
+            '               PE.IDPATRIMONIOEVENTO, TE.IDTIPOEVENTOPATRIMONIO,'+
+            '               TE.CODIGO, TE.NOMETIPOEVENTOPATRIMONIO,''U'' FLAGEDICAO'+
+            '         FROM PATRIMONIO P'+
+            '        INNER JOIN PATRIMONIOEVENTO PE'+
+            '           ON (P.IDPATRIMONIO = PE.IDPATRIMONIO)'+
+            '        INNER JOIN  TIPOEVENTOPATRIMONIO TE'+
+            '           ON (PE.IDTIPOEVENTOPATRIMONIO = TE.IDTIPOEVENTOPATRIMONIO))X'+
+            ' WHERE 1=1 '+Complemento;
+
+        end;
+        else
+        Result := GetTSQL(TipoPesquisa,Complemento,Join);
+
     end;
 
+  End;
+
+
+end;
+
+function TSQLERP.GetTSQL(TipoPesquisa: TTipoPesquisa; Complemento,
+  Join: String): TSQL;
+begin
+  Result.CampoCodigo := 'CODIGO' ;
+  Result.Versao20 := True;
+  Result.UsaMaxParaCodigo := True;
+  Result.TipoForm := TfGrid;
+  with Result do
+  Begin
+    case TipoPesquisa of
+      tpERPPatrimoniosUsadosOS:
+        Begin
+          CampoChave := 'IDOSPATRIMONIOSUSADOS';
+          CampoDisplay := '';
+          NomeTabela := 'OSPATRIMONIOSUSADOS';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'patrimônios usados na O.S.';
+          DesconsiderarCampos := 'CODIGO;NOMEPATRIMONIO;FLAGEDICAO';
+          Versao20:= False;
+          Select :=
+            'SELECT OP.IDOSPATRIMONIOSUSADOS, OP.IDSERVICOOS, OP.IDPATRIMONIO, '+
+            '       OP.CONTADORPATRIMONIO,P.CODIGO, P.NOMEPATRIMONIO,''N'' FLAGEDICAO '+
+            '  FROM OSPATRIMONIOSUSADOS OP '+
+            ' INNER JOIN PATRIMONIO P '+
+            '    ON (P.IDPATRIMONIO = OP.IDPATRIMONIO) '+
+            ' WHERE 1=1 '+Complemento;
+        End;
+      tpERPPatrimonioManutencaoTerceiros:
+        Begin
+          CampoChave := 'IDPATRIMONIOMANUTENCAO';
+          CampoDisplay := '';
+          NomeTabela := 'PATRIMONIOMANUTENCAO';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'Manutenção de patrimônios';
+          DesconsiderarCampos := 'CODIGOPATRIMONIO;NOMEPATRIMONIO;CODIGOFORNECEDOR;RAZAOSOCIAL;NUMERONOTA';
+          Versao20:= False;
+          CampoCodigo := '';
+          Select :=
+            'SELECT PM.IDPATRIMONIOMANUTENCAO, PM.IDPATRIMONIO, PM.IDFORNECEDOR,'+
+            '       PM.DATA, PM.CONTADORPATRIMONIO, PM.DETALHESMANUTENCAO,PM.IDENTRADA,'+
+            '       P.CODIGO CODIGOPATRIMONIO, P.NOMEPATRIMONIO,'+
+            '       F.CODIGO CODIGOFORNECEDOR, F.RAZAOSOCIAL,E.NUMERONOTA'+
+            '  FROM PATRIMONIOMANUTENCAO PM'+
+            ' INNER JOIN PATRIMONIO P'+
+            '    ON (P.IDPATRIMONIO = PM.IDPATRIMONIO)'+
+            ' INNER JOIN FORNECEDOR F'+
+            '    ON (F.IDFORNECEDOR = PM.IDFORNECEDOR)'+
+            '  LEFT JOIN ENTRADA E '+
+            '    ON (E.IDENTRADA = PM.IDENTRADA)'+
+            ' WHERE 1=1 '+Complemento;
+        End;
+
+    end;
   End;
 
 

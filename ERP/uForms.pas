@@ -58,6 +58,10 @@ interface
       class Procedure AbreConfiguracoes;
       class procedure AbreContasReceber(IdCliente: TipoCampoChave = '-1'; IdSaida: TipoCampoChave = '-1'; IdContratoCompetencia: TipoCampoChave = '-1');
       class function AbreCadastroPlanoContas(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
+      class function AbreCadastroTipoPatrimonio(TipoOperacao: TTipoOperacaoForm =toNada): CampoChave;
+      class function AbreCadastroTipoEvento(TipoOperacao: TTipoOperacaoForm =toNada): CampoChave;
+      class function AbreCadastroPatrimonio(TipoOperacao: TTipoOperacaoForm =toNada): CampoChave;
+      class function AbreManutencaoPatrimonio(TipoOperacao: TTipoOperacaoForm = toNada; pIdPatrimonio: TipoCampoChave = '-1'):CampoChave;
   private
 
     end;
@@ -71,7 +75,9 @@ uses uCadNCM, Lst_Empresa, Cad_Cliente, Cad_usuario, uCad_Funcionario,
   uLst_CondicaoPagamento, uLst_Proposta, uLst_TipoContrato, uLst_Contratos,
   uDlg_EquipamentoCliente, uLst_TipoOS, uLst_StatusOS, uLst_OS, uCad_OS,
   uAgenda, uPrincipal, uEntrada, Lst_OperacaoEstoque, uLst_Entrada, uSaida,
-  uCad_Transportadora, uLst_Saidas, uCadConfiguracoes, uLst_ContasReceber;
+  uCad_Transportadora, uLst_Saidas, uCadConfiguracoes, uLst_ContasReceber,
+  uLst_TipoPatrimonio, uLst_TipoEvento, uCad_Patrimonio,
+  uLst_ManutencaoPatrimonio;
 
 class procedure TrotinasForms.AbreAgenda(IdAgenda: TipoCampoChave = '-1';IdConratoCOmpetencia: TipoCampoChave = '-1');
 begin
@@ -177,6 +183,17 @@ begin
   AbreFormSimples(frmLst_OperacaoEstoque,TfrmLst_OperacaoEstoque,TipoOperacao);
 end;
 
+class function TrotinasForms.AbreCadastroPatrimonio(
+  TipoOperacao: TTipoOperacaoForm): CampoChave;
+begin
+   if frmCad_Patrimonio = nil then
+     frmCad_Patrimonio:= TfrmCad_Patrimonio.Create(nil);
+  if frmCad_Patrimonio.Showing then
+    frmCad_Patrimonio.BringToFront
+  else
+    frmCad_Patrimonio.Show;
+end;
+
 class function TrotinasForms.AbreCadastroPeridicidade(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
 begin
   AbreFormSimples(frmLst_Periodicidade,TfrmLst_Periodicidade,TipoOperacao);
@@ -208,10 +225,22 @@ begin
   AbreFormSimples(frmLst_TipoContrato, TfrmLst_TipoContrato,TipoOperacao);
 end;
 
+class function TrotinasForms.AbreCadastroTipoEvento(
+  TipoOperacao: TTipoOperacaoForm): CampoChave;
+begin
+  AbreFormSimples(ftmLst_TipoEvento,TftmLst_TipoEvento,TipoOperacao);
+end;
+
 class function TrotinasForms.AbreCadastroTipoOS(
   TipoOperacao: TTipoOperacaoForm): CampoChave;
 begin
   AbreFormSimples(frmLst_TipoOS,TfrmLst_TipoOS,TipoOperacao);
+end;
+
+class function TrotinasForms.AbreCadastroTipoPatrimonio(
+  TipoOperacao: TTipoOperacaoForm): CampoChave;
+begin
+  AbreFormSimples(frmLst_TipoPatrimonio,TfrmLst_TipoPatrimonio,TipoOperacao);
 end;
 
 class function TrotinasForms.AbreCadastroTransportadora(
@@ -367,6 +396,17 @@ begin
   Finally
     FreeAndNil(frmDlg_EquipamentoCliente);
   End;
+end;
+
+class function TrotinasForms.AbreManutencaoPatrimonio(
+  TipoOperacao: TTipoOperacaoForm; pIdPatrimonio: TipoCampoChave): CampoChave;
+begin
+   frmLst_ManutencaoPatrimonio := TfrmLst_ManutencaoPatrimonio.Create(Nil);
+   Try
+     frmLst_ManutencaoPatrimonio.ShowModal;
+   Finally
+     FreeAndNil(frmLst_ManutencaoPatrimonio);
+   End;
 end;
 
 class function TrotinasForms.AbreProposta(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;

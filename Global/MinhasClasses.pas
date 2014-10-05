@@ -198,7 +198,10 @@ interface
                      tpERPEntradaProduto,tpERPModeloNota, tpERPOperacao,tpERPOperacaoEntrada,tpERPOperacaoSaida,tpERPSerialProduto,
                      tpERPSerialProdutoEntrada,tpERPSerialProdutoAtivo,tpERPSerialProdutoOS,tpERPSaida,tpERPSaidaProduto,tpERPSaidaCondicaoPagamento,
                      tpERPSaidaCondicaoPagamentoParcelas,tpERPTransportadora,tpERPAlmoxarifado,tpERPSaidaSerialProduto,tpERPCEP,tpERPCompetenciaContrato,
-                     tpERPContasReceber,tpERPPlanoContas,tpERPContasReceberRecebimentos,tpERPEstoque,tpERPMovimentacaoEstoque
+                     tpERPContasReceber,tpERPPlanoContas,tpERPContasReceberRecebimentos,tpERPEstoque,tpERPMovimentacaoEstoque,tpERPTipoPatrimonio,
+                     tpERPPatrimonio,tpERPTipoEventos,tpERPTipoPatrimonioTipoEventos, tpERPPatrimoniosEventos,tpERPPatrimonioDisponivel,
+                     tpERPPatrimoniosUsadosOS,tpERPPatrimonioManutencaoTerceiros
+
 
 
                      );
@@ -305,7 +308,7 @@ interface
                           ,tpcERPPlanoContasFaturamentoDireto
                           ,tpcERPPlanoContasFaturamentoDeOS
                           ,tpcERPPlanoContasFaturamentoContrato
-
+                          ,tpcERPBloqueiaFaturamentoParaOSNaoBaixada
                          {$EndRegion}
 
 

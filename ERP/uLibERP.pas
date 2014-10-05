@@ -7,7 +7,10 @@ interface
      TRotinasPesquisa = class
        class procedure ConfiguraPesquisaFuncionario(var Edit : TEditPesquisa; aDataSet : TpFIBClientDataSet; aCampoData :String = '');
      end;
+
     TipoCampoChave = String;
+    TTipoMovimento = (tmProduto,tmPatrimonio,tmEquipamento);
+
     Function TipoCampoChaveToStr(Valor: TipoCampoChave): String;
 const
    SemID: TipoCampoChave = '-1';

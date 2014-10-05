@@ -53,7 +53,6 @@ inherited frmPrincipal: TfrmPrincipal
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitHeight = 338
         object cxGrid1: TcxGrid
           Left = 0
           Top = 0
@@ -61,7 +60,6 @@ inherited frmPrincipal: TfrmPrincipal
           Height = 478
           Align = alClient
           TabOrder = 0
-          ExplicitHeight = 338
           object cxGrid1DBTableView1: TcxGridDBTableView
             OnDblClick = cxGrid1DBTableView1DblClick
             NavigatorButtons.ConfirmDelete = False
@@ -159,6 +157,21 @@ inherited frmPrincipal: TfrmPrincipal
         end
         object Almoxarifados1: TMenuItem
           Action = actAlmoxarifado
+        end
+      end
+      object Patrimnio1: TMenuItem
+        Action = actPatrimonio
+        object Patrimnio2: TMenuItem
+          Action = actCadPatrimonio
+        end
+        object ManutenodePatrimnioporterceiros1: TMenuItem
+          Action = actManutencaoPatrimonio
+        end
+        object ipodePatrimnio1: TMenuItem
+          Action = actTipoPatrimonio
+        end
+        object iposdeeventos1: TMenuItem
+          Action = actTipoEvento
         end
       end
       object OS1: TMenuItem
@@ -525,6 +538,31 @@ inherited frmPrincipal: TfrmPrincipal
       Category = 'Cadastro'
       Caption = 'Planos de Conta'
       OnExecute = actPlanoContaExecute
+    end
+    object actPatrimonio: TAction
+      Category = 'Cadastro'
+      Caption = 'Patrim'#244'nio'
+      OnExecute = actPatrimonioExecute
+    end
+    object actTipoPatrimonio: TAction
+      Category = 'Cadastro'
+      Caption = 'Tipo de Patrim'#244'nio'
+      OnExecute = actTipoPatrimonioExecute
+    end
+    object actTipoEvento: TAction
+      Category = 'Cadastro'
+      Caption = 'Tipo de evento'
+      OnExecute = actTipoEventoExecute
+    end
+    object actCadPatrimonio: TAction
+      Category = 'Cadastro'
+      Caption = 'Cadastro de Patrim'#244'nio'
+      OnExecute = actCadPatrimonioExecute
+    end
+    object actManutencaoPatrimonio: TAction
+      Category = 'Cadastro'
+      Caption = 'Manuten'#231#227'o de Patrim'#244'nio por terceiros'
+      OnExecute = actManutencaoPatrimonioExecute
     end
   end
   object dxDockingManager1: TdxDockingManager

@@ -3,6 +3,7 @@ inherited frmCadConfiguracao: TfrmCadConfiguracao
   ClientHeight = 484
   ClientWidth = 899
   OnClose = FormClose
+  ExplicitTop = -89
   ExplicitWidth = 915
   ExplicitHeight = 523
   PixelsPerInch = 96
@@ -51,7 +52,7 @@ inherited frmCadConfiguracao: TfrmCadConfiguracao
     Top = 65
     Width = 899
     Height = 378
-    ActivePage = tsFinanceiro
+    ActivePage = tsOS
     Align = alClient
     Style = 9
     TabOrder = 2
@@ -982,6 +983,19 @@ inherited frmCadConfiguracao: TfrmCadConfiguracao
         Display.TabOrder = 2
         TamanhoDisplay = 200
       end
+      object grpBloqFaturamentoOSNaoBaixada: TRadioGroup
+        Left = 16
+        Top = 296
+        Width = 361
+        Height = 43
+        Caption = ' Bloqueia faturamento para O.S. n'#227'o baixada'
+        Columns = 3
+        Items.Strings = (
+          'N'#227'o permite'
+          'Pergunta'
+          'Permite')
+        TabOrder = 3
+      end
     end
     object tsFinanceiro: TcxTabSheet
       Caption = 'Financeiro'
@@ -1049,7 +1063,7 @@ inherited frmCadConfiguracao: TfrmCadConfiguracao
             Properties.DisplayFormat = '0.00 %;-0.00 %'
             Properties.NullString = '0'
             ShowHint = True
-            TabOrder = 5
+            TabOrder = 4
             Width = 80
           end
           object edtPlanoContaFaturamentoDireto: TEditPesquisa
@@ -1231,7 +1245,7 @@ inherited frmCadConfiguracao: TfrmCadConfiguracao
             Display.TabStop = False
             Display.Color = clSkyBlue
             Display.ReadOnly = True
-            Display.TabOrder = 4
+            Display.TabOrder = 5
             TamanhoDisplay = 200
           end
           object edtPlanoContasFaturamentoDeOS: TEditPesquisa

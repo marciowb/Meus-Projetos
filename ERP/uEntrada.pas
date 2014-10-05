@@ -19,7 +19,7 @@ uses
   dxSkinOffice2010Blue, dxSkinOffice2010Silver, dxSkinPumpkin, dxSkinSeven,
   dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
   dxSkinsDefaultPainters, dxSkinValentine, dxSkinXmas2008Blue,
-  dxSkinscxPCPainter;
+  dxSkinscxPCPainter,uLibERP;
 
 type
   TTipoNota =(tnEntradaDeFornecedor, tnEntradaDeCliente,tnDI);
@@ -112,6 +112,7 @@ type
     UfEmpresa, UfFornecedor: String;
     AliqICMSInterno : Currency;
     FTipoNota: TTipoNota;
+    TipoMovimento: TTipoMovimento;
     procedure SetTipoNota(const Value: TTipoNota);
   public
     { Public declarations }
@@ -125,7 +126,7 @@ var
 
 implementation
 
-uses uForms, uRegras, uLibERP;
+uses uForms, uRegras;
 
 {$R *.dfm}
 
@@ -141,6 +142,7 @@ begin
       pDataSet.Append;
       FechaEGrava := False;
       IdFornecedor := Self.edtCodigoFornecedor.ValorChaveString;
+      TipoMovimento := Self.TipoMovimento;
       DataSetSerial := Self.CdsSerial;
       ShowModal;
     End;
@@ -168,6 +170,7 @@ begin
       pDataSet.Edit;
       IdFornecedor := Self.edtCodigoFornecedor.ValorChaveString;
       DataSetSerial := Self.CdsSerial;
+      TipoMovimento := Self.TipoMovimento;
       ShowModal;
     End;
   Finally
@@ -235,7 +238,7 @@ begin
         '                            QUANTIDADE, VALORUNITARIO, VALORACRESCIMO, VALORDESCONTO, '+
         '                            BASEICMS, ALIQICMS, VALORICMS, ALIQIPI, VALORIPI, VALORTOTAL,'+
         '                            VALORTOTALBRUTO, STITUACAOTRIBUTARIA, VALORFRETERATEADO, VALORSEGURORATEADO, '+
-        '                            VALOROUTROSRATEADO, IDUNIDADE, NUMITEM,QUANTIDADERECEBIDA,FATORMULTIPLICADOR,IDCFOPENTRADA) VALUES '+
+        '                            VALOROUTROSRATEADO, IDUNIDADE, NUMITEM,QUANTIDADERECEBIDA,FATORMULTIPLICADOR,IDCFOPENTRADA,IDPATRIMONIO,CONTADORPATRIMONIO) VALUES '+
         '                           ('+TipoCampoChaveToStr(IDProdutoEntrada)+','+
                                     TipoCampoChaveToStr(CdsEntrada.FieldByName('IDENTRADA').AsString)+','+
                                     TipoCampoChaveToStr(CdsProdutos.FieldByName('IDCFOP').AsString)+','+
@@ -259,7 +262,9 @@ begin
                                     IntToStr(CdsProdutos.RecNo)+','+
                                     GetNumber(CdsProdutos.FieldByName('QUANTIDADERECEBIDA').AsCurrency)+','+
                                     GetNumber(CdsProdutos.FieldByName('FATORMULTIPLICADOR').AsCurrency)+','+
-                                    TipoCampoChaveToStr(CdsProdutos.FieldByName('IDCFOPENTRADA').AsString)+')';
+                                    TipoCampoChaveToStr(CdsProdutos.FieldByName('IDCFOPENTRADA').AsString)+','+
+                                    TipoCampoChaveToStr(CdsProdutos.FieldByName('IDPATRIMONIO').AsString)+','+
+                                    GetNumber(CdsProdutos.FieldByName('CONTADORPATRIMONIO').AsCurrency) +')';
       Exec_SQL(StrSQL);
 
       CdsSerial.First;
@@ -308,7 +313,8 @@ begin
         '      VALUES (:IDPRODUTOFORNECEDOR, :IDPRODUTO, :IDFORNECEDOR,'+
         '              :CODIGOPRODFORN, '+GetData(edtData.Date)+', :VALORUNITARIO,:DESCRICAOPRODUTO)MATCHING(IDPRODUTO, IDFORNECEDOR);'+
         ' END';
-      Exec_SQL(StrSQL);
+      if TipoMovimento = tmProduto then
+        Exec_SQL(StrSQL);
       CdsProdutos.Next;
     End;
     Commit;
@@ -464,6 +470,10 @@ begin
     TipoNota := tnEntradaDeCliente;
   end;
 
+  if ValoresCamposEstra[1] = 'N' then //FLAGMOVPATRIMONIO
+    TipoMovimento := tmProduto
+  else
+    TipoMovimento := tmPatrimonio;
 
 end;
 
@@ -519,7 +529,7 @@ begin
 
   CdsEntrada.Append;
   EdtEmpresa.CamposExtraPesquisa := 'UF';
-  edtCodigoOperacao.CamposExtraPesquisa := 'FLAGTIPOPESSOA';
+  edtCodigoOperacao.CamposExtraPesquisa := 'FLAGTIPOPESSOA,FLAGMOVPATRIMONIO';
 
   ConfiguraEditPesquisa(edtCodigoOperacao, CdsEntrada, tpERPOperacaoEntrada);
   ConfiguraEditPesquisa(edtCodigoFornecedor, CdsEntrada, tpERPFornecedor);

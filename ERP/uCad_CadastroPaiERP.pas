@@ -21,6 +21,7 @@ type
   TfrmCad_CadastroPaiERP = class(TfrmCad_CadastroPai)
     procedure CdsCadastroNewRecord(DataSet: TDataSet);
     procedure actNovoExecute(Sender: TObject);
+    procedure actGravarExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,6 +37,13 @@ implementation
 uses Comandos;
 
 {$R *.dfm}
+
+procedure TfrmCad_CadastroPaiERP.actGravarExecute(Sender: TObject);
+begin
+  VerificaEdits := True;
+  inherited;
+
+end;
 
 procedure TfrmCad_CadastroPaiERP.actNovoExecute(Sender: TObject);
 begin

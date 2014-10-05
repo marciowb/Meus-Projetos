@@ -286,6 +286,7 @@ inherited frmCad_OS: TfrmCad_OS
               TamanhoCodigo = 0
               AutoPesquisa = True
               AutoCompletar = True
+              OnRegAchado = edtTipoOSRegAchado
               UsaBtnNovo = False
               UsaBtnEditar = False
               UsaDisplay = True
@@ -1041,17 +1042,12 @@ inherited frmCad_OS: TfrmCad_OS
             Align = alClient
             Style = 2
             TabOrder = 1
-            ExplicitTop = 138
-            ExplicitHeight = 244
             ClientRectBottom = 228
             ClientRectRight = 595
             ClientRectTop = 23
             object tsEquipamento: TcxTabSheet
               Caption = 'Equipamentos'
               ImageIndex = 0
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 213
               object cxGrid1: TcxGrid
                 Left = 0
                 Top = 0
@@ -1059,7 +1055,6 @@ inherited frmCad_OS: TfrmCad_OS
                 Height = 205
                 Align = alClient
                 TabOrder = 0
-                ExplicitHeight = 213
                 object tvItens: TcxGridDBTableView
                   NavigatorButtons.ConfirmDelete = False
                   DataController.DataSource = DataEquipamento
@@ -1089,7 +1084,6 @@ inherited frmCad_OS: TfrmCad_OS
                 Height = 205
                 Align = alRight
                 TabOrder = 1
-                ExplicitHeight = 213
                 object BitBtn1: TBitBtn
                   Left = 5
                   Top = 53
@@ -1103,7 +1097,7 @@ inherited frmCad_OS: TfrmCad_OS
                 end
                 object BitBtn2: TBitBtn
                   Left = 6
-                  Top = 89
+                  Top = 87
                   Width = 115
                   Height = 25
                   Action = actAlterarEquipamento
@@ -1128,9 +1122,6 @@ inherited frmCad_OS: TfrmCad_OS
             object cxTabSheet2: TcxTabSheet
               Caption = 'Observa'#231#245'es'
               ImageIndex = 1
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 213
               object cxDBMemo1: TcxDBMemo
                 Left = 0
                 Top = 0
@@ -1238,5 +1229,14 @@ inherited frmCad_OS: TfrmCad_OS
     Params = <>
     Left = 104
     Top = 368
+  end
+  object CdsPatrimonio: TpFIBClientDataSet
+    Aggregates = <>
+    Params = <>
+    AfterPost = CdsPatrimonioAfterPost
+    BeforeDelete = CdsPatrimonioBeforeDelete
+    OnNewRecord = CdsPatrimonioNewRecord
+    Left = 336
+    Top = 352
   end
 end

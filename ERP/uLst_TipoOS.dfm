@@ -1,19 +1,9 @@
 inherited frmLst_TipoOS: TfrmLst_TipoOS
   Caption = 'Tipos de O.S.'
-  ExplicitWidth = 658
-  ExplicitHeight = 412
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     inherited Panel3: TPanel
-      inherited Panel4: TPanel
-        inherited BitBtn1: TBitBtn
-          Glyph.Data = {00000000}
-        end
-        inherited BitBtn2: TBitBtn
-          Glyph.Data = {00000000}
-        end
-      end
       object edtLayot: TEditPesquisa
         Left = 16
         Top = 120
@@ -195,6 +185,24 @@ inherited frmLst_TipoOS: TfrmLst_TipoOS
         Display.TabOrder = 3
         TamanhoDisplay = 160
       end
+      object DBRadioGroup1: TDBRadioGroup
+        Left = 16
+        Top = 152
+        Width = 278
+        Height = 41
+        Caption = ' Tipo de movimento '
+        Columns = 2
+        DataField = 'FLAGTIPOMOVIMENTO'
+        DataSource = DataCadastro
+        Items.Strings = (
+          'Equipamento'
+          'Patrimonio')
+        ParentBackground = True
+        TabOrder = 4
+        Values.Strings = (
+          'E'
+          'P')
+      end
     end
     inherited ToolBar1: TToolBar
       inherited ToolButton1: TToolButton
@@ -235,18 +243,6 @@ inherited frmLst_TipoOS: TfrmLst_TipoOS
           ExplicitTop = 24
           ExplicitWidth = 293
           ExplicitHeight = 294
-          inherited pnlTree: TPanel
-            Width = 293
-            Height = 294
-            ExplicitWidth = 293
-            ExplicitHeight = 294
-            inherited TvTree: TcxDBTreeList
-              Width = 293
-              Height = 294
-              ExplicitWidth = 293
-              ExplicitHeight = 294
-            end
-          end
         end
       end
     end

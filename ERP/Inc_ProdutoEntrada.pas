@@ -25,11 +25,12 @@ type
     edtCodigoFornecedor: TLabelDBEdit;
     DataProdutoEntrada: TDataSource;
     edtUnidadeCompra: TEditPesquisa;
-    LabelDBEdit1: TLabelDBEdit;
+    edtFatorMultiplicacao: TLabelDBEdit;
     LabelDBEdit2: TLabelDBEdit;
     btnSerial: TBitBtn;
     edtCFOPEntrada: TEditPesquisa;
     EdtAlmoxarifado: TEditPesquisa;
+    edtPatrimonio: TEditPesquisa;
     procedure FormShow(Sender: TObject);
     procedure edtCodigoFornecedorExit(Sender: TObject);
     procedure btnOkClick(Sender: TObject);
@@ -43,17 +44,22 @@ type
     procedure edtCodigoProdutoBtnEditarClick(Sender: TObject);
     procedure btnSerialClick(Sender: TObject);
     procedure edtQuantidadeExit(Sender: TObject);
+    procedure edtPatrimonioRegAchado(
+      const ValoresCamposEstra: array of Variant);
   private
     FIdFornecedor: TipoCampoChave;
     UsaSerial: Boolean;
     FDataSetSerial: TpFIBClientDataSet;
+    FTipoMovimento: TTipoMovimento;
     procedure SetIdFornecedor(const Value: TipoCampoChave);
     procedure SetDataSetSerial(const Value: TpFIBClientDataSet);
+    procedure SetTipoMovimento(const Value: TTipoMovimento);
     { Private declarations }
   public
     { Public declarations }
     Property IdFornecedor: TipoCampoChave read FIdFornecedor write SetIdFornecedor;
     property DataSetSerial: TpFIBClientDataSet read FDataSetSerial write SetDataSetSerial;
+    property TipoMovimento : TTipoMovimento read FTipoMovimento write SetTipoMovimento;
   end;
 
 var
@@ -79,6 +85,7 @@ begin
   ConfiguraEditPesquisa(edtUnidadeCompra, pDataSet, tpERPUnidade,True,'','','','IDUNIDADECOMPRA');
 
   ConfiguraEditPesquisa(EdtAlmoxarifado, pDataSet, tpERPAlmoxarifado);
+  ConfiguraEditPesquisa(edtPatrimonio, pDataSet, tpERPPatrimonio);
 
   edtCodigoProduto.SQLComp := 'TIPOPRODUTO <> '+QuotedStr(TipoProdutoServico);
 
@@ -97,6 +104,35 @@ end;
 procedure TfrmInc_ProdutoEntrada.SetIdFornecedor(const Value: TipoCampoChave);
 begin
   FIdFornecedor := Value;
+end;
+
+procedure TfrmInc_ProdutoEntrada.SetTipoMovimento(const Value: TTipoMovimento);
+begin
+  FTipoMovimento := Value;
+  edtCodigoProduto.Visible := FTipoMovimento = tmProduto;
+  edtPatrimonio.Visible := FTipoMovimento = tmPatrimonio;
+
+  case Value of
+    tmProduto:
+    begin
+      edtQuantidade.DataField := 'QUANTIDADERECEBIDA';
+      edtQuantidade.Titulo.Caption:= 'Quantidade recebida';
+    end;
+    tmPatrimonio:
+    begin
+      pDataSet.FieldByName('FATORMULTIPLICADOR').Value := 1;
+      pDataSet.FieldByName('QUANTIDADE').Value := 1;
+      pDataSet.FieldByName('QUANTIDADERECEBIDA').AsCurrency := 1;
+      edtQuantidade.DataField := 'CONTADORPATRIMONIO';
+      edtQuantidade.Titulo.Caption:= 'Contador';
+      edtFatorMultiplicacao.Enabled := False;
+      edtCodigoFornecedor.Enabled := False;
+      edtCodigoFornecedor.IsNull := True;
+    end;
+
+  end;
+
+
 end;
 
 procedure TfrmInc_ProdutoEntrada.btnSerialClick(Sender: TObject);
@@ -120,8 +156,13 @@ begin
      pDataSet.FieldByName('VALORUNITARIO').AsCurrency *
      pDataSet.FieldByName('QUANTIDADERECEBIDA').AsCurrency;
 
-  VerificaEdit(pDataSet, edtCodigoFornecedor,'','Informe o código do produto no fornecedor');
-  VerificaEdit(edtCodigoProduto,'Informe o produto');
+  if TipoMovimento = tmProduto then
+  begin
+    VerificaEdit(pDataSet, edtCodigoFornecedor,'','Informe o código do produto no fornecedor');
+    VerificaEdit(edtCodigoProduto,'Informe o produto')
+  end else
+    VerificaEdit(edtPatrimonio,'Informe o patrimônio');
+
   VerificaEdit(edtCodigoCFOP,'Informe o CFOP');
   VerificaEdit(pDataSet,edtQuantidade,'','Informe a quantidade');
   VerificaEdit(pDataSet,edtValorUnitario,'','Informe o valor unitário');
@@ -195,6 +236,18 @@ begin
   edtUnidade.Localiza;
 
 
+end;
+
+procedure TfrmInc_ProdutoEntrada.edtPatrimonioRegAchado(
+  const ValoresCamposEstra: array of Variant);
+begin
+  inherited;
+  if not (pDataSet.State in [dsEdit, dsInsert]) then
+    Exit;
+  pDataSet.FieldByName('CODIGO_PRODUTO').AsString := edtPatrimonio.Text;
+  pDataSet.FieldByName('NOME_PRODUTO').AsString := edtPatrimonio.Display.Text;
+  UsaSerial := False;
+  btnSerial.Enabled := UsaSerial;
 end;
 
 procedure TfrmInc_ProdutoEntrada.edtQuantidadeExit(Sender: TObject);

@@ -57,6 +57,7 @@ type
     DataSerialOS: TDataSource;
     CdsSerialOS: TpFIBClientDataSet;
     EdtCompetenciaContrato: TEditPesquisa;
+    CdsPatrimonio: TpFIBClientDataSet;
     procedure actIncluirEquipamentoExecute(Sender: TObject);
     procedure actAlterarEquipamentoExecute(Sender: TObject);
     procedure actExcluirEquipamentoExecute(Sender: TObject);
@@ -84,10 +85,14 @@ type
     procedure edtClienteRegAchado(const ValoresCamposEstra: array of Variant);
     procedure EdtCompetenciaContratoRegAchado(
       const ValoresCamposEstra: array of Variant);
+    procedure edtTipoOSRegAchado(const ValoresCamposEstra: array of Variant);
+    procedure CdsPatrimonioBeforeDelete(DataSet: TDataSet);
+    procedure CdsPatrimonioNewRecord(DataSet: TDataSet);
+    procedure CdsPatrimonioAfterPost(DataSet: TDataSet);
   private
     FIdProposta: TipoCampoChave;
     FIdContrato: TipoCampoChave;
-
+    FTipoMovimento: TTipoMovimento;
     { Private declarations }
     Procedure AddSerial;
     procedure SetIdProposta(const Value: TipoCampoChave);
@@ -124,6 +129,7 @@ begin
       frmDlg_EquipamentoOS.pDataSet := Self.CdsEquipamento;
       frmDlg_EquipamentoOS.FechaEGrava := True;
       frmDlg_EquipamentoOS.pDataSet.Edit;
+      frmDlg_EquipamentoOS.TipoMovimento := FTipoMovimento;
       frmDlg_EquipamentoOS.IdCliente := CdsCadastro.FieldByName('IDCLIENTE').Value;
       frmDlg_EquipamentoOS.ShowModal;
     Finally
@@ -135,12 +141,14 @@ begin
       frmDlg_ExecucaoOSEquipamento := TfrmDlg_ExecucaoOSEquipamento.Create(nil);
       frmDlg_ExecucaoOSEquipamento.pDataSet := Self.CdsEquipamento;
       frmDlg_ExecucaoOSEquipamento.FechaEGrava := True;
+      frmDlg_ExecucaoOSEquipamento.TipoMovimento := FTipoMovimento;
       frmDlg_ExecucaoOSEquipamento.IdCliente := CdsCadastro.FieldByName('IDCLIENTE').Value;
       frmDlg_ExecucaoOSEquipamento.IdEmpresa := CdsCadastro.FieldByName('IdEmpresa').Value;
       frmDlg_ExecucaoOSEquipamento.Data := CdsCadastro.FieldByName('Data').AsDateTime;
       frmDlg_ExecucaoOSEquipamento.pDataSetServico := Self.CdsServicoEquipamento;
       frmDlg_ExecucaoOSEquipamento.DataSetProdutos := Self.CdsProdutoServicoEquipamento;
       frmDlg_ExecucaoOSEquipamento.DataSetProdutosSerial := Self.CdsSerialOS;
+      frmDlg_ExecucaoOSEquipamento.DataSetPatrimonio := Self.CdsPatrimonio;
       frmDlg_ExecucaoOSEquipamento.pDataSet.Edit;
       NaoIniciou := Self.CdsServicoEquipamento.RecordCount = 0;
       if frmDlg_ExecucaoOSEquipamento.ShowModal = mrOK Then
@@ -225,6 +233,7 @@ begin
       frmDlg_EquipamentoOS.pDataSet := Self.CdsEquipamento;
       frmDlg_EquipamentoOS.FechaEGrava := False;
       frmDlg_EquipamentoOS.IdCliente := CdsCadastro.FieldByName('IDCLIENTE').Value;
+      frmDlg_EquipamentoOS.TipoMovimento := FTipoMovimento;
       frmDlg_EquipamentoOS.pDataSet.Append;
       frmDlg_EquipamentoOS.ShowModal;
     Finally
@@ -237,12 +246,15 @@ begin
       frmDlg_ExecucaoOSEquipamento := TfrmDlg_ExecucaoOSEquipamento.Create(nil);
       frmDlg_ExecucaoOSEquipamento.pDataSet := Self.CdsEquipamento;
       frmDlg_ExecucaoOSEquipamento.FechaEGrava := True;
+      frmDlg_ExecucaoOSEquipamento.TipoMovimento := FTipoMovimento;
       frmDlg_ExecucaoOSEquipamento.IdCliente := CdsCadastro.FieldByName('IDCLIENTE').Value;
       frmDlg_ExecucaoOSEquipamento.IdEmpresa := CdsCadastro.FieldByName('IdEmpresa').Value;
       frmDlg_ExecucaoOSEquipamento.Data := CdsCadastro.FieldByName('Data').AsDateTime;
       frmDlg_ExecucaoOSEquipamento.pDataSetServico := CdsServicoEquipamento;
       frmDlg_ExecucaoOSEquipamento.DataSetProdutos := Self.CdsProdutoServicoEquipamento;
       frmDlg_ExecucaoOSEquipamento.DataSetProdutosSerial := Self.CdsSerialOS;
+      frmDlg_ExecucaoOSEquipamento.DataSetPatrimonio := Self.CdsPatrimonio;
+
       frmDlg_ExecucaoOSEquipamento.pDataSet.Append;
       NaoIniciou := Self.CdsServicoEquipamento.RecordCount = 0;
       if frmDlg_ExecucaoOSEquipamento.ShowModal = mrOK Then
@@ -313,11 +325,6 @@ begin
             frmDlg_SaidaSerial.CdsSeriais.Next;
           end;
           CdsProdutoServicoEquipamento.FieldByName('quantidade').Value := I;
-//          CdsProdutoServicoEquipamento.Post;
-//          Self.CdsSerialOS.Filtered := True;
-//          CdsProdutoServicoEquipamento.AfterEdit := nil;
-//          CdsProdutoServicoEquipamento.Edit;
-//          CdsProdutoServicoEquipamento.AfterEdit := CdsProdutoServicoEquipamentoAfterEdit;
         end;
       Finally
         FreeAndNil(frmDlg_SaidaSerial);
@@ -332,6 +339,7 @@ begin
   SetRegistros(CdsServicoEquipamento,tpERPServicoEquipamentoOS);
   SetRegistros(CdsProdutoServicoEquipamento,tpERPProdutoServicoOS);
   SetRegistros(CdsSerialOS,tpERPSerialProdutoOS);
+  SetRegistros(CdsPatrimonio,tpERPPatrimoniosUsadosOS);
 
 end;
 
@@ -363,6 +371,17 @@ begin
        '                        AND E.IDEQUIPAMENTOSOS = S.IDEQUIPAMENTOSOS) '+
        '                         ) ';
     SetCds(Self.CdsProdutoServicoEquipamento,tpERPProdutoServicoOS,StrSQL);
+
+    StrSQL:=
+       ' EXISTS(SELECT 1   '+
+       '         FROM SERVICOOS S  '+
+       '        WHERE S.IDSERVICOOS =OP.IDSERVICOOS  '+
+       '          AND EXISTS(SELECT 1  '+
+       '                       FROM EQUIPAMENTOSOS E  '+
+       '                      WHERE E.IDOS =   '+TipoCampoChaveToStr(ValorChave)+
+       '                        AND E.IDEQUIPAMENTOSOS = S.IDEQUIPAMENTOSOS) '+
+       '                         ) ';
+    SetCds(Self.CdsPatrimonio,tpERPPatrimoniosUsadosOS,StrSQL);
 
 
 
@@ -419,6 +438,31 @@ begin
   CdsEquipamento.FieldByName('IDEQUIPAMENTOSOS').AsString:= GetCodigo(tpERPEquipamentoOS);
   CdsEquipamento.FieldByName('IDOS').AsString:= ValorChave;
   CdsEquipamento.FieldByName('FLAGEDICAO').AsString:= 'I';
+end;
+
+procedure TfrmCad_OS.CdsPatrimonioAfterPost(DataSet: TDataSet);
+begin
+  inherited;
+  CdsServicoEquipamentoAfterScroll(CdsServicoEquipamento);
+end;
+
+procedure TfrmCad_OS.CdsPatrimonioBeforeDelete(DataSet: TDataSet);
+begin
+  inherited;
+  CdsPatrimonio.Edit;
+  CdsPatrimonio.FieldByName('FLAGEDICAO').AsString := 'D';
+  CdsPatrimonio.Post;
+  Abort;
+end;
+
+procedure TfrmCad_OS.CdsPatrimonioNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  CdsPatrimonio.FieldByName('IDOSPATRIMONIOSUSADOS').AsString := GetCodigo(tpERPPatrimoniosUsadosOS);
+  CdsPatrimonio.FieldByName('IDSERVICOOS').AsString := CdsServicoEquipamento.FieldByName('IDSERVICOOS').AsString;
+  CdsPatrimonio.FieldByName('FLAGEDICAO').AsString := 'I';
+
+
 end;
 
 procedure TfrmCad_OS.CdsProdutoServicoEquipamentoAfterEdit(DataSet: TDataSet);
@@ -545,7 +589,11 @@ begin
     IdServico := SemID;
   CdsProdutoServicoEquipamento.Filter := '(FLAGEDICAO <>''D'') and IDSERVICOOS = '+TipoCampoChaveToStr(IdServico);
   CdsProdutoServicoEquipamento.Filtered := True;
-  
+
+  CdsPatrimonio.Filter := '(FLAGEDICAO <>''D'') and IDSERVICOOS = '+TipoCampoChaveToStr(IdServico);
+  CdsPatrimonio.Filtered := True;
+
+
 end;
 
 procedure TfrmCad_OS.CdsServicoEquipamentoBeforePost(DataSet: TDataSet);
@@ -585,6 +633,18 @@ begin
                   'COMPETENCIA');
 end;
 
+procedure TfrmCad_OS.edtTipoOSRegAchado(
+  const ValoresCamposEstra: array of Variant);
+begin
+  inherited;
+  if ValoresCamposEstra[0] = 'E' then // FTipoMovimento
+    FTipoMovimento := tmEquipamento;
+  if ValoresCamposEstra[0] = 'P' then // FTipoMovimento
+    FTipoMovimento := tmPatrimonio;
+
+
+end;
+
 procedure TfrmCad_OS.FormCreate(Sender: TObject);
 begin
   inherited;
@@ -597,6 +657,9 @@ procedure TfrmCad_OS.FormShow(Sender: TObject);
 begin
   inherited;
   ConfiguraEditPesquisa(edtEmpresa, CdsCadastro, tpERPEmpresa,True);
+
+  edtTipoOS.CamposExtraPesquisa := 'FLAGTIPOMOVIMENTO';
+
   ConfiguraEditPesquisa(edtTipoOS, CdsCadastro, tpERPTipoOS,True);
   ConfiguraEditPesquisa(edtStatusOS, CdsCadastro, tpERPStatusOS,True);
   ConfiguraEditPesquisa(edtCliente, CdsCadastro, tpERPCliente,True);

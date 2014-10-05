@@ -52,6 +52,8 @@ type
     LabelDBEdit2: TLabelDBEdit;
     LabelDBEdit3: TLabelDBEdit;
     cxSplitter1: TcxSplitter;
+    edtPatrimonio: TEditPesquisa;
+    edtEventoPatrimonio: TEditPesquisa;
     procedure actInserirExecute(Sender: TObject);
     procedure actAlterarExecute(Sender: TObject);
     procedure actExcluirExecute(Sender: TObject);
@@ -65,6 +67,8 @@ type
     FDataSetMaster: TpFIBClientDataSet;
     FDataSetProdutosSerial: TpFIBClientDataSet;
     FDataSetProdutos: TpFIBClientDataSet;
+    FTipoMovimento: TTipoMovimento;
+    FDataSetPatrimonio: TpFIBClientDataSet;
     procedure SetIdCliente(const Value: TipoCampoChave);
     procedure SetpDataSetServico(const Value: TpFIBClientDataSet);
     procedure SetData(const Value: TDate);
@@ -72,6 +76,8 @@ type
     procedure SetDataSetMaster(const Value: TpFIBClientDataSet);
     procedure SetDataSetProdutos(const Value: TpFIBClientDataSet);
     procedure SetDataSetProdutosSerial(const Value: TpFIBClientDataSet);
+    procedure SetTipoMovimento(const Value: TTipoMovimento);
+    procedure SetDataSetPatrimonio(const Value: TpFIBClientDataSet);
     { Private declarations }
   public
     { Public declarations }
@@ -82,6 +88,8 @@ type
     property DataSetMaster:  TpFIBClientDataSet read FDataSetMaster write SetDataSetMaster;
     property DataSetProdutos: TpFIBClientDataSet read FDataSetProdutos write SetDataSetProdutos;
     property DataSetProdutosSerial: TpFIBClientDataSet read FDataSetProdutosSerial write SetDataSetProdutosSerial;
+    property DataSetPatrimonio: TpFIBClientDataSet read FDataSetPatrimonio write SetDataSetPatrimonio;
+    property TipoMovimento: TTipoMovimento read FTipoMovimento write SetTipoMovimento;
   end;
 
 var
@@ -106,6 +114,7 @@ begin
     frmDlg_ServicoEquipamentoOS.Data := Self.Data;
     frmDlg_ServicoEquipamentoOS.DataSetProdutos := Self.DataSetProdutos;
     frmDlg_ServicoEquipamentoOS.DataSetProdutosSerial := Self.DataSetProdutosSerial;
+    frmDlg_ServicoEquipamentoOS.DataSetPatrimonio := Self.DataSetPatrimonio;
     frmDlg_ServicoEquipamentoOS.ShowModal;
   Finally
     FreeAndNil(frmDlg_ServicoEquipamentoOS);
@@ -130,13 +139,14 @@ begin
   Try
     frmDlg_ServicoEquipamentoOS := TfrmDlg_ServicoEquipamentoOS.Create(nil);
     frmDlg_ServicoEquipamentoOS.pDataSet := pDataSetServico;
-    frmDlg_ServicoEquipamentoOS.FechaEGrava := False;
+    frmDlg_ServicoEquipamentoOS.FechaEGrava := True;
     frmDlg_ServicoEquipamentoOS.pDataSet.Append;
     frmDlg_ServicoEquipamentoOS.IdCliente := Self.IdCliente;
     frmDlg_ServicoEquipamentoOS.IdEmpresa := Self.IdEmpresa;
     frmDlg_ServicoEquipamentoOS.Data := Self.Data;
     frmDlg_ServicoEquipamentoOS.DataSetProdutos := Self.DataSetProdutos;
     frmDlg_ServicoEquipamentoOS.DataSetProdutosSerial := Self.DataSetProdutosSerial;
+    frmDlg_ServicoEquipamentoOS.DataSetPatrimonio := Self.DataSetPatrimonio;
     frmDlg_ServicoEquipamentoOS.ShowModal;
   Finally
     FreeAndNil(frmDlg_ServicoEquipamentoOS);
@@ -151,13 +161,28 @@ begin
     mmDefeito.SetFocus;
     Exit;
   end;
-  VerificaEdit(edtEquipamentos,'Informe o equipamento');
-  if ExisteRegistro(pDataSet,'IDEQUIPAMENTOCLIENTE') Then
+  if TipoMovimento = tmEquipamento then
   begin
-    Avisa('Esse equipamento já foi dicionado');
-    edtEquipamentos.SetFocus;
-    exit;
-  end;
+    VerificaEdit(edtEquipamentos,'Informe o equipamento');
+    if ExisteRegistro(pDataSet,'IDEQUIPAMENTOCLIENTE') Then
+    begin
+      Avisa('Esse equipamento já foi dicionado');
+      edtEquipamentos.SetFocus;
+      exit;
+    end;
+  end ;
+  if TipoMovimento = tmPatrimonio then
+  begin
+    VerificaEdit(edtPatrimonio,'Informe o patrimônio');
+    if ExisteRegistro(pDataSet,'IDPATRIMONIO') Then
+    begin
+      Avisa('Esse patrimônio já foi dicionado');
+      edtPatrimonio.SetFocus;
+      exit;
+    end;
+  end ;
+
+
   if (Trim(mmLaudo.Text) <> '') and (edtFuncionario.IsNull) then
   begin
     Avisa('Informe o funcionário responsável pelo laudo');
@@ -193,8 +218,20 @@ end;
 procedure TfrmDlg_ExecucaoOSEquipamento.FormShow(Sender: TObject);
 begin
   inherited;
-  ConfiguraEditPesquisa(edtEquipamentos,pDataSet,tpERPClienteEquipamento,True,'','','IDENTIFICADOR','IDEQUIPAMENTOCLIENTE');
-  edtEquipamentos.SQLComp := 'idcliente = '+TipoCampoChaveToStr(IdCliente);
+  if TipoMovimento=tmEquipamento then
+  begin
+    ConfiguraEditPesquisa(edtEquipamentos,pDataSet,tpERPClienteEquipamento,True,'','','IDENTIFICADOR','IDEQUIPAMENTOCLIENTE');
+    edtEquipamentos.SQLComp := 'idcliente = '+TipoCampoChaveToStr(IdCliente);
+  end;
+  if TipoMovimento=tmPatrimonio then
+  begin
+    ConfiguraEditPesquisa(edtPatrimonio,pDataSet,tpERPPatrimonio,True);
+    edtEventoPatrimonio.SQLComp := 'IDPATRIMONIO = '+TipoCampoChaveToStr(edtPatrimonio.ValorChave);
+    ConfiguraEditPesquisa(edtEventoPatrimonio,pDataSet,tpERPPatrimoniosEventos,False);
+
+  end;
+
+
   ConfiguraEditPesquisa(edtFuncionario,pDataSet,tpERPFuncionario,False,'','','CODIGO','IDFUNCIONARIOSOLUCAO');
 
 end;
@@ -208,6 +245,12 @@ procedure TfrmDlg_ExecucaoOSEquipamento.SetDataSetMaster(
   const Value: TpFIBClientDataSet);
 begin
   FDataSetMaster := Value;
+end;
+
+procedure TfrmDlg_ExecucaoOSEquipamento.SetDataSetPatrimonio(
+  const Value: TpFIBClientDataSet);
+begin
+  FDataSetPatrimonio := Value;
 end;
 
 procedure TfrmDlg_ExecucaoOSEquipamento.SetDataSetProdutos(
@@ -236,6 +279,16 @@ procedure TfrmDlg_ExecucaoOSEquipamento.SetpDataSetServico(
   const Value: TpFIBClientDataSet);
 begin
   FpDataSetServico := Value;
+end;
+
+procedure TfrmDlg_ExecucaoOSEquipamento.SetTipoMovimento(
+  const Value: TTipoMovimento);
+begin
+  FTipoMovimento := Value;
+  edtEquipamentos.Visible :=FTipoMovimento = tmEquipamento;
+  edtPatrimonio.Visible := FTipoMovimento = tmPatrimonio;
+  edtEventoPatrimonio.Visible := FTipoMovimento = tmPatrimonio;
+
 end;
 
 end.

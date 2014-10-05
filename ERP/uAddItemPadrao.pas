@@ -32,6 +32,7 @@ type
     GroupBox1: TGroupBox;
     cxDBMemo1: TcxDBMemo;
     DataItens: TDataSource;
+    edtPatrimonio: TEditPesquisa;
     procedure FormShow(Sender: TObject);
     procedure btnOkClick(Sender: TObject);
     procedure edtPercAcrescimoExit(Sender: TObject);
@@ -40,20 +41,26 @@ type
     procedure edtValorDescExit(Sender: TObject);
     procedure edtValUniExit(Sender: TObject);
     procedure edtProdutoRegAchado(const ValoresCamposEstra: array of Variant);
+    procedure edtPatrimonioRegAchado(
+      const ValoresCamposEstra: array of Variant);
+    procedure FormCreate(Sender: TObject);
   private
     FIdEmpresa: TipoCampoChave;
     FIdCliente: TipoCampoChave;
     FData: TDateTime;
+    FTipoMovimento: TTipoMovimento;
     { Private declarations }
     Procedure CalculaTotal;
     procedure SetData(const Value: TDateTime);
     procedure SetIdCliente(const Value: TipoCampoChave);
     procedure SetIdEmpresa(const Value: TipoCampoChave);
+    procedure SetTipoMovimento(const Value: TTipoMovimento);
   published
     { Public declarations }
     property IdCliente:TipoCampoChave read FIdCliente write SetIdCliente;
     property IdEmpresa: TipoCampoChave read FIdEmpresa write SetIdEmpresa;
     Property Data: TDateTime read FData write SetData;
+    property TipoMovimento : TTipoMovimento read FTipoMovimento write SetTipoMovimento;
   end;
 
 var
@@ -67,11 +74,19 @@ uses Comandos, MinhasClasses, uRegras;
 
 procedure TfrmAddItemPadrao.btnOkClick(Sender: TObject);
 begin
-  VerificaEdit(edtProduto,'O produto/serviço deve ser informado');
+  if TipoMovimento = tmProduto then
+    VerificaEdit(edtProduto,'O produto/serviço deve ser informado')
+  else
+    VerificaEdit(edtPatrimonio,'O patrimônio deve ser informado');
+
   VerificaEdit(pDataSet,edtQuantidade,'','A quantidade deve ser informada');
   VerificaEdit(pDataSet,edtValUni,'','O valor deve ser informado');
   inherited;
-  edtProduto.SetFocus;
+  if TipoMovimento = tmProduto then
+    edtProduto.SetFocus;
+  if TipoMovimento = tmPatrimonio then
+    edtPatrimonio.SetFocus;
+
 end;
 
 procedure TfrmAddItemPadrao.CalculaTotal;
@@ -79,6 +94,28 @@ begin
   pDataSet.FieldByName('VALORTOTAL').AsCurrency :=
           (pDataSet.FieldByName('SUBTOTAL').AsCurrency - pDataSet.FieldByName('VALORDESCONTO').AsCurrency)+
              pDataSet.FieldByName('VALORACRESCIMO').AsCurrency;
+end;
+
+procedure TfrmAddItemPadrao.edtPatrimonioRegAchado(
+  const ValoresCamposEstra: array of Variant);
+begin
+  inherited;
+  if not (pDataSet.State in [dsEdit, dsInsert]) then
+    Exit;
+  pDataSet.FieldByName('CODIGO').AsString := edtPatrimonio.Text;
+  pDataSet.FieldByName('NOMEPRODUTO').AsString := edtPatrimonio.Display.Text;
+
+  if pDataSet.FindField('CONTADORPATRIMONIO') <> nil then
+  begin
+    pDataSet.FieldByName('CONTADORPATRIMONIO').Value := ValoresCamposEstra[0] ;
+    edtQuantidade.Text := ValoresCamposEstra[0] ;
+  end;
+
+  if ((pDataSet.FieldByName('VALORUNITARIO').IsNull) or
+      (pDataSet.FieldByName('VALORUNITARIO').OldValue <> pDataSet.FieldByName('VALORUNITARIO').Value))   then
+     pDataSet.FieldByName('VALORUNITARIO').AsCurrency := ValoresCamposEstra[1] ;
+
+
 end;
 
 procedure TfrmAddItemPadrao.edtPercAcrescimoExit(Sender: TObject);
@@ -142,10 +179,27 @@ begin
     CalculaTotal;
 end;
 
+procedure TfrmAddItemPadrao.FormCreate(Sender: TObject);
+begin
+  inherited;
+  TipoMovimento := tmProduto;
+end;
+
 procedure TfrmAddItemPadrao.FormShow(Sender: TObject);
 begin
   inherited;
-  ConfiguraEditPesquisa(edtProduto,pDataSet, tperpProduto,True);
+  if TipoMovimento =tmProduto then
+  begin
+    ConfiguraEditPesquisa(edtProduto,pDataSet, tperpProduto,True);
+    edtProduto.SetFocus;
+  end;
+  if TipoMovimento =tmPatrimonio then
+  begin
+    edtPatrimonio.CamposExtraPesquisa := 'CONTADOR,PRECOSAIDA';
+    ConfiguraEditPesquisa(edtPatrimonio,pDataSet, tpERPPatrimonioDisponivel,True);
+    edtPatrimonio.SetFocus;
+  end;
+
   DataItens.DataSet:= pDataSet;
 end;
 
@@ -162,6 +216,29 @@ end;
 procedure TfrmAddItemPadrao.SetIdEmpresa(const Value: TipoCampoChave);
 begin
   FIdEmpresa := Value;
+end;
+
+procedure TfrmAddItemPadrao.SetTipoMovimento(const Value: TTipoMovimento);
+begin
+  FTipoMovimento := Value;
+  edtProduto.Visible := FTipoMovimento = tmProduto;
+  edtPatrimonio.Visible := FTipoMovimento = tmPatrimonio;
+
+  case Value of
+    tmProduto:
+    begin
+      edtQuantidade.DataField := 'QUANTIDADE';
+      edtQuantidade.Titulo.Caption:= 'Quantidade';
+    end;
+    tmPatrimonio:
+    begin
+      pDataSet.FieldByName('QUANTIDADE').Value := 1;
+      edtQuantidade.DataField := 'CONTADORPATRIMONIO';
+      edtQuantidade.Titulo.Caption:= 'Contador';
+    end;
+
+  end;
+
 end;
 
 end.

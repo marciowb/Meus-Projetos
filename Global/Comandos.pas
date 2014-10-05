@@ -11,7 +11,7 @@ interface
         pFIBClientDataSet,  FIBDataSet, pFIBDataSet, FIBQuery, pFIBQuery,
         Printers,pFIBDatabase, pFIBProps, ppTypes, cxFilterConsts,cxEditConsts,
         UDmConexao, ShellAPI,ppDBPipe,cxSchedulerStrs, IdBaseComponent, IdComponent,
-        IdTCPConnection, IdTCPClient, IdHTTP, DateUtils,cxPC,ExtCtrls;
+        IdTCPConnection, IdTCPClient, IdHTTP, DateUtils,cxPC,ExtCtrls,cxDBEdit;
 
   function GetDataServidor : String;
   Function GetHoraServidor : String;
@@ -62,7 +62,7 @@ interface
   Function Verifica_CNPJ(CNPJ : String ) : Boolean ;
   Function ExisteRegistroCds(CdsOrigem, CdsDestino: TpFIBClientDataSet  ;NomeCampoOrigem, NomeCampoDestino : String ) : Boolean;
   Function GetNumber(Valor : Currency ): String;
-  Function VerificaLabelDbEdit(Form : TForm; CDs :TpFIBClientDataSet): Boolean;
+  Function VerificaLabelDbEdit(Form : TForm; CDs :TpFIBClientDataSet; TipoPesquisa: TTipoPesquisa): Boolean;
   Function ExisteRegistro(Cds : TpFIBClientDataSet;NomeCampo : String; VerificaEmEdicao : Boolean = False; VerificaFiltro: Boolean = False) : Boolean;overload;
   Function ExisteRegistro(TipoPesquisa : TTipoPesquisa; NomeCampo : String; Valor : String) : Boolean;overload;
   Function GetVersaoAplicativo: Ansistring;
@@ -1068,42 +1068,86 @@ begin
    End;
 End;
 
-Function VerificaLabelDbEdit(Form : TForm; CDs :TpFIBClientDataSet): Boolean;
+Function VerificaLabelDbEdit(Form : TForm; CDs :TpFIBClientDataSet; TipoPesquisa: TTipoPesquisa): Boolean;
 var
   i : Integer;
+  StrSQL: String;
 Begin
   Result := True;
-  for I := 0 to Form.ComponentCount - 1 do
+  StrSQL:=
+    'SELECT RDB$FIELD_NAME campo'+
+    '  FROM RDB$RELATION_FIELDS F2 '+
+    ' WHERE F2.RDB$RELATION_NAME = '+QuotedStr(GetTabela(TipoPesquisa))+
+    '   AND RDB$NULL_FLAG = 1 ';
+  with getcds(StrSQL) do
   begin
-   if (Form.Components[I] is TLabelDBEdit) then
-   begin
-     //Vazio
-     if (((Form.Components[I] as TLabelDBEdit).Text) = '') and
-       not((Form.Components[I] as TLabelDBEdit).IsNull) and
-       ((Form.Components[I] as TLabelDBEdit).CanFocus ) and
-       (Form.Components[I] as TLabelDBEdit).Visible then
-     begin
-       if (Form.Components[I] as TLabelDBEdit).MsgNull = '' then
-         AvisaErro('O campo '+LowerCase((Form.Components[I] as TLabelDBEdit).Titulo.Caption)+' não pode ficar vazio!',False)
-       else
-         AvisaErro((Form.Components[I] as TLabelDBEdit).MsgNull);
-       (Form.Components[I] as TLabelDBEdit).SetFocus;
-       Result := False;
-       Break;
-     end else //Repetido
-     if not(Form.Components[I] as TLabelDBEdit).PodeRepetir then
-     begin
-       if ((Form.Components[I] as TLabelDBEdit).Visible ) and
-          ((Form.Components[I] as TLabelDBEdit).Text <> '') and
-          (ExisteRegistro(Cds,(Form.Components[I] as TLabelDBEdit).DataField))  then
+    for I := 0 to Form.ComponentCount - 1 do
+    begin
+      if (Form.Components[I] is TEditPesquisa) then
        begin
-         AvisaErro('Já existe um registro este valor para o campo '+(Form.Components[I] as TLabelDBEdit).Titulo.Caption+'!',False);
+         if Locate('Campo',(Form.Components[I] as TEditPesquisa).CampoData,[]) and ((Form.Components[I] as TEditPesquisa).IsNull) then
+         begin
+            AvisaErro('O campo '+LowerCase((Form.Components[I] as TEditPesquisa).lblTitulo.Caption)+' não pode ficar vazio!',False);
+           (Form.Components[I] as TEditPesquisa).SetFocus;
+           Result := False;
+           Break;
+         end;
+      end;
+     if (Form.Components[I] is TcxDBDateEdit) then
+       begin
+         if Locate('Campo',(Form.Components[I] as TcxDBDateEdit).DataBinding.DataField,[]) and ((Form.Components[I] as TcxDBDateEdit).Text = '') then
+         begin
+            AvisaErro('Este campo não pode ficar vazio!',False);
+           (Form.Components[I] as TcxDBDateEdit).SetFocus;
+           Result := False;
+           Break;
+         end;
+      end;
+
+
+     if (Form.Components[I] is TLabelDBEdit) then
+     begin
+       if Locate('Campo',(Form.Components[I] as TLabelDBEdit).DataField,[]) and (Trim((Form.Components[I] as TLabelDBEdit).Text) = '')and
+          (not (Form.Components[I] as TLabelDBEdit).IsNull)  then
+       begin
+         if (Form.Components[I] as TLabelDBEdit).MsgNull = '' then
+           AvisaErro('O campo '+LowerCase((Form.Components[I] as TLabelDBEdit).Titulo.Caption)+' não pode ficar vazio!',False)
+         else
+           AvisaErro((Form.Components[I] as TLabelDBEdit).MsgNull);
          (Form.Components[I] as TLabelDBEdit).SetFocus;
          Result := False;
          Break;
        end;
+
+       //Vazio
+       if (((Form.Components[I] as TLabelDBEdit).Text) = '') and
+         not((Form.Components[I] as TLabelDBEdit).IsNull) and
+         ((Form.Components[I] as TLabelDBEdit).CanFocus ) and
+         (Form.Components[I] as TLabelDBEdit).Visible then
+       begin
+         if (Form.Components[I] as TLabelDBEdit).MsgNull = '' then
+           AvisaErro('O campo '+LowerCase((Form.Components[I] as TLabelDBEdit).Titulo.Caption)+' não pode ficar vazio!',False)
+         else
+           AvisaErro((Form.Components[I] as TLabelDBEdit).MsgNull);
+         (Form.Components[I] as TLabelDBEdit).SetFocus;
+         Result := False;
+         Break;
+       end else //Repetido
+       if not(Form.Components[I] as TLabelDBEdit).PodeRepetir then
+       begin
+         if ((Form.Components[I] as TLabelDBEdit).Visible ) and
+            ((Form.Components[I] as TLabelDBEdit).Text <> '') and
+            (ExisteRegistro(Cds,(Form.Components[I] as TLabelDBEdit).DataField))  then
+         begin
+           AvisaErro('Já existe um registro este valor para o campo '+(Form.Components[I] as TLabelDBEdit).Titulo.Caption+'!',False);
+           (Form.Components[I] as TLabelDBEdit).SetFocus;
+           Result := False;
+           Break;
+         end;
+       end;
      end;
-   end;
+    end;
+    Free;
   end;
 
 End;

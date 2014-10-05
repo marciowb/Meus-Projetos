@@ -18,5 +18,8 @@ interface
    TipoProdutoUsoInterno:String = 'I';
    TipoProdutoUsoInternoEVenda:String = 'X';
 
+   CfgOSBloqueiaFaturamentoParaOSNaoBaixadaNaoPermite: Integer = 0;
+   CfgOSBloqueiaFaturamentoParaOSNaoBaixadaPergunta: Integer = 1;
+   CfgOSBloqueiaFaturamentoParaOSNaoBaixadaPermite: Integer = 2;
 implementation
 end.

@@ -22,19 +22,25 @@ type
     Panel3: TPanel;
     edtEquipamentos: TEditPesquisa;
     mmDefeito: TcxDBMemo;
+    edtPatrimonio: TEditPesquisa;
     procedure FormShow(Sender: TObject);
     procedure btnOkClick(Sender: TObject);
     procedure edtEquipamentosBtnNovoClick(Sender: TObject);
     procedure edtEquipamentosBtnEditarClick(Sender: TObject);
     procedure edtEquipamentosRegAchado(
       const ValoresCamposEstra: array of Variant);
+    procedure edtPatrimonioRegAchado(
+      const ValoresCamposEstra: array of Variant);
   private
     FIdCliente: TipoCampoChave;
+    FTipoMovimento: TTipoMovimento;
     procedure SetIdCliente(const Value: TipoCampoChave);
+    procedure SetTipoMovimento(const Value: TTipoMovimento);
     { Private declarations }
   public
     { Public declarations }
     property IdCliente: TipoCampoChave read FIdCliente write SetIdCliente;
+    property TipoMovimento: TTipoMovimento read FTipoMovimento write SetTipoMovimento;
   end;
 
 var
@@ -54,13 +60,30 @@ begin
     mmDefeito.SetFocus;
     Exit;
   end;
-  VerificaEdit(edtEquipamentos,'Informe o equipamento');
-  if ExisteRegistro(pDataSet,'IDEQUIPAMENTOCLIENTE',False,True) Then
+
+  if TipoMovimento = tmEquipamento then
   begin
-    Avisa('Esse equipamento já foi adicionado');
-    edtEquipamentos.SetFocus;
-    exit;
+    VerificaEdit(edtEquipamentos,'Informe o equipamento');
+    if ExisteRegistro(pDataSet,'IDEQUIPAMENTOCLIENTE',False,True) Then
+    begin
+      Avisa('Esse equipamento já foi adicionado');
+      edtEquipamentos.SetFocus;
+      exit;
+    end;
   end;
+
+  if TipoMovimento = tmPatrimonio then
+  begin
+    VerificaEdit(edtPatrimonio,'Informe o patrimônio');
+    if ExisteRegistro(pDataSet,'IDPATRIMONIO',False,True) Then
+    begin
+      Avisa('Esse patrimônio já foi adicionado');
+      edtPatrimonio.SetFocus;
+      exit;
+    end;
+  end;
+
+
   inherited;
 
 end;
@@ -87,16 +110,47 @@ begin
     pDataSet.FieldByName('IDENTIFICADOR').AsString := edtEquipamentos.Text;
 end;
 
+procedure TfrmDlg_EquipamentoOS.edtPatrimonioRegAchado(
+  const ValoresCamposEstra: array of Variant);
+begin
+  inherited;
+  if pDataSet.State in [dsInsert,dsEdit] then
+  begin
+    pDataSet.FieldByName('DESCRICAOEQUIPAMENTO').AsString := ValoresCamposEstra[0];
+    pDataSet.FieldByName('IDENTIFICADOR').AsString := ValoresCamposEstra[1];
+    pDataSet.FieldByName('CONTADORPATRIMONIO').AsString := ValoresCamposEstra[2];
+  end;
+end;
+
 procedure TfrmDlg_EquipamentoOS.FormShow(Sender: TObject);
 begin
   inherited;
-  ConfiguraEditPesquisa(edtEquipamentos,pDataSet,tpERPClienteEquipamento,True,'','','IDENTIFICADOR','IDEQUIPAMENTOCLIENTE');
-  edtEquipamentos.SQLComp := 'idcliente = '+TipoCampoChaveToStr(IdCliente);
+  if TipoMovimento = tmEquipamento then
+  begin
+    ConfiguraEditPesquisa(edtEquipamentos,pDataSet,tpERPClienteEquipamento,True,'','','IDENTIFICADOR','IDEQUIPAMENTOCLIENTE');
+    edtEquipamentos.SQLComp := 'idcliente = '+TipoCampoChaveToStr(IdCliente);
+  end;
+
+  if TipoMovimento = tmPatrimonio then
+  begin
+    edtPatrimonio.CamposExtraPesquisa:= 'NOMEPATRIMONIO,SERIAL,CONTADOR';
+    ConfiguraEditPesquisa(edtPatrimonio,pDataSet,tpERPPatrimonio,True);
+  end;
+
+
 end;
 
 procedure TfrmDlg_EquipamentoOS.SetIdCliente(const Value: TipoCampoChave);
 begin
   FIdCliente := Value;
+end;
+
+procedure TfrmDlg_EquipamentoOS.SetTipoMovimento(const Value: TTipoMovimento);
+begin
+  FTipoMovimento := Value;
+  edtEquipamentos.Visible :=FTipoMovimento = tmEquipamento;
+  edtPatrimonio.Visible := FTipoMovimento = tmPatrimonio;
+
 end;
 
 end.

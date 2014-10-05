@@ -19,7 +19,7 @@ uses
   cxMaskEdit, cxDropDownEdit, cxCalendar, cxDBEdit, cxMemo, cxStyles,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxDBData, cxGridLevel,
   cxClasses, cxGridCustomView, cxGridCustomTableView, cxGridTableView,
-  cxGridDBTableView, cxGrid;
+  cxGridDBTableView, cxGrid,uLibERP;
 
 type
   TfrmCad_Entrada = class(TfrmCad_CadastroPaiERP)
@@ -90,8 +90,11 @@ type
     procedure CdsCadastroAfterPost(DataSet: TDataSet);
     procedure CdsSeriaisBeforeDelete(DataSet: TDataSet);
     procedure CdsProdutosBeforePost(DataSet: TDataSet);
+    procedure edtCodigoOperacaoRegAchado(
+      const ValoresCamposEstra: array of Variant);
   private
     { Private declarations }
+    TipoMovimento: TTipoMovimento;
   public
     { Public declarations }
   end;
@@ -101,7 +104,7 @@ var
 
 implementation
 
-uses Comandos, MinhasClasses, uRegras, Inc_ProdutoEntrada, uLibERP;
+uses Comandos, MinhasClasses, uRegras, Inc_ProdutoEntrada;
 
 
 
@@ -121,6 +124,7 @@ begin
       FechaEGrava := False;
       IdFornecedor := Self.edtCodigoFornecedor.ValorChaveString;
       DataSetSerial := Self.CdsSeriais;
+      TipoMovimento := Self.TipoMovimento;
       ShowModal;
       TRegrasEntradaMercadoria.CalculaTotalNotaEntrada(CdsCadastro,CdsProdutos);
     End;
@@ -142,6 +146,7 @@ begin
       pDataSet.Edit;
       IdFornecedor := Self.edtCodigoFornecedor.ValorChaveString;
       DataSetSerial := Self.CdsSeriais;
+      TipoMovimento := Self.TipoMovimento;
       ShowModal;
       TRegrasEntradaMercadoria.CalculaTotalNotaEntrada(CdsCadastro,CdsProdutos);
     End;
@@ -293,6 +298,16 @@ begin
   CdsSeriais.FieldByName('FLAGEDICAO').Value := 'I';
 end;
 
+procedure TfrmCad_Entrada.edtCodigoOperacaoRegAchado(
+  const ValoresCamposEstra: array of Variant);
+begin
+  inherited;
+   if ValoresCamposEstra[1] = 'N' then //FLAGMOVPATRIMONIO
+    TipoMovimento := tmProduto
+  else
+    TipoMovimento := tmPatrimonio;
+end;
+
 procedure TfrmCad_Entrada.FormCreate(Sender: TObject);
 begin
   inherited;
@@ -302,7 +317,7 @@ end;
 procedure TfrmCad_Entrada.FormShow(Sender: TObject);
 begin
   inherited;
-  edtCodigoOperacao.CamposExtraPesquisa := 'FLAGTIPOPESSOA';
+  edtCodigoOperacao.CamposExtraPesquisa := 'FLAGTIPOPESSOA,FLAGMOVPATRIMONIO';
   EdtEmpresa.CamposExtraPesquisa := 'UF';
   ConfiguraEditPesquisa(edtCodigoOperacao, CdsCadastro, tpERPOperacaoEntrada);
   ConfiguraEditPesquisa(edtCodigoFornecedor, CdsCadastro, tpERPFornecedor);

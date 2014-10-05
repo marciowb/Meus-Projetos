@@ -31,8 +31,6 @@ inherited frmCad_Entrada: TfrmCad_Entrada
       ClientRectBottom = 467
       ClientRectRight = 727
       inherited TsPrincipal: TcxTabSheet
-        ExplicitLeft = 1
-        ExplicitTop = 21
         ExplicitWidth = 726
         ExplicitHeight = 446
         inherited pnlGeral: TPanel
@@ -56,7 +54,7 @@ inherited frmCad_Entrada: TfrmCad_Entrada
             end
             object edtData: TcxDBDateEdit
               Left = 8
-              Top = 26
+              Top = 21
               DataBinding.DataField = 'data'
               DataBinding.DataSource = DataCadastro
               Properties.DateButtons = [btnToday]
@@ -480,6 +478,7 @@ inherited frmCad_Entrada: TfrmCad_Entrada
               TamanhoCodigo = 0
               AutoPesquisa = True
               AutoCompletar = True
+              OnRegAchado = edtCodigoOperacaoRegAchado
               UsaBtnNovo = False
               UsaBtnEditar = False
               UsaDisplay = True
@@ -1097,9 +1096,6 @@ inherited frmCad_Entrada: TfrmCad_Entrada
             object cxTabSheet2: TcxTabSheet
               Caption = 'Produtos'
               ImageIndex = 0
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object Panel6: TPanel
                 Left = 601
                 Top = 0
@@ -1174,7 +1170,7 @@ inherited frmCad_Entrada: TfrmCad_Entrada
                     Width = 50
                   end
                   object tvProdutosColumn3: TcxGridDBColumn
-                    Caption = 'Produto'
+                    Caption = 'Produto/Patrim'#244'nio'
                     DataBinding.FieldName = 'NOME_PRODUTO'
                     Width = 150
                   end
@@ -1247,9 +1243,6 @@ inherited frmCad_Entrada: TfrmCad_Entrada
             object cxTabSheet3: TcxTabSheet
               Caption = 'Observa'#231#245'es'
               ImageIndex = 1
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object cxDBMemo1: TcxDBMemo
                 Left = 0
                 Top = 0

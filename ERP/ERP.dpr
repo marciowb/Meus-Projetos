@@ -90,7 +90,11 @@ uses
   uLst_ContasReceber in 'uLst_ContasReceber.pas' {frmLst_ContasReceber},
   uCad_ContasReceber in 'uCad_ContasReceber.pas' {frmCad_ContasReceber},
   uDlg_RecebimentosContasReceber in 'uDlg_RecebimentosContasReceber.pas' {frmDlg_RecebimentosContasReceber},
-  uConfiguracaoFinanceiro in 'uConfiguracaoFinanceiro.pas';
+  uConfiguracaoFinanceiro in 'uConfiguracaoFinanceiro.pas',
+  uLst_TipoPatrimonio in 'uLst_TipoPatrimonio.pas' {frmLst_TipoPatrimonio},
+  uCad_Patrimonio in 'uCad_Patrimonio.pas' {frmCad_Patrimonio},
+  uLst_TipoEvento in 'uLst_TipoEvento.pas' {ftmLst_TipoEvento},
+  uLst_ManutencaoPatrimonio in 'uLst_ManutencaoPatrimonio.pas' {frmLst_ManutencaoPatrimonio};
 
 {$R *.res}
 

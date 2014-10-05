@@ -186,23 +186,19 @@ inherited frmLstCadastroSimples: TfrmLstCadastroSimples
         object tsGrid: TcxTabSheet
           Caption = 'tsGrid'
           ImageIndex = 0
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object pnlGrid: TPanel
             Left = 0
             Top = 0
-            Width = 295
-            Height = 296
+            Width = 293
+            Height = 294
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 0
             object TvCadastro: TcxGrid
               Left = 0
               Top = 0
-              Width = 295
-              Height = 296
+              Width = 293
+              Height = 294
               Align = alClient
               TabOrder = 0
               object TvCadastroDBTableView1: TcxGridDBTableView
@@ -230,23 +226,19 @@ inherited frmLstCadastroSimples: TfrmLstCadastroSimples
         object tsTree: TcxTabSheet
           Caption = 'tsTree'
           ImageIndex = 1
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object pnlTree: TPanel
             Left = 0
             Top = 0
-            Width = 295
-            Height = 296
+            Width = 293
+            Height = 294
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 0
             object TvTree: TcxDBTreeList
               Left = 0
               Top = 0
-              Width = 295
-              Height = 296
+              Width = 293
+              Height = 294
               Align = alClient
               Bands = <
                 item

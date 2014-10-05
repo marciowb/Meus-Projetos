@@ -138,6 +138,16 @@ type
     CentralOS2: TMenuItem;
     actPlanoConta: TAction;
     PlanosdeConta1: TMenuItem;
+    actPatrimonio: TAction;
+    Patrimnio1: TMenuItem;
+    actTipoPatrimonio: TAction;
+    ipodePatrimnio1: TMenuItem;
+    actTipoEvento: TAction;
+    iposdeeventos1: TMenuItem;
+    actCadPatrimonio: TAction;
+    Patrimnio2: TMenuItem;
+    actManutencaoPatrimonio: TAction;
+    ManutenodePatrimnioporterceiros1: TMenuItem;
     procedure actCadastroExecute(Sender: TObject);
     procedure actCFOPExecute(Sender: TObject);
     procedure actNCMExecute(Sender: TObject);
@@ -192,6 +202,11 @@ type
     procedure actFinanceiroExecute(Sender: TObject);
     procedure actContasReceberExecute(Sender: TObject);
     procedure actPlanoContaExecute(Sender: TObject);
+    procedure actPatrimonioExecute(Sender: TObject);
+    procedure actTipoPatrimonioExecute(Sender: TObject);
+    procedure actTipoEventoExecute(Sender: TObject);
+    procedure actCadPatrimonioExecute(Sender: TObject);
+    procedure actManutencaoPatrimonioExecute(Sender: TObject);
   private
     { Private declarations }
     Procedure AtualizaAgenda;
@@ -255,6 +270,12 @@ procedure TfrmPrincipal.actCadOSExecute(Sender: TObject);
 begin
   inherited;
   //
+end;
+
+procedure TfrmPrincipal.actCadPatrimonioExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreCadastroPatrimonio;
 end;
 
 procedure TfrmPrincipal.actCadProdutoExecute(Sender: TObject);
@@ -407,6 +428,12 @@ begin
   TrotinasForms.AbreCadastroLocalizacao;
 end;
 
+procedure TfrmPrincipal.actManutencaoPatrimonioExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreManutencaoPatrimonio;
+end;
+
 procedure TfrmPrincipal.actNCMExecute(Sender: TObject);
 begin
   inherited;
@@ -423,6 +450,12 @@ procedure TfrmPrincipal.actOSExecute(Sender: TObject);
 begin
   inherited;
 //
+end;
+
+procedure TfrmPrincipal.actPatrimonioExecute(Sender: TObject);
+begin
+  inherited;
+  //
 end;
 
 procedure TfrmPrincipal.actPeriodicidadeExecute(Sender: TObject);
@@ -479,10 +512,22 @@ begin
   TrotinasForms.AbreCadastroTipoContrato;
 end;
 
+procedure TfrmPrincipal.actTipoEventoExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreCadastroTipoEvento;
+end;
+
 procedure TfrmPrincipal.actTipoOSExecute(Sender: TObject);
 begin
   inherited;
   TrotinasForms.AbreCadastroTipoOS;
+end;
+
+procedure TfrmPrincipal.actTipoPatrimonioExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreCadastroTipoPatrimonio;
 end;
 
 procedure TfrmPrincipal.actTransportadoraExecute(Sender: TObject);

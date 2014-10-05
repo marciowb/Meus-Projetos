@@ -159,27 +159,28 @@ begin
   if (ConfirmaDel) then
   Begin
     try
-      if InfoSistema.UsaGuidChave then
-        ID := GetStr(CdsListagem.FieldByName(CampoChave).AsString)
-      else
-        ID:= CdsListagem.FieldByName(CampoChave).AsString;
+//      if InfoSistema.UsaGuidChave then
+//        ID := CdsListagem.FieldByName(CampoChave).AsString
+//      else
+//        ID:= CdsListagem.FieldByName(CampoChave).AsString;
+//      StartTrans;
+//      StrSQL :=
+//        'EXECUTE BLOCK AS '+
+//        ' DECLARE VARIABLE TABELA VARCHAR(40); '+
+//        'BEGIN'+
+//        '  FOR' +
+//        '    SELECT X.TABELA'+
+//        '      FROM VW_DEPENDENCIAS('+GetStr(Tabela)+','+ID+') X'+
+//        '      INTO :TABELA'+
+//        '    DO'+
+//        '    BEGIN'+
+//        '      EXECUTE STATEMENT' +
+//        '        ''DELETE FROM ''||:TABELA||' +
+//        '        '' WHERE ''||'+GetStr(CampoChave)+'||'' = ''||ascii_chr(39)||'+ID+'||ascii_chr(39);'+
+//        '    END '+
+//        'END';
+//      Exec_SQL(StrSQL);
       StartTrans;
-      StrSQL :=
-        'EXECUTE BLOCK AS '+
-        ' DECLARE VARIABLE TABELA VARCHAR(40); '+
-        'BEGIN'+
-        '  FOR' +
-        '    SELECT X.TABELA'+
-        '      FROM VW_DEPENDENCIAS('+GetStr(Tabela)+','+ID+') X'+
-        '      INTO :TABELA'+
-        '    DO'+
-        '    BEGIN'+
-        '      EXECUTE STATEMENT' +
-        '        ''DELETE FROM ''||:TABELA||' +
-        '        '' WHERE ''||'+GetStr(CampoChave)+'||'' = ''||'+ID+';'+
-        '    END '+
-        'END';
-      Exec_SQL(StrSQL);
       AlteraBanco(taDeleta, CdsListagem, Tabela, CampoChave);
       Commit;
       AtuDados;

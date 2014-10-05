@@ -43,6 +43,8 @@ type
     procedure btnSeriaisClick(Sender: TObject);
     procedure edtProdutoRegAchado(const ValoresCamposEstra: array of Variant);
     procedure edtQuantidadeEnter(Sender: TObject);
+    procedure edtPatrimonioRegAchado(
+      const ValoresCamposEstra: array of Variant);
   private
     UsaSerial: Boolean;
     FDataSetSeriais: TpFIBClientDataSet;
@@ -120,6 +122,13 @@ begin
       End;
 
 
+end;
+
+procedure TfrmDlg_SaidaItem.edtPatrimonioRegAchado(
+  const ValoresCamposEstra: array of Variant);
+begin
+  inherited;
+ //
 end;
 
 procedure TfrmDlg_SaidaItem.edtProdutoRegAchado(

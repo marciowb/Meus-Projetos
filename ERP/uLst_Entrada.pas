@@ -54,7 +54,7 @@ begin
   CriaColuna('NUMERONOTA','Nº nota',100,tcString);
   CriaColuna('MODELO','Modelo',50,tcString);
   CriaColuna('PESSOA','Pessoa',300,tcString);
-  CriaColuna('TIPOPESSOA','Tipo de Pessoa',100,tcString);
+  CriaColuna('DESCTIPOPESSOA','Tipo de Pessoa',100,tcString);
   CriaColuna('NOMEOPERACAOESTOQUE','Operação',150,tcString);
   CriaColuna('ESTACANCELADA','Cancelada',80,tcString);
   CriaColuna('VALORTOTALNOTA','Valor total',100,tcReal);

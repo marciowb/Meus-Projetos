@@ -212,7 +212,7 @@ begin
   ActiveControl := nil;
   PodeIr := True;
   if VerificaEdits then
-   PodeIr := VerificaLabelDbEdit(Self, CdsCadastro);
+   PodeIr := VerificaLabelDbEdit(Self, CdsCadastro, TipoPesquisa);
   if not PodeIr then
     Exit;
   Try
@@ -314,6 +314,7 @@ end;
 procedure TfrmCad_CadastroPai.actPesquisarExecute(Sender: TObject);
 var
   vAfterScroll : TDataSetNotifyEvent;
+  Id: String;
 begin
   inherited;
   Try
@@ -326,7 +327,10 @@ begin
       if ShowModal = mrOk then
       Begin
         ValorChave := CdsPesquisa.FieldByName(CampoChave).AsString;
-        SetCds(CdsCadastro, GetSelect(TipoPesquisa, CampoChave+' = '+GetValorChave(psIgual)));
+        Id := GetValorChave(psIgual);
+        if InfoSistema.UsaGuidChave then
+          Id := QuotedStr(ID);
+        SetCds(CdsCadastro, GetSelect(TipoPesquisa, CampoChave+' = '+ID));
       End;
     End;
   Finally

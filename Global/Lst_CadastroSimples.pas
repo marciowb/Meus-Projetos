@@ -233,7 +233,7 @@ begin
     Try
       if VerificaEdits then
       Begin
-        if not VerificaLabelDbEdit(Self, CdsCadastro) Then
+        if not VerificaLabelDbEdit(Self, CdsCadastro, TipoPesquisa) Then
         Begin
           CdsCadastro.AfterScroll := CdsCadastro.AfterScroll;
           Abort;
@@ -408,7 +408,7 @@ end;
 procedure TfrmLstCadastroSimples.CdsCadastroAfterPost(DataSet: TDataSet);
 begin
   inherited;
-  AlteraBanco(TipoAlteracao, CdsCadastro, NomeTabela, CampoChave);
+  AlteraBanco(TipoAlteracao, CdsCadastro, TipoPesquisa);
 
 end;
 
@@ -691,7 +691,7 @@ Var
 begin
   StrSQL :=
     'SELECT SUM(QTD) QTD  '+
-    '  FROM VW_DEPENDENCIAS('+QuotedStr(NomeTabela)+', '+CdsCadastro.FieldByName(CampoChave).AsString+')';
+    '  FROM VW_DEPENDENCIAS('+QuotedStr(NomeTabela)+', '+QuotedStr(CdsCadastro.FieldByName(CampoChave).AsString)+')';
   Result := StrToIntDef(GetValorCds(StrSQL),0) = 0;
 end;
 
