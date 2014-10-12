@@ -3624,6 +3624,7 @@ object DMConexao: TDMConexao
       end>
   end
   object Trans: TpFIBTransaction
+    Active = True
     DefaultDatabase = Conexao
     TimeoutAction = TARollback
     Left = 88
@@ -4935,6 +4936,7 @@ object DMConexao: TDMConexao
       C6AF45D68E113692B155AE6FD1C5AF59793FB7B160}
   end
   object Conexao: TpFIBDatabase
+    Connected = True
     DBName = 'D:\Meus Projetos\Bancos\ERP.FDB'
     DBParams.Strings = (
       'password=masterkey'
@@ -4949,12 +4951,8 @@ object DMConexao: TDMConexao
   end
   object pFIBDataSet1: TpFIBDataSet
     SelectSQL.Strings = (
-      ' SELECT SC.IDSAIDACONDICAOPAGAMENTO, SC.IDSAIDA,'
-      '        SC.IDCONDICAOPAGAMENTO, SC.VALOR,'
-      '        SC.NUMTOTALPARCELAS,C.NOMECONDICAOPAGAMENTO'
-      '   FROM SAIDACONDICAOPAGAMENTO SC'
-      '  INNER JOIN CONDICAOPAGAMENTO C'
-      '     ON (SC.IDCONDICAOPAGAMENTO = C.IDCONDICAOPAGAMENTO)')
+      'select * from vw_uf')
+    Active = True
     Transaction = Trans
     Database = Conexao
     Left = 152
@@ -4984,24 +4982,9 @@ object DMConexao: TDMConexao
   end
   object pFIBDataSet2: TpFIBDataSet
     SelectSQL.Strings = (
-      'select *'
-      '  from('
-      
-        'SELECT SO.IDSERIALPRODUTOOS, SO.IDPRODUTOSSERVICOOS, SO.IDSERIAL' +
-        'PRODUTO,'
-      '       SE.SERIAL,'#39'N'#39' FLAGEDICaO'
-      '  FROM SERIALPRODUTOOS SO'
-      ' INNER JOIN PRODUTOSSERVICOOS PS'
-      '    ON (PS.IDPRODUTOSSERVICOOS = SO.IDPRODUTOSSERVICOOS)'
-      ' INNER JOIN SERVICOOS S'
-      '    ON (S.IDSERVICOOS = PS.IDSERVICOOS)'
-      ' INNER JOIN EQUIPAMENTOSOS E'
-      '    ON (E.IDEQUIPAMENTOSOS = S.IDEQUIPAMENTOSOS)'
-      ' INNER JOIN OS'
-      '    ON (OS.IDOS = E.IDOS)'
-      ' INNER JOIN SERIALPRODUTO SE'
-      '    ON (SE.IDSERIALPRODUTO = SO.IDSERIALPRODUTO AND'
-      '        SE.IDEMPRESA = OS.IDEMPRESA   ))')
+      ''
+      'select * from MUNICIPIO')
+    Active = True
     Transaction = Trans
     Database = Conexao
     Left = 264
@@ -5011,5 +4994,15 @@ object DMConexao: TDMConexao
     DataSet = pFIBDataSet2
     Left = 280
     Top = 40
+  end
+  object pFIBDataSet3: TpFIBDataSet
+    SelectSQL.Strings = (
+      ''
+      'select * from iss')
+    Active = True
+    Transaction = Trans
+    Database = Conexao
+    Left = 216
+    Top = 216
   end
 end

@@ -1468,6 +1468,42 @@ begin
             '  FROM VW_ALERTATIPOEVENTOPATRIMONIO '+
             ' WHERE 1=1 '+Complemento;
         end;
+       tpERPICMS:
+        begin
+          CampoChave := 'IDICMS';
+          CampoDisplay := '';
+          NomeTabela := 'ICMS';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'ICMS';
+          DesconsiderarCampos := '';
+          Versao20:= False;
+          CampoCodigo := '';
+          Select :=
+            'SELECT IDICMS, ALIQICMS,UFORIGEM,UFDESTINO '+
+            '  FROM ICMS '+
+            ' WHERE 1=1 '+Complemento;
+        end;
+       tpERPISS:
+        begin
+          CampoChave := 'IDISS';
+          CampoDisplay := '';
+          NomeTabela := 'ISS';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'ISS';
+          DesconsiderarCampos := 'CODIGO;DESCRICAO;MUNICIPIO';
+          Versao20:= False;
+          CampoCodigo := '';
+          Select :=
+            'SELECT ISS.IDISS, ISS.IDMUNICIPIO, ISS.IDCODIGOMUNICIPALSERVICO, ISS.ALIQISS, '+
+            '       C.CODIGO,SUBSTRING( C.DESCRICAOCODIGOSERVICO FROM 1 FOR 100) DESCRICAO, '+
+            '       M.NOME MUNICIPIO '+
+            '  FROM ISS '+
+            ' INNER JOIN CODIGOMUNICIPALSERVICO C '+
+            '    ON (ISS.IDCODIGOMUNICIPALSERVICO = C.IDCODIGOMUNICIPALSERVICO) '+
+            ' INNER JOIN MUNICIPIO M '+
+            '    ON (M.IDMUNICIPIO = ISS.IDMUNICIPIO)'+
+            ' WHERE 1=1 '+Complemento;
+        end;
 
     end;
   End;

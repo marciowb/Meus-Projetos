@@ -280,6 +280,12 @@
 			<DCCReference Include="uLst_ManutencaoPatrimonio.pas">
 				<Form>frmLst_ManutencaoPatrimonio</Form>
 			</DCCReference>
+			<DCCReference Include="uALiqICMS.pas">
+				<Form>frmALiqICMS</Form>
+			</DCCReference>
+			<DCCReference Include="uAliqISS.pas">
+				<Form>frmAliqISS</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

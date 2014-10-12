@@ -94,7 +94,9 @@ uses
   uLst_TipoPatrimonio in 'uLst_TipoPatrimonio.pas' {frmLst_TipoPatrimonio},
   uCad_Patrimonio in 'uCad_Patrimonio.pas' {frmCad_Patrimonio},
   uLst_TipoEvento in 'uLst_TipoEvento.pas' {ftmLst_TipoEvento},
-  uLst_ManutencaoPatrimonio in 'uLst_ManutencaoPatrimonio.pas' {frmLst_ManutencaoPatrimonio};
+  uLst_ManutencaoPatrimonio in 'uLst_ManutencaoPatrimonio.pas' {frmLst_ManutencaoPatrimonio},
+  uALiqICMS in 'uALiqICMS.pas' {frmALiqICMS},
+  uAliqISS in 'uAliqISS.pas' {frmAliqISS};
 
 {$R *.res}
 

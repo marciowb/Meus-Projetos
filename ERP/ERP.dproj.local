@@ -111,5 +111,9 @@
     <Transaction>2014/09/21 05:22:19.806.dfm,D:\Meus Projetos\ERP\Unit1.dfm=D:\Meus Projetos\ERP\uLst_TipoEvento.dfm</Transaction>
     <Transaction>2014/10/05 06:09:55.475.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uLst_ManutencaoPatrimonio.pas</Transaction>
     <Transaction>2014/10/05 06:09:55.475.dfm,D:\Meus Projetos\ERP\Unit1.dfm=D:\Meus Projetos\ERP\uLst_ManutencaoPatrimonio.dfm</Transaction>
+    <Transaction>2014/10/12 05:37:04.963.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uALiqICMS.pas</Transaction>
+    <Transaction>2014/10/12 05:37:04.963.dfm,D:\Meus Projetos\ERP\Unit1.dfm=D:\Meus Projetos\ERP\uALiqICMS.dfm</Transaction>
+    <Transaction>2014/10/12 09:14:06.634.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uAliqISS.pas</Transaction>
+    <Transaction>2014/10/12 09:14:06.634.dfm,D:\Meus Projetos\ERP\Unit1.dfm=D:\Meus Projetos\ERP\uAliqISS.dfm</Transaction>
   </Transactions>
 </BorlandProject>

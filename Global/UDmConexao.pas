@@ -48,6 +48,7 @@ type
     Query: TpFIBQuery;
     pFIBDataSet2: TpFIBDataSet;
     DataSource1: TDataSource;
+    pFIBDataSet3: TpFIBDataSet;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

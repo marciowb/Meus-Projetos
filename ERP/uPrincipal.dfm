@@ -2,7 +2,6 @@ inherited frmPrincipal: TfrmPrincipal
   Caption = 'ERP'
   ClientHeight = 529
   ClientWidth = 842
-  ExplicitTop = -32
   ExplicitWidth = 858
   ExplicitHeight = 588
   PixelsPerInch = 96
@@ -54,9 +53,6 @@ inherited frmPrincipal: TfrmPrincipal
         Caption = 'Agenda'
         CaptionButtons = [cbHide]
         TabPosition = tctpTop
-        ExplicitLeft = 520
-        ExplicitWidth = 322
-        ExplicitHeight = 140
         DockType = 1
         OriginalWidth = 322
         OriginalHeight = 140
@@ -68,7 +64,6 @@ inherited frmPrincipal: TfrmPrincipal
           Align = alClient
           BevelOuter = bvNone
           TabOrder = 0
-          ExplicitHeight = 478
           object cxGrid1: TcxGrid
             Left = 0
             Top = 0
@@ -76,7 +71,6 @@ inherited frmPrincipal: TfrmPrincipal
             Height = 448
             Align = alClient
             TabOrder = 0
-            ExplicitHeight = 478
             object cxGrid1DBTableView1: TcxGridDBTableView
               OnDblClick = cxGrid1DBTableView1DblClick
               NavigatorButtons.ConfirmDelete = False
@@ -116,8 +110,6 @@ inherited frmPrincipal: TfrmPrincipal
         Caption = 'Patrim'#244'nios em alerta'
         CaptionButtons = [cbHide]
         TabPosition = tctpTop
-        ExplicitWidth = 185
-        ExplicitHeight = 140
         DockType = 1
         OriginalWidth = 322
         OriginalHeight = 140
@@ -128,10 +120,6 @@ inherited frmPrincipal: TfrmPrincipal
           Height = 448
           Align = alClient
           TabOrder = 0
-          ExplicitLeft = 40
-          ExplicitTop = 104
-          ExplicitWidth = 250
-          ExplicitHeight = 200
           object cxGrid2DBTableView1: TcxGridDBTableView
             NavigatorButtons.ConfirmDelete = False
             DataController.DataSource = DataPatrimonio
@@ -258,6 +246,15 @@ inherited frmPrincipal: TfrmPrincipal
         end
         object StatusOS1: TMenuItem
           Action = actStatusOS
+        end
+      end
+      object Fiscal1: TMenuItem
+        Action = actFiscal
+        object AlquotadeICMS1: TMenuItem
+          Action = actAliqICMS
+        end
+        object actISS1: TMenuItem
+          Action = actISS
         end
       end
       object Financeiro1: TMenuItem
@@ -640,6 +637,21 @@ inherited frmPrincipal: TfrmPrincipal
       Category = 'Cadastro'
       Caption = 'Manuten'#231#227'o de Patrim'#244'nio por terceiros'
       OnExecute = actManutencaoPatrimonioExecute
+    end
+    object actFiscal: TAction
+      Category = 'Fiscal'
+      Caption = 'Fiscal'
+      OnExecute = actFiscalExecute
+    end
+    object actAliqICMS: TAction
+      Category = 'Fiscal'
+      Caption = 'Al'#237'quota de ICMS'
+      OnExecute = actAliqICMSExecute
+    end
+    object actISS: TAction
+      Category = 'Fiscal'
+      Caption = 'Al'#237'quota de ISS'
+      OnExecute = actISSExecute
     end
   end
   object dxDockingManager1: TdxDockingManager

@@ -11,7 +11,8 @@ interface
         pFIBClientDataSet,  FIBDataSet, pFIBDataSet, FIBQuery, pFIBQuery,
         Printers,pFIBDatabase, pFIBProps, ppTypes, cxFilterConsts,cxEditConsts,
         UDmConexao, ShellAPI,ppDBPipe,cxSchedulerStrs, IdBaseComponent, IdComponent,
-        IdTCPConnection, IdTCPClient, IdHTTP, DateUtils,cxPC,ExtCtrls,cxDBEdit;
+        IdTCPConnection, IdTCPClient, IdHTTP, DateUtils,cxPC,ExtCtrls,cxDBEdit,
+        cxCustomPivotGrid, cxDBPivotGrid;
 
   function GetDataServidor : String;
   Function GetHoraServidor : String;
@@ -122,6 +123,7 @@ interface
   Function DeKriptaStr(aStr: String): String;
   function GetNomePC: String;
   function IdConexaoBd: Integer;
+  Procedure GetValorCelulaSelecionadaPivotGrid(PivotGrid: TcxDBPivotGrid; FieldNameLinha,FieldNameColuna: String; Out Res: Array of Variant );
   const
     VersaoAcesso = 7;
 implementation
@@ -2130,6 +2132,36 @@ begin
   Result := StrToInt(GetValorCds(StrSQL));
 end;
 
+ Procedure GetValorCelulaSelecionadaPivotGrid(PivotGrid: TcxDBPivotGrid; FieldNameLinha,FieldNameColuna: String; Out Res: Array of Variant );
+ var
+   cvInfo : TcxPivotGridDataCellViewInfo;
+   IDidx,Idx: Integer;
+   ARow : TcxPivotGridGroupItem;
+   AColumn : TcxPivotGridGroupItem;
+ begin
+
+    if PivotGrid.HitTest.HitAtDataCell then
+    begin
+        cvInfo := TcxPivotGridDataCellViewInfo(PivotGrid.HitTest.HitObject);
+        IDidx      := TcxDBPivotGridField(PivotGrid.DataController.GetItemByFieldName(FieldNameLinha)).Index;
+
+        ARow   := cvInfo.CrossCell.Row;
+        if ARow <> nil then
+        begin
+          Idx    := ARow.RecordIndex; // probably index of first record having row header like for selected cell
+          Res[0] := PivotGrid.DataController.Values[Idx, IDidx];
+        end;
+        AColumn := cvInfo.CrossCell.Column;
+        if AColumn <> nil then
+        begin
+          Idx     := AColumn.RecordIndex; // probably index of first record having column header like for selected cell
+          IDidx      := TcxDBPivotGridField(PivotGrid.DataController.GetItemByFieldName(FieldNameColuna)).Index;
+          Res[1] := PivotGrid.DataController.Values[Idx, IDidx];
+        end;
+
+    end;
+
+ end;
 
  initialization
  {$Region 'Traduz o Developer Express'}

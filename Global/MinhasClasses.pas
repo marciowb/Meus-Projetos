@@ -201,7 +201,7 @@ interface
                      tpERPContasReceber,tpERPPlanoContas,tpERPContasReceberRecebimentos,tpERPEstoque,tpERPMovimentacaoEstoque,tpERPTipoPatrimonio,
                      tpERPPatrimonio,tpERPTipoEventos,tpERPTipoPatrimonioTipoEventos, tpERPPatrimoniosEventos,tpERPPatrimonioDisponivel,
                      tpERPPatrimoniosUsadosOS,tpERPPatrimonioManutencaoTerceiros,tpERPPatrimonioManutencaoTerceirosEventos,
-                     tpERPAlertaPatrimonio
+                     tpERPAlertaPatrimonio,tpERPICMS,tpERPISS
 
 
 

@@ -62,6 +62,8 @@ interface
       class function AbreCadastroTipoEvento(TipoOperacao: TTipoOperacaoForm =toNada): CampoChave;
       class function AbreCadastroPatrimonio(TipoOperacao: TTipoOperacaoForm =toNada): CampoChave;
       class function AbreManutencaoPatrimonio(TipoOperacao: TTipoOperacaoForm = toNada; pIdPatrimonio: TipoCampoChave = '-1'):CampoChave;
+      class Procedure AbreAliqICMS;
+      class Procedure AbreAliqISS;
   private
 
     end;
@@ -77,7 +79,7 @@ uses uCadNCM, Lst_Empresa, Cad_Cliente, Cad_usuario, uCad_Funcionario,
   uAgenda, uPrincipal, uEntrada, Lst_OperacaoEstoque, uLst_Entrada, uSaida,
   uCad_Transportadora, uLst_Saidas, uCadConfiguracoes, uLst_ContasReceber,
   uLst_TipoPatrimonio, uLst_TipoEvento, uCad_Patrimonio,
-  uLst_ManutencaoPatrimonio;
+  uLst_ManutencaoPatrimonio, uALiqICMS, uAliqISS;
 
 class procedure TrotinasForms.AbreAgenda(IdAgenda: TipoCampoChave = '-1';IdConratoCOmpetencia: TipoCampoChave = '-1');
 begin
@@ -425,6 +427,26 @@ begin
     frmSaida.BringToFront
   else
     frmSaida.Show;
+end;
+
+class procedure TrotinasForms.AbreAliqICMS;
+begin
+  frmALiqICMS := TfrmALiqICMS.Create(nil);
+  Try
+    frmALiqICMS.ShowModal;
+  Finally
+    FreeAndNil(frmALiqICMS);
+  End;
+end;
+
+class procedure TrotinasForms.AbreAliqISS;
+begin
+  frmAliqISS := TfrmAliqISS.Create(nil);
+  Try
+    frmAliqISS.ShowModal;
+  Finally
+    FreeAndNil(frmAliqISS);
+  End;
 end;
 
 { TTelas }

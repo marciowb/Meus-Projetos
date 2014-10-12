@@ -159,6 +159,12 @@ type
     cxGrid2DBTableView1Column2: TcxGridDBColumn;
     cxGrid2DBTableView1Column3: TcxGridDBColumn;
     cxGrid2DBTableView1Column4: TcxGridDBColumn;
+    actFiscal: TAction;
+    actAliqICMS: TAction;
+    Fiscal1: TMenuItem;
+    AlquotadeICMS1: TMenuItem;
+    actISS: TAction;
+    actISS1: TMenuItem;
     procedure actCadastroExecute(Sender: TObject);
     procedure actCFOPExecute(Sender: TObject);
     procedure actNCMExecute(Sender: TObject);
@@ -218,6 +224,9 @@ type
     procedure actTipoEventoExecute(Sender: TObject);
     procedure actCadPatrimonioExecute(Sender: TObject);
     procedure actManutencaoPatrimonioExecute(Sender: TObject);
+    procedure actFiscalExecute(Sender: TObject);
+    procedure actAliqICMSExecute(Sender: TObject);
+    procedure actISSExecute(Sender: TObject);
   private
     { Private declarations }
     Procedure AtualizaAgenda;
@@ -238,6 +247,12 @@ procedure TfrmPrincipal.actAgendaExecute(Sender: TObject);
 begin
   inherited;
   TrotinasForms.AbreAgenda;
+end;
+
+procedure TfrmPrincipal.actAliqICMSExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreAliqICMS;
 end;
 
 procedure TfrmPrincipal.actAlmoxarifadoExecute(Sender: TObject);
@@ -385,6 +400,12 @@ begin
    //
 end;
 
+procedure TfrmPrincipal.actFiscalExecute(Sender: TObject);
+begin
+  inherited;
+  //
+end;
+
 procedure TfrmPrincipal.actFornecedorExecute(Sender: TObject);
 begin
   inherited;
@@ -413,6 +434,12 @@ procedure TfrmPrincipal.actInclusaoOSExecute(Sender: TObject);
 begin
   inherited;
   TrotinasForms.AbreInclusaoOS;
+end;
+
+procedure TfrmPrincipal.actISSExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreAliqISS;
 end;
 
 procedure TfrmPrincipal.actLinhaExecute(Sender: TObject);
