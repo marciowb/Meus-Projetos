@@ -2,6 +2,7 @@ inherited frmPrincipal: TfrmPrincipal
   Caption = 'ERP'
   ClientHeight = 529
   ClientWidth = 842
+  ExplicitTop = -32
   ExplicitWidth = 858
   ExplicitHeight = 588
   PixelsPerInch = 96
@@ -30,61 +31,137 @@ inherited frmPrincipal: TfrmPrincipal
       OriginalWidth = 300
       OriginalHeight = 200
     end
-    object DockAgenda: TdxDockPanel
+    object dxTabContainerDockSite1: TdxTabContainerDockSite
       Left = 520
       Top = 0
       Width = 322
       Height = 506
-      AllowDockClients = [dtNone, dtClient, dtLeft, dtTop, dtRight, dtBottom]
+      ActiveChildIndex = 0
       AllowFloating = True
-      AllowDock = [dtNone, dtClient, dtLeft, dtTop, dtRight, dtBottom]
       AutoHide = False
-      Caption = 'Agenda'
-      CaptionButtons = [cbHide]
-      TabPosition = tctpTop
       DockType = 4
       OriginalWidth = 322
       OriginalHeight = 140
-      object pnlAgenda: TPanel
+      object DockAgenda: TdxDockPanel
         Left = 0
         Top = 0
         Width = 318
-        Height = 478
-        Align = alClient
-        BevelOuter = bvNone
-        TabOrder = 0
-        object cxGrid1: TcxGrid
+        Height = 448
+        AllowDockClients = [dtNone, dtClient, dtLeft, dtTop, dtRight, dtBottom]
+        AllowFloating = True
+        AllowDock = [dtNone, dtClient, dtLeft, dtTop, dtRight, dtBottom]
+        AutoHide = False
+        Caption = 'Agenda'
+        CaptionButtons = [cbHide]
+        TabPosition = tctpTop
+        ExplicitLeft = 520
+        ExplicitWidth = 322
+        ExplicitHeight = 140
+        DockType = 1
+        OriginalWidth = 322
+        OriginalHeight = 140
+        object pnlAgenda: TPanel
           Left = 0
           Top = 0
           Width = 318
-          Height = 478
+          Height = 448
+          Align = alClient
+          BevelOuter = bvNone
+          TabOrder = 0
+          ExplicitHeight = 478
+          object cxGrid1: TcxGrid
+            Left = 0
+            Top = 0
+            Width = 318
+            Height = 448
+            Align = alClient
+            TabOrder = 0
+            ExplicitHeight = 478
+            object cxGrid1DBTableView1: TcxGridDBTableView
+              OnDblClick = cxGrid1DBTableView1DblClick
+              NavigatorButtons.ConfirmDelete = False
+              DataController.DataSource = DataAgenda
+              DataController.Summary.DefaultGroupSummaryItems = <>
+              DataController.Summary.FooterSummaryItems = <>
+              DataController.Summary.SummaryGroups = <>
+              OptionsView.CellAutoHeight = True
+              OptionsView.GroupByBox = False
+              OptionsView.Header = False
+              object cxGrid1DBTableView1Column1: TcxGridDBColumn
+                DataBinding.FieldName = 'DATACOMPROMISSO'
+                Visible = False
+                GroupIndex = 0
+                Options.ShowCaption = False
+                Options.SortByDisplayText = isbtOff
+                IsCaptionAssigned = True
+              end
+              object cxGrid1DBTableView1Column2: TcxGridDBColumn
+                DataBinding.FieldName = 'CAPTION'
+                Width = 273
+              end
+            end
+            object cxGrid1Level1: TcxGridLevel
+              GridView = cxGrid1DBTableView1
+            end
+          end
+        end
+      end
+      object pnlPatrimonio: TdxDockPanel
+        Left = 0
+        Top = 0
+        Width = 318
+        Height = 448
+        AllowFloating = True
+        AutoHide = False
+        Caption = 'Patrim'#244'nios em alerta'
+        CaptionButtons = [cbHide]
+        TabPosition = tctpTop
+        ExplicitWidth = 185
+        ExplicitHeight = 140
+        DockType = 1
+        OriginalWidth = 322
+        OriginalHeight = 140
+        object cxGrid2: TcxGrid
+          Left = 0
+          Top = 0
+          Width = 318
+          Height = 448
           Align = alClient
           TabOrder = 0
-          object cxGrid1DBTableView1: TcxGridDBTableView
-            OnDblClick = cxGrid1DBTableView1DblClick
+          ExplicitLeft = 40
+          ExplicitTop = 104
+          ExplicitWidth = 250
+          ExplicitHeight = 200
+          object cxGrid2DBTableView1: TcxGridDBTableView
             NavigatorButtons.ConfirmDelete = False
-            DataController.DataSource = DataAgenda
+            DataController.DataSource = DataPatrimonio
             DataController.Summary.DefaultGroupSummaryItems = <>
             DataController.Summary.FooterSummaryItems = <>
             DataController.Summary.SummaryGroups = <>
-            OptionsView.CellAutoHeight = True
             OptionsView.GroupByBox = False
-            OptionsView.Header = False
-            object cxGrid1DBTableView1Column1: TcxGridDBColumn
-              DataBinding.FieldName = 'DATACOMPROMISSO'
-              Visible = False
-              GroupIndex = 0
-              Options.ShowCaption = False
-              Options.SortByDisplayText = isbtOff
-              IsCaptionAssigned = True
+            object cxGrid2DBTableView1Column1: TcxGridDBColumn
+              Caption = 'C'#243'digo'
+              DataBinding.FieldName = 'CODIGOPATRIMONIO'
+              Width = 60
             end
-            object cxGrid1DBTableView1Column2: TcxGridDBColumn
-              DataBinding.FieldName = 'CAPTION'
-              Width = 273
+            object cxGrid2DBTableView1Column2: TcxGridDBColumn
+              Caption = 'Patrim'#244'nio'
+              DataBinding.FieldName = 'NOMEPATRIMONIO'
+              Width = 100
+            end
+            object cxGrid2DBTableView1Column3: TcxGridDBColumn
+              Caption = 'Evento'
+              DataBinding.FieldName = 'NOMETIPOEVENTOPATRIMONIO'
+              Width = 80
+            end
+            object cxGrid2DBTableView1Column4: TcxGridDBColumn
+              Caption = 'Data limite'
+              DataBinding.FieldName = 'DATALIMITE'
+              Width = 60
             end
           end
-          object cxGrid1Level1: TcxGridLevel
-            GridView = cxGrid1DBTableView1
+          object cxGrid2Level1: TcxGridLevel
+            GridView = cxGrid2DBTableView1
           end
         end
       end
@@ -592,5 +669,16 @@ inherited frmPrincipal: TfrmPrincipal
     Params = <>
     Left = 168
     Top = 248
+  end
+  object DataPatrimonio: TDataSource
+    DataSet = CdsPatrimonio
+    Left = 80
+    Top = 344
+  end
+  object CdsPatrimonio: TpFIBClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 192
+    Top = 336
   end
 end

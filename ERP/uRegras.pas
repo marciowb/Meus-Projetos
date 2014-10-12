@@ -58,7 +58,10 @@ interface
       class function CalculaAliqJuros(DataRecebimento,DataVencimento: TDate): Currency;
       class Function GeraContaReceberDeSaida(IdSaida : TipoCampoChave;UsaTrancaoPropria: Boolean = False ): Boolean;
    end;
-
+   TRegrasPatrimonio = class
+     class Procedure GetListagemPatrimoniosAlerta(var CdsAlerta: TpFIBClientDataSet);
+     class function VerificaPatrimonioPermitidoParaMovimentar(IdPatrimonio: TipoCampoChave;DataMov: TDate): Boolean;
+   end;
 
 implementation
 
@@ -724,6 +727,28 @@ begin
 
     end;
   end;
+
+end;
+
+{ TRegrasPatrimonio }
+
+class procedure TRegrasPatrimonio.GetListagemPatrimoniosAlerta(
+  var CdsAlerta: TpFIBClientDataSet);
+begin
+  SetCds(CdsAlerta,tpERPAlertaPatrimonio,' (DATAALERTA >= DATEADD(-7 DAY TO CURRENT_DATE) ) '+
+                                         ' AND (DATAALERTA <= DATEADD(7 DAY TO CURRENT_DATE))');
+end;
+
+class function TRegrasPatrimonio.VerificaPatrimonioPermitidoParaMovimentar(
+  IdPatrimonio: TipoCampoChave;DataMov: TDate): Boolean;
+var
+  DataBloq: TDate;
+begin
+   Result := True;
+   DataBloq := StrToDateDef(GetValorCds(tpERPAlertaPatrimonio,'idpatrimonio= '+TipoCampoChaveToStr(IdPatrimonio), 'DATALIMITE'),0);
+   if DataBloq > 0 then
+     Result := DataMov < DataBloq;
+
 
 end;
 

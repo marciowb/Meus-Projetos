@@ -1620,6 +1620,12 @@ begin
         Campos.Add('Código', 'TE.CODIGO', tcString, tsCampoPesquisaGrid);
         Campos.Add('Evento', 'NOMETIPOEVENTOPATRIMONIO', tcString,tsCampoPesquisaGrid, 200);
       End;
+      tpERPPatrimoniosEventos:
+      Begin
+        Titulo := 'Tipo eventos';
+        Campos.Add('Código', 'CODIGO', tcString, tsCampoPesquisaGrid);
+        Campos.Add('Evento', 'NOMETIPOEVENTOPATRIMONIO', tcString,tsCampoPesquisaGrid, 200);
+      End;
      tpERPPatrimonio,tpERPPatrimonioDisponivel:
       Begin
         Titulo := 'Patrimônio';

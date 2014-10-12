@@ -1,7 +1,6 @@
 inherited frmCad_Patrimonio: TfrmCad_Patrimonio
   Caption = 'Cadastro de patrim'#244'nio'
   ClientHeight = 468
-  ExplicitTop = -73
   ExplicitHeight = 507
   PixelsPerInch = 96
   TextHeight = 13
@@ -18,6 +17,7 @@ inherited frmCad_Patrimonio: TfrmCad_Patrimonio
     ExplicitHeight = 438
     inherited PageControl: TcxPageControl
       Height = 438
+      ActivePage = cxTabSheet1
       ExplicitHeight = 438
       ClientRectBottom = 437
       inherited TsPrincipal: TcxTabSheet
@@ -1045,9 +1045,10 @@ inherited frmCad_Patrimonio: TfrmCad_Patrimonio
   end
   object CdsEventosTipoPatrimonio: TpFIBClientDataSet
     Aggregates = <>
+    Filter = 'FLAGEDICAO <> '#39'D'#39
+    Filtered = True
     Params = <>
     BeforePost = CdsEventosTipoPatrimonioBeforePost
-    BeforeDelete = CdsEventosTipoPatrimonioBeforeDelete
     OnNewRecord = CdsEventosTipoPatrimonioNewRecord
     Left = 48
     Top = 208

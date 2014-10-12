@@ -62,6 +62,7 @@ type
     cxGrid1DBTableView1Column1: TcxGridDBColumn;
     cxGrid1DBTableView1Column2: TcxGridDBColumn;
     cxGrid1DBTableView1Column3: TcxGridDBColumn;
+    edtEventoPatrimonio: TEditPesquisa;
     procedure FormShow(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure edtServicoRegAchado(const ValoresCamposEstra: array of Variant);
@@ -75,6 +76,8 @@ type
     FDataSetProdutos: TpFIBClientDataSet;
     FDataSetProdutosSerial: TpFIBClientDataSet;
     FDataSetPatrimonio: TpFIBClientDataSet;
+    FTipoMovimento: TTipoMovimento;
+    FIdPatrimonio: TipoCampoChave;
     procedure SetIdCliente(const Value: TipoCampoChave);
     procedure SetData(const Value: TDate);
     procedure SetIdEmpresa(const Value: TipoCampoChave);
@@ -82,15 +85,19 @@ type
     procedure SetDataSetProdutos(const Value: TpFIBClientDataSet);
     procedure SetDataSetProdutosSerial(const Value: TpFIBClientDataSet);
     procedure SetDataSetPatrimonio(const Value: TpFIBClientDataSet);
+    procedure SetTipoMovimento(const Value: TTipoMovimento);
+    procedure SetIdPatrimonio(const Value: TipoCampoChave);
     { Private declarations }
   public
     { Public declarations }
     property IdCliente: TipoCampoChave read FIdCliente write SetIdCliente;
     property IdEmpresa: TipoCampoChave read FIdEmpresa write SetIdEmpresa;
+    property IdPatrimonio: TipoCampoChave  read FIdPatrimonio write SetIdPatrimonio;
     property Data: TDate read FData write SetData;
     property DataSetProdutos: TpFIBClientDataSet read FDataSetProdutos write SetDataSetProdutos;
     property DataSetProdutosSerial: TpFIBClientDataSet read FDataSetProdutosSerial write SetDataSetProdutosSerial;
     property DataSetPatrimonio: TpFIBClientDataSet read FDataSetPatrimonio write SetDataSetPatrimonio;
+    property TipoMovimento: TTipoMovimento read FTipoMovimento write SetTipoMovimento;
   end;
 
 var
@@ -98,7 +105,7 @@ var
 
 implementation
 
-uses Comandos, MinhasClasses, UDmConexao, uRegras,  uConstantes;
+uses Comandos, MinhasClasses, UDmConexao, uRegras,  uConstantes, uSQLERP, uSQL;
 
 {$R *.dfm}
 
@@ -130,8 +137,23 @@ end;
 
 procedure TfrmDlg_ServicoEquipamentoOS.edtServicoRegAchado(
   const ValoresCamposEstra: array of Variant);
+ var
+   StrSQL:String;
 begin
   inherited;
+  if TipoMovimento = tmPatrimonio then
+  begin
+    StrSQL := ' te.idservico = '+TipoCampoChaveToStr(edtServico.ValorChave)+
+              '  and te.idtipoeventopatrimonio in ( select IDTIPOEVENTOPATRIMONIO '+
+              '                                       from ('+
+                                              GetSelect(tpERPPatrimoniosEventos,'exists(select idtipopatrimonio '+
+                                                 '         from patrimonio p     '+
+                                                 '        where p.IDPATRIMONIO = '+TipoCampoChaveToStr(FIdPatrimonio)+
+                                                 '          and p.idtipopatrimonio = x.idtipopatrimonio)))' );
+
+    edtEventoPatrimonio.SQLComp := StrSQL;
+
+  end else
   if GridProduto.CanFocus then
     GridProduto.SetFocus;
   if edtServico.DataSet.State in [dsInsert,dsEdit]  then
@@ -144,6 +166,9 @@ begin
                                                  IdEmpresa,
                                                  Data);
   end;
+
+
+
 end;
 
 procedure TfrmDlg_ServicoEquipamentoOS.FormKeyDown(Sender: TObject;
@@ -162,6 +187,12 @@ end;
 procedure TfrmDlg_ServicoEquipamentoOS.FormShow(Sender: TObject);
 begin
   inherited;
+  if FTipoMovimento = tmPatrimonio then
+  begin
+    ConfiguraEditPesquisa(edtEventoPatrimonio,pDataSet, tpERPTipoEventos);
+    edtEventoPatrimonio.NomeTabela := 'TIPOEVENTOPATRIMONIO TE ';
+  end;
+
   ConfiguraEditPesquisa(edtServico,pDataSet,tpERPProduto,True);
   ConfiguraEditPesquisa(edtAlmoxarifado,pDataSet,tpERPAlmoxarifado,True);
   TRotinasPesquisa.ConfiguraPesquisaFuncionario(edtFuncionario,pDataSet);
@@ -170,6 +201,7 @@ begin
   DataSerial.DataSet := DataSetProdutosSerial;
   DataProdutos.DataSet := DataSetProdutos;
   DataPatrimonio.DataSet := DataSetPatrimonio;
+
 end;
 
 procedure TfrmDlg_ServicoEquipamentoOS.SetData(const Value: TDate);
@@ -203,6 +235,19 @@ end;
 procedure TfrmDlg_ServicoEquipamentoOS.SetIdEmpresa(const Value: TipoCampoChave);
 begin
   FIdEmpresa := Value;
+end;
+
+procedure TfrmDlg_ServicoEquipamentoOS.SetIdPatrimonio(
+  const Value: TipoCampoChave);
+begin
+  FIdPatrimonio := Value;
+end;
+
+procedure TfrmDlg_ServicoEquipamentoOS.SetTipoMovimento(
+  const Value: TTipoMovimento);
+begin
+  FTipoMovimento := Value;
+  edtEventoPatrimonio.Visible := Value = tmPatrimonio;
 end;
 
 function TfrmDlg_ServicoEquipamentoOS.TotalProdutos: Currency;

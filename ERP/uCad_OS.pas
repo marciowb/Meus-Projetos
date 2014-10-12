@@ -89,6 +89,7 @@ type
     procedure CdsPatrimonioBeforeDelete(DataSet: TDataSet);
     procedure CdsPatrimonioNewRecord(DataSet: TDataSet);
     procedure CdsPatrimonioAfterPost(DataSet: TDataSet);
+    procedure CdsPatrimonioBeforePost(DataSet: TDataSet);
   private
     FIdProposta: TipoCampoChave;
     FIdContrato: TipoCampoChave;
@@ -453,6 +454,18 @@ begin
   CdsPatrimonio.FieldByName('FLAGEDICAO').AsString := 'D';
   CdsPatrimonio.Post;
   Abort;
+end;
+
+procedure TfrmCad_OS.CdsPatrimonioBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  if TRegrasPatrimonio.VerificaPatrimonioPermitidoParaMovimentar(CdsPatrimonio.FieldByName('IDPATRIMONIO').AsString,
+        CdsCadastro.FieldByName('DATA').AsDateTime)  then
+  BEGIN
+    Avisa('Esse patrimônio não pode ser usado, pois está bloqueado. ');
+    Abort;
+  END;
+
 end;
 
 procedure TfrmCad_OS.CdsPatrimonioNewRecord(DataSet: TDataSet);

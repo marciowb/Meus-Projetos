@@ -53,7 +53,7 @@ type
     LabelDBEdit3: TLabelDBEdit;
     cxSplitter1: TcxSplitter;
     edtPatrimonio: TEditPesquisa;
-    edtEventoPatrimonio: TEditPesquisa;
+    edtContador: TLabelDBEdit;
     procedure actInserirExecute(Sender: TObject);
     procedure actAlterarExecute(Sender: TObject);
     procedure actExcluirExecute(Sender: TObject);
@@ -97,7 +97,8 @@ var
 
 implementation
 
-uses uCad_OS, UDmConexao, Comandos, MinhasClasses, uDlg_ServicoEquipamentoOS;
+uses uCad_OS, UDmConexao, Comandos, MinhasClasses, uDlg_ServicoEquipamentoOS,
+  uSQL;
 
 {$R *.dfm}
 
@@ -115,6 +116,8 @@ begin
     frmDlg_ServicoEquipamentoOS.DataSetProdutos := Self.DataSetProdutos;
     frmDlg_ServicoEquipamentoOS.DataSetProdutosSerial := Self.DataSetProdutosSerial;
     frmDlg_ServicoEquipamentoOS.DataSetPatrimonio := Self.DataSetPatrimonio;
+    frmDlg_ServicoEquipamentoOS.TipoMovimento := Self.TipoMovimento;
+    frmDlg_ServicoEquipamentoOS.IdPatrimonio := edtPatrimonio.ValorChave;
     frmDlg_ServicoEquipamentoOS.ShowModal;
   Finally
     FreeAndNil(frmDlg_ServicoEquipamentoOS);
@@ -147,6 +150,8 @@ begin
     frmDlg_ServicoEquipamentoOS.DataSetProdutos := Self.DataSetProdutos;
     frmDlg_ServicoEquipamentoOS.DataSetProdutosSerial := Self.DataSetProdutosSerial;
     frmDlg_ServicoEquipamentoOS.DataSetPatrimonio := Self.DataSetPatrimonio;
+    frmDlg_ServicoEquipamentoOS.TipoMovimento := Self.TipoMovimento;
+    frmDlg_ServicoEquipamentoOS.IdPatrimonio := edtPatrimonio.ValorChave;
     frmDlg_ServicoEquipamentoOS.ShowModal;
   Finally
     FreeAndNil(frmDlg_ServicoEquipamentoOS);
@@ -226,8 +231,6 @@ begin
   if TipoMovimento=tmPatrimonio then
   begin
     ConfiguraEditPesquisa(edtPatrimonio,pDataSet,tpERPPatrimonio,True);
-    edtEventoPatrimonio.SQLComp := 'IDPATRIMONIO = '+TipoCampoChaveToStr(edtPatrimonio.ValorChave);
-    ConfiguraEditPesquisa(edtEventoPatrimonio,pDataSet,tpERPPatrimoniosEventos,False);
 
   end;
 
@@ -287,7 +290,8 @@ begin
   FTipoMovimento := Value;
   edtEquipamentos.Visible :=FTipoMovimento = tmEquipamento;
   edtPatrimonio.Visible := FTipoMovimento = tmPatrimonio;
-  edtEventoPatrimonio.Visible := FTipoMovimento = tmPatrimonio;
+  edtContador.Visible  := FTipoMovimento = tmPatrimonio;
+
 
 end;
 

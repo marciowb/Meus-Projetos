@@ -24,12 +24,17 @@ uses
 type
   TftmLst_TipoEvento = class(TfrmLstCadastroSimplesERP)
     LabelDBEdit1: TLabelDBEdit;
-    grpControle: TDBRadioGroup;
-    edtPeriodo: TEditPesquisa;
-    edtIntervalo: TLabelDBEdit;
-    edtProduto: TEditPesquisa;
     GroupBox2: TGroupBox;
     DBMemo1: TDBMemo;
+    edtServico: TEditPesquisa;
+    GroupBox1: TGroupBox;
+    grpControle: TDBRadioGroup;
+    GroupBox3: TGroupBox;
+    edtPeriodo: TEditPesquisa;
+    edtIntervalo: TLabelDBEdit;
+    GroupBox4: TGroupBox;
+    edtIntervaloAlerta: TLabelDBEdit;
+    edtPeriodoAlerta: TEditPesquisa;
     procedure actGravarExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -45,7 +50,7 @@ var
 
 implementation
 
-uses MinhasClasses, Comandos;
+uses MinhasClasses, Comandos, uLibERP, uConstantes;
 
 {$R *.dfm}
 
@@ -87,7 +92,9 @@ procedure TftmLst_TipoEvento.FormShow(Sender: TObject);
 begin
   inherited;
   ConfiguraEditPesquisa(edtPeriodo, CdsCadastro, tpERPPeridicidade);
-  ConfiguraEditPesquisa(edtProduto, CdsCadastro, tpERPProduto);
+  ConfiguraEditPesquisa(edtPeriodoAlerta, CdsCadastro, tpERPPeridicidade, False,'','','CODIGO','IDPERIODICIDADEALERTA');
+  edtServico.SQLComp := 'TIPOPRODUTO = '+QuotedStr(TipoProdutoServico);
+  ConfiguraEditPesquisa(edtServico, CdsCadastro, tpERPProduto,fALSE,'','','CODIGO','IDSERVICO');
 end;
 
 procedure TftmLst_TipoEvento.grpControleChange(Sender: TObject);
@@ -95,6 +102,8 @@ begin
   inherited;
   edtPeriodo.Enabled := grpControle.ItemIndex in[ 0,2];
   edtIntervalo.Enabled := grpControle.ItemIndex in[ 1,2];
+  edtPeriodoAlerta.Enabled := grpControle.ItemIndex in[ 0,2];
+  edtIntervaloAlerta.Enabled := grpControle.ItemIndex in[ 1,2];
 end;
 
 end.

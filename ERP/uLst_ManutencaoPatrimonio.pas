@@ -27,17 +27,31 @@ type
     edtFornecedor: TEditPesquisa;
     cxDBDateEdit1: TcxDBDateEdit;
     Label1: TLabel;
-    GroupBox1: TGroupBox;
-    cxDBMemo1: TcxDBMemo;
     LabelDBEdit1: TLabelDBEdit;
     edtPatrimonio: TEditPesquisa;
     edtNotaEntrada: TEditPesquisa;
+    cxPageControl1: TcxPageControl;
+    cxTabSheet1: TcxTabSheet;
+    cxDBMemo1: TcxDBMemo;
+    cxTabSheet2: TcxTabSheet;
+    TvEventos: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    DataEventos: TDataSource;
+    CdsEventos: TpFIBClientDataSet;
+    vEventosColumn1: TcxGridDBColumn;
+    vEventosColumn2: TcxGridDBColumn;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure edtNotaEntradaRegAchado(
       const ValoresCamposEstra: array of Variant);
     procedure edtFornecedorRegAchado(
       const ValoresCamposEstra: array of Variant);
+    procedure TvEventosNavigatorButtonsButtonClick(Sender: TObject;
+      AButtonIndex: Integer; var ADone: Boolean);
+    procedure CdsEventosNewRecord(DataSet: TDataSet);
+    procedure CdsCadastroAfterPost(DataSet: TDataSet);
+    procedure CdsCadastroAfterScroll(DataSet: TDataSet);
   private
     FIdPatrimonio: TipoCampoChave;
     procedure SetIdPatrimonio(const Value: TipoCampoChave);
@@ -55,6 +69,27 @@ implementation
 uses MinhasClasses, Comandos;
 
 {$R *.dfm}
+
+procedure TfrmLst_ManutencaoPatrimonio.CdsCadastroAfterPost(DataSet: TDataSet);
+begin
+  inherited;
+  SetRegistros(CdsEventos,tpERPPatrimonioManutencaoTerceirosEventos);
+end;
+
+procedure TfrmLst_ManutencaoPatrimonio.CdsCadastroAfterScroll(
+  DataSet: TDataSet);
+begin
+  inherited;
+  SetCds(CdsEventos,tpERPPatrimonioManutencaoTerceirosEventos,'IDPATRIMONIOMANUTENCAO = '+TipoCampoChaveToStr(CdsCadastro.FieldByName('IDPATRIMONIOMANUTENCAO').Value));
+end;
+
+procedure TfrmLst_ManutencaoPatrimonio.CdsEventosNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  CdsEventos.FieldByName('IDPATRIMONIOMANUTENCAOEVENTOS').Value := GetCodigo(tpERPPatrimonioManutencaoTerceirosEventos);
+  CdsEventos.FieldByName('IDPATRIMONIOMANUTENCAO').Value := CdsCadastro.FieldByName('IDPATRIMONIOMANUTENCAO').Value;
+  CdsEventos.FieldByName('FLAGEDICAO').Value := 'I';
+end;
 
 procedure TfrmLst_ManutencaoPatrimonio.edtFornecedorRegAchado(
   const ValoresCamposEstra: array of Variant);
@@ -117,6 +152,31 @@ procedure TfrmLst_ManutencaoPatrimonio.SetIdPatrimonio(
   const Value: TipoCampoChave);
 begin
   FIdPatrimonio := Value;
+end;
+
+procedure TfrmLst_ManutencaoPatrimonio.TvEventosNavigatorButtonsButtonClick(
+  Sender: TObject; AButtonIndex: Integer; var ADone: Boolean);
+begin
+  inherited;
+  if AButtonIndex = 6 then
+  begin
+    MudaEstado;
+    AdicionaListaPesquisa(CdsEventos,tpERPTipoEventos,'Esse evento já foi adicionado');
+    ADone := True;
+    Abort;
+  end;
+  if AButtonIndex = 7 then
+  begin
+    if not ConfirmaDel then
+      Abort;
+    MudaEstado;
+    CdsEventos.Edit;
+    CdsEventos.FieldByName('FLAGEDICAO').AsString := 'D';
+    CdsEventos.Post;
+    ADone := True;
+    Abort;
+  end;
+
 end;
 
 end.

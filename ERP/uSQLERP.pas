@@ -704,7 +704,7 @@ begin
             '  SELECT E.IDEQUIPAMENTOSOS, E.IDEQUIPAMENTOCLIENTE,'+
             '         E.IDOS, E.DETALHEDEFEITO,'+
             '         E.VALORTOTALEQUIPAMENTO,E.SOLUCAO,E.IDFUNCIONARIOSOLUCAO,E.CONTADORPATRIMONIO,'+
-            '         E.IDPATRIMONIO,  '+
+            '         E.IDPATRIMONIO, '+
             '         COALESCE(C.DESCRICAOEQUIPAMENTO,P.NOMEPATRIMONIO)DESCRICAOEQUIPAMENTO, '+
             '         COALESCE(C.IDENTIFICADOR,P.SERIAL) IDENTIFICADOR, ''N'' FLAGEDICAO '+
             '    FROM EQUIPAMENTOSOS E'+
@@ -726,7 +726,7 @@ begin
           CampoCodigo := '';
           DesconsiderarCampos := 'CODIGOSERVICO;DESCRICAOSERVICO;NOMEFUNCIONARIO;FLAGEDICAO';
           Select :=
-            'SELECT S.IDSERVICOOS, S.IDEQUIPAMENTOSOS, S.IDPRODUTO, S.VALORSERVICO,'+
+            'SELECT S.IDSERVICOOS, S.IDEQUIPAMENTOSOS, S.IDPRODUTO, S.VALORSERVICO,S.IDTIPOEVENTOPATRIMONIO,'+
             '       S.VALORTOTALPRODUTOS, S.VALORTOTAL,S.OBS,S.DATAINICIO,S.HORAINICIO, S.DATATERMINO, S.HORATERMINO , '+
             '       S.IDFUNCIONARIO,S.IDALMOXARIFADO, P.CODIGO CODIGOSERVICO, P.NOMEPRODUTO DESCRICAOSERVICO,'+
             '       F.NOMEFUNCIONARIO,''N'' FLAGEDICAO '+
@@ -1307,17 +1307,18 @@ begin
           NomeTabela := 'TIPOEVENTOPATRIMONIO';
           DescricaoCampoDisplay := 'Evento';
           DescricaoTabela := 'Tipo de evento patrimônio';
-          DesconsiderarCampos := 'DESCRICAOPERIODICIDADE;NUMDIAS;PRODUTO;NOMEPRODUTO';
+          DesconsiderarCampos := 'DESCRICAOPERIODICIDADE;NUMDIAS;SERVICO;NOMESERVICO';
           UsaMaxParaCodigo := True;
           Versao20:= False;
           Select :=
-           ' SELECT TE.IDTIPOEVENTOPATRIMONIO,TE.CODIGO, TE.NOMETIPOEVENTOPATRIMONIO,TE.FLAGFORMACONTROLE, TE.IDPERIODICIDADE,TE.IDPRODUTO,' +
-           '        TE.OBS,TE.VALORCONTADOR, PE.DESCRICAOPERIODICIDADE,PE.NUMDIAS, P.CODIGO PRODUTO, P.NOMEPRODUTO '+
+           ' SELECT TE.IDTIPOEVENTOPATRIMONIO,TE.CODIGO, TE.NOMETIPOEVENTOPATRIMONIO,TE.FLAGFORMACONTROLE, '+
+           '        TE.IDPERIODICIDADE,TE.IDSERVICO, TE.IDPERIODICIDADEALERTA,TE.VALORCONTADORALERTA, ' +
+           '        TE.OBS,TE.VALORCONTADOR, PE.DESCRICAOPERIODICIDADE,PE.NUMDIAS, PS.CODIGO SERVICO, PS.NOMEPRODUTO NOMESERVICO '+
            '   FROM TIPOEVENTOPATRIMONIO TE' +
            '   LEFT JOIN PERIODICIDADE PE' +
            '     ON (PE.IDPERIODICIDADE= TE.IDPERIODICIDADE)'+
-           '   LEFT JOIN PRODUTO P' +
-           '     ON (P.IDPRODUTO = TE.IDPRODUTO) '+
+           '   LEFT JOIN PRODUTO PS' +
+           '     ON (PS.IDPRODUTO = TE.IDSERVICO) '+
            '  WHERE 1=1 '+Complemento;
         end;
       tpERPTipoPatrimonioTipoEventos:
@@ -1344,6 +1345,7 @@ begin
           NomeTabela := 'PATRIMONIOEVENTO';
           DescricaoCampoDisplay := '';
           DescricaoTabela := 'Eventos do patrimônio';
+          CampoCodigo := '';
           DesconsiderarCampos := 'IDTIPOPATRIMONIO;CODIGO;NOMETIPOEVENTOPATRIMONIO;FLAGEDICAO';
           Versao20:= False;
           Select :=
@@ -1430,6 +1432,42 @@ begin
             '    ON (E.IDENTRADA = PM.IDENTRADA)'+
             ' WHERE 1=1 '+Complemento;
         End;
+      tpERPPatrimonioManutencaoTerceirosEventos:
+        begin
+          CampoChave := 'IDPATRIMONIOMANUTENCAOEVENTOS';
+          CampoDisplay := '';
+          NomeTabela := 'PATRIMONIOMANUTENCAOEVENTOS';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'Manutenção de patrimônios(Eventos)';
+          DesconsiderarCampos := 'CODIGO;NOMETIPOEVENTOPATRIMONIO;FLAGEDICAO';
+          Versao20:= False;
+          CampoCodigo := '';
+          Select :=
+            'SELECT PEM.IDPATRIMONIOMANUTENCAOEVENTOS, PEM.IDTIPOEVENTOPATRIMONIO, PEM.IDPATRIMONIOMANUTENCAO, '+
+            '       TE.CODIGO, TE.NOMETIPOEVENTOPATRIMONIO,''N'' FLAGEDICAO  '+
+            '  FROM PATRIMONIOMANUTENCAOEVENTOS PEM   '+
+            ' INNER JOIN TIPOEVENTOPATRIMONIO TE '+
+            '   ON (TE.IDTIPOEVENTOPATRIMONIO = PEM.IDTIPOEVENTOPATRIMONIO) '+
+            ' WHERE 1=1 '+Complemento;
+        end;
+       tpERPAlertaPatrimonio:
+        begin
+          CampoChave := '';
+          CampoDisplay := '';
+          NomeTabela := 'VW_ALERTATIPOEVENTOPATRIMONIO';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'Alerta de patrimônio';
+          DesconsiderarCampos := 'CODIGO;NOMETIPOEVENTOPATRIMONIO;FLAGEDICAO';
+          Versao20:= False;
+          CampoCodigo := '';
+          Select :=
+            'SELECT IDPATRIMONIO, IDTIPOEVENTOPATRIMONIO,CODIGOPATRIMONIO,NOMEPATRIMONIO, '+
+            '       CODIGOTIPOEVENTO,NOMETIPOEVENTOPATRIMONIO,FLAGFORMACONTROLE, '+
+            '       CONTADORATUAL,ULTIMADATAMOV,DATALIMITE,CONTADORLIMITE, '+
+            '       DATAALERTA,CONTADORALERTA '+
+            '  FROM VW_ALERTATIPOEVENTOPATRIMONIO '+
+            ' WHERE 1=1 '+Complemento;
+        end;
 
     end;
   End;

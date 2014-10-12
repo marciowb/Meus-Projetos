@@ -200,7 +200,8 @@ interface
                      tpERPSaidaCondicaoPagamentoParcelas,tpERPTransportadora,tpERPAlmoxarifado,tpERPSaidaSerialProduto,tpERPCEP,tpERPCompetenciaContrato,
                      tpERPContasReceber,tpERPPlanoContas,tpERPContasReceberRecebimentos,tpERPEstoque,tpERPMovimentacaoEstoque,tpERPTipoPatrimonio,
                      tpERPPatrimonio,tpERPTipoEventos,tpERPTipoPatrimonioTipoEventos, tpERPPatrimoniosEventos,tpERPPatrimonioDisponivel,
-                     tpERPPatrimoniosUsadosOS,tpERPPatrimonioManutencaoTerceiros
+                     tpERPPatrimoniosUsadosOS,tpERPPatrimonioManutencaoTerceiros,tpERPPatrimonioManutencaoTerceirosEventos,
+                     tpERPAlertaPatrimonio
 
 
 

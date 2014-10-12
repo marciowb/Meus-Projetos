@@ -1,26 +1,35 @@
 inherited frmLst_ManutencaoPatrimonio: TfrmLst_ManutencaoPatrimonio
   Caption = 'Manuten'#231#227'o de patrim'#244'nio por terceiros'
-  ClientHeight = 455
+  ClientHeight = 472
   ClientWidth = 800
   ExplicitWidth = 816
-  ExplicitHeight = 494
+  ExplicitHeight = 511
   PixelsPerInch = 96
   TextHeight = 13
   inherited Status: TStatusBar
-    Top = 436
+    Top = 453
     Width = 800
+    ExplicitTop = 436
+    ExplicitWidth = 800
   end
   inherited Panel1: TPanel
     Width = 800
-    Height = 436
+    Height = 453
+    ExplicitWidth = 800
+    ExplicitHeight = 436
     inherited cxSplitter1: TcxSplitter
       Left = 393
-      Height = 406
+      Height = 423
+      ExplicitLeft = 393
+      ExplicitHeight = 406
     end
     inherited Panel3: TPanel
       Left = 401
       Width = 393
-      Height = 406
+      Height = 423
+      ExplicitLeft = 401
+      ExplicitWidth = 393
+      ExplicitHeight = 406
       object Label1: TLabel [0]
         Left = 159
         Top = 95
@@ -29,15 +38,11 @@ inherited frmLst_ManutencaoPatrimonio: TfrmLst_ManutencaoPatrimonio
         Caption = 'Data'
       end
       inherited Panel4: TPanel
-        Top = 365
+        Top = 382
         Width = 393
-        TabOrder = 10
-        inherited BitBtn1: TBitBtn
-          Glyph.Data = {00000000}
-        end
-        inherited BitBtn2: TBitBtn
-          Glyph.Data = {00000000}
-        end
+        TabOrder = 9
+        ExplicitTop = 365
+        ExplicitWidth = 393
       end
       object edtFornecedor: TEditPesquisa
         Left = 15
@@ -229,33 +234,6 @@ inherited frmLst_ManutencaoPatrimonio: TfrmLst_ManutencaoPatrimonio
         Properties.PostPopupValueOnTab = True
         TabOrder = 4
         Width = 105
-      end
-      object GroupBox1: TGroupBox
-        Left = 0
-        Top = 155
-        Width = 393
-        Height = 210
-        Align = alBottom
-        Caption = ' Detalhes da manuten'#231#227'o '
-        TabOrder = 7
-        ExplicitTop = 175
-        ExplicitWidth = 356
-        object cxDBMemo1: TcxDBMemo
-          Left = 2
-          Top = 15
-          Align = alClient
-          DataBinding.DataField = 'DETALHESMANUTENCAO'
-          DataBinding.DataSource = DataCadastro
-          Properties.ScrollBars = ssVertical
-          Properties.WantReturns = False
-          Properties.WantTabs = True
-          TabOrder = 0
-          ExplicitTop = 0
-          ExplicitWidth = 352
-          ExplicitHeight = 171
-          Height = 193
-          Width = 389
-        end
       end
       object LabelDBEdit1: TLabelDBEdit
         Left = 271
@@ -456,7 +434,7 @@ inherited frmLst_ManutencaoPatrimonio: TfrmLst_ManutencaoPatrimonio
         Display.TabStop = False
         Display.Color = clSkyBlue
         Display.ReadOnly = True
-        Display.TabOrder = 8
+        Display.TabOrder = 7
         TamanhoDisplay = 225
       end
       object edtNotaEntrada: TEditPesquisa
@@ -637,13 +615,111 @@ inherited frmLst_ManutencaoPatrimonio: TfrmLst_ManutencaoPatrimonio
         Display.TabStop = False
         Display.Color = clSkyBlue
         Display.ReadOnly = True
-        Display.TabOrder = 9
+        Display.TabOrder = 8
         Display.Visible = False
         TamanhoDisplay = 0
+      end
+      object cxPageControl1: TcxPageControl
+        Left = 0
+        Top = 144
+        Width = 393
+        Height = 238
+        ActivePage = cxTabSheet2
+        Align = alBottom
+        Style = 2
+        TabOrder = 10
+        ClientRectBottom = 238
+        ClientRectRight = 393
+        ClientRectTop = 23
+        object cxTabSheet2: TcxTabSheet
+          Caption = 'Eventos tratados'
+          ImageIndex = 1
+          ExplicitLeft = 4
+          ExplicitTop = 24
+          ExplicitWidth = 385
+          ExplicitHeight = 186
+          object cxGrid1: TcxGrid
+            Left = 0
+            Top = 0
+            Width = 393
+            Height = 215
+            Align = alClient
+            TabOrder = 0
+            ExplicitLeft = 32
+            ExplicitTop = 31
+            ExplicitWidth = 250
+            ExplicitHeight = 200
+            object TvEventos: TcxGridDBTableView
+              Tag = 99
+              NavigatorButtons.OnButtonClick = TvEventosNavigatorButtonsButtonClick
+              NavigatorButtons.ConfirmDelete = False
+              NavigatorButtons.First.Visible = False
+              NavigatorButtons.PriorPage.Visible = False
+              NavigatorButtons.Prior.Visible = False
+              NavigatorButtons.Next.Visible = False
+              NavigatorButtons.NextPage.Visible = False
+              NavigatorButtons.Last.Visible = False
+              NavigatorButtons.Insert.Hint = 'Incluir'
+              NavigatorButtons.Delete.Hint = 'Apagar'
+              NavigatorButtons.Edit.Visible = False
+              NavigatorButtons.Post.Hint = 'Gravar'
+              NavigatorButtons.Post.Visible = False
+              NavigatorButtons.Cancel.Hint = 'Cancelar'
+              NavigatorButtons.Cancel.Visible = False
+              NavigatorButtons.Refresh.Visible = False
+              NavigatorButtons.SaveBookmark.Visible = False
+              NavigatorButtons.GotoBookmark.Visible = False
+              NavigatorButtons.Filter.Visible = False
+              DataController.DataSource = DataEventos
+              DataController.Summary.DefaultGroupSummaryItems = <>
+              DataController.Summary.FooterSummaryItems = <>
+              DataController.Summary.SummaryGroups = <>
+              OptionsView.Navigator = True
+              OptionsView.GroupByBox = False
+              object vEventosColumn1: TcxGridDBColumn
+                Caption = 'C'#243'digo'
+                DataBinding.FieldName = 'CODIGO'
+                Width = 60
+              end
+              object vEventosColumn2: TcxGridDBColumn
+                Caption = 'Evento'
+                DataBinding.FieldName = 'NOMETIPOEVENTOPATRIMONIO'
+                Width = 300
+              end
+            end
+            object cxGrid1Level1: TcxGridLevel
+              GridView = TvEventos
+            end
+          end
+        end
+        object cxTabSheet1: TcxTabSheet
+          Caption = ' Detalhes da manuten'#231#227'o '
+          ImageIndex = 0
+          ExplicitLeft = 4
+          ExplicitTop = 24
+          ExplicitWidth = 281
+          ExplicitHeight = 165
+          object cxDBMemo1: TcxDBMemo
+            Left = 0
+            Top = 0
+            Align = alClient
+            DataBinding.DataField = 'DETALHESMANUTENCAO'
+            DataBinding.DataSource = DataCadastro
+            Properties.ScrollBars = ssVertical
+            Properties.WantReturns = False
+            Properties.WantTabs = True
+            TabOrder = 0
+            ExplicitWidth = 281
+            ExplicitHeight = 165
+            Height = 215
+            Width = 393
+          end
+        end
       end
     end
     inherited ToolBar1: TToolBar
       Width = 792
+      ExplicitWidth = 792
       inherited ToolButton1: TToolButton
         ExplicitWidth = 24
       end
@@ -671,45 +747,67 @@ inherited frmLst_ManutencaoPatrimonio: TfrmLst_ManutencaoPatrimonio
     end
     inherited Panel2: TPanel
       Width = 391
-      Height = 406
+      Height = 423
       ExplicitWidth = 391
       ExplicitHeight = 406
       inherited PageControl: TcxPageControl
         Width = 389
-        Height = 404
-        ClientRectBottom = 400
+        Height = 421
+        ExplicitWidth = 389
+        ExplicitHeight = 404
+        ClientRectBottom = 417
         ClientRectRight = 385
         inherited tsGrid: TcxTabSheet
           ExplicitLeft = 4
           ExplicitTop = 24
-          ExplicitWidth = 293
-          ExplicitHeight = 294
+          ExplicitWidth = 381
+          ExplicitHeight = 376
           inherited pnlGrid: TPanel
             Width = 381
-            Height = 376
+            Height = 393
+            ExplicitWidth = 381
+            ExplicitHeight = 376
             inherited TvCadastro: TcxGrid
               Width = 381
-              Height = 376
+              Height = 393
+              ExplicitWidth = 381
+              ExplicitHeight = 376
             end
           end
         end
         inherited tsTree: TcxTabSheet
           ExplicitLeft = 4
           ExplicitTop = 24
-          ExplicitWidth = 293
-          ExplicitHeight = 344
+          ExplicitWidth = 381
+          ExplicitHeight = 393
           inherited pnlTree: TPanel
             Width = 381
-            Height = 376
-            ExplicitHeight = 344
+            Height = 393
+            ExplicitWidth = 381
+            ExplicitHeight = 393
             inherited TvTree: TcxDBTreeList
               Width = 381
-              Height = 376
-              ExplicitHeight = 344
+              Height = 393
+              ExplicitWidth = 381
+              ExplicitHeight = 393
             end
           end
         end
       end
     end
+  end
+  object DataEventos: TDataSource
+    DataSet = CdsEventos
+    Left = 48
+    Top = 136
+  end
+  object CdsEventos: TpFIBClientDataSet
+    Aggregates = <>
+    Filter = 'FLAGEDICAO <> '#39'D'#39
+    Filtered = True
+    Params = <>
+    OnNewRecord = CdsEventosNewRecord
+    Left = 168
+    Top = 136
   end
 end

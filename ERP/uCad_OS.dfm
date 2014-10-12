@@ -1233,6 +1233,7 @@ inherited frmCad_OS: TfrmCad_OS
   object CdsPatrimonio: TpFIBClientDataSet
     Aggregates = <>
     Params = <>
+    BeforePost = CdsPatrimonioBeforePost
     AfterPost = CdsPatrimonioAfterPost
     BeforeDelete = CdsPatrimonioBeforeDelete
     OnNewRecord = CdsPatrimonioNewRecord

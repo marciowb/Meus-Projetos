@@ -185,8 +185,8 @@ begin
   inherited;
   if not PodeExcluir then
   Begin
-    Avisa('Esse registro não pode ser excluído porque possui dependências.');
-    Exit;
+    Avisa('Esse registro não deve ser excluído porque possui dependências.');
+//    Exit;
   End;
   if TipoForm = tfGrid then
   Begin

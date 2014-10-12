@@ -57,7 +57,6 @@ type
     procedure edtFabricanteBtnNovoClick(Sender: TObject);
     procedure CdsCadastroAfterPost(DataSet: TDataSet);
     procedure CdsEventosTipoPatrimonioNewRecord(DataSet: TDataSet);
-    procedure CdsEventosTipoPatrimonioBeforeDelete(DataSet: TDataSet);
     procedure CdsEventosTipoPatrimonioBeforePost(DataSet: TDataSet);
     procedure TvEventosNavigatorButtonsButtonClick(Sender: TObject;
       AButtonIndex: Integer; var ADone: Boolean);
@@ -96,17 +95,6 @@ procedure TfrmCad_Patrimonio.CdsCadastroAfterPost(DataSet: TDataSet);
 begin
   inherited;
   SetRegistros(CdsEventosTipoPatrimonio,tpERPPatrimoniosEventos);
-end;
-
-procedure TfrmCad_Patrimonio.CdsEventosTipoPatrimonioBeforeDelete(
-  DataSet: TDataSet);
-begin
-  inherited;
-  MudaEstado;
-  CdsEventosTipoPatrimonio.Edit;
-  CdsEventosTipoPatrimonio.FieldByName('FLAGEDICAO').Value := 'D';
-  CdsEventosTipoPatrimonio.Post;
-  Abort;
 end;
 
 procedure TfrmCad_Patrimonio.CdsEventosTipoPatrimonioBeforePost(
@@ -178,6 +166,8 @@ end;
 
 Procedure TfrmCad_Patrimonio.TvEventosNavigatorButtonsButtonClick(
   Sender: TObject; AButtonIndex: Integer; var ADone: Boolean);
+  var
+    SP: TBookmark;
 begin
   inherited;
   if AButtonIndex = 6 then
@@ -185,7 +175,34 @@ begin
     MudaEstado;
     AdicionaListaPesquisa(CdsEventosTipoPatrimonio,tpERPTipoEventos,'Esse evento já foi adicionado');
     ADone:= True;
-  end;
+  end ;
+  if AButtonIndex = 8 then
+  Begin
+     if CdsEventosTipoPatrimonio.FieldByName('FLAGEDICAO').Value = 'N' then
+     begin
+       avisa('Esse evento pertence ao tipo de patrimônio usado e não pode ser excluído');
+       Exit;
+     end;
+     if ConfirmaDel then
+     begin
+       Try
+         Sp := CdsEventosTipoPatrimonio.GetBookmark;
+         MudaEstado;
+         CdsEventosTipoPatrimonio.Filtered := False;
+         CdsEventosTipoPatrimonio.GotoBookmark(Sp);
+         CdsEventosTipoPatrimonio.Edit;
+         CdsEventosTipoPatrimonio.FieldByName('FLAGEDICAO').Value := 'D';
+         CdsEventosTipoPatrimonio.Post;
+       Finally
+         CdsEventosTipoPatrimonio.Filtered := True;
+         CdsEventosTipoPatrimonio.FreeBookmark(SP);
+       End;
+     end;
+     ADone:= True;
+     Abort;
+  End;
+
+
 end;
 
 end.

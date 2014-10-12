@@ -148,6 +148,17 @@ type
     Patrimnio2: TMenuItem;
     actManutencaoPatrimonio: TAction;
     ManutenodePatrimnioporterceiros1: TMenuItem;
+    pnlPatrimonio: TdxDockPanel;
+    dxTabContainerDockSite1: TdxTabContainerDockSite;
+    cxGrid2DBTableView1: TcxGridDBTableView;
+    cxGrid2Level1: TcxGridLevel;
+    cxGrid2: TcxGrid;
+    DataPatrimonio: TDataSource;
+    CdsPatrimonio: TpFIBClientDataSet;
+    cxGrid2DBTableView1Column1: TcxGridDBColumn;
+    cxGrid2DBTableView1Column2: TcxGridDBColumn;
+    cxGrid2DBTableView1Column3: TcxGridDBColumn;
+    cxGrid2DBTableView1Column4: TcxGridDBColumn;
     procedure actCadastroExecute(Sender: TObject);
     procedure actCFOPExecute(Sender: TObject);
     procedure actNCMExecute(Sender: TObject);
@@ -219,7 +230,7 @@ var
 
 implementation
 
-uses uForms, MinhasClasses, uCadNCM, Comandos;
+uses uForms, MinhasClasses, uCadNCM, Comandos, uRegras;
 
 {$R *.dfm}
 
@@ -568,6 +579,10 @@ begin
   SetCds(CdsAgenda,tpERPAgenda,Filtro);
 //  if CdsAgenda.RecordCount = 0 Then
 //    DockAgenda.AutoHide := True;
+
+  TRegrasPatrimonio.GetListagemPatrimoniosAlerta(CdsPatrimonio);
+  pnlPatrimonio.AutoHide := CdsPatrimonio.RecordCount =  0;
+
 end;
 
 procedure TfrmPrincipal.cxGrid1DBTableView1DblClick(Sender: TObject);
