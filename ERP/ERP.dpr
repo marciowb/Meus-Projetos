@@ -96,7 +96,9 @@ uses
   uLst_TipoEvento in 'uLst_TipoEvento.pas' {ftmLst_TipoEvento},
   uLst_ManutencaoPatrimonio in 'uLst_ManutencaoPatrimonio.pas' {frmLst_ManutencaoPatrimonio},
   uALiqICMS in 'uALiqICMS.pas' {frmALiqICMS},
-  uAliqISS in 'uAliqISS.pas' {frmAliqISS};
+  uAliqISS in 'uAliqISS.pas' {frmAliqISS},
+  uAuxConexao in 'uAuxConexao.pas' {frmAuxCOnexao},
+  uDocumentoFiscal in 'uDocumentoFiscal.pas';
 
 {$R *.res}
 

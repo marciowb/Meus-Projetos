@@ -286,6 +286,10 @@
 			<DCCReference Include="uAliqISS.pas">
 				<Form>frmAliqISS</Form>
 			</DCCReference>
+			<DCCReference Include="uAuxConexao.pas">
+				<Form>frmAuxCOnexao</Form>
+			</DCCReference>
+			<DCCReference Include="uDocumentoFiscal.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

@@ -4,16 +4,15 @@ inherited frmALiqICMS: TfrmALiqICMS
   ClientWidth = 834
   Position = poDesigned
   WindowState = wsMaximized
-  ExplicitTop = 2
   ExplicitWidth = 850
   ExplicitHeight = 531
   PixelsPerInch = 96
   TextHeight = 13
   object lblPos: TLabel
     Left = 0
-    Top = 415
+    Top = 437
     Width = 834
-    Height = 36
+    Height = 14
     Align = alBottom
     Caption = 'lblPos'
     Font.Charset = DEFAULT_CHARSET
@@ -22,14 +21,15 @@ inherited frmALiqICMS: TfrmALiqICMS
     Font.Name = 'Tahoma'
     Font.Style = [fsItalic]
     ParentFont = False
-    ExplicitTop = 456
+    ExplicitTop = 415
+    ExplicitWidth = 30
   end
   object GridICMS: TcxDBPivotGrid
     Tag = 99
     Left = 25
     Top = 23
     Width = 809
-    Height = 392
+    Height = 414
     Hint = 'Duplo clique na celula que deseja alterar'
     Align = alClient
     DataSource = DataICMS
@@ -62,9 +62,6 @@ inherited frmALiqICMS: TfrmALiqICMS
     TabOrder = 0
     OnClick = GridICMSClick
     OnDblClick = GridICMSDblClick
-    ExplicitLeft = 56
-    ExplicitWidth = 778
-    ExplicitHeight = 469
     object cxDBPivotGrid1ALIQICMS: TcxDBPivotGridField
       Area = faData
       AreaIndex = 0
@@ -113,8 +110,7 @@ inherited frmALiqICMS: TfrmALiqICMS
     Properties.Alignment.Vert = taVCenter
     Properties.Angle = 90
     Properties.Orientation = cxoBottom
-    ExplicitHeight = 469
-    AnchorY = 219
+    AnchorY = 230
   end
   object cxLabel2: TcxLabel
     Left = 0
@@ -129,7 +125,6 @@ inherited frmALiqICMS: TfrmALiqICMS
     Style.Font.Style = []
     Style.IsFontAssigned = True
     Properties.Alignment.Horz = taCenter
-    ExplicitTop = 81
     AnchorX = 417
   end
   object Panel1: TPanel
@@ -140,8 +135,6 @@ inherited frmALiqICMS: TfrmALiqICMS
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitLeft = -8
-    ExplicitTop = 456
   end
   object DataICMS: TDataSource
     DataSet = CdsICMS

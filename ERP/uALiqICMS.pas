@@ -99,7 +99,8 @@ begin
     end;
 
   end;
-
+  if Valor = '' then
+    Exit;
 
   SetLength(R,2);
   GetValorCelulaSelecionadaPivotGrid(GridICMS, 'UFORIGEM','UFDESTINO',R);

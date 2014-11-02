@@ -153,9 +153,9 @@ Var
 begin
   inherited;
 
-  if not PodeExcluir then
-    Avisa('Esse registro possui dependências.  '+#13+#10+
-          ' Ao excluir esse registros outros registros poderão ser excluídos!');
+//  if not PodeExcluir then
+//    Avisa('Esse registro possui dependências.  '+#13+#10+
+//          ' Ao excluir esse registros outros registros poderão ser excluídos!');  //Deixa o banco decidir
   if (ConfirmaDel) then
   Begin
     try

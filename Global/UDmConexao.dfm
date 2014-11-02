@@ -3624,7 +3624,6 @@ object DMConexao: TDMConexao
       end>
   end
   object Trans: TpFIBTransaction
-    Active = True
     DefaultDatabase = Conexao
     TimeoutAction = TARollback
     Left = 88
@@ -4936,7 +4935,6 @@ object DMConexao: TDMConexao
       C6AF45D68E113692B155AE6FD1C5AF59793FB7B160}
   end
   object Conexao: TpFIBDatabase
-    Connected = True
     DBName = 'D:\Meus Projetos\Bancos\ERP.FDB'
     DBParams.Strings = (
       'password=masterkey'
@@ -4952,7 +4950,6 @@ object DMConexao: TDMConexao
   object pFIBDataSet1: TpFIBDataSet
     SelectSQL.Strings = (
       'select * from vw_uf')
-    Active = True
     Transaction = Trans
     Database = Conexao
     Left = 152
@@ -4984,7 +4981,6 @@ object DMConexao: TDMConexao
     SelectSQL.Strings = (
       ''
       'select * from MUNICIPIO')
-    Active = True
     Transaction = Trans
     Database = Conexao
     Left = 264
@@ -4999,7 +4995,6 @@ object DMConexao: TDMConexao
     SelectSQL.Strings = (
       ''
       'select * from iss')
-    Active = True
     Transaction = Trans
     Database = Conexao
     Left = 216

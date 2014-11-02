@@ -58,10 +58,24 @@ interface
       class function CalculaAliqJuros(DataRecebimento,DataVencimento: TDate): Currency;
       class Function GeraContaReceberDeSaida(IdSaida : TipoCampoChave;UsaTrancaoPropria: Boolean = False ): Boolean;
    end;
+
    TRegrasPatrimonio = class
      class Procedure GetListagemPatrimoniosAlerta(var CdsAlerta: TpFIBClientDataSet);
      class function VerificaPatrimonioPermitidoParaMovimentar(IdPatrimonio: TipoCampoChave;DataMov: TDate): Boolean;
    end;
+
+
+   TRegrasImpostos = class
+    private
+      class function GetAliqICMS(UfOrigem, UfDestino: String; IdProduto: TipoCampoChave): Currency;
+      class function GetAliqISS(IdServico, IdMunicipio: TipoCampoChave): Currency;
+      class Procedure GetAliqPIS_COFINS_IPI(IdCliente,IdProduto:TipoCampoChave; Out PIS:Currency; Out COFINS: Currency; Out IPI:Currency);
+    public
+      class function CalculaImpostos(IdCliente, IdProduto,IdCFOP: TipoCampoChave; CST_CSOSN: String;
+                                     ValorOperacao: Currency; Frete,Seguro,OutrasDespesas: Currency): IImpostos;
+
+   end;
+
 
 implementation
 
@@ -749,6 +763,33 @@ begin
    if DataBloq > 0 then
      Result := DataMov < DataBloq;
 
+
+end;
+
+{ TRegrasImpostos }
+
+class function TRegrasImpostos.CalculaImpostos(IdCliente, IdProduto,
+  IdCFOP: TipoCampoChave; CST_CSOSN: String;
+  ValorOperacao: Currency; Frete,Seguro,OutrasDespesas: Currency): IImpostos;
+begin
+
+end;
+
+class function TRegrasImpostos.GetAliqICMS(UfOrigem, UfDestino: String;
+  IdProduto: TipoCampoChave): Currency;
+begin
+
+end;
+
+class function TRegrasImpostos.GetAliqISS(IdServico,
+  IdMunicipio: TipoCampoChave): Currency;
+begin
+
+end;
+
+class procedure TRegrasImpostos.GetAliqPIS_COFINS_IPI(IdCliente,
+  IdProduto: TipoCampoChave; out PIS, COFINS, IPI: Currency);
+begin
 
 end;
 

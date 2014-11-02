@@ -112,8 +112,6 @@ inherited frmListagemPadrao: TfrmListagemPadrao
       DoubleBuffered = True
       ParentDoubleBuffered = False
       TabOrder = 5
-      ExplicitLeft = 348
-      ExplicitTop = -2
     end
     object BitBtn7: TBitBtn
       Left = 259
@@ -308,9 +306,6 @@ inherited frmListagemPadrao: TfrmListagemPadrao
     object tsListagem: TcxTabSheet
       Caption = 'Listagem'
       ImageIndex = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object cxGrid1: TcxGrid
         Left = 0
         Top = 0
