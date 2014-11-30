@@ -7,7 +7,9 @@ interface
     type
 
 
-     
+      TTipoVerificacao = (tvCPF_CNPJ,tvIE,tvCEP,tvTotais, tvCFOP, tvUF);
+
+      TVerificacoes =  set of TTipoVerificacao;
 
       IEndereco = interface(IInterfaceMaster)
 
@@ -836,6 +838,7 @@ interface
         FFrete: Currency;
         FTotalDocumento: Currency;
         FServicos: TList<IItemDocumento>;
+        FOpcoesDeVerificacao: TVerificacoes;
         procedure SetANTT(const Value: String);
         procedure SetCobranca(const Value: TList<ICobranca>);
         procedure SetDestinatario(const Value: IPessoa);
@@ -886,6 +889,7 @@ interface
         function GetTransportadora: IPessoa;
         function GetUfPlaca: String;
         function GetVolume: Integer;
+        procedure SetVerificacoes(const Value: TVerificacoes);
       published
         property Emitente: IPessoa read GetEmitente write SetEmitente;
         property Destinatario: IPessoa read GetDestinatario write SetDestinatario;
@@ -916,6 +920,8 @@ interface
         property PesoLiquido: Double read GetPesoLiquido write SetPesoLiquido;
 
         Property Cobranca: TList<ICobranca> read GetCobranca write SetCobranca;
+        property OpcoesDeVerificacao: TVerificacoes read FOpcoesDeVerificacao write SetVerificacoes;
+        Function VerificaDados: TStringList ;virtual;
         constructor Create;virtual;
 
       end;
@@ -1896,6 +1902,8 @@ begin
     FFrete:= 0;
     FTotalDocumento:= 0;
     FServicos:= TList<IItemDocumento>.Create;
+    OpcoesDeVerificacao := [tvCPF_CNPJ,tvIE,tvCEP,tvTotais, tvCFOP, tvUF];
+
 end;
 
 function TDocumentoFiscal.GetANTT: String;
@@ -2192,11 +2200,88 @@ begin
   FUfPlaca := Value;
 end;
 
+procedure TDocumentoFiscal.SetVerificacoes(const Value: TVerificacoes);
+begin
+  FOpcoesDeVerificacao := Value;
+end;
+
 procedure TDocumentoFiscal.SetVolume(const Value: Integer);
 begin
   FVolume := Value;
 end;
 
+
+Function TDocumentoFiscal.VerificaDados: TStringList;
+begin
+   Result := TStringList.Create;
+
+   if tvCPF_CNPJ in FOpcoesDeVerificacao then
+   begin
+     {$Region 'Emitente'}
+     if Trim(Self.Emitente.CPF_CNPJ) = '' then
+       Result.Add('CPF/CNPJ do emitente não informado')
+     else
+     if Length(Self.Emitente.CPF_CNPJ) = 11 then //CPF
+     begin
+       if not Verifica_CPF(Self.Emitente.CPF_CNPJ) then
+         Result.Add('CPF do emitente inválido')
+     end else //CNPJ
+     if not Verifica_CNPJ(Self.Emitente.CPF_CNPJ) then
+       Result.Add('CNPJ do emitente inválido');
+     {$EndRegion}
+
+
+     {$Region 'Destinatario'}
+     if Trim(Self.Destinatario.CPF_CNPJ) = '' then
+       Result.Add('CPF/CNPJ do destinatário não informado')
+     else
+     if Length(Self.Destinatario.CPF_CNPJ) = 11 then //CPF
+     begin
+       if not Verifica_CPF(Self.Destinatario.CPF_CNPJ) then
+         Result.Add('CPF do destinatário inválido')
+     end else //CNPJ
+     if not Verifica_CNPJ(Self.Destinatario.CPF_CNPJ) then
+       Result.Add('CNPJ do destinatário inválido');
+     {$EndRegion}
+
+     {$Region 'Transportadora'}
+     if Trim(Self.Transportadora.CPF_CNPJ) = '' then
+       Result.Add('CPF/CNPJ do transportadora não informado')
+     else
+     if Length(Self.Transportadora.CPF_CNPJ) = 11 then //CPF
+     begin
+       if not Verifica_CPF(Self.Transportadora.CPF_CNPJ) then
+         Result.Add('CPF do transportadora inválido')
+     end else //CNPJ
+     if not Verifica_CNPJ(Self.Transportadora.CPF_CNPJ) then
+       Result.Add('CNPJ do transportadora inválido');
+     {$EndRegion}
+
+   end;
+
+   if tvIE in FOpcoesDeVerificacao then
+   begin
+     {$Region 'Emitente'}
+     if not Verifica_Inscricao_Estadual(Self.Emitente.IE) then
+       Result.Add('Inscrição Estadual do emitente inválido');
+     {$EndRegion}
+
+
+     {$Region 'Destinatario'}
+     if not Verifica_Inscricao_Estadual(Self.Destinatario.IE) then
+       Result.Add('Inscrição Estadual  do destinatário inválido');
+     {$EndRegion}
+
+     {$Region 'Transportadora'}
+     if not Verifica_Inscricao_Estadual(Self.Transportadora.IE) then
+       Result.Add('Inscrição Estadual do transportadora inválido');
+     {$EndRegion}
+
+   end;
+
+
+
+end;
 
 Procedure CriaDocumentoFiscal(Const DataSetNota, DataSetItens, DataSetCobranca: TDataSet; Var Doc: IDocumentoFiscal );
 var

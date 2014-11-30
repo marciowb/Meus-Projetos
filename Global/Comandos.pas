@@ -61,6 +61,7 @@ interface
   Function GetTime(Hora : TTime; Aspas : Boolean = True): String;overload;
   Function Verifica_CPF(Cpf : String ) : Boolean ;
   Function Verifica_CNPJ(CNPJ : String ) : Boolean ;
+  Function Verifica_Inscricao_Estadual(IE, UF : String ) : Boolean ;
   Function ExisteRegistroCds(CdsOrigem, CdsDestino: TpFIBClientDataSet  ;NomeCampoOrigem, NomeCampoDestino : String ) : Boolean;
   Function GetNumber(Valor : Currency ): String;
   Function VerificaLabelDbEdit(Form : TForm; CDs :TpFIBClientDataSet; TipoPesquisa: TTipoPesquisa): Boolean;
@@ -1007,6 +1008,35 @@ begin
   Result := (Digitos[13] = DV1) and (Digitos[14] = DV2);
 
 End;
+
+Function Verifica_Inscricao_Estadual(IE,UF : String ) : Boolean ;
+var
+  IRet, IOk, IErro, IPar    : Integer;
+
+  LibHandle                 : THandle;
+  ConsisteInscricaoEstadual : function (const Insc, UF: String): Integer; stdcall;
+begin
+
+  try
+    LibHandle :=  LoadLibrary (PChar (Trim ('DllInscE32.Dll')));
+    if  LibHandle <=  HINSTANCE_ERROR then
+      raise Exception.Create ('Dll não carregada');
+
+    @ConsisteInscricaoEstadual  :=  GetProcAddress (LibHandle, 'ConsisteInscricaoEstadual');
+    if  @ConsisteInscricaoEstadual  = nil then
+      raise Exception.Create('Entrypoint Download não encontrado na Dll');
+
+
+
+    IRet := ConsisteInscricaoEstadual (IE,UF);
+    Result := Iret = 0 ;
+
+
+  finally
+    FreeLibrary (LibHandle);
+  end;
+
+end;
 
 Function ExisteRegistroCds(CdsOrigem, CdsDestino : TpFIBClientDataSet  ;NomeCampoOrigem, NomeCampoDestino : String ) : Boolean;
 var
