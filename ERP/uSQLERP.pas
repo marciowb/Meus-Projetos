@@ -9,6 +9,8 @@ interface
      end;
 implementation
 
+uses uConstantes;
+
 { TSQLERP }
 
 function TSQLERP.GetMySQL(TipoPesquisa: TTipoPesquisa; Complemento,
@@ -31,8 +33,9 @@ begin
          DescricaoTabela := 'Empresa';
          Versao20 := False;
          Select :=
-           'SELECT E.IDEMPRESA, E.CODIGO, E.RAZAOSOCIAL, E.FANTASIA, E.CNPJ, '+
-           '       E.IDCEP, E.COMPLEMENTO, E.NUMERO, E.LOGOMARCA, E.IE,E.IM,E.NUMEROPROPOSTA, E.NUMEROCONTRATO, '+
+           'SELECT E.IDEMPRESA, E.CODIGO, E.RAZAOSOCIAL, E.FANTASIA, E.CNPJ,E.REGIMEEMPRESA, '+
+           '       E.IDCEP, E.COMPLEMENTO, E.NUMERO, E.LOGOMARCA, E.IE,E.IM,E.NUMEROPROPOSTA, '+
+           '       E.NUMEROCONTRATO,E.IDMUNICIPIO, '+
            '       E.TELEFONE, E.FAX, E.OBS,E.NUMEROOS,E.NUMEROSAIDA, CEP.CEP, CEP.LOGRADOURO, CEP.BAIRRO, '+
            '       CEP.CIDADE,COALESCE(E.UF, CEP.UF) UF  '+
            '  FROM EMPRESA E '+
@@ -40,7 +43,7 @@ begin
            '    ON (CEP.IDCEP = E.IDCEP) '+
            ' WHERE 1=1 '+Complemento;
        End;
-     tpERPCFOP:
+     tpERPCFOPVisivel,tpERPCFOP:
        Begin
          CampoChave := 'IDCFOP';
          CampoDisplay := 'NATUREZA';
@@ -50,9 +53,11 @@ begin
          CampoCodigo := 'CFOP';
          Versao20 := True;
          Select :=
-            'SELECT IDCFOP, CFOP, NATUREZA '+
+            'SELECT IDCFOP, CFOP, NATUREZA, FLAGTIPOOPERACAO, '+
+            '       FLAGTRIBUTAIPI,FLAGTRIBUTAICMS,'+
+            '       FLAGTRIBUTAST,FLAGTRIBUTAPIS_COFINS,CST_PIS_COFINS,FLAGVISIVEL '+
             '  FROM CFOP '+
-            '  WHERE 1=1 '+Complemento;
+            '  WHERE 1=1 '+IfThen(TipoPesquisa = tpERPCFOPVisivel,' AND COALESCE(FLAGVISIVEL,''N'') = ''Y'' ')+Complemento;
        End;
 
      tpERPUnidade:
@@ -115,9 +120,12 @@ begin
         DescricaoCampoDisplay := '';
         DescricaoTabela := 'NCM Impostos';
         Versao20 := True;
+        DesconsiderarCampos := 'TIPO_ALIQIPI;FLAGEDICAO';
         Select :=
           'SELECT IDNCMESTADO, IDNCM,UF,  '+
-          '       ALIQPIS, ALIQCOFINS, ALIQII, ALIQIPI ,VALOR_LI,''N'' FLAGEDICAO '+
+          '       ALIQPIS, ALIQCOFINS, ALIQII, ALIQIPI ,VALOR_LI,''N'' FLAGEDICAO, '+
+          '       CASE WHEN (ALIQIPI IS NULL ) AND (IPIVALOR IS NOT NULL ) THEN ''V'' '+
+          '            ELSE ''A'' END TIPO_ALIQIPI, ALIQREDUCAOBASEICMS '+
           '  FROM NCMESTADO '+
           ' WHERE 1=1 '+Complemento;
       End;
@@ -130,14 +138,17 @@ begin
        DescricaoTabela := 'Clientes';
        Versao20 := False;
        UsaMaxParaCodigo := True;
-       DesconsiderarCampos := 'GRUPOCLIENTE';
+       DesconsiderarCampos := 'GRUPOCLIENTE;MUNICIPIO;IBGE';
        Select :=
           ' SELECT C.IDCLIENTE, C.CODIGO, C.NOMECLIENTE, C.NUMERO, C.COMPLEMENTO, C.CPF,C.CNPJ, C.ORGAOEMISSOR,'+
           '        C.DATAEMISSAO, C.DATANASCIMENTO, C.DATACADASTRO, C.TELEFONE, C.OBS, C.RG, C.IDCEP, C.CELULAR,C.FANTASIA, '+
-          '        C.CONTATO, C.IE, C.IM, C.FLAGTIPOPESSOA,C.CEP, C.LOGRADOURO, C.BAIRRO, C.CIDADE, C.UF,C.EMAIL,C.IDGRUPOCLIENTE, G.NOME GRUPOCLIENTE'+
+          '        C.CONTATO, C.IE, C.IM, C.FLAGTIPOPESSOA,C.CEP, C.LOGRADOURO, C.BAIRRO, C.CIDADE, C.UF,C.EMAIL,C.IDGRUPOCLIENTE,'+
+          '        C.IDMUNICIPIO, G.NOME GRUPOCLIENTE,M.NOME MUNICIPIO, M.IBGE'+
           '   FROM CLIENTE C'+
           '   LEFT JOIN GRUPOCLIENTE G '+
           '     ON (G.IDGRUPOCLIENTE = C.IDGRUPOCLIENTE)'+
+          '   LEFT JOIN MUNICIPIO M '+
+          '     ON (M.IDMUNICIPIO = C.IDMUNICIPIO) '+
           '  WHERE 1=1 '+Complemento;
       End;
      tpERPGrupoCliente:
@@ -276,7 +287,7 @@ begin
         NomeTabela := 'PRODUTO';
         DescricaoCampoDisplay := 'Descrição';
         DescricaoTabela := 'Produto';
-        DesconsiderarCampos := 'NOMELINHA;NOMEGRUPO;RAZAOSOCIAL;NOMELOCALIZACAO;NOMEFABRICANTE;CODIGOMUNICIPALSERVICO,NCM';
+        DesconsiderarCampos := 'NOMELINHA;NOMEGRUPO;RAZAOSOCIAL;NOMELOCALIZACAO;NOMEFABRICANTE;CODIGOMUNICIPALSERVICO;NCM';
         Versao20 := False;
         UsaMaxParaCodigo := True;
         Select :=
@@ -779,7 +790,7 @@ begin
             '       FLAGCANCELADA,OBS,VALORDESCONTO,IDEMPRESA,'+
             '       FRETEPORCONTA,IDUSUARIO,DATACRIACAO,IDCLIENTE,'+
             '       NOMEOPERACAOESTOQUE,PESSOA,TIPOPESSOA,LOGIN,'+
-            '       IDCFOP,CODIGOEMPRESA,ESTACANCELADA,DESCTIPOPESSOA'+
+            '       IDCFOP,CODIGOEMPRESA,ESTACANCELADA,DESCTIPOPESSOA,TIPOTRANSPORTE'+
             ' FROM ('+
             '        SELECT E.IDENTRADA, E.DATA, E.IDOPERACAOESTOQUE, E.IDFORNECEDOR,'+
             '               E.NUMERONOTA, E.SERIE, E.MODELO, E.VALORTOTALPRODUTOS,'+
@@ -787,7 +798,7 @@ begin
             '               E.VALORST, E.VALORSEGURO, E.VALORFRETE, E.VALOROUTRAS,'+
             '               E.VALORTOTALNOTA, E.FLAGCANCELADA, E.OBS, E.VALORDESCONTO,'+
             '               E.IDEMPRESA, E.FRETEPORCONTA, E.IDUSUARIO,'+
-            '               E.DATACRIACAO, E.IDCLIENTE,'+
+            '               E.DATACRIACAO, E.IDCLIENTE,E.TIPOTRANSPORTE,'+
             '               O.NOMEOPERACAOESTOQUE,'+
             '               COALESCE(F.RAZAOSOCIAL,C.NOMECLIENTE) PESSOA,'+
             '               CASE WHEN E.IDFORNECEDOR IS NULL THEN ''C'' ELSE ''F'' END TIPOPESSOA,'+
@@ -829,7 +840,9 @@ begin
             '       EP.REDUCAOBASE, EP.IDUNIDADECOMPRA,EP.CST,EP.IDCFOPENTRADA,EP.IDALMOXARIFADO,'+
             '       EP.FATORMULTIPLICADOR, EP.QUANTIDADERECEBIDA,EP.IDPATRIMONIO,EP.CONTADORPATRIMONIO,COALESCE(P.CODIGO,PT.CODIGO) CODIGO_PRODUTO,'+
             '       COALESCE(P.NOMEPRODUTO,PT.NOMEPATRIMONIO) NOME_PRODUTO,C.CFOP,CE.CFOP CFOPENTRADA,U.CODIGO UNIDADE,UC.CODIGO UNIDADE_COMPRA,'+
-            '       PF.CODIGOPRODUTO CODIGOPRODUTOFORNECEDOR,''N'' FLAGEDICAO, A.NOMEALMOXARIFADO'+
+            '       PF.CODIGOPRODUTO CODIGOPRODUTOFORNECEDOR,''N'' FLAGEDICAO, A.NOMEALMOXARIFADO, '+
+            '        CASE WHEN P.CODIGO IS NULL THEN ''P'' '+
+            '             WHEN P.TIPOPRODUTO = '+QuotedStr(TipoProdutoServico)+' THEN ''S'' ELSE ''I'' END TIPO_ITEM '+
             '  FROM ENTRADA E '+
             ' INNER JOIN ENTRADAPRODUTO EP '+
             '    ON (EP.IDENTRADA = E.IDENTRADA)'+
@@ -882,7 +895,7 @@ begin
           Select :=
             ' SELECT IDOPERACAOESTOQUE, CODIGO, NOMEOPERACAOESTOQUE, '+
             '        FLAGTIPOOPERACAO, FLAGVENDA, FLAGTIPOPESSOA, FLAGGERAFINANCEIRO, '+
-            '        FLAGMOVIMENTAESTOQUE,FLAGDOCUMENTO,FLAGMOVPATRIMONIO '+
+            '        FLAGMOVIMENTAESTOQUE,FLAGDOCUMENTO,FLAGMOVPATRIMONIO,FLAGCONTABILIZARECEITABRUTA '+
             '   FROM OPERACAOESTOQUE'+
             '  WHERE  '+IfThen(TipoPesquisa = tpERPOperacaoEntrada,' FLAGTIPOOPERACAO =''E'' ',
                                  IfThen(TipoPesquisa = tpERPOperacaoSaida,' FLAGTIPOOPERACAO =''S'' ', ' 1=1 '))+   Complemento;
@@ -972,8 +985,8 @@ begin
           '        S.BASECALCULOICMS, S.BASECALCULOIPI,  S.BASECALCULOPISCOFINS, S.BASECALCULOICMSST,'+
           '        S.BASECALCULOISS, S.BASECSLL, S.VALORICMS, S.VALORIPI, S.VALORST, S.VALORPIS, S.VALORCOFINS, S.VALORTOTALNOTA,'+
           '        S.VALORICMSST, S.VALORISS, S.VAORPISSERVICO, S.VAORCOFINSSERVICO, S.VALORCSLL, S.CHAVEACESSO, S.FLAGCANCELADA,'+
-          '        S.JUSTIFICATIVACANCELAMENTO, S.IDUSUARIO, S.IDUSUARIOCANCELAMENTO, S.DATACANCELAMENTO, S.HORACANCELAMENTO,'+
-          '        S.IDPROPOSTA,S.FLAGVENDA, S.ALIQACRESCIMO,S.ALIQDESCONTO,S.IDFUNCIONARIO,S.NUMEROSAIDA,'+
+          '        S.JUSTIFICATIVACANCELAMENTO, S.IDUSUARIO, S.IDUSUARIOCANCELAMENTO, S.DATACANCELAMENTO, S.HORACANCELAMENTO, '+
+          '        S.IDPROPOSTA,S.FLAGVENDA, S.ALIQACRESCIMO,S.ALIQDESCONTO,S.IDFUNCIONARIO,S.NUMEROSAIDA,COALESCE(S.TIPOTRANSPORTE,7)TIPOTRANSPORTE, '+
           '        O.NOMEOPERACAOESTOQUE,COALESCE(C.CODIGO, F.CODIGO) CODIGO_PESSOA,'+
           '        COALESCE( C.NOMECLIENTE, F.RAZAOSOCIAL) PESSOA,COALESCE( C.UF, F.UF) UF_PESSOA, T.RAZAOSOCIAL TRANSPORTADORA ,'+
           '        U.LOGIN USUARIO,FU.NOMEFUNCIONARIO,'+
@@ -1005,16 +1018,19 @@ begin
         DescricaoTabela := 'Saída de produto(Itens)';
         Versao20 := False;
         CampoCodigo := '';
-        DesconsiderarCampos := 'CODIGO;NOMEPRODUTO;UNIDADE;CFOP;FLAGEDICAO';
+        DesconsiderarCampos := 'CODIGO;NOMEPRODUTO;UNIDADE;CFOP;FLAGEDICAO;TIPO_ITEM';
         Select :=
           ' SELECT SP.IDSAIDAPRODUTO, SP.IDSAIDA, SP.IDPRODUTO,SP.IDCOR, SP.IDTAMANHO, SP.NUMITEM, SP.IDUNIDADE, SP.QUANTIDADE, SP.VALORUNITARIO,'+
           '        SP.ALIQDESCONTO, SP.ALIQACRESCIMO, SP.VALORDESCONTO, SP.VALORACRESCIMO, SP.BASEICMS, SP.ALIQICMS, SP.VALORICMS,'+
           '        SP.BASEIPI, SP.ALIQIPI, SP.VALORIPI, SP.BASEICMSST, SP.ALIQST, SP.MVA, SP.VALORST, SP.BASEPISCOFINS, SP.ALIQPIS,'+
           '        SP.ALIQCOFINS, SP.VALORPIS, SP.VALORCOFINS, SP.BASEISS, SP.ALIQISS, SP.VALORISS, SP.BASECSLL, SP.ALIQCSLL,'+
-          '        SP.VALORCSLL, SP.IDCFOP, SP.IDNCM, SP.IDCODIGOMUNICIPAL, SP.CST, SP.CSOSN, SP.CUSTOMEDIO, SP.CUSTOESTOQUE,'+
+          '        SP.VALORCSLL,SP.BASEIRRF, SP.ALIQIRRF, SP.VALORIRRF,  SP.IDCFOP, SP.IDNCM, SP.IDCODIGOMUNICIPAL, SP.CST, SP.CSOSN,'+
+          '        SP.CUSTOMEDIO, SP.CUSTOESTOQUE,SP.CRT,SP.VALORUNITARIOORIGINAL, '+
           '        SP.CUSTOCONTABIL, SP.EAN, SP.MARCKUP, SP.VALORLUCRO, SP.VALORFRETERATEADO, SP.VALORSEGURORATEADO,SP.IDPATRIMONIO, SP.CONTADORPATRIMONIO,'+
           '        SP.VALOROUTRASDESPESASRATEADO, SP.SUBTOTAL, SP.VALORTOTAL,SP.OBS,SP.IDALMOXARIFADO, COALESCE(P.CODIGO , PT.CODIGO) CODIGO,'+
-          '        COALESCE(P.NOMEPRODUTO,PT.NOMEPATRIMONIO) NOMEPRODUTO, U.CODIGO UNIDADE,C.CFOP,''N'' FLAGEDICAO'+
+          '        COALESCE(P.NOMEPRODUTO,PT.NOMEPATRIMONIO) NOMEPRODUTO, U.CODIGO UNIDADE,C.CFOP,''N'' FLAGEDICAO, '+
+          '        CASE WHEN P.CODIGO IS NULL THEN ''P'' '+
+          '             WHEN P.TIPOPRODUTO = '+QuotedStr(TipoProdutoServico)+' THEN ''S'' ELSE ''I'' END TIPO_ITEM '+
           '   FROM SAIDAPRODUTO SP'+
           '   LEFT JOIN PRODUTO P'+
           '     ON (SP.IDPRODUTO = P.IDPRODUTO)'+
@@ -1116,13 +1132,13 @@ begin
         CampoCodigo := 'CEP';
         Select :=
           'EXECUTE BLOCK RETURNS (IDCEP CHAVE, CEP CHAR(8),LOGRADOURO VARCHAR(200),'+
-          '                       BAIRRO VARCHAR(100),CIDADE VARCHAR(100),UF CHAR(2)) AS '+
+          '                       BAIRRO VARCHAR(100),CIDADE VARCHAR(100),UF CHAR(2), IDMUNICIPIO CHAVE) AS '+
           'BEGIN '+
           '  FOR'+
-          '    SELECT IDCEP, CEP, LOGRADOURO, BAIRRO, CIDADE, ''RJ'' UF'+
+          '    SELECT IDCEP, CEP, LOGRADOURO, BAIRRO, CIDADE,UF,IDMUNICIPIO'+
           '      FROM CEP'+
           '     WHERE 1=1 '+Complemento+
-          '      INTO IDCEP,:CEP, :LOGRADOURO, :BAIRRO, :CIDADE, :UF'+
+          '      INTO IDCEP,:CEP, :LOGRADOURO, :BAIRRO, :CIDADE, :UF, :IDMUNICIPIO'+
           '   DO'+
           '    BEGIN'+
           '      SUSPEND;'+
@@ -1272,7 +1288,27 @@ begin
             '  FROM TIPOPATRIMONIO '+
             ' WHERE 1=1 '+Complemento;
        end;
-      tpERPPatrimonio,tpERPPatrimonioDisponivel:
+        else
+        Result := GetTSQL(TipoPesquisa,Complemento,Join);
+
+    end;
+
+  End;
+
+
+end;
+
+function TSQLERP.GetTSQL(TipoPesquisa: TTipoPesquisa; Complemento,
+  Join: String): TSQL;
+begin
+  Result.CampoCodigo := 'CODIGO' ;
+  Result.Versao20 := True;
+  Result.UsaMaxParaCodigo := True;
+  Result.TipoForm := TfGrid;
+  with Result do
+  Begin
+    case TipoPesquisa of
+       tpERPPatrimonio,tpERPPatrimonioDisponivel:
        begin
           CampoChave := 'IDPATRIMONIO';
           CampoDisplay := 'NOMEPATRIMONIO';
@@ -1340,59 +1376,7 @@ begin
             '    ON (TE.IDTIPOEVENTOPATRIMONIO = TI.IDTIPOEVENTOPATRIMONIO)  '+
             ' WHERE 1=1 '+Complemento;
         end;
-      tpERPPatrimoniosEventos:
-        begin
-          CampoChave := 'IDPATRIMONIOEVENTO';
-          CampoDisplay := '';
-          NomeTabela := 'PATRIMONIOEVENTO';
-          DescricaoCampoDisplay := '';
-          DescricaoTabela := 'Eventos do patrimônio';
-          CampoCodigo := '';
-          DesconsiderarCampos := 'IDTIPOPATRIMONIO;CODIGO;NOMETIPOEVENTOPATRIMONIO;FLAGEDICAO';
-          Versao20:= False;
-          Select :=
-            'SELECT IDPATRIMONIO,IDTIPOPATRIMONIO,IDPATRIMONIOEVENTO,'+
-            '       IDTIPOEVENTOPATRIMONIO,CODIGO,NOMETIPOEVENTOPATRIMONIO,'+
-            '       FLAGEDICAO'+
-            '  FROM ('+
-            '        SELECT CAST(NULL AS CHAVE) IDPATRIMONIO, TI.IDTIPOPATRIMONIO,'+
-            '               CAST(NULL AS CHAVE)  IDPATRIMONIOEVENTO, TE.IDTIPOEVENTOPATRIMONIO,'+
-            '               TE.CODIGO, TE.NOMETIPOEVENTOPATRIMONIO,''N'' FLAGEDICAO'+
-            '          FROM TIPOPATRIMONIOTIPOEVENTO TI'+
-            '         INNER JOIN TIPOEVENTOPATRIMONIO TE'+
-            '            ON (TE.IDTIPOEVENTOPATRIMONIO = TI.IDTIPOEVENTOPATRIMONIO)'+
-            '         UNION'+
-            '        SELECT PE.IDPATRIMONIO, P.IDTIPOPATRIMONIO,'+
-            '               PE.IDPATRIMONIOEVENTO, TE.IDTIPOEVENTOPATRIMONIO,'+
-            '               TE.CODIGO, TE.NOMETIPOEVENTOPATRIMONIO,''U'' FLAGEDICAO'+
-            '         FROM PATRIMONIO P'+
-            '        INNER JOIN PATRIMONIOEVENTO PE'+
-            '           ON (P.IDPATRIMONIO = PE.IDPATRIMONIO)'+
-            '        INNER JOIN  TIPOEVENTOPATRIMONIO TE'+
-            '           ON (PE.IDTIPOEVENTOPATRIMONIO = TE.IDTIPOEVENTOPATRIMONIO))X'+
-            ' WHERE 1=1 '+Complemento;
 
-        end;
-        else
-        Result := GetTSQL(TipoPesquisa,Complemento,Join);
-
-    end;
-
-  End;
-
-
-end;
-
-function TSQLERP.GetTSQL(TipoPesquisa: TTipoPesquisa; Complemento,
-  Join: String): TSQL;
-begin
-  Result.CampoCodigo := 'CODIGO' ;
-  Result.Versao20 := True;
-  Result.UsaMaxParaCodigo := True;
-  Result.TipoForm := TfGrid;
-  with Result do
-  Begin
-    case TipoPesquisa of
       tpERPPatrimoniosUsadosOS:
         Begin
           CampoChave := 'IDOSPATRIMONIOSUSADOS';
@@ -1498,7 +1482,7 @@ begin
           Select :=
             'SELECT ISS.IDISS, ISS.IDMUNICIPIO, ISS.IDCODIGOMUNICIPALSERVICO, ISS.ALIQISS, '+
             '       C.CODIGO,SUBSTRING( C.DESCRICAOCODIGOSERVICO FROM 1 FOR 100) DESCRICAO, '+
-            '       M.NOME MUNICIPIO '+
+            '       M.NOME MUNICIPIO, ISS.ALIQPIS,ISS.ALIQCOFINS, ISS.ALIQCSLL, ISS.VALORMINIMOTRIBFEDERAL, ISS.VALORMINIMOIR,ISS.ALIQIR '+
             '  FROM ISS '+
             ' INNER JOIN CODIGOMUNICIPALSERVICO C '+
             '    ON (ISS.IDCODIGOMUNICIPALSERVICO = C.IDCODIGOMUNICIPALSERVICO) '+
@@ -1506,7 +1490,151 @@ begin
             '    ON (M.IDMUNICIPIO = ISS.IDMUNICIPIO)'+
             ' WHERE 1=1 '+Complemento;
         end;
+        tpERPPatrimoniosEventos:
+        begin
+          CampoChave := 'IDPATRIMONIOEVENTO';
+          CampoDisplay := '';
+          NomeTabela := 'PATRIMONIOEVENTO';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'Eventos do patrimônio';
+          CampoCodigo := '';
+          DesconsiderarCampos := 'IDTIPOPATRIMONIO;CODIGO;NOMETIPOEVENTOPATRIMONIO;FLAGEDICAO';
+          Versao20:= False;
+          Select :=
+            'SELECT IDPATRIMONIO,IDTIPOPATRIMONIO,IDPATRIMONIOEVENTO,'+
+            '       IDTIPOEVENTOPATRIMONIO,CODIGO,NOMETIPOEVENTOPATRIMONIO,'+
+            '       FLAGEDICAO'+
+            '  FROM ('+
+            '        SELECT CAST(NULL AS CHAVE) IDPATRIMONIO, TI.IDTIPOPATRIMONIO,'+
+            '               CAST(NULL AS CHAVE)  IDPATRIMONIOEVENTO, TE.IDTIPOEVENTOPATRIMONIO,'+
+            '               TE.CODIGO, TE.NOMETIPOEVENTOPATRIMONIO,''N'' FLAGEDICAO'+
+            '          FROM TIPOPATRIMONIOTIPOEVENTO TI'+
+            '         INNER JOIN TIPOEVENTOPATRIMONIO TE'+
+            '            ON (TE.IDTIPOEVENTOPATRIMONIO = TI.IDTIPOEVENTOPATRIMONIO)'+
+            '         UNION'+
+            '        SELECT PE.IDPATRIMONIO, P.IDTIPOPATRIMONIO,'+
+            '               PE.IDPATRIMONIOEVENTO, TE.IDTIPOEVENTOPATRIMONIO,'+
+            '               TE.CODIGO, TE.NOMETIPOEVENTOPATRIMONIO,''U'' FLAGEDICAO'+
+            '         FROM PATRIMONIO P'+
+            '        INNER JOIN PATRIMONIOEVENTO PE'+
+            '           ON (P.IDPATRIMONIO = PE.IDPATRIMONIO)'+
+            '        INNER JOIN  TIPOEVENTOPATRIMONIO TE'+
+            '           ON (PE.IDTIPOEVENTOPATRIMONIO = TE.IDTIPOEVENTOPATRIMONIO))X'+
+            ' WHERE 1=1 '+Complemento;
 
+        end;
+        tpERPMunicpio:
+        begin
+          CampoChave := 'IDMUNICIPIO';
+          CampoDisplay := 'NOME';
+          NomeTabela := 'MUNICIPIO';
+          DescricaoCampoDisplay := 'Município';
+          DescricaoTabela := 'Municípios';
+          CampoCodigo := 'IBGE';
+          DesconsiderarCampos := '';
+          Versao20:= True;
+          Select :=
+             'SELECT  IDMUNICIPIO,UF,IBGE, NOME '+
+             '  FROM MUNICIPIO '+
+             ' WHERE 1=1 '+Complemento;
+        end;
+        tpERPCST:
+        begin
+          CampoChave := 'CST';
+          CampoDisplay := 'descricao';
+          NomeTabela := 'VW_SITUACAO_TRIBUTARIA';
+          DescricaoCampoDisplay := 'Descrição';
+          DescricaoTabela := 'CST';
+          CampoCodigo := 'CST';
+          DesconsiderarCampos := '';
+          Versao20:= True;
+          Select :=
+             'SELECT  CST,descricao, CST, ST, Origem, DESCRICAO, descricao_Origem, descricao_ST '+
+             '  FROM VW_SITUACAO_TRIBUTARIA '+
+             ' WHERE 1=1 '+Complemento;
+        end;
+
+        tpERPST:
+        begin
+          CampoChave := 'ST';
+          CampoDisplay := 'descricao_ST';
+          NomeTabela := 'VW_SITUACAO_TRIBUTARIA';
+          DescricaoCampoDisplay := 'Descrição';
+          DescricaoTabela := 'CST';
+          CampoCodigo := 'ST';
+          DesconsiderarCampos := '';
+          Versao20:= True;
+          Select :=
+             'SELECT distinct descricao_ST, ST '+
+             '  FROM VW_SITUACAO_TRIBUTARIA '+
+             ' WHERE 1=1 '+Complemento;
+        end;
+
+        tpERPCSOSN:
+        begin
+          CampoChave := 'CSOSN';
+          CampoDisplay := 'descricao';
+          NomeTabela := 'vw_CSOSN';
+          DescricaoCampoDisplay := 'Descrição';
+          DescricaoTabela := 'CSOSN';
+          CampoCodigo := 'CSOSN';
+          DesconsiderarCampos := '';
+          Versao20:= True;
+          Select :=
+             'SELECT  CSOSN,descricao,DETALHES '+
+             '  FROM vw_CSOSN '+
+             ' WHERE 1=1 '+Complemento;
+        end;
+       tpERPLimiteReceitaBruta:
+         begin
+          CampoChave := 'IDLIMITERECEITABRUTA';
+          CampoDisplay := 'VALOR';
+          NomeTabela := 'LIMITERECEITABRUTA';
+          CampoCodigo :='ANO';
+          DescricaoCampoDisplay := 'Valor';
+          DescricaoTabela := 'Limite de receita bruta decretada pelo governo(Somente para simples nacional e lucro presumido) ';
+          DesconsiderarCampos := 'FLAGEDICAO';
+          Versao20:= True;
+          Select :=
+             'SELECT  IDLIMITERECEITABRUTA,IDEMPRESA,ANO,VALOR,''N'' FLAGEDICAO '+
+             '  FROM LIMITERECEITABRUTA '+
+             ' WHERE 1=1 '+Complemento;
+        end;
+       tpERPCST_CFOP:
+         begin
+          CampoChave := 'IDCFOPCST';
+          CampoDisplay := 'DESCRICAO_ST';
+          NomeTabela := 'CFOPCST';
+          CampoCodigo :='CST';
+          DescricaoCampoDisplay := 'Descrição';
+          DescricaoTabela := 'CST/CFOP';
+          DesconsiderarCampos := 'FLAGEDICAO;DESCRICAO_ST;ST';
+          Versao20:= True;
+          Select :=
+             'SELECT CST.IDCFOPCST, CST.IDCFOP, CST.CST, CST.CSOSN,S.DESCRICAO_ST,''N'' FLAGEDICAO, S.ST '+
+             '  FROM CFOPCST CST '+
+             '  LEFT JOIN (SELECT DISTINCT ST, DESCRICAO_ST '+
+             '               FROM VW_SITUACAO_TRIBUTARIA) S '+
+             '    ON (S.ST = CST.CST) '+
+             ' WHERE 1=1 '+Complemento;
+        end;
+       tpERPCFOPSemelhante:
+          begin
+          CampoChave := 'IDCFOPSEMELHANTE';
+          CampoDisplay := 'NATUREZA';
+          NomeTabela := 'CFOPSEMELHANTE';
+          CampoCodigo :='CFOP';
+          DescricaoCampoDisplay := 'Descrição';
+          DescricaoTabela := 'CFOPs semelhantes';
+          DesconsiderarCampos := 'FLAGEDICAO;NATUREZA;CFOP';
+          Versao20:= True;
+          Select :=
+             'SELECT CS.IDCFOPSEMELHANTE, CS.IDCFOPPAI,CS.IDCFOP,CFOP.CFOP, CFOP.NATUREZA,''N'' FLAGEDICAO '+
+             '  FROM CFOPSEMELHANTE CS '+
+             ' INNER JOIN CFOP '+
+             '    ON (CS.IDCFOP = CFOP.IDCFOP) '+
+             ' WHERE 1=1 '+Complemento;
+        end;
     end;
   End;
 

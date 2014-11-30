@@ -42,6 +42,7 @@ type
     cxGrid1DBTableView1Column5: TcxGridDBColumn;
     cxGrid1DBTableView1Column6: TcxGridDBColumn;
     cxGrid1DBTableView1Column1: TcxGridDBColumn;
+    cxGrid1DBTableView1Column7: TcxGridDBColumn;
     procedure FormCreate(Sender: TObject);
     procedure CdsTributacoesBeforePost(DataSet: TDataSet);
     procedure CdsCadastroAfterPost(DataSet: TDataSet);

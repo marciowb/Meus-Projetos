@@ -3,6 +3,7 @@ inherited frmAddItemPadrao: TfrmAddItemPadrao
   Caption = 'frmAddItemPadrao'
   ClientHeight = 437
   ExplicitTop = -42
+  ExplicitWidth = 320
   ExplicitHeight = 476
   PixelsPerInch = 96
   TextHeight = 13
@@ -10,13 +11,13 @@ inherited frmAddItemPadrao: TfrmAddItemPadrao
     Top = 396
     ExplicitTop = 396
     inherited btnOk: TBitBtn
-      Left = 142
+      Left = 138
       Top = 6
       ExplicitLeft = 142
       ExplicitTop = 6
     end
     inherited btnCancelar: TBitBtn
-      Left = 239
+      Left = 235
       ExplicitLeft = 239
     end
   end

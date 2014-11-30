@@ -536,7 +536,7 @@ begin
   ConfiguraEditPesquisa(edtCodigoModelo, CdsEntrada, tpERPModeloNota);
   ConfiguraEditPesquisa(EdtEmpresa, CdsEntrada, tpERPEmpresa);
 
-  ConfiguraEditPesquisa(edtCFOP, CdsEntrada, tpERPCFOP);
+  ConfiguraEditPesquisa(edtCFOP, CdsEntrada, tpERPCFOPVisivel);
   edtCFOP.TamanhoCodigo := 4;
   edtCFOP.AutoPesquisa := True;
   edtCodigoModelo.TamanhoCodigo :=2;

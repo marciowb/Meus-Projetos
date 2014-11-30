@@ -23,28 +23,28 @@ inherited frmCad_Produto: TfrmCad_Produto
     Width = 530
     Height = 370
     ExplicitWidth = 530
-    ExplicitHeight = 371
+    ExplicitHeight = 370
     inherited PageControl: TcxPageControl
       Top = 48
       Width = 530
       Height = 322
-      ActivePage = cxTabSheet8
+      ActivePage = cxTabSheet4
       TabOrder = 1
       ExplicitTop = 48
       ExplicitWidth = 530
-      ExplicitHeight = 323
+      ExplicitHeight = 322
       ClientRectBottom = 321
       ClientRectRight = 529
       inherited TsPrincipal: TcxTabSheet
         ExplicitLeft = 1
         ExplicitTop = 21
         ExplicitWidth = 528
-        ExplicitHeight = 301
+        ExplicitHeight = 300
         inherited pnlGeral: TPanel
           Width = 528
           Height = 300
           ExplicitWidth = 528
-          ExplicitHeight = 301
+          ExplicitHeight = 300
           object btnAjustaEstoque: TSpeedButton
             Left = 468
             Top = 208
@@ -1306,7 +1306,6 @@ inherited frmCad_Produto: TfrmCad_Produto
             Height = 65
             Align = alBottom
             TabOrder = 19
-            ExplicitTop = 236
             object LabelDBEdit7: TLabelDBEdit
               Left = 10
               Top = 28
@@ -1421,10 +1420,6 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet1: TcxTabSheet
         Caption = 'Adicionais'
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 301
         object GroupBox1: TGroupBox
           Left = 0
           Top = 0
@@ -1457,7 +1452,6 @@ inherited frmCad_Produto: TfrmCad_Produto
           Align = alClient
           Caption = ' Observa'#231#245'es '
           TabOrder = 1
-          ExplicitHeight = 156
           object cxDBRichEdit2: TcxDBRichEdit
             Left = 2
             Top = 15
@@ -1482,7 +1476,6 @@ inherited frmCad_Produto: TfrmCad_Produto
           Align = alRight
           Caption = ' Imagem '
           TabOrder = 2
-          ExplicitHeight = 156
           object cxDBImage1: TcxDBImage
             Left = 2
             Top = 15
@@ -1502,10 +1495,6 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet4: TcxTabSheet
         Caption = 'Outros'
         ImageIndex = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 301
         object GroupBox5: TGroupBox
           Left = 0
           Top = 0
@@ -2051,16 +2040,11 @@ inherited frmCad_Produto: TfrmCad_Produto
           Align = alClient
           Caption = ' Fornecedores '
           TabOrder = 1
-          ExplicitHeight = 187
         end
       end
       object cxTabSheet8: TcxTabSheet
         Caption = 'Estoque'
         ImageIndex = 3
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 301
         object GroupBox6: TGroupBox
           Left = 0
           Top = 0
@@ -2076,10 +2060,6 @@ inherited frmCad_Produto: TfrmCad_Produto
             Height = 128
             Align = alClient
             TabOrder = 0
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 528
-            ExplicitHeight = 301
             object tvEstoque: TcxGridDBTableView
               Tag = 99
               NavigatorButtons.ConfirmDelete = False
@@ -2175,10 +2155,6 @@ inherited frmCad_Produto: TfrmCad_Produto
           Align = alClient
           Caption = ' Movimenta'#231#227'o '
           TabOrder = 1
-          ExplicitLeft = 24
-          ExplicitTop = 128
-          ExplicitWidth = 185
-          ExplicitHeight = 105
           object cxGrid4: TcxGrid
             Left = 2
             Top = 15
@@ -2186,9 +2162,6 @@ inherited frmCad_Produto: TfrmCad_Produto
             Height = 130
             Align = alClient
             TabOrder = 0
-            ExplicitLeft = 0
-            ExplicitTop = 14
-            ExplicitHeight = 178
             object TvMovimentacao: TcxGridDBTableView
               Tag = 99
               NavigatorButtons.ConfirmDelete = False
@@ -2316,22 +2289,16 @@ inherited frmCad_Produto: TfrmCad_Produto
         object cxSplitter1: TcxSplitter
           Left = 0
           Top = 145
-          Width = 8
+          Width = 528
           Height = 8
           HotZoneClassName = 'TcxMediaPlayer9Style'
           AlignSplitter = salTop
           Control = GroupBox6
-          ExplicitTop = 105
-          ExplicitWidth = 195
         end
       end
       object cxTabSheet7: TcxTabSheet
         Caption = 'Seriais'
         ImageIndex = 3
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 301
         object cxGrid2: TcxGrid
           Left = 0
           Top = 0
@@ -2339,7 +2306,6 @@ inherited frmCad_Produto: TfrmCad_Produto
           Height = 300
           Align = alClient
           TabOrder = 0
-          ExplicitHeight = 301
           object cxGrid2DBTableView1: TcxGridDBTableView
             NavigatorButtons.ConfirmDelete = False
             DataController.DataSource = DataSeriais
@@ -2377,10 +2343,6 @@ inherited frmCad_Produto: TfrmCad_Produto
       object cxTabSheet2: TcxTabSheet
         Caption = 'Processos/procedimentos'
         ImageIndex = 5
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 301
         object grpProcesso: TGroupBox
           Left = 0
           Top = 0
@@ -2389,7 +2351,6 @@ inherited frmCad_Produto: TfrmCad_Produto
           Align = alClient
           Caption = ' Processos/procedimentos'
           TabOrder = 0
-          ExplicitHeight = 301
           object cxGrid1: TcxGrid
             Left = 2
             Top = 15
@@ -2397,7 +2358,6 @@ inherited frmCad_Produto: TfrmCad_Produto
             Height = 283
             Align = alClient
             TabOrder = 0
-            ExplicitHeight = 284
             object cxGrid1DBTableView1: TcxGridDBTableView
               Tag = 99
               NavigatorButtons.OnButtonClick = cxGrid1DBTableView1NavigatorButtonsButtonClick

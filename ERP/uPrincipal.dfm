@@ -199,9 +199,6 @@ inherited frmPrincipal: TfrmPrincipal
         object Localizao1: TMenuItem
           Action = actLocalizacao
         end
-        object actNCM1: TMenuItem
-          Action = actNCM
-        end
         object Linha1: TMenuItem
           Action = actLinha
         end
@@ -213,9 +210,6 @@ inherited frmPrincipal: TfrmPrincipal
         end
         object OperaoEstoque1: TMenuItem
           Action = actOperacaoEstoque
-        end
-        object actCFOP1: TMenuItem
-          Action = actCFOP
         end
         object ransportadora1: TMenuItem
           Action = actTransportadora
@@ -255,6 +249,12 @@ inherited frmPrincipal: TfrmPrincipal
         end
         object actISS1: TMenuItem
           Action = actISS
+        end
+        object actCFOP1: TMenuItem
+          Action = actCFOP
+        end
+        object actNCM1: TMenuItem
+          Action = actNCM
         end
       end
       object Financeiro1: TMenuItem

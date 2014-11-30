@@ -18,6 +18,11 @@ interface
    TipoProdutoUsoInterno:String = 'I';
    TipoProdutoUsoInternoEVenda:String = 'X';
 
+   RegimeEmpresaSimples: String = 'S';
+   RegimeEmpresaLucroReal: String = 'L';
+   RegimeEmpresaLucroPresumido: String = 'P';
+   RegimeEmpresaMei: String = 'M';
+
    CfgOSBloqueiaFaturamentoParaOSNaoBaixadaNaoPermite: Integer = 0;
    CfgOSBloqueiaFaturamentoParaOSNaoBaixadaPergunta: Integer = 1;
    CfgOSBloqueiaFaturamentoParaOSNaoBaixadaPermite: Integer = 2;

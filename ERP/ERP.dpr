@@ -98,7 +98,8 @@ uses
   uALiqICMS in 'uALiqICMS.pas' {frmALiqICMS},
   uAliqISS in 'uAliqISS.pas' {frmAliqISS},
   uAuxConexao in 'uAuxConexao.pas' {frmAuxCOnexao},
-  uDocumentoFiscal in 'uDocumentoFiscal.pas';
+  uDocumentoFiscal in 'uDocumentoFiscal.pas',
+  uCad_CFOP in 'uCad_CFOP.pas' {frmCad_CFOP};
 
 {$R *.res}
 

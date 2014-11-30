@@ -56,6 +56,19 @@ type
     LabelDBEdit13: TLabelDBEdit;
     GroupBox3: TGroupBox;
     DBGrid1: TDBGrid;
+    cxTabSheet5: TcxTabSheet;
+    edtMunicipio: TEditPesquisa;
+    cxPageControl2: TcxPageControl;
+    cxTabSheet6: TcxTabSheet;
+    DBRadioGroup1: TDBRadioGroup;
+    cxTabSheet7: TcxTabSheet;
+    DataLimiteReceita: TDataSource;
+    CdsLimiteReceitaBruta: TpFIBClientDataSet;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    cxGrid1DBTableView1Column1: TcxGridDBColumn;
+    cxGrid1DBTableView1Column2: TcxGridDBColumn;
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -63,6 +76,13 @@ type
     procedure CdsCadastroAfterOpen(DataSet: TDataSet);
     procedure actGravarExecute(Sender: TObject);
     procedure edtCEPRegAchado(const ValoresCamposEstra: array of Variant);
+    procedure CdsLimiteReceitaBrutaNewRecord(DataSet: TDataSet);
+    procedure CdsLimiteReceitaBrutaBeforePost(DataSet: TDataSet);
+    procedure CdsLimiteReceitaBrutaAfterOpen(DataSet: TDataSet);
+    procedure CdsLimiteReceitaBrutaBeforeDelete(DataSet: TDataSet);
+    procedure CdsCadastroAfterPost(DataSet: TDataSet);
+    procedure CdsCadastroAfterScroll(DataSet: TDataSet);
+    procedure CdsLimiteReceitaBrutaBeforeEdit(DataSet: TDataSet);
   private
     { Private declarations }
 
@@ -103,6 +123,61 @@ begin
   FormataMascara(CdsCadastro.FieldByName('CNPJ'),tcCNPJ);
 end;
 
+procedure TfrmLst_Empresa.CdsCadastroAfterPost(DataSet: TDataSet);
+begin
+  inherited;
+  SetRegistros(CdsLimiteReceitaBruta,tpERPLimiteReceitaBruta);
+end;
+
+procedure TfrmLst_Empresa.CdsCadastroAfterScroll(DataSet: TDataSet);
+begin
+  inherited;
+  SetCds(CdsLimiteReceitaBruta,tpERPLimiteReceitaBruta,'idempresa= '+TipoCampoChaveToStr(ValorChave));
+end;
+
+procedure TfrmLst_Empresa.CdsLimiteReceitaBrutaAfterOpen(DataSet: TDataSet);
+begin
+  inherited;
+  FormataMascara(CdsLimiteReceitaBruta.FieldByName('valor'), tcMoeda);
+end;
+
+procedure TfrmLst_Empresa.CdsLimiteReceitaBrutaBeforeDelete(DataSet: TDataSet);
+begin
+  inherited;
+  if ConfirmaDel then
+  begin
+    MudaEstado;
+    CdsLimiteReceitaBruta.Edit;
+    CdsLimiteReceitaBruta.FieldByName('FLAGEDICAO').AsString :='D';
+    CdsLimiteReceitaBruta.Post;
+  end;
+  Abort;
+
+end;
+
+procedure TfrmLst_Empresa.CdsLimiteReceitaBrutaBeforeEdit(DataSet: TDataSet);
+begin
+  inherited;
+  MudaEstado;
+end;
+
+procedure TfrmLst_Empresa.CdsLimiteReceitaBrutaBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  if CdsLimiteReceitaBruta.FieldByName('FLAGEDICAO').Value = 'N' then
+     CdsLimiteReceitaBruta.FieldByName('FLAGEDICAO').Value := 'E';
+end;
+
+procedure TfrmLst_Empresa.CdsLimiteReceitaBrutaNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  MudaEstado;
+  CdsLimiteReceitaBruta.FieldByName('IDLIMITERECEITABRUTA').Value := GetCodigo(tpERPLimiteReceitaBruta);
+  CdsLimiteReceitaBruta.FieldByName('IDEMPRESA').Value := ValorChave;
+  CdsLimiteReceitaBruta.FieldByName('FLAGEDICAO').Value := 'I';
+
+end;
+
 procedure TfrmLst_Empresa.edtCEPRegAchado(
   const ValoresCamposEstra: array of Variant);
 begin
@@ -112,6 +187,8 @@ begin
     edtBairro.Text := FieldByName('BAIRRO').AsString;
     edtCidade.Text := FieldByName('CIDADE').AsString;
     edtUf.Text :=     FieldByName('UF').AsString;
+    edtMunicipio.ValorChave := FieldByName('IDMUNICIPIO').Value;
+    edtMunicipio.Localiza;
     Free;
   End;
 end;
@@ -133,7 +210,7 @@ begin
   CriaColuna('CODIGO','Código');
   CriaColuna('RAZAOSOCIAL','Razão social',120);
   ConfiguraEditPesquisa(edtCEP,CdsCadastro,tpERPCEP,True, 'LOGRADOURO','CEP','CEP','IDCEP',8);
-
+  ConfiguraEditPesquisa(edtMunicipio,CdsCadastro,tpERPMunicpio,True);
 
 end;
 

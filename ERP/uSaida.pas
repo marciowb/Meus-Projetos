@@ -105,7 +105,7 @@ type
     LabelDBEdit3: TLabelDBEdit;
     LabelDBEdit4: TLabelDBEdit;
     edtTransportadora: TEditPesquisa;
-    LabelDBEdit5: TLabelDBEdit;
+    edtPlaca: TLabelDBEdit;
     cmbUF: TDBComboBox;
     cxDBDateEdit2: TcxDBDateEdit;
     LabelDBEdit6: TLabelDBEdit;
@@ -140,6 +140,7 @@ type
     EdtAlmoxarifado: TEditPesquisa;
     edtFuncionario: TEditPesquisa;
     CdsSeriais: TpFIBClientDataSet;
+    grpViaTranporte: TDBRadioGroup;
     procedure actNovoPagamentoExecute(Sender: TObject);
     procedure actEditarPagamentoExecute(Sender: TObject);
     procedure actExcluirPagamentoExecute(Sender: TObject);
@@ -169,6 +170,7 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure CdsItensAfterScroll(DataSet: TDataSet);
     procedure CdsItensBeforePost(DataSet: TDataSet);
+    procedure grpViaTranporteChange(Sender: TObject);
   private
     { Private declarations }
     UfEmpresa: String;
@@ -224,6 +226,9 @@ begin
     frmDlg_SaidaItem.pDataSet.Edit;
     frmDlg_SaidaItem.FechaEGrava := True;
     frmDlg_SaidaItem.TipoMovimento := FTipoMovimento;
+    frmDlg_SaidaItem.IdCLiente := edtPessoa.ValorChave;
+    frmDlg_SaidaItem.IdEmpresa := edtEmpresa.ValorChave;
+    frmDlg_SaidaItem.ShowModal;
     frmDlg_SaidaItem.ShowModal;
     CalculaTotais;
   Finally
@@ -288,6 +293,8 @@ begin
     frmDlg_SaidaItem.pDataSet.Append;
     frmDlg_SaidaItem.FechaEGrava := False;
     frmDlg_SaidaItem.TipoMovimento := FTipoMovimento;
+    frmDlg_SaidaItem.IdCLiente := edtPessoa.ValorChave;
+    frmDlg_SaidaItem.IdEmpresa := edtEmpresa.ValorChave;
     frmDlg_SaidaItem.ShowModal;
     CalculaTotais;
   Finally
@@ -416,17 +423,19 @@ begin
 
     CdsSaida.FieldByName('VALORDESCONTOTOTAL').AsCurrency := ValorDesconto;
     CdsSaida.FieldByName('VALORACRESCIMOTOTAL').AsCurrency := ValorAcrescimo;
-
     TotalNota :=
      TotalProduto+
        IPI+ST+CdsSaida.FieldByName('VALOROUTRASDESPESAS').AsCurrency+CdsSaida.FieldByName('VALORSEGURO').AsCurrency+
        ifThen(grpFrete.ItemIndex = 0,CdsSaida.FieldByName('VALORFRETE').AsCurrency);
 
-    CdsSaida.FieldByName('ALIQDESCONTO').AsCurrency :=
-          (CdsSaida.FieldByName('VALORDESCONTOTOTAL').AsCurrency  / TotalNota) * 100;
+    if TotalNota > 0 then
+    begin
+      CdsSaida.FieldByName('ALIQDESCONTO').AsCurrency :=
+            (CdsSaida.FieldByName('VALORDESCONTOTOTAL').AsCurrency  / TotalNota) * 100;
 
-    CdsSaida.FieldByName('ALIQACRESCIMO').AsCurrency :=
-          (CdsSaida.FieldByName('VALORACRESCIMOTOTAL').AsCurrency  / TotalNota) * 100;
+      CdsSaida.FieldByName('ALIQACRESCIMO').AsCurrency :=
+            (CdsSaida.FieldByName('VALORACRESCIMOTOTAL').AsCurrency  / TotalNota) * 100;
+    end;
 
     CdsSaida.FieldByName('VALORTOTALNOTA').AsCurrency := (TotalNota-ValorDesconto)+ValorAcrescimo;
 
@@ -529,6 +538,7 @@ begin
   CdsItens.FieldByName('IDSAIDAPRODUTO').Value := GetCodigo(tpERPSaidaProduto);
   CdsItens.FieldByName('flagedicao').AsString := 'I';
   CdsItens.FieldByName('IDALMOXARIFADO').Value := EdtAlmoxarifado.ValorChave;
+  CdsItens.FieldByName('CRT').AsString := TRegrasImpostos.GetCRT(CdsSaida.FieldByName('IDEMPRESA').AsString , CdsSaida.FieldByName('Data').AsDateTime );
 end;
 
 procedure TfrmSaida.CdsParcelamentosBeforePost(DataSet: TDataSet);
@@ -652,7 +662,7 @@ begin
   GeraFinanceiro := ValoresCamposEstra[1] = 'Y'; //FLAGGERAFINANCEIRO
   GroupPagamento.Enabled := GeraFinanceiro;
 
-  if ValoresCamposEstra[1] = 'N' then //FLAGMOVPATRIMONIO
+  if ValoresCamposEstra[2] = 'N' then //FLAGMOVPATRIMONIO
     FTipoMovimento := tmProduto
   else
     FTipoMovimento := tmPatrimonio;
@@ -690,6 +700,22 @@ procedure TfrmSaida.grpFreteClick(Sender: TObject);
 begin
   inherited;
   CalculaTotais;
+end;
+
+procedure TfrmSaida.grpViaTranporteChange(Sender: TObject);
+begin
+  inherited;
+  if grpViaTranporte.ItemIndex >= 0 then
+  begin
+    edtPlaca.Enabled := grpViaTranporte.Values[grpViaTranporte.ItemIndex] = '7';
+    cmbUF.Enabled := grpViaTranporte.Values[grpViaTranporte.ItemIndex] = '7';
+    if grpViaTranporte.Values[grpViaTranporte.ItemIndex] <> '7' then
+    begin
+      edtPlaca.Clear;
+      cmbUF.ItemIndex :=-1;
+    end;
+  end;
+
 end;
 
 procedure TfrmSaida.ImportaOS(idOS: TipoCampoChave);

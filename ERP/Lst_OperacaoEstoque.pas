@@ -31,6 +31,7 @@ type
     cxDBCheckBox3: TcxDBCheckBox;
     DBRadioGroup3: TDBRadioGroup;
     cxDBCheckBox4: TcxDBCheckBox;
+    cxDBCheckBox5: TcxDBCheckBox;
     procedure actGravarExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure CdsCadastroBeforePost(DataSet: TDataSet);

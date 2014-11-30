@@ -1,28 +1,28 @@
 inherited frmLst_Empresa: TfrmLst_Empresa
   Caption = 'Cadastro de empresa'
-  ClientHeight = 535
-  ExplicitWidth = 658
-  ExplicitHeight = 574
+  ClientHeight = 598
+  ExplicitTop = -104
+  ExplicitHeight = 637
   PixelsPerInch = 96
   TextHeight = 13
   inherited Status: TStatusBar
-    Top = 516
-    ExplicitTop = 516
+    Top = 579
+    ExplicitTop = 571
   end
   inherited Panel1: TPanel
-    Height = 516
-    ExplicitHeight = 516
+    Height = 579
+    ExplicitHeight = 571
     inherited cxSplitter1: TcxSplitter
-      Height = 486
-      ExplicitHeight = 486
+      Height = 549
+      ExplicitHeight = 541
     end
     inherited Panel3: TPanel
-      Height = 486
-      ExplicitHeight = 486
+      Height = 549
+      ExplicitHeight = 541
       inherited Panel4: TPanel
-        Top = 445
+        Top = 508
         TabOrder = 9
-        ExplicitTop = 445
+        ExplicitTop = 500
         inherited BitBtn1: TBitBtn
           Width = 105
           ExplicitWidth = 105
@@ -150,27 +150,29 @@ inherited frmLst_Empresa: TfrmLst_Empresa
       end
       object cxPageControl1: TcxPageControl
         Left = 0
-        Top = 252
+        Top = 264
         Width = 323
-        Height = 193
-        ActivePage = cxTabSheet1
+        Height = 244
+        ActivePage = cxTabSheet5
         Align = alBottom
         Style = 10
         TabOrder = 8
         TabPosition = tpBottom
-        ClientRectBottom = 174
+        ClientRectBottom = 225
         ClientRectRight = 323
         ClientRectTop = 0
         object cxTabSheet1: TcxTabSheet
           Caption = 'Endere'#231'o'
           ImageIndex = 0
+          ExplicitHeight = 174
           object GroupBox1: TGroupBox
             Left = 0
             Top = 0
             Width = 323
-            Height = 174
+            Height = 225
             Align = alClient
             TabOrder = 0
+            ExplicitHeight = 174
             object edtCEP: TEditPesquisa
               Left = 12
               Top = 25
@@ -434,22 +436,324 @@ inherited frmLst_Empresa: TfrmLst_Empresa
               ReadOnly = True
               TabOrder = 6
             end
+            object edtMunicipio: TEditPesquisa
+              Left = 16
+              Top = 184
+              Width = 65
+              Height = 21
+              TabOrder = 7
+              TipoPesquisa = 0
+              TamanhoCodigo = 0
+              AutoPesquisa = True
+              AutoCompletar = True
+              UsaBtnNovo = False
+              UsaBtnEditar = False
+              UsaDisplay = True
+              LblTitulo.Left = 16
+              LblTitulo.Top = 169
+              LblTitulo.Width = 43
+              LblTitulo.Height = 13
+              LblTitulo.Caption = 'Munic'#237'pio'
+              BtnPesquisa.Left = 83
+              BtnPesquisa.Top = 184
+              BtnPesquisa.Width = 25
+              BtnPesquisa.Height = 21
+              BtnPesquisa.Hint = 'F2 para pesquisar'
+              BtnPesquisa.Glyph.Data = {
+                36060000424D3606000000000000360000002800000020000000100000000100
+                1800000000000006000000000000000000000000000000000000FF00FF4A667C
+                BE9596FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+                FFFF00FFFF00FFFF00FFFF00FF777777BDBDBDFF00FFFF00FFFF00FFFF00FFFF
+                00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF6B9CC31E89E8
+                4B7AA3C89693FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+                FFFF00FFFF00FFFF00FFABABAB9797978B8B8BC1C1C1FF00FFFF00FFFF00FFFF
+                00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF4BB4FE51B5FF
+                2089E94B7AA2C69592FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+                FFFF00FFFF00FFFF00FFB8B8B8BCBCBC9898988A8A8AC0C0C0FF00FFFF00FFFF
+                00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF51B7FE
+                51B3FF1D87E64E7AA0CA9792FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+                FFFF00FFFF00FFFF00FFFF00FFBBBBBBBCBCBC9595958B8B8BC2C2C2FF00FFFF
+                00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+                51B7FE4EB2FF1F89E64E7BA2B99497FF00FFFF00FFFF00FFFF00FFFF00FFFF00
+                FFFF00FFFF00FFFF00FFFF00FFFF00FFBBBBBBBABABA9696968C8C8CBABABAFF
+                00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+                FF00FF52B8FE4BB1FF2787D95F6A76FF00FFB0857FC09F94C09F96BC988EFF00
+                FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFBCBCBCB9B9B99494947E7E7EFF
+                00FF979797AAAAAAABABABA5A5A5FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+                FF00FFFF00FF55BDFFB5D6EDBF9D92BB9B8CE7DAC2FFFFE3FFFFE5FDFADAD8C3
+                B3B58D85FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFBEBEBED1D1D1A8A8A8A3
+                A3A3D4D4D4F1F1F1F2F2F2EBEBEBC5C5C59D9D9DFF00FFFF00FFFF00FFFF00FF
+                FF00FFFF00FFFF00FFFF00FFCEA795FDEEBEFFFFD8FFFFDAFFFFDBFFFFE6FFFF
+                FBEADDDCAE837FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFB1B1B1DD
+                DDDDEBEBEBECECECEDEDEDF2F2F2FDFDFDE3E3E3969696FF00FFFF00FFFF00FF
+                FF00FFFF00FFFF00FFFF00FFC1A091FBDCA8FEF7D0FFFFDBFFFFE3FFFFF8FFFF
+                FDFFFFFDC6A99CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFA9A9A9D1
+                D1D1E7E7E7EDEDEDF1F1F1FBFBFBFEFEFEFEFEFEB1B1B1FF00FFFF00FFFF00FF
+                FF00FFFF00FFFF00FFC1A091FEE3ACF1C491FCF2CAFFFFDDFFFFE4FFFFF7FFFF
+                F7FFFFE9EEE5CBB9948CFF00FFFF00FFFF00FFFF00FFFF00FFA9A9A9D5D5D5C1
+                C1C1E3E3E3EEEEEEF1F1F1FBFBFBFBFBFBF4F4F4DCDCDCA2A2A2FF00FFFF00FF
+                FF00FFFF00FFFF00FFC2A191FFE6AEEEB581F7DCAEFEFDD8FFFFDFFFFFE3FFFF
+                E4FFFFE0F3ECD2BB968EFF00FFFF00FFFF00FFFF00FFFF00FFA9A9A9D6D6D6B7
+                B7B7D2D2D2EBEBEBEFEFEFF1F1F1F1F1F1EFEFEFE2E2E2A4A4A4FF00FFFF00FF
+                FF00FFFF00FFFF00FFBC978CFBE7B7F4C791F2C994F8E5B9FEFCD8FFFFDDFFFF
+                DCFFFFE0E2D2BAB68E86FF00FFFF00FFFF00FFFF00FFFF00FFA4A4A4D9D9D9C2
+                C2C2C3C3C3D8D8D8EBEBEBEEEEEEEDEDEDEFEFEFCECECE9E9E9EFF00FFFF00FF
+                FF00FFFF00FFFF00FFFF00FFD9C3A9FFFEE5F7DCB8F2C994F5D4A5FAE8BDFDF4
+                C9FDFBD6B69089FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC1C1C1F2
+                F2F2D7D7D7C3C3C3CDCDCDDBDBDBE3E3E3E9E9E99F9F9FFF00FFFF00FFFF00FF
+                FF00FFFF00FFFF00FFFF00FFB58D85E8DEDDFFFEF2F9D8A3F4C48CF9D49FFDEA
+                B8D0B49FB89086FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF9D9D9DE2
+                E2E2F8F8F8CECECEC0C0C0CCCCCCDADADAB7B7B79F9F9FFF00FFFF00FFFF00FF
+                FF00FFFF00FFFF00FFFF00FFFF00FFAD827FC9AA9EEFE0B7EFDFB2E7CEACB890
+                86B89086FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF96
+                9696B3B3B3D3D3D3D0D0D0C9C9C99F9F9F9F9F9FFF00FFFF00FFFF00FFFF00FF
+                FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFBA968ABB988CB79188FF00
+                FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+                00FFFF00FFA2A2A2A3A3A39F9F9FFF00FFFF00FFFF00FFFF00FF}
+              BtnPesquisa.NumGlyphs = 2
+              BtnPesquisa.ParentShowHint = False
+              BtnPesquisa.ShowHint = True
+              BtnNovo.Left = 108
+              BtnNovo.Top = 184
+              BtnNovo.Width = 25
+              BtnNovo.Height = 21
+              BtnNovo.Hint = 'F3 para criar novo registro'
+              BtnNovo.Glyph.Data = {
+                36060000424D3606000000000000360000002800000020000000100000000100
+                18000000000000060000120B0000120B00000000000000000000FF00FFFF00FF
+                B78183B78183B78183B78183B78183B78183B78183B78183B78183B78183B781
+                83B78183B78183FF00FFFF00FFFF00FF9C9C9C9C9C9C9C9C9C9C9C9C9C9C9C9C
+                9C9C9C9C9C9C9C9C9C9C9C9C9C9C9C9C9C9C9C9C9C9C9CFF00FFFF00FFFF00FF
+                C7A79CFEEED4F7E3C5F6DFBCF5DBB4F3D7ABF3D3A2F1CF9AF0CF97F0CF98F0CF
+                98F5D49AB78183FF00FFFF00FFFF00FF9C9C9CE9E9E9DEDEDED9D9D9D4D4D4CF
+                CFCFCACACAC5C5C5C3C3C3C4C4C4C4C4C4C7C7C79C9C9CFF00FFFF00FFFF00FF
+                C7A79EFDEFD9F6E3CBF5DFC2F4DBBAF2D7B2F1D4A9F1D0A2EECC99EECC97EECC
+                97F3D199B78183FF00FFFF00FFFF00FF9C9C9CEBEBEBE0E0E0DBDBDBD7D7D7D2
+                D2D2CDCDCDC9C9C9C3C3C3C2C2C2C2C2C2C6C6C69C9C9CFF00FFFF00FFFF00FF
+                C7A9A1FEF3E3F8E7D3F5E3CBF5DFC3F3DBBBF2D7B2F1D4ABF0D0A3EECC9AEECC
+                97F3D199B78183FF00FFFF00FFFF00FF959595F0F0F0E5E5E5E0E0E0DCDCDCD7
+                D7D7D2D2D2CECECEC9C9C9C4C4C4C2C2C2C6C6C69C9C9CFF00FFFF00FFFF00FF
+                C9ACA5FFF7EBF9EBDAF7E7D2F6E3CAF5DFC2F4DBB9F2D7B2F1D4AAF0D0A1EFCD
+                99F3D198B78183FF00FFFF00FFFF00FF959595F5F5F5E9E9E9E4E4E4E0E0E0DB
+                DBDBD6D6D6D2D2D2CDCDCDC8C8C8C4C4C4C5C5C59C9C9CFF00FFFF00FFFF00FF
+                CEB2AAFFFCF4FAEFE4F8EADAF7E7D3F5E2CBF5DFC2F4DBBBF1D7B2F1D3AAF0D0
+                A1F3D29BB78183FF00FFFF00FFFF00FF9F9F9FF9F9F9EFEFEFE9E9E9E5E5E5E0
+                E0E0DBDBDBD7D7D7D1D1D1CDCDCDC8C8C8C7C7C79C9C9CFF00FFFF00FFFF00FF
+                D3B7AFFFFFFDFBF4ECFAEFE3F9EBDAF7E7D2F5E3C9F5DFC2F4DBBAF2D7B1F0D4
+                A9F5D5A3B78183FF00FFFF00FFFF00FF9F9F9FFEFEFEF3F3F3EEEEEEE9E9E9E4
+                E4E4DFDFDFDBDBDBD7D7D7D1D1D1CCCCCCCCCCCC9C9C9CFF00FFFF00FFFF00FF
+                D7BBB2FFFFFFFEF9F5FBF3ECFAEFE2F9EADAF8E7D2F5E3CAF5DEC2F4DBBAF2D8
+                B2F6D9ACB78183FF00FFFF00FFFF00FFA6A6A6FFFFFFF9F9F9F3F3F3EEEEEEE9
+                E9E9E5E5E5DFDFDFDBDBDBD7D7D7D2D2D2D1D1D19C9C9CFF00FFFF00FFFF00FF
+                DABEB3FFFFFFFFFEFDFDF8F4FBF3ECF9EFE3F8EADAF7E7D2F6E2CAF6DEC1F4DB
+                B9F8DDB4B78183FF00FFFF00FFFF00FFA6A6A6FFFFFFFEFEFEF8F8F8F3F3F3EE
+                EEEEE9E9E9E4E4E4E0E0E0DBDBDBD6D6D6D6D6D69C9C9CFF00FFFF00FFFF00FF
+                DEC1B5FFFFFFFFFFFFFFFEFDFEF9F4FBF3EBFAEFE2F9EBD9F8E6D1F6E2C8F7E1
+                C2F0DAB7B78183FF00FFFF00FFFF00FFB1B1B1FFFFFFFFFFFFFEFEFEF9F9F9F3
+                F3F3EEEEEEE9E9E9E4E4E4DFDFDFDCDCDCD3D3D39C9C9CFF00FFFF00FFFF00FF
+                E2C5B5FFFFFFFFFFFFFFFFFFFFFEFDFDF9F4FBF3EBFAEEE2FAEDDCFCEFD9E6D9
+                C4C6BCA9B78183FF00FFFF00FFFF00FFB1B1B1FFFFFFFFFFFFFFFFFFFEFEFEF8
+                F8F8F3F3F3EEEEEEEBEBEBEAEAEAD5D5D5B7B7B79C9C9CFF00FFFF00FFFF00FF
+                E5C7B7FFFFFFFFFFFFFFFFFFFFFFFFFFFEFDFDF8F3FDF6ECF1E1D5C6A194B594
+                89B08F81B78183FF00FFFF00FFFF00FFB8B8B8FFFFFFFFFFFFFFFFFFFFFFFFFE
+                FEFEF8F8F8F4F4F4E3E3E39999999999999999999C9C9CFF00FFFF00FFFF00FF
+                E9CBB8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFCFFFEF9E3CFC9BF8C76E8B2
+                70ECA54AC58768FF00FFFF00FFFF00FFB8B8B8FFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFDFDFDFCFCFCD6D6D6999999ACACAC9B9B9B969696FF00FFFF00FFFF00FF
+                ECCDBAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4D4D2C89A7FFAC5
+                77CD9377FF00FFFF00FFFF00FFFF00FFBFBFBFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFDBDBDB999999B8B8B8A2A2A2FF00FFFF00FFFF00FFFF00FF
+                EACAB6FCF7F4FCF7F3FBF6F3FBF6F3FAF5F3F9F5F3F9F5F3E1D0CEC7977CCF9B
+                86FF00FFFF00FFFF00FFFF00FFFF00FFBFBFBFF8F8F8F7F7F7F7F7F7F7F7F7F6
+                F6F6F6F6F6F6F6F6D7D7D7999999AAAAAAFF00FFFF00FFFF00FFFF00FFFF00FF
+                E9C6B1EBCCB8EBCCB8EBCCB8EBCBB8EACBB8EACBB8EACCB9DABBB0B8857AFF00
+                FFFF00FFFF00FFFF00FFFF00FFFF00FFBFBFBFB1B1B1B1B1B1B1B1B1B1B1B1B1
+                B1B1B1B1B1B1B1B1B1B1B1999999FF00FFFF00FFFF00FFFF00FF}
+              BtnNovo.NumGlyphs = 2
+              BtnNovo.ParentShowHint = False
+              BtnNovo.ShowHint = True
+              BtnNovo.Visible = False
+              BtnEditar.Left = 133
+              BtnEditar.Top = 184
+              BtnEditar.Width = 25
+              BtnEditar.Height = 21
+              BtnEditar.Hint = 'F5 para editar esse registro'
+              BtnEditar.Glyph.Data = {
+                36030000424D3603000000000000360000002800000010000000100000000100
+                18000000000000030000610B0000610B00000000000000000000FF00FFFF00FF
+                9596968184868184868184868184868184868184868184868184868184868184
+                86818486818486FF00FFFF00FFFF00FF959696FEFEFCFCFCFBF8F8F7F3F3F2EF
+                EFEEEBEBEAE6E6E5E2E2E1DCDCDCD0D0D0C5C5C5818486FF00FFFF00FFFF00FF
+                959696FEFEFCB6B6B6B6B6B6B6B6B6B6B6B6B6B6B6B6B6B6B6B6B6B6B6B6B6B6
+                B6D0D0D0818486FF00FFFF00FFFF00FF959696FEFEFC1919193E3935CAB6ABF8
+                F8F7F3F3F2EFEFEEEBEBEAE6E6E5E2E2E1DCDCDC818486FF00FFFF00FFFF00FF
+                959696FEFEFC3E39352D2C2A374546CAB6ABF8F8F7F3F3F2EFEFEEEBEBEAE6E6
+                E5E2E2E1818486FF00FFFF00FFFF00FF959696FEFEFCB6B6B63A5C600C84B10B
+                3B542A407BB6A1A1B6B6B6B6B6B6B6B6B6E6E6E5818486FF00FFFF00FFFF00FF
+                959696FEFEFCFEFEFC3A5C60165E827B645A0C84B12A407BCAB6ABF3F3F2EFEF
+                EEEBEBEA818486FF00FFFF00FFFF00FF959696FEFEFCFEFEFCFEFEFC80A6CB15
+                C4FB01A5E60C84B12A407BCAB6ABF6F6F4EFEFEE818486FF00FFFF00FFFF00FF
+                959696FEFEFCB6B6B6B6B6B680A6CB97E7FB15C4FB01A5E60C84B12A407BB6A1
+                A1F6F6F4818486FF00FFFF00FFFF00FF959696FEFEFCFEFEFCFEFEFCFEFEFC80
+                A6CB97E7FB15C4FB01A5E60C84B12A407BCAB6AB818486FF00FFFF00FFFF00FF
+                959696FEFEFCFEFEFCFEFEFCFEFEFCFEFEFC80A6CB97E7FB15C4FB01A5E60C84
+                B12A407B818486FF00FFFF00FFFF00FF959696FEFEFCB6B6B6B6B6B6B6B6B6B6
+                B6B6B6B6B680A6CB97E7FB15C4FB1F92F2111B8307035AFF00FFFF00FFFF00FF
+                959696FEFEFCFEFEFCFEFEFCFEFEFCFEFEFCFEFEFCFEFEFC80A6CB3187E72D44
+                B42D44B4111B8307035AFF00FFFF00FF959696FEFEFCFEFEFCFEFEFCFEFEFCFE
+                FEFCFEFEFCFEFEFCFEFEFC2D44B46E88D86F7FD52D44B4FF00FFFF00FFFF00FF
+                959696FEFEFCFEFEFCFEFEFCFEFEFCFEFEFCFEFEFCFEFEFCFEFEFC8184862D44
+                B42D44B4FF00FFFF00FFFF00FFFF00FF95969681848681848681848681848681
+                8486818486818486818486818486FF00FFFF00FFFF00FFFF00FF}
+              BtnEditar.ParentShowHint = False
+              BtnEditar.ShowHint = True
+              BtnEditar.Visible = False
+              Display.Left = 108
+              Display.Top = 184
+              Display.Width = 200
+              Display.Height = 21
+              Display.TabStop = False
+              Display.Color = clSkyBlue
+              Display.ReadOnly = True
+              Display.TabOrder = 8
+              TamanhoDisplay = 200
+            end
+          end
+        end
+        object cxTabSheet5: TcxTabSheet
+          Caption = ' Fiscal '
+          ImageIndex = 4
+          ExplicitLeft = -2
+          ExplicitHeight = 174
+          object cxPageControl2: TcxPageControl
+            Left = 0
+            Top = 0
+            Width = 323
+            Height = 225
+            ActivePage = cxTabSheet7
+            Align = alClient
+            Style = 10
+            TabOrder = 0
+            ExplicitLeft = 64
+            ExplicitTop = 40
+            ExplicitWidth = 289
+            ExplicitHeight = 193
+            ClientRectBottom = 225
+            ClientRectRight = 323
+            ClientRectTop = 19
+            object cxTabSheet6: TcxTabSheet
+              Caption = 'Geral'
+              ImageIndex = 0
+              ExplicitLeft = 5
+              ExplicitTop = 25
+              ExplicitWidth = 315
+              ExplicitHeight = 197
+              object DBRadioGroup1: TDBRadioGroup
+                Left = 0
+                Top = 0
+                Width = 323
+                Height = 55
+                Align = alTop
+                Caption = ' Regime de tributa'#231#227'o '
+                Columns = 2
+                DataField = 'REGIMEEMPRESA'
+                DataSource = DataCadastro
+                Items.Strings = (
+                  'Simples'
+                  'Lucro real'
+                  'Lucro presumido'
+                  'Mei')
+                ParentBackground = True
+                TabOrder = 0
+                Values.Strings = (
+                  'S'
+                  'R'
+                  'P'
+                  'M')
+                ExplicitLeft = 16
+                ExplicitTop = 3
+                ExplicitWidth = 281
+              end
+            end
+            object cxTabSheet7: TcxTabSheet
+              Caption = ' Limite receita bruta'
+              ImageIndex = 1
+              ExplicitLeft = 5
+              ExplicitTop = 25
+              ExplicitWidth = 315
+              ExplicitHeight = 197
+              object cxGrid1: TcxGrid
+                Left = 0
+                Top = 0
+                Width = 323
+                Height = 206
+                Align = alClient
+                TabOrder = 0
+                ExplicitLeft = 72
+                ExplicitTop = 40
+                ExplicitWidth = 250
+                ExplicitHeight = 200
+                object cxGrid1DBTableView1: TcxGridDBTableView
+                  Tag = 99
+                  NavigatorButtons.ConfirmDelete = False
+                  NavigatorButtons.First.Visible = False
+                  NavigatorButtons.PriorPage.Visible = False
+                  NavigatorButtons.Prior.Visible = False
+                  NavigatorButtons.Next.Visible = False
+                  NavigatorButtons.NextPage.Visible = False
+                  NavigatorButtons.Last.Visible = False
+                  NavigatorButtons.Insert.Hint = 'Novo'
+                  NavigatorButtons.Delete.Hint = 'Apagar'
+                  NavigatorButtons.Edit.Hint = 'Editar'
+                  NavigatorButtons.Post.Hint = 'Gravar'
+                  NavigatorButtons.Cancel.Hint = 'Cancelar'
+                  NavigatorButtons.Refresh.Visible = False
+                  NavigatorButtons.SaveBookmark.Visible = False
+                  NavigatorButtons.GotoBookmark.Visible = False
+                  NavigatorButtons.Filter.Visible = False
+                  DataController.DataSource = DataLimiteReceita
+                  DataController.Summary.DefaultGroupSummaryItems = <>
+                  DataController.Summary.FooterSummaryItems = <>
+                  DataController.Summary.SummaryGroups = <>
+                  OptionsBehavior.FocusCellOnTab = True
+                  OptionsBehavior.FocusFirstCellOnNewRecord = True
+                  OptionsBehavior.GoToNextCellOnEnter = True
+                  OptionsBehavior.FocusCellOnCycle = True
+                  OptionsData.DeletingConfirmation = False
+                  OptionsView.Navigator = True
+                  OptionsView.GroupByBox = False
+                  object cxGrid1DBTableView1Column1: TcxGridDBColumn
+                    Caption = 'Ano'
+                    DataBinding.FieldName = 'ANO'
+                    Width = 72
+                  end
+                  object cxGrid1DBTableView1Column2: TcxGridDBColumn
+                    Caption = 'Valor '
+                    DataBinding.FieldName = 'VALOR'
+                    Width = 100
+                  end
+                end
+                object cxGrid1Level1: TcxGridLevel
+                  GridView = cxGrid1DBTableView1
+                end
+              end
+            end
           end
         end
         object cxTabSheet2: TcxTabSheet
           Caption = 'Logomarca '
           ImageIndex = 1
-          ExplicitWidth = 0
-          ExplicitHeight = 0
+          ExplicitHeight = 174
           object Panel5: TPanel
             Left = 288
             Top = 0
             Width = 35
-            Height = 174
+            Height = 225
             Align = alRight
             BevelKind = bkSoft
             BevelOuter = bvNone
             TabOrder = 0
+            ExplicitHeight = 174
             object SpeedButton1: TSpeedButton
               Left = 0
               Top = 22
@@ -537,45 +841,46 @@ inherited frmLst_Empresa: TfrmLst_Empresa
             Left = 0
             Top = 0
             Width = 288
-            Height = 174
+            Height = 225
             Align = alClient
             DataField = 'LOGOMARCA'
             DataSource = DataCadastro
             Proportional = True
             Stretch = True
             TabOrder = 1
+            ExplicitHeight = 174
           end
         end
         object cxTabSheet3: TcxTabSheet
           Caption = 'Obs'
           ImageIndex = 2
-          ExplicitWidth = 0
-          ExplicitHeight = 0
+          ExplicitHeight = 174
           object GroupBox2: TGroupBox
             Left = 0
             Top = 0
             Width = 323
-            Height = 174
+            Height = 225
             Align = alClient
             TabOrder = 0
+            ExplicitHeight = 174
             object DBMemo1: TDBMemo
               Left = 2
               Top = 15
               Width = 319
-              Height = 157
+              Height = 208
               Align = alClient
               DataField = 'OBS'
               DataSource = DataCadastro
               ScrollBars = ssVertical
               TabOrder = 0
+              ExplicitHeight = 157
             end
           end
         end
         object cxTabSheet4: TcxTabSheet
           Caption = 'Sequenciais'
           ImageIndex = 3
-          ExplicitWidth = 0
-          ExplicitHeight = 0
+          ExplicitHeight = 174
           object LabelDBEdit9: TLabelDBEdit
             Left = 16
             Top = 16
@@ -658,12 +963,13 @@ inherited frmLst_Empresa: TfrmLst_Empresa
           end
           object GroupBox3: TGroupBox
             Left = 0
-            Top = 86
+            Top = 137
             Width = 323
             Height = 88
             Align = alBottom
             Caption = ' Documentos '
             TabOrder = 4
+            ExplicitTop = 86
             object DBGrid1: TDBGrid
               Left = 2
               Top = 15
@@ -728,23 +1034,23 @@ inherited frmLst_Empresa: TfrmLst_Empresa
       end
     end
     inherited Panel2: TPanel
-      Height = 486
-      ExplicitHeight = 486
+      Height = 549
+      ExplicitHeight = 541
       inherited PageControl: TcxPageControl
-        Height = 484
-        ExplicitHeight = 484
-        ClientRectBottom = 480
+        Height = 547
+        ExplicitHeight = 539
+        ClientRectBottom = 543
         inherited tsGrid: TcxTabSheet
           ExplicitLeft = 4
           ExplicitTop = 24
           ExplicitWidth = 293
-          ExplicitHeight = 456
+          ExplicitHeight = 511
           inherited pnlGrid: TPanel
-            Height = 456
-            ExplicitHeight = 456
+            Height = 519
+            ExplicitHeight = 511
             inherited TvCadastro: TcxGrid
-              Height = 456
-              ExplicitHeight = 456
+              Height = 519
+              ExplicitHeight = 511
             end
           end
         end
@@ -752,17 +1058,13 @@ inherited frmLst_Empresa: TfrmLst_Empresa
           ExplicitLeft = 4
           ExplicitTop = 24
           ExplicitWidth = 293
-          ExplicitHeight = 456
+          ExplicitHeight = 511
           inherited pnlTree: TPanel
-            Width = 293
-            Height = 456
-            ExplicitWidth = 293
-            ExplicitHeight = 456
+            Height = 519
+            ExplicitHeight = 511
             inherited TvTree: TcxDBTreeList
-              Width = 293
-              Height = 456
-              ExplicitWidth = 293
-              ExplicitHeight = 456
+              Height = 519
+              ExplicitHeight = 511
             end
           end
         end
@@ -782,5 +1084,23 @@ inherited frmLst_Empresa: TfrmLst_Empresa
       'mf|Metafiles (*.wmf)|*.wmf'
     Left = 32
     Top = 128
+  end
+  object DataLimiteReceita: TDataSource
+    DataSet = CdsLimiteReceitaBruta
+    Left = 32
+    Top = 168
+  end
+  object CdsLimiteReceitaBruta: TpFIBClientDataSet
+    Aggregates = <>
+    Filter = 'FLAGEDICAO<> '#39'D'#39
+    Filtered = True
+    Params = <>
+    AfterOpen = CdsLimiteReceitaBrutaAfterOpen
+    BeforeEdit = CdsLimiteReceitaBrutaBeforeEdit
+    BeforePost = CdsLimiteReceitaBrutaBeforePost
+    BeforeDelete = CdsLimiteReceitaBrutaBeforeDelete
+    OnNewRecord = CdsLimiteReceitaBrutaNewRecord
+    Left = 144
+    Top = 176
   end
 end

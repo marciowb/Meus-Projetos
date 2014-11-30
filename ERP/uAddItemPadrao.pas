@@ -50,13 +50,13 @@ type
     FData: TDateTime;
     FTipoMovimento: TTipoMovimento;
     { Private declarations }
-    Procedure CalculaTotal;
     procedure SetData(const Value: TDateTime);
     procedure SetIdCliente(const Value: TipoCampoChave);
     procedure SetIdEmpresa(const Value: TipoCampoChave);
     procedure SetTipoMovimento(const Value: TTipoMovimento);
   published
     { Public declarations }
+    Procedure CalculaTotal;virtual;
     property IdCliente:TipoCampoChave read FIdCliente write SetIdCliente;
     property IdEmpresa: TipoCampoChave read FIdEmpresa write SetIdEmpresa;
     Property Data: TDateTime read FData write SetData;

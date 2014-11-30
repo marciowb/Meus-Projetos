@@ -1,25 +1,25 @@
 inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
   Caption = 'Opera'#231#227'o de estoque'
-  ClientHeight = 434
-  ExplicitHeight = 473
+  ClientHeight = 466
+  ExplicitHeight = 505
   PixelsPerInch = 96
   TextHeight = 13
   inherited Status: TStatusBar
-    Top = 415
+    Top = 447
     ExplicitTop = 415
   end
   inherited Panel1: TPanel
-    Height = 415
+    Height = 447
     ExplicitHeight = 415
     inherited cxSplitter1: TcxSplitter
-      Height = 385
+      Height = 417
       ExplicitHeight = 385
     end
     inherited Panel3: TPanel
-      Height = 385
+      Height = 417
       ExplicitHeight = 385
       inherited Panel4: TPanel
-        Top = 344
+        Top = 376
         TabOrder = 8
         ExplicitTop = 344
       end
@@ -151,6 +151,18 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
         TabOrder = 9
         Width = 137
       end
+      object cxDBCheckBox5: TcxDBCheckBox
+        Left = 16
+        Top = 331
+        Caption = 'Contabiliza receita bruta'
+        DataBinding.DataField = 'FLAGCONTABILIZARECEITABRUTA'
+        DataBinding.DataSource = DataCadastro
+        Properties.ValueChecked = 'Y'
+        Properties.ValueGrayed = 'N'
+        Properties.ValueUnchecked = 'N'
+        TabOrder = 10
+        Width = 153
+      end
     end
     inherited ToolBar1: TToolBar
       inherited ToolButton1: TToolButton
@@ -179,22 +191,22 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
       end
     end
     inherited Panel2: TPanel
-      Height = 385
+      Height = 417
       ExplicitHeight = 385
       inherited PageControl: TcxPageControl
-        Height = 383
+        Height = 415
         ExplicitHeight = 383
-        ClientRectBottom = 379
+        ClientRectBottom = 411
         inherited tsGrid: TcxTabSheet
           ExplicitLeft = 4
           ExplicitTop = 24
           ExplicitWidth = 293
           ExplicitHeight = 355
           inherited pnlGrid: TPanel
-            Height = 355
+            Height = 387
             ExplicitHeight = 355
             inherited TvCadastro: TcxGrid
-              Height = 355
+              Height = 387
               ExplicitHeight = 355
             end
           end
@@ -203,13 +215,13 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
           ExplicitLeft = 4
           ExplicitTop = 24
           ExplicitWidth = 293
-          ExplicitHeight = 355
+          ExplicitHeight = 387
           inherited pnlTree: TPanel
-            Height = 355
-            ExplicitHeight = 355
+            Height = 387
+            ExplicitHeight = 387
             inherited TvTree: TcxDBTreeList
-              Height = 355
-              ExplicitHeight = 355
+              Height = 387
+              ExplicitHeight = 387
             end
           end
         end

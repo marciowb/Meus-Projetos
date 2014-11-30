@@ -188,7 +188,7 @@ interface
                      ,tpTipoContato, tpEmpresa, tpGrupo, tpSecao,tpFabricante
                      {$EndRegion}
 
-                     ,tpERPEmpresa,tpERPCFOP,tpERPUnidade,tpERPAgenda,tpERPNCM,tpERPNCMTributacao,
+                     ,tpERPEmpresa,tpERPCFOPVisivel,tpERPUnidade,tpERPAgenda,tpERPNCM,tpERPNCMTributacao,
                      tpERPCliente,tpERPGrupoCliente,tpERPCargo,tpERPUsuario,tpERPFuncionario,tpERPDepartamento,tpERPFornecedor,
                      tpERPGrupo, tpERPLinha, tpERPLocalizacao,tpERPProduto,tpERPFabricante,tpERPCodigoMunicipalServico,
                      tpERPProcessosservico,tpERPProdutoProcessosservico,tpERPPeridicidade,tpERPBanco,tpERPContaBancaria,tpERPCondicaoPagamento,
@@ -201,7 +201,8 @@ interface
                      tpERPContasReceber,tpERPPlanoContas,tpERPContasReceberRecebimentos,tpERPEstoque,tpERPMovimentacaoEstoque,tpERPTipoPatrimonio,
                      tpERPPatrimonio,tpERPTipoEventos,tpERPTipoPatrimonioTipoEventos, tpERPPatrimoniosEventos,tpERPPatrimonioDisponivel,
                      tpERPPatrimoniosUsadosOS,tpERPPatrimonioManutencaoTerceiros,tpERPPatrimonioManutencaoTerceirosEventos,
-                     tpERPAlertaPatrimonio,tpERPICMS,tpERPISS
+                     tpERPAlertaPatrimonio,tpERPICMS,tpERPISS,tpERPMunicpio,tpERPCST, tpERPCSOSN, tpERPLimiteReceitaBruta,
+                     tpERPCST_CFOP,tpERPST,tpERPCFOP,tpERPCFOPSemelhante
 
 
 

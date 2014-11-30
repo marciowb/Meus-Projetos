@@ -3,7 +3,7 @@ unit uDocumentoFiscal;
 interface
     uses
        MinhasClasses, uSQLERP,Comandos,Classes,SysUtils, Math,DB,pFIBClientDataSet,
-       StrUtils,ulibERP, DateUtils;
+       StrUtils,ulibERP, DateUtils, Generics.Collections;
     type
 
 
@@ -86,6 +86,91 @@ interface
         property CRT: String read GetCRT write SetCRT;
       end;
 
+      IImpostos = interface(IInterfaceMaster)
+        procedure SetAliqICMS(const Value: Currency);
+        procedure SetAliqISS(const Value: Currency);
+        function GetAliqICMS: Currency;
+        function GetAliqISS: Currency;
+        function GetAliqIR: Currency;
+        procedure SetAliqCOFINS(const Value: Currency);
+        procedure SetAliqIR(const Value: Currency);
+        procedure SetALiqCSLL(const Value: Currency);
+        procedure SetAliqICMSST(const Value: Currency);
+        procedure SetAliqIPI(const Value: Currency);
+        procedure SetAliqPIS(const Value: Currency);
+        procedure SetBaseCSLL(const Value: Currency);
+        procedure SetBaseICMS(const Value: Currency);
+        procedure SetBaseISS(const Value: Currency);
+        procedure SetBaseICMSST(const Value: Currency);
+        procedure SetBaseIPI(const Value: Currency);
+        procedure SetBasePIS_COFINS(const Value: Currency);
+        procedure SetBaseIR(const Value: Currency);
+        procedure SetMVA(const Value: Currency);
+        procedure SetTipoIPI(const Value: TTIpoIPI);
+        procedure SetValorCSLL(const Value: Currency);
+        procedure SetValorICMS(const Value: Currency);
+        procedure SetValorISS(const Value: Currency);
+        procedure SetValorICMSST(const Value: Currency);
+        procedure SetValorIPI(const Value: Currency);
+        procedure SetValorPIS(const Value: Currency);
+        procedure SetValorCOFINS(const Value: Currency);
+        procedure SetValorIR(const Value: Currency);
+
+        function GetAliqCOFINS: Currency;
+        function GetALiqCSLL: Currency;
+        function GetAliqICMSST: Currency;
+        function GetAliqIPI: Currency;
+        function GetAliqPIS: Currency;
+        function GetBaseCSLL: Currency;
+        function GetBaseICMS: Currency;
+        function GetBaseISS: Currency;
+        function GetBaseICMSST: Currency;
+        function GetBaseIPI: Currency;
+        function GetBasePIS_COFINS: Currency;
+        function GetBaseIR: Currency;
+        function GetMVA: Currency;
+        function GetTipoIPI: TTIpoIPI;
+        function GetValorCSLL: Currency;
+        function GetValorICMS: Currency;
+        function GetValorISS: Currency;
+        function GetValorICMSST: Currency;
+        function GetValorIPI: Currency;
+        function GetValorPIS: Currency;
+        function GetValorCOFINS: Currency;
+        function GetValorIR: Currency;
+
+        property AliqICMS: Currency read GetAliqICMS write SetAliqICMS;
+        property AliqISS: Currency read GetAliqISS write SetAliqISS;
+        property AliqPIS: Currency read GetAliqPIS write SetAliqPIS;
+        property AliqCOFINS: Currency read GetAliqCOFINS write SetAliqCOFINS;
+        property AliqIPI: Currency read GetAliqIPI write SetAliqIPI;
+        property TipoIPI: TTIpoIPI read GetTipoIPI write SetTipoIPI;
+        property MVA: Currency read GetMVA write SetMVA;
+        Property AliqICMSST: Currency read GetAliqICMSST write SetAliqICMSST;
+        property ALiqCSLL: Currency read GetALiqCSLL write SetALiqCSLL;
+        property ALiqIR: Currency read GetALiqIR write SetALiqIR;
+
+        property BaseICMS: Currency read GetBaseICMS write SetBaseICMS;
+        property BaseISS: Currency read GetBaseISS write SetBaseISS;
+        property BaseIPI: Currency read GetBaseIPI write SetBaseIPI;
+        Property BasePIS_COFINS: Currency read GetBasePIS_COFINS write SetBasePIS_COFINS;
+        property BaseICMSST: Currency read GetBaseICMSST write SetBaseICMSST;
+        property BaseCSLL: Currency read GetBaseCSLL write SetBaseCSLL;
+        property BaseIR: Currency read GetBaseIR write SetBaseIR;
+
+        property ValorICMS: Currency read GetValorICMS write SetValorICMS;
+        property ValorISS: Currency read GetValorISS write SetValorISS;
+        property ValorIPI: Currency read GetValorIPI write SetValorIPI;
+        Property ValorPIS: Currency read GetValorPIS write SetValorPIS;
+        Property ValorCOFINS: Currency read GetValorCOFINS write SetValorCOFINS;
+        property ValorICMSST: Currency read GetValorICMSST write SetValorICMSST;
+        property ValorCSLL: Currency read GetValorCSLL write SetValorCSLL;
+        property ValorIR: Currency read GetValorIR write SetValorIR;
+
+
+      end;
+
+
       IItemDocumento = interface(IInterfaceMaster)
 
         procedure SetAliqAcrescimo(const Value: Currency);
@@ -96,7 +181,9 @@ interface
         procedure SetCodigoDoProdutoNoFabricante(const Value: String);
         procedure SetCodigoExportador(const Value: String);
 
-        procedure SetCST_CSOSN(const Value: String);
+        procedure SetCST(const Value: String);
+        procedure SetCSOSN(const Value: String);
+        procedure SetCRT(const Value: String);
         procedure SetDataDesembaraco(const Value: TDate);
         procedure SetDataDI(const Value: TDate);
 
@@ -132,7 +219,9 @@ interface
         function GetCodigoExportador: String;
         function GetCodigoFederalServico: String;
         function GetCodigoMunicipalServico: String;
-        function GetCST_CSOSN: String;
+        function GetCST: String;
+        function GetCSOSN: String;
+        function GetCRT: String;
         function GetDataDesembaraco: TDate;
         function GetDataDI: TDate;
         function GetEAN13: String;
@@ -184,7 +273,9 @@ interface
         Property ValorTotalLiquido: Currency read GetValorTotalLiquido ;
 
         Property CFOP:String read GetCFOP write SetCFOP;
-        Property CST_CSOSN: String read GetCST_CSOSN write SetCST_CSOSN;
+        Property CST: String read GetCST write SetCST;
+        Property CSOSN: String read GetCSOSN write SetCSOSN;
+        Property CRT: String read GetCRT write SetCRT;
         Property NCM: String read GetNCM ;
         Property CodigoMunicipalServico: String read GetCodigoMunicipalServico ;
         Property CodigoFederalServico: String read GetCodigoFederalServico ;
@@ -213,28 +304,132 @@ interface
 
       end;
 
+      ICobranca = interface(IInterfaceMaster)
+        procedure SetNumeroDocumento(const Value: String);
+        procedure SetValorDocumento(const Value: Currency);
+        procedure SetVencimento(const Value: TDate);
+
+        function GetNumeroDocumento: String;
+        function GetValorDocumento: Currency;
+        function GetVencimento: TDate;
+
+        property NumeroDocumento: String read GetNumeroDocumento write SetNumeroDocumento;
+        property ValorDocumento: Currency read GetValorDocumento write SetValorDocumento;
+        property Vencimento: TDate read GetVencimento write SetVencimento;
+      end;
+
+      IDocumentoFiscal = Interface(IInterfaceMaster)
+        procedure SetANTT(const Value: String);
+        procedure SetCobranca(const Value: TList<ICobranca>);
+        procedure SetDestinatario(const Value: IPessoa);
+        procedure SetEmitente(const Value: IPessoa);
+        procedure SetEnderecoCobranca(const Value: IEndereco);
+        procedure SetEnderecoEntrega(const Value: IEndereco);
+        procedure SetEspecie(const Value: String);
+        procedure SetFrete(const Value: Currency);
+        procedure SetMarca(const Value: String);
+        procedure SetOutrasDespesas(const Value: Currency);
+        procedure SetPesoBruto(const Value: Double);
+        procedure SetPesoLiquido(const Value: Double);
+        procedure SetPlaca(const Value: String);
+        procedure SetProdutos(const Value: TList<IItemDocumento>);
+        procedure SetSeguro(const Value: Currency);
+        procedure SetServicos(const Value: TList<IItemDocumento>);
+        procedure SetTipoFrete(const Value: TTipoFrete);
+        procedure SetTipoTransporte(const Value: TTipoTransporte);
+        procedure SetTotalDocumento(const Value: Currency);
+        procedure SetTotalImpostos(const Value: IImpostos);
+        procedure SetTotalProdutos(const Value: Currency);
+        procedure SetTotalServicos(const Value: Currency);
+        procedure SetTransportadora(const Value: IPessoa);
+        procedure SetUfPlaca(const Value: String);
+        procedure SetVolume(const Value: Integer);
+        function GetANTT: String;
+        function GetCobranca: TList<ICobranca>;
+        function GetDestinatario: IPessoa;
+        function GetEmitente: IPessoa;
+        function GetEnderecoCobranca: IEndereco;
+        function GetEnderecoEntrega: IEndereco;
+        function GetEspecie: String;
+        function GetFrete: Currency;
+        function GetMarca: String;
+        function GetOutrasDespesas: Currency;
+        function GetPesoBruto: Double;
+        function GetPesoLiquido: Double;
+        function GetPlaca: String;
+        function GetProdutos: TList<IItemDocumento>;
+        function GetSeguro: Currency;
+        function GetServicos: TList<IItemDocumento>;
+        function GetTipoFrete: TTipoFrete;
+        function GetTipoTransporte: TTipoTransporte;
+        function GetTotalDocumento: Currency;
+        function GetTotalImpostos: IImpostos;
+        function GetTotalProdutos: Currency;
+        function GetTotalServicos: Currency;
+        function GetTransportadora: IPessoa;
+        function GetUfPlaca: String;
+        function GetVolume: Integer;
+
+        property Emitente: IPessoa read GetEmitente write SetEmitente;
+        property Destinatario: IPessoa read GetDestinatario write SetDestinatario;
+        property Transportadora: IPessoa read GetTransportadora write SetTransportadora;
+        property EnderecoEntrega: IEndereco read GetEnderecoEntrega write SetEnderecoEntrega;
+        property EnderecoCobranca: IEndereco read GetEnderecoCobranca write SetEnderecoCobranca;
+
+        property Produtos:  TList<IItemDocumento> read GetProdutos write SetProdutos;
+        property Servicos:  TList<IItemDocumento> read GetServicos write SetServicos;
+
+        Property TotalImpostos: IImpostos read GetTotalImpostos write SetTotalImpostos;
+        property TotalProdutos: Currency read GetTotalProdutos write SetTotalProdutos;
+        Property TotalServicos: Currency read GetTotalServicos write SetTotalServicos;
+        property Seguro: Currency read GetSeguro write SetSeguro;
+        property Frete: Currency read GetFrete write SetFrete;
+        property OutrasDespesas: Currency read GetOutrasDespesas write SetOutrasDespesas;
+        property TotalDocumento: Currency read GetTotalDocumento write SetTotalDocumento;
+
+        property TipoTransporte: TTipoTransporte read GetTipoTransporte write SetTipoTransporte;
+        property TipoFrete: TTipoFrete read GetTipoFrete write SetTipoFrete;
+        property Placa: String read GetPlaca write SetPlaca;
+        Property UfPlaca: String read GetUfPlaca write SetUfPlaca;
+        property ANTT: String read GetANTT write SetANTT;
+        Property Volume: Integer read GetVolume write SetVolume;
+        property Especie: String read GetEspecie write SetEspecie;
+        property Marca: String read GetMarca write SetMarca;
+        property PesoBruto: Double read GetPesoBruto write SetPesoBruto;
+        property PesoLiquido: Double read GetPesoLiquido write SetPesoLiquido;
+
+        Property Cobranca: TList<ICobranca> read GetCobranca write SetCobranca;
+
+
+      end;
 
       TImpostos = class(TInterfacedObject,IImpostos)
       private
         FAliqICMS: Currency;
         FAliqISS: Currency;
-        FValorPIS_COFINS: Currency;
+        FValorPIS: Currency;
+        FValorCOFINS: Currency;
         FBaseCSLL: Currency;
         FValorICMSST: Currency;
         FValorIPI: Currency;
-        FBaseICMS_ISS: Currency;
+        FBaseICMS: Currency;
+        FBaseISS: Currency;
         FAliqICMSST: Currency;
         FAliqIPI: Currency;
         FMVA: Currency;
         FValorCSLL: Currency;
         FBasePIS_COFINS: Currency;
-        FValorICMS_ISS: Currency;
+        FValorICMS: Currency;
+        FValorISS: Currency;
         FBaseICMSST: Currency;
         FBaseIPI: Currency;
         FALiqCSLL: Currency;
         FTipoIPI: TTIpoIPI;
         FAliqPIS: Currency;
         FAliqCOFINS: Currency;
+        FALiqIR: Currency;
+        FBaseIR: Currency;
+        FValorIR: Currency;
         procedure SetAliqICMS(const Value: Currency);
         procedure SetAliqISS(const Value: Currency);
         function GetAliqICMS: Currency;
@@ -245,34 +440,48 @@ interface
         procedure SetAliqIPI(const Value: Currency);
         procedure SetAliqPIS(const Value: Currency);
         procedure SetBaseCSLL(const Value: Currency);
-        procedure SetBaseICMS_ISS(const Value: Currency);
+        procedure SetBaseICMS(const Value: Currency);
+        procedure SetBaseISS(const Value: Currency);
         procedure SetBaseICMSST(const Value: Currency);
         procedure SetBaseIPI(const Value: Currency);
         procedure SetBasePIS_COFINS(const Value: Currency);
         procedure SetMVA(const Value: Currency);
         procedure SetTipoIPI(const Value: TTIpoIPI);
         procedure SetValorCSLL(const Value: Currency);
-        procedure SetValorICMS_ISS(const Value: Currency);
+        procedure SetValorICMS(const Value: Currency);
+        procedure SetValorISS(const Value: Currency);
         procedure SetValorICMSST(const Value: Currency);
         procedure SetValorIPI(const Value: Currency);
-        procedure SetValorPIS_COFINS(const Value: Currency);
+        procedure SetValorPIS(const Value: Currency);
+        procedure SetValorCOFINS(const Value: Currency);
         function GetAliqCOFINS: Currency;
         function GetALiqCSLL: Currency;
         function GetAliqICMSST: Currency;
         function GetAliqIPI: Currency;
         function GetAliqPIS: Currency;
         function GetBaseCSLL: Currency;
-        function GetBaseICMS_ISS: Currency;
+        function GetBaseICMS: Currency;
+        function GetBaseISS: Currency;
         function GetBaseICMSST: Currency;
         function GetBaseIPI: Currency;
         function GetBasePIS_COFINS: Currency;
         function GetMVA: Currency;
         function GetTipoIPI: TTIpoIPI;
         function GetValorCSLL: Currency;
-        function GetValorICMS_ISS: Currency;
+        function GetValorICMS: Currency;
+        function GetValorISS: Currency;
         function GetValorICMSST: Currency;
         function GetValorIPI: Currency;
-        function GetValorPIS_COFINS: Currency;
+        function GetValorPIS: Currency;
+        function GetValorCOFINS: Currency;
+        function GetALiqIR: Currency;
+        function GetBaseIR: Currency;
+        function GetValorIR: Currency;
+        procedure SetALiqIR(const Value: Currency);
+        procedure SetBaseIR(const Value: Currency);
+        procedure SetValorIR(const Value: Currency);
+
+
       published
         property AliqICMS: Currency read GetAliqICMS write SetAliqICMS;
         property AliqISS: Currency read GetAliqISS write SetAliqISS;
@@ -283,18 +492,24 @@ interface
         property MVA: Currency read GetMVA write SetMVA;
         Property AliqICMSST: Currency read GetAliqICMSST write SetAliqICMSST;
         property ALiqCSLL: Currency read GetALiqCSLL write SetALiqCSLL;
+        property ALiqIR: Currency read GetALiqIR write SetALiqIR;
 
-        property BaseICMS_ISS: Currency read GetBaseICMS_ISS write SetBaseICMS_ISS;
+        property BaseICMS: Currency read GetBaseICMS write SetBaseICMS;
+        property BaseISS: Currency read GetBaseISS write SetBaseISS;
         property BaseIPI: Currency read GetBaseIPI write SetBaseIPI;
         Property BasePIS_COFINS: Currency read GetBasePIS_COFINS write SetBasePIS_COFINS;
         property BaseICMSST: Currency read GetBaseICMSST write SetBaseICMSST;
         property BaseCSLL: Currency read GetBaseCSLL write SetBaseCSLL;
+        property BaseIR: Currency read GetBaseIR write SetBaseIR;
 
-        property ValorICMS_ISS: Currency read GetValorICMS_ISS write SetValorICMS_ISS;
+        property ValorICMS: Currency read GetValorICMS write SetValorICMS;
+        property ValorISS: Currency read GetValorISS write SetValorISS;
         property ValorIPI: Currency read GetValorIPI write SetValorIPI;
-        Property ValorPIS_COFINS: Currency read GetValorPIS_COFINS write SetValorPIS_COFINS;
+        Property ValorPIS: Currency read GetValorPIS write SetValorPIS;
+        Property ValorCOFINS: Currency read GetValorCOFINS write SetValorCOFINS;
         property ValorICMSST: Currency read GetValorICMSST write SetValorICMSST;
         property ValorCSLL: Currency read GetValorCSLL write SetValorCSLL;
+        property ValorIR: Currency read GetValorIR write SetValorIR;
 
 
       end;
@@ -428,7 +643,8 @@ interface
         FEAN13: String;
         FAliqAcrescimo: Currency;
         FAliqDesconto: Currency;
-        FCST_CSOSN: String;
+        FCST: String;
+        FCSOSN: String;
         FCFOP: String;
         FValorSeguro: Currency;
         FNCM: String;
@@ -445,7 +661,8 @@ interface
         FNome: String;
         FValorAFRMM: Currency;
         FIdProduto : TipoCampoChave;
-    FIdCliente: TipoCampoChave;
+        FIdCliente: TipoCampoChave;
+        FCRT: String;
         procedure SetAliqAcrescimo(const Value: Currency);
         procedure SetAliqDesconto(const Value: Currency);
         procedure SetCFOP(const Value: String);
@@ -453,7 +670,7 @@ interface
         procedure SetCodigo(const Value: String);
         procedure SetCodigoDoProdutoNoFabricante(const Value: String);
         procedure SetCodigoExportador(const Value: String);
-        procedure SetCST_CSOSN(const Value: String);
+        procedure SetCST(const Value: String);
         procedure SetDataDesembaraco(const Value: TDate);
         procedure SetDataDI(const Value: TDate);
         procedure SetLocalDesembaraco(const Value: String);
@@ -485,7 +702,7 @@ interface
         function GetCodigoExportador: String;
         function GetCodigoFederalServico: String;
         function GetCodigoMunicipalServico: String;
-        function GetCST_CSOSN: String;
+        function GetCST: String;
         function GetDataDesembaraco: TDate;
         function GetDataDI: TDate;
         function GetEAN13: String;
@@ -518,6 +735,11 @@ interface
         procedure SetTotalBruto(const Value: Currency);
         procedure SetValorTotalLiquido(const Value: Currency);
         procedure SetIdCliente(const Value: TipoCampoChave);
+        procedure SetImpostos(const Value: IImpostos);
+        function GetCSOSN: String;
+        procedure SetCSOSN(const Value: String);
+        function GetCRT: String;
+        procedure SetCRT(const Value: String);
 
       published
         property Codigo: String read GetCodigo write SetCodigo;
@@ -541,7 +763,9 @@ interface
         Property ValorTotalLiquido: Currency read GetValorTotalLiquido write SetValorTotalLiquido;
 
         Property CFOP:String read GetCFOP write SetCFOP;
-        Property CST_CSOSN: String read GetCST_CSOSN write SetCST_CSOSN;
+        Property CST: String read GetCST write SetCST;
+        Property CSOSN: String read GetCSOSN write SetCSOSN;
+        Property CRT: String read GetCRT write SetCRT;
         Property NCM: String read GetNCM ;
         Property CodigoMunicipalServico: String read GetCodigoMunicipalServico ;
         Property CodigoFederalServico: String read GetCodigoFederalServico ;
@@ -565,12 +789,138 @@ interface
         property NumeroPedidoCompra:String read GetNumeroPedidoCompra write SetNumeroPedidoCompra;
         property NumeroItemPedidoCompra:Integer read GetNumeroItemPedidoCompra write SetNumeroItemPedidoCompra;
 
-        Property Impostos: IImpostos read GetImpostos ;
+        Property Impostos: IImpostos read GetImpostos write SetImpostos;
         property IdCliente: TipoCampoChave read FIdCliente write SetIdCliente;
 
       end;
 
+      TCobranca = class(TInterfacedObject, ICobranca)
+        FVencimento: TDate;
+        FValorDocumento: Currency;
+        FNumeroDocumento: String;
+        procedure SetNumeroDocumento(const Value: String);
+        procedure SetValorDocumento(const Value: Currency);
+        procedure SetVencimento(const Value: TDate);
+        function GetNumeroDocumento: String;
+        function GetValorDocumento: Currency;
+        function GetVencimento: TDate;
+        property NumeroDocumento: String read GetNumeroDocumento write SetNumeroDocumento;
+        property ValorDocumento: Currency read GetValorDocumento write SetValorDocumento;
+        property Vencimento: TDate read GetVencimento write SetVencimento;
+      end;
 
+      TDocumentoFiscal = class(TInterfacedObject,IDocumentoFiscal)
+      private
+        FPesoBruto: Double;
+        FUfPlaca: String;
+        FTotalImpostos: IImpostos;
+        FDestinatario: IPessoa;
+        FEspecie: String;
+        FTotalProdutos: Currency;
+        FEnderecoCobranca: IEndereco;
+        FEnderecoEntrega: IEndereco;
+        FTransportadora: IPessoa;
+        FANTT: String;
+        FCobranca: TList<ICobranca>;
+        FSeguro: Currency;
+        FTotalServicos: Currency;
+        FOutrasDespesas: Currency;
+        FEmitente: IPessoa;
+        FTipoTransporte: TTipoTransporte;
+        FPesoLiquido: Double;
+        FVolume: Integer;
+        FTipoFrete: TTipoFrete;
+        FProdutos: TList<IItemDocumento>;
+        FMarca: String;
+        FPlaca: String;
+        FFrete: Currency;
+        FTotalDocumento: Currency;
+        FServicos: TList<IItemDocumento>;
+        procedure SetANTT(const Value: String);
+        procedure SetCobranca(const Value: TList<ICobranca>);
+        procedure SetDestinatario(const Value: IPessoa);
+        procedure SetEmitente(const Value: IPessoa);
+        procedure SetEnderecoCobranca(const Value: IEndereco);
+        procedure SetEnderecoEntrega(const Value: IEndereco);
+        procedure SetEspecie(const Value: String);
+        procedure SetFrete(const Value: Currency);
+        procedure SetMarca(const Value: String);
+        procedure SetOutrasDespesas(const Value: Currency);
+        procedure SetPesoBruto(const Value: Double);
+        procedure SetPesoLiquido(const Value: Double);
+        procedure SetPlaca(const Value: String);
+        procedure SetProdutos(const Value: TList<IItemDocumento>);
+        procedure SetSeguro(const Value: Currency);
+        procedure SetServicos(const Value: TList<IItemDocumento>);
+        procedure SetTipoFrete(const Value: TTipoFrete);
+        procedure SetTipoTransporte(const Value: TTipoTransporte);
+        procedure SetTotalDocumento(const Value: Currency);
+        procedure SetTotalImpostos(const Value: IImpostos);
+        procedure SetTotalProdutos(const Value: Currency);
+        procedure SetTotalServicos(const Value: Currency);
+        procedure SetTransportadora(const Value: IPessoa);
+        procedure SetUfPlaca(const Value: String);
+        procedure SetVolume(const Value: Integer);
+        function GetANTT: String;
+        function GetCobranca: TList<ICobranca>;
+        function GetDestinatario: IPessoa;
+        function GetEmitente: IPessoa;
+        function GetEnderecoCobranca: IEndereco;
+        function GetEnderecoEntrega: IEndereco;
+        function GetEspecie: String;
+        function GetFrete: Currency;
+        function GetMarca: String;
+        function GetOutrasDespesas: Currency;
+        function GetPesoBruto: Double;
+        function GetPesoLiquido: Double;
+        function GetPlaca: String;
+        function GetProdutos: TList<IItemDocumento>;
+        function GetSeguro: Currency;
+        function GetServicos: TList<IItemDocumento>;
+        function GetTipoFrete: TTipoFrete;
+        function GetTipoTransporte: TTipoTransporte;
+        function GetTotalDocumento: Currency;
+        function GetTotalImpostos: IImpostos;
+        function GetTotalProdutos: Currency;
+        function GetTotalServicos: Currency;
+        function GetTransportadora: IPessoa;
+        function GetUfPlaca: String;
+        function GetVolume: Integer;
+      published
+        property Emitente: IPessoa read GetEmitente write SetEmitente;
+        property Destinatario: IPessoa read GetDestinatario write SetDestinatario;
+        property Transportadora: IPessoa read GetTransportadora write SetTransportadora;
+        property EnderecoEntrega: IEndereco read GetEnderecoEntrega write SetEnderecoEntrega;
+        property EnderecoCobranca: IEndereco read GetEnderecoCobranca write SetEnderecoCobranca;
+
+        property Produtos:  TList<IItemDocumento> read GetProdutos write SetProdutos;
+        property Servicos:  TList<IItemDocumento> read GetServicos write SetServicos;
+
+        Property TotalImpostos: IImpostos read GetTotalImpostos ;
+        property TotalProdutos: Currency read GetTotalProdutos ;
+        Property TotalServicos: Currency read GetTotalServicos ;
+        property Seguro: Currency read GetSeguro write SetSeguro;
+        property Frete: Currency read GetFrete write SetFrete;
+        property OutrasDespesas: Currency read GetOutrasDespesas write SetOutrasDespesas;
+        property TotalDocumento: Currency read GetTotalDocumento write SetTotalDocumento;
+
+        property TipoTransporte: TTipoTransporte read GetTipoTransporte write SetTipoTransporte;
+        property TipoFrete: TTipoFrete read GetTipoFrete write SetTipoFrete;
+        property Placa: String read GetPlaca write SetPlaca;
+        Property UfPlaca: String read GetUfPlaca write SetUfPlaca;
+        property ANTT: String read GetANTT write SetANTT;
+        Property Volume: Integer read GetVolume write SetVolume;
+        property Especie: String read GetEspecie write SetEspecie;
+        property Marca: String read GetMarca write SetMarca;
+        property PesoBruto: Double read GetPesoBruto write SetPesoBruto;
+        property PesoLiquido: Double read GetPesoLiquido write SetPesoLiquido;
+
+        Property Cobranca: TList<ICobranca> read GetCobranca write SetCobranca;
+        constructor Create;virtual;
+
+      end;
+
+      Procedure CriaDocumentoFiscal(Const DataSetNota, DataSetItens, DataSetCobranca: TDataSet; Var Doc: IDocumentoFiscal );
 
 implementation
 
@@ -580,7 +930,7 @@ uses uRegras;
 
 function TImpostos.GetAliqCOFINS: Currency;
 begin
-  Result := FAliqICMSST;
+  Result := FAliqCOFINS;
 end;
 
 function TImpostos.GetALiqCSLL: Currency;
@@ -603,6 +953,11 @@ begin
   Result := FAliqIPI;
 end;
 
+function TImpostos.GetALiqIR: Currency;
+begin
+  Result := FALiqIR;
+end;
+
 function TImpostos.GetAliqISS: Currency;
 begin
   Result := FAliqISS;
@@ -623,14 +978,24 @@ begin
   Result := FBaseICMSST;
 end;
 
-function TImpostos.GetBaseICMS_ISS: Currency;
+function TImpostos.GetBaseICMS: Currency;
 begin
-  Result := FBaseICMS_ISS;
+  Result := FBaseICMS;
+end;
+
+function TImpostos.GetBaseISS: Currency;
+begin
+  Result := FBaseISS;
 end;
 
 function TImpostos.GetBaseIPI: Currency;
 begin
   Result := FBaseIPI;
+end;
+
+function TImpostos.GetBaseIR: Currency;
+begin
+  Result := FBaseIR;
 end;
 
 function TImpostos.GetBasePIS_COFINS: Currency;
@@ -648,6 +1013,11 @@ begin
   Result := FTipoIPI;
 end;
 
+function TImpostos.GetValorCOFINS: Currency;
+begin
+  Result := FValorCOFINS;
+end;
+
 function TImpostos.GetValorCSLL: Currency;
 begin
   Result := FValorCSLL;
@@ -658,20 +1028,33 @@ begin
   Result := FValorICMSST;
 end;
 
-function TImpostos.GetValorICMS_ISS: Currency;
+function TImpostos.GetValorICMS: Currency;
 begin
-  Result := FValorICMS_ISS;
+  Result := FValorICMS;
 end;
+
+function TImpostos.GetValorISS: Currency;
+begin
+  Result := FValorISS;
+end;
+
 
 function TImpostos.GetValorIPI: Currency;
 begin
   Result := FValorIPI;
 end;
 
-function TImpostos.GetValorPIS_COFINS: Currency;
+
+function TImpostos.GetValorIR: Currency;
 begin
-  Result := FValorPIS_COFINS;
+  Result := FValorIR;
 end;
+
+function TImpostos.GetValorPIS: Currency;
+begin
+  Result := FValorPIS;
+end;
+
 
 procedure TImpostos.SetAliqCOFINS(const Value: Currency);
 begin
@@ -698,6 +1081,11 @@ begin
   FAliqIPI := Value;
 end;
 
+procedure TImpostos.SetALiqIR(const Value: Currency);
+begin
+  FALiqIR := Value;
+end;
+
 procedure TImpostos.SetAliqISS(const Value: Currency);
 begin
   FAliqISS := Value;
@@ -718,14 +1106,25 @@ begin
   FBaseICMSST := Value;
 end;
 
-procedure TImpostos.SetBaseICMS_ISS(const Value: Currency);
+procedure TImpostos.SetBaseICMS(const Value: Currency);
 begin
-  FBaseICMS_ISS := Value;
+  FBaseICMS := Value;
 end;
+
+procedure TImpostos.SetBaseISS(const Value: Currency);
+begin
+  FBaseISS := Value;
+end;
+
 
 procedure TImpostos.SetBaseIPI(const Value: Currency);
 begin
   FBaseIPI := Value;
+end;
+
+procedure TImpostos.SetBaseIR(const Value: Currency);
+begin
+  FBaseIR := Value;
 end;
 
 procedure TImpostos.SetBasePIS_COFINS(const Value: Currency);
@@ -743,6 +1142,11 @@ begin
   FTipoIPI := Value;
 end;
 
+procedure TImpostos.SetValorCOFINS(const Value: Currency);
+begin
+   FValorCOFINS := Value;
+end;
+
 procedure TImpostos.SetValorCSLL(const Value: Currency);
 begin
   FValorCSLL := Value;
@@ -753,20 +1157,32 @@ begin
   FValorICMSST := Value;
 end;
 
-procedure TImpostos.SetValorICMS_ISS(const Value: Currency);
+procedure TImpostos.SetValorICMS(const Value: Currency);
 begin
-  FValorICMS_ISS := Value;
+  FValorICMS := Value;
 end;
+
+procedure TImpostos.SetValorISS(const Value: Currency);
+begin
+  FValorISS := Value;
+end;
+
 
 procedure TImpostos.SetValorIPI(const Value: Currency);
 begin
   FValorIPI := Value;
 end;
 
-procedure TImpostos.SetValorPIS_COFINS(const Value: Currency);
+procedure TImpostos.SetValorIR(const Value: Currency);
 begin
-  FValorPIS_COFINS := Value;
+   FValorIR :=Value;
 end;
+
+procedure TImpostos.SetValorPIS(const Value: Currency);
+begin
+  FValorPIS := Value;
+end;
+
 
 { IEndereco }
 
@@ -1049,9 +1465,20 @@ begin
   Result := FCodigoMunicipalServico;
 end;
 
-function TItemDocumento.GetCST_CSOSN: String;
+function TItemDocumento.GetCRT: String;
 begin
-  Result := FCST_CSOSN;
+  Result := fCRT;
+end;
+
+function TItemDocumento.GetCSOSN: String;
+begin
+   Result := FCSOSN;
+end;
+
+
+function TItemDocumento.GetCST: String;
+begin
+  Result := FCST;
 end;
 
 function TItemDocumento.GetDataDesembaraco: TDate;
@@ -1076,8 +1503,12 @@ end;
 
 function TItemDocumento.GetImpostos: IImpostos;
 begin
-  FImpostos := TRegrasImpostos.CalculaImpostos(FIdCliente,FIdProduto,'',FCST_CSOSN, FValorTotalLiquido, FValorFrete,
-                                               FValorSeguro,FValorOutrasDespesas );
+//  if FImpostos = nil then
+//  begin
+//    FImpostos := TImpostos.Create;
+//    FImpostos := TRegrasImpostos.CalculaImpostos(FIdCliente,FIdProduto,'',FCST_CSOSN, FValorTotalLiquido, FValorFrete,
+//                                                 FValorSeguro,FValorOutrasDespesas );
+//  end;
   Result := FImpostos;
 end;
 
@@ -1233,7 +1664,7 @@ begin
        Self.FNCM :=   FieldByName('NCM').AsString;
        Self.FIdProduto :=   FieldByName('IDPRODUTO').Value;
        Self.FEX_TIPI :=   '';
-
+       FreeAndNil(Self.FImpostos);
        Free;
      end;
 
@@ -1254,9 +1685,20 @@ begin
 end;
 
 
-procedure TItemDocumento.SetCST_CSOSN(const Value: String);
+procedure TItemDocumento.SetCRT(const Value: String);
 begin
-  FCST_CSOSN := Value;
+  FCRT := Value;
+end;
+
+procedure TItemDocumento.SetCSOSN(const Value: String);
+begin
+  FCSOSN := Value;
+end;
+
+
+procedure TItemDocumento.SetCST(const Value: String);
+begin
+  FCST := Value;
 end;
 
 procedure TItemDocumento.SetDataDesembaraco(const Value: TDate);
@@ -1273,6 +1715,11 @@ end;
 procedure TItemDocumento.SetIdCliente(const Value: TipoCampoChave);
 begin
   FIdCliente := Value;
+end;
+
+procedure TItemDocumento.SetImpostos(const Value: IImpostos);
+begin
+  FImpostos := Value;
 end;
 
 procedure TItemDocumento.SetLocalDesembaraco(const Value: String);
@@ -1388,4 +1835,659 @@ begin
   FValorUnitario := Value;
 end;
 
+{ ICobranca }
+
+function TCobranca.GetNumeroDocumento: String;
+begin
+  Result := FNumeroDocumento;
+end;
+
+function TCobranca.GetValorDocumento: Currency;
+begin
+  Result := FValorDocumento;
+end;
+
+function TCobranca.GetVencimento: TDate;
+begin
+  Result := FVencimento;
+end;
+
+procedure TCobranca.SetNumeroDocumento(const Value: String);
+begin
+  FNumeroDocumento := Value;
+end;
+
+procedure TCobranca.SetValorDocumento(const Value: Currency);
+begin
+  FValorDocumento := Value;
+end;
+
+procedure TCobranca.SetVencimento(const Value: TDate);
+begin
+  FVencimento := Value;
+end;
+
+{ IDocumentoFiscal }
+
+constructor TDocumentoFiscal.Create;
+begin
+    FPesoBruto:= 0;
+    FUfPlaca:= '';
+    FTotalImpostos:= TImpostos.Create;
+    FDestinatario:= TPessoa.Create;
+    FEspecie:= '' ;
+    FTotalProdutos:= 0;
+    FEnderecoCobranca:= TEndereco.Create;
+    FEnderecoEntrega:= TEndereco.Create;
+    FTransportadora:= TPessoa.Create;
+    FANTT := '';
+    FCobranca:= TList<ICobranca>.Create;
+    FSeguro:= 0;
+    FTotalServicos:= 0;
+    FOutrasDespesas:= 0;
+    FEmitente:= TPessoa.Create;
+    FTipoTransporte:= ttRodoviaria;
+    FPesoLiquido:= 0;
+    FVolume:= 1;
+    FTipoFrete:= tfDestinatario;
+    FProdutos:=  TList<IItemDocumento>.Create;
+    FMarca:= '';
+    FPlaca:= '';
+    FFrete:= 0;
+    FTotalDocumento:= 0;
+    FServicos:= TList<IItemDocumento>.Create;
+end;
+
+function TDocumentoFiscal.GetANTT: String;
+begin
+  Result := FANTT;
+end;
+
+function TDocumentoFiscal.GetCobranca: TList<ICobranca>;
+begin
+  Result := FCobranca;
+end;
+
+function TDocumentoFiscal.GetDestinatario: IPessoa;
+begin
+  Result := FDestinatario;
+end;
+
+function TDocumentoFiscal.GetEmitente: IPessoa;
+begin
+  Result := FEmitente;
+end;
+
+function TDocumentoFiscal.GetEnderecoCobranca: IEndereco;
+begin
+  Result := FEnderecoCobranca;
+end;
+
+function TDocumentoFiscal.GetEnderecoEntrega: IEndereco;
+begin
+  Result := FEnderecoEntrega;
+end;
+
+function TDocumentoFiscal.GetEspecie: String;
+begin
+  Result := FEspecie;
+end;
+
+function TDocumentoFiscal.GetFrete: Currency;
+begin
+  Result := FFrete;
+end;
+
+function TDocumentoFiscal.GetMarca: String;
+begin
+  Result := FMarca;
+end;
+
+function TDocumentoFiscal.GetOutrasDespesas: Currency;
+begin
+  Result := FOutrasDespesas;
+end;
+
+function TDocumentoFiscal.GetPesoBruto: Double;
+begin
+  Result := FPesoBruto;
+end;
+
+function TDocumentoFiscal.GetPesoLiquido: Double;
+begin
+  Result := FPesoLiquido;
+end;
+
+function TDocumentoFiscal.GetPlaca: String;
+begin
+  Result := FPlaca;
+end;
+
+function TDocumentoFiscal.GetProdutos: TList<IItemDocumento>;
+begin
+  Result := FProdutos;
+end;
+
+function TDocumentoFiscal.GetSeguro: Currency;
+begin
+  Result := FSeguro;
+end;
+
+function TDocumentoFiscal.GetServicos: TList<IItemDocumento>;
+begin
+  Result := FServicos;
+end;
+
+function TDocumentoFiscal.GetTipoFrete: TTipoFrete;
+begin
+  Result := FTipoFrete;
+end;
+
+function TDocumentoFiscal.GetTipoTransporte: TTipoTransporte;
+begin
+  Result := FTipoTransporte;
+end;
+
+function TDocumentoFiscal.GetTotalDocumento: Currency;
+begin
+  Result := FTotalDocumento;
+end;
+
+function TDocumentoFiscal.GetTotalImpostos: IImpostos;
+var
+  I: Integer;
+begin
+  FTotalImpostos.AliqICMS := 0;
+  FTotalImpostos.AliqISS := 0;
+  FTotalImpostos.AliqPIS := 0;
+  FTotalImpostos.AliqCOFINS := 0;
+  FTotalImpostos.AliqIPI := 0;
+  FTotalImpostos.MVA := 0;
+  FTotalImpostos.AliqICMSST := 0;
+  FTotalImpostos.ALiqCSLL := 0;
+  FTotalImpostos.ValorICMS := 0;
+  FTotalImpostos.ValorISS := 0;
+  FTotalImpostos.ValorIPI := 0;
+  FTotalImpostos.ValorPIS := 0;
+  FTotalImpostos.ValorCOFINS := 0;
+  FTotalImpostos.ValorICMSST := 0;
+  FTotalImpostos.ValorCSLL := 0;
+
+  for I := 0 to Produtos.Count - 1 do
+  begin
+    FTotalImpostos.ValorICMS := FTotalImpostos.ValorICMS + Produtos[i].Impostos.ValorICMS;
+    FTotalImpostos.ValorIPI   := FTotalImpostos.ValorIPI + Produtos[i].Impostos.ValorIPI;
+    FTotalImpostos.ValorPIS  := FTotalImpostos.ValorPIS + Produtos[i].Impostos.ValorPIS;
+    FTotalImpostos.ValorCOFINS  := FTotalImpostos.ValorCOFINS + Produtos[i].Impostos.ValorCOFINS;
+    FTotalImpostos.ValorICMSST  := FTotalImpostos.ValorICMSST + Produtos[i].Impostos.ValorICMSST;
+    FTotalImpostos.ValorCSLL  := FTotalImpostos.ValorCSLL + Produtos[i].Impostos.ValorCSLL;
+  end;
+
+  for I := 0 to Servicos.Count - 1 do
+  begin
+    FTotalImpostos.ValorISS := FTotalImpostos.ValorISS + Produtos[i].Impostos.ValorISS;
+    FTotalImpostos.ValorIPI   := FTotalImpostos.ValorIPI + Servicos[i].Impostos.ValorIPI;
+    FTotalImpostos.ValorPIS  := FTotalImpostos.ValorPIS + Servicos[i].Impostos.ValorPIS;
+    FTotalImpostos.ValorCOFINS  := FTotalImpostos.ValorCOFINS + Servicos[i].Impostos.ValorCOFINS;
+    FTotalImpostos.ValorICMSST  := FTotalImpostos.ValorICMSST + Servicos[i].Impostos.ValorICMSST;
+    FTotalImpostos.ValorCSLL  := FTotalImpostos.ValorCSLL + Servicos[i].Impostos.ValorCSLL;
+  end;
+
+  Result := FTotalImpostos;
+end;
+
+function TDocumentoFiscal.GetTotalProdutos: Currency;
+var
+  I:Integer;
+begin
+  FTotalProdutos:= 0 ;
+  for I := 0 to FProdutos.Count - 1 do
+    FTotalProdutos:= FTotalProdutos+ FProdutos.Items[i].ValorTotalLiquido;
+
+  Result := FTotalProdutos;
+end;
+
+function TDocumentoFiscal.GetTotalServicos: Currency;
+var
+  I:Integer;
+begin
+  for I := 0 to FServicos.Count - 1 do
+    FTotalServicos:= FTotalServicos+ FServicos.Items[i].ValorTotalLiquido;
+
+  Result := FTotalServicos;
+end;
+
+function TDocumentoFiscal.GetTransportadora: IPessoa;
+begin
+  Result := FTransportadora;
+end;
+
+function TDocumentoFiscal.GetUfPlaca: String;
+begin
+  Result := FUfPlaca;
+end;
+
+function TDocumentoFiscal.GetVolume: Integer;
+begin
+  Result := FVolume;
+end;
+
+procedure TDocumentoFiscal.SetANTT(const Value: String);
+begin
+  FANTT := Value;
+end;
+
+procedure TDocumentoFiscal.SetCobranca(const Value: TList<ICobranca>);
+begin
+  FCobranca := Value;
+end;
+
+procedure TDocumentoFiscal.SetDestinatario(const Value: IPessoa);
+begin
+  FDestinatario := Value;
+end;
+
+procedure TDocumentoFiscal.SetEmitente(const Value: IPessoa);
+begin
+  FEmitente := Value;
+end;
+
+procedure TDocumentoFiscal.SetEnderecoCobranca(const Value: IEndereco);
+begin
+  FEnderecoCobranca := Value;
+end;
+
+procedure TDocumentoFiscal.SetEnderecoEntrega(const Value: IEndereco);
+begin
+  FEnderecoEntrega := Value;
+end;
+
+procedure TDocumentoFiscal.SetEspecie(const Value: String);
+begin
+  FEspecie := Value;
+end;
+
+procedure TDocumentoFiscal.SetFrete(const Value: Currency);
+begin
+  FFrete := Value;
+end;
+
+procedure TDocumentoFiscal.SetMarca(const Value: String);
+begin
+  FMarca := Value;
+end;
+
+procedure TDocumentoFiscal.SetOutrasDespesas(const Value: Currency);
+begin
+  FOutrasDespesas := Value;
+end;
+
+procedure TDocumentoFiscal.SetPesoBruto(const Value: Double);
+begin
+  FPesoBruto := Value;
+end;
+
+procedure TDocumentoFiscal.SetPesoLiquido(const Value: Double);
+begin
+  FPesoLiquido := Value;
+end;
+
+procedure TDocumentoFiscal.SetPlaca(const Value: String);
+begin
+  FPlaca := Value;
+end;
+
+procedure TDocumentoFiscal.SetProdutos(const Value: TList<IItemDocumento>);
+begin
+  FProdutos := Value;
+end;
+
+procedure TDocumentoFiscal.SetSeguro(const Value: Currency);
+begin
+  FSeguro := Value;
+end;
+
+procedure TDocumentoFiscal.SetServicos(const Value: TList<IItemDocumento>);
+begin
+  FServicos := Value;
+end;
+
+procedure TDocumentoFiscal.SetTipoFrete(const Value: TTipoFrete);
+begin
+  FTipoFrete := Value;
+end;
+
+procedure TDocumentoFiscal.SetTipoTransporte(const Value: TTipoTransporte);
+begin
+  FTipoTransporte := Value;
+end;
+
+procedure TDocumentoFiscal.SetTotalDocumento(const Value: Currency);
+begin
+  FTotalDocumento := Value;
+end;
+
+procedure TDocumentoFiscal.SetTotalImpostos(const Value: IImpostos);
+begin
+  FTotalImpostos := Value;
+end;
+
+procedure TDocumentoFiscal.SetTotalProdutos(const Value: Currency);
+begin
+  FTotalProdutos := Value;
+end;
+
+procedure TDocumentoFiscal.SetTotalServicos(const Value: Currency);
+begin
+  FTotalServicos := Value;
+end;
+
+procedure TDocumentoFiscal.SetTransportadora(const Value: IPessoa);
+begin
+  FTransportadora := Value;
+end;
+
+procedure TDocumentoFiscal.SetUfPlaca(const Value: String);
+begin
+  FUfPlaca := Value;
+end;
+
+procedure TDocumentoFiscal.SetVolume(const Value: Integer);
+begin
+  FVolume := Value;
+end;
+
+
+Procedure CriaDocumentoFiscal(Const DataSetNota, DataSetItens, DataSetCobranca: TDataSet; Var Doc: IDocumentoFiscal );
+var
+  Item: IItemDocumento;
+  Cob: TCobranca;
+begin
+  if not Assigned(Doc) then
+    Doc := TDocumentoFiscal.Create;
+
+  {$Region 'Cria Emitente'}
+  with GetCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(DataSetNota.FieldByName('idempresa').Value)) do
+  begin
+    Doc.Emitente.Nome_RazaoSocial :=FieldByName('RAZAOSOCIAL').AsString;
+    Doc.Emitente.NomeFantasia :=FieldByName('FANTASIA').AsString;
+    Doc.Emitente.CPF_CNPJ :=FieldByName('CNPJ').AsString;
+    Doc.Emitente.Telefone :=FieldByName('TELEFONE').AsString;
+    Doc.Emitente.IE :=FieldByName('IE').AsString;
+    Doc.Emitente.IE_ST :='';
+    Doc.Emitente.SUFRAMA :='';
+    Doc.Emitente.IdentificacaoSUFRAMA := '';
+    Doc.Emitente.IM :=FieldByName('IM').AsString;
+    Doc.Emitente.Email :='';
+    Doc.Emitente.CNAE :='';  { TODO : Rever }
+    Doc.Emitente.CRT :=''; { TODO : Rever }
+    Doc.Emitente.Endereco.Endereco :=FieldByName('LOGRADOURO').AsString;
+    Doc.Emitente.Endereco.NumeroEndereco :=FieldByName('NUMERO').AsString;
+    Doc.Emitente.Endereco.Complemento :=FieldByName('COMPLEMENTO').AsString;
+    Doc.Emitente.Endereco.Bairro :=FieldByName('BAIRRO').AsString;
+    Doc.Emitente.Endereco.Cidade :=FieldByName('CIDADE').AsString;
+    Doc.Emitente.Endereco.Estado :=FieldByName('UF').AsString;
+    Doc.Emitente.Endereco.CodigoMunicipio := '';{ TODO : Rever }
+    Doc.Emitente.Endereco.CEP :=FieldByName('CEP').AsString;
+    Doc.Emitente.Endereco.NumPais := 1058;
+    Doc.Emitente.Endereco.NomePais := 'BRASIL';
+
+    Free;
+  end;
+  {$EndRegion}
+
+  {$Region 'Cria Destinatario'}
+  if (DataSetNota.FindField('IDCliente') <> nil) and
+     (not DataSetNota.FieldByName('IDCliente').IsNull) then
+  begin
+    with GetCds(tpERPCliente,'IDCliente = '+TipoCampoChaveToStr(DataSetNota.FieldByName('IDCliente').Value)) do
+    begin
+      Doc.Destinatario.Nome_RazaoSocial :=FieldByName('NOMECLIENTE').AsString;
+      Doc.Destinatario.NomeFantasia :=FieldByName('FANTASIA').AsString;
+      if FieldByName('CNPJ').AsString = '' then
+        Doc.Destinatario.CPF_CNPJ :=FieldByName('CNPJ').AsString
+      else
+      if FieldByName('CPF').AsString = '' then
+        Doc.Destinatario.CPF_CNPJ :=FieldByName('CPF').AsString
+      else
+      begin
+        Free;
+        AvisaErro('O CPF/CNPJ do destinatário deve estar preenchido');
+      end;
+
+
+      Doc.Destinatario.Telefone :=FieldByName('TELEFONE').AsString;
+      Doc.Destinatario.IE :=FieldByName('IE').AsString;
+      Doc.Destinatario.IE_ST :='';
+      Doc.Destinatario.SUFRAMA :='';
+      Doc.Destinatario.IdentificacaoSUFRAMA := '';
+      Doc.Destinatario.IM :=FieldByName('IM').AsString;
+      Doc.Destinatario.Email := FieldByName('email').AsString;
+      Doc.Destinatario.Endereco.Endereco :=FieldByName('LOGRADOURO').AsString;
+      Doc.Destinatario.Endereco.NumeroEndereco :=FieldByName('NUMERO').AsString;
+      Doc.Destinatario.Endereco.Complemento :=FieldByName('COMPLEMENTO').AsString;
+      Doc.Destinatario.Endereco.Bairro :=FieldByName('BAIRRO').AsString;
+      Doc.Destinatario.Endereco.Cidade :=FieldByName('CIDADE').AsString;
+      Doc.Destinatario.Endereco.Estado :=FieldByName('UF').AsString;
+      Doc.Destinatario.Endereco.CodigoMunicipio := '';{ TODO : Rever }
+      Doc.Destinatario.Endereco.CEP :=FieldByName('CEP').AsString;
+      Doc.Destinatario.Endereco.NumPais := 1058;     { TODO : Rever }
+      Doc.Destinatario.Endereco.NomePais := 'BRASIL'; { TODO : Rever }
+
+      Free;
+    end;
+  end;
+  if (DataSetNota.FindField('idfornecedor') <> nil) and
+     (not DataSetNota.FieldByName('idfornecedor').IsNull) then
+  begin
+    with GetCds(tpERPFornecedor,'IDCliente = '+TipoCampoChaveToStr(DataSetNota.FieldByName('idfornecedor').Value)) do
+    begin
+      Doc.Destinatario.Nome_RazaoSocial :=FieldByName('RAZAOSOCIAL').AsString;
+      Doc.Destinatario.NomeFantasia :=FieldByName('FANTASIA').AsString;
+      if FieldByName('CNPJ').AsString = '' then
+        Doc.Destinatario.CPF_CNPJ :=FieldByName('CNPJ').AsString
+      else
+      begin
+        Free;
+        AvisaErro('O CPF/CNPJ do destinatário deve estar preenchido');
+      end;
+
+
+      Doc.Destinatario.Telefone :=FieldByName('TELEFONE').AsString;
+      Doc.Destinatario.IE :='';
+      Doc.Destinatario.IE_ST :='';
+      Doc.Destinatario.SUFRAMA :='';
+      Doc.Destinatario.IdentificacaoSUFRAMA := '';
+      Doc.Destinatario.IM :='';
+      Doc.Destinatario.Email := FieldByName('email').AsString;
+      Doc.Destinatario.Endereco.Endereco :=FieldByName('LOGRADOURO').AsString;
+      Doc.Destinatario.Endereco.NumeroEndereco :=FieldByName('NUMERO').AsString;
+      Doc.Destinatario.Endereco.Complemento :=FieldByName('COMPLEMENTO').AsString;
+      Doc.Destinatario.Endereco.Bairro :=FieldByName('BAIRRO').AsString;
+      Doc.Destinatario.Endereco.Cidade :=FieldByName('CIDADE').AsString;
+      Doc.Destinatario.Endereco.Estado :=FieldByName('UF').AsString;
+      Doc.Destinatario.Endereco.CodigoMunicipio := '';{ TODO : Rever }
+      Doc.Destinatario.Endereco.CEP :=FieldByName('CEP').AsString;
+      Doc.Destinatario.Endereco.NumPais := 1058;     { TODO : Rever }
+      Doc.Destinatario.Endereco.NomePais := 'BRASIL'; { TODO : Rever }
+
+      Free;
+    end;
+  end;
+
+  {$EndRegion}
+
+  {$Region 'Cria Transportadora'}
+  with GetCds(tpERPCliente,'IDCliente = '+TipoCampoChaveToStr(DataSetNota.FieldByName('IDCliente').Value)) do
+    begin
+      Doc.Emitente.Nome_RazaoSocial :=FieldByName('NOMECLIENTE').AsString;
+      Doc.Emitente.NomeFantasia :=FieldByName('FANTASIA').AsString;
+      if FieldByName('CNPJ').AsString = '' then
+        Doc.Emitente.CPF_CNPJ :=FieldByName('CNPJ').AsString
+     else
+      begin
+        Free;
+        AvisaErro('O CPF/CNPJ da transportadora deve estar preenchido');
+      end;
+
+
+      Doc.Transportadora.Telefone :=FieldByName('TELEFONE').AsString;
+      Doc.Transportadora.IE :=FieldByName('IE').AsString;
+      Doc.Transportadora.IE_ST :='';
+      Doc.Transportadora.SUFRAMA :='';
+      Doc.Transportadora.IdentificacaoSUFRAMA := '';
+      Doc.Transportadora.IM :='';
+      Doc.Transportadora.Email := '';
+      Doc.Transportadora.Endereco.Endereco :=FieldByName('LOGRADOURO').AsString;
+      Doc.Transportadora.Endereco.NumeroEndereco :=FieldByName('NUMERO').AsString;
+      Doc.Transportadora.Endereco.Complemento :=FieldByName('COMPLEMENTO').AsString;
+      Doc.Transportadora.Endereco.Bairro :=FieldByName('BAIRRO').AsString;
+      Doc.Transportadora.Endereco.Cidade :=FieldByName('CIDADE').AsString;
+      Doc.Transportadora.Endereco.Estado :=FieldByName('UF').AsString;
+      Doc.Transportadora.Endereco.CodigoMunicipio := '';{ TODO : Rever }
+      Doc.Transportadora.Endereco.CEP :=FieldByName('CEP').AsString;
+      Doc.Transportadora.Endereco.NumPais := 1058;     { TODO : Rever }
+      Doc.Transportadora.Endereco.NomePais := 'BRASIL'; { TODO : Rever }
+
+      Free;
+    end;
+
+  {$EndRegion}
+
+  {$Region 'Corpo da nota '}
+  Doc.EnderecoEntrega := Doc.Destinatario.Endereco;
+  Doc.EnderecoCobranca := Doc.Destinatario.Endereco;
+
+
+  Doc.Seguro := DataSetNota.FieldByName('VALORSEGURO').Value;
+  Doc.Frete := DataSetNota.FieldByName('VALORFRETE').Value;
+  Doc.OutrasDespesas := DataSetNota.FieldByName('VALOROUTRASDESPESAS').Value;
+  Doc.TotalDocumento := DataSetNota.FieldByName('VALORTOTALNOTA').Value;
+
+  case DataSetNota.FieldByName('TIPOTRANSPORTE').AsInteger of
+    1: Doc.TipoTransporte := ttMaritima;
+    2: Doc.TipoTransporte := ttFluvial;
+    3: Doc.TipoTransporte := ttLacustre;
+    4: Doc.TipoTransporte := ttAerea;
+    5: Doc.TipoTransporte := ttPostal;
+    6: Doc.TipoTransporte := ttFerroviaria;
+    7: Doc.TipoTransporte := ttRodoviaria;
+    8: Doc.TipoTransporte := ttConduto_Rede_Transmissao;
+    9: Doc.TipoTransporte := ttMeios_Proprios;
+   10: Doc.TipoTransporte := ttEntrada_Ou_Saida_ficta;
+  end;
+
+  if DataSetNota.FieldByName('FLAGMODALIDADEFRETE').Value  = 'D' then
+    Doc.TipoFrete := tfDestinatario
+  else
+  if DataSetNota.FieldByName('FLAGMODALIDADEFRETE').Value  = 'E' then
+    Doc.TipoFrete := tfEmitente
+  else
+    Doc.TipoFrete := tfTerceiros;
+
+  Doc.Placa := DataSetNota.FieldByName('PLACAVEICULO').Value;
+  Doc.UfPlaca := DataSetNota.FieldByName('UFPLACAVEICULO').Value;
+  Doc.ANTT := '';
+  Doc.Volume := DataSetNota.FieldByName('VOLUME').Value;
+  Doc.Especie := DataSetNota.FieldByName('ESPECIE').Value;
+  Doc.Marca := '';
+  Doc.PesoBruto := DataSetNota.FieldByName('PESOBRUTO').Value;
+  Doc.PesoLiquido := DataSetNota.FieldByName('PESOLIQ').Value;
+  {$EndRegion}
+
+  {$Region 'Itens'}
+  DataSetItens.First;
+  while not DataSetItens.Eof do
+  begin
+    Item := TItemDocumento.Create;
+    Item.Codigo := DataSetItens.FieldByName('CODIGO_PRODUTO').AsString;
+    Item.Unidade := DataSetItens.FieldByName('UNIDADE').Value;
+    Item.Quantidade := DataSetItens.FieldByName('QUANTIDADE').Value;
+    Item.ValorUnitario := DataSetItens.FieldByName('VALORUNITARIO').Value;
+    Item.ValorDesconto := DataSetItens.FieldByName('VALORDESCONTO').Value;
+    Item.ValorAcrescimo := DataSetItens.FieldByName('VALORACRESCIMO').Value;
+    Item.AliqDesconto := DataSetItens.FieldByName('ALIQDESCONTO').Value;
+    Item.AliqAcrescimo := DataSetItens.FieldByName('ALIQACRESCIMO').Value;
+    Item.ValorFrete := DataSetItens.FieldByName('VALORFRETERATEADO').Value;
+    Item.ValorSeguro := DataSetItens.FieldByName('VALORSEGURORATEADO').Value;
+    Item.ValorOutrasDespesas := DataSetItens.FieldByName('VALOROUTRASDESPESASRATEADO').Value;
+    Item.CFOP := DataSetItens.FieldByName('CFOP').Value;
+    Item.CST := DataSetItens.FieldByName('CST').Value;
+    Item.CSOSN := DataSetItens.FieldByName('CSOSN').Value;
+    Item.CRT := DataSetItens.FieldByName('CRT').Value;
+
+    Item.NumDI := '';
+    Item.DataDI :=0;
+    Item.LocalDesembaraco := '';
+    Item.UFDesenbaraco:= '';
+    Item.DataDesembaraco := 0;
+    Item.TipoTransporte := Doc.TipoTransporte;
+    Item.ValorAFRMM := 0;
+    Item.TipoIntermedio := tiImportacao_por_conta_propria;
+    Item.CNPJ_Adquerente := DataSetNota.FieldByName('CNPJ').AsString;
+    Item.UF_Terceiro :='';
+    Item.CodigoExportador := '';
+    Item.NumAdicao := 0;
+    Item.CodigoDoProdutoNoFabricante := '';
+
+    Item.NumeroPedidoCompra:= '';
+    Item.NumeroItemPedidoCompra := 0;
+
+    Item.Impostos.AliqICMS := DataSetItens.FieldByName('ALIQICMS').Value;
+    Item.Impostos.AliqISS := DataSetItens.FieldByName('ALIQISS').Value;
+    Item.Impostos.AliqCOFINS := DataSetItens.FieldByName('ALIQCOFINS').Value;
+    Item.Impostos.AliqPIS := DataSetItens.FieldByName('ALIQPIS').Value;
+    Item.Impostos.AliqIPI := DataSetItens.FieldByName('ALIQIPI').Value;
+    Item.Impostos.TipoIPI := iIPIAliq;
+    Item.Impostos.MVA := DataSetItens.FieldByName('MVA').Value;
+    Item.Impostos.AliqICMSST := DataSetItens.FieldByName('ALIQST').Value;
+    Item.Impostos.ALiqCSLL := DataSetItens.FieldByName('ALIQCSLL').Value;
+    if DataSetItens.FieldByName('BASEISS').AsCurrency >0  then
+    begin
+      Item.Impostos.BaseISS := DataSetItens.FieldByName('BASEISS').Value  ;
+      Item.Impostos.ValorISS := DataSetItens.FieldByName('VALORISS').Value;
+    end else
+    begin
+      Item.Impostos.BaseICMS := DataSetItens.FieldByName('BASEICMS').Value;
+      Item.Impostos.ValorICMS := DataSetItens.FieldByName('VALORICMS').Value;
+    end;
+
+    Item.Impostos.BaseIPI := DataSetItens.FieldByName('BASEIPI').Value;
+    Item.Impostos.BasePIS_COFINS := DataSetItens.FieldByName('BASEPISCOFINS').Value;
+    Item.Impostos.BaseICMSST := DataSetItens.FieldByName('BASEICMSST').Value;
+    Item.Impostos.BaseCSLL := DataSetItens.FieldByName('BASECSLL').Value;
+
+    Item.Impostos.ValorIPI := DataSetItens.FieldByName('VALORIPI').Value;
+    Item.Impostos.ValorPIS := DataSetItens.FieldByName('VALORPIS').Value;
+    Item.Impostos.ValorCOFINS := DataSetItens.FieldByName('VALORCOFINS').Value;
+    Item.Impostos.ValorICMSST := DataSetItens.FieldByName('VALORST').Value;
+    Item.Impostos.ValorCSLL := DataSetItens.FieldByName('VALORCSLL').Value;
+
+    if DataSetItens.FieldByName('TIPO_ITEM').AsString = 'S' then
+      Doc.Servicos.Add(Item)
+    else
+      Doc.Produtos.Add(Item);
+
+    DataSetItens.Next;
+  end;
+  {$EndRegion}
+
+  DataSetCobranca.First;
+  while not DataSetCobranca.Eof do
+  begin
+    Cob := TCobranca.Create;
+    Cob.NumeroDocumento := '';
+    Cob.Vencimento := 0;
+    Cob.ValorDocumento := DataSetCobranca.FieldByName('VALOR').Value;
+
+    DataSetCobranca.Next;
+  end;
+
+
+
+
+end;
+
+
 end.
+

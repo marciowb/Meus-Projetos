@@ -234,7 +234,7 @@ end;
 procedure TfrmCad_Produto.FormShow(Sender: TObject);
 begin
   inherited;
-  edtCodMunServico.SQLComp := 'flagtipo = ''S''';
+//  edtCodMunServico.SQLComp := 'flagtipo = ''S''';
   ConfiguraEditPesquisa(edtLinha,CdsCadastro,tpERPLinha);
   ConfiguraEditPesquisa(edtFornecedor,CdsCadastro,tpERPFornecedor);
   ConfiguraEditPesquisa(edtFabricante,CdsCadastro,tpERPFabricante);

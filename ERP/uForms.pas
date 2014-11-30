@@ -64,6 +64,7 @@ interface
       class function AbreManutencaoPatrimonio(TipoOperacao: TTipoOperacaoForm = toNada; pIdPatrimonio: TipoCampoChave = '-1'):CampoChave;
       class Procedure AbreAliqICMS;
       class Procedure AbreAliqISS;
+      class function AbreCadastroCFOP(TipoOperacao: TTipoOperacaoForm = toNada; pIdPatrimonio: TipoCampoChave = '-1'):CampoChave;
   private
 
     end;
@@ -79,7 +80,7 @@ uses uCadNCM, Lst_Empresa, Cad_Cliente, Cad_usuario, uCad_Funcionario,
   uAgenda, uPrincipal, uEntrada, Lst_OperacaoEstoque, uLst_Entrada, uSaida,
   uCad_Transportadora, uLst_Saidas, uCadConfiguracoes, uLst_ContasReceber,
   uLst_TipoPatrimonio, uLst_TipoEvento, uCad_Patrimonio,
-  uLst_ManutencaoPatrimonio, uALiqICMS, uAliqISS;
+  uLst_ManutencaoPatrimonio, uALiqICMS, uAliqISS, uCad_CFOP;
 
 class procedure TrotinasForms.AbreAgenda(IdAgenda: TipoCampoChave = '-1';IdConratoCOmpetencia: TipoCampoChave = '-1');
 begin
@@ -107,6 +108,12 @@ end;
 class function TrotinasForms.AbreCadastroCargos(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;
 begin
   AbreFormSimplesPeloTipoPesquisa(tpERPCargo,TipoOperacao);
+end;
+
+class function TrotinasForms.AbreCadastroCFOP(TipoOperacao: TTipoOperacaoForm;
+  pIdPatrimonio: TipoCampoChave): CampoChave;
+begin
+  AbreFormCadastroPai<TfrmCad_CFOP>(TipoOperacao);
 end;
 
 class function TrotinasForms.AbreCadastroCliente(TipoOperacao: TTipoOperacaoForm = toNada): CampoChave;

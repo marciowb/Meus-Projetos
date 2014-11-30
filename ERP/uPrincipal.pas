@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs,uPrincipalPadrao, cxGraphics, cxControls, cxLookAndFeels,
+  Dialogs, uPrincipalPadrao, cxGraphics, cxControls, cxLookAndFeels,
   cxLookAndFeelPainters, dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinCaramel,
   dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide, dxSkinFoggy, dxSkinGlassOceans,
   dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky, dxSkinLondonLiquidSky,
@@ -14,7 +14,7 @@ uses
   dxSkinPumpkin, dxSkinSeven, dxSkinSharp, dxSkinSilver, dxSkinSpringTime,
   dxSkinStardust, dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
   dxSkinXmas2008Blue, dxSkinsdxBarPainter, ActnList, Menus, dxBar, dxStatusBar,
-  dxRibbonStatusBar,Generics.Collections, dxSkinscxPCPainter, cxPC, StdCtrls,
+  dxRibbonStatusBar, Generics.Collections, dxSkinscxPCPainter, cxPC, StdCtrls,
   ExtCtrls, dxSkinsdxDockControlPainter, dxDockControl, dxDockPanel, cxStyles,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, DB, cxDBData,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, DBClient,
@@ -240,7 +240,6 @@ var
 implementation
 
 uses uForms, MinhasClasses, uCadNCM, Comandos, uRegras;
-
 {$R *.dfm}
 
 procedure TfrmPrincipal.actAgendaExecute(Sender: TObject);
@@ -313,7 +312,7 @@ end;
 procedure TfrmPrincipal.actCargoExecute(Sender: TObject);
 begin
   inherited;
-  TrotinasForms. AbreCadastroCargos
+  TrotinasForms.AbreCadastroCargos
 end;
 
 procedure TfrmPrincipal.actCentralOSExecute(Sender: TObject);
@@ -325,7 +324,7 @@ end;
 procedure TfrmPrincipal.actCFOPExecute(Sender: TObject);
 begin
   inherited;
-  TrotinasForms.AbreFormSimplesPeloTipoPesquisa(tpERPCFOP);
+  TrotinasForms.AbreCadastroCFOP;
 end;
 
 procedure TfrmPrincipal.actCondicaoPagamentoExecute(Sender: TObject);
@@ -397,7 +396,7 @@ end;
 procedure TfrmPrincipal.actFinanceiroExecute(Sender: TObject);
 begin
   inherited;
-   //
+  //
 end;
 
 procedure TfrmPrincipal.actFiscalExecute(Sender: TObject);
@@ -481,13 +480,13 @@ end;
 procedure TfrmPrincipal.actOperacaoEstoqueExecute(Sender: TObject);
 begin
   inherited;
-  TRotinasForms.AbreCadastroOperacaoEstoque;
+  TrotinasForms.AbreCadastroOperacaoEstoque;
 end;
 
 procedure TfrmPrincipal.actOSExecute(Sender: TObject);
 begin
   inherited;
-//
+  //
 end;
 
 procedure TfrmPrincipal.actPatrimonioExecute(Sender: TObject);
@@ -523,7 +522,7 @@ end;
 procedure TfrmPrincipal.actProdutosExecute(Sender: TObject);
 begin
   inherited;
-//
+  //
 end;
 
 procedure TfrmPrincipal.actPropostaExecute(Sender: TObject);
@@ -602,20 +601,21 @@ procedure TfrmPrincipal.AtualizaAgenda;
 var
   Filtro: String;
 begin
-  Filtro := '  (DATACOMPROMISSO <= CURRENT_DATE +7 ) AND  COALESCE(A.FLAGBAIXADO,''N'') = ''N'' ';
-  SetCds(CdsAgenda,tpERPAgenda,Filtro);
-//  if CdsAgenda.RecordCount = 0 Then
-//    DockAgenda.AutoHide := True;
+  Filtro :=
+    '  (DATACOMPROMISSO <= CURRENT_DATE +7 ) AND  COALESCE(A.FLAGBAIXADO,''N'') = ''N'' ';
+  SetCds(CdsAgenda, tpERPAgenda, Filtro);
+  // if CdsAgenda.RecordCount = 0 Then
+  // DockAgenda.AutoHide := True;
 
   TRegrasPatrimonio.GetListagemPatrimoniosAlerta(CdsPatrimonio);
-  pnlPatrimonio.AutoHide := CdsPatrimonio.RecordCount =  0;
+  pnlPatrimonio.AutoHide := CdsPatrimonio.RecordCount = 0;
 
 end;
 
 procedure TfrmPrincipal.cxGrid1DBTableView1DblClick(Sender: TObject);
 begin
   inherited;
-  TrotinasForms.AbreAgenda( Self.CdsAgenda.FieldByName('IdAgenda').Value);
+  TrotinasForms.AbreAgenda(Self.CdsAgenda.FieldByName('IdAgenda').Value);
 end;
 
 procedure TfrmPrincipal.FormCreate(Sender: TObject);

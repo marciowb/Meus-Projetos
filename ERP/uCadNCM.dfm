@@ -2,7 +2,6 @@ inherited frmCad_NCM: TfrmCad_NCM
   Caption = 'Cadastro de NCM'
   ClientWidth = 629
   ExplicitWidth = 645
-  ExplicitHeight = 240
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
@@ -17,7 +16,10 @@ inherited frmCad_NCM: TfrmCad_NCM
       ExplicitWidth = 444
       ClientRectRight = 443
       inherited TsPrincipal: TcxTabSheet
+        ExplicitLeft = 1
+        ExplicitTop = 21
         ExplicitWidth = 442
+        ExplicitHeight = 321
         inherited pnlGeral: TPanel
           Width = 442
           ExplicitWidth = 442
@@ -302,6 +304,11 @@ inherited frmCad_NCM: TfrmCad_NCM
                   DataBinding.FieldName = 'VALOR_LI'
                   Visible = False
                   Width = 70
+                end
+                object cxGrid1DBTableView1Column7: TcxGridDBColumn
+                  Caption = '% Redu'#231#227'o da base do ICMS'
+                  DataBinding.FieldName = 'ALIQREDUCAOBASEICMS'
+                  Width = 147
                 end
               end
               object cxGrid1Level1: TcxGridLevel

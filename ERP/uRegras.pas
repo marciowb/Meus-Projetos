@@ -2,7 +2,7 @@ unit uRegras;
 
 interface
   Uses MinhasClasses, uSQLERP,Comandos,Classes,SysUtils, Math,DB,pFIBClientDataSet,
-       StrUtils,ulibERP, DateUtils;
+       StrUtils,ulibERP, DateUtils,uDocumentoFiscal;
   Type
     TParcela = record
       NumParcela: Integer;
@@ -67,12 +67,15 @@ interface
 
    TRegrasImpostos = class
     private
-      class function GetAliqICMS(UfOrigem, UfDestino: String; IdProduto: TipoCampoChave): Currency;
-      class function GetAliqISS(IdServico, IdMunicipio: TipoCampoChave): Currency;
-      class Procedure GetAliqPIS_COFINS_IPI(IdCliente,IdProduto:TipoCampoChave; Out PIS:Currency; Out COFINS: Currency; Out IPI:Currency);
+      class Procedure GetAliqImpostos(IdCliente,IdProduto:TipoCampoChave;UFOrigem: String;
+                                            Out Imposto: TImpostos;
+                                            out ValorMinimoTributosFederais: Currency;
+                                            out ValorMinimoIR: Currency;
+                                            Out TipoProduto:String );
     public
-      class function CalculaImpostos(IdCliente, IdProduto,IdCFOP: TipoCampoChave; CST_CSOSN: String;
+      class function CalculaImpostos(IdCliente, IdProduto,IdCFOP, IdEmpresa: TipoCampoChave; CST: String; CSOSN: String;
                                      ValorOperacao: Currency; Frete,Seguro,OutrasDespesas: Currency): IImpostos;
+      class function GetCRT(IdEmpresa: TipoCampoChave; Data: TDate): String;
 
    end;
 
@@ -769,27 +772,197 @@ end;
 { TRegrasImpostos }
 
 class function TRegrasImpostos.CalculaImpostos(IdCliente, IdProduto,
-  IdCFOP: TipoCampoChave; CST_CSOSN: String;
+  IdCFOP,IdEmpresa: TipoCampoChave; CST: String ;CSOSN: String;
   ValorOperacao: Currency; Frete,Seguro,OutrasDespesas: Currency): IImpostos;
+var
+  DataSetEmpresa, DataSetCliente: TpFIBClientDataSet;
+  ValorMinimoTributosFederais: Currency;
+  ValorMinimoIR: Currency;
+  Impostos: TImpostos;
+  TipoProduto: String;
 begin
+  Impostos := Timpostos.Create;
+  Try
+    DataSetEmpresa := GetCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(IdEmpresa));
+    DataSetCliente := GetCds(tpERPCliente,'idcliente = '+TipoCampoChaveToStr(IdCliente));
 
+    TRegrasImpostos.GetAliqImpostos(IdCliente,IdProduto, DataSetEmpresa.FieldByName('uf').AsString,Impostos,
+                                    ValorMinimoTributosFederais, ValorMinimoIR,TipoProduto);
+
+
+
+
+    {$Region 'Calcula ISS'}
+    if TipoProduto =TipoProdutoServico then
+    begin
+     Impostos.BaseISS := ValorOperacao;
+     Impostos.ValorISS := (Impostos.BaseISS * Impostos.AliqISS )/100.00;
+    end;
+    {$EndRegion}
+
+    {$Region 'Calcula CSLL'}
+     if TipoProduto =TipoProdutoServico then
+     begin
+       if (DataSetCliente.FieldByName('FLAGTIPOPESSOA').AsString ='J') and
+          (DataSetEmpresa.FieldByName('REGIMEEMPRESA').AsString <> RegimeEmpresaSimples) then
+       begin
+         Impostos.BaseCSLL := ValorOperacao;
+         if ValorOperacao >= ValorMinimoTributosFederais then
+           Impostos.ValorCSLL := (Impostos.BaseCSLL * Impostos.ALiqCSLL )/100.00
+         else
+           Impostos.ValorCSLL := 0 ;
+       end;
+     end;
+    {$EndRegion}
+
+    {$Region 'Calcula IR'}
+     if (TipoProduto =TipoProdutoServico) and (DataSetCliente.FieldByName('FLAGTIPOPESSOA').AsString ='J' ) and
+        (DataSetEmpresa.FieldByName('REGIMEEMPRESA').AsString <> RegimeEmpresaSimples) then
+     begin
+       Impostos.BaseIR := ValorOperacao;
+       Impostos.ValorIR := (Impostos.BaseIR * Impostos.ALiqIR )/100.00;
+       if ValorOperacao <= ValorMinimoIR then
+         Impostos.ValorIR := 0 ;
+     end;
+    {$EndRegion}
+
+
+    {$Region 'Calcula IPI'}
+    if TipoProduto <> TipoProdutoServico then
+    begin
+
+
+    end;
+
+    {$EndRegion}
+
+    {$Region 'Calcula ICMS'}
+    {$EndRegion}
+
+
+    {$Region 'Calcula PIS/COFINS'}
+     if TipoProduto = TipoProdutoServico then
+     begin
+       if (DataSetCliente.FieldByName('FLAGTIPOPESSOA').AsString ='J') and
+          (DataSetEmpresa.FieldByName('REGIMEEMPRESA').AsString <> RegimeEmpresaSimples) then
+       begin
+         Impostos.BasePIS_COFINS := ValorOperacao;
+         if ValorOperacao >= ValorMinimoTributosFederais then
+         begin
+           Impostos.ValorPIS := (Impostos.BasePIS_COFINS * Impostos.AliqPIS )/100.00;
+           Impostos.ValorCOFINS := (Impostos.BasePIS_COFINS * Impostos.AliqCOFINS )/100.00;
+         end else
+         begin
+           Impostos.ValorPIS := 0 ;
+           Impostos.ValorCOFINS := 0 ;
+         end;
+
+       end;
+
+     end;
+
+    {$EndRegion}
+
+
+
+    Result := Impostos;
+
+  Finally
+    FreeAndNil(DataSetEmpresa);
+    FreeAndNil(DataSetCliente);
+  End;
 end;
 
-class function TRegrasImpostos.GetAliqICMS(UfOrigem, UfDestino: String;
-  IdProduto: TipoCampoChave): Currency;
-begin
 
+
+class procedure TRegrasImpostos.GetAliqImpostos(IdCliente,IdProduto:TipoCampoChave; UFOrigem: String;
+                                            Out Imposto: TImpostos;
+                                            out ValorMinimoTributosFederais: Currency;
+                                            out ValorMinimoIR: Currency;
+                                            Out TipoProduto:String );
+var
+  StrSQL:String;
+begin
+  StrSQL :=
+    'SELECT COALESCE(N.ALIQIPI, N.IPIVALOR) ALIQ_IPI,'+
+    '       CASE WHEN (N.ALIQIPI IS NULL ) AND (N.IPIVALOR IS NOT NULL ) THEN ''V'''+
+    '            ELSE ''A'' END TIPO_ALIQIPI,'+
+    '       COALESCE(N.ALIQPIS,ISS.ALIQPIS) ALIQPIS, COALESCE(N.ALIQCOFINS,ISS.ALIQCOFINS) ALIQCOFINS, '+
+    '       N.ALIQII, N.VALOR_LI, ISS.ALIQCSLL,ISS.ALIQIR,ISS.VALORMINIMOTRIBFEDERAL,ISS.VALORMINIMOIR,ISS.ALIQISS, '+
+    '       COALESCE(N.ALIQICMS, ICMS.ALIQICMS) ALIQICMS,P.TIPOPRODUTO  '+
+    '  FROM PRODUTO P'+
+    '  LEFT JOIN NCMESTADO N'+
+    '    ON (P.IDNCM = N.IDNCM)'+
+    '  LEFT JOIN ISS '+
+    '    ON (P.IDCODIGOMUNICIPALSERVICO = ISS.IDCODIGOMUNICIPALSERVICO) '+
+    '  LEFT JOIN ICMS '+
+    '    ON (ICMS.UFORIGEM ='+QuotedStr(UFOrigem)+' AND ICMS.UFDESTINO = N.UF) '+
+    ' WHERE P.IDPRODUTO = '+TipoCampoChaveToStr(IdProduto)+
+    '   AND EXISTS(SELECT 1'+
+    '                FROM CLIENTE C'+
+    '               WHERE C.IDCLIENTE = '+TipoCampoChaveToStr(IdCliente)+
+    '                 AND ((C.UF = N.UF) OR (C.IDMUNICIPIO = ISS.IDMUNICIPIO)))';
+
+  with GetCds(StrSQL) do
+  begin
+    Imposto.AliqPIS := FieldByName('ALIQPIS').AsCurrency;
+    Imposto.AliqCOFINS := FieldByName('ALIQCOFINS').AsCurrency;
+    Imposto.AliqIPI := FieldByName('ALIQ_IPI').AsCurrency;
+    if FieldByName('TIPO_ALIQIPI').AsString = 'V' Then
+      Imposto.TipoIPI := iIPIValor
+    else
+      Imposto.TipoIPI := iIPIAliq;
+
+    Imposto.AliqCSLL := FieldByName('ALIQCSLL').AsCurrency;
+    Imposto.ALiqIR := FieldByName('ALIQIR').AsCurrency;
+    Imposto.AliqICMS := FieldByName('ALIQICMS').AsCurrency;
+    Imposto.AliqISS := FieldByName('ALIQISS').AsCurrency;
+
+    ValorMinimoTributosFederais := FieldByName('VALORMINIMOTRIBFEDERAL').AsCurrency;
+    ValorMinimoIR := FieldByName('VALORMINIMOIR').AsCurrency;
+    TipoProduto := FieldByName('TIPOPRODUTO').AsString;
+
+    Free;
+  end;
 end;
 
-class function TRegrasImpostos.GetAliqISS(IdServico,
-  IdMunicipio: TipoCampoChave): Currency;
+class function TRegrasImpostos.GetCRT(IdEmpresa: TipoCampoChave; Data: TDate): String;
+var
+  DataSetEmpresa: TpFIBClientDataSet;
+  Mes, Ano,Dia: Word;
+  ReceitaAtual,LimiteFaturamento: Currency;
+  StrSQL: String;
 begin
+  Try
+    DataSetEmpresa := GetCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(IdEmpresa));
+    DecodeDate(Data,Ano,Mes,Dia);
+    if DataSetEmpresa.FieldByName('regimeempresa').AsString <> RegimeEmpresaSimples then
+    begin
+      Result := '3';
+      Exit;
+    end;
+    StrSQL := GetValorCds(tpERPLimiteReceitaBruta,'idempresa = '+TipoCampoChaveToStr(IdEmpresa)+' and ano = '+IntToStr(Ano),'Valor');
+    LimiteFaturamento := StrToCurrDef(StrSQL,0);
+    if LimiteFaturamento <= 0 then
+      Result := '1'
+    else
+    begin
+      StrSQL :=
+        'SELECT SUM(VALOR_MES_ANO) VALOR '+
+        '  FROM VW_RECEITA_BRUTA_MES_ANO '+
+        ' WHERE IDEMPRESA =  '+TipoCampoChaveToStr(IdEmpresa)+
+        '   AND ANO  = '+IntToStr(Ano);
+      ReceitaAtual:= StrToCurrDef( GetValorCds(StrSQL) ,0);
 
-end;
+      if LimiteFaturamento > ReceitaAtual then
+        Result := '1'
+      else
+       Result := '2';
+    end;
 
-class procedure TRegrasImpostos.GetAliqPIS_COFINS_IPI(IdCliente,
-  IdProduto: TipoCampoChave; out PIS, COFINS, IPI: Currency);
-begin
+  Finally
+    FreeAndNil(DataSetEmpresa);
+  End;
 
 end;
 

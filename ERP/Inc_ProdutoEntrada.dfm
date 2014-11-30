@@ -207,7 +207,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Display.TabStop = False
       Display.Color = clSkyBlue
       Display.ReadOnly = True
-      Display.TabOrder = 6
+      Display.TabOrder = 5
       TamanhoDisplay = 215
     end
     object edtQuantidade: TLabelDBEdit
@@ -217,7 +217,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Height = 21
       DataField = 'QUANTIDADERECEBIDA'
       DataSource = DataProdutoEntrada
-      TabOrder = 7
+      TabOrder = 6
       OnExit = edtQuantidadeExit
       Titulo.Left = 19
       Titulo.Top = 121
@@ -238,7 +238,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Height = 21
       DataField = 'VALORUNITARIO'
       DataSource = DataProdutoEntrada
-      TabOrder = 12
+      TabOrder = 11
       Titulo.Left = 19
       Titulo.Top = 202
       Titulo.Width = 66
@@ -276,7 +276,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Top = 176
       Width = 52
       Height = 21
-      TabOrder = 10
+      TabOrder = 9
       TipoPesquisa = 0
       TamanhoCodigo = 0
       AutoPesquisa = True
@@ -463,7 +463,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Height = 21
       DataField = 'BASEICMS'
       DataSource = DataProdutoEntrada
-      TabOrder = 13
+      TabOrder = 12
       Titulo.Left = 100
       Titulo.Top = 202
       Titulo.Width = 51
@@ -483,7 +483,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Height = 21
       DataField = 'ALIQICMS'
       DataSource = DataProdutoEntrada
-      TabOrder = 14
+      TabOrder = 13
       Titulo.Left = 208
       Titulo.Top = 202
       Titulo.Width = 49
@@ -503,7 +503,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Height = 21
       DataField = 'VALORICMS'
       DataSource = DataProdutoEntrada
-      TabOrder = 15
+      TabOrder = 14
       Titulo.Left = 266
       Titulo.Top = 202
       Titulo.Width = 67
@@ -543,7 +543,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Height = 21
       DataField = 'VALORTOTAL'
       DataSource = DataProdutoEntrada
-      TabOrder = 23
+      TabOrder = 22
       Titulo.Left = 140
       Titulo.Top = 245
       Titulo.Width = 49
@@ -784,7 +784,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Top = 136
       Width = 52
       Height = 21
-      TabOrder = 8
+      TabOrder = 7
       TipoPesquisa = 0
       TamanhoCodigo = 0
       AutoPesquisa = True
@@ -970,7 +970,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Height = 21
       DataField = 'FATORMULTIPLICADOR'
       DataSource = DataProdutoEntrada
-      TabOrder = 9
+      TabOrder = 8
       Titulo.Left = 235
       Titulo.Top = 121
       Titulo.Width = 88
@@ -993,7 +993,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       DataField = 'QUANTIDADE'
       DataSource = DataProdutoEntrada
       ReadOnly = True
-      TabOrder = 25
+      TabOrder = 24
       Titulo.Left = 331
       Titulo.Top = 121
       Titulo.Width = 56
@@ -1195,7 +1195,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Display.TabStop = False
       Display.Color = clSkyBlue
       Display.ReadOnly = True
-      Display.TabOrder = 24
+      Display.TabOrder = 25
       TamanhoDisplay = 256
     end
     object EdtAlmoxarifado: TEditPesquisa
@@ -1203,7 +1203,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Top = 176
       Width = 65
       Height = 21
-      TabOrder = 11
+      TabOrder = 10
       TipoPesquisa = 0
       TamanhoCodigo = 0
       AutoPesquisa = True
@@ -1377,7 +1377,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Display.TabStop = False
       Display.Color = clSkyBlue
       Display.ReadOnly = True
-      Display.TabOrder = 22
+      Display.TabOrder = 23
       TamanhoDisplay = 170
     end
     object edtPatrimonio: TEditPesquisa
@@ -1560,7 +1560,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Display.TabStop = False
       Display.Color = clSkyBlue
       Display.ReadOnly = True
-      Display.TabOrder = 5
+      Display.TabOrder = 15
       TamanhoDisplay = 264
     end
   end

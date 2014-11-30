@@ -1034,7 +1034,7 @@ inherited frmSaida: TfrmSaida
       Left = 1
       Top = 1
       Width = 1223
-      Height = 150
+      Height = 101
       Align = alClient
       Caption = ' Itens '
       TabOrder = 0
@@ -1042,7 +1042,7 @@ inherited frmSaida: TfrmSaida
         Left = 2
         Top = 15
         Width = 1071
-        Height = 133
+        Height = 84
         Align = alClient
         TabOrder = 0
         object TvItens: TcxGridDBTableView
@@ -1211,7 +1211,7 @@ inherited frmSaida: TfrmSaida
         Left = 1073
         Top = 15
         Width = 148
-        Height = 133
+        Height = 84
         Align = alRight
         TabOrder = 1
         object BitBtn1: TBitBtn
@@ -1253,21 +1253,22 @@ inherited frmSaida: TfrmSaida
     end
     object GroupBox3: TGroupBox
       Left = 1
-      Top = 151
+      Top = 102
       Width = 1223
-      Height = 73
+      Height = 122
       Align = alBottom
       Caption = ' Frete '
       TabOrder = 1
+      ExplicitLeft = 3
       object Label2: TLabel
-        Left = 935
-        Top = 24
+        Left = 525
+        Top = 77
         Width = 92
         Height = 13
         Caption = 'UF Placa do ve'#237'culo'
       end
       object Label3: TLabel
-        Left = 1037
+        Left = 853
         Top = 22
         Width = 66
         Height = 13
@@ -1554,16 +1555,16 @@ inherited frmSaida: TfrmSaida
         Display.TabOrder = 6
         TamanhoDisplay = 190
       end
-      object LabelDBEdit5: TLabelDBEdit
-        Left = 856
-        Top = 38
+      object edtPlaca: TLabelDBEdit
+        Left = 446
+        Top = 91
         Width = 73
         Height = 21
         DataField = 'PLACAVEICULO'
         DataSource = DataSaida
-        TabOrder = 7
-        Titulo.Left = 856
-        Titulo.Top = 23
+        TabOrder = 10
+        Titulo.Left = 446
+        Titulo.Top = 76
         Titulo.Width = 76
         Titulo.Height = 13
         Titulo.Caption = 'Placa do ve'#237'culo'
@@ -1575,8 +1576,8 @@ inherited frmSaida: TfrmSaida
         AsInteger = 0
       end
       object cmbUF: TDBComboBox
-        Left = 935
-        Top = 38
+        Left = 525
+        Top = 91
         Width = 41
         Height = 21
         Style = csDropDownList
@@ -1610,25 +1611,25 @@ inherited frmSaida: TfrmSaida
           'SP'
           'SE'
           'TO')
-        TabOrder = 8
+        TabOrder = 11
       end
       object cxDBDateEdit2: TcxDBDateEdit
-        Left = 1036
+        Left = 852
         Top = 38
         DataBinding.DataField = 'DATA'
         DataBinding.DataSource = DataSaida
-        TabOrder = 9
+        TabOrder = 7
         Width = 107
       end
       object LabelDBEdit6: TLabelDBEdit
-        Left = 1149
+        Left = 965
         Top = 38
         Width = 71
         Height = 21
         DataField = 'HORASAIDA'
         DataSource = DataSaida
-        TabOrder = 10
-        Titulo.Left = 1149
+        TabOrder = 8
+        Titulo.Left = 965
         Titulo.Top = 23
         Titulo.Width = 66
         Titulo.Height = 13
@@ -1639,6 +1640,37 @@ inherited frmSaida: TfrmSaida
         CorSecundaria = 11592447
         GravaEsteCampo = True
         AsInteger = 0
+      end
+      object grpViaTranporte: TDBRadioGroup
+        Left = 16
+        Top = 65
+        Width = 409
+        Height = 52
+        Caption = ' Via de transporte '
+        Columns = 4
+        DataField = 'TIPOTRANSPORTE'
+        DataSource = DataSaida
+        Items.Strings = (
+          'Mar'#237'tima'
+          'Fluvial'
+          'Lacustre'
+          'A'#233'rea'
+          'Postal'
+          'Ferrovi'#225'ria'
+          'Rodovi'#225'ria'
+          'Meios Pr'#243'prios')
+        ParentBackground = True
+        TabOrder = 9
+        Values.Strings = (
+          '1'
+          '2'
+          '3'
+          '4'
+          '5'
+          '6'
+          '7'
+          '9')
+        OnChange = grpViaTranporteChange
       end
     end
   end

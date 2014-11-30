@@ -82,6 +82,7 @@ type
     ContasaReceber1: TMenuItem;
     actNotasFiscais: TAction;
     Saidasparaessecliente1: TMenuItem;
+    edtMunicipio: TEditPesquisa;
     procedure FormCreate(Sender: TObject);
     procedure CdsCadastroAfterOpen(DataSet: TDataSet);
     procedure CdsCadastroNewRecord(DataSet: TDataSet);
@@ -317,6 +318,7 @@ procedure TfrmCad_Cliente.FormShow(Sender: TObject);
 begin
   inherited;
   ConfiguraEditPesquisa(edtGrupoCliente,CdsCadastro, tpERPGrupoCliente,False,'','','CODIGO','',6,nil);
+  ConfiguraEditPesquisa(edtMunicipio,CdsCadastro, tpERPMunicpio,False);
   if NovoReg or EditReg then
     edtNome.SetFocus;
 end;

@@ -78,8 +78,8 @@ begin
 
   DataProdutoEntrada.DataSet := pDataSet;
   ConfiguraEditPesquisa(edtCodigoProduto, pDataSet, tpERPProduto);
-  ConfiguraEditPesquisa(edtCodigoCFOP, pDataSet, tpERPCFOP);
-  ConfiguraEditPesquisa(edtCFOPEntrada, pDataSet, tpERPCFOP,True,'','','CFOP','IDCFOPENTRADA');
+  ConfiguraEditPesquisa(edtCodigoCFOP, pDataSet, tpERPCFOPVisivel);
+  ConfiguraEditPesquisa(edtCFOPEntrada, pDataSet, tpERPCFOPVisivel,True,'','','CFOP','IDCFOPENTRADA');
 
   ConfiguraEditPesquisa(edtUnidade, pDataSet, tpERPUnidade);
   ConfiguraEditPesquisa(edtUnidadeCompra, pDataSet, tpERPUnidade,True,'','','','IDUNIDADECOMPRA');
@@ -185,7 +185,7 @@ end;
 procedure TfrmInc_ProdutoEntrada.edtCodigoCFOPBtnNovoClick(Sender: TObject);
 begin
   inherited;
-  TrotinasForms.AbreFormSimplesPeloTipoPesquisa(tpERPCFOP, toIncluir);
+  TrotinasForms.AbreFormSimplesPeloTipoPesquisa(tpERPCFOPVisivel, toIncluir);
 end;
 
 procedure TfrmInc_ProdutoEntrada.edtCodigoFornecedorExit(Sender: TObject);

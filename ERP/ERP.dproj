@@ -290,6 +290,9 @@
 				<Form>frmAuxCOnexao</Form>
 			</DCCReference>
 			<DCCReference Include="uDocumentoFiscal.pas"/>
+			<DCCReference Include="uCad_CFOP.pas">
+				<Form>frmCad_CFOP</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>
