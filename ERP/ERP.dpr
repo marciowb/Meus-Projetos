@@ -99,7 +99,8 @@ uses
   uAliqISS in 'uAliqISS.pas' {frmAliqISS},
   uAuxConexao in 'uAuxConexao.pas' {frmAuxCOnexao},
   uDocumentoFiscal in 'uDocumentoFiscal.pas',
-  uCad_CFOP in 'uCad_CFOP.pas' {frmCad_CFOP};
+  uCad_CFOP in 'uCad_CFOP.pas' {frmCad_CFOP},
+  uNFSe in 'uNFSe.pas';
 
 {$R *.res}
 

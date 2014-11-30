@@ -62,6 +62,7 @@ interface
   Function Verifica_CPF(Cpf : String ) : Boolean ;
   Function Verifica_CNPJ(CNPJ : String ) : Boolean ;
   Function Verifica_Inscricao_Estadual(IE, UF : String ) : Boolean ;
+  Function Verifica_CEP(Cep, UF : String ) : Boolean ;
   Function ExisteRegistroCds(CdsOrigem, CdsDestino: TpFIBClientDataSet  ;NomeCampoOrigem, NomeCampoDestino : String ) : Boolean;
   Function GetNumber(Valor : Currency ): String;
   Function VerificaLabelDbEdit(Form : TForm; CDs :TpFIBClientDataSet; TipoPesquisa: TTipoPesquisa): Boolean;
@@ -285,7 +286,7 @@ begin
       Width := Largura;
     end;
   end;
-  
+
 end;
 function MontaCard(Tv : TcxGridDBCardView; NomeCampo, Titulo: String;
                       TipoCampo: TTipoCampo) : TcxGridDBCardViewRow;
@@ -339,7 +340,7 @@ Begin
         else
           DataBinding.ValueTypeClass := TcxStringValueType;
       end;
-  
+
   End;
 End;
 
@@ -453,7 +454,7 @@ Begin
     Cds.AfterScroll := vAfter;
     Cds.EnableControls;
   End;
-  
+
 
 End  ;
 
@@ -1038,6 +1039,119 @@ begin
 
 end;
 
+Function Verifica_CEP(Cep, UF : String ) : Boolean ;
+var
+ cCEP1 : Integer;
+begin
+
+ Cep := copy(Cep,1,5) + copy(Cep,7,3);
+
+ cCEP1 := StrToInt(copy(Cep,1,3));
+
+ if Length(trim(Cep)) > 0 then
+ begin
+  if (StrToInt(Cep) <= 1000000.0) then
+  begin
+    AvisaErro('CEP tem que ser maior que [01000-000]',False);
+    Result := False;
+  end else
+  begin
+    if Length(trim(copy(Cep, 6, 3))) < 3 then
+      Result := False
+    else
+    if (UF = 'SP') and (cCEP1 >= 10) and (cCEP1 <= 199) then
+      Result := True
+    else
+    if (UF = 'RJ') and (cCEP1 >= 200) and (cCEP1 <= 289) then
+        Result := True
+    else
+    if (UF = 'ES') and (cCEP1 >= 290) and (cCEP1 <= 299) then
+        Result := True
+    else
+    if (UF = 'MG') and (cCEP1 >= 300) and (cCEP1 <= 399) then
+        Result := True
+    else
+    if (UF = 'BA') and (cCEP1 >= 400) and (cCEP1 <= 489) then
+        Result := True
+    else
+    if (UF = 'SE') and (cCEP1 >= 490) and (cCEP1 <= 499) then
+        Result := True
+    else
+    if (UF = 'PE') and (cCEP1 >= 500) and (cCEP1 <= 569) then
+        Result := True
+    else
+    if (UF = 'AL') and (cCEP1 >= 570) and (cCEP1 <= 579) then
+        Result := True
+    else
+    if (UF = 'PB') and (cCEP1 >= 580) and (cCEP1 <= 589) then
+        Result := True
+    else
+    if (UF = 'RN') and (cCEP1 >= 590) and (cCEP1 <= 599) then
+        Result := True
+    else
+    if (UF = 'CE') and (cCEP1 >= 600) and (cCEP1 <= 639) then
+        Result := True
+    else
+    if (UF = 'PI') and (cCEP1 >= 640) and (cCEP1 <= 649) then
+        Result := True
+    else
+    if (UF = 'MA') and (cCEP1 >= 650) and (cCEP1 <= 659) then
+        Result := True
+    else
+    if (UF = 'PA') and (cCEP1 >= 660) and (cCEP1 <= 688) then
+        Result := True
+    else
+    if (UF = 'AM') and ((cCEP1 >= 690) and (cCEP1 <= 692) or (cCEP1 >= 694) and  (cCEP1 <= 698)) then
+        Result := True
+    else
+    if (UF = 'AP') and (cCEP1 = 689) then
+        Result := True
+    else
+    if (UF = 'RR') and (cCEP1 = 693) then
+        Result := True
+    else
+    if (UF = 'AC') and (cCEP1 = 699) then
+        Result := True
+    else
+    if ((UF = 'DF') or (UF = 'GO')) and (cCEP1 >= 000) and (cCEP1 <= 999)then
+        Result := True
+    else
+    if (UF = 'TO') and (cCEP1 >= 770) and (cCEP1 <= 779) then
+        Result := True
+    else
+    if (UF = 'MT') and (cCEP1 >= 780) and (cCEP1 <= 788) then
+        Result := True
+    else
+    if (UF = 'MS') and (cCEP1 >= 790) and (cCEP1 <= 799) then
+        Result := True
+    else
+    if (UF = 'RO') and (cCEP1 = 789) then
+        Result := True
+      else
+    if (UF = 'PR') and (cCEP1 >= 800) and (cCEP1 <= 879) then
+        Result := True
+    else
+    if (UF = 'SC') and (cCEP1 >= 880) and (cCEP1 <= 899) then
+        Result := True
+    else
+    if (UF = 'RS') and (cCEP1 >= 900) and (cCEP1 <= 999) then
+        Result := True
+    else
+    if (UF = 'EX') and (CEP = '99999999') then
+        Result := True
+    else
+      Result := False
+
+  end;
+
+ end else
+ begin
+  Result := True;
+ end;
+
+
+end;
+
 Function ExisteRegistroCds(CdsOrigem, CdsDestino : TpFIBClientDataSet  ;NomeCampoOrigem, NomeCampoDestino : String ) : Boolean;
 var
   CdsClone : TpFIBClientDataSet;
@@ -1271,7 +1385,7 @@ Begin
       //if edtPesquisa.Text <> '' then
       //   btnPesquisarClick(nil);
       if ShowModal = mrOk then
-      Begin        
+      Begin
         Resultado := CdsPesquisa.FieldByName(GetCampoChave(TipoPesquisa)).AsVariant
       End  else
         Resultado := '';
@@ -1353,7 +1467,7 @@ Begin
     Result := True;
     StrToFloat(VarToStr(Value));
   Except
-    Result := False;          
+    Result := False;
   End;
 End;
 procedure MontaTree(Tree: TcxDBTreeList;Campo, Titulo: String;  Tamanho: Integer = 90);
@@ -1369,7 +1483,7 @@ Begin
     Caption.Text := Titulo;
     DataBinding.FieldName := Campo;
   End;
- 
+
 End;
 
 function GetTableCount(Tabela : String; Campo : String ='*'; Where : String = '1=1' ) : Integer;
@@ -1384,7 +1498,7 @@ Begin
       '  from '+ tabela+
       ' where '+Where;
     SetCds(Cds, StrSQL);
-    Result := cds.Fields[0].AsInteger;  
+    Result := cds.Fields[0].AsInteger;
   Finally
     FreeAndNil(Cds);
   End;
@@ -1407,7 +1521,7 @@ Begin
                 IfThen( ((DataIni <> '  /  /    ') and ( IsDate(DataIni))),  CampoBanco+'>= '+GetData(DataIni)+
                         IfThen((UsaDataFinal) and (DataFin <> '  /  /    '), ' and ',''), '')+
                 IfThen((UsaDataFinal) and (DataFin <> '  /  /    '), CampoBanco+' <= '+GetData(DataFin), '');
-  
+
 
 End;
 
@@ -1496,7 +1610,7 @@ begin
   p := GetPropInfo (Controle.ClassInfo,'DataField');
   if Assigned(p) or (vFieldName <> '') then
   Begin
-    if vFieldName = '' then    
+    if vFieldName = '' then
       vFieldName := GetStrProp(Controle,'DataField');
     if (vDataSource<>nil) and
        (vDataSource.DataSet <> nil) and

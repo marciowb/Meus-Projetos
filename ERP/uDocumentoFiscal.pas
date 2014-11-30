@@ -7,9 +7,14 @@ interface
     type
 
 
-      TTipoVerificacao = (tvCPF_CNPJ,tvIE,tvCEP,tvTotais, tvCFOP, tvUF);
+      TTipoVerificacao = (tvCPF_CNPJ,tvIE,tvCEP,tvCFOP, tvUF);
 
       TVerificacoes =  set of TTipoVerificacao;
+
+      TRetorno = record
+        Erro: Boolean;
+        Mensagem: String;
+      end;
 
       IEndereco = interface(IInterfaceMaster)
 
@@ -1902,7 +1907,7 @@ begin
     FFrete:= 0;
     FTotalDocumento:= 0;
     FServicos:= TList<IItemDocumento>.Create;
-    OpcoesDeVerificacao := [tvCPF_CNPJ,tvIE,tvCEP,tvTotais, tvCFOP, tvUF];
+    OpcoesDeVerificacao := [tvCPF_CNPJ,tvIE,tvCEP,tvCFOP, tvUF];
 
 end;
 
@@ -2212,6 +2217,8 @@ end;
 
 
 Function TDocumentoFiscal.VerificaDados: TStringList;
+var
+  I: Integer;
 begin
    Result := TStringList.Create;
 
@@ -2259,23 +2266,89 @@ begin
 
    end;
 
+    if tvUF in FOpcoesDeVerificacao then
+   begin
+      {$Region 'Emitente'}
+     if GetTableCount('VW_UF','*','UF = '+QuotedStr(Self.Emitente.Endereco.Estado)) = 0 then
+       Result.Add('UF do emitente inválido');
+     {$EndRegion}
+
+     {$Region 'Destinatario'}
+     if GetTableCount('VW_UF','*','UF = '+QuotedStr(Self.Destinatario.Endereco.Estado)) = 0 then
+       Result.Add('UF do destinatário inválido');
+     {$EndRegion}
+
+     {$Region 'Transportadora'}
+     if GetTableCount('VW_UF','*','UF = '+QuotedStr(Self.Transportadora.Endereco.Estado)) = 0 then
+       Result.Add('UF do transportadora inválido');
+     {$EndRegion}
+
+
+   end;
+
+
    if tvIE in FOpcoesDeVerificacao then
    begin
      {$Region 'Emitente'}
-     if not Verifica_Inscricao_Estadual(Self.Emitente.IE) then
+     if not Verifica_Inscricao_Estadual(Self.Emitente.IE, Self.Emitente.Endereco.Estado) then
        Result.Add('Inscrição Estadual do emitente inválido');
      {$EndRegion}
 
 
      {$Region 'Destinatario'}
-     if not Verifica_Inscricao_Estadual(Self.Destinatario.IE) then
+     if not Verifica_Inscricao_Estadual(Self.Destinatario.IE, Self.Destinatario.Endereco.Estado) then
        Result.Add('Inscrição Estadual  do destinatário inválido');
      {$EndRegion}
 
      {$Region 'Transportadora'}
-     if not Verifica_Inscricao_Estadual(Self.Transportadora.IE) then
+     if not Verifica_Inscricao_Estadual(Self.Transportadora.IE, Self.Transportadora.Endereco.Estado) then
        Result.Add('Inscrição Estadual do transportadora inválido');
      {$EndRegion}
+
+   end;
+
+   if tvCEP in FOpcoesDeVerificacao then
+   begin
+      {$Region 'Emitente'}
+     if not Verifica_CEP(Self.Emitente.Endereco.CEP, Self.Emitente.Endereco.Estado) then
+       Result.Add('CEP do emitente inválido');
+     {$EndRegion}
+
+     {$Region 'Destinatario'}
+     if not Verifica_CEP(Self.Destinatario.Endereco.CEP, Self.Destinatario.Endereco.Estado) then
+       Result.Add('CEP do destinatário inválido');
+     {$EndRegion}
+
+     {$Region 'Transportadora'}
+     if not Verifica_CEP(Self.Transportadora.Endereco.CEP,  Self.Transportadora.Endereco.Estado) then
+       Result.Add('CEP do transportadora inválido');
+     {$EndRegion}
+
+
+   end;
+
+   if tvCFOP in FOpcoesDeVerificacao then
+   begin
+      for I := 0 to Self.Produtos.Count -1 do
+      begin
+        if Self.Destinatario.Endereco.Estado = 'EX' then
+        begin
+           if not (Self.Produtos.Items[i].CFOP[1] in ['3','7']) then
+             Result.Add('O CFOP['+Self.Produtos.Items[i].CFOP+'] do item '+FormatFloat('00',I)+' é inválido pra operações de comércio exterior. ' );
+        end else
+        if Self.Emitente.Endereco.Estado <> Self.Destinatario.Endereco.Estado then
+        begin
+           if not (Self.Produtos.Items[i].CFOP[1] in ['2','3','6','7']) then
+             Result.Add('O CFOP['+Self.Produtos.Items[i].CFOP+'] do item '+FormatFloat('00',I)+' é inválido pra operações fora do seu estado. Estado do emitente: '+Self.Emitente.Endereco.Estado+
+                        ' Estado do destinatário: '+Self.Destinatario.Endereco.Estado );
+        end else
+        if Self.Emitente.Endereco.Estado = Self.Destinatario.Endereco.Estado then
+        begin
+           if  (Self.Produtos.Items[i].CFOP[1] in ['2','3','6','7']) then
+             Result.Add('O CFOP['+Self.Produtos.Items[i].CFOP+'] do item '+FormatFloat('00',I)+' é inválido pra operações no seu estado.' );
+        end ;
+
+      end;
 
    end;
 

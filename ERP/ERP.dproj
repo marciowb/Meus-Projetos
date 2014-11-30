@@ -293,6 +293,7 @@
 			<DCCReference Include="uCad_CFOP.pas">
 				<Form>frmCad_CFOP</Form>
 			</DCCReference>
+			<DCCReference Include="uNFSe.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

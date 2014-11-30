@@ -120,5 +120,6 @@
     <Transaction>2014/11/02 06:07:54.056.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uDocumentoFiscal.pas</Transaction>
     <Transaction>2014/11/29 07:12:43.751.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uCad_CFOP.pas</Transaction>
     <Transaction>2014/11/29 07:12:43.751.dfm,D:\Meus Projetos\ERP\Unit1.dfm=D:\Meus Projetos\ERP\uCad_CFOP.dfm</Transaction>
+    <Transaction>2014/11/30 07:19:41.708.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uNFSe.pas</Transaction>
   </Transactions>
 </BorlandProject>
