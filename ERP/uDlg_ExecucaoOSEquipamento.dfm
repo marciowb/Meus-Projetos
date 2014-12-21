@@ -840,6 +840,7 @@ inherited frmDlg_ExecucaoOSEquipamento: TfrmDlg_ExecucaoOSEquipamento
       HotZoneClassName = 'TcxMediaPlayer9Style'
       AlignSplitter = salTop
       Control = Panel3
+      ExplicitWidth = 8
     end
     object cxSplitter1: TcxSplitter
       Left = 0
@@ -849,6 +850,7 @@ inherited frmDlg_ExecucaoOSEquipamento: TfrmDlg_ExecucaoOSEquipamento
       HotZoneClassName = 'TcxMediaPlayer9Style'
       AlignSplitter = salBottom
       Control = GroupBox3
+      ExplicitWidth = 8
     end
   end
   object ActionList1: TActionList

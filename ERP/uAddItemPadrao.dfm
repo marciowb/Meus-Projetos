@@ -11,13 +11,13 @@ inherited frmAddItemPadrao: TfrmAddItemPadrao
     Top = 396
     ExplicitTop = 396
     inherited btnOk: TBitBtn
-      Left = 138
+      Left = 134
       Top = 6
       ExplicitLeft = 142
       ExplicitTop = 6
     end
     inherited btnCancelar: TBitBtn
-      Left = 235
+      Left = 231
       ExplicitLeft = 239
     end
   end

@@ -1048,6 +1048,9 @@ inherited frmCad_OS: TfrmCad_OS
             object tsEquipamento: TcxTabSheet
               Caption = 'Equipamentos'
               ImageIndex = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object cxGrid1: TcxGrid
                 Left = 0
                 Top = 0
@@ -1122,6 +1125,9 @@ inherited frmCad_OS: TfrmCad_OS
             object cxTabSheet2: TcxTabSheet
               Caption = 'Observa'#231#245'es'
               ImageIndex = 1
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object cxDBMemo1: TcxDBMemo
                 Left = 0
                 Top = 0

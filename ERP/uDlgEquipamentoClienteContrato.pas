@@ -17,7 +17,7 @@ uses
   dxSkinXmas2008Blue, dxSkinscxPCPainter, cxCustomData, cxFilter, cxData,
   cxDataStorage, cxEdit, DB, cxDBData, cxGridLevel, cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid,
-  DBClient, pFIBClientDataSet, ulibERP;
+  DBClient, pFIBClientDataSet, ulibERP,uClassesERP;
 
 type
   TfrmDlg_EquipamentoClienteContrato = class(TfrmDlg_CadastroERP)

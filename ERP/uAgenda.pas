@@ -19,7 +19,7 @@ uses
   dxSkinOffice2010Black, dxSkinOffice2010Blue, dxSkinOffice2010Silver,
   dxSkinPumpkin, dxSkinSeven, dxSkinSharp, dxSkinSilver, dxSkinSpringTime,
   dxSkinStardust, dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinXmas2008Blue, dxSkinscxScheduler3Painter,ulibERP;
+  dxSkinXmas2008Blue, dxSkinscxScheduler3Painter,ulibERP,uClassesERP;
 
 type
   TfrmAgenda = class(TfrmPadrao)

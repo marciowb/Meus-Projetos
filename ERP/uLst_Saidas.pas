@@ -17,7 +17,7 @@ uses
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, DB, cxDBData, DBClient,
   pFIBClientDataSet, ActnList, cxGridLevel, cxClasses, cxGridCustomView,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxPC,
-  StdCtrls, Buttons, dxStatusBar, ExtCtrls,uLibErp;
+  StdCtrls, Buttons, dxStatusBar, ExtCtrls,uLibErp,uClassesERP;
 
 type
   TfrmLst_Saidas = class(TfrmListagemPadraoERP)

@@ -709,8 +709,6 @@ inherited frmLst_ManutencaoPatrimonio: TfrmLst_ManutencaoPatrimonio
             Properties.WantReturns = False
             Properties.WantTabs = True
             TabOrder = 0
-            ExplicitWidth = 281
-            ExplicitHeight = 165
             Height = 215
             Width = 393
           end

@@ -19,7 +19,7 @@ uses
   DB, cxDBData, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
   cxGridLevel, cxClasses, cxGridCustomView, cxGrid, cxSpinEdit, cxTimeEdit,
   cxMaskEdit, cxDropDownEdit, cxCalendar, cxDBLookupComboBox, DBClient,
-  pFIBClientDataSet,ulibERP, cxPC;
+  pFIBClientDataSet,ulibERP, cxPC,uClassesERP;
 
 type
   TfrmDlg_ServicoEquipamentoOS = class(TfrmDlg_CadastroERP)

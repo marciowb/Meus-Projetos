@@ -15,7 +15,7 @@ uses
   dxSkinPumpkin, dxSkinSeven, dxSkinSharp, dxSkinSilver, dxSkinSpringTime,
   dxSkinStardust, dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
   dxSkinXmas2008Blue, cxTextEdit, cxMemo, cxDBEdit, DBCtrls, LabelDBEdit, Mask,
-  EditPesquisa,DB, uLibERP;
+  EditPesquisa,DB, uLibERP,uClassesERP;
 
 type
   TfrmAddItemPadrao = class(TfrmDlg_CadastroERP)

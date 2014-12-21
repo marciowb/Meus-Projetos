@@ -3,19 +3,8 @@ unit uDocumentoFiscal;
 interface
     uses
        MinhasClasses, uSQLERP,Comandos,Classes,SysUtils, Math,DB,pFIBClientDataSet,
-       StrUtils,ulibERP, DateUtils, Generics.Collections;
+       StrUtils, DateUtils, Generics.Collections,uClassesERP;
     type
-
-
-      TTipoVerificacao = (tvCPF_CNPJ,tvIE,tvCEP,tvCFOP, tvUF);
-
-      TVerificacoes =  set of TTipoVerificacao;
-
-      TRetorno = record
-        Erro: Boolean;
-        Mensagem: String;
-      end;
-
       IEndereco = interface(IInterfaceMaster)
 
         procedure SetBairro(const Value: String);
@@ -27,6 +16,8 @@ interface
         procedure SetEstado(const Value: String);
         procedure SetNomePais(const Value: String);
         procedure SetNumeroEndereco(const Value: String);
+        procedure SetCodigoIBGEEstado(const Value: String);
+
         procedure SetNumPais(const Value: Integer);
         function GetBairro: String;
         function GetCEP: String;
@@ -38,6 +29,8 @@ interface
         function GetNomePais: String;
         function GetNumeroEndereco: String;
         function GetNumPais: Integer;
+        function GetCodigoIBGEEstado: String;
+
         property Endereco: String read GetEndereco write SetEndereco;
         property NumeroEndereco: String read GetNumeroEndereco write SetNumeroEndereco;
         property Complemento:String read GetComplemento write SetComplemento;
@@ -48,6 +41,7 @@ interface
         property CEP: String read GetCEP write SetCEP;
         property NumPais: Integer read GetNumPais write SetNumPais;
         property NomePais:String read GetNomePais write SetNomePais;
+        property CodigoIBGEEstado : String read GetCodigoIBGEEstado write SetCodigoIBGEEstado;
       End;
 
       IPessoa = interface(IInterfaceMaster)
@@ -215,8 +209,13 @@ interface
         procedure SetValorFrete(const Value: Currency);
         procedure SetValorOutrasDespesas(const Value: Currency);
         procedure SetValorSeguro(const Value: Currency);
-
         procedure SetValorUnitario(const Value: Currency);
+        procedure SetCodigoDeBeneficio(const Value: String);
+        procedure SetDesciminacaoCodigoDeBeneficio(const Value: String);
+        Procedure SetValorTotalLiquido(Const Value: Currency);
+
+        function GetCodigoDeBeneficio: String;
+        function GetDesciminacaoCodigoDeBeneficio: String;
         function GetAliqAcrescimo: Currency;
         function GetAliqDesconto: Currency;
         function GetCFOP: String;
@@ -277,14 +276,14 @@ interface
         Property ValorSeguro: Currency read GetValorSeguro write SetValorSeguro;
         Property ValorOutrasDespesas: Currency read GetValorOutrasDespesas write SetValorOutrasDespesas;
 
-        Property ValorTotalLiquido: Currency read GetValorTotalLiquido ;
+        Property ValorTotalLiquido: Currency read GetValorTotalLiquido write SetValorTotalLiquido;
 
         Property CFOP:String read GetCFOP write SetCFOP;
         Property CST: String read GetCST write SetCST;
         Property CSOSN: String read GetCSOSN write SetCSOSN;
         Property CRT: String read GetCRT write SetCRT;
         Property NCM: String read GetNCM ;
-        Property CodigoMunicipalServico: String read GetCodigoMunicipalServico ;
+        Property CodigoMunicipalServico: String read GetCodigoMunicipalServico  ;
         Property CodigoFederalServico: String read GetCodigoFederalServico ;
         Property EX_TIPI: String read GetEX_TIPI ;
 
@@ -306,10 +305,15 @@ interface
         property NumeroPedidoCompra:String read GetNumeroPedidoCompra write SetNumeroPedidoCompra;
         property NumeroItemPedidoCompra:Integer read GetNumeroItemPedidoCompra write SetNumeroItemPedidoCompra;
 
+        property CodigoDeBeneficio : String  read GetCodigoDeBeneficio write SetCodigoDeBeneficio;
+        property DesciminacaoCodigoDeBeneficio : String  read GetDesciminacaoCodigoDeBeneficio write SetDesciminacaoCodigoDeBeneficio;
+
         Property Impostos: IImpostos read GetImpostos ;
 
 
       end;
+
+
 
       ICobranca = interface(IInterfaceMaster)
         procedure SetNumeroDocumento(const Value: String);
@@ -325,11 +329,18 @@ interface
         property Vencimento: TDate read GetVencimento write SetVencimento;
       end;
 
+      IEmitente = interface(IPessoa)
+        function GetRegimeTributacao: String;
+        procedure SetRegimeTributacao(const Value: String);
+        property RegimeTributacao: String read GetRegimeTributacao write SetRegimeTributacao;
+      end;
+
+
       IDocumentoFiscal = Interface(IInterfaceMaster)
         procedure SetANTT(const Value: String);
         procedure SetCobranca(const Value: TList<ICobranca>);
         procedure SetDestinatario(const Value: IPessoa);
-        procedure SetEmitente(const Value: IPessoa);
+        procedure SetEmitente(const Value: IEmitente);
         procedure SetEnderecoCobranca(const Value: IEndereco);
         procedure SetEnderecoEntrega(const Value: IEndereco);
         procedure SetEspecie(const Value: String);
@@ -351,10 +362,16 @@ interface
         procedure SetTransportadora(const Value: IPessoa);
         procedure SetUfPlaca(const Value: String);
         procedure SetVolume(const Value: Integer);
+        procedure SetDataNota(const Value: TDate);
+        procedure SetNumeroNota(const Value: String);
+        Procedure SetSerieNota (Const Value: String);
+        procedure SetTipoAmbiente(const Value: uClassesERP.TTipoAmbiente);
+
+
         function GetANTT: String;
         function GetCobranca: TList<ICobranca>;
         function GetDestinatario: IPessoa;
-        function GetEmitente: IPessoa;
+        function GetEmitente: IEmitente;
         function GetEnderecoCobranca: IEndereco;
         function GetEnderecoEntrega: IEndereco;
         function GetEspecie: String;
@@ -376,8 +393,12 @@ interface
         function GetTransportadora: IPessoa;
         function GetUfPlaca: String;
         function GetVolume: Integer;
+        function GetDataNota: TDate;
+        function GetNumeroNota: String;
+        function GetSerieNota: String;
+        function GetTipoAmbiente: uClassesERP.TTipoAmbiente;
 
-        property Emitente: IPessoa read GetEmitente write SetEmitente;
+        property Emitente: IEmitente read GetEmitente write SetEmitente;
         property Destinatario: IPessoa read GetDestinatario write SetDestinatario;
         property Transportadora: IPessoa read GetTransportadora write SetTransportadora;
         property EnderecoEntrega: IEndereco read GetEnderecoEntrega write SetEnderecoEntrega;
@@ -404,6 +425,15 @@ interface
         property Marca: String read GetMarca write SetMarca;
         property PesoBruto: Double read GetPesoBruto write SetPesoBruto;
         property PesoLiquido: Double read GetPesoLiquido write SetPesoLiquido;
+
+        property DataNota: TDate read GetDataNota write SetDataNota;
+        property NumeroNota: String read GetNumeroNota write SetNumeroNota;
+        property SerieNota:String  read GetSerieNota write SetSerieNota;
+
+
+
+
+        property TipoAmbiente: uClassesERP.TTipoAmbiente read GetTipoAmbiente write SetTipoAmbiente;
 
         Property Cobranca: TList<ICobranca> read GetCobranca write SetCobranca;
 
@@ -534,6 +564,7 @@ interface
         FCodigoMunicipio: String;
         FEndereco: String;
         FEstado: String;
+        FCodigoIBGEEstado: String;
         procedure SetBairro(const Value: String);
         procedure SetCEP(const Value: String);
         procedure SetCidade(const Value: String);
@@ -554,6 +585,9 @@ interface
         function GetNomePais: String;
         function GetNumeroEndereco: String;
         function GetNumPais: Integer;
+        procedure SetCodigoIBGEEstado(const Value: String);
+        function GetCodigoIBGEEstado: String;
+
       published
         property Endereco: String read GetEndereco write SetEndereco;
         property NumeroEndereco: String read GetNumeroEndereco write SetNumeroEndereco;
@@ -565,6 +599,7 @@ interface
         property CEP: String read GetCEP write SetCEP;
         property NumPais: Integer read GetNumPais write SetNumPais;
         property NomePais:String read GetNomePais write SetNomePais;
+        property CodigoIBGEEstado : String read GetCodigoIBGEEstado write SetCodigoIBGEEstado;
       End;
 
       TPessoa = Class(TInterfacedObject, IPessoa)
@@ -609,6 +644,8 @@ interface
         function GetSUFRAMA: String;
         function GetTelefone: String;
       published
+        Constructor Create;
+        destructor Destroy;
         property Nome_RazaoSocial: String read GetNome_RazaoSocial write SetNome_RazaoSocial;
         property NomeFantasia: String read GetNomeFantasia write SetNomeFantasia;
         property CPF_CNPJ: String read GetCPF_CNPJ write SetCPF_CNPJ;
@@ -624,6 +661,15 @@ interface
         property CRT: String read GetCRT write SetCRT;
       end;
 
+      TEmitente = class(TPessoa, iEmitente)
+      private
+        FRegimeTributacao: String;
+        function GetRegimeTributacao: String;
+        procedure SetRegimeTributacao(const Value: String);
+      published
+        property RegimeTributacao: String read GetRegimeTributacao write SetRegimeTributacao;
+        constructor Create;
+      end;
 
       TItemDocumento = Class(TInterfacedObject, IItemDocumento)
       private
@@ -668,8 +714,10 @@ interface
         FNome: String;
         FValorAFRMM: Currency;
         FIdProduto : TipoCampoChave;
-        FIdCliente: TipoCampoChave;
         FCRT: String;
+        fCodigoDeBeneficio: String;
+        fDesciminacaoCodigoDeBeneficio: String;
+
         procedure SetAliqAcrescimo(const Value: Currency);
         procedure SetAliqDesconto(const Value: Currency);
         procedure SetCFOP(const Value: String);
@@ -700,6 +748,11 @@ interface
         procedure SetValorOutrasDespesas(const Value: Currency);
         procedure SetValorSeguro(const Value: Currency);
         procedure SetValorUnitario(const Value: Currency);
+        procedure SetCodigoDeBeneficio(const Value: String);
+        procedure SetDesciminacaoCodigoDeBeneficio(const Value: String);
+
+        function GetCodigoDeBeneficio: String;
+        function GetDesciminacaoCodigoDeBeneficio: String;
         function GetAliqAcrescimo: Currency;
         function GetAliqDesconto: Currency;
         function GetCFOP: String;
@@ -741,7 +794,6 @@ interface
         function GetValorUnitario: Currency;
         procedure SetTotalBruto(const Value: Currency);
         procedure SetValorTotalLiquido(const Value: Currency);
-        procedure SetIdCliente(const Value: TipoCampoChave);
         procedure SetImpostos(const Value: IImpostos);
         function GetCSOSN: String;
         procedure SetCSOSN(const Value: String);
@@ -749,6 +801,8 @@ interface
         procedure SetCRT(const Value: String);
 
       published
+        Constructor Create;
+        destructor Destroy;
         property Codigo: String read GetCodigo write SetCodigo;
         Property EAN13: String read GetEAN13 ;
         property Nome:String read GetNome ;
@@ -796,11 +850,16 @@ interface
         property NumeroPedidoCompra:String read GetNumeroPedidoCompra write SetNumeroPedidoCompra;
         property NumeroItemPedidoCompra:Integer read GetNumeroItemPedidoCompra write SetNumeroItemPedidoCompra;
 
+        property CodigoDeBeneficio : String  read GetCodigoDeBeneficio write SetCodigoDeBeneficio;
+        property DesciminacaoCodigoDeBeneficio : String  read GetDesciminacaoCodigoDeBeneficio write SetDesciminacaoCodigoDeBeneficio;
+
+
         Property Impostos: IImpostos read GetImpostos write SetImpostos;
-        property IdCliente: TipoCampoChave read FIdCliente write SetIdCliente;
+
 
       end;
 
+      
       TCobranca = class(TInterfacedObject, ICobranca)
         FVencimento: TDate;
         FValorDocumento: Currency;
@@ -832,7 +891,7 @@ interface
         FSeguro: Currency;
         FTotalServicos: Currency;
         FOutrasDespesas: Currency;
-        FEmitente: IPessoa;
+        FEmitente: IEmitente;
         FTipoTransporte: TTipoTransporte;
         FPesoLiquido: Double;
         FVolume: Integer;
@@ -844,10 +903,16 @@ interface
         FTotalDocumento: Currency;
         FServicos: TList<IItemDocumento>;
         FOpcoesDeVerificacao: TVerificacoes;
+        FDataNota : TDate;
+        FNumeroNota: String;
+        FSerieNota: String;
+        FTipoAmbiente: uClassesERP.TTipoAmbiente;
+
+
         procedure SetANTT(const Value: String);
         procedure SetCobranca(const Value: TList<ICobranca>);
         procedure SetDestinatario(const Value: IPessoa);
-        procedure SetEmitente(const Value: IPessoa);
+        procedure SetEmitente(const Value: IEmitente);
         procedure SetEnderecoCobranca(const Value: IEndereco);
         procedure SetEnderecoEntrega(const Value: IEndereco);
         procedure SetEspecie(const Value: String);
@@ -872,7 +937,7 @@ interface
         function GetANTT: String;
         function GetCobranca: TList<ICobranca>;
         function GetDestinatario: IPessoa;
-        function GetEmitente: IPessoa;
+        function GetEmitente: IEmitente;
         function GetEnderecoCobranca: IEndereco;
         function GetEnderecoEntrega: IEndereco;
         function GetEspecie: String;
@@ -895,8 +960,18 @@ interface
         function GetUfPlaca: String;
         function GetVolume: Integer;
         procedure SetVerificacoes(const Value: TVerificacoes);
+        function GetDataNota: TDate;
+        procedure SetDataNota(const Value: TDate);
+        function GetNumeroNota: String;
+        procedure SetNumeroNota(const Value: String);
+        function GetSerieNota: String;
+        procedure SetSerieNota(const Value: String);
+        procedure SetTipoAmbiente(const Value: uClassesERP.TTipoAmbiente);
+        function GetTipoAmbiente: uClassesERP.TTipoAmbiente;
+
+
       published
-        property Emitente: IPessoa read GetEmitente write SetEmitente;
+        property Emitente: IEmitente read GetEmitente write SetEmitente;
         property Destinatario: IPessoa read GetDestinatario write SetDestinatario;
         property Transportadora: IPessoa read GetTransportadora write SetTransportadora;
         property EnderecoEntrega: IEndereco read GetEnderecoEntrega write SetEnderecoEntrega;
@@ -924,14 +999,23 @@ interface
         property PesoBruto: Double read GetPesoBruto write SetPesoBruto;
         property PesoLiquido: Double read GetPesoLiquido write SetPesoLiquido;
 
+        property DataNota: TDate read GetDataNota write SetDataNota;
+        property NumeroNota: String read GetNumeroNota write SetNumeroNota;
+        property SerieNota:String  read GetSerieNota write SetSerieNota;
+
+
+
+        property TipoAmbiente: uClassesERP.TTipoAmbiente read GetTipoAmbiente write SetTipoAmbiente;
+
         Property Cobranca: TList<ICobranca> read GetCobranca write SetCobranca;
         property OpcoesDeVerificacao: TVerificacoes read FOpcoesDeVerificacao write SetVerificacoes;
         Function VerificaDados: TStringList ;virtual;
         constructor Create;virtual;
+        destructor Destroy;virtual;
 
       end;
 
-      Procedure CriaDocumentoFiscal(Const DataSetNota, DataSetItens, DataSetCobranca: TDataSet; Var Doc: IDocumentoFiscal );
+
 
 implementation
 
@@ -1212,6 +1296,11 @@ begin
   Result := FCidade;
 end;
 
+function TEndereco.GetCodigoIBGEEstado: String;
+begin
+  Result := FCodigoIBGEEstado;
+end;
+
 function TEndereco.GetCodigoMunicipio: String;
 begin
   Result := FCodigoMunicipio;
@@ -1262,6 +1351,11 @@ begin
   FCidade := Value;
 end;
 
+procedure TEndereco.SetCodigoIBGEEstado(const Value: String);
+begin
+  FCodigoIBGEEstado := Value;
+end;
+
 procedure TEndereco.SetCodigoMunicipio(const Value: String);
 begin
   FCodigoMunicipio := Value;
@@ -1298,6 +1392,16 @@ begin
 end;
 
 { IIPessoa }
+
+constructor TPessoa.Create;
+begin
+   Self.Endereco := TEndereco.Create;
+end;
+
+destructor TPessoa.Destroy;
+begin
+  FreeAndNil(FEndereco);
+end;
 
 function TPessoa.GetCNAE: String;
 begin
@@ -1431,6 +1535,17 @@ end;
 
 { IItemDocumento }
 
+constructor TItemDocumento.Create;
+begin
+   Inherited;
+   Self.Impostos := Timpostos.Create;
+end;
+
+destructor TItemDocumento.Destroy;
+begin
+  FreeAndNil(FImpostos);
+end;
+
 function TItemDocumento.GetAliqAcrescimo: Currency;
 begin
   Result := FAliqAcrescimo;
@@ -1514,12 +1629,6 @@ end;
 
 function TItemDocumento.GetImpostos: IImpostos;
 begin
-//  if FImpostos = nil then
-//  begin
-//    FImpostos := TImpostos.Create;
-//    FImpostos := TRegrasImpostos.CalculaImpostos(FIdCliente,FIdProduto,'',FCST_CSOSN, FValorTotalLiquido, FValorFrete,
-//                                                 FValorSeguro,FValorOutrasDespesas );
-//  end;
   Result := FImpostos;
 end;
 
@@ -1668,14 +1777,14 @@ begin
   if FCodigo <> Value then
   begin
      FCodigo := Value;
-     with GetCds(tpERPProduto,'codigo = '+QuotedStr(Value)) do
+     with GetCds(tpERPProduto,'p.codigo = '+QuotedStr(Value)) do
      begin
        Self.FNome := FieldByName('NOMEPRODUTO').AsString;
        Self.FEAN13 := FieldByName('CODIGOBARRAS').AsString;
        Self.FNCM :=   FieldByName('NCM').AsString;
        Self.FIdProduto :=   FieldByName('IDPRODUTO').Value;
+       Self.FCodigoMunicipalServico := FieldByName('CODIGOSERVFEDERAL').Value;
        Self.FEX_TIPI :=   '';
-       FreeAndNil(Self.FImpostos);
        Free;
      end;
 
@@ -1723,10 +1832,6 @@ begin
 end;
 
 
-procedure TItemDocumento.SetIdCliente(const Value: TipoCampoChave);
-begin
-  FIdCliente := Value;
-end;
 
 procedure TItemDocumento.SetImpostos(const Value: IImpostos);
 begin
@@ -1882,32 +1987,47 @@ end;
 
 constructor TDocumentoFiscal.Create;
 begin
-    FPesoBruto:= 0;
-    FUfPlaca:= '';
-    FTotalImpostos:= TImpostos.Create;
-    FDestinatario:= TPessoa.Create;
-    FEspecie:= '' ;
+    PesoBruto:= 0;
+    UfPlaca:= '';
+    Especie:= '' ;
     FTotalProdutos:= 0;
-    FEnderecoCobranca:= TEndereco.Create;
-    FEnderecoEntrega:= TEndereco.Create;
-    FTransportadora:= TPessoa.Create;
-    FANTT := '';
-    FCobranca:= TList<ICobranca>.Create;
-    FSeguro:= 0;
+    ANTT := '';
+    Seguro:= 0;
     FTotalServicos:= 0;
-    FOutrasDespesas:= 0;
-    FEmitente:= TPessoa.Create;
-    FTipoTransporte:= ttRodoviaria;
-    FPesoLiquido:= 0;
-    FVolume:= 1;
-    FTipoFrete:= tfDestinatario;
-    FProdutos:=  TList<IItemDocumento>.Create;
-    FMarca:= '';
-    FPlaca:= '';
-    FFrete:= 0;
-    FTotalDocumento:= 0;
-    FServicos:= TList<IItemDocumento>.Create;
+    OutrasDespesas:= 0;
+    TipoTransporte:= ttRodoviaria;
+    PesoLiquido:= 0;
+    Volume:= 1;
+    TipoFrete:= tfDestinatario;
+    Marca:= '';
+    Placa:= '';
+    Frete:= 0;
+    TotalDocumento:= 0;
     OpcoesDeVerificacao := [tvCPF_CNPJ,tvIE,tvCEP,tvCFOP, tvUF];
+
+    EnderecoCobranca:= TEndereco.Create;
+    EnderecoEntrega:= TEndereco.Create;
+    Transportadora:= TPessoa.Create;
+    FTotalImpostos:= TImpostos.Create;
+    Destinatario:= TPessoa.Create;
+    Cobranca:= TList<ICobranca>.Create;
+    Emitente:= TEmitente.Create;
+    Servicos:= TList<IItemDocumento>.Create;
+    Produtos:=  TList<IItemDocumento>.Create;
+
+
+end;
+
+destructor TDocumentoFiscal.Destroy;
+begin
+  FreeAndNil(FEmitente);
+  FreeAndNil(FDestinatario);
+  FreeAndNil(FTransportadora);
+  FreeAndNil(FTotalImpostos);
+  FreeAndNil(FCobranca);
+  FreeAndNil(FProdutos);
+  FreeAndNil(FServicos);
+  FreeAndNil(FEmitente);
 
 end;
 
@@ -1921,12 +2041,18 @@ begin
   Result := FCobranca;
 end;
 
+function TDocumentoFiscal.GetDataNota: TDate;
+begin
+  Result := FDataNota;
+end;
+
+
 function TDocumentoFiscal.GetDestinatario: IPessoa;
 begin
   Result := FDestinatario;
 end;
 
-function TDocumentoFiscal.GetEmitente: IPessoa;
+function TDocumentoFiscal.GetEmitente: IEmitente;
 begin
   Result := FEmitente;
 end;
@@ -1950,10 +2076,14 @@ function TDocumentoFiscal.GetFrete: Currency;
 begin
   Result := FFrete;
 end;
-
 function TDocumentoFiscal.GetMarca: String;
 begin
   Result := FMarca;
+end;
+
+function TDocumentoFiscal.GetNumeroNota: String;
+begin
+   Result := FNumeroNota;
 end;
 
 function TDocumentoFiscal.GetOutrasDespesas: Currency;
@@ -1981,14 +2111,25 @@ begin
   Result := FProdutos;
 end;
 
+
 function TDocumentoFiscal.GetSeguro: Currency;
 begin
   Result := FSeguro;
 end;
 
+function TDocumentoFiscal.GetSerieNota: String;
+begin
+   Result := FSerieNota ;
+end;
+
 function TDocumentoFiscal.GetServicos: TList<IItemDocumento>;
 begin
   Result := FServicos;
+end;
+
+function TDocumentoFiscal.GetTipoAmbiente: uClassesERP.TTipoAmbiente;
+begin
+  Result := FTipoAmbiente;
 end;
 
 function TDocumentoFiscal.GetTipoFrete: TTipoFrete;
@@ -2038,7 +2179,7 @@ begin
 
   for I := 0 to Servicos.Count - 1 do
   begin
-    FTotalImpostos.ValorISS := FTotalImpostos.ValorISS + Produtos[i].Impostos.ValorISS;
+    FTotalImpostos.ValorISS := FTotalImpostos.ValorISS + Servicos[i].Impostos.ValorISS;
     FTotalImpostos.ValorIPI   := FTotalImpostos.ValorIPI + Servicos[i].Impostos.ValorIPI;
     FTotalImpostos.ValorPIS  := FTotalImpostos.ValorPIS + Servicos[i].Impostos.ValorPIS;
     FTotalImpostos.ValorCOFINS  := FTotalImpostos.ValorCOFINS + Servicos[i].Impostos.ValorCOFINS;
@@ -2064,6 +2205,7 @@ function TDocumentoFiscal.GetTotalServicos: Currency;
 var
   I:Integer;
 begin
+  FTotalServicos:= 0 ;
   for I := 0 to FServicos.Count - 1 do
     FTotalServicos:= FTotalServicos+ FServicos.Items[i].ValorTotalLiquido;
 
@@ -2095,12 +2237,19 @@ begin
   FCobranca := Value;
 end;
 
+
+procedure TDocumentoFiscal.SetDataNota(const Value: TDate);
+begin
+  FDataNota := Value;
+end;
+
+
 procedure TDocumentoFiscal.SetDestinatario(const Value: IPessoa);
 begin
   FDestinatario := Value;
 end;
 
-procedure TDocumentoFiscal.SetEmitente(const Value: IPessoa);
+procedure TDocumentoFiscal.SetEmitente(const Value: IEmitente);
 begin
   FEmitente := Value;
 end;
@@ -2130,6 +2279,11 @@ begin
   FMarca := Value;
 end;
 
+procedure TDocumentoFiscal.SetNumeroNota(const Value: String);
+begin
+   FNumeroNota := Value;
+end;
+
 procedure TDocumentoFiscal.SetOutrasDespesas(const Value: Currency);
 begin
   FOutrasDespesas := Value;
@@ -2155,14 +2309,25 @@ begin
   FProdutos := Value;
 end;
 
+
 procedure TDocumentoFiscal.SetSeguro(const Value: Currency);
 begin
   FSeguro := Value;
 end;
 
+procedure TDocumentoFiscal.SetSerieNota(const Value: String);
+begin
+  FSerieNota := Value;
+end;
+
 procedure TDocumentoFiscal.SetServicos(const Value: TList<IItemDocumento>);
 begin
   FServicos := Value;
+end;
+
+procedure TDocumentoFiscal.SetTipoAmbiente(const Value: uClassesERP.TTipoAmbiente);
+begin
+  FTipoAmbiente := Value;
 end;
 
 procedure TDocumentoFiscal.SetTipoFrete(const Value: TTipoFrete);
@@ -2252,16 +2417,19 @@ begin
      {$EndRegion}
 
      {$Region 'Transportadora'}
-     if Trim(Self.Transportadora.CPF_CNPJ) = '' then
-       Result.Add('CPF/CNPJ do transportadora não informado')
-     else
-     if Length(Self.Transportadora.CPF_CNPJ) = 11 then //CPF
+     if Self.Transportadora.Nome_RazaoSocial<> '' then
      begin
-       if not Verifica_CPF(Self.Transportadora.CPF_CNPJ) then
-         Result.Add('CPF do transportadora inválido')
-     end else //CNPJ
-     if not Verifica_CNPJ(Self.Transportadora.CPF_CNPJ) then
-       Result.Add('CNPJ do transportadora inválido');
+       if Trim(Self.Transportadora.CPF_CNPJ) = '' then
+         Result.Add('CPF/CNPJ do transportadora não informado')
+       else
+       if Length(Self.Transportadora.CPF_CNPJ) = 11 then //CPF
+       begin
+         if not Verifica_CPF(Self.Transportadora.CPF_CNPJ) then
+           Result.Add('CPF do transportadora inválido')
+       end else //CNPJ
+       if not Verifica_CNPJ(Self.Transportadora.CPF_CNPJ) then
+         Result.Add('CNPJ do transportadora inválido');
+     end;
      {$EndRegion}
 
    end;
@@ -2279,8 +2447,11 @@ begin
      {$EndRegion}
 
      {$Region 'Transportadora'}
-     if GetTableCount('VW_UF','*','UF = '+QuotedStr(Self.Transportadora.Endereco.Estado)) = 0 then
-       Result.Add('UF do transportadora inválido');
+     if Self.Transportadora.Nome_RazaoSocial<> '' then
+     begin
+       if GetTableCount('VW_UF','*','UF = '+QuotedStr(Self.Transportadora.Endereco.Estado)) = 0 then
+         Result.Add('UF do transportadora inválido');
+     end;
      {$EndRegion}
 
 
@@ -2301,8 +2472,11 @@ begin
      {$EndRegion}
 
      {$Region 'Transportadora'}
-     if not Verifica_Inscricao_Estadual(Self.Transportadora.IE, Self.Transportadora.Endereco.Estado) then
-       Result.Add('Inscrição Estadual do transportadora inválido');
+     if Self.Transportadora.Nome_RazaoSocial<> '' then
+     begin
+       if not Verifica_Inscricao_Estadual(Self.Transportadora.IE, Self.Transportadora.Endereco.Estado) then
+         Result.Add('Inscrição Estadual do transportadora inválido');
+     end;
      {$EndRegion}
 
    end;
@@ -2320,12 +2494,30 @@ begin
      {$EndRegion}
 
      {$Region 'Transportadora'}
-     if not Verifica_CEP(Self.Transportadora.Endereco.CEP,  Self.Transportadora.Endereco.Estado) then
-       Result.Add('CEP do transportadora inválido');
+     if Self.Transportadora.Nome_RazaoSocial<> '' then
+     begin
+       if not Verifica_CEP(Self.Transportadora.Endereco.CEP,  Self.Transportadora.Endereco.Estado) then
+         Result.Add('CEP do transportadora inválido');
+     end;
      {$EndRegion}
 
 
    end;
+
+   if tvIBGE in FOpcoesDeVerificacao then
+   begin
+     {$Region 'Emitente'}
+     if Self.Emitente.Endereco.CodigoMunicipio = '' then
+       Result.Add('Código do município do emitente não preenchido. Informe esse código no cadastro de CEP');
+     {$EndRegion}
+
+     {$Region 'Destinatario'}
+     if Self.Destinatario.Endereco.CodigoMunicipio = '' then
+       Result.Add('Código do município do destinatario não preenchido. Informe esse código no cadastro de CEP');
+     {$EndRegion}
+
+   end;
+
 
    if tvCFOP in FOpcoesDeVerificacao then
    begin
@@ -2356,296 +2548,46 @@ begin
 
 end;
 
-Procedure CriaDocumentoFiscal(Const DataSetNota, DataSetItens, DataSetCobranca: TDataSet; Var Doc: IDocumentoFiscal );
-var
-  Item: IItemDocumento;
-  Cob: TCobranca;
+
+{ TEmitente }
+
+constructor TEmitente.Create;
 begin
-  if not Assigned(Doc) then
-    Doc := TDocumentoFiscal.Create;
-
-  {$Region 'Cria Emitente'}
-  with GetCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(DataSetNota.FieldByName('idempresa').Value)) do
-  begin
-    Doc.Emitente.Nome_RazaoSocial :=FieldByName('RAZAOSOCIAL').AsString;
-    Doc.Emitente.NomeFantasia :=FieldByName('FANTASIA').AsString;
-    Doc.Emitente.CPF_CNPJ :=FieldByName('CNPJ').AsString;
-    Doc.Emitente.Telefone :=FieldByName('TELEFONE').AsString;
-    Doc.Emitente.IE :=FieldByName('IE').AsString;
-    Doc.Emitente.IE_ST :='';
-    Doc.Emitente.SUFRAMA :='';
-    Doc.Emitente.IdentificacaoSUFRAMA := '';
-    Doc.Emitente.IM :=FieldByName('IM').AsString;
-    Doc.Emitente.Email :='';
-    Doc.Emitente.CNAE :='';  { TODO : Rever }
-    Doc.Emitente.CRT :=''; { TODO : Rever }
-    Doc.Emitente.Endereco.Endereco :=FieldByName('LOGRADOURO').AsString;
-    Doc.Emitente.Endereco.NumeroEndereco :=FieldByName('NUMERO').AsString;
-    Doc.Emitente.Endereco.Complemento :=FieldByName('COMPLEMENTO').AsString;
-    Doc.Emitente.Endereco.Bairro :=FieldByName('BAIRRO').AsString;
-    Doc.Emitente.Endereco.Cidade :=FieldByName('CIDADE').AsString;
-    Doc.Emitente.Endereco.Estado :=FieldByName('UF').AsString;
-    Doc.Emitente.Endereco.CodigoMunicipio := '';{ TODO : Rever }
-    Doc.Emitente.Endereco.CEP :=FieldByName('CEP').AsString;
-    Doc.Emitente.Endereco.NumPais := 1058;
-    Doc.Emitente.Endereco.NomePais := 'BRASIL';
-
-    Free;
-  end;
-  {$EndRegion}
-
-  {$Region 'Cria Destinatario'}
-  if (DataSetNota.FindField('IDCliente') <> nil) and
-     (not DataSetNota.FieldByName('IDCliente').IsNull) then
-  begin
-    with GetCds(tpERPCliente,'IDCliente = '+TipoCampoChaveToStr(DataSetNota.FieldByName('IDCliente').Value)) do
-    begin
-      Doc.Destinatario.Nome_RazaoSocial :=FieldByName('NOMECLIENTE').AsString;
-      Doc.Destinatario.NomeFantasia :=FieldByName('FANTASIA').AsString;
-      if FieldByName('CNPJ').AsString = '' then
-        Doc.Destinatario.CPF_CNPJ :=FieldByName('CNPJ').AsString
-      else
-      if FieldByName('CPF').AsString = '' then
-        Doc.Destinatario.CPF_CNPJ :=FieldByName('CPF').AsString
-      else
-      begin
-        Free;
-        AvisaErro('O CPF/CNPJ do destinatário deve estar preenchido');
-      end;
-
-
-      Doc.Destinatario.Telefone :=FieldByName('TELEFONE').AsString;
-      Doc.Destinatario.IE :=FieldByName('IE').AsString;
-      Doc.Destinatario.IE_ST :='';
-      Doc.Destinatario.SUFRAMA :='';
-      Doc.Destinatario.IdentificacaoSUFRAMA := '';
-      Doc.Destinatario.IM :=FieldByName('IM').AsString;
-      Doc.Destinatario.Email := FieldByName('email').AsString;
-      Doc.Destinatario.Endereco.Endereco :=FieldByName('LOGRADOURO').AsString;
-      Doc.Destinatario.Endereco.NumeroEndereco :=FieldByName('NUMERO').AsString;
-      Doc.Destinatario.Endereco.Complemento :=FieldByName('COMPLEMENTO').AsString;
-      Doc.Destinatario.Endereco.Bairro :=FieldByName('BAIRRO').AsString;
-      Doc.Destinatario.Endereco.Cidade :=FieldByName('CIDADE').AsString;
-      Doc.Destinatario.Endereco.Estado :=FieldByName('UF').AsString;
-      Doc.Destinatario.Endereco.CodigoMunicipio := '';{ TODO : Rever }
-      Doc.Destinatario.Endereco.CEP :=FieldByName('CEP').AsString;
-      Doc.Destinatario.Endereco.NumPais := 1058;     { TODO : Rever }
-      Doc.Destinatario.Endereco.NomePais := 'BRASIL'; { TODO : Rever }
-
-      Free;
-    end;
-  end;
-  if (DataSetNota.FindField('idfornecedor') <> nil) and
-     (not DataSetNota.FieldByName('idfornecedor').IsNull) then
-  begin
-    with GetCds(tpERPFornecedor,'IDCliente = '+TipoCampoChaveToStr(DataSetNota.FieldByName('idfornecedor').Value)) do
-    begin
-      Doc.Destinatario.Nome_RazaoSocial :=FieldByName('RAZAOSOCIAL').AsString;
-      Doc.Destinatario.NomeFantasia :=FieldByName('FANTASIA').AsString;
-      if FieldByName('CNPJ').AsString = '' then
-        Doc.Destinatario.CPF_CNPJ :=FieldByName('CNPJ').AsString
-      else
-      begin
-        Free;
-        AvisaErro('O CPF/CNPJ do destinatário deve estar preenchido');
-      end;
-
-
-      Doc.Destinatario.Telefone :=FieldByName('TELEFONE').AsString;
-      Doc.Destinatario.IE :='';
-      Doc.Destinatario.IE_ST :='';
-      Doc.Destinatario.SUFRAMA :='';
-      Doc.Destinatario.IdentificacaoSUFRAMA := '';
-      Doc.Destinatario.IM :='';
-      Doc.Destinatario.Email := FieldByName('email').AsString;
-      Doc.Destinatario.Endereco.Endereco :=FieldByName('LOGRADOURO').AsString;
-      Doc.Destinatario.Endereco.NumeroEndereco :=FieldByName('NUMERO').AsString;
-      Doc.Destinatario.Endereco.Complemento :=FieldByName('COMPLEMENTO').AsString;
-      Doc.Destinatario.Endereco.Bairro :=FieldByName('BAIRRO').AsString;
-      Doc.Destinatario.Endereco.Cidade :=FieldByName('CIDADE').AsString;
-      Doc.Destinatario.Endereco.Estado :=FieldByName('UF').AsString;
-      Doc.Destinatario.Endereco.CodigoMunicipio := '';{ TODO : Rever }
-      Doc.Destinatario.Endereco.CEP :=FieldByName('CEP').AsString;
-      Doc.Destinatario.Endereco.NumPais := 1058;     { TODO : Rever }
-      Doc.Destinatario.Endereco.NomePais := 'BRASIL'; { TODO : Rever }
-
-      Free;
-    end;
-  end;
-
-  {$EndRegion}
-
-  {$Region 'Cria Transportadora'}
-  with GetCds(tpERPCliente,'IDCliente = '+TipoCampoChaveToStr(DataSetNota.FieldByName('IDCliente').Value)) do
-    begin
-      Doc.Emitente.Nome_RazaoSocial :=FieldByName('NOMECLIENTE').AsString;
-      Doc.Emitente.NomeFantasia :=FieldByName('FANTASIA').AsString;
-      if FieldByName('CNPJ').AsString = '' then
-        Doc.Emitente.CPF_CNPJ :=FieldByName('CNPJ').AsString
-     else
-      begin
-        Free;
-        AvisaErro('O CPF/CNPJ da transportadora deve estar preenchido');
-      end;
-
-
-      Doc.Transportadora.Telefone :=FieldByName('TELEFONE').AsString;
-      Doc.Transportadora.IE :=FieldByName('IE').AsString;
-      Doc.Transportadora.IE_ST :='';
-      Doc.Transportadora.SUFRAMA :='';
-      Doc.Transportadora.IdentificacaoSUFRAMA := '';
-      Doc.Transportadora.IM :='';
-      Doc.Transportadora.Email := '';
-      Doc.Transportadora.Endereco.Endereco :=FieldByName('LOGRADOURO').AsString;
-      Doc.Transportadora.Endereco.NumeroEndereco :=FieldByName('NUMERO').AsString;
-      Doc.Transportadora.Endereco.Complemento :=FieldByName('COMPLEMENTO').AsString;
-      Doc.Transportadora.Endereco.Bairro :=FieldByName('BAIRRO').AsString;
-      Doc.Transportadora.Endereco.Cidade :=FieldByName('CIDADE').AsString;
-      Doc.Transportadora.Endereco.Estado :=FieldByName('UF').AsString;
-      Doc.Transportadora.Endereco.CodigoMunicipio := '';{ TODO : Rever }
-      Doc.Transportadora.Endereco.CEP :=FieldByName('CEP').AsString;
-      Doc.Transportadora.Endereco.NumPais := 1058;     { TODO : Rever }
-      Doc.Transportadora.Endereco.NomePais := 'BRASIL'; { TODO : Rever }
-
-      Free;
-    end;
-
-  {$EndRegion}
-
-  {$Region 'Corpo da nota '}
-  Doc.EnderecoEntrega := Doc.Destinatario.Endereco;
-  Doc.EnderecoCobranca := Doc.Destinatario.Endereco;
-
-
-  Doc.Seguro := DataSetNota.FieldByName('VALORSEGURO').Value;
-  Doc.Frete := DataSetNota.FieldByName('VALORFRETE').Value;
-  Doc.OutrasDespesas := DataSetNota.FieldByName('VALOROUTRASDESPESAS').Value;
-  Doc.TotalDocumento := DataSetNota.FieldByName('VALORTOTALNOTA').Value;
-
-  case DataSetNota.FieldByName('TIPOTRANSPORTE').AsInteger of
-    1: Doc.TipoTransporte := ttMaritima;
-    2: Doc.TipoTransporte := ttFluvial;
-    3: Doc.TipoTransporte := ttLacustre;
-    4: Doc.TipoTransporte := ttAerea;
-    5: Doc.TipoTransporte := ttPostal;
-    6: Doc.TipoTransporte := ttFerroviaria;
-    7: Doc.TipoTransporte := ttRodoviaria;
-    8: Doc.TipoTransporte := ttConduto_Rede_Transmissao;
-    9: Doc.TipoTransporte := ttMeios_Proprios;
-   10: Doc.TipoTransporte := ttEntrada_Ou_Saida_ficta;
-  end;
-
-  if DataSetNota.FieldByName('FLAGMODALIDADEFRETE').Value  = 'D' then
-    Doc.TipoFrete := tfDestinatario
-  else
-  if DataSetNota.FieldByName('FLAGMODALIDADEFRETE').Value  = 'E' then
-    Doc.TipoFrete := tfEmitente
-  else
-    Doc.TipoFrete := tfTerceiros;
-
-  Doc.Placa := DataSetNota.FieldByName('PLACAVEICULO').Value;
-  Doc.UfPlaca := DataSetNota.FieldByName('UFPLACAVEICULO').Value;
-  Doc.ANTT := '';
-  Doc.Volume := DataSetNota.FieldByName('VOLUME').Value;
-  Doc.Especie := DataSetNota.FieldByName('ESPECIE').Value;
-  Doc.Marca := '';
-  Doc.PesoBruto := DataSetNota.FieldByName('PESOBRUTO').Value;
-  Doc.PesoLiquido := DataSetNota.FieldByName('PESOLIQ').Value;
-  {$EndRegion}
-
-  {$Region 'Itens'}
-  DataSetItens.First;
-  while not DataSetItens.Eof do
-  begin
-    Item := TItemDocumento.Create;
-    Item.Codigo := DataSetItens.FieldByName('CODIGO_PRODUTO').AsString;
-    Item.Unidade := DataSetItens.FieldByName('UNIDADE').Value;
-    Item.Quantidade := DataSetItens.FieldByName('QUANTIDADE').Value;
-    Item.ValorUnitario := DataSetItens.FieldByName('VALORUNITARIO').Value;
-    Item.ValorDesconto := DataSetItens.FieldByName('VALORDESCONTO').Value;
-    Item.ValorAcrescimo := DataSetItens.FieldByName('VALORACRESCIMO').Value;
-    Item.AliqDesconto := DataSetItens.FieldByName('ALIQDESCONTO').Value;
-    Item.AliqAcrescimo := DataSetItens.FieldByName('ALIQACRESCIMO').Value;
-    Item.ValorFrete := DataSetItens.FieldByName('VALORFRETERATEADO').Value;
-    Item.ValorSeguro := DataSetItens.FieldByName('VALORSEGURORATEADO').Value;
-    Item.ValorOutrasDespesas := DataSetItens.FieldByName('VALOROUTRASDESPESASRATEADO').Value;
-    Item.CFOP := DataSetItens.FieldByName('CFOP').Value;
-    Item.CST := DataSetItens.FieldByName('CST').Value;
-    Item.CSOSN := DataSetItens.FieldByName('CSOSN').Value;
-    Item.CRT := DataSetItens.FieldByName('CRT').Value;
-
-    Item.NumDI := '';
-    Item.DataDI :=0;
-    Item.LocalDesembaraco := '';
-    Item.UFDesenbaraco:= '';
-    Item.DataDesembaraco := 0;
-    Item.TipoTransporte := Doc.TipoTransporte;
-    Item.ValorAFRMM := 0;
-    Item.TipoIntermedio := tiImportacao_por_conta_propria;
-    Item.CNPJ_Adquerente := DataSetNota.FieldByName('CNPJ').AsString;
-    Item.UF_Terceiro :='';
-    Item.CodigoExportador := '';
-    Item.NumAdicao := 0;
-    Item.CodigoDoProdutoNoFabricante := '';
-
-    Item.NumeroPedidoCompra:= '';
-    Item.NumeroItemPedidoCompra := 0;
-
-    Item.Impostos.AliqICMS := DataSetItens.FieldByName('ALIQICMS').Value;
-    Item.Impostos.AliqISS := DataSetItens.FieldByName('ALIQISS').Value;
-    Item.Impostos.AliqCOFINS := DataSetItens.FieldByName('ALIQCOFINS').Value;
-    Item.Impostos.AliqPIS := DataSetItens.FieldByName('ALIQPIS').Value;
-    Item.Impostos.AliqIPI := DataSetItens.FieldByName('ALIQIPI').Value;
-    Item.Impostos.TipoIPI := iIPIAliq;
-    Item.Impostos.MVA := DataSetItens.FieldByName('MVA').Value;
-    Item.Impostos.AliqICMSST := DataSetItens.FieldByName('ALIQST').Value;
-    Item.Impostos.ALiqCSLL := DataSetItens.FieldByName('ALIQCSLL').Value;
-    if DataSetItens.FieldByName('BASEISS').AsCurrency >0  then
-    begin
-      Item.Impostos.BaseISS := DataSetItens.FieldByName('BASEISS').Value  ;
-      Item.Impostos.ValorISS := DataSetItens.FieldByName('VALORISS').Value;
-    end else
-    begin
-      Item.Impostos.BaseICMS := DataSetItens.FieldByName('BASEICMS').Value;
-      Item.Impostos.ValorICMS := DataSetItens.FieldByName('VALORICMS').Value;
-    end;
-
-    Item.Impostos.BaseIPI := DataSetItens.FieldByName('BASEIPI').Value;
-    Item.Impostos.BasePIS_COFINS := DataSetItens.FieldByName('BASEPISCOFINS').Value;
-    Item.Impostos.BaseICMSST := DataSetItens.FieldByName('BASEICMSST').Value;
-    Item.Impostos.BaseCSLL := DataSetItens.FieldByName('BASECSLL').Value;
-
-    Item.Impostos.ValorIPI := DataSetItens.FieldByName('VALORIPI').Value;
-    Item.Impostos.ValorPIS := DataSetItens.FieldByName('VALORPIS').Value;
-    Item.Impostos.ValorCOFINS := DataSetItens.FieldByName('VALORCOFINS').Value;
-    Item.Impostos.ValorICMSST := DataSetItens.FieldByName('VALORST').Value;
-    Item.Impostos.ValorCSLL := DataSetItens.FieldByName('VALORCSLL').Value;
-
-    if DataSetItens.FieldByName('TIPO_ITEM').AsString = 'S' then
-      Doc.Servicos.Add(Item)
-    else
-      Doc.Produtos.Add(Item);
-
-    DataSetItens.Next;
-  end;
-  {$EndRegion}
-
-  DataSetCobranca.First;
-  while not DataSetCobranca.Eof do
-  begin
-    Cob := TCobranca.Create;
-    Cob.NumeroDocumento := '';
-    Cob.Vencimento := 0;
-    Cob.ValorDocumento := DataSetCobranca.FieldByName('VALOR').Value;
-
-    DataSetCobranca.Next;
-  end;
-
-
-
-
+  inherited;
+  //Self.Endereco := TEndereco.Create;
 end;
 
+function TEmitente.GetRegimeTributacao: String;
+begin
+  Result := FRegimeTributacao;
+end;
+
+procedure TEmitente.SetRegimeTributacao(const Value: String);
+begin
+  FRegimeTributacao :=Value;
+end;
+
+{ TServico }
+
+function TItemDocumento.GetCodigoDeBeneficio: String;
+begin
+  Result := fCodigoDeBeneficio;
+end;
+
+function TItemDocumento.GetDesciminacaoCodigoDeBeneficio: String;
+begin
+  Result := fDesciminacaoCodigoDeBeneficio;
+end;
+
+procedure TItemDocumento.SetCodigoDeBeneficio(const Value: String);
+begin
+  fCodigoDeBeneficio := Value;
+end;
+
+procedure TItemDocumento.SetDesciminacaoCodigoDeBeneficio(const Value: String);
+begin
+  fDesciminacaoCodigoDeBeneficio := Value;
+end;
 
 end.
 

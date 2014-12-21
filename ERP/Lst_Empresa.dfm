@@ -1,28 +1,29 @@
 inherited frmLst_Empresa: TfrmLst_Empresa
   Caption = 'Cadastro de empresa'
   ClientHeight = 598
-  ExplicitTop = -104
+  ExplicitTop = -182
+  ExplicitWidth = 658
   ExplicitHeight = 637
   PixelsPerInch = 96
   TextHeight = 13
   inherited Status: TStatusBar
     Top = 579
-    ExplicitTop = 571
+    ExplicitTop = 579
   end
   inherited Panel1: TPanel
     Height = 579
-    ExplicitHeight = 571
+    ExplicitHeight = 579
     inherited cxSplitter1: TcxSplitter
       Height = 549
-      ExplicitHeight = 541
+      ExplicitHeight = 549
     end
     inherited Panel3: TPanel
       Height = 549
-      ExplicitHeight = 541
+      ExplicitHeight = 549
       inherited Panel4: TPanel
         Top = 508
-        TabOrder = 9
-        ExplicitTop = 500
+        TabOrder = 10
+        ExplicitTop = 508
         inherited BitBtn1: TBitBtn
           Width = 105
           ExplicitWidth = 105
@@ -115,7 +116,7 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         Height = 21
         DataField = 'Telefone'
         DataSource = DataCadastro
-        TabOrder = 6
+        TabOrder = 7
         Titulo.Left = 16
         Titulo.Top = 205
         Titulo.Width = 42
@@ -135,7 +136,7 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         Height = 21
         DataField = 'FAX'
         DataSource = DataCadastro
-        TabOrder = 7
+        TabOrder = 8
         Titulo.Left = 168
         Titulo.Top = 205
         Titulo.Width = 18
@@ -153,10 +154,10 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         Top = 264
         Width = 323
         Height = 244
-        ActivePage = cxTabSheet5
+        ActivePage = cxTabSheet1
         Align = alBottom
         Style = 10
-        TabOrder = 8
+        TabOrder = 9
         TabPosition = tpBottom
         ClientRectBottom = 225
         ClientRectRight = 323
@@ -164,7 +165,6 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         object cxTabSheet1: TcxTabSheet
           Caption = 'Endere'#231'o'
           ImageIndex = 0
-          ExplicitHeight = 174
           object GroupBox1: TGroupBox
             Left = 0
             Top = 0
@@ -172,7 +172,6 @@ inherited frmLst_Empresa: TfrmLst_Empresa
             Height = 225
             Align = alClient
             TabOrder = 0
-            ExplicitHeight = 174
             object edtCEP: TEditPesquisa
               Left = 12
               Top = 25
@@ -623,31 +622,21 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         object cxTabSheet5: TcxTabSheet
           Caption = ' Fiscal '
           ImageIndex = 4
-          ExplicitLeft = -2
-          ExplicitHeight = 174
           object cxPageControl2: TcxPageControl
             Left = 0
             Top = 0
             Width = 323
             Height = 225
-            ActivePage = cxTabSheet7
+            ActivePage = cxTabSheet6
             Align = alClient
             Style = 10
             TabOrder = 0
-            ExplicitLeft = 64
-            ExplicitTop = 40
-            ExplicitWidth = 289
-            ExplicitHeight = 193
             ClientRectBottom = 225
             ClientRectRight = 323
             ClientRectTop = 19
             object cxTabSheet6: TcxTabSheet
               Caption = 'Geral'
               ImageIndex = 0
-              ExplicitLeft = 5
-              ExplicitTop = 25
-              ExplicitWidth = 315
-              ExplicitHeight = 197
               object DBRadioGroup1: TDBRadioGroup
                 Left = 0
                 Top = 0
@@ -670,18 +659,11 @@ inherited frmLst_Empresa: TfrmLst_Empresa
                   'R'
                   'P'
                   'M')
-                ExplicitLeft = 16
-                ExplicitTop = 3
-                ExplicitWidth = 281
               end
             end
             object cxTabSheet7: TcxTabSheet
               Caption = ' Limite receita bruta'
               ImageIndex = 1
-              ExplicitLeft = 5
-              ExplicitTop = 25
-              ExplicitWidth = 315
-              ExplicitHeight = 197
               object cxGrid1: TcxGrid
                 Left = 0
                 Top = 0
@@ -689,10 +671,6 @@ inherited frmLst_Empresa: TfrmLst_Empresa
                 Height = 206
                 Align = alClient
                 TabOrder = 0
-                ExplicitLeft = 72
-                ExplicitTop = 40
-                ExplicitWidth = 250
-                ExplicitHeight = 200
                 object cxGrid1DBTableView1: TcxGridDBTableView
                   Tag = 99
                   NavigatorButtons.ConfirmDelete = False
@@ -743,7 +721,6 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         object cxTabSheet2: TcxTabSheet
           Caption = 'Logomarca '
           ImageIndex = 1
-          ExplicitHeight = 174
           object Panel5: TPanel
             Left = 288
             Top = 0
@@ -753,7 +730,6 @@ inherited frmLst_Empresa: TfrmLst_Empresa
             BevelKind = bkSoft
             BevelOuter = bvNone
             TabOrder = 0
-            ExplicitHeight = 174
             object SpeedButton1: TSpeedButton
               Left = 0
               Top = 22
@@ -848,13 +824,11 @@ inherited frmLst_Empresa: TfrmLst_Empresa
             Proportional = True
             Stretch = True
             TabOrder = 1
-            ExplicitHeight = 174
           end
         end
         object cxTabSheet3: TcxTabSheet
           Caption = 'Obs'
           ImageIndex = 2
-          ExplicitHeight = 174
           object GroupBox2: TGroupBox
             Left = 0
             Top = 0
@@ -862,7 +836,6 @@ inherited frmLst_Empresa: TfrmLst_Empresa
             Height = 225
             Align = alClient
             TabOrder = 0
-            ExplicitHeight = 174
             object DBMemo1: TDBMemo
               Left = 2
               Top = 15
@@ -873,14 +846,12 @@ inherited frmLst_Empresa: TfrmLst_Empresa
               DataSource = DataCadastro
               ScrollBars = ssVertical
               TabOrder = 0
-              ExplicitHeight = 157
             end
           end
         end
         object cxTabSheet4: TcxTabSheet
           Caption = 'Sequenciais'
           ImageIndex = 3
-          ExplicitHeight = 174
           object LabelDBEdit9: TLabelDBEdit
             Left = 16
             Top = 16
@@ -963,25 +934,84 @@ inherited frmLst_Empresa: TfrmLst_Empresa
           end
           object GroupBox3: TGroupBox
             Left = 0
-            Top = 137
+            Top = 96
             Width = 323
-            Height = 88
+            Height = 129
             Align = alBottom
             Caption = ' Documentos '
             TabOrder = 4
-            ExplicitTop = 86
-            object DBGrid1: TDBGrid
+            object cxGrid2: TcxGrid
               Left = 2
               Top = 15
               Width = 319
-              Height = 71
+              Height = 112
               Align = alClient
               TabOrder = 0
-              TitleFont.Charset = DEFAULT_CHARSET
-              TitleFont.Color = clWindowText
-              TitleFont.Height = -11
-              TitleFont.Name = 'Tahoma'
-              TitleFont.Style = []
+              ExplicitLeft = 88
+              ExplicitTop = 48
+              ExplicitWidth = 250
+              ExplicitHeight = 200
+              object cxGrid2DBTableView1: TcxGridDBTableView
+                Tag = 99
+                NavigatorButtons.ConfirmDelete = False
+                NavigatorButtons.First.Visible = False
+                NavigatorButtons.PriorPage.Visible = False
+                NavigatorButtons.Prior.Visible = False
+                NavigatorButtons.Next.Visible = False
+                NavigatorButtons.NextPage.Visible = False
+                NavigatorButtons.Last.Visible = False
+                NavigatorButtons.Insert.Hint = 'Novo'
+                NavigatorButtons.Delete.Hint = 'Apagar'
+                NavigatorButtons.Edit.Hint = 'Alterar'
+                NavigatorButtons.Post.Hint = 'Gravar'
+                NavigatorButtons.Post.Visible = True
+                NavigatorButtons.Cancel.Hint = 'Cancelar'
+                NavigatorButtons.Refresh.Visible = False
+                NavigatorButtons.SaveBookmark.Visible = False
+                NavigatorButtons.GotoBookmark.Visible = False
+                NavigatorButtons.Filter.Visible = False
+                DataController.DataSource = DataDocumentos
+                DataController.Summary.DefaultGroupSummaryItems = <>
+                DataController.Summary.FooterSummaryItems = <>
+                DataController.Summary.SummaryGroups = <>
+                OptionsBehavior.FocusCellOnTab = True
+                OptionsBehavior.FocusFirstCellOnNewRecord = True
+                OptionsBehavior.GoToNextCellOnEnter = True
+                OptionsBehavior.NavigatorHints = True
+                OptionsBehavior.FocusCellOnCycle = True
+                OptionsData.DeletingConfirmation = False
+                OptionsView.Navigator = True
+                OptionsView.GroupByBox = False
+                object cxGrid2DBTableView1Column1: TcxGridDBColumn
+                  Caption = 'Tipo de Documento'
+                  DataBinding.FieldName = 'FLAGTIPODOCUMENTO'
+                  PropertiesClassName = 'TcxImageComboBoxProperties'
+                  Properties.Items = <
+                    item
+                      Description = 'NFe'
+                      ImageIndex = 0
+                      Value = 'N'
+                    end
+                    item
+                      Description = 'NFSe'
+                      Value = 'S'
+                    end>
+                  Width = 101
+                end
+                object cxGrid2DBTableView1Column2: TcxGridDBColumn
+                  Caption = 'S'#233'rie'
+                  DataBinding.FieldName = 'SERIE'
+                  Width = 81
+                end
+                object cxGrid2DBTableView1Column3: TcxGridDBColumn
+                  Caption = 'Ultimo n'#250'mero'
+                  DataBinding.FieldName = 'NUMEROATUAL'
+                  Width = 131
+                end
+              end
+              object cxGrid2Level1: TcxGridLevel
+                GridView = cxGrid2DBTableView1
+              end
             end
           end
         end
@@ -989,7 +1019,7 @@ inherited frmLst_Empresa: TfrmLst_Empresa
       object LabelDBEdit10: TLabelDBEdit
         Left = 16
         Top = 182
-        Width = 121
+        Width = 142
         Height = 21
         DataField = 'IM'
         DataSource = DataCadastro
@@ -1000,6 +1030,26 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         Titulo.Height = 13
         Titulo.Caption = 'Inscri'#231#227'o  Municipal'
         IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit3: TLabelDBEdit
+        Left = 168
+        Top = 182
+        Width = 121
+        Height = 21
+        DataField = 'CNAE'
+        DataSource = DataCadastro
+        TabOrder = 6
+        Titulo.Left = 168
+        Titulo.Top = 167
+        Titulo.Width = 27
+        Titulo.Height = 13
+        Titulo.Caption = 'CNAE'
+        IsNull = False
         PodeRepetir = True
         CorPrincipal = clWhite
         CorSecundaria = 11592447
@@ -1035,22 +1085,22 @@ inherited frmLst_Empresa: TfrmLst_Empresa
     end
     inherited Panel2: TPanel
       Height = 549
-      ExplicitHeight = 541
+      ExplicitHeight = 549
       inherited PageControl: TcxPageControl
         Height = 547
-        ExplicitHeight = 539
+        ExplicitHeight = 547
         ClientRectBottom = 543
         inherited tsGrid: TcxTabSheet
           ExplicitLeft = 4
           ExplicitTop = 24
           ExplicitWidth = 293
-          ExplicitHeight = 511
+          ExplicitHeight = 519
           inherited pnlGrid: TPanel
             Height = 519
-            ExplicitHeight = 511
+            ExplicitHeight = 519
             inherited TvCadastro: TcxGrid
               Height = 519
-              ExplicitHeight = 511
+              ExplicitHeight = 519
             end
           end
         end
@@ -1058,13 +1108,13 @@ inherited frmLst_Empresa: TfrmLst_Empresa
           ExplicitLeft = 4
           ExplicitTop = 24
           ExplicitWidth = 293
-          ExplicitHeight = 511
+          ExplicitHeight = 519
           inherited pnlTree: TPanel
             Height = 519
-            ExplicitHeight = 511
+            ExplicitHeight = 519
             inherited TvTree: TcxDBTreeList
               Height = 519
-              ExplicitHeight = 511
+              ExplicitHeight = 519
             end
           end
         end
@@ -1102,5 +1152,20 @@ inherited frmLst_Empresa: TfrmLst_Empresa
     OnNewRecord = CdsLimiteReceitaBrutaNewRecord
     Left = 144
     Top = 176
+  end
+  object DataDocumentos: TDataSource
+    DataSet = CdsDocumentos
+    Left = 32
+    Top = 256
+  end
+  object CdsDocumentos: TpFIBClientDataSet
+    Aggregates = <>
+    Params = <>
+    BeforeEdit = CdsDocumentosBeforeEdit
+    BeforePost = CdsDocumentosBeforePost
+    BeforeDelete = CdsDocumentosBeforeDelete
+    OnNewRecord = CdsDocumentosNewRecord
+    Left = 152
+    Top = 248
   end
 end

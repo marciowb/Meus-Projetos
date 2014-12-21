@@ -19,7 +19,7 @@ uses
   cxMaskEdit, cxDropDownEdit, cxCalendar, cxDBEdit, cxStyles, cxCustomData,
   cxFilter, cxData, cxDataStorage, cxDBData, cxGridLevel, cxClasses,
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
-  cxGrid, cxMemo,ulibERP;
+  cxGrid, cxMemo,ulibERP,uClassesERP;
 
 type
   TfrmCad_OS = class(TfrmCad_CadastroPaiERP)

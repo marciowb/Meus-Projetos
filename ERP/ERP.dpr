@@ -100,7 +100,10 @@ uses
   uAuxConexao in 'uAuxConexao.pas' {frmAuxCOnexao},
   uDocumentoFiscal in 'uDocumentoFiscal.pas',
   uCad_CFOP in 'uCad_CFOP.pas' {frmCad_CFOP},
-  uNFSe in 'uNFSe.pas';
+  uDMHermes in 'uDMHermes.pas' {dmHermes: TDataModule},
+  uNFSe in 'uNFSe.pas',
+  uClassesERP in 'uClassesERP.pas',
+  uLst_LoteNotas in 'uLst_LoteNotas.pas' {frmLst_LoteNotas};
 
 {$R *.res}
 

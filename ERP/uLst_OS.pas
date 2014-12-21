@@ -17,7 +17,7 @@ uses
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, DB, cxDBData, DBClient,
   pFIBClientDataSet, ActnList, cxGridLevel, cxClasses, cxGridCustomView,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxPC,
-  StdCtrls, Buttons, dxStatusBar, ExtCtrls, Menus,uLibERP;
+  StdCtrls, Buttons, dxStatusBar, ExtCtrls, Menus,uLibERP,uClassesERP;
 
 type
   TfrmLst_OS = class(TfrmListagemPadraoERP)

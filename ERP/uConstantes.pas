@@ -26,5 +26,16 @@ interface
    CfgOSBloqueiaFaturamentoParaOSNaoBaixadaNaoPermite: Integer = 0;
    CfgOSBloqueiaFaturamentoParaOSNaoBaixadaPergunta: Integer = 1;
    CfgOSBloqueiaFaturamentoParaOSNaoBaixadaPermite: Integer = 2;
+
+   OPeracaoestoqueDocumentoNada = 0;
+   OPeracaoestoqueDocumentoNFe = 1;
+   OPeracaoestoqueDocumentoNFSe = 2;
+   OPeracaoestoqueDocumentoNFSeNfe = 3;
+   OPeracaoestoqueDocumentoComprovante = 4;
+
+   NumeracaoNotaSaidaNFe = 'N';
+   NumeracaoNotaSaidaNFSe = 'S';
+
+
 implementation
 end.

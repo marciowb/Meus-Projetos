@@ -20,7 +20,8 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
-			<DCC_DependencyCheckOutputName>ERP.exe</DCC_DependencyCheckOutputName>
+			<DCC_ExeOutput>D:\Meus Projetos\ERP\Deploy</DCC_ExeOutput>
+			<DCC_DependencyCheckOutputName>Deploy\ERP.exe</DCC_DependencyCheckOutputName>
 			<DCC_ImageBase>00400000</DCC_ImageBase>
 			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
 			<DCC_Platform>x86</DCC_Platform>
@@ -293,7 +294,15 @@
 			<DCCReference Include="uCad_CFOP.pas">
 				<Form>frmCad_CFOP</Form>
 			</DCCReference>
+			<DCCReference Include="uDMHermes.pas">
+				<Form>dmHermes</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
 			<DCCReference Include="uNFSe.pas"/>
+			<DCCReference Include="uClassesERP.pas"/>
+			<DCCReference Include="uLst_LoteNotas.pas">
+				<Form>frmLst_LoteNotas</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

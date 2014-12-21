@@ -19,7 +19,7 @@ uses
   cxDropDownEdit, cxCalendar, cxDBEdit, EditPesquisa, cxGroupBox, cxRadioGroup,
   cxMemo, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxDBData,
   cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView,
-  cxGridTableView, cxGridDBTableView, cxGrid,Math,ulibERP;
+  cxGridTableView, cxGridDBTableView, cxGrid,Math,ulibERP,uClassesERP;
 
 type
   TfrmCad_Proposta = class(TfrmCad_CadastroPaiERP)

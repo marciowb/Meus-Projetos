@@ -1246,6 +1246,9 @@ inherited frmCad_Contrato: TfrmCad_Contrato
             object tsEquipamentos: TcxTabSheet
               Caption = 'Servi'#231'os prestados [F12]'
               ImageIndex = 2
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object Panel5: TPanel
                 Left = 522
                 Top = 0
@@ -1342,6 +1345,9 @@ inherited frmCad_Contrato: TfrmCad_Contrato
             object tsObs: TcxTabSheet
               Caption = 'Observa'#231#245'es [Ctrl+Q]'
               ImageIndex = 2
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object cxDBMemo1: TcxDBMemo
                 Left = 0
                 Top = 0
@@ -1361,6 +1367,10 @@ inherited frmCad_Contrato: TfrmCad_Contrato
       object cxTabSheet1: TcxTabSheet
         Caption = 'Compet'#234'ncias'
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox1: TGroupBox
           Left = 0
           Top = 0

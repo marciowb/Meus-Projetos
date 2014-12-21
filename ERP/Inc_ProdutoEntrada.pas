@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Dlg_Cadastro, StdCtrls, Buttons, ExtCtrls, Mask, EditPesquisa,
   DBCtrls, LabelDBEdit, Comandos, MinhasClasses, DB, pFIBClientDataSet, uSQL,
-  ulibERP;
+  ulibERP,uClassesERP;
 
 type
   TfrmInc_ProdutoEntrada = class(TfrmDlg_Cadastro)

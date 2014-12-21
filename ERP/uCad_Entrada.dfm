@@ -1096,6 +1096,9 @@ inherited frmCad_Entrada: TfrmCad_Entrada
             object cxTabSheet2: TcxTabSheet
               Caption = 'Produtos'
               ImageIndex = 0
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object Panel6: TPanel
                 Left = 601
                 Top = 0
@@ -1243,6 +1246,9 @@ inherited frmCad_Entrada: TfrmCad_Entrada
             object cxTabSheet3: TcxTabSheet
               Caption = 'Observa'#231#245'es'
               ImageIndex = 1
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object cxDBMemo1: TcxDBMemo
                 Left = 0
                 Top = 0

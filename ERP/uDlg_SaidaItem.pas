@@ -15,7 +15,7 @@ uses
   dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
   dxSkinsDefaultPainters, dxSkinValentine, dxSkinXmas2008Blue, DB, cxTextEdit,
   cxMemo, cxDBEdit, StdCtrls, DBCtrls, LabelDBEdit, Mask, EditPesquisa, Buttons,
-  ExtCtrls, DBClient, pFIBClientDataSet, uLibERP;
+  ExtCtrls, DBClient, pFIBClientDataSet, uLibERP,uClassesERP;
 
 type
   TfrmDlg_SaidaItem = class(TfrmAddItemPadrao)

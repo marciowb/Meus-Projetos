@@ -4,7 +4,7 @@ interface
   uses
      Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
      Dialogs,Lst_CadastroERP, MinhasClasses,uCad_CadastroPaiERP,uListagemPadraoERP,
-     Generics.Collections,cxPC,TypInfo,ulibERP;
+     Generics.Collections,cxPC,TypInfo,ulibERP,uClassesERP;
 
 
   type

@@ -20,7 +20,7 @@ uses
   dxSkinOffice2010Black, dxSkinOffice2010Blue, dxSkinOffice2010Silver,
   dxSkinPumpkin, dxSkinSeven, dxSkinSharp, dxSkinSilver, dxSkinSpringTime,
   dxSkinStardust, dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinXmas2008Blue, dxSkinscxPCPainter, Grids, DBGrids;
+  dxSkinXmas2008Blue, dxSkinscxPCPainter, Grids, DBGrids, cxImageComboBox;
 
 type
   TfrmLst_Empresa = class(TfrmLstCadastroSimplesERP)
@@ -55,7 +55,6 @@ type
     LabelDBEdit12: TLabelDBEdit;
     LabelDBEdit13: TLabelDBEdit;
     GroupBox3: TGroupBox;
-    DBGrid1: TDBGrid;
     cxTabSheet5: TcxTabSheet;
     edtMunicipio: TEditPesquisa;
     cxPageControl2: TcxPageControl;
@@ -69,6 +68,15 @@ type
     cxGrid1: TcxGrid;
     cxGrid1DBTableView1Column1: TcxGridDBColumn;
     cxGrid1DBTableView1Column2: TcxGridDBColumn;
+    LabelDBEdit3: TLabelDBEdit;
+    cxGrid2DBTableView1: TcxGridDBTableView;
+    cxGrid2Level1: TcxGridLevel;
+    cxGrid2: TcxGrid;
+    DataDocumentos: TDataSource;
+    CdsDocumentos: TpFIBClientDataSet;
+    cxGrid2DBTableView1Column1: TcxGridDBColumn;
+    cxGrid2DBTableView1Column2: TcxGridDBColumn;
+    cxGrid2DBTableView1Column3: TcxGridDBColumn;
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -83,6 +91,10 @@ type
     procedure CdsCadastroAfterPost(DataSet: TDataSet);
     procedure CdsCadastroAfterScroll(DataSet: TDataSet);
     procedure CdsLimiteReceitaBrutaBeforeEdit(DataSet: TDataSet);
+    procedure CdsDocumentosNewRecord(DataSet: TDataSet);
+    procedure CdsDocumentosBeforeDelete(DataSet: TDataSet);
+    procedure CdsDocumentosBeforePost(DataSet: TDataSet);
+    procedure CdsDocumentosBeforeEdit(DataSet: TDataSet);
   private
     { Private declarations }
 
@@ -115,11 +127,11 @@ end;
 procedure TfrmLst_Empresa.CdsCadastroAfterOpen(DataSet: TDataSet);
 begin
   inherited;
-  CdsCadastro.FieldByName('BAIRRO').ProviderFlags := [];
-  CdsCadastro.FieldByName('CEP').ProviderFlags := [];
-  CdsCadastro.FieldByName('CIDADE').ProviderFlags := [];
-//  CdsCadastro.FieldByName('UF').ProviderFlags := [];
-  CdsCadastro.FieldByName('LOGRADOURO').ProviderFlags := [];
+//  CdsCadastro.FieldByName('BAIRRO').ProviderFlags := [];
+//  CdsCadastro.FieldByName('CEP').ProviderFlags := [];
+//  CdsCadastro.FieldByName('CIDADE').ProviderFlags := [];
+////  CdsCadastro.FieldByName('UF').ProviderFlags := [];
+//  CdsCadastro.FieldByName('LOGRADOURO').ProviderFlags := [];
   FormataMascara(CdsCadastro.FieldByName('CNPJ'),tcCNPJ);
 end;
 
@@ -127,12 +139,51 @@ procedure TfrmLst_Empresa.CdsCadastroAfterPost(DataSet: TDataSet);
 begin
   inherited;
   SetRegistros(CdsLimiteReceitaBruta,tpERPLimiteReceitaBruta);
+  SetRegistros(CdsDocumentos,tpERPNumeracaoNotaSaida);
 end;
 
 procedure TfrmLst_Empresa.CdsCadastroAfterScroll(DataSet: TDataSet);
 begin
   inherited;
   SetCds(CdsLimiteReceitaBruta,tpERPLimiteReceitaBruta,'idempresa= '+TipoCampoChaveToStr(ValorChave));
+  SetCds(CdsDocumentos,tpERPNumeracaoNotaSaida,'idempresa= '+TipoCampoChaveToStr(ValorChave));
+end;
+
+procedure TfrmLst_Empresa.CdsDocumentosBeforeDelete(DataSet: TDataSet);
+begin
+  inherited;
+  if ConfirmaDel then
+  begin
+    MudaEstado;
+    CdsDocumentos.Edit;
+    CdsDocumentos.FieldByName('FLAGEDICAO').AsString :='D';
+    CdsDocumentos.Post;
+  end;
+  Abort;
+end;
+
+procedure TfrmLst_Empresa.CdsDocumentosBeforeEdit(DataSet: TDataSet);
+begin
+  inherited;
+  MudaEstado;
+end;
+
+procedure TfrmLst_Empresa.CdsDocumentosBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  if CdsDocumentos.FieldByName('FLAGEDICAO').Value = 'N' then
+     CdsDocumentos.FieldByName('FLAGEDICAO').Value := 'E';
+end;
+
+procedure TfrmLst_Empresa.CdsDocumentosNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  MudaEstado;
+  CdsDocumentos.FieldByName('idempresa').Value := ValorChave;
+  CdsDocumentos.FieldByName('flagedicao').Value := 'I';
+  CdsDocumentos.FieldByName('IDNUMERACAONOTASAIDA').Value := GetCodigo(tpERPNumeracaoNotaSaida);
+  CdsDocumentos.FieldByName('Serie').Value := '0';
+  CdsDocumentos.FieldByName('NUMEROATUAL').Value := 0;
 end;
 
 procedure TfrmLst_Empresa.CdsLimiteReceitaBrutaAfterOpen(DataSet: TDataSet);

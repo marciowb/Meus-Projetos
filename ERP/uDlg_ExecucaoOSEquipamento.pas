@@ -18,7 +18,7 @@ uses
   dxSkinscxPCPainter, cxCustomData, cxFilter, cxData, cxDataStorage, DB,
   cxDBData, cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxGrid, ActnList, cxSplitter, DBCtrls,
-  LabelDBEdit, DBClient, pFIBClientDataSet,ulibERP;
+  LabelDBEdit, DBClient, pFIBClientDataSet,ulibERP,uClassesERP;
 
 type
   TfrmDlg_ExecucaoOSEquipamento = class(TfrmDlg_CadastroERP)

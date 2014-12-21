@@ -2,6 +2,7 @@ inherited frmDlg_ItensProposta: TfrmDlg_ItensProposta
   Caption = 'Itens da proposta'
   ClientHeight = 388
   ClientWidth = 346
+  ExplicitTop = 8
   ExplicitWidth = 362
   ExplicitHeight = 427
   PixelsPerInch = 96
@@ -31,7 +32,9 @@ inherited frmDlg_ItensProposta: TfrmDlg_ItensProposta
       ExplicitWidth = 346
       ExplicitHeight = 286
       inherited edtProduto: TEditPesquisa
-        Display.TabOrder = 2
+        BtnNovo.Visible = True
+        BtnEditar.Visible = True
+        Display.TabOrder = 3
       end
       inherited edtQuantidade: TLabelDBEdit
         Top = 114
@@ -63,7 +66,6 @@ inherited frmDlg_ItensProposta: TfrmDlg_ItensProposta
       end
       inherited LabelDBEdit6: TLabelDBEdit
         Top = 153
-        TabOrder = 10
         Titulo.Top = 138
         Titulo.ExplicitTop = 138
         ExplicitTop = 153
@@ -84,7 +86,6 @@ inherited frmDlg_ItensProposta: TfrmDlg_ItensProposta
       end
       inherited LabelDBEdit9: TLabelDBEdit
         Top = 153
-        TabOrder = 11
         Titulo.Top = 138
         Titulo.ExplicitTop = 138
         ExplicitTop = 153
@@ -92,13 +93,16 @@ inherited frmDlg_ItensProposta: TfrmDlg_ItensProposta
       inherited GroupBox1: TGroupBox
         Top = 193
         Width = 346
-        TabOrder = 12
         ExplicitTop = 132
         ExplicitWidth = 346
         inherited cxDBMemo1: TcxDBMemo
           ExplicitWidth = 342
           Width = 342
         end
+      end
+      inherited edtPatrimonio: TEditPesquisa
+        TabOrder = 2
+        Display.TabOrder = 14
       end
       object edtEquipamentoCliente: TEditPesquisa
         Left = 15
@@ -279,7 +283,7 @@ inherited frmDlg_ItensProposta: TfrmDlg_ItensProposta
         Display.TabStop = False
         Display.Color = clSkyBlue
         Display.ReadOnly = True
-        Display.TabOrder = 3
+        Display.TabOrder = 13
         TamanhoDisplay = 170
       end
     end

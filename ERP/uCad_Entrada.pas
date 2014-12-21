@@ -19,7 +19,7 @@ uses
   cxMaskEdit, cxDropDownEdit, cxCalendar, cxDBEdit, cxMemo, cxStyles,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxDBData, cxGridLevel,
   cxClasses, cxGridCustomView, cxGridCustomTableView, cxGridTableView,
-  cxGridDBTableView, cxGrid,uLibERP;
+  cxGridDBTableView, cxGrid,uLibERP,uClassesERP;
 
 type
   TfrmCad_Entrada = class(TfrmCad_CadastroPaiERP)

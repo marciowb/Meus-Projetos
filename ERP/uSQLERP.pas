@@ -32,15 +32,20 @@ begin
          DescricaoCampoDisplay := 'Razão social';
          DescricaoTabela := 'Empresa';
          Versao20 := False;
+         DesconsiderarCampos := 'CODIGOIBGEESTADO;CEP;LOGRADOURO;BAIRRO;CIDADE;IBGE';
          Select :=
            'SELECT E.IDEMPRESA, E.CODIGO, E.RAZAOSOCIAL, E.FANTASIA, E.CNPJ,E.REGIMEEMPRESA, '+
            '       E.IDCEP, E.COMPLEMENTO, E.NUMERO, E.LOGOMARCA, E.IE,E.IM,E.NUMEROPROPOSTA, '+
-           '       E.NUMEROCONTRATO,E.IDMUNICIPIO, '+
+           '       E.NUMEROCONTRATO,E.IDMUNICIPIO,E.CNAE, '+
            '       E.TELEFONE, E.FAX, E.OBS,E.NUMEROOS,E.NUMEROSAIDA, CEP.CEP, CEP.LOGRADOURO, CEP.BAIRRO, '+
-           '       CEP.CIDADE,COALESCE(E.UF, CEP.UF) UF  '+
+           '       CEP.CIDADE,COALESCE(E.UF, CEP.UF) UF, UF.CODIBGE CODIGOIBGEESTADO, M.IBGE  '+
            '  FROM EMPRESA E '+
            ' INNER JOIN CEP  '+
            '    ON (CEP.IDCEP = E.IDCEP) '+
+           ' INNER JOIN VW_UF UF '+
+           '    ON (UF.UF = CEP.UF) '+
+           '  LEFT JOIN MUNICIPIO M '+
+           '    ON (M.IDMUNICIPIO = CEP.IDMUNICIPIO)'+
            ' WHERE 1=1 '+Complemento;
        End;
      tpERPCFOPVisivel,tpERPCFOP:
@@ -287,12 +292,12 @@ begin
         NomeTabela := 'PRODUTO';
         DescricaoCampoDisplay := 'Descrição';
         DescricaoTabela := 'Produto';
-        DesconsiderarCampos := 'NOMELINHA;NOMEGRUPO;RAZAOSOCIAL;NOMELOCALIZACAO;NOMEFABRICANTE;CODIGOMUNICIPALSERVICO;NCM';
+        DesconsiderarCampos := 'NOMELINHA;NOMEGRUPO;RAZAOSOCIAL;NOMELOCALIZACAO;NOMEFABRICANTE;CODIGOMUNICIPALSERVICO;NCM;CODIGOSERVFEDERAL';
         Versao20 := False;
         UsaMaxParaCodigo := True;
         Select :=
           'SELECT P.IDPRODUTO, P.CODIGO, P.NOMEPRODUTO, P.DESCRICAODETALHADA, P.TIPOPRODUTO, P.IDGRUPO, P.IDLINHA, P.IDLOCALIZACAO,'+
-          '       P.IMAGEMPRINCIPAL, P.OBS, P.IDNCM, P.IDCODIGOMUNICIPALSERVICO, P.CODIGOSERVFEDERAL, P.CUSTOATUAL, P.CUSTOMEDIO,'+
+          '       P.IMAGEMPRINCIPAL, P.OBS, P.IDNCM, P.IDCODIGOMUNICIPALSERVICO, CF.CODIGO CODIGOSERVFEDERAL, P.CUSTOATUAL, P.CUSTOMEDIO,'+
           '       P.CUSTOCONTABIL, P.ESTOQUEMINIMO, P.DATACADASTRO, P.FLAGSERIAL, P.FLAGLOTE, P.FLAGINATIVO, P.CODIGOBARRAS,'+
           '       P.IDFABRICANTE, P.IDFORNECEDOR, P.CST, P.CSOSN, P.IDUNIDADE, P.ORIGEM, P.PRECO, P.MARKUP,P.ESTOQUEATUAL,'+
           '       P.FATORMULTIPLICADOR,L.NOMELINHA,'+
@@ -312,6 +317,8 @@ begin
           '    ON (U.IDUNIDADE = P.IDUNIDADE)'+
           '  LEFT JOIN CODIGOMUNICIPALSERVICO C '+
           '    ON (c.IDCODIGOMUNICIPALSERVICO  = P.IDCODIGOMUNICIPALSERVICO)  '+
+          '  LEFT JOIN CODIGOMUNICIPALSERVICO CF '+
+          '    ON (c.CODPAI  = CF.IDCODIGOMUNICIPALSERVICO)  '+
           '  LEFT JOIN NCM '+
           '    ON (NCM.IDNCM  = P.IDNCM)  '+
           ' WHERE 1=1 '+Complemento;
@@ -1085,13 +1092,15 @@ begin
           DescricaoCampoDisplay := 'Nome fantasia';
           DescricaoTabela := 'Transportadora';
           Versao20 := False;
-          DesconsiderarCampos := 'CEP;LOGRADOURO;BAIRRO;CIDADE;UF';
+          DesconsiderarCampos := 'CEP;LOGRADOURO;BAIRRO;CIDADE;UF;IBGE';
           Select :=
              'SELECT T.IDTRANSPORTADORA, T.CODIGO, T.RAZAOSOCIAL, T.NOMEFANTASIA, T.CNPJ, T.IE, T.IDCEP, T.COMPLEMENTO, T.NUMERO, '+
-             '       T.RNTRC, T.IDCFOP, CEP.CEP, CEP.LOGRADOURO, CEP.BAIRRO, CEP.CIDADE, CEP.UF '+
+             '       T.RNTRC, T.IDCFOP, CEP.CEP, CEP.LOGRADOURO, CEP.BAIRRO, CEP.CIDADE, CEP.UF,M.IBGE '+
              '  FROM TRANSPORTADORA T '+
              ' INNER JOIN CEP '+
              '    ON (CEP.IDCEP = T.IDCEP) '+
+             '  LEFT JOIN MUNICIPIO M '+
+             '    ON (M.IDMUNICIPIO = CEP.IDMUNICIPIO )'+
              '  WHERE 1=1 '+Complemento;
         end;
       tpERPAlmoxarifado:
@@ -1635,6 +1644,74 @@ begin
              '    ON (CS.IDCFOP = CFOP.IDCFOP) '+
              ' WHERE 1=1 '+Complemento;
         end;
+        tpERPNumeracaoNotaSaida:
+        begin
+          CampoChave := 'IDNUMERACAONOTASAIDA';
+          CampoDisplay := '';
+          NomeTabela := 'NUMERACAONOTASAIDA';
+          CampoCodigo :='';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'Numeração das notas de saída';
+          DesconsiderarCampos := 'FLAGEDICAO';
+          Versao20:= True;
+          Select :=
+             'SELECT  IDNUMERACAONOTASAIDA,IDEMPRESA,FLAGTIPODOCUMENTO,SERIE,NUMEROATUAL,''N'' FLAGEDICAO '+
+             '  FROM NUMERACAONOTASAIDA  '+
+             ' WHERE 1=1 '+Complemento;
+        end;
+        tpERPLotesNota:
+        begin
+          CampoChave := 'IDLOTEDOCUMENTO';
+          CampoDisplay := 'NUMEROLOTES';
+          NomeTabela := 'LOTEDOCUMENTO';
+          CampoCodigo :='';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'Lotes de documentos ';
+          DesconsiderarCampos := 'STATUSNFSE;STATUSNFE';
+          Versao20:= True;
+          Select :=
+            ' SELECT IDLOTEDOCUMENTO, LPAD(NUMEROLOTE, 10,''0'') NUMEROLOTE, DATAGERACAO, '+
+            '        HORAGERACAO, FLAGSTATUSNFE, DATAHORARESPOSTANFE, MSGERRONFE,'+
+            '        FLAGSTATUSNFSE, DATAHORARESPOSTANFSE, MSGERRONFSE,'+
+            '        CASE WHEN FLAGSTATUSNFE =''N'' THEN ''NÃO INICIADO'''+
+            '             WHEN FLAGSTATUSNFE =''I'' THEN ''INICIO ENVIO'''+
+            '             WHEN FLAGSTATUSNFE =''E'' THEN ''ENVIADO'''+
+            '             WHEN FLAGSTATUSNFE =''R'' THEN ''ERRO'''+
+            '             WHEN FLAGSTATUSNFE =''S'' THEN ''SUCESSO'' END STATUSNFE,'+
+            '        CASE WHEN FLAGSTATUSNFSE =''N'' THEN ''NÃO INICIADO'''+
+            '             WHEN FLAGSTATUSNFSE =''I'' THEN ''INICIO ENVIO'''+
+            '             WHEN FLAGSTATUSNFSE =''E'' THEN ''ENVIADO'''+
+            '             WHEN FLAGSTATUSNFSE =''R'' THEN ''ERRO'''+
+            '             WHEN FLAGSTATUSNFSE =''S'' THEN ''SUCESSO'' END STATUSNFSE'+
+            '   FROM LOTEDOCUMENTO'+
+            '  WHERE 1=1 '+Complemento;
+        end;
+       tpERPItensLotesNota:
+       begin
+          CampoChave := 'IDITENSLOTEDOCUMENTO';
+          CampoDisplay := 'PESSOA';
+          NomeTabela := 'ITENSLOTEDOCUMENTO';
+          CampoCodigo :='';
+          DescricaoCampoDisplay := '';
+          DescricaoTabela := 'Lotes de documentos(Itens) ';
+          DesconsiderarCampos := 'STATUS;PESSOA;DATA;NUMEROSAIDA';
+          Versao20:= True;
+          Select :=
+            '  SELECT I.IDITENSLOTEDOCUMENTO, I.IDLOTEDOCUMENTO,'+
+            '         I.IDSAIDA, I.FLAGSTATUS,'+
+            '         S.DATA,S.NUMEROSAIDA,COALESCE(C.NOMECLIENTE,F.RAZAOSOCIAL) PESSOA,'+
+            '         CASE WHEN I.FLAGSTATUS = ''A'' THEN ''AGUARDANDO'''+
+            '              WHEN I.FLAGSTATUS = ''E'' THEN ''ERRO'''+
+            '              WHEN I.FLAGSTATUS = ''S'' THEN ''SUCESSO'' END STATUS'+
+            '    FROM ITENSLOTEDOCUMENTO I'+
+            '   INNER JOIN SAIDA S'+
+            '      ON (S.IDSAIDA = I.IDSAIDA)'+
+            '    LEFT JOIN CLIENTE C'+
+            '      ON (C.IDCLIENTE = S.IDCLIENTE)'+
+            '    LEFT JOIN FORNECEDOR F'+
+            '      ON (F.IDFORNECEDOR = S.IDFORNECEDOR)'+
+            ' WHERE 1=1 '+Complemento;
+       end;
     end;
   End;
 

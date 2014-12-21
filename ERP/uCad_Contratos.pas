@@ -19,7 +19,7 @@ uses
   cxMaskEdit, cxDropDownEdit, cxCalendar, cxDBEdit, cxStyles, cxCustomData,
   cxFilter, cxData, cxDataStorage, cxDBData, cxMemo, cxGridLevel,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxClasses,
-  cxGridCustomView, cxGrid,ulibERP, cxSpinEdit;
+  cxGridCustomView, cxGrid,ulibERP, cxSpinEdit,uClassesERP;
 
 type
   TfrmCad_Contrato = class(TfrmCad_CadastroPaiERP)

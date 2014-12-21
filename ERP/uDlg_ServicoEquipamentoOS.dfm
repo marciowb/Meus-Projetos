@@ -645,6 +645,9 @@ inherited frmDlg_ServicoEquipamentoOS: TfrmDlg_ServicoEquipamentoOS
       object cxTabSheet1: TcxTabSheet
         Caption = ' Produtos usados '
         ImageIndex = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Panel6: TPanel
           Left = 0
           Top = 0
@@ -963,6 +966,9 @@ inherited frmDlg_ServicoEquipamentoOS: TfrmDlg_ServicoEquipamentoOS
       object cxTabSheet2: TcxTabSheet
         Caption = 'Patrim'#244'nios( Ferramentas) usados'
         ImageIndex = 1
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object cxGrid1: TcxGrid
           Tag = 99
           Left = 0

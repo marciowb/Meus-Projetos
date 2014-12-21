@@ -20,7 +20,7 @@ uses
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
   cxGrid, cxPC, ComCtrls, ToolWin, StdCtrls, Buttons, DBCtrls, LabelDBEdit,
   cxSplitter, ExtCtrls, cxContainer, cxMemo, cxDBEdit, cxTextEdit, cxMaskEdit,
-  cxDropDownEdit, cxCalendar,uLibERP;
+  cxDropDownEdit, cxCalendar,uLibERP,uClassesERP;
 
 type
   TfrmLst_ManutencaoPatrimonio = class(TfrmLstCadastroSimplesERP)

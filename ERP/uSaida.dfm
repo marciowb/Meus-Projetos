@@ -1021,6 +1021,17 @@ inherited frmSaida: TfrmSaida
         Display.TabOrder = 12
         TamanhoDisplay = 150
       end
+      object BitBtn7: TBitBtn
+        Left = 739
+        Top = 125
+        Width = 188
+        Height = 38
+        Caption = 'Gerar Documentos fiscais'
+        DoubleBuffered = True
+        ParentDoubleBuffered = False
+        TabOrder = 13
+        OnClick = BitBtn7Click
+      end
     end
   end
   object Panel2: TPanel
@@ -1259,7 +1270,6 @@ inherited frmSaida: TfrmSaida
       Align = alBottom
       Caption = ' Frete '
       TabOrder = 1
-      ExplicitLeft = 3
       object Label2: TLabel
         Left = 525
         Top = 77
@@ -1698,6 +1708,8 @@ inherited frmSaida: TfrmSaida
       object cxTabSheet3: TcxTabSheet
         Caption = 'Adicionais'
         ImageIndex = 1
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupPagamento: TGroupBox
           Left = 737
           Top = 0

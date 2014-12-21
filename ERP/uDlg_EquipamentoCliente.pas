@@ -15,7 +15,7 @@ uses
   dxSkinOffice2010Blue, dxSkinOffice2010Silver, dxSkinPumpkin, dxSkinSeven,
   dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
   dxSkinsDefaultPainters, dxSkinValentine, dxSkinXmas2008Blue, cxTextEdit,
-  cxMemo, cxDBEdit, DB, DBClient, pFIBClientDataSet,ulibERP;
+  cxMemo, cxDBEdit, DB, DBClient, pFIBClientDataSet,ulibERP,uClassesERP;
 
 type
   TfrmDlg_EquipamentoCliente = class(TfrmDlg_CadastroERP)

@@ -2,6 +2,7 @@ inherited frmDlg_EquipamentoCliente: TfrmDlg_EquipamentoCliente
   ActiveControl = edtProduto
   Caption = 'Equipamento do cliente'
   ClientHeight = 296
+  ExplicitWidth = 320
   ExplicitHeight = 335
   PixelsPerInch = 96
   TextHeight = 13

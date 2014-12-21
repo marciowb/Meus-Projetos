@@ -1,7 +1,7 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'D:\Meus Projetos\ERP\Lst_Empresa.pas',0,1,158,14,161,0,0,,
-File_1=TSourceModule,'D:\Meus Projetos\ERP\uCad_Produto.pas',0,1,1,1,1,0,0,,
-File_2=TSourceModule,'D:\Meus Projetos\ERP\uSaida.pas',0,1,696,30,715,0,0,,
+File_0=TSourceModule,'D:\Meus Projetos\ERP\uNFSe.pas',0,1,9,32,20,0,0,,
+File_1=TSourceModule,'D:\Meus Projetos\ERP\Lst_Empresa.pas',0,1,158,14,161,0,0,,
+File_2=TSourceModule,'D:\Meus Projetos\ERP\uCad_Produto.pas',0,1,1,1,1,0,0,,
 File_3=TSourceModule,'D:\Meus Projetos\ERP\Lst_OperacaoEstoque.pas',0,1,1,1,1,0,0,,
 File_4=TSourceModule,'D:\Meus Projetos\ERP\uAddItemPadrao.pas',0,1,96,41,116,0,0,,
 File_5=TSourceModule,'D:\Meus Projetos\ERP\uDlg_SaidaItem.pas',0,1,187,1,199,0,0,,
@@ -12,51 +12,90 @@ File_9=TSourceModule,'D:\Meus Projetos\componentes\DevExpress VCL\ExpressPivotGr
 File_10=TSourceModule,'D:\Meus Projetos\ERP\uLst_ManutencaoPatrimonio.pas',0,1,155,16,172,0,0,,
 File_11=TSourceModule,'D:\Meus Projetos\ERP\uCad_Patrimonio.pas',0,1,162,13,184,0,0,,
 File_12=TSourceModule,'D:\Meus Projetos\ERP\uCad_OS.pas',0,1,453,22,465,0,0,,
-File_13=TSourceModule,'D:\Meus Projetos\ERP\uDlg_ExecucaoOSEquipamento.pas',0,1,273,57,293,0,0,,
-File_14=TSourceModule,'D:\Meus Projetos\ERP\uDlg_ServicoEquipamentoOS.pas',0,1,138,1,155,0,0,,
 
 [Modules]
-Module0=D:\Meus Projetos\Global\Comandos.pas
-Module1=D:\Meus Projetos\ERP\ERP.dproj
-Module2=D:\Meus Projetos\ERP\uSQLERP.pas
-Module3=D:\Meus Projetos\ERP\uCad_CFOP.pas
-Module4=D:\Meus Projetos\Global\UDmConexao.pas
-Module5=D:\Meus Projetos\ERP\uForms.pas
-Module6=D:\Meus Projetos\Global\MinhasClasses.pas
-Module7=D:\Meus Projetos\ERP\uPrincipal.pas
-Module8=D:\Meus Projetos\ERP\uRegras.pas
-Module9=D:\Meus Projetos\ERP\uCadNCM.pas
-Module10=D:\Meus Projetos\ERP\uAliqISS.pas
-Module11=D:\Meus Projetos\ERP\uDocumentoFiscal.pas
-Module12=D:\Meus Projetos\componentes\Kimera\EditPesquisa\EditPesquisa.pas
-Module13=D:\Meus Projetos\ERP\uLibERP.pas
-Module14=D:\Meus Projetos\ERP\Cad_Cliente.pas
-Module15=D:\Meus Projetos\ERP\uConstantes.pas
-Module16=D:\Meus Projetos\ERP\uALiqICMS.pas
-Module17=D:\Meus Projetos\Global\uListagemPadrao.pas
-Module18=default.htm
-Count=19
+Module0=D:\Meus Projetos\ERP\uDMHermes.pas
+Module1=default.htm
+Module2=D:\Meus Projetos\ERP\ERP.dproj
+Module3=D:\Meus Projetos\ERP\uRegras.pas
+Module4=D:\Meus Projetos\ERP\uSQLERP.pas
+Module5=D:\Meus Projetos\ERP\uLibERP.pas
+Module6=D:\Meus Projetos\ERP\uConstantes.pas
+Module7=D:\Meus Projetos\ERP\uiDocumentoFiscal.pas
+Module8=D:\Meus Projetos\ERP\uDocumentoFiscal.pas
+Module9=D:\Meus Projetos\ERP\uSaida.pas
+Module10=D:\Meus Projetos\Global\UDmConexao.pas
+Module11=D:\Meus Projetos\Global\Comandos.pas
+Module12=D:\Meus Projetos\ERP\uCad_CFOP.pas
+Module13=D:\Meus Projetos\ERP\uForms.pas
+Module14=D:\Meus Projetos\Global\MinhasClasses.pas
+Module15=D:\Meus Projetos\ERP\uPrincipal.pas
+Module16=D:\Meus Projetos\ERP\uCadNCM.pas
+Module17=D:\Meus Projetos\ERP\uAliqISS.pas
+Module18=D:\Meus Projetos\componentes\Kimera\EditPesquisa\EditPesquisa.pas
+Module19=D:\Meus Projetos\ERP\Cad_Cliente.pas
+Module20=D:\Meus Projetos\ERP\uALiqICMS.pas
+Module21=D:\Meus Projetos\Global\uListagemPadrao.pas
+Count=22
 EditWindowCount=1
 
-[D:\Meus Projetos\Global\Comandos.pas]
+[D:\Meus Projetos\ERP\uDMHermes.pas]
 ModuleType=TSourceModule
-FormState=0
+FormState=1
 FormOnTop=0
+
+[default.htm]
+ModuleType=TURLModule
 
 [D:\Meus Projetos\ERP\ERP.dproj]
 ModuleType=TBaseProject
+
+[D:\Meus Projetos\ERP\uRegras.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
 
 [D:\Meus Projetos\ERP\uSQLERP.pas]
 ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
 
-[D:\Meus Projetos\ERP\uCad_CFOP.pas]
+[D:\Meus Projetos\ERP\uLibERP.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[D:\Meus Projetos\ERP\uConstantes.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[D:\Meus Projetos\ERP\uiDocumentoFiscal.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[D:\Meus Projetos\ERP\uDocumentoFiscal.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[D:\Meus Projetos\ERP\uSaida.pas]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
 [D:\Meus Projetos\Global\UDmConexao.pas]
+ModuleType=TSourceModule
+FormState=1
+FormOnTop=0
+
+[D:\Meus Projetos\Global\Comandos.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[D:\Meus Projetos\ERP\uCad_CFOP.pas]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
@@ -76,11 +115,6 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[D:\Meus Projetos\ERP\uRegras.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
 [D:\Meus Projetos\ERP\uCadNCM.pas]
 ModuleType=TSourceModule
 FormState=1
@@ -91,17 +125,7 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[D:\Meus Projetos\ERP\uDocumentoFiscal.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
 [D:\Meus Projetos\componentes\Kimera\EditPesquisa\EditPesquisa.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
-[D:\Meus Projetos\ERP\uLibERP.pas]
 ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
@@ -109,11 +133,6 @@ FormOnTop=0
 [D:\Meus Projetos\ERP\Cad_Cliente.pas]
 ModuleType=TSourceModule
 FormState=1
-FormOnTop=0
-
-[D:\Meus Projetos\ERP\uConstantes.pas]
-ModuleType=TSourceModule
-FormState=0
 FormOnTop=0
 
 [D:\Meus Projetos\ERP\uALiqICMS.pas]
@@ -126,8 +145,9 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[default.htm]
-ModuleType=TURLModule
+[D:\Meus Projetos\Global\uFormPadrao.pas]
+FormState=1
+FormOnTop=0
 
 [D:\Meus Projetos\ERP\uCad_CadastroPaiERP.pas]
 FormState=1
@@ -137,17 +157,13 @@ FormOnTop=0
 FormState=1
 FormOnTop=0
 
-[D:\Meus Projetos\Global\uFormPadrao.pas]
-FormState=1
-FormOnTop=0
-
 [D:\Meus Projetos\Global\uPrincipalPadrao.pas]
 FormState=1
 FormOnTop=0
 
 [EditWindow0]
-ViewCount=19
-CurrentEditView=D:\Meus Projetos\Global\Comandos.pas
+ViewCount=22
+CurrentEditView=D:\Meus Projetos\ERP\uDMHermes.pas
 View0=0
 View1=1
 View2=2
@@ -167,6 +183,9 @@ View15=15
 View16=16
 View17=17
 View18=18
+View19=19
+View20=20
+View21=21
 PercentageSizes=1
 Create=1
 Visible=1
@@ -183,15 +202,17 @@ ClientHeight=8558
 DockedToMainForm=1
 BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
-LeftPanelSize=0
+LeftPanelSize=1896
+LeftPanelClients=PropertyInspector
+LeftPanelData=0000080001000000000000000000000000000000000000000000000100000000000000001100000050726F7065727479496E73706563746F72FFFFFFFF
 RightPanelSize=0
-BottomPanelSize=0
+BottomPanelSize=1549
 BottomPanelClients=DockSite1,MessageView
-BottomPanelData=0000080001020200000009000000446F636B53697465310F0000004D65737361676556696577466F726D1534000000000000022806000000000000FFFFFFFF
+BottomPanelData=0000080001020100000009000000446F636B53697465317A45000000000000020D0600000000000001000000007A4500000F0000004D65737361676556696577466F726DFFFFFFFF
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0
 BottomMiddelPanelData=0000080001000100000009000000446F636B53697465302D1900000000000000771B000000000000FFFFFFFF
-TabDockLeftClients=DockSite3=0,PropertyInspector=1,DockSite2=2
+TabDockLeftClients=DockSite3=0,DockSite2=1
 TabDockRightClients=DockSite4=0
 
 [View0]
@@ -223,9 +244,9 @@ EditViewName=D:\Meus Projetos\Global\MinhasClasses.pas
 [View3]
 CustomEditViewType=TEditView
 Module=D:\Meus Projetos\Global\Comandos.pas
-CursorX=1
-CursorY=1787
-TopLine=1792
+CursorX=6
+CursorY=1150
+TopLine=1135
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -290,7 +311,7 @@ EditViewName=D:\Meus Projetos\ERP\uAliqISS.pas
 CustomEditViewType=TEditView
 Module=D:\Meus Projetos\ERP\ERP.dpr
 CursorX=1
-CursorY=106
+CursorY=109
 TopLine=93
 LeftCol=1
 Elisions=
@@ -300,15 +321,48 @@ EditViewName=D:\Meus Projetos\ERP\ERP.dpr
 [View10]
 CustomEditViewType=TEditView
 Module=D:\Meus Projetos\ERP\uDocumentoFiscal.pas
-CursorX=13
-CursorY=2417
-TopLine=2402
+CursorX=1
+CursorY=9
+TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=D:\Meus Projetos\ERP\uDocumentoFiscal.pas
 
 [View11]
+CustomEditViewType=TEditView
+Module=D:\Meus Projetos\ERP\uiDocumentoFiscal.pas
+CursorX=41
+CursorY=5
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\Meus Projetos\ERP\uiDocumentoFiscal.pas
+
+[View12]
+CustomEditViewType=TEditView
+Module=D:\Meus Projetos\ERP\uLibERP.pas
+CursorX=33
+CursorY=34
+TopLine=20
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\Meus Projetos\ERP\uLibERP.pas
+
+[View13]
+CustomEditViewType=TEditView
+Module=D:\Meus Projetos\ERP\uSaida.pas
+CursorX=28
+CursorY=201
+TopLine=180
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\Meus Projetos\ERP\uSaida.pas
+
+[View14]
 CustomEditViewType=TEditView
 Module=D:\Meus Projetos\componentes\Kimera\EditPesquisa\EditPesquisa.pas
 CursorX=11
@@ -319,29 +373,29 @@ Elisions=
 Bookmarks=
 EditViewName=D:\Meus Projetos\componentes\Kimera\EditPesquisa\EditPesquisa.pas
 
-[View12]
+[View15]
 CustomEditViewType=TEditView
 Module=D:\Meus Projetos\ERP\uSQLERP.pas
-CursorX=40
-CursorY=1560
-TopLine=1558
+CursorX=56
+CursorY=898
+TopLine=881
 LeftCol=1
 Elisions=
 Bookmarks={1,720,41}
 EditViewName=D:\Meus Projetos\ERP\uSQLERP.pas
 
-[View13]
+[View16]
 CustomEditViewType=TEditView
 Module=D:\Meus Projetos\ERP\uCad_CFOP.pas
-CursorX=16
-CursorY=118
-TopLine=106
+CursorX=5
+CursorY=191
+TopLine=166
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=D:\Meus Projetos\ERP\uCad_CFOP.pas
 
-[View14]
+[View17]
 CustomEditViewType=TEditView
 Module=D:\Meus Projetos\ERP\uCadNCM.pas
 CursorX=1
@@ -352,18 +406,29 @@ Elisions=
 Bookmarks=
 EditViewName=Borland.FormDesignerView
 
-[View15]
+[View18]
 CustomEditViewType=TEditView
 Module=D:\Meus Projetos\ERP\uRegras.pas
-CursorX=6
-CursorY=833
-TopLine=795
+CursorX=5
+CursorY=395
+TopLine=383
 LeftCol=1
-Elisions={{795,4},{801,15},{'Calcula ISS'}}{{803,4},{816,15},{'Calcula CSLL'}}{{818,4},{827,15},{'Calcula IR'}}
+Elisions={{823,4},{829,15},{'Calcula ISS'}}{{831,4},{844,15},{'Calcula CSLL'}}{{846,4},{855,15},{'Calcula IR'}}
 Bookmarks=
 EditViewName=D:\Meus Projetos\ERP\uRegras.pas
 
-[View16]
+[View19]
+CustomEditViewType=TEditView
+Module=D:\Meus Projetos\ERP\uDMHermes.pas
+CursorX=34
+CursorY=31
+TopLine=25
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=D:\Meus Projetos\ERP\uDMHermes.pas
+
+[View20]
 CustomEditViewType=TEditView
 Module=D:\Meus Projetos\ERP\Cad_Cliente.pas
 CursorX=64
@@ -374,23 +439,12 @@ Elisions=
 Bookmarks=
 EditViewName=D:\Meus Projetos\ERP\Cad_Cliente.pas
 
-[View17]
-CustomEditViewType=TEditView
-Module=D:\Meus Projetos\ERP\uLibERP.pas
-CursorX=33
-CursorY=25
-TopLine=2
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=D:\Meus Projetos\ERP\uLibERP.pas
-
-[View18]
+[View21]
 CustomEditViewType=TEditView
 Module=D:\Meus Projetos\ERP\uConstantes.pas
-CursorX=24
-CursorY=21
-TopLine=1
+CursorX=35
+CursorY=33
+TopLine=19
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -475,18 +529,18 @@ StayOnTop=0
 [MessageView]
 PercentageSizes=1
 Create=1
-Visible=0
+Visible=1
 Docked=1
 State=0
 Left=0
-Top=0
-Width=2767
-Height=1415
+Top=23
+Width=10000
+Height=1319
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=2767
-ClientHeight=1415
-TBDockHeight=1415
+ClientWidth=10000
+ClientHeight=1319
+TBDockHeight=1319
 LRDockWidth=2767
 Dockable=1
 StayOnTop=0
@@ -499,12 +553,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1881
-Height=8063
+Width=1999
+Height=8269
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1881
-ClientHeight=8063
+ClientWidth=1999
+ClientHeight=8269
 TBDockHeight=7157
 LRDockWidth=1999
 Dockable=1
@@ -718,22 +772,27 @@ StayOnTop=0
 [PropertyInspector]
 PercentageSizes=1
 Create=1
-Visible=0
+Visible=1
 Docked=1
 State=0
 Left=0
-Top=0
+Top=23
 Width=1896
-Height=8599
+Height=6566
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1896
-ClientHeight=8599
+ClientHeight=6566
 TBDockHeight=8599
 LRDockWidth=1896
 Dockable=1
 StayOnTop=0
 SplitPos=111
+
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=Params,
+ExpandedItems=TableScope=0,Driver=0
 
 [ModelViewTool]
 PercentageSizes=1
@@ -944,14 +1003,14 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=0
-Top=0
+Left=4
+Top=20
 Width=1999
-Height=8599
+Height=8269
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1881
-ClientHeight=8063
+ClientWidth=1999
+ClientHeight=8269
 TBDockHeight=8599
 LRDockWidth=1999
 Dockable=1

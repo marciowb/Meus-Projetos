@@ -882,6 +882,9 @@ inherited frmCad_Proposta: TfrmCad_Proposta
             ClientRectTop = 23
             object tsProduto: TcxTabSheet
               Caption = 'Itens [F10]'
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object Panel4: TPanel
                 Left = 558
                 Top = 0
@@ -986,6 +989,9 @@ inherited frmCad_Proposta: TfrmCad_Proposta
             object tsPagamento: TcxTabSheet
               Caption = 'Condi'#231#245'es de pagamentos [F12]'
               ImageIndex = 1
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object Panel5: TPanel
                 Left = 536
                 Top = 0
@@ -1068,6 +1074,9 @@ inherited frmCad_Proposta: TfrmCad_Proposta
             object tsObs: TcxTabSheet
               Caption = 'Observa'#231#245'es [Ctrl+Q]'
               ImageIndex = 2
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object cxDBMemo1: TcxDBMemo
                 Left = 0
                 Top = 0

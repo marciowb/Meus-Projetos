@@ -19,7 +19,7 @@ uses
   dxSkinOffice2010Blue, dxSkinOffice2010Silver, dxSkinPumpkin, dxSkinSeven,
   dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
   dxSkinsDefaultPainters, dxSkinValentine, dxSkinXmas2008Blue,
-  dxSkinscxPCPainter,uLibERP;
+  dxSkinscxPCPainter,uLibERP,uClassesERP;
 
 type
   TTipoNota =(tnEntradaDeFornecedor, tnEntradaDeCliente,tnDI);

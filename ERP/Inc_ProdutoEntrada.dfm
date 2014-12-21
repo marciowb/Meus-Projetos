@@ -452,7 +452,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Display.TabStop = False
       Display.Color = clSkyBlue
       Display.ReadOnly = True
-      Display.TabOrder = 19
+      Display.TabOrder = 15
       Display.Visible = False
       TamanhoDisplay = 0
     end
@@ -735,7 +735,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Display.TabStop = False
       Display.Color = clSkyBlue
       Display.ReadOnly = True
-      Display.TabOrder = 20
+      Display.TabOrder = 19
       TamanhoDisplay = 145
     end
     object LabelDBEdit3: TLabelDBEdit
@@ -993,7 +993,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       DataField = 'QUANTIDADE'
       DataSource = DataProdutoEntrada
       ReadOnly = True
-      TabOrder = 24
+      TabOrder = 23
       Titulo.Left = 331
       Titulo.Top = 121
       Titulo.Width = 56
@@ -1195,7 +1195,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Display.TabStop = False
       Display.Color = clSkyBlue
       Display.ReadOnly = True
-      Display.TabOrder = 25
+      Display.TabOrder = 24
       TamanhoDisplay = 256
     end
     object EdtAlmoxarifado: TEditPesquisa
@@ -1377,7 +1377,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Display.TabStop = False
       Display.Color = clSkyBlue
       Display.ReadOnly = True
-      Display.TabOrder = 23
+      Display.TabOrder = 25
       TamanhoDisplay = 170
     end
     object edtPatrimonio: TEditPesquisa
@@ -1560,7 +1560,7 @@ inherited frmInc_ProdutoEntrada: TfrmInc_ProdutoEntrada
       Display.TabStop = False
       Display.Color = clSkyBlue
       Display.ReadOnly = True
-      Display.TabOrder = 15
+      Display.TabOrder = 20
       TamanhoDisplay = 264
     end
   end

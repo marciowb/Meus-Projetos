@@ -2,7 +2,7 @@ unit uRegras;
 
 interface
   Uses MinhasClasses, uSQLERP,Comandos,Classes,SysUtils, Math,DB,pFIBClientDataSet,
-       StrUtils,ulibERP, DateUtils,uDocumentoFiscal;
+       StrUtils,ulibERP, DateUtils,uDocumentoFiscal,Generics.Collections,uClassesERP;
   Type
     TParcela = record
       NumParcela: Integer;
@@ -28,7 +28,7 @@ interface
     end;
 
     TRegrasPeriodo = class
-      CLASS function GetDataFinal(DataInicial: TDate;IdPeriodiciadade: TipoCampoChave): TDateTime;
+      class function GetDataFinal(DataInicial: TDate;IdPeriodiciadade: TipoCampoChave): TDateTime;
     end;
     TRegrasEntradaMercadoria = class
       class Procedure CalculaTotalNotaEntrada(var DataSetMaster: TpFIBClientDataSet; var DataSetProdutos: TpFIBClientDataSet);
@@ -40,6 +40,8 @@ interface
       class procedure DesbloqueiaQuantidadeProduto(IdVenda,IdEmpresa: TipoCampoChave; NumItem:Integer);
       class function GravaSaida(const DataSetSaida, DataSetProdutos, DataSetPagamentos, DataSetParcelamento,DataSetSeriais: TpFIBClientDataSet): Boolean;
       class procedure DesbloqueiaProdutosVenda(IdVenda,IdEmpresa:TipoCampoChave);
+      Class Function GeraDocumentoFiscal(const DataSetSaida, DataSetProdutos, DataSetPagamentos : TpFIBClientDataSet): TRetorno;
+      class function GetNumeroNota(TipoDocumento: TTipoDocumento; IdEmpresa:TipoCampoChave): String;
     end;
 
     TRegrasOS = class
@@ -82,7 +84,7 @@ interface
 
 implementation
 
-uses uConstantes, uConfiguracaoOS, uConfiguracaoFinanceiro;
+uses uConstantes, uConfiguracaoOS, uConfiguracaoFinanceiro, uNFSe;
 
 { TRegrasCondicaoPagamento }
 
@@ -377,6 +379,66 @@ begin
       Raise;
     end;
   End;
+end;
+
+class function TRegrasSaidaProduto.GeraDocumentoFiscal(const DataSetSaida,
+  DataSetProdutos, DataSetPagamentos: TpFIBClientDataSet): TRetorno;
+var
+  Doc: IDocumentoFiscal;
+  Docs: TList<IDocumentoFiscal>;
+  TipoDocumento: TTiposDocumento;
+  FlagDoc: Integer;
+  Nfse: TNFSe;
+  Ret: TRetorno;
+begin
+  Try
+    Doc:= TDocumentoFiscal.Create;
+    CriaDocumentoFiscal(DataSetSaida,DataSetProdutos,DataSetPagamentos, Doc);
+    FlagDoc := StrToIntDef(GetValorCds(tpERPOperacao,'idoperacaoestoque = '+TipoCampoChaveToStr(DataSetSaida.FieldByName('idoperacaoestoque').Value),'FLAGDOCUMENTO'),OPeracaoestoqueDocumentoNada) ;
+    TipoDocumento := [];
+    if (FlagDoc = OPeracaoestoqueDocumentoNFe)or (FlagDoc = OPeracaoestoqueDocumentoNFSeNfe) then
+      TipoDocumento := TipoDocumento + [tdNFe];
+    if (FlagDoc = OPeracaoestoqueDocumentoNFSe)or (FlagDoc = OPeracaoestoqueDocumentoNFSeNfe) then
+      TipoDocumento := TipoDocumento + [tdNFSe];
+    if (FlagDoc = OPeracaoestoqueDocumentoComprovante) then
+      TipoDocumento := TipoDocumento + [tdComprovante];
+
+    if tdNFSe in TipoDocumento then
+    begin
+      Try
+        Docs := TList<IDocumentoFiscal>.Create;
+        Doc.NumeroNota := TRegrasSaidaProduto.GetNumeroNota(tdNFSe,DataSetSaida.FieldByName('idempresa').AsString);
+        Doc.SerieNota := 'UNICA'; { TODO : Rever }
+        Docs.Add(Doc);
+        Nfse := TNFSe.Create(Docs);
+        Ret := Nfse.Enviar;
+        if Ret.Erro Then
+          AvisaErro(Ret.Mensagem,False);
+      Finally
+        FreeAndNil(Nfse);
+      End;
+    end;
+
+
+  Finally
+    Doc._Release;
+  End;
+
+end;
+
+class function TRegrasSaidaProduto.GetNumeroNota(
+  TipoDocumento: TTipoDocumento; IdEmpresa:TipoCampoChave): String;
+var
+  Flag: String;
+begin
+   { TODO : Tratar para mais de uma serie }
+   if TipoDocumento =  tdNFSe  then
+     Flag := NumeracaoNotaSaidaNFSe;
+   if TipoDocumento =  tdNFe  then
+     Flag := NumeracaoNotaSaidaNFe;
+
+   Result := GetValorCds(tpERPNumeracaoNotaSaida,'idempresa = '+TipoCampoChaveToStr(IdEmpresa)+' and FLAGTIPODOCUMENTO = '+QuotedStr(Flag),'NUMEROATUAL' );
+   Result :=  FormatFloat('000000', StrToIntDef(Result,0)+1);
 end;
 
 class function TRegrasSaidaProduto.GravaSaida(const DataSetSaida,

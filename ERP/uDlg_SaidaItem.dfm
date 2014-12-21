@@ -33,385 +33,18 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
       ExplicitTop = -16
       ExplicitWidth = 602
       ExplicitHeight = 436
-      object LabelDBEdit2: TLabelDBEdit [0]
-        Left = 16
-        Top = 146
-        Width = 74
-        Height = 21
-        DataField = 'BASEICMS'
-        DataSource = DataItens
-        TabOrder = 16
-        Titulo.Left = 16
-        Titulo.Top = 131
-        Titulo.Width = 51
-        Titulo.Height = 13
-        Titulo.Caption = 'Base ICMS'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
+      object btnSeriais: TBitBtn [0]
+        Left = 422
+        Top = 267
+        Width = 75
+        Height = 25
+        Caption = 'Seriais'
+        DoubleBuffered = True
+        ParentDoubleBuffered = False
+        TabOrder = 41
+        OnClick = btnSeriaisClick
       end
-      object LabelDBEdit17: TLabelDBEdit [1]
-        Left = 96
-        Top = 146
-        Width = 50
-        Height = 21
-        DataField = 'ALIQICMS'
-        DataSource = DataItens
-        TabOrder = 18
-        Titulo.Left = 96
-        Titulo.Top = 131
-        Titulo.Width = 49
-        Titulo.Height = 13
-        Titulo.Caption = 'Aliq. ICMS'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit19: TLabelDBEdit [2]
-        Left = 152
-        Top = 146
-        Width = 66
-        Height = 21
-        TabStop = False
-        Color = clSkyBlue
-        DataField = 'VALORICMS'
-        DataSource = DataItens
-        ReadOnly = True
-        TabOrder = 17
-        Titulo.Left = 152
-        Titulo.Top = 131
-        Titulo.Width = 52
-        Titulo.Height = 13
-        Titulo.Caption = 'Valor ICMS'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit20: TLabelDBEdit [3]
-        Left = 224
-        Top = 146
-        Width = 64
-        Height = 21
-        DataField = 'BASEISS'
-        DataSource = DataItens
-        TabOrder = 19
-        Titulo.Left = 224
-        Titulo.Top = 131
-        Titulo.Width = 42
-        Titulo.Height = 13
-        Titulo.Caption = 'Base ISS'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit21: TLabelDBEdit [4]
-        Left = 295
-        Top = 146
-        Width = 39
-        Height = 21
-        DataField = 'ALIQISS'
-        DataSource = DataItens
-        TabOrder = 20
-        Titulo.Left = 295
-        Titulo.Top = 131
-        Titulo.Width = 40
-        Titulo.Height = 13
-        Titulo.Caption = 'Aliq. ISS'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit22: TLabelDBEdit [5]
-        Left = 341
-        Top = 146
-        Width = 66
-        Height = 21
-        TabStop = False
-        Color = clSkyBlue
-        DataField = 'VALORISS'
-        DataSource = DataItens
-        ReadOnly = True
-        TabOrder = 21
-        Titulo.Left = 341
-        Titulo.Top = 131
-        Titulo.Width = 43
-        Titulo.Height = 13
-        Titulo.Caption = 'Valor ISS'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit25: TLabelDBEdit [6]
-        Left = 418
-        Top = 146
-        Width = 71
-        Height = 21
-        DataField = 'BASEIPI'
-        DataSource = DataItens
-        TabOrder = 22
-        Titulo.Left = 418
-        Titulo.Top = 131
-        Titulo.Width = 40
-        Titulo.Height = 13
-        Titulo.Caption = 'Base IPI'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit24: TLabelDBEdit [7]
-        Left = 504
-        Top = 146
-        Width = 39
-        Height = 21
-        DataField = 'ALIQIPI'
-        DataSource = DataItens
-        TabOrder = 23
-        Titulo.Left = 504
-        Titulo.Top = 131
-        Titulo.Width = 38
-        Titulo.Height = 13
-        Titulo.Caption = 'Aliq. IPI'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit23: TLabelDBEdit [8]
-        Left = 16
-        Top = 186
-        Width = 74
-        Height = 21
-        TabStop = False
-        Color = clSkyBlue
-        DataField = 'VALORIPI'
-        DataSource = DataItens
-        ReadOnly = True
-        TabOrder = 24
-        Titulo.Left = 16
-        Titulo.Top = 171
-        Titulo.Width = 41
-        Titulo.Height = 13
-        Titulo.Caption = 'Valor IPI'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit28: TLabelDBEdit [9]
-        Left = 96
-        Top = 186
-        Width = 122
-        Height = 21
-        DataField = 'BASEICMSST'
-        DataSource = DataItens
-        TabOrder = 25
-        Titulo.Left = 96
-        Titulo.Top = 171
-        Titulo.Width = 74
-        Titulo.Height = 13
-        Titulo.Caption = 'Base ICMS S.T.'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit27: TLabelDBEdit [10]
-        Left = 280
-        Top = 186
-        Width = 54
-        Height = 21
-        DataField = 'ALIQST'
-        DataSource = DataItens
-        TabOrder = 27
-        Titulo.Left = 280
-        Titulo.Top = 171
-        Titulo.Width = 44
-        Titulo.Height = 13
-        Titulo.Caption = 'Aliq. S.T.'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit26: TLabelDBEdit [11]
-        Left = 224
-        Top = 186
-        Width = 50
-        Height = 21
-        DataField = 'MVA'
-        DataSource = DataItens
-        TabOrder = 26
-        Titulo.Left = 224
-        Titulo.Top = 171
-        Titulo.Width = 21
-        Titulo.Height = 13
-        Titulo.Caption = 'MVA'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit29: TLabelDBEdit [12]
-        Left = 341
-        Top = 186
-        Width = 66
-        Height = 21
-        TabStop = False
-        Color = clSkyBlue
-        DataField = 'VALORST'
-        DataSource = DataItens
-        ReadOnly = True
-        TabOrder = 28
-        Titulo.Left = 341
-        Titulo.Top = 171
-        Titulo.Width = 67
-        Titulo.Height = 13
-        Titulo.Caption = 'Valor ICMS ST'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit30: TLabelDBEdit [13]
-        Left = 418
-        Top = 186
-        Width = 125
-        Height = 21
-        DataField = 'BASEPISCOFINS'
-        DataSource = DataItens
-        TabOrder = 29
-        Titulo.Left = 418
-        Titulo.Top = 171
-        Titulo.Width = 91
-        Titulo.Height = 13
-        Titulo.Caption = 'Base PIS/CONFINS'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit31: TLabelDBEdit [14]
-        Left = 224
-        Top = 229
-        Width = 50
-        Height = 21
-        DataField = 'ALIQPIS'
-        DataSource = DataItens
-        TabOrder = 32
-        Titulo.Left = 224
-        Titulo.Top = 214
-        Titulo.Width = 40
-        Titulo.Height = 13
-        Titulo.Caption = 'Aliq. PIS'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit32: TLabelDBEdit [15]
-        Left = 16
-        Top = 229
-        Width = 74
-        Height = 21
-        DataField = 'ALIQCOFINS'
-        DataSource = DataItens
-        TabOrder = 30
-        Titulo.Left = 16
-        Titulo.Top = 214
-        Titulo.Width = 62
-        Titulo.Height = 13
-        Titulo.Caption = 'Aliq. COFINS'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit33: TLabelDBEdit [16]
-        Left = 280
-        Top = 229
-        Width = 54
-        Height = 21
-        TabStop = False
-        Color = clSkyBlue
-        DataField = 'VALORPIS'
-        DataSource = DataItens
-        ReadOnly = True
-        TabOrder = 33
-        Titulo.Left = 280
-        Titulo.Top = 214
-        Titulo.Width = 43
-        Titulo.Height = 13
-        Titulo.Caption = 'Valor PIS'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit34: TLabelDBEdit [17]
-        Left = 96
-        Top = 229
-        Width = 122
-        Height = 21
-        TabStop = False
-        Color = clSkyBlue
-        DataField = 'VALORCOFINS'
-        DataSource = DataItens
-        ReadOnly = True
-        TabOrder = 31
-        Titulo.Left = 96
-        Titulo.Top = 214
-        Titulo.Width = 65
-        Titulo.Height = 13
-        Titulo.Caption = 'Valor COFINS'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object edtAlmoxarifado: TEditPesquisa [18]
+      object edtAlmoxarifado: TEditPesquisa [1]
         Left = 320
         Top = 26
         Width = 65
@@ -593,16 +226,383 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         Display.TabOrder = 6
         TamanhoDisplay = 130
       end
-      object btnSeriais: TBitBtn [19]
-        Left = 422
-        Top = 267
-        Width = 75
-        Height = 25
-        Caption = 'Seriais'
-        DoubleBuffered = True
-        ParentDoubleBuffered = False
-        TabOrder = 41
-        OnClick = btnSeriaisClick
+      object LabelDBEdit34: TLabelDBEdit [2]
+        Left = 96
+        Top = 229
+        Width = 122
+        Height = 21
+        TabStop = False
+        Color = clSkyBlue
+        DataField = 'VALORCOFINS'
+        DataSource = DataItens
+        ReadOnly = True
+        TabOrder = 31
+        Titulo.Left = 96
+        Titulo.Top = 214
+        Titulo.Width = 65
+        Titulo.Height = 13
+        Titulo.Caption = 'Valor COFINS'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit33: TLabelDBEdit [3]
+        Left = 280
+        Top = 229
+        Width = 54
+        Height = 21
+        TabStop = False
+        Color = clSkyBlue
+        DataField = 'VALORPIS'
+        DataSource = DataItens
+        ReadOnly = True
+        TabOrder = 33
+        Titulo.Left = 280
+        Titulo.Top = 214
+        Titulo.Width = 43
+        Titulo.Height = 13
+        Titulo.Caption = 'Valor PIS'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit32: TLabelDBEdit [4]
+        Left = 16
+        Top = 229
+        Width = 74
+        Height = 21
+        DataField = 'ALIQCOFINS'
+        DataSource = DataItens
+        TabOrder = 30
+        Titulo.Left = 16
+        Titulo.Top = 214
+        Titulo.Width = 62
+        Titulo.Height = 13
+        Titulo.Caption = 'Aliq. COFINS'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit31: TLabelDBEdit [5]
+        Left = 224
+        Top = 229
+        Width = 50
+        Height = 21
+        DataField = 'ALIQPIS'
+        DataSource = DataItens
+        TabOrder = 32
+        Titulo.Left = 224
+        Titulo.Top = 214
+        Titulo.Width = 40
+        Titulo.Height = 13
+        Titulo.Caption = 'Aliq. PIS'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit30: TLabelDBEdit [6]
+        Left = 418
+        Top = 186
+        Width = 125
+        Height = 21
+        DataField = 'BASEPISCOFINS'
+        DataSource = DataItens
+        TabOrder = 29
+        Titulo.Left = 418
+        Titulo.Top = 171
+        Titulo.Width = 91
+        Titulo.Height = 13
+        Titulo.Caption = 'Base PIS/CONFINS'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit29: TLabelDBEdit [7]
+        Left = 341
+        Top = 186
+        Width = 66
+        Height = 21
+        TabStop = False
+        Color = clSkyBlue
+        DataField = 'VALORST'
+        DataSource = DataItens
+        ReadOnly = True
+        TabOrder = 28
+        Titulo.Left = 341
+        Titulo.Top = 171
+        Titulo.Width = 67
+        Titulo.Height = 13
+        Titulo.Caption = 'Valor ICMS ST'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit26: TLabelDBEdit [8]
+        Left = 224
+        Top = 186
+        Width = 50
+        Height = 21
+        DataField = 'MVA'
+        DataSource = DataItens
+        TabOrder = 26
+        Titulo.Left = 224
+        Titulo.Top = 171
+        Titulo.Width = 21
+        Titulo.Height = 13
+        Titulo.Caption = 'MVA'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit27: TLabelDBEdit [9]
+        Left = 280
+        Top = 186
+        Width = 54
+        Height = 21
+        DataField = 'ALIQST'
+        DataSource = DataItens
+        TabOrder = 27
+        Titulo.Left = 280
+        Titulo.Top = 171
+        Titulo.Width = 44
+        Titulo.Height = 13
+        Titulo.Caption = 'Aliq. S.T.'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit28: TLabelDBEdit [10]
+        Left = 96
+        Top = 186
+        Width = 122
+        Height = 21
+        DataField = 'BASEICMSST'
+        DataSource = DataItens
+        TabOrder = 25
+        Titulo.Left = 96
+        Titulo.Top = 171
+        Titulo.Width = 74
+        Titulo.Height = 13
+        Titulo.Caption = 'Base ICMS S.T.'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit23: TLabelDBEdit [11]
+        Left = 16
+        Top = 186
+        Width = 74
+        Height = 21
+        TabStop = False
+        Color = clSkyBlue
+        DataField = 'VALORIPI'
+        DataSource = DataItens
+        ReadOnly = True
+        TabOrder = 24
+        Titulo.Left = 16
+        Titulo.Top = 171
+        Titulo.Width = 41
+        Titulo.Height = 13
+        Titulo.Caption = 'Valor IPI'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit24: TLabelDBEdit [12]
+        Left = 504
+        Top = 146
+        Width = 39
+        Height = 21
+        DataField = 'ALIQIPI'
+        DataSource = DataItens
+        TabOrder = 23
+        Titulo.Left = 504
+        Titulo.Top = 131
+        Titulo.Width = 38
+        Titulo.Height = 13
+        Titulo.Caption = 'Aliq. IPI'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit25: TLabelDBEdit [13]
+        Left = 418
+        Top = 146
+        Width = 71
+        Height = 21
+        DataField = 'BASEIPI'
+        DataSource = DataItens
+        TabOrder = 22
+        Titulo.Left = 418
+        Titulo.Top = 131
+        Titulo.Width = 40
+        Titulo.Height = 13
+        Titulo.Caption = 'Base IPI'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit22: TLabelDBEdit [14]
+        Left = 341
+        Top = 146
+        Width = 66
+        Height = 21
+        TabStop = False
+        Color = clSkyBlue
+        DataField = 'VALORISS'
+        DataSource = DataItens
+        ReadOnly = True
+        TabOrder = 21
+        Titulo.Left = 341
+        Titulo.Top = 131
+        Titulo.Width = 43
+        Titulo.Height = 13
+        Titulo.Caption = 'Valor ISS'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit21: TLabelDBEdit [15]
+        Left = 295
+        Top = 146
+        Width = 39
+        Height = 21
+        DataField = 'ALIQISS'
+        DataSource = DataItens
+        TabOrder = 20
+        Titulo.Left = 295
+        Titulo.Top = 131
+        Titulo.Width = 40
+        Titulo.Height = 13
+        Titulo.Caption = 'Aliq. ISS'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit20: TLabelDBEdit [16]
+        Left = 224
+        Top = 146
+        Width = 64
+        Height = 21
+        DataField = 'BASEISS'
+        DataSource = DataItens
+        TabOrder = 19
+        Titulo.Left = 224
+        Titulo.Top = 131
+        Titulo.Width = 42
+        Titulo.Height = 13
+        Titulo.Caption = 'Base ISS'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit19: TLabelDBEdit [17]
+        Left = 152
+        Top = 146
+        Width = 66
+        Height = 21
+        TabStop = False
+        Color = clSkyBlue
+        DataField = 'VALORICMS'
+        DataSource = DataItens
+        ReadOnly = True
+        TabOrder = 17
+        Titulo.Left = 152
+        Titulo.Top = 131
+        Titulo.Width = 52
+        Titulo.Height = 13
+        Titulo.Caption = 'Valor ICMS'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit17: TLabelDBEdit [18]
+        Left = 96
+        Top = 146
+        Width = 50
+        Height = 21
+        DataField = 'ALIQICMS'
+        DataSource = DataItens
+        TabOrder = 18
+        Titulo.Left = 96
+        Titulo.Top = 131
+        Titulo.Width = 49
+        Titulo.Height = 13
+        Titulo.Caption = 'Aliq. ICMS'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit2: TLabelDBEdit [19]
+        Left = 16
+        Top = 146
+        Width = 74
+        Height = 21
+        DataField = 'BASEICMS'
+        DataSource = DataItens
+        TabOrder = 16
+        Titulo.Left = 16
+        Titulo.Top = 131
+        Titulo.Width = 51
+        Titulo.Height = 13
+        Titulo.Caption = 'Base ICMS'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
       end
       inherited edtProduto: TEditPesquisa
         BtnNovo.Visible = True

@@ -17,7 +17,7 @@ uses
   dxSkinscxPCPainter, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, DB,
   cxDBData, DBClient, pFIBClientDataSet, cxGridLevel, cxClasses,
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
-  cxGrid, cxImageComboBox,ulibERP;
+  cxGrid, cxImageComboBox,ulibERP,uClassesERP;
 
 type
   TfrmDlg_SaidaSerial = class(TfrmDlg_CadastroERP)

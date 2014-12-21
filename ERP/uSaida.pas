@@ -18,7 +18,8 @@ uses
   cxDBEdit, Mask, EditPesquisa, DBCtrls, LabelDBEdit, dxSkinscxPCPainter,
   Buttons, cxPC, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage,
   cxDBData, cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView,
-  cxGridTableView, cxGridDBTableView, cxGrid, ActnList,Math, cxSplitter,ulibERP;
+  cxGridTableView, cxGridDBTableView, cxGrid, ActnList,Math, cxSplitter,ulibERP,
+  uClassesERP;
 
 type
   TfrmSaida = class(TfrmPadrao)
@@ -141,6 +142,7 @@ type
     edtFuncionario: TEditPesquisa;
     CdsSeriais: TpFIBClientDataSet;
     grpViaTranporte: TDBRadioGroup;
+    BitBtn7: TBitBtn;
     procedure actNovoPagamentoExecute(Sender: TObject);
     procedure actEditarPagamentoExecute(Sender: TObject);
     procedure actExcluirPagamentoExecute(Sender: TObject);
@@ -171,6 +173,7 @@ type
     procedure CdsItensAfterScroll(DataSet: TDataSet);
     procedure CdsItensBeforePost(DataSet: TDataSet);
     procedure grpViaTranporteChange(Sender: TObject);
+    procedure BitBtn7Click(Sender: TObject);
   private
     { Private declarations }
     UfEmpresa: String;
@@ -188,6 +191,7 @@ type
     { Public declarations }
     Procedure AbreVenda(IdVenda: TipoCampoChave);
     property IdOS: TipoCampoChave read FIdOS write SetIdOS;
+    Procedure GerarDocumentosFiscais;
   end;
 
 var
@@ -319,6 +323,12 @@ begin
   Finally
     FreeAndNil(frmdlgCondicaoPagamento);
   End;
+end;
+
+procedure TfrmSaida.BitBtn7Click(Sender: TObject);
+begin
+  inherited;
+  TRegrasSaidaProduto.GeraDocumentoFiscal(CdsSaida,CdsItens,CdsCondicaoPagamento);
 end;
 
 procedure TfrmSaida.btnCancelarClick(Sender: TObject);
@@ -694,6 +704,11 @@ begin
      btnCancelarClick(nil);
 
   end;
+end;
+
+procedure TfrmSaida.GerarDocumentosFiscais;
+begin
+
 end;
 
 procedure TfrmSaida.grpFreteClick(Sender: TObject);
