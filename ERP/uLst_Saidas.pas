@@ -23,11 +23,14 @@ type
   TfrmLst_Saidas = class(TfrmListagemPadraoERP)
     actContasReceber: TAction;
     BitBtn11: TBitBtn;
+    BitBtn12: TBitBtn;
+    acLotesDocumentos: TAction;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure actNovoExecute(Sender: TObject);
     procedure actEditarExecute(Sender: TObject);
     procedure actContasReceberExecute(Sender: TObject);
+    procedure acLotesDocumentosExecute(Sender: TObject);
   private
     FIdCliente: TipoCampoChave;
     FIdOS: TipoCampoChave;
@@ -48,6 +51,12 @@ implementation
 uses MinhasClasses, uForms;
 
 {$R *.dfm}
+
+procedure TfrmLst_Saidas.acLotesDocumentosExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreLotesDocumentos;
+end;
 
 procedure TfrmLst_Saidas.actContasReceberExecute(Sender: TObject);
 begin

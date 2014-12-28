@@ -142,7 +142,8 @@ type
     edtFuncionario: TEditPesquisa;
     CdsSeriais: TpFIBClientDataSet;
     grpViaTranporte: TDBRadioGroup;
-    BitBtn7: TBitBtn;
+    edtSerieNFE: TEditPesquisa;
+    edtSerieNFSe: TEditPesquisa;
     procedure actNovoPagamentoExecute(Sender: TObject);
     procedure actEditarPagamentoExecute(Sender: TObject);
     procedure actExcluirPagamentoExecute(Sender: TObject);
@@ -173,7 +174,6 @@ type
     procedure CdsItensAfterScroll(DataSet: TDataSet);
     procedure CdsItensBeforePost(DataSet: TDataSet);
     procedure grpViaTranporteChange(Sender: TObject);
-    procedure BitBtn7Click(Sender: TObject);
   private
     { Private declarations }
     UfEmpresa: String;
@@ -200,7 +200,7 @@ var
 implementation
 
 uses UDmConexao, Comandos, MinhasClasses, uDlg_SaidaItem, udlgCondicaoPagamento,
-  uRegras,  uConfiguracaoOS;
+  uRegras,  uConfiguracaoOS, uConstantes;
 
 {$R *.dfm}
 procedure TfrmSaida.AbreVenda(IdVenda: TipoCampoChave);
@@ -323,12 +323,6 @@ begin
   Finally
     FreeAndNil(frmdlgCondicaoPagamento);
   End;
-end;
-
-procedure TfrmSaida.BitBtn7Click(Sender: TObject);
-begin
-  inherited;
-  TRegrasSaidaProduto.GeraDocumentoFiscal(CdsSaida,CdsItens,CdsCondicaoPagamento);
 end;
 
 procedure TfrmSaida.btnCancelarClick(Sender: TObject);
@@ -677,13 +671,38 @@ begin
   else
     FTipoMovimento := tmPatrimonio;
 
+  if (ValoresCamposEstra[3] = OPeracaoestoqueDocumentoNFe) or (ValoresCamposEstra[3] = OPeracaoestoqueDocumentoNFSeNfe) then
+  begin
+    edtSerieNFE.AutoCompletar := False;
+    edtSerieNFE.Enabled := True;
+    edtSerieNFE.SQLComp := 'idempresa = '+TipoCampoChaveToStr(edtEmpresa.ValorChave)+
+                           ' and flagtipodocumento = '+QuotedStr(NumeracaoNotaSaidaNFe);
+    ConfiguraEditPesquisa(edtSerieNFE,CdsSaida,tpERPNumeracaoNotaSaida,True,'','','Serie','idserienfe');
+  end;
+
+  if (ValoresCamposEstra[3] = OPeracaoestoqueDocumentoNFSe) or (ValoresCamposEstra[3] = OPeracaoestoqueDocumentoNFSeNfe) then
+  begin
+    edtSerieNFSe.AutoCompletar := False;
+    edtSerieNFSe.Enabled := True;
+    edtSerieNFSe.SQLComp := 'idempresa = '+TipoCampoChaveToStr(edtEmpresa.ValorChave)+
+                           ' and flagtipodocumento = '+QuotedStr(NumeracaoNotaSaidaNFSe);
+    ConfiguraEditPesquisa(edtSerieNFSe,CdsSaida,tpERPNumeracaoNotaSaida,True,'','','Serie','idserienfse');
+  end;
+
+  if edtSerieNFE.Enabled and Self.Visible then
+    edtSerieNFE.SetFocus
+  else
+  if edtSerieNFSe.Enabled and Self.Visible then
+    edtSerieNFSe.SetFocus;
+
+
 end;
 
 procedure TfrmSaida.FormCreate(Sender: TObject);
 begin
   inherited;
   EdtEmpresa.CamposExtraPesquisa := 'UF';
-  edtOperacao.CamposExtraPesquisa := 'FLAGTIPOPESSOA,FLAGGERAFINANCEIRO,FLAGMOVPATRIMONIO';
+  edtOperacao.CamposExtraPesquisa := 'FLAGTIPOPESSOA,FLAGGERAFINANCEIRO,FLAGMOVPATRIMONIO,FLAGDOCUMENTO';
   ConfiguraEditPesquisa(edtEmpresa,CdsSaida,tpERPEmpresa);
   edtOperacao.SQLComp := ' FLAGTIPOOPERACAO =''S''';
   ConfiguraEditPesquisa(edtOperacao,CdsSaida,tpERPOperacaoSaida);
@@ -863,6 +882,9 @@ begin
     TRegrasSaidaProduto.DesbloqueiaProdutosVenda(CdsSaida.FieldByName('idsaida').Value, edtEmpresa.ValorChave);
   AbreVenda('-1');
   IdOS:= '-1';
+  edtSerieNFE.Enabled :=  False;
+  edtSerieNFSe.Enabled :=  False;
+
   CdsSaida.Append;
   TRotinasPesquisa.ConfiguraPesquisaFuncionario(edtFuncionario,CdsSaida);
   if Self.Showing then

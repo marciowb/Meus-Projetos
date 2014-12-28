@@ -15,16 +15,20 @@ interface
        FCaminhoNFSe: String;
        FCaminhoXml: String;
        FCaminhoLogs: String;
+       fCodigoVerificacao: String;
 
        Function GeraArquivo: TRetorno;
        function GetLote: String;
        Function ConsultaSituacao: Boolean;
        function GetProtocolo: String;
+       function GetCodigoVerificacao: String;
+       procedure SetLote(const Value: String);
      public
        constructor Create(Const Docs: TList<IDocumentoFiscal>);
        destructor Destroy;
-       property Lote: String read GetLote;
+       property Lote: String read GetLote write SetLote;
        property Protocolo: String read GetProtocolo;
+       property CodigoVerificacao: String read GetCodigoVerificacao;
        Function Enviar: TRetorno;
      end;
 
@@ -32,6 +36,11 @@ interface
 implementation
   Const
     PastaRioDeJaneiro: String = 'Rio de Janeiro';
+    SituacaoRioDeJaneiroNaoRecebido: String ='1';
+    SituacaoRioDeJaneiroNaoProcessado: String ='2';
+    SituacaoRioDeJaneiroProcessadoComErro: String ='3';
+    SituacaoRioDeJaneiroProcessadoComSucesso: String ='4';
+
 
 { TNFSe }
 
@@ -108,17 +117,53 @@ begin
 end;
 
 function TNFSe.Enviar: TRetorno;
+var
+  Enviado: Boolean;
 begin
    Result := GeraArquivo;
    if not Result.Erro then
    begin
      Try
-       NFSe.Enviar(fLote);
+       Try
+         Enviado := NFSe.Enviar(fLote);
+       Except
+         on e:Exception do
+         begin
+           Result.Erro := True;
+           Result.Mensagem := 'Erro ao enviar lote. |'+e.Message;
+           Exit;
+         end;
+       End;
+       if Enviado Then
+       begin
+         FProtocolo :=  NFSe.WebServices.ConsLote.Protocolo;
+
+         Try
+           fCodigoVerificacao := NFSe.WebServices.Enviar.NFSeRetorno.Leitor.rCampo(tcStr,'CodigoVerificacao');{ TODO : testar }
+         except
+           on e:Exception do
+           begin
+             Result.Erro := True;
+             Result.Mensagem := 'Erro ao ler retorno lote. |' +NFSe.WebServices.Enviar.NFSeRetorno.Leitor.Arquivo+'|'+e.Message;
+             Exit;
+           end;
+         End;
+
+
+         { TODO : Fazer case por cidade }
+         Result.Erro := NFSe.WebServices.ConsSitLote.Situacao = SituacaoRioDeJaneiroProcessadoComErro;
+         if Result.Erro then
+         begin
+            Result.Mensagem := NFSe.WebServices.ConsSitLote.Msg+'|'+NFSe.WebServices.ConsSitLote.RetWS;
+            Exit;
+         end;
+       end;
      Except
        on e:Exception do
        begin
          Result.Erro := True;
-         Result.Mensagem := 'Erro ao enviar lote.'+sLineBreak+e.Message;
+         Result.Mensagem := 'Erro ao enviar lote NFSe. |'+e.Message;
+         Exit;
        end;
      End;
    end;
@@ -153,7 +198,17 @@ begin
 
             // TnfseRegimeEspecialTributacao = ( retNenhum, retMicroempresaMunicipal, retEstimativa, retSociedadeProfissionais, retCooperativa, retMicroempresarioIndividual, retMicroempresarioEmpresaPP );
             //  RegimeEspecialTributacao := retNenhum;
-            RegimeEspecialTributacao := retMicroempresaMunicipal;
+            if FDocs[i].Emitente.RegimeTributacao = RegimeEmpresaLucroReal Then
+              RegimeEspecialTributacao := retLucroReal
+            else
+            if FDocs[i].Emitente.RegimeTributacao = RegimeEmpresaLucroPresumido Then
+              RegimeEspecialTributacao := retLucroPresumido
+            else
+            if FDocs[i].Emitente.RegimeTributacao = RegimeEmpresaMei Then
+              RegimeEspecialTributacao := retMicroempresarioIndividual
+            else
+              RegimeEspecialTributacao := retNenhum;
+
 
             // TnfseSimNao = ( snSim, snNao );
             if FDocs[i].Emitente.RegimeTributacao = RegimeEmpresaSimples then
@@ -234,26 +289,30 @@ begin
                                            Servico.Valores.DescontoIncondicionado -
                                            Servico.Valores.DescontoCondicionado;
 
-            Servico.ItemListaServico         := FDocs[i].Servicos[X].CodigoMunicipalServico;
+            Servico.ItemListaServico         := FDocs[i].Servicos[X].CodigoFederalServico;
             {$EndRegion}
 
             {$Region 'Sobre o serviço'}
           // Para o provedor ISS.NET em ambiente de Homologação
           // o Codigo CNAE tem que ser '6511102'
           // Servico.CodigoCnae                := '123'; // Informação Opcional
-          if FDocs[i].Servicos[X].CodigoDeBeneficio <> '' then
-          begin
-            Servico.CodigoTributacaoMunicipio :=FDocs[i].Servicos[X].CodigoDeBeneficio+StringReplace(FDocs[i].Servicos[X].CodigoMunicipalServico,'.','',[rfReplaceAll]) ;
-            Servico.Discriminacao             := FDocs[i].Servicos[x].DesciminacaoCodigoDeBeneficio;
-          end else
-          begin
-            if FDocs[i].TipoAmbiente = uClassesERP.tabHomologacao then
-            begin
-              Servico.CodigoTributacaoMunicipio := '118879';
-              Servico.Discriminacao             := 'discriminacao I;discriminacao II';
-            end;
 
-          end;
+            Servico.CodigoTributacaoMunicipio :=FDocs[i].Servicos[X].CodigoMunicipalServico;
+            Servico.Discriminacao             := FDocs[i].Servicos[x].DescricaoCodigoServico;
+
+//          if FDocs[i].Servicos[X].CodigoDeBeneficio <> '' then
+//          begin
+//            Servico.CodigoTributacaoMunicipio :=FDocs[i].Servicos[X].CodigoDeBeneficio+StringReplace(FDocs[i].Servicos[X].CodigoMunicipalServico,'.','',[rfReplaceAll]) ;
+//            Servico.Discriminacao             := FDocs[i].Servicos[x].DesciminacaoCodigoDeBeneficio;
+//          end else
+//          begin
+//            if FDocs[i].TipoAmbiente = uClassesERP.tabHomologacao then
+//            begin
+//              Servico.CodigoTributacaoMunicipio := '118879';
+//              Servico.Discriminacao             := 'discriminacao I;discriminacao II';
+//            end;
+//
+//          end;
 
           // Para o provedor ISS.NET em ambiente de Homologação
           // o Codigo do Municipio tem que ser '999'
@@ -345,29 +404,34 @@ begin
      on e: Exception do
      begin
        result.Erro := True;
-       Result.Mensagem := 'Erro ao gerar arquivos. '+sLineBreak+E.Message;
+       Result.Mensagem := 'Erro ao gerar arquivos. '+E.Message;
      end;
    End;
 end;
 
 
 
+function TNFSe.GetCodigoVerificacao: String;
+begin
+   Result := fCodigoVerificacao;
+end;
+
 function TNFSe.GetLote: String;
 var
   Guid: TGUID;
   Temp: Integer;
 begin
-   if FLote = '' then
-   begin
-//     CreateGUID(Guid);
-//     FLote := GUIDToString(Guid);
-//     FLote := Copy(FLote,1,10);
-//     FLote := StringReplace(fLote,'{','',[rfReplaceAll]);
-//     FLote := StringReplace(fLote,'}','',[rfReplaceAll]);
-//     FLote := StringReplace(fLote,'-','',[rfReplaceAll]);
-      Temp :=  Random(9999999999);
-      fLote := IntToStr(Temp);
-   end;
+//   if FLote = '' then
+//   begin
+////     CreateGUID(Guid);
+////     FLote := GUIDToString(Guid);
+////     FLote := Copy(FLote,1,10);
+////     FLote := StringReplace(fLote,'{','',[rfReplaceAll]);
+////     FLote := StringReplace(fLote,'}','',[rfReplaceAll]);
+////     FLote := StringReplace(fLote,'-','',[rfReplaceAll]);
+//      Temp :=  Random(9999999999);
+//      fLote := IntToStr(Temp);
+//   end;
    Result := FLote;
 
 end;
@@ -375,6 +439,11 @@ end;
 function TNFSe.GetProtocolo: String;
 begin
    Result := FProtocolo;
+end;
+
+procedure TNFSe.SetLote(const Value: String);
+begin
+   fLote := Value;
 end;
 
 end.

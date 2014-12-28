@@ -77,6 +77,8 @@ type
     cxGrid2DBTableView1Column1: TcxGridDBColumn;
     cxGrid2DBTableView1Column2: TcxGridDBColumn;
     cxGrid2DBTableView1Column3: TcxGridDBColumn;
+    DBRadioGroup2: TDBRadioGroup;
+    DBRadioGroup3: TDBRadioGroup;
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);

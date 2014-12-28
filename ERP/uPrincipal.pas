@@ -165,6 +165,8 @@ type
     AlquotadeICMS1: TMenuItem;
     actISS: TAction;
     actISS1: TMenuItem;
+    actLoteDocumentoFiscal: TAction;
+    Lotesdedocumentosfiscais1: TMenuItem;
     procedure actCadastroExecute(Sender: TObject);
     procedure actCFOPExecute(Sender: TObject);
     procedure actNCMExecute(Sender: TObject);
@@ -227,6 +229,7 @@ type
     procedure actFiscalExecute(Sender: TObject);
     procedure actAliqICMSExecute(Sender: TObject);
     procedure actISSExecute(Sender: TObject);
+    procedure actLoteDocumentoFiscalExecute(Sender: TObject);
   private
     { Private declarations }
     Procedure AtualizaAgenda;
@@ -463,6 +466,12 @@ procedure TfrmPrincipal.actLocalizacaoExecute(Sender: TObject);
 begin
   inherited;
   TrotinasForms.AbreCadastroLocalizacao;
+end;
+
+procedure TfrmPrincipal.actLoteDocumentoFiscalExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreLotesDocumentos;
 end;
 
 procedure TfrmPrincipal.actManutencaoPatrimonioExecute(Sender: TObject);

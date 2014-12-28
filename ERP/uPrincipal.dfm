@@ -313,6 +313,9 @@ inherited frmPrincipal: TfrmPrincipal
         object Listagemdesadas1: TMenuItem
           Action = actListagemSaidas
         end
+        object Lotesdedocumentosfiscais1: TMenuItem
+          Action = actLoteDocumentoFiscal
+        end
       end
       object N1: TMenuItem
         Caption = '-'
@@ -652,6 +655,11 @@ inherited frmPrincipal: TfrmPrincipal
       Category = 'Fiscal'
       Caption = 'Al'#237'quota de ISS'
       OnExecute = actISSExecute
+    end
+    object actLoteDocumentoFiscal: TAction
+      Category = 'Venda'
+      Caption = 'Lotes de documentos fiscais'
+      OnExecute = actLoteDocumentoFiscalExecute
     end
   end
   object dxDockingManager1: TdxDockingManager

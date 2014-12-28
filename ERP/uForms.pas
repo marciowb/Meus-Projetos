@@ -65,6 +65,7 @@ interface
       class Procedure AbreAliqICMS;
       class Procedure AbreAliqISS;
       class function AbreCadastroCFOP(TipoOperacao: TTipoOperacaoForm = toNada; pIdPatrimonio: TipoCampoChave = '-1'):CampoChave;
+      class procedure AbreLotesDocumentos;
   private
 
     end;
@@ -80,7 +81,7 @@ uses uCadNCM, Lst_Empresa, Cad_Cliente, Cad_usuario, uCad_Funcionario,
   uAgenda, uPrincipal, uEntrada, Lst_OperacaoEstoque, uLst_Entrada, uSaida,
   uCad_Transportadora, uLst_Saidas, uCadConfiguracoes, uLst_ContasReceber,
   uLst_TipoPatrimonio, uLst_TipoEvento, uCad_Patrimonio,
-  uLst_ManutencaoPatrimonio, uALiqICMS, uAliqISS, uCad_CFOP;
+  uLst_ManutencaoPatrimonio, uALiqICMS, uAliqISS, uCad_CFOP, uLst_LoteNotas;
 
 class procedure TrotinasForms.AbreAgenda(IdAgenda: TipoCampoChave = '-1';IdConratoCOmpetencia: TipoCampoChave = '-1');
 begin
@@ -386,6 +387,16 @@ begin
     frmLst_Saidas.BringToFront
   else
     frmLst_Saidas.Show;
+end;
+
+class procedure TrotinasForms.AbreLotesDocumentos;
+begin
+   Try
+     frmLst_LoteNotas := tfrmLst_LoteNotas.Create(nil);
+     frmLst_LoteNotas.ShowModal;
+   Finally
+     FreeAndNil(frmLst_LoteNotas);
+   End;
 end;
 
 class function TrotinasForms.AbreManutencaoEquipamentoCliente(pIdCliente: TipoCampoChave;TipoOperacao: TTipoOperacaoForm): CampoChave;

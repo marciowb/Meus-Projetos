@@ -108,7 +108,8 @@ interface
   Function GetDescricaoLayout(IdLayout: Integer): String;
   Procedure AbrirArquivo(pFileName : String);
   Function GetDataSet(StrSQL: String): TpFIBClientDataSet;
-  Procedure AdicionaListaPesquisa(Var Cds: TpFIBClientDataSet; aTipoPesquisa: TTipoPesquisa;MsgExistente : String; Filtro: String = '');
+  Procedure AdicionaListaPesquisa(Var Cds: TpFIBClientDataSet; aTipoPesquisa: TTipoPesquisa;MsgExistente : String;CamposExtrasDataSet,CamposExtrasPesquisa: Array of String; Filtro: String = '');overload;
+  Procedure AdicionaListaPesquisa(Var Cds: TpFIBClientDataSet; aTipoPesquisa: TTipoPesquisa;MsgExistente : String; Filtro: String = '');overload;
   Function PadL(aStr: AnsiString; Tamanho : Integer; Caracter : AnsiChar): AnsiString;
   Function PadR(aStr: AnsiString; Tamanho : Integer; Caracter : AnsiChar): AnsiString;
   Procedure ApagarArquivo(vFileName: AnsiString);
@@ -126,6 +127,7 @@ interface
   function GetNomePC: String;
   function IdConexaoBd: Integer;
   Procedure GetValorCelulaSelecionadaPivotGrid(PivotGrid: TcxDBPivotGrid; FieldNameLinha,FieldNameColuna: String; Out Res: Array of Variant );
+  function SomenteNumero(aStr: String): String;
   const
     VersaoAcesso = 7;
 implementation
@@ -1924,9 +1926,10 @@ Begin
 End;
 
 
-Procedure AdicionaListaPesquisa(Var Cds: TpFIBClientDataSet; aTipoPesquisa: TTipoPesquisa;MsgExistente : String; Filtro: String = '');
+Procedure AdicionaListaPesquisa(Var Cds: TpFIBClientDataSet; aTipoPesquisa: TTipoPesquisa;MsgExistente : String;CamposExtrasDataSet,CamposExtrasPesquisa: Array of String; Filtro: String = '');
 var
   ID : Variant;
+  I: Integer;
 begin
   frmPesquisa := TfrmPesquisa.Create(nil);
   Try
@@ -1950,6 +1953,9 @@ begin
           Cds.FieldByName(GetCampoCodigo(aTipoPesquisa)).Value := CdsPesquisa.FieldByName(CampoCodigo).Value;
           Cds.FieldByName(CampoDisplay).Value := CdsPesquisa.FieldByName(CampoDisplay).Value;
         End;
+
+        for I := 0 to Length(CamposExtrasDataSet)-1 do
+          Cds.FieldByName(CamposExtrasDataSet[i]).Value := CdsPesquisa.FieldByName(CamposExtrasPesquisa[i]).Value;
         Cds.Post;
 
       End;
@@ -1959,6 +1965,13 @@ begin
   End;
 
  End;
+
+ Procedure AdicionaListaPesquisa(Var Cds: TpFIBClientDataSet; aTipoPesquisa: TTipoPesquisa;MsgExistente : String;Filtro: String = '');
+ var
+   CamposExtrasDataSet,CamposExtrasPesquisa: Array of String;
+ begin
+   AdicionaListaPesquisa(Cds,aTipoPesquisa,MsgExistente,CamposExtrasDataSet,CamposExtrasPesquisa,Filtro);
+ end;
 
  Function PadL(aStr: AnsiString; Tamanho : Integer; Caracter : AnsiChar): AnsiString;
  Begin
@@ -2306,6 +2319,22 @@ end;
     end;
 
  end;
+
+ function SomenteNumero(aStr: String): String;
+ begin
+   Result := aStr;
+   Result := StringReplace(Result,'.','',[rfReplaceAll]);
+   Result := StringReplace(Result,'-','',[rfReplaceAll]);
+   Result := StringReplace(Result,'/','',[rfReplaceAll]);
+   Result := StringReplace(Result,'\','',[rfReplaceAll]);
+   Result := StringReplace(Result,'{','',[rfReplaceAll]);
+   Result := StringReplace(Result,'}','',[rfReplaceAll]);
+   Result := StringReplace(Result,'[','',[rfReplaceAll]);
+   Result := StringReplace(Result,']','',[rfReplaceAll]);
+   Result := StringReplace(Result,',','',[rfReplaceAll]);
+ end;
+
+
 
  initialization
  {$Region 'Traduz o Developer Express'}

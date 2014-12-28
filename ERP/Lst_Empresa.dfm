@@ -1,7 +1,7 @@
 inherited frmLst_Empresa: TfrmLst_Empresa
   Caption = 'Cadastro de empresa'
   ClientHeight = 598
-  ExplicitTop = -182
+  ExplicitTop = -81
   ExplicitWidth = 658
   ExplicitHeight = 637
   PixelsPerInch = 96
@@ -154,7 +154,7 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         Top = 264
         Width = 323
         Height = 244
-        ActivePage = cxTabSheet1
+        ActivePage = cxTabSheet5
         Align = alBottom
         Style = 10
         TabOrder = 9
@@ -637,6 +637,8 @@ inherited frmLst_Empresa: TfrmLst_Empresa
             object cxTabSheet6: TcxTabSheet
               Caption = 'Geral'
               ImageIndex = 0
+              ExplicitLeft = -2
+              ExplicitTop = 16
               object DBRadioGroup1: TDBRadioGroup
                 Left = 0
                 Top = 0
@@ -659,6 +661,49 @@ inherited frmLst_Empresa: TfrmLst_Empresa
                   'R'
                   'P'
                   'M')
+              end
+              object DBRadioGroup2: TDBRadioGroup
+                Left = 0
+                Top = 89
+                Width = 323
+                Height = 34
+                Align = alTop
+                Caption = 'Ambiente NFSe'
+                Columns = 3
+                DataField = 'ambienteNFSE'
+                DataSource = DataCadastro
+                Items.Strings = (
+                  'N'#227'o definido'
+                  'Produ'#231#227'o'
+                  'Homologa'#231#227'o')
+                ParentBackground = True
+                TabOrder = 1
+                Values.Strings = (
+                  ''
+                  'P'
+                  'H')
+                ExplicitTop = 55
+              end
+              object DBRadioGroup3: TDBRadioGroup
+                Left = 0
+                Top = 55
+                Width = 323
+                Height = 34
+                Align = alTop
+                Caption = 'Ambiente NFe'
+                Columns = 3
+                DataField = 'ambienteNFE'
+                DataSource = DataCadastro
+                Items.Strings = (
+                  'N'#227'o definido'
+                  'Produ'#231#227'o'
+                  'Homologa'#231#227'o')
+                ParentBackground = True
+                TabOrder = 2
+                Values.Strings = (
+                  ''
+                  'P'
+                  'H')
               end
             end
             object cxTabSheet7: TcxTabSheet
@@ -947,10 +992,6 @@ inherited frmLst_Empresa: TfrmLst_Empresa
               Height = 112
               Align = alClient
               TabOrder = 0
-              ExplicitLeft = 88
-              ExplicitTop = 48
-              ExplicitWidth = 250
-              ExplicitHeight = 200
               object cxGrid2DBTableView1: TcxGridDBTableView
                 Tag = 99
                 NavigatorButtons.ConfirmDelete = False

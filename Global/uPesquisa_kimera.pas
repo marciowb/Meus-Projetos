@@ -278,6 +278,8 @@ begin
         lstCampos.ItemIndex := i;
         StrSQL := StrSQL + IfThen(StrSQL <> '', ' or ', '') + GetCondicao;
       End;
+      if StrSQL = '' then
+         StrSQL := ' 1=1 ';
       StrSQL := '(' + StrSQL + ')';
     Finally
       lstCampos.ItemIndex := 0;
@@ -1646,6 +1648,14 @@ begin
         Campos.Add('Data', 'PM.DATA', tcString,tsCampoPesquisaGrid, 80);
         Campos.Add('Nota', 'E.NUMERONOTA', tcString,tsCampoPesquisaGrid, 100);
       end;
+    tpERPSaida:
+      Begin
+        Titulo := 'Saída de mercadorias/serviços ';
+        Campos.Add('Data', 'DATASAIDA', tcCampoData, tsCampoPesquisaGrid,80);
+        Campos.Add('Número', 'S.NUMEROSAIDA', tcString,tsCampoPesquisaGrid, 100);
+        Campos.Add('Pessoa', 'PESSOA', tcString,tsCampoPesquisaGrid, 200,nil, 'COALESCE( C.NOMECLIENTE, F.RAZAOSOCIAL)');
+
+      End;
   {$EndRegion}
 
   end;

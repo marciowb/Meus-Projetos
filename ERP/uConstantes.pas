@@ -36,6 +36,33 @@ interface
    NumeracaoNotaSaidaNFe = 'N';
    NumeracaoNotaSaidaNFSe = 'S';
 
+   StatusLoteDocumentosFiscaisNaoIniciado = 'N';
+   StatusLoteDocumentosFiscaisIniciado = 'I';
+   StatusLoteDocumentosFiscaisEnviado = 'E';
+   StatusLoteDocumentosFiscaisErro = 'R';
+   StatusLoteDocumentosFiscaisSucesso = 'S';
+
+   StatusItemLoteDocumentosFiscaisAguardando = 'A';
+   StatusItemLoteDocumentosFiscaisErro = 'E';
+   StatusItemLoteDocumentosFiscaisSucesso = 'S';
+
+   ModalidadeFreteEmitente = 'E';
+   ModalidadeFreteDestinatario = 'D';
+   ModalidadeFreteTerceiros = 'T';
+
+   TipoTransporteMaritima = '1';
+   TipoTransporteFluvial  = '2';
+   TipoTransporteLacustre = '3';
+   TipoTransporteAerea    = '4';
+   TipoTransportePostal   = '5';
+   TipoTransporteFerroviaria = '6';
+   TipoTransporteRodoviaria = '7';
+   TipoTransporteConduto_Rede_Transmissao = '8';
+   TipoTransporteMeios_Proprios = '9';
+   TipoTransporteEntrada_Saida_ficta = '10';
+
+
+
 
 implementation
 end.

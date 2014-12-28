@@ -257,6 +257,7 @@ interface
         function GetValorSeguro: Currency;
         function GetValorTotalLiquido: Currency;
         function GetValorUnitario: Currency;
+        function GetDescricaoCodigoServico: String;
 
         property Codigo: String read GetCodigo write SetCodigo;
         Property EAN13: String read GetEAN13 ;
@@ -285,6 +286,7 @@ interface
         Property NCM: String read GetNCM ;
         Property CodigoMunicipalServico: String read GetCodigoMunicipalServico  ;
         Property CodigoFederalServico: String read GetCodigoFederalServico ;
+        Property DescricaoCodigoServico: String read GetDescricaoCodigoServico;
         Property EX_TIPI: String read GetEX_TIPI ;
 
         Property NumDI: String read GetNumDI write SetNumDI;
@@ -366,7 +368,13 @@ interface
         procedure SetNumeroNota(const Value: String);
         Procedure SetSerieNota (Const Value: String);
         procedure SetTipoAmbiente(const Value: uClassesERP.TTipoAmbiente);
-
+        procedure SetIdSaida(const Value:  TipoCampoChave);
+        procedure SetIdEntrada(const Value: TipoCampoChave);
+        procedure SetIdEmpresa(const Value: TipoCampoChave);
+        Procedure SetTipoDocumento(const Value: TTipoDocumento);
+        Procedure SetLoteSistema(const Value: String );
+        Procedure SetProtocolo(const Value:  String);
+        Procedure SetChaveAcesso(const Value: String);
 
         function GetANTT: String;
         function GetCobranca: TList<ICobranca>;
@@ -397,6 +405,13 @@ interface
         function GetNumeroNota: String;
         function GetSerieNota: String;
         function GetTipoAmbiente: uClassesERP.TTipoAmbiente;
+        function GetIdSaida: TipoCampoChave;
+        function GetIdEntrada: TipoCampoChave;
+        function GetIdEmpresa: TipoCampoChave;
+        function GetTipoDocumento: TTipoDocumento;
+        Function GetLoteSistema : String;
+        Function GetProtocolo :String ;
+        Function GetChaveAcesso: String;
 
         property Emitente: IEmitente read GetEmitente write SetEmitente;
         property Destinatario: IPessoa read GetDestinatario write SetDestinatario;
@@ -436,6 +451,15 @@ interface
         property TipoAmbiente: uClassesERP.TTipoAmbiente read GetTipoAmbiente write SetTipoAmbiente;
 
         Property Cobranca: TList<ICobranca> read GetCobranca write SetCobranca;
+
+        property IdSaida: TipoCampoChave read GetIdSaida write SetIdSaida;
+        property IdEntrada: TipoCampoChave read GetIdEntrada write SetIdEntrada;
+        property IdEmpresa: TipoCampoChave read GetIdEmpresa write SetIdEmpresa;
+        property TipoDocumento: TTipoDocumento read GetTipoDocumento write SetTipoDocumento;
+        property LoteSistema:String read GetLoteSistema write SetLoteSistema;
+        property Protocolo: String read GetProtocolo write SetProtocolo;
+        property ChaveAcesso: String read GetChaveAcesso write SetChaveAcesso;
+
 
 
       end;
@@ -717,6 +741,7 @@ interface
         FCRT: String;
         fCodigoDeBeneficio: String;
         fDesciminacaoCodigoDeBeneficio: String;
+        fDescricaoCodigoServico: String;
 
         procedure SetAliqAcrescimo(const Value: Currency);
         procedure SetAliqDesconto(const Value: Currency);
@@ -799,6 +824,7 @@ interface
         procedure SetCSOSN(const Value: String);
         function GetCRT: String;
         procedure SetCRT(const Value: String);
+        function GetDescricaoCodigoServico: String;
 
       published
         Constructor Create;
@@ -830,6 +856,7 @@ interface
         Property NCM: String read GetNCM ;
         Property CodigoMunicipalServico: String read GetCodigoMunicipalServico ;
         Property CodigoFederalServico: String read GetCodigoFederalServico ;
+        Property DescricaoCodigoServico: String read GetDescricaoCodigoServico;
         Property EX_TIPI: String read GetEX_TIPI ;
 
         Property NumDI: String read GetNumDI write SetNumDI;
@@ -907,6 +934,13 @@ interface
         FNumeroNota: String;
         FSerieNota: String;
         FTipoAmbiente: uClassesERP.TTipoAmbiente;
+        fIdEntrada: TipoCampoChave;
+        fIdSaida: TipoCampoChave;
+        fTipoDocumento: TTipoDocumento;
+        fChaveAcesso: String;
+        fLoteSistema: String;
+        fProtocolo: String;
+        fIdEmpresa: TipoCampoChave;
 
 
         procedure SetANTT(const Value: String);
@@ -968,6 +1002,20 @@ interface
         procedure SetSerieNota(const Value: String);
         procedure SetTipoAmbiente(const Value: uClassesERP.TTipoAmbiente);
         function GetTipoAmbiente: uClassesERP.TTipoAmbiente;
+        function GetIdEntrada: TipoCampoChave;
+        function GetIdSaida: TipoCampoChave;
+        function GetTipoDocumento: TTipoDocumento;
+        procedure SetIdEntrada(const Value: TipoCampoChave);
+        procedure SetIdSaida(const Value: TipoCampoChave);
+        procedure SetTipoDocumento(const Value: TTipoDocumento);
+        function GetChaveAcesso: String;
+        function GetLoteSistema: String;
+        function GetProtocolo: String;
+        procedure SetChaveAcesso(const Value: String);
+        procedure SetLoteSistema(const Value: String);
+        procedure SetProtocolo(const Value: String);
+        function GetIdEmpresa: TipoCampoChave;
+        procedure SetIdEmpresa(const Value: TipoCampoChave);
 
 
       published
@@ -1007,11 +1055,20 @@ interface
 
         property TipoAmbiente: uClassesERP.TTipoAmbiente read GetTipoAmbiente write SetTipoAmbiente;
 
+        property IdSaida: TipoCampoChave read GetIdSaida write SetIdSaida;
+        property IdEntrada: TipoCampoChave read GetIdEntrada write SetIdEntrada;
+        property IdEmpresa: TipoCampoChave read GetIdEmpresa write SetIdEmpresa;
+        property TipoDocumento: TTipoDocumento read GetTipoDocumento write SetTipoDocumento;
+        property LoteSistema:String read GetLoteSistema write SetLoteSistema;
+        property Protocolo: String read GetProtocolo write SetProtocolo;
+        property ChaveAcesso: String read GetChaveAcesso write SetChaveAcesso;
+
+
         Property Cobranca: TList<ICobranca> read GetCobranca write SetCobranca;
         property OpcoesDeVerificacao: TVerificacoes read FOpcoesDeVerificacao write SetVerificacoes;
         Function VerificaDados: TStringList ;virtual;
         constructor Create;virtual;
-        destructor Destroy;virtual;
+
 
       end;
 
@@ -1781,9 +1838,11 @@ begin
      begin
        Self.FNome := FieldByName('NOMEPRODUTO').AsString;
        Self.FEAN13 := FieldByName('CODIGOBARRAS').AsString;
-       Self.FNCM :=   FieldByName('NCM').AsString;
-       Self.FIdProduto :=   FieldByName('IDPRODUTO').Value;
-       Self.FCodigoMunicipalServico := FieldByName('CODIGOSERVFEDERAL').Value;
+       Self.FNCM :=   SomenteNumero( FieldByName('NCM').AsString);
+       Self.FIdProduto :=   FieldByName('IDPRODUTO').AsString;
+       Self.FCodigoFederalServico := SomenteNumero(FieldByName('CODIGOSERVFEDERAL').AsString);
+       Self.FCodigoMunicipalServico := SomenteNumero(FieldByName('CODIGOMUNICIPALSERVICO').AsString);
+       Self.fDescricaoCodigoServico := FieldByName('DESCRICAOCODIGOSERVICO').AsString;
        Self.FEX_TIPI :=   '';
        Free;
      end;
@@ -2018,22 +2077,15 @@ begin
 
 end;
 
-destructor TDocumentoFiscal.Destroy;
-begin
-  FreeAndNil(FEmitente);
-  FreeAndNil(FDestinatario);
-  FreeAndNil(FTransportadora);
-  FreeAndNil(FTotalImpostos);
-  FreeAndNil(FCobranca);
-  FreeAndNil(FProdutos);
-  FreeAndNil(FServicos);
-  FreeAndNil(FEmitente);
-
-end;
 
 function TDocumentoFiscal.GetANTT: String;
 begin
   Result := FANTT;
+end;
+
+function TDocumentoFiscal.GetChaveAcesso: String;
+begin
+  Result := fChaveAcesso;
 end;
 
 function TDocumentoFiscal.GetCobranca: TList<ICobranca>;
@@ -2076,6 +2128,26 @@ function TDocumentoFiscal.GetFrete: Currency;
 begin
   Result := FFrete;
 end;
+function TDocumentoFiscal.GetIdEmpresa: TipoCampoChave;
+begin
+  Result := fIdEmpresa;
+end;
+
+function TDocumentoFiscal.GetIdEntrada: TipoCampoChave;
+begin
+  Result := fIdEntrada;
+end;
+
+function TDocumentoFiscal.GetIdSaida: TipoCampoChave;
+begin
+  Result := fIdSaida;
+end;
+
+function TDocumentoFiscal.GetLoteSistema: String;
+begin
+  Result := fLoteSistema;
+end;
+
 function TDocumentoFiscal.GetMarca: String;
 begin
   Result := FMarca;
@@ -2112,6 +2184,11 @@ begin
 end;
 
 
+function TDocumentoFiscal.GetProtocolo: String;
+begin
+  Result := fProtocolo;
+end;
+
 function TDocumentoFiscal.GetSeguro: Currency;
 begin
   Result := FSeguro;
@@ -2130,6 +2207,11 @@ end;
 function TDocumentoFiscal.GetTipoAmbiente: uClassesERP.TTipoAmbiente;
 begin
   Result := FTipoAmbiente;
+end;
+
+function TDocumentoFiscal.GetTipoDocumento: TTipoDocumento;
+begin
+  Result := fTipoDocumento;
 end;
 
 function TDocumentoFiscal.GetTipoFrete: TTipoFrete;
@@ -2232,6 +2314,11 @@ begin
   FANTT := Value;
 end;
 
+procedure TDocumentoFiscal.SetChaveAcesso(const Value: String);
+begin
+  fChaveAcesso := Value;
+end;
+
 procedure TDocumentoFiscal.SetCobranca(const Value: TList<ICobranca>);
 begin
   FCobranca := Value;
@@ -2274,6 +2361,26 @@ begin
   FFrete := Value;
 end;
 
+procedure TDocumentoFiscal.SetIdEmpresa(const Value: TipoCampoChave);
+begin
+   fIdEmpresa := Value;
+end;
+
+procedure TDocumentoFiscal.SetIdEntrada(const Value: TipoCampoChave);
+begin
+  fIdEntrada := Value;
+end;
+
+procedure TDocumentoFiscal.SetIdSaida(const Value: TipoCampoChave);
+begin
+  fIdSaida := Value;
+end;
+
+procedure TDocumentoFiscal.SetLoteSistema(const Value: String);
+begin
+   fLoteSistema := Value;
+end;
+
 procedure TDocumentoFiscal.SetMarca(const Value: String);
 begin
   FMarca := Value;
@@ -2310,6 +2417,11 @@ begin
 end;
 
 
+procedure TDocumentoFiscal.SetProtocolo(const Value: String);
+begin
+   fProtocolo := Value;
+end;
+
 procedure TDocumentoFiscal.SetSeguro(const Value: Currency);
 begin
   FSeguro := Value;
@@ -2328,6 +2440,11 @@ end;
 procedure TDocumentoFiscal.SetTipoAmbiente(const Value: uClassesERP.TTipoAmbiente);
 begin
   FTipoAmbiente := Value;
+end;
+
+procedure TDocumentoFiscal.SetTipoDocumento(const Value: TTipoDocumento);
+begin
+  fTipoDocumento := Value;
 end;
 
 procedure TDocumentoFiscal.SetTipoFrete(const Value: TTipoFrete);
@@ -2577,6 +2694,11 @@ end;
 function TItemDocumento.GetDesciminacaoCodigoDeBeneficio: String;
 begin
   Result := fDesciminacaoCodigoDeBeneficio;
+end;
+
+function TItemDocumento.GetDescricaoCodigoServico: String;
+begin
+  Result := fDescricaoCodigoServico;
 end;
 
 procedure TItemDocumento.SetCodigoDeBeneficio(const Value: String);
