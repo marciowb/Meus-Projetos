@@ -2,6 +2,7 @@ inherited frmLst_LoteNotas: TfrmLst_LoteNotas
   Caption = 'Listagem de Lotes de Nota'
   ClientHeight = 529
   ClientWidth = 877
+  ExplicitTop = -134
   ExplicitWidth = 893
   ExplicitHeight = 568
   PixelsPerInch = 96
@@ -61,9 +62,9 @@ inherited frmLst_LoteNotas: TfrmLst_LoteNotas
       ExplicitHeight = 401
       inherited cxGrid1: TcxGrid
         Width = 877
-        Height = 215
+        Height = 213
         ExplicitWidth = 877
-        ExplicitHeight = 215
+        ExplicitHeight = 213
         inherited TvListagem: TcxGridDBTableView
           Styles.Inactive = nil
           Styles.Selection = nil
@@ -72,17 +73,17 @@ inherited frmLst_LoteNotas: TfrmLst_LoteNotas
       end
       object GroupBox1: TGroupBox
         Left = 0
-        Top = 223
+        Top = 221
         Width = 877
-        Height = 178
+        Height = 180
         Align = alBottom
         Caption = ' Notas '
         TabOrder = 1
         object cxGrid2: TcxGrid
           Left = 2
           Top = 15
-          Width = 873
-          Height = 161
+          Width = 717
+          Height = 163
           Align = alClient
           TabOrder = 0
           object TvNotas: TcxGridDBTableView
@@ -140,10 +141,31 @@ inherited frmLst_LoteNotas: TfrmLst_LoteNotas
             GridView = TvNotas
           end
         end
+        object Panel1: TPanel
+          Left = 719
+          Top = 15
+          Width = 156
+          Height = 163
+          Align = alRight
+          BevelKind = bkSoft
+          BevelOuter = bvNone
+          TabOrder = 1
+          object BitBtn12: TBitBtn
+            Left = 8
+            Top = 24
+            Width = 137
+            Height = 41
+            Action = actImprimirNFSe
+            Caption = 'Imprimir RPS'
+            DoubleBuffered = True
+            ParentDoubleBuffered = False
+            TabOrder = 0
+          end
+        end
       end
       object cxSplitter1: TcxSplitter
         Left = 0
-        Top = 215
+        Top = 213
         Width = 877
         Height = 8
         HotZoneClassName = 'TcxMediaPlayer9Style'
@@ -169,6 +191,11 @@ inherited frmLst_LoteNotas: TfrmLst_LoteNotas
       Caption = 'Gerar Documentos fiscais'
       ImageIndex = 44
       OnExecute = actGerarDocumentosExecute
+    end
+    object actImprimirNFSe: TAction
+      Caption = 'Imprimir RPS'
+      ImageIndex = 19
+      OnExecute = actImprimirNFSeExecute
     end
   end
   object DataItens: TDataSource

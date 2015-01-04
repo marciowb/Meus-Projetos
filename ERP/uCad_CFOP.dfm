@@ -142,6 +142,7 @@ inherited frmCad_CFOP: TfrmCad_CFOP
             Properties.KeyFieldNames = 'CST'
             Properties.ListColumns = <
               item
+                Caption = ' '
                 Width = 200
                 FieldName = 'CONCATENADO'
               end>
@@ -215,10 +216,6 @@ inherited frmCad_CFOP: TfrmCad_CFOP
             object cxTabSheet1: TcxTabSheet
               Caption = ' CSTs usados nesse CFOP  '
               ImageIndex = 0
-              ExplicitLeft = 4
-              ExplicitTop = 24
-              ExplicitWidth = 281
-              ExplicitHeight = 165
               object GroupBox1: TGroupBox
                 Left = 0
                 Top = -3
@@ -226,7 +223,6 @@ inherited frmCad_CFOP: TfrmCad_CFOP
                 Height = 173
                 Align = alBottom
                 TabOrder = 0
-                ExplicitTop = 256
                 object Panel2: TPanel
                   Left = 478
                   Top = 15
@@ -235,7 +231,6 @@ inherited frmCad_CFOP: TfrmCad_CFOP
                   Align = alRight
                   BevelOuter = bvLowered
                   TabOrder = 0
-                  ExplicitLeft = 247
                   object SpeedButton1: TSpeedButton
                     Left = 6
                     Top = 24
@@ -350,7 +345,6 @@ inherited frmCad_CFOP: TfrmCad_CFOP
                   Height = 156
                   Align = alClient
                   TabOrder = 1
-                  ExplicitWidth = 245
                   object TvCST_CFOP: TcxGridDBTableView
                     NavigatorButtons.ConfirmDelete = False
                     DataController.DataSource = DataCST_CFOP

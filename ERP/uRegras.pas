@@ -69,14 +69,15 @@ interface
 
    TRegrasImpostos = class
     private
-      class Procedure GetAliqImpostos(IdCliente,IdProduto:TipoCampoChave;UFOrigem: String;
+      class Procedure GetAliqImpostos(IdCliente,IdProduto, IdEmpresa:TipoCampoChave;UFOrigem: String;
                                             Out Imposto: TImpostos;
                                             out ValorMinimoTributosFederais: Currency;
                                             out ValorMinimoIR: Currency;
                                             Out TipoProduto:String );
     public
       class function CalculaImpostos(IdCliente, IdProduto,IdCFOP, IdEmpresa: TipoCampoChave; CST: String; CSOSN: String;
-                                     ValorOperacao: Currency; Frete,Seguro,OutrasDespesas: Currency): IImpostos;
+                                     ValorOperacao: Currency; Frete,Seguro,OutrasDespesas: Currency;
+                                     TipoFrete: TTipoFrete; DataOperacao: TDate): IImpostos;
       class function GetCRT(IdEmpresa: TipoCampoChave; Data: TDate): String;
 
    end;
@@ -87,6 +88,7 @@ interface
      class procedure GeraDocumentosFiscais(IdLote:TipoCampoChave; NumeroLote: String; Out RespostaNFSe: TRetorno; Out RespostaNFe: TRetorno);
      class Procedure ProcessaLote(IdLote:TipoCampoChave; NumeroLote: String );
      class procedure GravaDocumento(Doc: IDocumentoFiscal);
+     class Procedure ImprimeNFSe(IdSaida: TipoCampoChave);
    end;
 
 implementation
@@ -375,7 +377,7 @@ begin
     StrSQL :=
       'delete from RESERVAVENDAANDAMENTO '+
       ' where IDEMPRESA = '+TipoCampoChaveToStr(IdEmpresa)+
-      '   AND IDVENDA = '+TipoCampoChaveToStr(IdVenda)+
+      '   AND IDSAIDA = '+TipoCampoChaveToStr(IdVenda)+
       '   and NUMITEM = '+IntToStr(NumItem);
     Exec_SQL(StrSQL);
     Commit;
@@ -799,21 +801,25 @@ end;
 
 class function TRegrasImpostos.CalculaImpostos(IdCliente, IdProduto,
   IdCFOP,IdEmpresa: TipoCampoChave; CST: String ;CSOSN: String;
-  ValorOperacao: Currency; Frete,Seguro,OutrasDespesas: Currency): IImpostos;
+  ValorOperacao: Currency; Frete,Seguro,OutrasDespesas: Currency; TipoFrete: TTipoFrete; DataOperacao: TDate): IImpostos;
 var
-  DataSetEmpresa, DataSetCliente: TpFIBClientDataSet;
+  DataSetEmpresa, DataSetCliente,DataSetCFOP: TpFIBClientDataSet;
   ValorMinimoTributosFederais: Currency;
-  ValorMinimoIR: Currency;
+  ValorMinimoIR,Despesas, ValorVendas: Currency;
   Impostos: TImpostos;
-  TipoProduto: String;
+  TipoProduto, StrSQL: String;
+  DataIni, DataFim: TDate;
 begin
   Impostos := Timpostos.Create;
   Try
     DataSetEmpresa := GetCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(IdEmpresa));
     DataSetCliente := GetCds(tpERPCliente,'idcliente = '+TipoCampoChaveToStr(IdCliente));
+    DataSetCFOP     := GetCds(tpERPCFOP,'idcfop = '+TipoCampoChaveToStr(IdCFOP));
 
-    TRegrasImpostos.GetAliqImpostos(IdCliente,IdProduto, DataSetEmpresa.FieldByName('uf').AsString,Impostos,
+    TRegrasImpostos.GetAliqImpostos(IdCliente,IdProduto,IdEmpresa, DataSetEmpresa.FieldByName('uf').AsString,Impostos,
                                     ValorMinimoTributosFederais, ValorMinimoIR,TipoProduto);
+
+
 
 
 
@@ -856,13 +862,74 @@ begin
     {$Region 'Calcula IPI'}
     if TipoProduto <> TipoProdutoServico then
     begin
-
+      if DataSetCFOP.FieldByName('FLAGTRIBUTAIPI').AsString = 'Y' then
+      begin
+        if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaDentroEstado) or
+           (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaForaEstado) or
+           (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoExportacao)  then
+        begin
+          if TipoFrete = tfEmitente then
+            Despesas := 0
+          else
+            Despesas := Frete;
+          Impostos.BaseIPI := ValorOperacao+Despesas;
+          Impostos.ValorIPI := Impostos.BaseIPI * Impostos.AliqIPI /100;
+        end;
+      end;
 
     end;
 
     {$EndRegion}
 
     {$Region 'Calcula ICMS'}
+
+     if TipoProduto <> TipoProdutoServico then
+    begin
+      if DataSetCFOP.FieldByName('FLAGTRIBUTAICMS').AsString = 'Y' then
+      begin
+        if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaDentroEstado) or
+           (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaForaEstado) or
+           (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoExportacao)  then
+        begin
+          if TipoFrete = tfEmitente then
+           Despesas := 0
+          else
+           Despesas := Frete;
+
+          Despesas := Despesas + OutrasDespesas+Seguro;
+
+          Impostos.BaseICMS := ValorOperacao+Despesas;
+
+          if (DataSetCliente.FieldByName('flagtipopessoa').AsString = 'J') and
+             (Copy(DataSetCFOP.FieldByName('CFOP').AsString,2,1)= '1' )  then //CFOP de industrialização 5101,6101,7101...
+            Impostos.BaseICMS := Impostos.BaseICMS + Impostos.ValorIPI;
+
+          if Impostos.AliqReducaoBaseICMS <> 0  then
+            Impostos.BaseICMS := Impostos.BaseICMS  - ((Impostos.BaseICMS * Impostos.AliqReducaoBaseICMS)/100);
+
+          Impostos.ValorICMS := Impostos.BaseICMS * Impostos.AliqICMS /100;
+        end;
+      end;
+
+    end;
+
+    {$EndRegion}
+
+    {$Region 'ICMS ST'}
+     if TipoProduto <> TipoProdutoServico then
+     begin
+        if DataSetCFOP.FieldByName('FLAGTRIBUTAST').AsString = 'Y' then
+        begin
+          if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaDentroEstado) or
+             (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaForaEstado) or
+             (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoExportacao)  then
+          begin
+            { TODO : fazer }
+          end;
+        end;
+     end;
+
+
     {$EndRegion}
 
 
@@ -873,7 +940,24 @@ begin
           (DataSetEmpresa.FieldByName('REGIMEEMPRESA').AsString <> RegimeEmpresaSimples) then
        begin
          Impostos.BasePIS_COFINS := ValorOperacao;
-         if ValorOperacao >= ValorMinimoTributosFederais then
+         DataIni := FirstDay(DataOperacao);
+         if DataOperacao < StrToDate(GetDataServidor) then
+           DataFim := DataOperacao
+         else
+           DataFim := LastDay(DataOperacao);
+         StrSQL :=
+           'SELECT SUM(VALORTOTAL) VALORTOTAL '+
+           '  FROM SAIDAPRODUTO SP '+
+           ' WHERE EXISTS(SELECT 1' +
+           '                FROM SAIDA S' +
+           '               WHERE S.IDSAIDA  = SP. IDSAIDA '+
+           '                 AND DATA >= '+GetData(DataIni)+' and DATA <= '+GetData(DataFim)+
+           '                 AND S.IDCLIENTE= '+TipoCampoChaveToStr(IdCliente)+')'+
+           '   AND TIPOPRODUTO = '+QuotedStr(TipoProdutoServico);
+         ValorVendas := StrToCurrDef(GetValorCds(StrSQL),0);
+         ValorVendas := ValorVendas + ValorOperacao;
+
+         if ValorVendas >= ValorMinimoTributosFederais then
          begin
            Impostos.ValorPIS := (Impostos.BasePIS_COFINS * Impostos.AliqPIS )/100.00;
            Impostos.ValorCOFINS := (Impostos.BasePIS_COFINS * Impostos.AliqCOFINS )/100.00;
@@ -885,10 +969,47 @@ begin
 
        end;
 
+     end ELSE
+     begin
+        if TipoProduto <> TipoProdutoServico then
+        begin
+          if DataSetCFOP.FieldByName('FLAGTRIBUTAPIS_COFINS').AsString = 'Y' then
+          begin
+            if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaDentroEstado) or
+               (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaForaEstado) or
+               (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoExportacao)  then
+            begin
+              if TipoFrete = tfEmitente then
+                Despesas := 0
+              else
+                Despesas := Frete;
+
+              Despesas := Despesas + OutrasDespesas+Seguro;
+              if DataSetCFOP.FieldByName('CST_PIS_COFINS').AsString = CST_PIS_COFINS_Operacao_Tributavel_a_Aliquota_Zero then
+              begin
+                Impostos.AliqPIS := 0;
+                Impostos.AliqCOFINS := 0;
+              end else
+              if DataSetCFOP.FieldByName('CST_PIS_COFINS').AsString = CST_PIS_COFINS_Operacao_Isenta_da_Contribuicao then
+              begin
+                Impostos.ValorCOFINS := 0;
+                Impostos.ValorPIS := 0;
+              end else
+              begin
+                Impostos.BasePIS_COFINS := ValorOperacao+Despesas+Impostos.ValorIPI+Impostos.ValorICMSST;
+                Impostos.ValorPIS := Impostos.BasePIS_COFINS* Impostos.AliqPIS /100;
+                Impostos.ValorCOFINS := Impostos.BasePIS_COFINS* Impostos.AliqCOFINS /100;
+              end;
+
+            end;
+          end;
+        end;
+
+
      end;
 
-    {$EndRegion}
 
+    {$EndRegion}
 
 
     Result := Impostos;
@@ -896,12 +1017,13 @@ begin
   Finally
     FreeAndNil(DataSetEmpresa);
     FreeAndNil(DataSetCliente);
+    FreeAndNil(DataSetCFOP);
   End;
 end;
 
 
 
-class procedure TRegrasImpostos.GetAliqImpostos(IdCliente,IdProduto:TipoCampoChave; UFOrigem: String;
+class procedure TRegrasImpostos.GetAliqImpostos(IdCliente,IdProduto, IdEmpresa:TipoCampoChave; UFOrigem: String;
                                             Out Imposto: TImpostos;
                                             out ValorMinimoTributosFederais: Currency;
                                             out ValorMinimoIR: Currency;
@@ -913,9 +1035,9 @@ begin
     'SELECT COALESCE(N.ALIQIPI, N.IPIVALOR) ALIQ_IPI,'+
     '       CASE WHEN (N.ALIQIPI IS NULL ) AND (N.IPIVALOR IS NOT NULL ) THEN ''V'''+
     '            ELSE ''A'' END TIPO_ALIQIPI,'+
-    '       COALESCE(N.ALIQPIS,ISS.ALIQPIS) ALIQPIS, COALESCE(N.ALIQCOFINS,ISS.ALIQCOFINS) ALIQCOFINS, '+
-    '       N.ALIQII, N.VALOR_LI, ISS.ALIQCSLL,ISS.ALIQIR,ISS.VALORMINIMOTRIBFEDERAL,ISS.VALORMINIMOIR,ISS.ALIQISS, '+
-    '       COALESCE(N.ALIQICMS, ICMS.ALIQICMS) ALIQICMS,P.TIPOPRODUTO  '+
+    '       COALESCE(COALESCE(N.ALIQPIS,ISS.ALIQPIS),E.ALIQPIS) ALIQPIS, COALESCE(COALESCE(N.ALIQCOFINS,ISS.ALIQCOFINS),E.ALIQPIS) ALIQCOFINS, '+
+    '       N.ALIQII, N.VALOR_LI, COALESCE(ISS.ALIQCSLL,E.ALIQCSLL)ALIQCSLL, COALESCE(ISS.ALIQIR,E.ALIQIR)ALIQIR, ISS.VALORMINIMOTRIBFEDERAL,ISS.VALORMINIMOIR,ISS.ALIQISS, '+
+    '       COALESCE(N.ALIQICMS, ICMS.ALIQICMS) ALIQICMS,P.TIPOPRODUTO,COALESCE(N.ALIQREDUCAOBASEICMS,0)ALIQREDUCAOBASEICMS  '+
     '  FROM PRODUTO P'+
     '  LEFT JOIN NCMESTADO N'+
     '    ON (P.IDNCM = N.IDNCM)'+
@@ -923,6 +1045,8 @@ begin
     '    ON (P.IDCODIGOMUNICIPALSERVICO = ISS.IDCODIGOMUNICIPALSERVICO) '+
     '  LEFT JOIN ICMS '+
     '    ON (ICMS.UFORIGEM ='+QuotedStr(UFOrigem)+' AND ICMS.UFDESTINO = N.UF) '+
+    '  LEFT JOIN EMPRESA E '+
+    '    ON (E.IDEMPRESA = '+TipoCampoChaveToStr(IdEmpresa)+') '+
     ' WHERE P.IDPRODUTO = '+TipoCampoChaveToStr(IdProduto)+
     '   AND EXISTS(SELECT 1'+
     '                FROM CLIENTE C'+
@@ -943,6 +1067,7 @@ begin
     Imposto.ALiqIR := FieldByName('ALIQIR').AsCurrency;
     Imposto.AliqICMS := FieldByName('ALIQICMS').AsCurrency;
     Imposto.AliqISS := FieldByName('ALIQISS').AsCurrency;
+    Imposto.AliqReducaoBaseICMS := FieldByName('ALIQREDUCAOBASEICMS').AsCurrency;
 
     ValorMinimoTributosFederais := FieldByName('VALORMINIMOTRIBFEDERAL').AsCurrency;
     ValorMinimoIR := FieldByName('VALORMINIMOIR').AsCurrency;
@@ -1074,8 +1199,6 @@ begin
           else
             Doc.TipoAmbiente := tabHomologacao ;
           DocsNFSe.Add(Doc);
-          Doc._Release;
-          Doc := nil;
         end;
 
          if tdNFe in TipoDocumento then
@@ -1093,8 +1216,7 @@ begin
             Doc.TipoAmbiente := tabHomologacao ;
 
           DocsNFe.Add(Doc);
-          Doc._Release;
-          Doc := nil;
+
         end;
 
 
@@ -1108,8 +1230,7 @@ begin
     begin
       Try
         TRegrasLotesDocumentosFiscais.AtualizaStatusLote(IdLote,StatusLoteDocumentosFiscaisIniciado,StatusLoteDocumentosFiscaisEnviado);
-        Nfse := TNFSe.Create(DocsNFSe);
-        Nfse.Lote := NumeroLote;
+        Nfse := TNFSe.Create(DocsNFSe,NumeroLote);
         RespostaNFSe := Nfse.Enviar;
         if not RespostaNFSe.Erro then
         begin
@@ -1133,7 +1254,6 @@ begin
 //      Try
 //        Nfse := TNFSe.Create(DocsNFSe);
 //        RespostaNFe := Nfse.Enviar;
-//
 //      Finally
 //        FreeAndNil(Nfse);
 //      End;
@@ -1243,7 +1363,10 @@ begin
       '                       IDSAIDA, '+
       '                       TIPODOCUMENTO, '+
       '                       IDENTRADA,'+
-      '                       IDEMPRESA)'+
+      '                       IDEMPRESA,  '+
+      '                       PROTOCOLO,'+
+      '                       CHAVEACESSO,'+
+      '                       LOTE   ) '+
       'VALUES ( '+QuotedStr(Id)+','+
                 GetData(Doc.DataNota)+','+
                 'current_time,'+ //Hora Nota
@@ -1331,7 +1454,10 @@ begin
                GetStr(IfThen(Doc.TipoDocumento = tdNFSe, NumeracaoNotaSaidaNFSe,
                          IfThen(Doc.TipoDocumento = tdNFe, NumeracaoNotaSaidaNFe,'C')))+','+
                TipoCampoChaveToStr(Doc.IdEntrada)+','+
-               TipoCampoChaveToStr(Doc.IdEmpresa)+');';
+               TipoCampoChaveToStr(Doc.IdEmpresa)+','+
+               GetStr(Doc.Protocolo)+','+
+               GetStr(Doc.ChaveAcesso)+','+
+               GetStr(Doc.LoteSistema)+');';
 
 
     Exec_SQL(StrSQL);
@@ -1535,6 +1661,56 @@ begin
       Raise;
     end;
 
+  End;
+end;
+
+class procedure TRegrasLotesDocumentosFiscais.ImprimeNFSe(
+  IdSaida: TipoCampoChave);
+var
+  StrSQL: String;
+  Nfse : TNFSe;
+  Doc: IDocumentoFiscal;
+  DocsNFSe: TList<IDocumentoFiscal>;
+  DataSetNota, DataSetItens, DataSetCobranca: TpFIBClientDataSet;
+begin
+  Try
+    DocsNFSe := TList<IDocumentoFiscal>.Create;
+    DataSetNota := TpFIBClientDataSet.Create(nil);
+    DataSetItens := TpFIBClientDataSet.Create(nil);
+    DataSetCobranca := TpFIBClientDataSet.Create(nil);
+
+    SetCds(DataSetNota,tpERPSaida,'idsaida = '+TipoCampoChaveToStr(IdSaida));
+    SetCds(DataSetItens,tpERPSaidaProduto,'idsaida = '+TipoCampoChaveToStr(IdSaida));
+    SetCds(DataSetCobranca,tpERPSaidaCondicaoPagamento,'idsaida = '+TipoCampoChaveToStr(IdSaida));
+    CriaDocumentoFiscal(DataSetNota,DataSetItens,DataSetCobranca, Doc);
+    DocsNFSe.Add(Doc);
+    StrSQL:=
+      'SELECT FIRST 1  D.PROTOCOLO, D.LOTE'+
+      '  FROM DOCUMENTO D '+
+      '  WHERE D.IDSAIDA = '+TipoCampoChaveToStr(IdSaida)+
+      '    AND D.TIPODOCUMENTO = '+QuotedStr(NumeracaoNotaSaidaNFSe)+
+      '  ORDER BY D.REVISAO DESC ';
+
+    WITH GetCds(StrSQL) do
+    begin
+      Nfse := TNFSe.Create(DocsNFSe,FieldByName('LOTE').AsString);
+      with GetCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(DataSetNota.FieldByName('idempresa').AsString)) do
+      begin
+        Nfse.SalvaLogoEmpresa(FieldByName('LOGOMARCA'));
+        Free;
+      end;
+
+      NFSe.Imprimir(FieldByName('PROTOCOLO').AsString);
+      Free;
+    end;
+  Finally
+    FreeAndNil(Nfse);
+    FreeAndNil(DataSetNota);
+    FreeAndNil(DataSetItens);
+    FreeAndNil(DataSetCobranca);
+    FreeAndNil(DocsNFSe);
+    if Assigned(Doc) then
+      Doc._Release;
   End;
 end;
 

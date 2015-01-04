@@ -10,29 +10,27 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
   inherited Panel1: TPanel
     Top = 415
     Width = 554
-    ExplicitTop = 486
-    ExplicitWidth = 319
+    ExplicitTop = 415
+    ExplicitWidth = 554
     inherited btnOk: TBitBtn
-      Left = 258
-      ExplicitLeft = 23
+      Left = 254
+      ExplicitLeft = 254
     end
     inherited btnCancelar: TBitBtn
-      Left = 355
-      ExplicitLeft = 120
+      Left = 351
+      ExplicitLeft = 351
     end
   end
   inherited Panel2: TPanel
     Width = 554
     Height = 415
-    ExplicitWidth = 319
-    ExplicitHeight = 486
+    ExplicitWidth = 554
+    ExplicitHeight = 415
     inherited Panel3: TPanel
       Width = 554
       Height = 415
-      ExplicitLeft = 160
-      ExplicitTop = -16
-      ExplicitWidth = 602
-      ExplicitHeight = 436
+      ExplicitWidth = 554
+      ExplicitHeight = 415
       object btnSeriais: TBitBtn [0]
         Left = 422
         Top = 267
@@ -438,48 +436,8 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         GravaEsteCampo = True
         AsInteger = 0
       end
-      object LabelDBEdit24: TLabelDBEdit [12]
-        Left = 504
-        Top = 146
-        Width = 39
-        Height = 21
-        DataField = 'ALIQIPI'
-        DataSource = DataItens
-        TabOrder = 23
-        Titulo.Left = 504
-        Titulo.Top = 131
-        Titulo.Width = 38
-        Titulo.Height = 13
-        Titulo.Caption = 'Aliq. IPI'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit25: TLabelDBEdit [13]
-        Left = 418
-        Top = 146
-        Width = 71
-        Height = 21
-        DataField = 'BASEIPI'
-        DataSource = DataItens
-        TabOrder = 22
-        Titulo.Left = 418
-        Titulo.Top = 131
-        Titulo.Width = 40
-        Titulo.Height = 13
-        Titulo.Caption = 'Base IPI'
-        IsNull = True
-        PodeRepetir = True
-        CorPrincipal = clWhite
-        CorSecundaria = 11592447
-        GravaEsteCampo = True
-        AsInteger = 0
-      end
-      object LabelDBEdit22: TLabelDBEdit [14]
-        Left = 341
+      object LabelDBEdit22: TLabelDBEdit [12]
+        Left = 477
         Top = 146
         Width = 66
         Height = 21
@@ -488,8 +446,8 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         DataField = 'VALORISS'
         DataSource = DataItens
         ReadOnly = True
-        TabOrder = 21
-        Titulo.Left = 341
+        TabOrder = 23
+        Titulo.Left = 477
         Titulo.Top = 131
         Titulo.Width = 43
         Titulo.Height = 13
@@ -501,15 +459,15 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         GravaEsteCampo = True
         AsInteger = 0
       end
-      object LabelDBEdit21: TLabelDBEdit [15]
-        Left = 295
+      object LabelDBEdit21: TLabelDBEdit [13]
+        Left = 431
         Top = 146
         Width = 39
         Height = 21
         DataField = 'ALIQISS'
         DataSource = DataItens
-        TabOrder = 20
-        Titulo.Left = 295
+        TabOrder = 22
+        Titulo.Left = 431
         Titulo.Top = 131
         Titulo.Width = 40
         Titulo.Height = 13
@@ -521,15 +479,15 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         GravaEsteCampo = True
         AsInteger = 0
       end
-      object LabelDBEdit20: TLabelDBEdit [16]
-        Left = 224
+      object LabelDBEdit20: TLabelDBEdit [14]
+        Left = 360
         Top = 146
         Width = 64
         Height = 21
         DataField = 'BASEISS'
         DataSource = DataItens
-        TabOrder = 19
-        Titulo.Left = 224
+        TabOrder = 21
+        Titulo.Left = 360
         Titulo.Top = 131
         Titulo.Width = 42
         Titulo.Height = 13
@@ -541,8 +499,8 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         GravaEsteCampo = True
         AsInteger = 0
       end
-      object LabelDBEdit19: TLabelDBEdit [17]
-        Left = 152
+      object LabelDBEdit19: TLabelDBEdit [15]
+        Left = 288
         Top = 146
         Width = 66
         Height = 21
@@ -551,8 +509,8 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         DataField = 'VALORICMS'
         DataSource = DataItens
         ReadOnly = True
-        TabOrder = 17
-        Titulo.Left = 152
+        TabOrder = 19
+        Titulo.Left = 288
         Titulo.Top = 131
         Titulo.Width = 52
         Titulo.Height = 13
@@ -564,15 +522,15 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         GravaEsteCampo = True
         AsInteger = 0
       end
-      object LabelDBEdit17: TLabelDBEdit [18]
-        Left = 96
+      object LabelDBEdit17: TLabelDBEdit [16]
+        Left = 232
         Top = 146
         Width = 50
         Height = 21
         DataField = 'ALIQICMS'
         DataSource = DataItens
-        TabOrder = 18
-        Titulo.Left = 96
+        TabOrder = 20
+        Titulo.Left = 232
         Titulo.Top = 131
         Titulo.Width = 49
         Titulo.Height = 13
@@ -584,15 +542,15 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         GravaEsteCampo = True
         AsInteger = 0
       end
-      object LabelDBEdit2: TLabelDBEdit [19]
-        Left = 16
+      object LabelDBEdit2: TLabelDBEdit [17]
+        Left = 152
         Top = 146
         Width = 74
         Height = 21
         DataField = 'BASEICMS'
         DataSource = DataItens
-        TabOrder = 16
-        Titulo.Left = 16
+        TabOrder = 18
+        Titulo.Left = 152
         Titulo.Top = 131
         Titulo.Width = 51
         Titulo.Height = 13
@@ -708,8 +666,8 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         Width = 554
         Height = 112
         TabOrder = 43
-        ExplicitTop = 374
-        ExplicitWidth = 319
+        ExplicitTop = 303
+        ExplicitWidth = 554
         ExplicitHeight = 112
         inherited cxDBMemo1: TcxDBMemo
           ExplicitWidth = 550
@@ -738,6 +696,7 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         TamanhoCodigo = 0
         AutoPesquisa = True
         AutoCompletar = True
+        OnRegAchado = edtCFOPRegAchado
         UsaBtnNovo = False
         UsaBtnEditar = False
         UsaDisplay = True
@@ -1038,11 +997,8 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         Top = 105
         Width = 40
         Height = 21
-        TabStop = False
-        Color = clSkyBlue
         DataField = 'CRT'
         DataSource = DataItens
-        ReadOnly = True
         TabOrder = 13
         Titulo.Left = 272
         Titulo.Top = 90
@@ -1066,6 +1022,7 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         TamanhoCodigo = 0
         AutoPesquisa = True
         AutoCompletar = True
+        OnRegAchado = edtCSTRegAchado
         UsaBtnNovo = False
         UsaBtnEditar = False
         UsaDisplay = False
@@ -1249,6 +1206,7 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         TamanhoCodigo = 0
         AutoPesquisa = True
         AutoCompletar = True
+        OnRegAchado = edtCSOSNRegAchado
         UsaBtnNovo = False
         UsaBtnEditar = False
         UsaDisplay = False
@@ -1421,6 +1379,46 @@ inherited frmDlg_SaidaItem: TfrmDlg_SaidaItem
         Display.TabOrder = 46
         Display.Visible = False
         TamanhoDisplay = 50
+      end
+      object LabelDBEdit25: TLabelDBEdit
+        Left = 15
+        Top = 146
+        Width = 71
+        Height = 21
+        DataField = 'BASEIPI'
+        DataSource = DataItens
+        TabOrder = 16
+        Titulo.Left = 15
+        Titulo.Top = 131
+        Titulo.Width = 40
+        Titulo.Height = 13
+        Titulo.Caption = 'Base IPI'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
+      end
+      object LabelDBEdit24: TLabelDBEdit
+        Left = 92
+        Top = 146
+        Width = 48
+        Height = 21
+        DataField = 'ALIQIPI'
+        DataSource = DataItens
+        TabOrder = 17
+        Titulo.Left = 92
+        Titulo.Top = 131
+        Titulo.Width = 38
+        Titulo.Height = 13
+        Titulo.Caption = 'Aliq. IPI'
+        IsNull = True
+        PodeRepetir = True
+        CorPrincipal = clWhite
+        CorSecundaria = 11592447
+        GravaEsteCampo = True
+        AsInteger = 0
       end
     end
   end

@@ -25,8 +25,6 @@ type
     LabelDBEdit20: TLabelDBEdit;
     LabelDBEdit21: TLabelDBEdit;
     LabelDBEdit22: TLabelDBEdit;
-    LabelDBEdit25: TLabelDBEdit;
-    LabelDBEdit24: TLabelDBEdit;
     LabelDBEdit23: TLabelDBEdit;
     LabelDBEdit28: TLabelDBEdit;
     LabelDBEdit27: TLabelDBEdit;
@@ -49,27 +47,35 @@ type
     LabelDBEdit10: TLabelDBEdit;
     edtCST: TEditPesquisa;
     edtCSOSN: TEditPesquisa;
+    LabelDBEdit25: TLabelDBEdit;
+    LabelDBEdit24: TLabelDBEdit;
     procedure FormShow(Sender: TObject);
     procedure btnSeriaisClick(Sender: TObject);
     procedure edtProdutoRegAchado(const ValoresCamposEstra: array of Variant);
     procedure edtQuantidadeEnter(Sender: TObject);
     procedure edtPatrimonioRegAchado(
       const ValoresCamposEstra: array of Variant);
+    procedure edtCFOPRegAchado(const ValoresCamposEstra: array of Variant);
+    procedure edtCSTRegAchado(const ValoresCamposEstra: array of Variant);
+    procedure edtCSOSNRegAchado(const ValoresCamposEstra: array of Variant);
   private
     UsaSerial: Boolean;
     FDataSetSeriais: TpFIBClientDataSet;
     FIdCLiente: TipoCampoChave;
     FIdEmpresa: TipoCampoChave;
+    FTipoFrete: TTipoFrete;
     procedure SetDataSetSeriais(const Value: TpFIBClientDataSet);
     Procedure CalculaTotal;override;
     procedure SetIdCLiente(const Value: TipoCampoChave);
     procedure SetIdEmpresa(const Value: TipoCampoChave);
+    procedure SetTipoFrete(const Value: TTipoFrete);
     { Private declarations }
   public
     { Public declarations }
     property DataSetSeriais: TpFIBClientDataSet read FDataSetSeriais write SetDataSetSeriais;
     property IdCLiente: TipoCampoChave read FIdCLiente write SetIdCLiente;
     property IdEmpresa: TipoCampoChave  read FIdEmpresa write SetIdEmpresa;
+    property TipoFrete: TTipoFrete read FTipoFrete write SetTipoFrete;
   end;
 
 var
@@ -151,7 +157,7 @@ begin
                                   pDataSet.FieldByName('valortotal').AsCurrency,
                                   pDataSet.FieldByName('VALORFRETERATEADO').AsCurrency,
                                   pDataSet.FieldByName('VALORSEGURORATEADO').AsCurrency,
-                                  pDataSet.FieldByName('VALOROUTRASDESPESASRATEADO').AsCurrency ) do
+                                  pDataSet.FieldByName('VALOROUTRASDESPESASRATEADO').AsCurrency,FTipoFrete,Data ) do
    begin
      pDataSet.FieldByName('BASEICMS').AsCurrency := BaseICMS;
      pDataSet.FieldByName('ALIQICMS').AsCurrency := AliqICMS;
@@ -182,6 +188,30 @@ begin
 
 end;
 
+procedure TfrmDlg_SaidaItem.edtCFOPRegAchado(
+  const ValoresCamposEstra: array of Variant);
+begin
+  inherited;
+  if pDataSet.State <> dsBrowse then
+    CalculaTotal;
+end;
+
+procedure TfrmDlg_SaidaItem.edtCSOSNRegAchado(
+  const ValoresCamposEstra: array of Variant);
+begin
+  inherited;
+  if pDataSet.State <> dsBrowse then
+    CalculaTotal;
+end;
+
+procedure TfrmDlg_SaidaItem.edtCSTRegAchado(
+  const ValoresCamposEstra: array of Variant);
+begin
+  inherited;
+  if pDataSet.State <> dsBrowse then
+    CalculaTotal;
+end;
+
 procedure TfrmDlg_SaidaItem.edtPatrimonioRegAchado(
   const ValoresCamposEstra: array of Variant);
 begin
@@ -194,6 +224,7 @@ procedure TfrmDlg_SaidaItem.edtProdutoRegAchado(
 begin
   inherited;
   UsaSerial:= ValoresCamposEstra[10] = 'Y' ;
+  btnSeriais.Enabled := UsaSerial;
   if pDataSet.State in [dsEdit,dsInsert] then
   begin
     pDataSet.FieldByName('IDCODIGOMUNICIPAL').Value := ValoresCamposEstra[2];
@@ -247,6 +278,11 @@ end;
 procedure TfrmDlg_SaidaItem.SetIdEmpresa(const Value: TipoCampoChave);
 begin
   FIdEmpresa := Value;
+end;
+
+procedure TfrmDlg_SaidaItem.SetTipoFrete(const Value: TTipoFrete);
+begin
+  FTipoFrete := Value;
 end;
 
 end.

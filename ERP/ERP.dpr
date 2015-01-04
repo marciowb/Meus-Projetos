@@ -103,7 +103,8 @@ uses
   uDMHermes in 'uDMHermes.pas' {dmHermes: TDataModule},
   uNFSe in 'uNFSe.pas',
   uClassesERP in 'uClassesERP.pas',
-  uLst_LoteNotas in 'uLst_LoteNotas.pas' {frmLst_LoteNotas};
+  uLst_LoteNotas in 'uLst_LoteNotas.pas' {frmLst_LoteNotas},
+  uNFe in 'uNFe.pas';
 
 {$R *.res}
 

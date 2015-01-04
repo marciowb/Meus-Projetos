@@ -2,7 +2,6 @@ inherited frmLst_Empresa: TfrmLst_Empresa
   Caption = 'Cadastro de empresa'
   ClientHeight = 598
   ExplicitTop = -81
-  ExplicitWidth = 658
   ExplicitHeight = 637
   PixelsPerInch = 96
   TextHeight = 13
@@ -638,7 +637,6 @@ inherited frmLst_Empresa: TfrmLst_Empresa
               Caption = 'Geral'
               ImageIndex = 0
               ExplicitLeft = -2
-              ExplicitTop = 16
               object DBRadioGroup1: TDBRadioGroup
                 Left = 0
                 Top = 0
@@ -682,7 +680,6 @@ inherited frmLst_Empresa: TfrmLst_Empresa
                   ''
                   'P'
                   'H')
-                ExplicitTop = 55
               end
               object DBRadioGroup3: TDBRadioGroup
                 Left = 0
@@ -704,6 +701,86 @@ inherited frmLst_Empresa: TfrmLst_Empresa
                   ''
                   'P'
                   'H')
+              end
+              object LabelDBEdit14: TLabelDBEdit
+                Left = 8
+                Top = 142
+                Width = 49
+                Height = 21
+                DataField = 'ALIQPIS'
+                DataSource = DataCadastro
+                TabOrder = 3
+                Titulo.Left = 8
+                Titulo.Top = 127
+                Titulo.Width = 40
+                Titulo.Height = 13
+                Titulo.Caption = 'Aliq. PIS'
+                IsNull = True
+                PodeRepetir = True
+                CorPrincipal = clWhite
+                CorSecundaria = 11592447
+                GravaEsteCampo = True
+                AsInteger = 0
+              end
+              object LabelDBEdit15: TLabelDBEdit
+                Left = 63
+                Top = 142
+                Width = 66
+                Height = 21
+                DataField = 'ALIQCOFINS'
+                DataSource = DataCadastro
+                TabOrder = 4
+                Titulo.Left = 63
+                Titulo.Top = 127
+                Titulo.Width = 62
+                Titulo.Height = 13
+                Titulo.Caption = 'Aliq. COFINS'
+                IsNull = True
+                PodeRepetir = True
+                CorPrincipal = clWhite
+                CorSecundaria = 11592447
+                GravaEsteCampo = True
+                AsInteger = 0
+              end
+              object LabelDBEdit16: TLabelDBEdit
+                Left = 135
+                Top = 142
+                Width = 42
+                Height = 21
+                DataField = 'ALIQIR'
+                DataSource = DataCadastro
+                TabOrder = 5
+                Titulo.Left = 135
+                Titulo.Top = 127
+                Titulo.Width = 35
+                Titulo.Height = 13
+                Titulo.Caption = 'Aliq. IR'
+                IsNull = True
+                PodeRepetir = True
+                CorPrincipal = clWhite
+                CorSecundaria = 11592447
+                GravaEsteCampo = True
+                AsInteger = 0
+              end
+              object LabelDBEdit17: TLabelDBEdit
+                Left = 183
+                Top = 142
+                Width = 66
+                Height = 21
+                DataField = 'ALIQCSLL'
+                DataSource = DataCadastro
+                TabOrder = 6
+                Titulo.Left = 183
+                Titulo.Top = 127
+                Titulo.Width = 47
+                Titulo.Height = 13
+                Titulo.Caption = 'Aliq. CSLL'
+                IsNull = True
+                PodeRepetir = True
+                CorPrincipal = clWhite
+                CorSecundaria = 11592447
+                GravaEsteCampo = True
+                AsInteger = 0
               end
             end
             object cxTabSheet7: TcxTabSheet

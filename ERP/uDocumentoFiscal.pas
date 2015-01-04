@@ -116,6 +116,7 @@ interface
         procedure SetValorPIS(const Value: Currency);
         procedure SetValorCOFINS(const Value: Currency);
         procedure SetValorIR(const Value: Currency);
+        procedure SetAliqReducaoBaseICMS(const Value: Currency);
 
         function GetAliqCOFINS: Currency;
         function GetALiqCSLL: Currency;
@@ -139,6 +140,7 @@ interface
         function GetValorPIS: Currency;
         function GetValorCOFINS: Currency;
         function GetValorIR: Currency;
+        function GetAliqReducaoBaseICMS: Currency;
 
         property AliqICMS: Currency read GetAliqICMS write SetAliqICMS;
         property AliqISS: Currency read GetAliqISS write SetAliqISS;
@@ -168,6 +170,7 @@ interface
         property ValorCSLL: Currency read GetValorCSLL write SetValorCSLL;
         property ValorIR: Currency read GetValorIR write SetValorIR;
 
+        property AliqReducaoBaseICMS: Currency read GetAliqReducaoBaseICMS write SetAliqReducaoBaseICMS;
 
       end;
 
@@ -491,6 +494,8 @@ interface
         FALiqIR: Currency;
         FBaseIR: Currency;
         FValorIR: Currency;
+        FAliqReducaoBaseICMS: Currency;
+
         procedure SetAliqICMS(const Value: Currency);
         procedure SetAliqISS(const Value: Currency);
         function GetAliqICMS: Currency;
@@ -538,10 +543,11 @@ interface
         function GetALiqIR: Currency;
         function GetBaseIR: Currency;
         function GetValorIR: Currency;
+        Function GetAliqReducaoBaseICMS: Currency;
         procedure SetALiqIR(const Value: Currency);
         procedure SetBaseIR(const Value: Currency);
         procedure SetValorIR(const Value: Currency);
-
+        Procedure SetAliqReducaoBaseICMS(const Value: Currency);
 
       published
         property AliqICMS: Currency read GetAliqICMS write SetAliqICMS;
@@ -571,6 +577,8 @@ interface
         property ValorICMSST: Currency read GetValorICMSST write SetValorICMSST;
         property ValorCSLL: Currency read GetValorCSLL write SetValorCSLL;
         property ValorIR: Currency read GetValorIR write SetValorIR;
+
+        property AliqReducaoBaseICMS: Currency read GetAliqReducaoBaseICMS write SetAliqReducaoBaseICMS;
 
 
       end;
@@ -1120,6 +1128,11 @@ begin
   Result := FAliqPIS;
 end;
 
+function TImpostos.GetAliqReducaoBaseICMS: Currency;
+begin
+  Result := FAliqReducaoBaseICMS;
+end;
+
 function TImpostos.GetBaseCSLL: Currency;
 begin
   Result := FBaseCSLL;
@@ -1246,6 +1259,11 @@ end;
 procedure TImpostos.SetAliqPIS(const Value: Currency);
 begin
   FAliqPIS := Value;
+end;
+
+procedure TImpostos.SetAliqReducaoBaseICMS(const Value: Currency);
+begin
+  FAliqReducaoBaseICMS := Value;
 end;
 
 procedure TImpostos.SetBaseCSLL(const Value: Currency);

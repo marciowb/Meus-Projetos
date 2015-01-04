@@ -174,6 +174,7 @@ type
     procedure CdsItensAfterScroll(DataSet: TDataSet);
     procedure CdsItensBeforePost(DataSet: TDataSet);
     procedure grpViaTranporteChange(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     UfEmpresa: String;
@@ -181,7 +182,6 @@ type
     TotalPagamentos: Currency;
     FIdOS: TipoCampoChave;
     GeraFinanceiro: Boolean;
-    Procedure RestartaVenda;
     procedure CalculaTotalPagamentos;
     Procedure CalculaTotais(SemDesconAcrescimo: Boolean=False);
     procedure RateiaValores;
@@ -191,7 +191,7 @@ type
     { Public declarations }
     Procedure AbreVenda(IdVenda: TipoCampoChave);
     property IdOS: TipoCampoChave read FIdOS write SetIdOS;
-    Procedure GerarDocumentosFiscais;
+    Procedure RestartaVenda;
   end;
 
 var
@@ -232,9 +232,13 @@ begin
     frmDlg_SaidaItem.TipoMovimento := FTipoMovimento;
     frmDlg_SaidaItem.IdCLiente := edtPessoa.ValorChave;
     frmDlg_SaidaItem.IdEmpresa := edtEmpresa.ValorChave;
+    if CdsSaida.FieldByName('FLAGMODALIDADEFRETE').AsString = ModalidadeFreteEmitente then
+     frmDlg_SaidaItem.TipoFrete := tfEmitente
+    else
+     frmDlg_SaidaItem.TipoFrete := tfDestinatario;
     frmDlg_SaidaItem.ShowModal;
-    frmDlg_SaidaItem.ShowModal;
-    CalculaTotais;
+    RateiaValores;
+
   Finally
     FreeAndNil(frmDlg_SaidaItem);
   End;
@@ -265,12 +269,12 @@ begin
   begin
     CdsItens.Edit;
     CdsItens.FieldByName('FLAGEDICAO').AsString := 'D';
-    CdsItens.Post;
     TRegrasSaidaProduto.DesbloqueiaQuantidadeProduto(CdsItens.FieldByName('idsaida').Value,
                                                       edtEmpresa.ValorChave,
                                                       CdsItens.FieldByName('NUMITEM').Value);
 
-    CalculaTotais;
+    CdsItens.Post;
+    RateiaValores;
   end;
 
 end;
@@ -299,8 +303,14 @@ begin
     frmDlg_SaidaItem.TipoMovimento := FTipoMovimento;
     frmDlg_SaidaItem.IdCLiente := edtPessoa.ValorChave;
     frmDlg_SaidaItem.IdEmpresa := edtEmpresa.ValorChave;
+    if CdsSaida.FieldByName('FLAGMODALIDADEFRETE').AsString = ModalidadeFreteEmitente then
+     frmDlg_SaidaItem.TipoFrete := tfEmitente
+    else
+     frmDlg_SaidaItem.TipoFrete := tfDestinatario;
+
     frmDlg_SaidaItem.ShowModal;
-    CalculaTotais;
+    RateiaValores;
+
   Finally
     FreeAndNil(frmDlg_SaidaItem);
   End;
@@ -339,6 +349,8 @@ begin
     avisa('Deve existir pelo menos 1 item');
     Exit;
   end;
+
+
   CalculaTotalPagamentos;
 
   if (GeraFinanceiro) and (TotalPagamentos <> CdsSaida.FieldByName('VALORTOTALNOTA').AsCurrency) then
@@ -725,14 +737,25 @@ begin
   end;
 end;
 
-procedure TfrmSaida.GerarDocumentosFiscais;
+procedure TfrmSaida.FormShow(Sender: TObject);
 begin
+  inherited;
+  if edtFuncionario.Enabled Then
+    edtFuncionario.SetFocus
+  else
+  if edtEmpresa.Enabled Then
+    edtEmpresa.SetFocus
+  else
+  if edtOperacao.Enabled Then
+    edtOperacao.SetFocus;
 
 end;
+
 
 procedure TfrmSaida.grpFreteClick(Sender: TObject);
 begin
   inherited;
+  RateiaValores;
   CalculaTotais;
 end;
 
@@ -849,7 +872,27 @@ procedure TfrmSaida.RateiaValores;
 var
   Rat, AliqDesconto, ALiqAcrescimo,
   ValorDesconto, ValorAcrescimo: Currency;
+  FTipoFrete: TTipoFrete;
+  Desp, Frete,Seguro, IPI, ST: Currency;
 begin
+  Desp := CdsSaida.FieldByName('VALOROUTRASDESPESAS').AsCurrency;
+  Seguro := CdsSaida.FieldByName('VALORSEGURO').AsCurrency;
+  Frete := CdsSaida.FieldByName('VALORFRETE').AsCurrency;
+
+  CdsSaida.FieldByName('VALOROUTRASDESPESAS').AsCurrency := 0;
+  CdsSaida.FieldByName('VALORSEGURO').AsCurrency := 0;
+  CdsSaida.FieldByName('VALORFRETE').AsCurrency := 0;
+  Try
+    CalculaTotais;
+  Finally
+    CdsSaida.FieldByName('VALOROUTRASDESPESAS').AsCurrency := Desp;
+    CdsSaida.FieldByName('VALORSEGURO').AsCurrency := Seguro;
+    CdsSaida.FieldByName('VALORFRETE').AsCurrency := Frete;
+  End;
+
+  IPI := CdsSaida.FieldByName('VALORIPI').AsCurrency;
+  ST := CdsSaida.FieldByName('VALORST').AsCurrency;
+
   Try
     CdsItens.DisableControls;
     while not CdsItens.eof do
@@ -860,11 +903,59 @@ begin
       CdsItens.FieldByName('VALORDESCONTO').AsCurrency := RoundTo(CdsItens.FieldByName('SUBTOTAL').AsCurrency * CdsItens.FieldByName('ALIQDESCONTO').AsCurrency/100,-2);
       CdsItens.FieldByName('VALORACRESCIMO').AsCurrency := RoundTo(CdsItens.FieldByName('SUBTOTAL').AsCurrency * CdsItens.FieldByName('ALIQACRESCIMO').AsCurrency/100,-2);
 
-      Rat := (100-((CdsItens.FieldByName('VALORTOTAL').AsCurrency/ CdsSaida.FieldByName('VALORTOTALNOTA').AsCurrency) * 100))/100;
+      Rat := (CdsItens.FieldByName('VALORTOTAL').AsCurrency/ (CdsSaida.FieldByName('VALORTOTALNOTA').AsCurrency- IPI -ST));
 
-      CdsItens.FieldByName('VALORFRETERATEADO').AsCurrency :=  CdsSaida.FieldByName('VALORFRETE').AsCurrency * Rat;
-      CdsItens.FieldByName('VALORSEGURORATEADO').AsCurrency :=  CdsSaida.FieldByName('VALORSEGURO').AsCurrency * Rat;
-      CdsItens.FieldByName('VALOROUTRASDESPESASRATEADO').AsCurrency :=  CdsSaida.FieldByName('VALOROUTRASDESPESAS').AsCurrency * Rat;
+      CdsItens.FieldByName('VALORFRETERATEADO').AsCurrency :=  (CdsSaida.FieldByName('VALORFRETE').AsCurrency * Rat);
+      CdsItens.FieldByName('VALORSEGURORATEADO').AsCurrency :=  (CdsSaida.FieldByName('VALORSEGURO').AsCurrency * Rat);
+      CdsItens.FieldByName('VALOROUTRASDESPESASRATEADO').AsCurrency :=  (CdsSaida.FieldByName('VALOROUTRASDESPESAS').AsCurrency * Rat);
+
+     if CdsSaida.FieldByName('FLAGMODALIDADEFRETE').AsString = ModalidadeFreteEmitente then
+       FTipoFrete := tfEmitente
+     else
+       FTipoFrete := tfDestinatario;
+
+
+
+
+      with TRegrasImpostos.CalculaImpostos(edtPessoa.ValorChave,CdsItens.FieldByName('idproduto').AsString,
+                                  CdsItens.FieldByName('idcfop').AsString,edtEmpresa.ValorChave,
+                                  CdsItens.FieldByName('cst').AsString,
+                                  CdsItens.FieldByName('csosn').AsString,
+                                  CdsItens.FieldByName('valortotal').AsCurrency,
+                                  CdsItens.FieldByName('VALORFRETERATEADO').AsCurrency,
+                                  CdsItens.FieldByName('VALORSEGURORATEADO').AsCurrency,
+                                  CdsItens.FieldByName('VALOROUTRASDESPESASRATEADO').AsCurrency,FTipoFrete,
+                                  CdsSaida.FieldByName('data').AsDateTime ) do
+      begin
+         CdsItens.FieldByName('BASEICMS').AsCurrency := BaseICMS;
+         CdsItens.FieldByName('ALIQICMS').AsCurrency := AliqICMS;
+         CdsItens.FieldByName('VALORICMS').AsCurrency := ValorICMS;
+         CdsItens.FieldByName('BASEIPI').AsCurrency := BaseIPI;
+         CdsItens.FieldByName('ALIQIPI').AsCurrency := AliqIPI;
+         CdsItens.FieldByName('VALORIPI').AsCurrency := ValorIPI;
+         CdsItens.FieldByName('BASEICMSST').AsCurrency := BaseICMSST;
+         CdsItens.FieldByName('ALIQST').AsCurrency := AliqICMSST;
+         CdsItens.FieldByName('MVA').AsCurrency := MVA;
+         CdsItens.FieldByName('VALORST').AsCurrency := ValorICMSST;
+         CdsItens.FieldByName('BASEPISCOFINS').AsCurrency := BasePIS_COFINS;
+         CdsItens.FieldByName('ALIQPIS').AsCurrency := AliqPIS;
+         CdsItens.FieldByName('ALIQCOFINS').AsCurrency := AliqCOFINS;
+         CdsItens.FieldByName('VALORPIS').AsCurrency := ValorPIS;
+         CdsItens.FieldByName('VALORCOFINS').AsCurrency := ValorCOFINS;
+         CdsItens.FieldByName('BASEISS').AsCurrency := BaseISS;
+         CdsItens.FieldByName('ALIQISS').AsCurrency := AliqISS;
+         CdsItens.FieldByName('VALORISS').AsCurrency := ValorISS;
+         CdsItens.FieldByName('BASECSLL').AsCurrency := BaseCSLL;
+         CdsItens.FieldByName('ALIQCSLL').AsCurrency := ALiqCSLL;
+         CdsItens.FieldByName('VALORCSLL').AsCurrency := ValorCSLL;
+         CdsItens.FieldByName('BaseIRRF').AsCurrency := BaseIR;
+         CdsItens.FieldByName('ALIQIRRF').AsCurrency := ALiqIR;
+         CdsItens.FieldByName('ValorIRRF').AsCurrency := ValorIR;
+      end;
+
+
+
+
 
       CdsItens.Post;
       CdsItens.Next;

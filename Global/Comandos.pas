@@ -1019,6 +1019,11 @@ var
   LibHandle                 : THandle;
   ConsisteInscricaoEstadual : function (const Insc, UF: String): Integer; stdcall;
 begin
+  if (IE = '') or (LowerCase(IE) = 'isento')then
+  begin
+    Result := True;
+    Exit;
+  end;
 
   try
     LibHandle :=  LoadLibrary (PChar (Trim ('DllInscE32.Dll')));
@@ -1058,7 +1063,7 @@ begin
     Result := False;
   end else
   begin
-    if Length(trim(copy(Cep, 6, 3))) < 3 then
+    if Length(trim(copy(Cep, 5, 3))) < 3 then
       Result := False
     else
     if (UF = 'SP') and (cCEP1 >= 10) and (cCEP1 <= 199) then

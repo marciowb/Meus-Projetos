@@ -34,6 +34,9 @@ type
     vNotasColumn4: TcxGridDBColumn;
     BitBtn11: TBitBtn;
     actGerarDocumentos: TAction;
+    Panel1: TPanel;
+    BitBtn12: TBitBtn;
+    actImprimirNFSe: TAction;
     procedure FormCreate(Sender: TObject);
     procedure actGerarDocumentosExecute(Sender: TObject);
     procedure CdsListagemAfterScroll(DataSet: TDataSet);
@@ -43,6 +46,7 @@ type
     procedure CdsItensLoteNewRecord(DataSet: TDataSet);
     procedure TvNotasDblClick(Sender: TObject);
     procedure actExcluirExecute(Sender: TObject);
+    procedure actImprimirNFSeExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -96,6 +100,12 @@ begin
     CdsListagem.FreeBookmark(Sp);
   End;
 
+end;
+
+procedure TfrmLst_LoteNotas.actImprimirNFSeExecute(Sender: TObject);
+begin
+  inherited;
+  TRegrasLotesDocumentosFiscais.ImprimeNFSe(CdsItensLote.FieldByName('idsaida').AsString);
 end;
 
 procedure TfrmLst_LoteNotas.actNovoExecute(Sender: TObject);

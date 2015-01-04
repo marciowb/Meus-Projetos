@@ -436,15 +436,28 @@ end;
 
 
 class procedure TrotinasForms.AbreVenda(IdVenda: TipoCampoChave);
+var
+  frmSaidaTemp : TfrmSaida;
 begin
-  if not Assigned(frmSaida) Then
-    frmSaida := TfrmSaida.Create(nil);
-  if IdVenda <> SemID then
-    frmSaida.AbreVenda(IdVenda);
-  if frmSaida.Showing Then
-    frmSaida.BringToFront
-  else
-    frmSaida.Show;
+  if IdVenda = SemID then
+  begin
+    if not Assigned(frmSaida) Then
+      frmSaida := TfrmSaida.Create(nil);
+    if frmSaida.Showing Then
+      frmSaida.BringToFront
+    else
+      frmSaida.Show;
+  end else
+  begin
+    Try
+      frmSaidaTemp := TfrmSaida.Create(nil);
+      frmSaidaTemp.AbreVenda(IdVenda);
+      frmSaidaTemp.ShowModal;
+    Finally
+      FreeAndNil(frmSaidaTemp);
+    End;
+
+  end;
 end;
 
 class procedure TrotinasForms.AbreAliqICMS;

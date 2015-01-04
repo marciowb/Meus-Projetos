@@ -8,18 +8,18 @@ inherited frmLst_Saidas: TfrmLst_Saidas
   TextHeight = 13
   inherited pnlFiltros: TPanel
     Width = 1039
-    ExplicitWidth = 880
+    ExplicitWidth = 1039
   end
   inherited Panel2: TPanel
     Width = 1039
-    ExplicitWidth = 880
+    ExplicitWidth = 1039
     inherited BitBtn1: TBitBtn
       Left = 966
-      ExplicitLeft = 766
+      ExplicitLeft = 966
     end
     inherited BitBtn9: TBitBtn
       Left = 875
-      ExplicitLeft = 675
+      ExplicitLeft = 875
     end
     object BitBtn11: TBitBtn
       Left = 536
@@ -50,31 +50,31 @@ inherited frmLst_Saidas: TfrmLst_Saidas
     Top = 514
     Width = 1039
     ExplicitTop = 514
-    ExplicitWidth = 880
+    ExplicitWidth = 1039
   end
   inherited pnlCaption: TPanel
     Width = 1039
-    ExplicitWidth = 880
+    ExplicitWidth = 1039
     inherited Panel4: TPanel
       Left = 688
-      ExplicitLeft = 529
+      ExplicitLeft = 688
     end
   end
   inherited PageControl: TcxPageControl
     Width = 1039
     Height = 426
-    ExplicitWidth = 880
+    ExplicitWidth = 1039
     ExplicitHeight = 426
     ClientRectBottom = 426
     ClientRectRight = 1039
     inherited tsListagem: TcxTabSheet
       ExplicitTop = 20
-      ExplicitWidth = 880
+      ExplicitWidth = 1039
       ExplicitHeight = 406
       inherited cxGrid1: TcxGrid
         Width = 1039
         Height = 406
-        ExplicitWidth = 880
+        ExplicitWidth = 1039
         ExplicitHeight = 406
         inherited TvListagem: TcxGridDBTableView
           Styles.Inactive = nil

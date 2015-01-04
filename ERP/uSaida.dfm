@@ -1,12 +1,13 @@
 inherited frmSaida: TfrmSaida
   ActiveControl = edtFuncionario
   Caption = 'Sa'#237'da'
-  ClientHeight = 584
+  ClientHeight = 636
   ClientWidth = 1225
   Position = poDesigned
   WindowState = wsMaximized
+  ExplicitTop = -241
   ExplicitWidth = 1241
-  ExplicitHeight = 623
+  ExplicitHeight = 675
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -1393,22 +1394,23 @@ inherited frmSaida: TfrmSaida
     Left = 0
     Top = 150
     Width = 1225
-    Height = 244
+    Height = 296
     Align = alClient
     TabOrder = 1
     object GroupBox1: TGroupBox
       Left = 1
       Top = 1
       Width = 1223
-      Height = 120
+      Height = 172
       Align = alClient
       Caption = ' Itens '
       TabOrder = 0
+      ExplicitTop = 123
       object cxGrid1: TcxGrid
         Left = 2
         Top = 15
         Width = 1071
-        Height = 103
+        Height = 155
         Align = alClient
         TabOrder = 0
         object TvItens: TcxGridDBTableView
@@ -1577,12 +1579,12 @@ inherited frmSaida: TfrmSaida
         Left = 1073
         Top = 15
         Width = 148
-        Height = 103
+        Height = 155
         Align = alRight
         TabOrder = 1
         object BitBtn1: TBitBtn
           Left = 16
-          Top = 17
+          Top = 23
           Width = 121
           Height = 25
           Action = actNovoItem
@@ -1619,12 +1621,13 @@ inherited frmSaida: TfrmSaida
     end
     object GroupBox3: TGroupBox
       Left = 1
-      Top = 121
+      Top = 173
       Width = 1223
       Height = 122
       Align = alBottom
       Caption = ' Frete '
       TabOrder = 1
+      ExplicitTop = 1
       object Label2: TLabel
         Left = 525
         Top = 77
@@ -2008,7 +2011,7 @@ inherited frmSaida: TfrmSaida
       end
       object grpViaTranporte: TDBRadioGroup
         Left = 16
-        Top = 65
+        Top = 66
         Width = 409
         Height = 52
         Caption = ' Via de transporte '
@@ -2041,7 +2044,7 @@ inherited frmSaida: TfrmSaida
   end
   object Panel3: TPanel
     Left = 0
-    Top = 394
+    Top = 446
     Width = 1225
     Height = 190
     Align = alBottom

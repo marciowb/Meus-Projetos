@@ -4,7 +4,8 @@ interface
    uses
        MinhasClasses, uSQLERP,Comandos,Classes,SysUtils, Math,DB,pFIBClientDataSet,
        StrUtils,ulibERP, DateUtils, Generics.Collections,uDocumentoFiscal,ACBrNFSe,
-       ACBrNFSeDANFSeClass, pnfsNFSe,pcnConversao, pnfsConversao,uConstantes,uClassesERP;
+       ACBrNFSeDANFSeClass, pnfsNFSe,pcnConversao, pnfsConversao,uConstantes,
+       uClassesERP,ACBrNFSeDANFSeFR;
    type
      TNFSe = class
      Private
@@ -15,7 +16,14 @@ interface
        FCaminhoNFSe: String;
        FCaminhoXml: String;
        FCaminhoLogs: String;
+       FCaminhoNaoEnviado: String;
+       FCaminhoRPS: String;
+       FCaminhoRespostasWS: String;
+       FCaminhoPDF: String;
+       FCaminhoPastaCidade: String;
+
        fCodigoVerificacao: String;
+       FCaminhoNotas: String;
 
        Function GeraArquivo: TRetorno;
        function GetLote: String;
@@ -23,13 +31,31 @@ interface
        function GetProtocolo: String;
        function GetCodigoVerificacao: String;
        procedure SetLote(const Value: String);
+      function GetCaminhoLogs: String;
+      function GetCaminhoNaoEnviado: String;
+      function GetCaminhoNFSe: String;
+      function GetCaminhoPastaCidade: String;
+      function GetCaminhoPDF: String;
+      function GetCaminhoRespostasWS: String;
+      function GetCaminhoRPS: String;
+      function GetCaminhoXml: String;
      public
-       constructor Create(Const Docs: TList<IDocumentoFiscal>);
+       constructor Create(Const Docs: TList<IDocumentoFiscal>; pLote: String );
        destructor Destroy;
        property Lote: String read GetLote write SetLote;
        property Protocolo: String read GetProtocolo;
        property CodigoVerificacao: String read GetCodigoVerificacao;
        Function Enviar: TRetorno;
+       procedure Imprimir(Protocolo: String);
+       property CaminhoNFSe: String read GetCaminhoNFSe;
+       property CaminhoXml: String read GetCaminhoXml;
+       property CaminhoLogs: String read GetCaminhoLogs;
+       property CaminhoNaoEnviado: String read GetCaminhoNaoEnviado;
+       property CaminhoRPS: String read GetCaminhoRPS;
+       property CaminhoRespostasWS: String read GetCaminhoRespostasWS;
+       property CaminhoPDF: String read GetCaminhoPDF;
+       property CaminhoPastaCidade: String read GetCaminhoPastaCidade;
+       procedure SalvaLogoEmpresa(CampoImg: TField);
      end;
 
 
@@ -41,6 +67,7 @@ implementation
     SituacaoRioDeJaneiroProcessadoComErro: String ='3';
     SituacaoRioDeJaneiroProcessadoComSucesso: String ='4';
 
+    CodigoIBGERioDeJaneiro: Integer = 3304557;
 
 { TNFSe }
 
@@ -49,38 +76,48 @@ begin
 
 end;
 
-constructor TNFSe.Create(Const Docs: TList<IDocumentoFiscal>);
-var
- PathMensal: String;
+constructor TNFSe.Create(Const Docs: TList<IDocumentoFiscal>; pLote: String );
 begin
   FDocs := Docs;
+  fLote := pLote;
+
   NFSe := TACBrNFSe.Create(nil);
 
   FCaminhoNFSe := ExtractFilePath(ParamStr(0))+'NFSe';
-  FCaminhoXml :=FCaminhoNFSe+'\XML';
-  FCaminhoLogs :=FCaminhoNFSe+'\Log';
+  FCaminhoNotas := FCaminhoNFSe+'\Notas\'+FormatDateTime('yyyy-mm',Now)+'\'+FLote;
+  FCaminhoXml :=  FCaminhoNotas+'\XML\';
+  FCaminhoNaoEnviado := FCaminhoNotas+'\Saida\';
+  FCaminhoRPS := FCaminhoNotas;
+  FCaminhoLogs := FCaminhoNotas+'\Log\';
+  FCaminhoRespostasWS := FCaminhoNotas+'\RespostasWS\';
+  FCaminhoPDF := FCaminhoNotas+'\PDF\';
 
   ForceDirectories(FCaminhoNFSe);
+  ForceDirectories(FCaminhoNotas);
   ForceDirectories(FCaminhoXml);
   ForceDirectories(FCaminhoLogs);
-
-
-  NFSe.Configuracoes.Certificados.SelecionarCertificado;
+  ForceDirectories(FCaminhoNaoEnviado);
+  ForceDirectories(FCaminhoRPS);
+  ForceDirectories(FCaminhoRespostasWS);
+  ForceDirectories(FCaminhoPDF);
 
   NFSe.Configuracoes.Arquivos.AdicionarLiteral:=True;
   NFSe.Configuracoes.Arquivos.EmissaoPathNFSe:=True;
-  NFSe.Configuracoes.Arquivos.PastaMensal:=True;
+  NFSe.Configuracoes.Arquivos.PastaMensal:=False;
+
   NFSe.Configuracoes.Arquivos.PathCan:= FCaminhoLogs;
-  NFSe.Configuracoes.Arquivos.PathNFSe:= FCaminhoXml;
-  NFSe.Configuracoes.Arquivos.Salvar:=True;
-
-  PathMensal:= NFSe.Configuracoes.Arquivos.GetPathNFSe(0);
-
-  NFSe.Configuracoes.Geral.PathSchemas := FCaminhoNFSe+'\'+PastaRioDeJaneiro+'\Schemas\';
+  NFSe.Configuracoes.Arquivos.PathNFSe:= FCaminhoNaoEnviado;
+  NFSe.Configuracoes.Arquivos.PathRPS := FCaminhoRPS;
+  NFSe.Configuracoes.Arquivos.PathGer := FCaminhoRespostasWS;
   NFSe.Configuracoes.Geral.Salvar      := True;
-  NFSe.Configuracoes.Geral.PathSalvar  := FCaminhoLogs;
+  NFSe.Configuracoes.Geral.PathSalvar  := FCaminhoXml;
 
   NFSe.Configuracoes.WebServices.CodigoMunicipio := StrToIntDef(FDocs[0].Emitente.Endereco.CodigoMunicipio, 0);
+  if NFSe.Configuracoes.WebServices.CodigoMunicipio = CodigoIBGERioDeJaneiro then
+    FCaminhoPastaCidade := FCaminhoNFSe+'\'+PastaRioDeJaneiro+'\';
+
+  NFSe.Configuracoes.Geral.PathSchemas := FCaminhoPastaCidade+'\Schemas\';
+
   if FDocs[0].TipoAmbiente = uClassesERP.tabHomologacao Then
     NFSe.Configuracoes.WebServices.Ambiente := taHomologacao
   else
@@ -97,15 +134,6 @@ begin
   NFSe.Configuracoes.WebServices.ProxyPass := '';
 
   NFSe.Configuracoes.WebServices.SetConfigMunicipio(NFSe.Configuracoes.Geral.PathSchemas);
-
-  if NFSe.DANFSe <> nil then
-  begin
-  NFSe.DANFSe.Logo       := '';
-  NFSe.DANFSe.PrestLogo  := '';
-  NFSe.DANFSe.Prefeitura := '';
-  NFSe.DANFSe.PathPDF    := FCaminhoLogs;
-  end;
-
 
 
 end;
@@ -150,8 +178,9 @@ begin
          End;
 
 
-         { TODO : Fazer case por cidade }
-         Result.Erro := NFSe.WebServices.ConsSitLote.Situacao = SituacaoRioDeJaneiroProcessadoComErro;
+         if NFSe.Configuracoes.WebServices.CodigoMunicipio = CodigoIBGERioDeJaneiro then
+           Result.Erro := NFSe.WebServices.ConsSitLote.Situacao = SituacaoRioDeJaneiroProcessadoComErro;
+
          if Result.Erro then
          begin
             Result.Mensagem := NFSe.WebServices.ConsSitLote.Msg+'|'+NFSe.WebServices.ConsSitLote.RetWS;
@@ -175,6 +204,7 @@ var
   Arquivo: String;
   G: TGuid;
 begin
+   NFSe.Configuracoes.Certificados.SelecionarCertificado;
    Try
      Result.Erro := False;
   
@@ -398,8 +428,8 @@ begin
      {$EndRegion}
 
 
-     NFSe.GerarLote(Lote);
-     NFSe.NotasFiscais.SaveToFile(FCaminhoXml+'\.');
+     //NFSe.GerarLote(Lote);
+     NFSe.NotasFiscais.SaveToFile;
    Except
      on e: Exception do
      begin
@@ -410,6 +440,45 @@ begin
 end;
 
 
+function TNFSe.GetCaminhoLogs: String;
+begin
+  Result := FCaminhoLogs;
+end;
+
+function TNFSe.GetCaminhoNaoEnviado: String;
+begin
+  Result := FCaminhoNaoEnviado;
+end;
+
+function TNFSe.GetCaminhoNFSe: String;
+begin
+  Result := FCaminhoNFSe;
+end;
+
+function TNFSe.GetCaminhoPastaCidade: String;
+begin
+  Result := FCaminhoPastaCidade;
+end;
+
+function TNFSe.GetCaminhoPDF: String;
+begin
+  Result := FCaminhoPDF;
+end;
+
+function TNFSe.GetCaminhoRespostasWS: String;
+begin
+  Result := FCaminhoRespostasWS;
+end;
+
+function TNFSe.GetCaminhoRPS: String;
+begin
+  Result := FCaminhoRPS;
+end;
+
+function TNFSe.GetCaminhoXml: String;
+begin
+  Result := FCaminhoXml;
+end;
 
 function TNFSe.GetCodigoVerificacao: String;
 begin
@@ -439,6 +508,45 @@ end;
 function TNFSe.GetProtocolo: String;
 begin
    Result := FProtocolo;
+end;
+
+procedure TNFSe.Imprimir(Protocolo: String);
+var
+  Danfe: TACBrNFSeDANFSeFR;
+  pNFSe: TACBrNFSe;
+begin
+  Try
+    Danfe := TACBrNFSeDANFSeFR.Create(nil);
+    pNFSe := TACBrNFSe.Create(nil);
+    pNFSe.NotasFiscais.Clear;
+    pNFSe.NotasFiscais.LoadFromFile(FCaminhoRespostasWS+Protocolo+'-lista-nfse.xml');
+    pNFSe.DANFSe := Danfe;
+    Danfe.FastFile := FCaminhoNFSe+'\Danfe\DANFSE.fr3';
+    pNFSe.DANFSe.Logo       := FCaminhoPastaCidade+'Logo\Logo.bmp';
+    if FileExists(FCaminhoPastaCidade+'Logo\LogoEmpresa.bmp') then
+      pNFSe.DANFSe.PrestLogo  := FCaminhoPastaCidade+'Logo\LogoEmpresa.bmp';
+
+    if NFSe.Configuracoes.WebServices.CodigoMunicipio = CodigoIBGERioDeJaneiro then
+      pNFSe.DANFSe.Prefeitura := 'Rio de Janeiro';
+    pNFSe.DANFSe.PathPDF    := FCaminhoPDF;
+
+    pNFse.Configuracoes.Arquivos.NomeLongoNFSe := True;
+    pNFse.NotasFiscais.Imprimir;
+    pNFse.NotasFiscais.ImprimirPDF;
+
+
+
+  Finally
+    FreeAndNil(Danfe);
+    FreeAndNil(pNFSe);
+  End;
+
+end;
+
+procedure TNFSe.SalvaLogoEmpresa(CampoImg: TField);
+begin
+  if not CampoImg.IsNull then
+    TBlobField(CampoImg).SaveToFile(FCaminhoPastaCidade+'Logo\LogoEmpresa.bmp');
 end;
 
 procedure TNFSe.SetLote(const Value: String);

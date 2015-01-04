@@ -29,6 +29,8 @@ interface
 
     TTipoAmbiente = (tabHomologacao, tabProducao);
 
+    TTipoEmissaoNFE = (tenfeNormal, tenfeContingencia, tenfeSCAN, tenfeDPEC, tenfeFSDA, tenfeSVCAN, tenfeSVCRS, tenfeSVCSP, tenfeOffLine);
+
 
 
 implementation

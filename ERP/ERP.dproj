@@ -303,6 +303,7 @@
 			<DCCReference Include="uLst_LoteNotas.pas">
 				<Form>frmLst_LoteNotas</Form>
 			</DCCReference>
+			<DCCReference Include="uNFe.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

@@ -17,6 +17,7 @@ interface
     Procedure CriaDocumentoFiscal(Const DataSetNota, DataSetItens, DataSetCobranca: TDataSet; Var Doc: IDocumentoFiscal );
 
     Function TipoTransporteToStr(TipoTranp: TTipoTransporte):String;
+    Function StrToTipoTransporte(TipoTranp: String):TTipoTransporte;
 
 const
    SemID: TipoCampoChave = '-1';
@@ -86,8 +87,8 @@ var
   Item: IItemDocumento;
   Cob: TCobranca;
 begin
-  if  Assigned(Doc) then
-    Doc._Release;
+//  if  Assigned(Doc) then
+//    Doc._Release;
   Doc := TDocumentoFiscal.Create;
 
   {$Region 'Cria Emitente'}
@@ -359,6 +360,14 @@ begin
     DataSetCobranca.Next;
   end;
 
+  with (Doc as TDocumentoFiscal).VerificaDados do
+  begin
+    if Count > 0 then
+    begin
+      AvisaErro('Erros encontrados: '+sLineBreak+ Text);
+    end;
+    Free;
+  end;
 
 
 
@@ -388,6 +397,44 @@ begin
     ttEntrada_Ou_Saida_ficta:
       Result := TipoTransporteEntrada_Saida_ficta ;
   end;
+end;
+
+Function StrToTipoTransporte(TipoTranp: String):TTipoTransporte;
+begin
+  if TipoTranp = TipoTransporteMaritima  then
+    Result := ttMaritima
+  else
+  if TipoTranp = TipoTransporteFluvial  then
+    Result := ttFluvial
+  else
+  if TipoTranp = TipoTransporteLacustre  then
+    Result := ttLacustre
+  else
+  if TipoTranp = TipoTransporteAerea  then
+    Result := ttAerea
+  else
+  if TipoTranp = TipoTransportePostal  then
+    Result := ttPostal
+  else
+  if TipoTranp = TipoTransporteFerroviaria  then
+    Result := ttFerroviaria
+  else
+  if TipoTranp = TipoTransporteRodoviaria  then
+    Result := ttRodoviaria
+  else
+  if TipoTranp = TipoTransporteConduto_Rede_Transmissao  then
+    Result := ttMaritima
+  else
+  if TipoTranp = TipoTransporteConduto_Rede_Transmissao  then
+    Result := ttConduto_Rede_Transmissao
+  else
+  if TipoTranp = TipoTransporteMeios_Proprios  then
+    Result := ttMeios_Proprios
+  else
+  if TipoTranp = TipoTransporteEntrada_Saida_ficta  then
+    Result := ttEntrada_Ou_Saida_ficta;
+
+
 end;
 
 end.

@@ -61,7 +61,53 @@ interface
    TipoTransporteMeios_Proprios = '9';
    TipoTransporteEntrada_Saida_ficta = '10';
 
+   CFOPTipoeracaoEntradaDentroEstado: String = '0';
+   CFOPTipoeracaoEntradaForaEstado: String = '1';
+   CFOPTipoeracaoSaidaDentroEstado: String = '2';
+   CFOPTipoeracaoSaidaForaEstado: String = '3';
+   CFOPTipoeracaoImportacao: String = '4';
+   CFOPTipoeracaoExportacao: String = '5';
 
+
+
+   {$Region 'CST de PIS/COFINS'}
+    CST_PIS_COFINS_Operacao_Tributavel_com_Aliquota_Basica:String = '01';
+    CST_PIS_COFINS_Operacao_Tributavel_com_Aliquota_Diferenciada:String = '02';
+    CST_PIS_COFINS_Operacao_Tributavel_com_Aliquota_por_Unidade_de_Medida_de_Produto:String = '03';
+    CST_PIS_COFINS_Operacao_Tributavel_Monofasica_–_Revenda_a_Aliquota_Zero:String = '04';
+    CST_PIS_COFINS_Operacao_Tributavel_por_Substituicao_Tributaria:String = '05';
+    CST_PIS_COFINS_Operacao_Tributavel_a_Aliquota_Zero:String = '06';
+    CST_PIS_COFINS_Operacao_Isenta_da_Contribuicao:String = '07';
+    CST_PIS_COFINS_Operacao_sem_Incidencia_da_Contribuicao:String = '08';
+    CST_PIS_COFINS_Operacao_com_Suspensao_da_Contribuicao:String = '09';
+    CST_PIS_COFINS_Outras_Operacoes_de_Saida:String = '49';
+    CST_PIS_COFINS_Operacao_com_Direito_a_Credito_–_Vinculada_Exclusivamente_a_Receita_Tributada_no_Mercado_Interno:String = '50';
+    CST_PIS_COFINS_Operacao_com_Direito_a_Credito_–_Vinculada_Exclusivamente_a_Receita_Nao_Tributada_no_Mercado_Interno:String = '51';
+    CST_PIS_COFINS_Operacao_com_Direito_a_Credito_–_Vinculada_Exclusivamente_a_Receita_de_Exportacao:String = '52';
+    CST_PIS_COFINS_Operacao_com_Direito_a_Credito_–_Vinculada_a_Receitas_Tributadas_e_Nao_Tributadas_no_Mercado_Interno:String = '53';
+    CST_PIS_COFINS_Operacao_com_Direito_a_Credito_–_Vinculada_a_Receitas_Tributadas_no_Mercado_Interno_e_de_Exportacao:String = '54';
+    CST_PIS_COFINS_Operacao_com_Direito_a_Credito_–_Vinculada_a_Receitas_Nao_Tributadas_no_Mercado_Interno_e_de_Exportacao:String = '55';
+    CST_PIS_COFINS_Operacao_com_Direito_a_Credito_–_Vinculada_a_Receitas_Tributadas_e_Nao_Tributadas_no_Mercado_Interno_e_de_Exportacao:String = '56';
+    CST_PIS_COFINS_Credito_Presumido_–_Operacao_de_Aquisicao_Vinculada_Exclusivamente_a_Receita_Tributada_no_Mercado_Interno:String = '60';
+    CST_PIS_COFINS_Credito_Presumido_–_Operacao_de_Aquisicao_Vinculada_Exclusivamente_a_Receita_Nao_Tributada_no_Mercado_Interno:String = '61';
+    CST_PIS_COFINS_Credito_Presumido_–_Operacao_de_Aquisicao_Vinculada_Exclusivamente_a_Receita_de_Exportacao:String = '62';
+    CST_PIS_COFINS_Credito_Presumido_–_Operacao_de_Aquisicao_Vinculada_a_Receitas_Tributadas_e_Nao_Tributadas_no_Mercado_Interno:String = '63';
+    CST_PIS_COFINS_Credito_Presumido_–_Operacao_de_Aquisicao_Vinculada_a_Receitas_Tributadas_no_Mercado_Interno_e_de_Exportacao:String = '64';
+    CST_PIS_COFINS_Credito_Presumido_–_Operacao_de_Aquisicao_Vinculada_a_Receitas_Nao_Tributadas_no_Mercado_Interno_e_de_Exportacao:String = '65';
+    CST_PIS_COFINS_Credito_Presumido_–_Operacao_de_Aquisicao_Vinculada_a_Receitas_Tributadas_e_Nao_Tributadas_no_Mercado_Interno_e_de_Exportacao:String = '66';
+    CST_PIS_COFINS_Credito_Presumido_–_Outras_Operacoes:String = '67';
+    CST_PIS_COFINS_Operacao_de_Aquisicao_sem_Direito_a_Credito:String = '70';
+    CST_PIS_COFINS_Operacao_de_Aquisicao_com_Isencao:String = '71';
+    CST_PIS_COFINS_Operacao_de_Aquisicao_com_Suspensao:String = '72';
+    CST_PIS_COFINS_Operacao_de_Aquisicao_a_Aliquota_Zero:String = '73';
+    CST_PIS_COFINS_Operacao_de_Aquisicao_sem_Incidencia_da_Contribuicao:String = '74';
+    CST_PIS_COFINS_Operacao_de_Aquisicao_por_Substituicao_Tributaria:String = '75';
+    CST_PIS_COFINS_Outras_Operacoes_de_Entrada:String = '98';
+    CST_PIS_COFINS_Outras_Operacoes:String = '99';
+
+
+
+   {$EndRegion}
 
 
 implementation

@@ -79,6 +79,10 @@ type
     cxGrid2DBTableView1Column3: TcxGridDBColumn;
     DBRadioGroup2: TDBRadioGroup;
     DBRadioGroup3: TDBRadioGroup;
+    LabelDBEdit14: TLabelDBEdit;
+    LabelDBEdit15: TLabelDBEdit;
+    LabelDBEdit16: TLabelDBEdit;
+    LabelDBEdit17: TLabelDBEdit;
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
