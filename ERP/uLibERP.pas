@@ -14,7 +14,9 @@ interface
     Function TipoCampoChaveToStr(Valor: TipoCampoChave): String;
 
     function RoundTo5(Valor: Double; Casas: Integer): Double;
-    Procedure CriaDocumentoFiscal(Const DataSetNota, DataSetItens, DataSetCobranca: TDataSet; Var Doc: IDocumentoFiscal );
+    Procedure CriaDocumentoFiscal(Const DataSetNota, DataSetItens, DataSetCobranca: TDataSet; Var Doc: IDocumentoFiscal );overload;
+    Procedure CriaDocumentoFiscal(Const IdDocumento: TipoCampoChave ; Var Doc: IDocumentoFiscal );overload;
+//    Procedure CriaDocumentoFiscal(Const IdSaida: TipoCampoChave ; TipoDocumento: String; Var Doc: IDocumentoFiscal );overload;
 
     Function TipoTransporteToStr(TipoTranp: TTipoTransporte):String;
     Function StrToTipoTransporte(TipoTranp: String):TTipoTransporte;
@@ -370,6 +372,13 @@ begin
   end;
 
 
+
+end;
+
+Procedure CriaDocumentoFiscal(Const IdDocumento: TipoCampoChave ; Var Doc: IDocumentoFiscal );overload;
+var
+  DataSetDocumento, DataSetItens: TpFIBClientDataSet;
+begin
 
 end;
 

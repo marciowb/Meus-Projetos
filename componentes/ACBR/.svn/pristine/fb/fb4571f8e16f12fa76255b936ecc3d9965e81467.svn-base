@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Debug"/>
+    <Units Count="49">
+      <Unit0>
+        <Filename Value="ACBrNFe_demo.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ACBrNFE_Demo"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="51" Y="8"/>
+        <UsageCount Value="100"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="Unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="927"/>
+        <CursorPos X="27" Y="936"/>
+        <UsageCount Value="100"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="ufrmStatus.pas"/>
+        <ComponentName Value="frmStatus"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ufrmStatus"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="44" Y="8"/>
+        <UsageCount Value="7"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="C:\Fontes\ACBrNFe2\ACBrNFeNotasFiscais.pas"/>
+        <UnitName Value="ACBrNFeNotasFiscais"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="469"/>
+        <CursorPos X="1" Y="475"/>
+        <UsageCount Value="32"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="C:\Fontes\ACBrNFe2\ACBrNFeUtil.pas"/>
+        <UnitName Value="ACBrNFeUtil"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1480"/>
+        <CursorPos X="1" Y="1493"/>
+        <UsageCount Value="30"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="C:\Fontes\PCN2\pcnNFe.pas"/>
+        <UnitName Value="pcnNFe"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="36"/>
+        <CursorPos X="15" Y="66"/>
+        <UsageCount Value="3"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="C:\Fontes\PCN2\pcnValidador.pas"/>
+        <UnitName Value="pcnValidador"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="3"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="C:\Fontes\PCN2\pcnGerador.pas"/>
+        <UnitName Value="pcnGerador"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="3"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="C:\Fontes\PCN2\pcnSignature.pas"/>
+        <UnitName Value="pcnSignature"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="46"/>
+        <CursorPos X="64" Y="47"/>
+        <UsageCount Value="3"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="C:\Fontes\PCN2\pcnProcNFe.pas"/>
+        <UnitName Value="pcnProcNFe"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="224"/>
+        <CursorPos X="1" Y="260"/>
+        <UsageCount Value="3"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="C:\Fontes\PCN2\pcnNFeW.pas"/>
+        <UnitName Value="pcnNFeW"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="3"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="C:\Fontes\ACBrNFe2\ACBrNFeConfiguracoes.pas"/>
+        <UnitName Value="ACBrNFeConfiguracoes"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="127"/>
+        <CursorPos X="46" Y="148"/>
+        <UsageCount Value="3"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="C:\Fontes\ACBrNFe2\libxml2.pas"/>
+        <UnitName Value="libxml2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3670"/>
+        <CursorPos X="2" Y="3686"/>
+        <UsageCount Value="3"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="C:\Fontes\ACBrNFe2\libxmlsec.pas"/>
+        <UnitName Value="libxmlsec"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="893"/>
+        <CursorPos X="26" Y="923"/>
+        <UsageCount Value="5"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="C:\Fontes\ACBrNFe2\libxslt.pas"/>
+        <UnitName Value="libxslt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="3"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="C:\Fontes\ACBrNFe2\ACBrNFeDANFeRL.pas"/>
+        <ComponentName Value="frlDANFeRL"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ACBrNFeDANFeRL"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="422"/>
+        <CursorPos X="22" Y="458"/>
+        <UsageCount Value="11"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="C:\Fontes\ACBrNFe2\ACBrNFeDANFeRLClass.pas"/>
+        <UnitName Value="ACBrNFeDANFeRLClass"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="219"/>
+        <CursorPos X="1" Y="255"/>
+        <UsageCount Value="8"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="C:\lcl\include\control.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="2733"/>
+        <CursorPos X="1" Y="2742"/>
+        <UsageCount Value="7"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="C:\lcl\include\canvas.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1656"/>
+        <CursorPos X="1" Y="1672"/>
+        <UsageCount Value="4"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="C:\lcl\include\buttoncontrol.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="54"/>
+        <CursorPos X="28" Y="66"/>
+        <UsageCount Value="4"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="C:\Fontes\ACBrNFe2\ACBrNFeDANFeRLPaisagem.pas"/>
+        <ComponentName Value="frlDANFeRLPaisagem"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ACBrNFeDANFeRLPaisagem"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="127"/>
+        <CursorPos X="58" Y="145"/>
+        <UsageCount Value="5"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="C:\Fontes\ACBrNFe2\ACBrNFeDANFeRLRetrato.pas"/>
+        <UnitName Value="ACBrNFeDANFeRLRetrato"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="760"/>
+        <CursorPos X="1" Y="796"/>
+        <UsageCount Value="6"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="C:\Pacotes\Lazarus\Acbr-nfe2\PCN2.pas"/>
+        <UnitName Value="PCN2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="8"/>
+        <CursorPos X="12" Y="26"/>
+        <UsageCount Value="4"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="C:\Fontes\ACBrNFe2\ACBr_NFe2.pas"/>
+        <UnitName Value="ACBr_NFe2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="5"/>
+        <CursorPos X="12" Y="23"/>
+        <UsageCount Value="4"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="C:\Pacotes\Lazarus\Acbr-nfe2\ACBrNFeDanfeRLlpk.pas"/>
+        <UnitName Value="ACBrNFeDanfeRLlpk"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="3" Y="10"/>
+        <UsageCount Value="4"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="C:\Fontes\ACBrNFe2\ACBrNFe.pas"/>
+        <UnitName Value="ACBrNFe"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="6"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="C:\Fontes\ACBrNFe2\ACBrNFeWebServices.pas"/>
+        <UnitName Value="ACBrNFeWebServices"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="4"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="C:\Fontes\ACBrNFe2\ACBrNFeDMLaz.pas"/>
+        <UnitName Value="ACBrNFeDMLaz"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="22"/>
+        <CursorPos X="17" Y="44"/>
+        <UsageCount Value="4"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="C:\Pacotes\Lazarus\Acbr-nfe2\ACBr_NFe2.pas"/>
+        <UnitName Value="ACBr_NFe2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="5"/>
+        <CursorPos X="12" Y="23"/>
+        <UsageCount Value="4"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="Nova pasta\package\htmlsubs.pas"/>
+        <UnitName Value="Htmlsubs"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="486"/>
+        <CursorPos X="67" Y="502"/>
+        <UsageCount Value="6"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="Nova pasta\package\styleun.pas"/>
+        <UnitName Value="StyleUn"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="596"/>
+        <CursorPos X="50" Y="605"/>
+        <UsageCount Value="5"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="C:\lcl\graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="494"/>
+        <CursorPos X="3" Y="507"/>
+        <UsageCount Value="5"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="C:\fpc\2.7.1\source\packages\fcl-image\src\fpcanvas.pp"/>
+        <UnitName Value="FPCanvas"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="66"/>
+        <CursorPos X="3" Y="37"/>
+        <UsageCount Value="5"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="Nova pasta\package\htmlun2.pas"/>
+        <UnitName Value="htmlun2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="615"/>
+        <CursorPos X="14" Y="507"/>
+        <UsageCount Value="5"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="Nova pasta\package\ditherunit.pas"/>
+        <UnitName Value="DitherUnit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="867"/>
+        <CursorPos X="31" Y="879"/>
+        <UsageCount Value="5"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="C:\fpc\2.7.1\source\rtl\win32\classes.pp"/>
+        <UnitName Value="Classes"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="31"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="5"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="C:\Fontes\PCN2\pcnAuxiliar.pas"/>
+        <UnitName Value="pcnAuxiliar"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="931"/>
+        <CursorPos X="1" Y="950"/>
+        <UsageCount Value="9"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="..\..\..\Fontes\ACBrNFe2\ACBrNFeDANFeRL.pas"/>
+        <UnitName Value="ACBrNFeDANFeRL"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="99"/>
+        <CursorPos X="4" Y="108"/>
+        <UsageCount Value="9"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="..\..\..\Fontes\ACBrSerial\ACBrECF.pas"/>
+        <UnitName Value="ACBrECF"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1064"/>
+        <CursorPos X="23" Y="1075"/>
+        <UsageCount Value="9"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="..\..\..\Fontes\ACBrNFe2\ACBrNFeDANFeRLRetrato.pas"/>
+        <UnitName Value="ACBrNFeDANFeRLRetrato"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="131"/>
+        <CursorPos X="5" Y="140"/>
+        <UsageCount Value="9"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="..\..\..\Fontes\ACBrNFe2\ACBrNFeDANFeRLPaisagem.pas"/>
+        <UnitName Value="ACBrNFeDANFeRLPaisagem"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="135"/>
+        <CursorPos X="23" Y="144"/>
+        <UsageCount Value="9"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="..\..\..\Fontes\ACBrNFe2\ACBrNFeDANFeEventoRL.pas"/>
+        <ComponentName Value="frlDANFeEventoRL"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ACBrNFeDANFeEventoRL"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="44"/>
+        <CursorPos X="4" Y="53"/>
+        <UsageCount Value="9"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="..\..\..\Fontes\ACBrNFe2\ACBrNFeDANFeEventoRLRetrato.pas"/>
+        <ComponentName Value="frlDANFeEventoRLRetrato"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ACBrNFeDANFeEventoRLRetrato"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="46"/>
+        <CursorPos X="23" Y="55"/>
+        <UsageCount Value="9"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="Unit1.lfm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="31" Y="14"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="..\..\..\Fontes\ACBrNFe2\ACBrNFe.pas"/>
+        <UnitName Value="ACBrNFe"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="877"/>
+        <CursorPos X="27" Y="882"/>
+        <UsageCount Value="13"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="..\..\..\Fontes\ACBrNFe2\ACBrNFeWebServices.pas"/>
+        <UnitName Value="ACBrNFeWebServices"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="5137"/>
+        <CursorPos X="1" Y="5283"/>
+        <UsageCount Value="13"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="..\..\..\Fontes\ACBrComum\ACBrUtil.pas"/>
+        <UnitName Value="ACBrUtil"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="323"/>
+        <CursorPos X="14" Y="333"/>
+        <UsageCount Value="10"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="..\..\..\Fontes\ACBrCapicom\ACBrHTTPReqResp.pas"/>
+        <UnitName Value="ACBrHTTPReqResp"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="394"/>
+        <CursorPos X="22" Y="168"/>
+        <UsageCount Value="14"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="..\..\..\Fontes\ACBrNFe2\ACBrNFeUtil.pas"/>
+        <UnitName Value="ACBrNFeUtil"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="51"/>
+        <CursorPos X="25" Y="55"/>
+        <UsageCount Value="13"/>
+      </Unit48>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="7" HistoryIndex="6">
+      <Position1>
+        <Filename Value="Unit1.pas"/>
+        <Caret Line="2299" Column="1" TopLine="2297"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Unit1.pas"/>
+        <Caret Line="205" Column="13" TopLine="197"/>
+      </Position2>
+      <Position3>
+        <Filename Value="Unit1.pas"/>
+        <Caret Line="889" Column="1" TopLine="887"/>
+      </Position3>
+      <Position4>
+        <Filename Value="Unit1.pas"/>
+        <Caret Line="900" Column="39" TopLine="898"/>
+      </Position4>
+      <Position5>
+        <Filename Value="Unit1.pas"/>
+        <Caret Line="891" Column="57" TopLine="889"/>
+      </Position5>
+      <Position6>
+        <Filename Value="Unit1.pas"/>
+        <Caret Line="912" Column="58" TopLine="910"/>
+      </Position6>
+      <Position7>
+        <Filename Value="Unit1.pas"/>
+        <Caret Line="907" Column="58" TopLine="905"/>
+      </Position7>
+    </JumpHistory>
+  </ProjectSession>
+  <EditorMacros Count="0"/>
+</CONFIG>

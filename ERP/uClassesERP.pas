@@ -31,6 +31,7 @@ interface
 
     TTipoEmissaoNFE = (tenfeNormal, tenfeContingencia, tenfeSCAN, tenfeDPEC, tenfeFSDA, tenfeSVCAN, tenfeSVCRS, tenfeSVCSP, tenfeOffLine);
 
+    TTipoCancelamento = (tcErro_De_Emissao,tcOperacao_Nao_Concluido);
 
 
 implementation

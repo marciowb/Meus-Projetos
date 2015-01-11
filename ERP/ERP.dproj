@@ -304,6 +304,9 @@
 				<Form>frmLst_LoteNotas</Form>
 			</DCCReference>
 			<DCCReference Include="uNFe.pas"/>
+			<DCCReference Include="uDlg_CancelamentoDocumento.pas">
+				<Form>frmDlg_CancelamentoDocumento</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

@@ -104,7 +104,8 @@ uses
   uNFSe in 'uNFSe.pas',
   uClassesERP in 'uClassesERP.pas',
   uLst_LoteNotas in 'uLst_LoteNotas.pas' {frmLst_LoteNotas},
-  uNFe in 'uNFe.pas';
+  uNFe in 'uNFe.pas',
+  uDlg_CancelamentoDocumento in 'uDlg_CancelamentoDocumento.pas' {frmDlg_CancelamentoDocumento};
 
 {$R *.res}
 

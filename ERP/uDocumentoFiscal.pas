@@ -378,6 +378,10 @@ interface
         Procedure SetLoteSistema(const Value: String );
         Procedure SetProtocolo(const Value:  String);
         Procedure SetChaveAcesso(const Value: String);
+        Procedure SetXML(const Value: WideString);
+        procedure SetMotivoCancelamento(const Value: String);
+        procedure SetCancecelado(const Value: Boolean);
+        procedure SetTipoCancelamento(const Value: TTipoCancelamento);
 
         function GetANTT: String;
         function GetCobranca: TList<ICobranca>;
@@ -415,6 +419,10 @@ interface
         Function GetLoteSistema : String;
         Function GetProtocolo :String ;
         Function GetChaveAcesso: String;
+        Function GetXML: WideString;
+        function GetTipoCancelamento: TTipoCancelamento;
+        function GetCancecelado: Boolean;
+        function GetMotivoCancelamento: String;
 
         property Emitente: IEmitente read GetEmitente write SetEmitente;
         property Destinatario: IPessoa read GetDestinatario write SetDestinatario;
@@ -462,6 +470,10 @@ interface
         property LoteSistema:String read GetLoteSistema write SetLoteSistema;
         property Protocolo: String read GetProtocolo write SetProtocolo;
         property ChaveAcesso: String read GetChaveAcesso write SetChaveAcesso;
+        property XML: WideString read GetXML write SetXML;
+        property Cancecelado: Boolean read GetCancecelado write SetCancecelado;
+        property TipoCancelamento: TTipoCancelamento read GetTipoCancelamento write SetTipoCancelamento;
+        property MotivoCancelamento: String read GetMotivoCancelamento write SetMotivoCancelamento;
 
 
 
@@ -949,7 +961,10 @@ interface
         fLoteSistema: String;
         fProtocolo: String;
         fIdEmpresa: TipoCampoChave;
-
+        fXML: WideString;
+        FTipoCancelamento: TTipoCancelamento;
+        FCancecelado: Boolean;
+        FMotivoCancelamento: String;
 
         procedure SetANTT(const Value: String);
         procedure SetCobranca(const Value: TList<ICobranca>);
@@ -1024,6 +1039,14 @@ interface
         procedure SetProtocolo(const Value: String);
         function GetIdEmpresa: TipoCampoChave;
         procedure SetIdEmpresa(const Value: TipoCampoChave);
+        function GetXML: WideString;
+        procedure SetXML(const Value: WideString);
+        procedure SetTipoCancelamento(const Value: TTipoCancelamento);
+        function GetTipoCancelamento: TTipoCancelamento;
+        procedure SetCancecelado(const Value: Boolean);
+        function GetCancecelado: Boolean;
+        procedure SetMotivoCancelamento(const Value: String);
+        function GetMotivoCancelamento: String;
 
 
       published
@@ -1070,6 +1093,10 @@ interface
         property LoteSistema:String read GetLoteSistema write SetLoteSistema;
         property Protocolo: String read GetProtocolo write SetProtocolo;
         property ChaveAcesso: String read GetChaveAcesso write SetChaveAcesso;
+        property XML: WideString read GetXML write SetXML;
+        property Cancecelado: Boolean read GetCancecelado write SetCancecelado;
+        property TipoCancelamento: TTipoCancelamento read GetTipoCancelamento write SetTipoCancelamento;
+        property MotivoCancelamento: String read GetMotivoCancelamento write SetMotivoCancelamento;
 
 
         Property Cobranca: TList<ICobranca> read GetCobranca write SetCobranca;
@@ -2091,7 +2118,7 @@ begin
     Emitente:= TEmitente.Create;
     Servicos:= TList<IItemDocumento>.Create;
     Produtos:=  TList<IItemDocumento>.Create;
-
+    FCancecelado := False;
 
 end;
 
@@ -2099,6 +2126,11 @@ end;
 function TDocumentoFiscal.GetANTT: String;
 begin
   Result := FANTT;
+end;
+
+function TDocumentoFiscal.GetCancecelado: Boolean;
+begin
+   Result := FCancecelado;
 end;
 
 function TDocumentoFiscal.GetChaveAcesso: String;
@@ -2171,6 +2203,11 @@ begin
   Result := FMarca;
 end;
 
+function TDocumentoFiscal.GetMotivoCancelamento: String;
+begin
+  Result := FMotivoCancelamento;
+end;
+
 function TDocumentoFiscal.GetNumeroNota: String;
 begin
    Result := FNumeroNota;
@@ -2225,6 +2262,11 @@ end;
 function TDocumentoFiscal.GetTipoAmbiente: uClassesERP.TTipoAmbiente;
 begin
   Result := FTipoAmbiente;
+end;
+
+function TDocumentoFiscal.GetTipoCancelamento: TTipoCancelamento;
+begin
+  Result := FTipoCancelamento;
 end;
 
 function TDocumentoFiscal.GetTipoDocumento: TTipoDocumento;
@@ -2327,9 +2369,19 @@ begin
   Result := FVolume;
 end;
 
+function TDocumentoFiscal.GetXML: WideString;
+begin
+  Result := fXML;
+end;
+
 procedure TDocumentoFiscal.SetANTT(const Value: String);
 begin
   FANTT := Value;
+end;
+
+procedure TDocumentoFiscal.SetCancecelado(const Value: Boolean);
+begin
+  FCancecelado := Value;
 end;
 
 procedure TDocumentoFiscal.SetChaveAcesso(const Value: String);
@@ -2404,6 +2456,11 @@ begin
   FMarca := Value;
 end;
 
+procedure TDocumentoFiscal.SetMotivoCancelamento(const Value: String);
+begin
+  FMotivoCancelamento := Value;
+end;
+
 procedure TDocumentoFiscal.SetNumeroNota(const Value: String);
 begin
    FNumeroNota := Value;
@@ -2458,6 +2515,11 @@ end;
 procedure TDocumentoFiscal.SetTipoAmbiente(const Value: uClassesERP.TTipoAmbiente);
 begin
   FTipoAmbiente := Value;
+end;
+
+procedure TDocumentoFiscal.SetTipoCancelamento(const Value: TTipoCancelamento);
+begin
+  FTipoCancelamento := Value;
 end;
 
 procedure TDocumentoFiscal.SetTipoDocumento(const Value: TTipoDocumento);
@@ -2515,6 +2577,11 @@ begin
   FVolume := Value;
 end;
 
+
+procedure TDocumentoFiscal.SetXML(const Value: WideString);
+begin
+  fXML := Value;
+end;
 
 Function TDocumentoFiscal.VerificaDados: TStringList;
 var

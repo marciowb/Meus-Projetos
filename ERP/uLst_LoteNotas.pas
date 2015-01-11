@@ -37,6 +37,8 @@ type
     Panel1: TPanel;
     BitBtn12: TBitBtn;
     actImprimirNFSe: TAction;
+    BitBtn13: TBitBtn;
+    actCancelarNFSe: TAction;
     procedure FormCreate(Sender: TObject);
     procedure actGerarDocumentosExecute(Sender: TObject);
     procedure CdsListagemAfterScroll(DataSet: TDataSet);
@@ -47,6 +49,7 @@ type
     procedure TvNotasDblClick(Sender: TObject);
     procedure actExcluirExecute(Sender: TObject);
     procedure actImprimirNFSeExecute(Sender: TObject);
+    procedure actCancelarNFSeExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,9 +63,30 @@ var
 implementation
 
 uses MinhasClasses, Comandos, uLibERP, uRegras, uClassesERP, uForms,
-  uConstantes;
+  uConstantes, uDlg_CancelamentoDocumento;
 
 {$R *.dfm}
+
+procedure TfrmLst_LoteNotas.actCancelarNFSeExecute(Sender: TObject);
+var
+  TipoCanc: TTipoCancelamento;
+begin
+  inherited;
+  Try
+    frmDlg_CancelamentoDocumento := TfrmDlg_CancelamentoDocumento.Create(nil);
+    If frmDlg_CancelamentoDocumento.ShowModal = mrOk Then
+    Begin
+      case frmDlg_CancelamentoDocumento.grpMotivoCancelamento.ItemIndex of
+        0: TipoCanc := tcErro_De_Emissao;
+        1: TipoCanc := tcOperacao_Nao_Concluido;
+      end;
+      TRegrasLotesDocumentosFiscais.CancelaNFSe(CdsItensLote.FieldByName('idsaida').AsString,TipoCanc,frmDlg_CancelamentoDocumento.mmDealhes.Text);
+    End;
+
+  Finally
+    FreeAndNil(frmDlg_CancelamentoDocumento);
+  End;
+end;
 
 procedure TfrmLst_LoteNotas.actExcluirExecute(Sender: TObject);
 begin

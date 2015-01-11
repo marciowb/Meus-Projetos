@@ -2,7 +2,7 @@ inherited frmLst_LoteNotas: TfrmLst_LoteNotas
   Caption = 'Listagem de Lotes de Nota'
   ClientHeight = 529
   ClientWidth = 877
-  ExplicitTop = -134
+  ExplicitTop = -35
   ExplicitWidth = 893
   ExplicitHeight = 568
   PixelsPerInch = 96
@@ -151,8 +151,8 @@ inherited frmLst_LoteNotas: TfrmLst_LoteNotas
           BevelOuter = bvNone
           TabOrder = 1
           object BitBtn12: TBitBtn
-            Left = 8
-            Top = 24
+            Left = 6
+            Top = 13
             Width = 137
             Height = 41
             Action = actImprimirNFSe
@@ -160,6 +160,17 @@ inherited frmLst_LoteNotas: TfrmLst_LoteNotas
             DoubleBuffered = True
             ParentDoubleBuffered = False
             TabOrder = 0
+          end
+          object BitBtn13: TBitBtn
+            Left = 6
+            Top = 57
+            Width = 137
+            Height = 41
+            Action = actCancelarNFSe
+            Caption = 'Cancelar NFS-e'
+            DoubleBuffered = True
+            ParentDoubleBuffered = False
+            TabOrder = 1
           end
         end
       end
@@ -196,6 +207,11 @@ inherited frmLst_LoteNotas: TfrmLst_LoteNotas
       Caption = 'Imprimir RPS'
       ImageIndex = 19
       OnExecute = actImprimirNFSeExecute
+    end
+    object actCancelarNFSe: TAction
+      Caption = 'Cancelar NFS-e'
+      ImageIndex = 8
+      OnExecute = actCancelarNFSeExecute
     end
   end
   object DataItens: TDataSource

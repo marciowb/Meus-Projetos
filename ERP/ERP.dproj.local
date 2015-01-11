@@ -130,5 +130,7 @@
     <Transaction>2014/12/21 05:45:46.455.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uClassesERP.pas</Transaction>
     <Transaction>2014/12/21 06:36:19.742.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uLst_LoteNotas.pas</Transaction>
     <Transaction>2014/12/21 06:36:19.742.dfm,D:\Meus Projetos\ERP\Unit1.dfm=D:\Meus Projetos\ERP\uLst_LoteNotas.dfm</Transaction>
+    <Transaction>2015/01/11 05:56:00.814.pas,D:\Meus Projetos\ERP\Unit1.pas=D:\Meus Projetos\ERP\uDlg_CancelamentoDocumento.pas</Transaction>
+    <Transaction>2015/01/11 05:56:00.814.dfm,D:\Meus Projetos\ERP\Unit1.dfm=D:\Meus Projetos\ERP\uDlg_CancelamentoDocumento.dfm</Transaction>
   </Transactions>
 </BorlandProject>

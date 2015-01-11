@@ -89,6 +89,7 @@ interface
      class Procedure ProcessaLote(IdLote:TipoCampoChave; NumeroLote: String );
      class procedure GravaDocumento(Doc: IDocumentoFiscal);
      class Procedure ImprimeNFSe(IdSaida: TipoCampoChave);
+     class Procedure CancelaNFSe(IdSaida: TipoCampoChave; TipoCancelamento: TTipoCancelamento; Motivo: String);
    end;
 
 implementation
@@ -394,7 +395,7 @@ end;
 class function TRegrasSaidaProduto.GetNumeroNota(
   TipoDocumento: TTipoDocumento; IdEmpresa:TipoCampoChave; Serie: String ): String;
 var
-  Flag: String;
+  Flag, StrSQL: String;
 begin
    if TipoDocumento =  tdNFSe  then
      Flag := NumeracaoNotaSaidaNFSe;
@@ -405,6 +406,24 @@ begin
                                                  ' and FLAGTIPODOCUMENTO = '+QuotedStr(Flag)+
                                                  ' and serie = '+QuotedStr(Serie),'NUMEROATUAL' );
    Result :=  FormatFloat('000000', StrToIntDef(Result,0)+1);
+   StrSQL:=
+     'UPDATE NUMERACAONOTASAIDA '+
+     '   SET NUMEROATUAL = ' +QuotedStr(Result)+
+     ' WHERE idempresa = '+TipoCampoChaveToStr(IdEmpresa)+
+     '   and FLAGTIPODOCUMENTO = '+QuotedStr(Flag)+
+     '   and serie = '+QuotedStr(Serie);
+   try
+     StartTrans();
+     Exec_SQL(StrSQL);
+     Commit();
+   except
+     on E: Exception do
+     begin
+       RollBack();
+       Raise;
+     end;
+   end;
+
 end;
 
 class function TRegrasSaidaProduto.GravaSaida(const DataSetSaida,
@@ -1147,6 +1166,67 @@ begin
 
 end;
 
+class procedure TRegrasLotesDocumentosFiscais.CancelaNFSe(
+  IdSaida: TipoCampoChave; TipoCancelamento: TTipoCancelamento; Motivo: String);
+var
+  StrSQL: String;
+  Nfse : TNFSe;
+  Doc: IDocumentoFiscal;
+  DocsNFSe: TList<IDocumentoFiscal>;
+  DataSetNota, DataSetItens, DataSetCobranca: TpFIBClientDataSet;
+begin
+  Try
+    DocsNFSe := TList<IDocumentoFiscal>.Create;
+    DataSetNota := TpFIBClientDataSet.Create(nil);
+    DataSetItens := TpFIBClientDataSet.Create(nil);
+    DataSetCobranca := TpFIBClientDataSet.Create(nil);
+
+    SetCds(DataSetNota,tpERPSaida,'idsaida = '+TipoCampoChaveToStr(IdSaida));
+    SetCds(DataSetItens,tpERPSaidaProduto,'idsaida = '+TipoCampoChaveToStr(IdSaida));
+    SetCds(DataSetCobranca,tpERPSaidaCondicaoPagamento,'idsaida = '+TipoCampoChaveToStr(IdSaida));
+    CriaDocumentoFiscal(DataSetNota,DataSetItens,DataSetCobranca, Doc);
+    DocsNFSe.Add(Doc);
+    StrSQL:=
+      'SELECT FIRST 1  D.PROTOCOLO, D.LOTE,D.SERIE , D.NUMERO'+
+      '  FROM DOCUMENTO D '+
+      '  WHERE D.IDSAIDA = '+TipoCampoChaveToStr(IdSaida)+
+      '    AND D.TIPODOCUMENTO = '+QuotedStr(NumeracaoNotaSaidaNFSe)+
+      '  ORDER BY D.REVISAO DESC ';
+
+    WITH GetCds(StrSQL) do
+    begin
+      DocsNFSe[0].NumeroNota := FieldByName('NUMERO').AsString;
+      DocsNFSe[0].SerieNota := FieldByName('SERIE').AsString;
+
+      Nfse := TNFSe.Create(DocsNFSe,FieldByName('LOTE').AsString);
+      with NFSe.CancelarNota(FieldByName('PROTOCOLO').AsString, TipoCancelamento) do
+      begin
+        if not Erro then
+        begin
+          Doc.TipoCancelamento := TipoCancelamento;
+          Doc.MotivoCancelamento := Motivo;
+          Doc.Cancecelado := True;
+          TRegrasLotesDocumentosFiscais.GravaDocumento(Doc);
+        end else
+          AvisaErro(Mensagem);
+      end;
+
+      Free;
+    end;
+
+
+
+  Finally
+    FreeAndNil(Nfse);
+    FreeAndNil(DataSetNota);
+    FreeAndNil(DataSetItens);
+    FreeAndNil(DataSetCobranca);
+    FreeAndNil(DocsNFSe);
+    if Assigned(Doc) then
+      Doc._Release;
+  End;
+end;
+
 class procedure TRegrasLotesDocumentosFiscais.GeraDocumentosFiscais(
   IdLote: TipoCampoChave; NumeroLote: String; Out RespostaNFSe: TRetorno; Out RespostaNFe: TRetorno);
 var
@@ -1238,7 +1318,8 @@ begin
           begin
             DocsNFSe.Items[i].LoteSistema := NumeroLote;
             DocsNFSe.Items[i].Protocolo := Nfse.Protocolo;
-            DocsNFSe.Items[i].ChaveAcesso := Nfse.CodigoVerificacao;
+            DocsNFSe.Items[i].ChaveAcesso := Nfse.DocumentosProcessados[i].ChaveAcesso;
+            DocsNFSe.Items[i].XML := Nfse.DocumentosProcessados[i].XML;
             GravaDocumento(DocsNFSe.Items[i]);
           end;
 
@@ -1366,7 +1447,12 @@ begin
       '                       IDEMPRESA,  '+
       '                       PROTOCOLO,'+
       '                       CHAVEACESSO,'+
-      '                       LOTE   ) '+
+      '                       LOTE,' +
+      '                       XML,'+
+      '                       FLAGCANCELADO,'+
+      '                       TIPOCANCELAMENTO,'+
+      '                       MOTIVOCANCELAMENTO,'+
+      '                       DATAHORACANCELAMENTO      ) '+
       'VALUES ( '+QuotedStr(Id)+','+
                 GetData(Doc.DataNota)+','+
                 'current_time,'+ //Hora Nota
@@ -1457,7 +1543,12 @@ begin
                TipoCampoChaveToStr(Doc.IdEmpresa)+','+
                GetStr(Doc.Protocolo)+','+
                GetStr(Doc.ChaveAcesso)+','+
-               GetStr(Doc.LoteSistema)+');';
+               GetStr(Doc.LoteSistema)+','+
+               GetStr(Doc.XML)+','+
+               GetStr(IfThen(Doc.Cancecelado,'Y','N'))+','+
+               GetStr(IfThen(Doc.TipoCancelamento = tcErro_De_Emissao, 'E','O' ))+','+
+               GetStr(Doc.MotivoCancelamento)+','+
+               IfThen(Doc.Cancecelado,'current_timestamp','null')+  ');';
 
 
     Exec_SQL(StrSQL);
