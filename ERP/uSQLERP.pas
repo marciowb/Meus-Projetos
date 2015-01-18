@@ -1626,7 +1626,7 @@ begin
           DesconsiderarCampos := 'FLAGEDICAO;DESCRICAO_ST;ST';
           Versao20:= True;
           Select :=
-             'SELECT CST.IDCFOPCST, CST.IDCFOP, CST.CST, CST.CSOSN,S.DESCRICAO_ST,''N'' FLAGEDICAO, S.ST '+
+             'SELECT CST.IDCFOPCST, CST.IDCFOP, CST.CST, S.DESCRICAO_ST,''N'' FLAGEDICAO, S.ST '+
              '  FROM CFOPCST CST '+
              '  LEFT JOIN (SELECT DISTINCT ST, DESCRICAO_ST '+
              '               FROM VW_SITUACAO_TRIBUTARIA) S '+
@@ -1718,6 +1718,26 @@ begin
             '      ON (F.IDFORNECEDOR = S.IDFORNECEDOR)'+
             ' WHERE 1=1 '+Complemento;
        end;
+
+      tpERPCSOSN_CFOP:
+         begin
+          CampoChave := 'IDCFOPCSOSN';
+          CampoDisplay := 'DESCRICAO';
+          NomeTabela := 'CFOPCSOSN';
+          CampoCodigo :='CSOSN';
+          DescricaoCampoDisplay := 'Descrição';
+          DescricaoTabela := 'CSOSN/CFOP';
+          DesconsiderarCampos := 'FLAGEDICAO;DESCRICAO';
+          Versao20:= True;
+          Select :=
+             'SELECT CST.IDCFOPCSOSN, CST.IDCFOP, CST.CSOSN, S.DESCRICAO,''N'' FLAGEDICAO '+
+             '  FROM CFOPCSOSN CST '+
+             ' inner JOIN VW_CSOSN S '+
+             '    ON (S.CSOSN = CST.CSOSN) '+
+             ' WHERE 1=1 '+Complemento;
+        end;
+
+
     end;
   End;
 

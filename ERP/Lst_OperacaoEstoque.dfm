@@ -1,27 +1,29 @@
 inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
   Caption = 'Opera'#231#227'o de estoque'
   ClientHeight = 466
+  ExplicitTop = -64
+  ExplicitWidth = 658
   ExplicitHeight = 505
   PixelsPerInch = 96
   TextHeight = 13
   inherited Status: TStatusBar
     Top = 447
-    ExplicitTop = 415
+    ExplicitTop = 447
   end
   inherited Panel1: TPanel
     Height = 447
-    ExplicitHeight = 415
+    ExplicitHeight = 447
     inherited cxSplitter1: TcxSplitter
       Height = 417
-      ExplicitHeight = 385
+      ExplicitHeight = 417
     end
     inherited Panel3: TPanel
       Height = 417
-      ExplicitHeight = 385
+      ExplicitHeight = 417
       inherited Panel4: TPanel
         Top = 376
         TabOrder = 8
-        ExplicitTop = 344
+        ExplicitTop = 376
       end
       object LabelDBEdit1: TLabelDBEdit
         Left = 16
@@ -47,23 +49,31 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
         Left = 16
         Top = 99
         Width = 265
-        Height = 46
+        Height = 50
         Caption = ' Tipo de opera'#231#227'o '
-        Columns = 2
+        Columns = 3
         DataField = 'FLAGTIPOOPERACAO'
         DataSource = DataCadastro
         Items.Strings = (
           'Entrada'
-          'Sa'#237'da')
+          'Saida'
+          'Devolu'#231#227'o'
+          'Transfer'#234'ncia'
+          'Exporta'#231#227'o'
+          'Importa'#231#227'o')
         ParentBackground = True
         TabOrder = 2
         Values.Strings = (
           'E'
-          'S')
+          'S'
+          'D'
+          'T'
+          'X'
+          'I')
       end
       object cxDBCheckBox1: TcxDBCheckBox
         Left = 16
-        Top = 280
+        Top = 296
         Caption = 'Venda'
         DataBinding.DataField = 'FLAGVENDA'
         DataBinding.DataSource = DataCadastro
@@ -75,7 +85,7 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
       end
       object DBRadioGroup2: TDBRadioGroup
         Left = 16
-        Top = 151
+        Top = 159
         Width = 265
         Height = 50
         Caption = ' Tipo de pessoa '
@@ -93,7 +103,7 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
       end
       object cxDBCheckBox2: TcxDBCheckBox
         Left = 143
-        Top = 280
+        Top = 296
         Caption = 'Gera financeiro'
         DataBinding.DataField = 'FLAGGERAFINANCEIRO'
         DataBinding.DataSource = DataCadastro
@@ -105,7 +115,7 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
       end
       object cxDBCheckBox3: TcxDBCheckBox
         Left = 16
-        Top = 307
+        Top = 323
         Caption = 'Movimenta estoque'
         DataBinding.DataField = 'FLAGMOVIMENTAESTOQUE'
         DataBinding.DataSource = DataCadastro
@@ -117,7 +127,7 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
       end
       object DBRadioGroup3: TDBRadioGroup
         Left = 16
-        Top = 207
+        Top = 223
         Width = 265
         Height = 61
         Caption = ' Tipo de documento'
@@ -141,7 +151,7 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
       end
       object cxDBCheckBox4: TcxDBCheckBox
         Left = 143
-        Top = 307
+        Top = 323
         Caption = 'Movimenta patrim'#244'nio'
         DataBinding.DataField = 'FLAGMOVPATRIMONIO'
         DataBinding.DataSource = DataCadastro
@@ -153,7 +163,7 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
       end
       object cxDBCheckBox5: TcxDBCheckBox
         Left = 16
-        Top = 331
+        Top = 347
         Caption = 'Contabiliza receita bruta'
         DataBinding.DataField = 'FLAGCONTABILIZARECEITABRUTA'
         DataBinding.DataSource = DataCadastro
@@ -192,22 +202,22 @@ inherited frmLst_OperacaoEstoque: TfrmLst_OperacaoEstoque
     end
     inherited Panel2: TPanel
       Height = 417
-      ExplicitHeight = 385
+      ExplicitHeight = 417
       inherited PageControl: TcxPageControl
         Height = 415
-        ExplicitHeight = 383
+        ExplicitHeight = 415
         ClientRectBottom = 411
         inherited tsGrid: TcxTabSheet
           ExplicitLeft = 4
           ExplicitTop = 24
           ExplicitWidth = 293
-          ExplicitHeight = 355
+          ExplicitHeight = 387
           inherited pnlGrid: TPanel
             Height = 387
-            ExplicitHeight = 355
+            ExplicitHeight = 387
             inherited TvCadastro: TcxGrid
               Height = 387
-              ExplicitHeight = 355
+              ExplicitHeight = 387
             end
           end
         end

@@ -9,18 +9,22 @@ inherited frmDlg_CancelamentoDocumento: TfrmDlg_CancelamentoDocumento
   inherited Panel1: TPanel
     Top = 178
     Width = 351
+    ExplicitTop = 178
+    ExplicitWidth = 351
     inherited btnOk: TBitBtn
-      Left = 101
-      ExplicitLeft = 168
+      Left = 97
+      ExplicitLeft = 97
     end
     inherited btnCancelar: TBitBtn
-      Left = 192
-      ExplicitLeft = 259
+      Left = 188
+      ExplicitLeft = 188
     end
   end
   inherited Panel2: TPanel
     Width = 351
     Height = 178
+    ExplicitWidth = 351
+    ExplicitHeight = 178
     object grpMotivoCancelamento: TRadioGroup
       Left = 0
       Top = 0
@@ -33,7 +37,6 @@ inherited frmDlg_CancelamentoDocumento: TfrmDlg_CancelamentoDocumento
         'Erro na emiss'#227'o'
         'Desist'#234'ncia')
       TabOrder = 0
-      ExplicitWidth = 418
     end
     object GroupBox1: TGroupBox
       Left = 0
@@ -43,10 +46,6 @@ inherited frmDlg_CancelamentoDocumento: TfrmDlg_CancelamentoDocumento
       Align = alClient
       Caption = ' Detalhes '
       TabOrder = 1
-      ExplicitLeft = 80
-      ExplicitTop = 96
-      ExplicitWidth = 185
-      ExplicitHeight = 105
       object mmDealhes: TMemo
         Left = 2
         Top = 15
@@ -55,7 +54,6 @@ inherited frmDlg_CancelamentoDocumento: TfrmDlg_CancelamentoDocumento
         Align = alClient
         ScrollBars = ssVertical
         TabOrder = 0
-        ExplicitHeight = 260
       end
     end
   end

@@ -33,6 +33,16 @@ interface
 
     TTipoCancelamento = (tcErro_De_Emissao,tcOperacao_Nao_Concluido);
 
+    TTipoTributacaoICMS = (ttICMSTributado,ttICMSISento,ttICMSNaoTributado);
+
+    TFormaTributacao = record
+       TipoTributacaoICMS :  TTipoTributacaoICMS;
+       TributaIPI: Boolean;
+       TributaPIS_COFINS: Boolean;
+       TributaST: Boolean;
+       ReduzBaseICMS: Boolean;
+    end;
+
 
 implementation
 

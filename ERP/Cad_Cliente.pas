@@ -137,6 +137,9 @@ begin
       CdsCadastro.FieldByName('BAIRRO').AsString := frmPesquisa.cdsPesquisa.FieldByName('BAIRRO').AsString;
       CdsCadastro.FieldByName('CIDADE').AsString := frmPesquisa.cdsPesquisa.FieldByName('CIDADE').AsString;
       CdsCadastro.FieldByName('UF').AsString :=     frmPesquisa.cdsPesquisa.FieldByName('UF').AsString;
+      CdsCadastro.FieldByName('IDMUNICIPIO').AsString :=     frmPesquisa.cdsPesquisa.FieldByName('IDMUNICIPIO').AsString;
+      edtMunicipio.Localiza;
+
 
     End;
   Finally

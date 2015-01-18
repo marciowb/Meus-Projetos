@@ -61,12 +61,20 @@ interface
    TipoTransporteMeios_Proprios = '9';
    TipoTransporteEntrada_Saida_ficta = '10';
 
-   CFOPTipoeracaoEntradaDentroEstado: String = '0';
-   CFOPTipoeracaoEntradaForaEstado: String = '1';
-   CFOPTipoeracaoSaidaDentroEstado: String = '2';
-   CFOPTipoeracaoSaidaForaEstado: String = '3';
-   CFOPTipoeracaoImportacao: String = '4';
-   CFOPTipoeracaoExportacao: String = '5';
+   CFOPTipoOperacaoEntradaDentroEstado: String = '0';
+   CFOPTipoOperacaoEntradaForaEstado: String = '1';
+   CFOPTipoOperacaoSaidaDentroEstado: String = '2';
+   CFOPTipoOperacaoSaidaForaEstado: String = '3';
+   CFOPTipoOperacaoImportacao: String = '4';
+   CFOPTipoOperacaoExportacao: String = '5';
+
+
+   OperacaoEntrada: String = 'E';
+   OperacaoSaida: String = 'S';
+   OperacaoImportacao: String = 'I';
+   OperacaoExportacao: String = 'X';
+   OperacaoDevolucao: String = 'D';
+   OperacaoTransferencia: String = 'T';
 
 
 

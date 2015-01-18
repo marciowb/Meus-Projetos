@@ -88,9 +88,12 @@ uses UDmConexao, Comandos, MinhasClasses, uPesquisa_kimera, uLibERP, uAguarde;
 {$R *.dfm}
 
 procedure TfrmAliqISS.AtualizaDataSets;
+var
+  SP: TBookmark;
 begin
   Try
     frmAguarde.Ativar;
+    Sp := CdsEstados.GetBookmark;
     CdsEstados.DisableControls;
     CdsMunicipio.DisableControls;
     CdsEstados.AfterScroll := nil;
@@ -101,6 +104,11 @@ begin
     SetCds(CdsCodMunicipal,tpERPISS,'');
 
   Finally
+    if Assigned(SP) then
+       CdsEstados.GotoBookmark(SP)
+    else
+      CdsEstados.First;
+
     CdsEstados.AfterScroll := CdsEstadosAfterScroll;
     CdsMunicipio.AfterScroll := CdsMunicipioAfterScroll;
     CdsEstados.EnableControls;
@@ -247,7 +255,7 @@ procedure TfrmAliqISS.FormShow(Sender: TObject);
 begin
   inherited;
   AtualizaDataSets;
-  CdsEstados.First;
+//  CdsEstados.First;
 end;
 
 end.

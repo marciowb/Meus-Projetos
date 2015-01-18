@@ -202,7 +202,7 @@ interface
                      tpERPPatrimonio,tpERPTipoEventos,tpERPTipoPatrimonioTipoEventos, tpERPPatrimoniosEventos,tpERPPatrimonioDisponivel,
                      tpERPPatrimoniosUsadosOS,tpERPPatrimonioManutencaoTerceiros,tpERPPatrimonioManutencaoTerceirosEventos,
                      tpERPAlertaPatrimonio,tpERPICMS,tpERPISS,tpERPMunicpio,tpERPCST, tpERPCSOSN, tpERPLimiteReceitaBruta,
-                     tpERPCST_CFOP,tpERPST,tpERPCFOP,tpERPCFOPSemelhante,tpERPNumeracaoNotaSaida,tpERPLotesNota,tpERPItensLotesNota
+                     tpERPCST_CFOP,tpERPST,tpERPCFOP,tpERPCFOPSemelhante,tpERPNumeracaoNotaSaida,tpERPLotesNota,tpERPItensLotesNota,tpERPCSOSN_CFOP
 
 
 

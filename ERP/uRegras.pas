@@ -73,13 +73,21 @@ interface
                                             Out Imposto: TImpostos;
                                             out ValorMinimoTributosFederais: Currency;
                                             out ValorMinimoIR: Currency;
-                                            Out TipoProduto:String );
+                                            Out TipoProduto:String;MsgSemConfiguracao: Boolean = True );
+      class Function VerificaFormaTributacao(IdCFOP: TipoCampoChave;  CST: String; CSOSN: String): TFormaTributacao;
     public
       class function CalculaImpostos(IdCliente, IdProduto,IdCFOP, IdEmpresa: TipoCampoChave; CST: String; CSOSN: String;
                                      ValorOperacao: Currency; Frete,Seguro,OutrasDespesas: Currency;
                                      TipoFrete: TTipoFrete; DataOperacao: TDate): IImpostos;
       class function GetCRT(IdEmpresa: TipoCampoChave; Data: TDate): String;
 
+
+   end;
+
+   TRegrasDocumentos = class
+     class Procedure CriaDocumentoFiscal(Const DataSetNota, DataSetItens, DataSetCobranca: TDataSet; Var Doc: IDocumentoFiscal );overload;
+     class Procedure CriaDocumentoFiscal(Const IdDocumento: TipoCampoChave ; Var Doc: IDocumentoFiscal );overload;
+     class Procedure CriaDocumentoFiscal(Const IdSaida: TipoCampoChave ; TipoDocumento: String; Var Doc: IDocumentoFiscal );overload;
    end;
 
    TRegrasLotesDocumentosFiscais = class
@@ -91,6 +99,13 @@ interface
      class Procedure ImprimeNFSe(IdSaida: TipoCampoChave);
      class Procedure CancelaNFSe(IdSaida: TipoCampoChave; TipoCancelamento: TTipoCancelamento; Motivo: String);
    end;
+
+   TRegrasCFOP = class
+     class Procedure ObtemCFOP(Const IdOperacao,IdProduto,IdEmpresa,IdPessoa: TipoCampoChave;
+                               Out IdCFOP: TipoCampoChave; out CST,CSOSN: String; const OperacaoParaCliente: Boolean = True);
+   end;
+
+
 
 implementation
 
@@ -828,6 +843,7 @@ var
   Impostos: TImpostos;
   TipoProduto, StrSQL: String;
   DataIni, DataFim: TDate;
+  FormaTributar: TFormaTributacao;
 begin
   Impostos := Timpostos.Create;
   Try
@@ -842,6 +858,7 @@ begin
 
 
 
+    FormaTributar := TRegrasImpostos.VerificaFormaTributacao(IdCFOP,CST,CSOSN);
 
     {$Region 'Calcula ISS'}
     if TipoProduto =TipoProdutoServico then
@@ -881,11 +898,11 @@ begin
     {$Region 'Calcula IPI'}
     if TipoProduto <> TipoProdutoServico then
     begin
-      if DataSetCFOP.FieldByName('FLAGTRIBUTAIPI').AsString = 'Y' then
+      if FormaTributar.TributaIPI then
       begin
-        if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaDentroEstado) or
-           (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaForaEstado) or
-           (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoExportacao)  then
+        if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoSaidaDentroEstado) or
+           (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoSaidaForaEstado) or
+           (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoExportacao)  then
         begin
           if TipoFrete = tfEmitente then
             Despesas := 0
@@ -904,11 +921,11 @@ begin
 
      if TipoProduto <> TipoProdutoServico then
     begin
-      if DataSetCFOP.FieldByName('FLAGTRIBUTAICMS').AsString = 'Y' then
+      if FormaTributar.TipoTributacaoICMS <> ttICMSNaoTributado then
       begin
-        if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaDentroEstado) or
-           (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaForaEstado) or
-           (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoExportacao)  then
+        if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoSaidaDentroEstado) or
+           (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoSaidaForaEstado) or
+           (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoExportacao)  then
         begin
           if TipoFrete = tfEmitente then
            Despesas := 0
@@ -923,7 +940,7 @@ begin
              (Copy(DataSetCFOP.FieldByName('CFOP').AsString,2,1)= '1' )  then //CFOP de industrialização 5101,6101,7101...
             Impostos.BaseICMS := Impostos.BaseICMS + Impostos.ValorIPI;
 
-          if Impostos.AliqReducaoBaseICMS <> 0  then
+          if FormaTributar.ReduzBaseICMS   then
             Impostos.BaseICMS := Impostos.BaseICMS  - ((Impostos.BaseICMS * Impostos.AliqReducaoBaseICMS)/100);
 
           Impostos.ValorICMS := Impostos.BaseICMS * Impostos.AliqICMS /100;
@@ -937,11 +954,11 @@ begin
     {$Region 'ICMS ST'}
      if TipoProduto <> TipoProdutoServico then
      begin
-        if DataSetCFOP.FieldByName('FLAGTRIBUTAST').AsString = 'Y' then
+        if FormaTributar.TributaST then
         begin
-          if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaDentroEstado) or
-             (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaForaEstado) or
-             (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoExportacao)  then
+          if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoSaidaDentroEstado) or
+             (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoSaidaForaEstado) or
+             (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoExportacao)  then
           begin
             { TODO : fazer }
           end;
@@ -992,11 +1009,11 @@ begin
      begin
         if TipoProduto <> TipoProdutoServico then
         begin
-          if DataSetCFOP.FieldByName('FLAGTRIBUTAPIS_COFINS').AsString = 'Y' then
+          if FormaTributar.TributaPIS_COFINS then
           begin
-            if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaDentroEstado) or
-               (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoSaidaForaEstado) or
-               (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoeracaoExportacao)  then
+            if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoSaidaDentroEstado) or
+               (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoSaidaForaEstado) or
+               (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoExportacao)  then
             begin
               if TipoFrete = tfEmitente then
                 Despesas := 0
@@ -1046,31 +1063,39 @@ class procedure TRegrasImpostos.GetAliqImpostos(IdCliente,IdProduto, IdEmpresa:T
                                             Out Imposto: TImpostos;
                                             out ValorMinimoTributosFederais: Currency;
                                             out ValorMinimoIR: Currency;
-                                            Out TipoProduto:String );
+                                            Out TipoProduto:String;MsgSemConfiguracao: Boolean = True );
 var
-  StrSQL:String;
+  StrSQL, IdMunicipio,UF,
+  NomeMunicipio, CodigoCliente, NomeCliente:String;
 begin
+  with GetCds(tpERPCliente, 'IDCLIENTE = '+TipoCampoChaveToStr(IdCliente)) do
+  begin
+    Uf := FieldByName('UF').AsString;
+    IdMunicipio := FieldByName('IdMunicipio').AsString;
+    NomeMunicipio := FieldByName('MUNICIPIO').AsString;
+    CodigoCliente := FieldByName('codigo').AsString;
+    NomeCliente := FieldByName('NOMECLIENTE').AsString;
+    Free;
+  end;
   StrSQL :=
     'SELECT COALESCE(N.ALIQIPI, N.IPIVALOR) ALIQ_IPI,'+
     '       CASE WHEN (N.ALIQIPI IS NULL ) AND (N.IPIVALOR IS NOT NULL ) THEN ''V'''+
-    '            ELSE ''A'' END TIPO_ALIQIPI,'+
+    '            ELSE ''A'' END TIPO_ALIQIPI, NCM.CODIGO NCM, '+
     '       COALESCE(COALESCE(N.ALIQPIS,ISS.ALIQPIS),E.ALIQPIS) ALIQPIS, COALESCE(COALESCE(N.ALIQCOFINS,ISS.ALIQCOFINS),E.ALIQPIS) ALIQCOFINS, '+
     '       N.ALIQII, N.VALOR_LI, COALESCE(ISS.ALIQCSLL,E.ALIQCSLL)ALIQCSLL, COALESCE(ISS.ALIQIR,E.ALIQIR)ALIQIR, ISS.VALORMINIMOTRIBFEDERAL,ISS.VALORMINIMOIR,ISS.ALIQISS, '+
     '       COALESCE(N.ALIQICMS, ICMS.ALIQICMS) ALIQICMS,P.TIPOPRODUTO,COALESCE(N.ALIQREDUCAOBASEICMS,0)ALIQREDUCAOBASEICMS  '+
     '  FROM PRODUTO P'+
     '  LEFT JOIN NCMESTADO N'+
-    '    ON (P.IDNCM = N.IDNCM)'+
+    '    ON (P.IDNCM = N.IDNCM and N.UF = '+QuotedStr(UF)+')'+
+    '  LEFT JOIN NCM '+
+    '    ON (NCM.IDNCM = P.IDNCM) '+
     '  LEFT JOIN ISS '+
-    '    ON (P.IDCODIGOMUNICIPALSERVICO = ISS.IDCODIGOMUNICIPALSERVICO) '+
+    '    ON (P.IDCODIGOMUNICIPALSERVICO = ISS.IDCODIGOMUNICIPALSERVICO AND ISS.IDMUNICIPIO = '+TipoCampoChaveToStr(IdMunicipio)+') '+
     '  LEFT JOIN ICMS '+
     '    ON (ICMS.UFORIGEM ='+QuotedStr(UFOrigem)+' AND ICMS.UFDESTINO = N.UF) '+
     '  LEFT JOIN EMPRESA E '+
     '    ON (E.IDEMPRESA = '+TipoCampoChaveToStr(IdEmpresa)+') '+
-    ' WHERE P.IDPRODUTO = '+TipoCampoChaveToStr(IdProduto)+
-    '   AND EXISTS(SELECT 1'+
-    '                FROM CLIENTE C'+
-    '               WHERE C.IDCLIENTE = '+TipoCampoChaveToStr(IdCliente)+
-    '                 AND ((C.UF = N.UF) OR (C.IDMUNICIPIO = ISS.IDMUNICIPIO)))';
+    ' WHERE P.IDPRODUTO = '+TipoCampoChaveToStr(IdProduto);
 
   with GetCds(StrSQL) do
   begin
@@ -1092,8 +1117,33 @@ begin
     ValorMinimoIR := FieldByName('VALORMINIMOIR').AsCurrency;
     TipoProduto := FieldByName('TIPOPRODUTO').AsString;
 
+
+    if MsgSemConfiguracao then
+    begin
+      if (FieldByName('ALIQISS').IsNull) and (FieldByName('ALIQICMS').IsNull)  then
+      begin
+        if TipoProduto = TipoProdutoServico then
+        begin
+           Avisa('Não foi encontrado configuração de calculo de ISS para o cliente '+CodigoCliente+'-'+NomeCliente+'.'+sLineBreak+
+                 ' Por favor configurar em: Menu Cadastros => Fiscal=> ISS . Para o município: '+NomeMunicipio+'('+UF+')' );
+
+        end else
+        begin
+           Avisa('Não foi encontrado configuração de calculo de ICMS para o cliente '+CodigoCliente+'-'+NomeCliente+'.'+sLineBreak+
+                 ' Por favor configurar em: Menu Cadastros => Fiscal=> ICMS . Para os estados: '+UFOrigem+' X '+UF+
+                 '. Verifique também o cadastro do NCM '+FieldByName('NCM').AsString+' para o estado '+UF  );
+
+        end;
+
+      end;
+
+    end;
+
     Free;
   end;
+
+
+
 end;
 
 class function TRegrasImpostos.GetCRT(IdEmpresa: TipoCampoChave; Data: TDate): String;
@@ -1134,6 +1184,72 @@ begin
     FreeAndNil(DataSetEmpresa);
   End;
 
+end;
+
+class function TRegrasImpostos.VerificaFormaTributacao(IdCFOP: TipoCampoChave;
+  CST, CSOSN: String): TFormaTributacao;
+var
+  DataSetCFOP, DataSetCST, DataSetCSOSN: TpFIBClientDataSet;
+  UsaCST: Boolean;
+begin
+  Try
+    DataSetCFOP := TpFIBClientDataSet.Create(nil);
+    DataSetCST := TpFIBClientDataSet.Create(nil);
+    DataSetCSOSN := TpFIBClientDataSet.Create(nil);
+    DataSetCFOP := GetCds(tpERPCFOP, 'idCFOP = '+TipoCampoChaveToStr(IdCFOP));
+    DataSetCST := GetCds(tpERPCST, 'CST = '+QuotedStr(CST));
+    DataSetCSOSN := GetCds(tpERPCSOSN, 'CSOSN = '+QuotedStr(CSOSN));
+
+    UsaCST:= CST<> '';
+    Result.TributaIPI := DataSetCFOP.FieldByName('flagtributaIPI').AsString = 'Y';
+    Result.TributaPIS_COFINS := DataSetCFOP.FieldByName('FLAGTRIBUTAPIS_COFINS').AsString = 'Y';
+    Result.TributaST := DataSetCFOP.FieldByName('FLAGTRIBUTAST').AsString = 'Y';
+    if DataSetCFOP.FieldByName('FLAGTRIBUTAICMS').AsString = 'N' then
+        Result.TipoTributacaoICMS := ttICMSNaoTributado
+    else
+    begin
+      if UsaCST then
+      begin
+        if DataSetCST.FieldByName('TIPO_TRIBUTACAO_ICMS').AsString = 'N' then
+          Result.TipoTributacaoICMS := ttICMSNaoTributado
+        else
+        if DataSetCST.FieldByName('TIPO_TRIBUTACAO_ICMS').AsString = 'T' then
+          Result.TipoTributacaoICMS := ttICMSTributado
+        else
+        if DataSetCST.FieldByName('TIPO_TRIBUTACAO_ICMS').AsString = 'I' then
+          Result.TipoTributacaoICMS := ttICMSISento;
+
+        Result.ReduzBaseICMS :=  DataSetCST.FieldByName('REDUZ_BASE_ICMS').AsString = 'Y' ;
+
+        if Result.TributaST  then
+          Result.TributaST :=  DataSetCST.FieldByName('TRIBUTA_ST').AsString = 'Y' ;
+
+      end else
+      begin
+        if DataSetCSOSN.FieldByName('TIPO_TRIBUTACAO_ICMS').AsString = 'N' then
+          Result.TipoTributacaoICMS := ttICMSNaoTributado
+        else
+        if DataSetCSOSN.FieldByName('TIPO_TRIBUTACAO_ICMS').AsString = 'T' then
+          Result.TipoTributacaoICMS := ttICMSTributado
+        else
+        if DataSetCSOSN.FieldByName('TIPO_TRIBUTACAO_ICMS').AsString = 'I' then
+          Result.TipoTributacaoICMS := ttICMSISento;
+
+        Result.ReduzBaseICMS :=  DataSetCSOSN.FieldByName('REDUZ_BASE_ICMS').AsString = 'Y' ;
+
+        if Result.TributaST  then
+          Result.TributaST :=  DataSetCSOSN.FieldByName('TRIBUTA_ST').AsString = 'Y' ;
+
+      end;
+
+    end;
+
+
+  Finally
+    FreeAndNil(DataSetCFOP);
+    FreeAndNil(DataSetCST);
+    FreeAndNil(DataSetCSOSN);
+  End;
 end;
 
 { TRegrasLotesDocumentosFiscais }
@@ -1184,7 +1300,7 @@ begin
     SetCds(DataSetNota,tpERPSaida,'idsaida = '+TipoCampoChaveToStr(IdSaida));
     SetCds(DataSetItens,tpERPSaidaProduto,'idsaida = '+TipoCampoChaveToStr(IdSaida));
     SetCds(DataSetCobranca,tpERPSaidaCondicaoPagamento,'idsaida = '+TipoCampoChaveToStr(IdSaida));
-    CriaDocumentoFiscal(DataSetNota,DataSetItens,DataSetCobranca, Doc);
+    TRegrasDocumentos.CriaDocumentoFiscal(DataSetNota,DataSetItens,DataSetCobranca, Doc);
     DocsNFSe.Add(Doc);
     StrSQL:=
       'SELECT FIRST 1  D.PROTOCOLO, D.LOTE,D.SERIE , D.NUMERO'+
@@ -1267,7 +1383,7 @@ begin
 
         if tdNFSe in TipoDocumento then
         begin
-          CriaDocumentoFiscal(DataSetNota,DataSetItens,DataSetCobranca, Doc);
+          TRegrasDocumentos.CriaDocumentoFiscal(DataSetNota,DataSetItens,DataSetCobranca, Doc);
           Doc.IdSaida := FieldByName('idsaida').AsString  ;
           Doc.IdEmpresa := DataSetNota.FieldByName('idempresa').AsString  ;
 
@@ -1283,7 +1399,7 @@ begin
 
          if tdNFe in TipoDocumento then
         begin
-          CriaDocumentoFiscal(DataSetNota,DataSetItens,DataSetCobranca, Doc);
+          TRegrasDocumentos.CriaDocumentoFiscal(DataSetNota,DataSetItens,DataSetCobranca, Doc);
           Doc.IdSaida := FieldByName('idsaida').AsString  ;
           Doc.IdEmpresa := DataSetNota.FieldByName('idempresa').AsString  ;
 
@@ -1773,10 +1889,10 @@ begin
     SetCds(DataSetNota,tpERPSaida,'idsaida = '+TipoCampoChaveToStr(IdSaida));
     SetCds(DataSetItens,tpERPSaidaProduto,'idsaida = '+TipoCampoChaveToStr(IdSaida));
     SetCds(DataSetCobranca,tpERPSaidaCondicaoPagamento,'idsaida = '+TipoCampoChaveToStr(IdSaida));
-    CriaDocumentoFiscal(DataSetNota,DataSetItens,DataSetCobranca, Doc);
+    TRegrasDocumentos.CriaDocumentoFiscal(DataSetNota,DataSetItens,DataSetCobranca, Doc);
     DocsNFSe.Add(Doc);
     StrSQL:=
-      'SELECT FIRST 1  D.PROTOCOLO, D.LOTE'+
+      'SELECT FIRST 1  D.PROTOCOLO, D.LOTE, NUMERO'+
       '  FROM DOCUMENTO D '+
       '  WHERE D.IDSAIDA = '+TipoCampoChaveToStr(IdSaida)+
       '    AND D.TIPODOCUMENTO = '+QuotedStr(NumeracaoNotaSaidaNFSe)+
@@ -1791,7 +1907,7 @@ begin
         Free;
       end;
 
-      NFSe.Imprimir(FieldByName('PROTOCOLO').AsString);
+      NFSe.Imprimir(FieldByName('PROTOCOLO').AsString,FieldByName('NUMERO').AsString);
       Free;
     end;
   Finally
@@ -1889,6 +2005,709 @@ begin
       Raise;
     end;
   End;
+
+end;
+
+{ TRegrasDocumentos }
+
+class procedure TRegrasDocumentos.CriaDocumentoFiscal(const DataSetNota,
+  DataSetItens, DataSetCobranca: TDataSet; var Doc: IDocumentoFiscal);
+var
+  Item: IItemDocumento;
+  Cob: TCobranca;
+begin
+//  if  Assigned(Doc) then
+//    Doc._Release;
+  Doc := TDocumentoFiscal.Create;
+
+  {$Region 'Cria Emitente'}
+  with GetCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(DataSetNota.FieldByName('idempresa').AsString)) do
+  begin
+    Doc.Emitente.Nome_RazaoSocial :=FieldByName('RAZAOSOCIAL').AsString;
+    Doc.Emitente.NomeFantasia :=FieldByName('FANTASIA').AsString;
+    Doc.Emitente.CPF_CNPJ :=FieldByName('CNPJ').AsString;
+    Doc.Emitente.Telefone :=FieldByName('TELEFONE').AsString;
+    Doc.Emitente.IE :=FieldByName('IE').AsString;
+    Doc.Emitente.IE_ST :='';
+    Doc.Emitente.SUFRAMA :='';
+    Doc.Emitente.IdentificacaoSUFRAMA := '';
+    Doc.Emitente.IM :=FieldByName('IM').AsString;
+    Doc.Emitente.Email :='';
+    Doc.Emitente.CNAE := FieldByName('CNAE').AsString;
+//    Doc.Emitente.CRT := TRegrasImpostos.GetCRT(DataSetNota.FieldByName('idempresa').AsString,DataSetNota.FieldByName('data').AsDateTime);
+    Doc.Emitente.Endereco.Endereco :=FieldByName('LOGRADOURO').AsString;
+    Doc.Emitente.Endereco.NumeroEndereco :=FieldByName('NUMERO').AsString;
+    Doc.Emitente.Endereco.Complemento :=FieldByName('COMPLEMENTO').AsString;
+    Doc.Emitente.Endereco.Bairro :=FieldByName('BAIRRO').AsString;
+    Doc.Emitente.Endereco.Cidade :=FieldByName('CIDADE').AsString;
+    Doc.Emitente.Endereco.Estado :=FieldByName('UF').AsString;
+    Doc.Emitente.Endereco.CodigoIBGEEstado := FieldByName('CODIGOIBGEESTADO').AsString;
+    Doc.Emitente.Endereco.CodigoMunicipio := FieldByName('ibge').AsString;
+    Doc.Emitente.Endereco.CEP :=FieldByName('CEP').AsString;
+    Doc.Emitente.Endereco.NumPais := 1058;
+    Doc.Emitente.Endereco.NomePais := 'BRASIL';
+    Doc.Emitente.RegimeTributacao := FieldByName('REGIMEEMPRESA').AsString;
+    Free;
+  end;
+  {$EndRegion}
+
+  {$Region 'Cria Destinatario'}
+  if (DataSetNota.FindField('IDCliente') <> nil) and
+     (not DataSetNota.FieldByName('IDCliente').IsNull) then
+  begin
+    with GetCds(tpERPCliente,'IDCliente = '+TipoCampoChaveToStr(DataSetNota.FieldByName('IDCliente').AsString)) do
+    begin
+      Doc.Destinatario.Nome_RazaoSocial :=FieldByName('NOMECLIENTE').AsString;
+      Doc.Destinatario.NomeFantasia :=FieldByName('FANTASIA').AsString;
+      if FieldByName('CNPJ').AsString <> '' then
+        Doc.Destinatario.CPF_CNPJ :=FieldByName('CNPJ').AsString
+      else
+      if FieldByName('CPF').AsString <> '' then
+        Doc.Destinatario.CPF_CNPJ :=FieldByName('CPF').AsString;
+
+
+      Doc.Destinatario.Telefone :=FieldByName('TELEFONE').AsString;
+      Doc.Destinatario.IE :=FieldByName('IE').AsString;
+      Doc.Destinatario.IE_ST :='';
+      Doc.Destinatario.SUFRAMA :='';
+      Doc.Destinatario.IdentificacaoSUFRAMA := '';
+      Doc.Destinatario.IM :=FieldByName('IM').AsString;
+      Doc.Destinatario.Email := FieldByName('email').AsString;
+      Doc.Destinatario.Endereco.Endereco :=FieldByName('LOGRADOURO').AsString;
+      Doc.Destinatario.Endereco.NumeroEndereco :=FieldByName('NUMERO').AsString;
+      Doc.Destinatario.Endereco.Complemento :=FieldByName('COMPLEMENTO').AsString;
+      Doc.Destinatario.Endereco.Bairro :=FieldByName('BAIRRO').AsString;
+      Doc.Destinatario.Endereco.Cidade :=FieldByName('CIDADE').AsString;
+      Doc.Destinatario.Endereco.Estado :=FieldByName('UF').AsString;
+      Doc.Destinatario.Endereco.CodigoMunicipio := FieldByName('IBGE').AsString;
+      Doc.Destinatario.Endereco.CEP :=FieldByName('CEP').AsString;
+      Doc.Destinatario.Endereco.NumPais := 1058;     { TODO : Rever }
+      Doc.Destinatario.Endereco.NomePais := 'BRASIL'; { TODO : Rever }
+
+      Free;
+    end;
+  end;
+  if (DataSetNota.FindField('idfornecedor') <> nil) and
+     (not DataSetNota.FieldByName('idfornecedor').IsNull) then
+  begin
+    with GetCds(tpERPFornecedor,'IDCliente = '+TipoCampoChaveToStr(DataSetNota.FieldByName('idfornecedor').AsString)) do
+    begin
+      Doc.Destinatario.Nome_RazaoSocial :=FieldByName('RAZAOSOCIAL').AsString;
+      Doc.Destinatario.NomeFantasia :=FieldByName('FANTASIA').AsString;
+      Doc.Destinatario.CPF_CNPJ :=FieldByName('CNPJ').AsString;
+      Doc.Destinatario.Telefone :=FieldByName('TELEFONE').AsString;
+      Doc.Destinatario.IE :='';
+      Doc.Destinatario.IE_ST :='';
+      Doc.Destinatario.SUFRAMA :='';
+      Doc.Destinatario.IdentificacaoSUFRAMA := '';
+      Doc.Destinatario.IM :='';
+      Doc.Destinatario.Email := FieldByName('email').AsString;
+      Doc.Destinatario.Endereco.Endereco :=FieldByName('LOGRADOURO').AsString;
+      Doc.Destinatario.Endereco.NumeroEndereco :=FieldByName('NUMERO').AsString;
+      Doc.Destinatario.Endereco.Complemento :=FieldByName('COMPLEMENTO').AsString;
+      Doc.Destinatario.Endereco.Bairro :=FieldByName('BAIRRO').AsString;
+      Doc.Destinatario.Endereco.Cidade :=FieldByName('CIDADE').AsString;
+      Doc.Destinatario.Endereco.Estado :=FieldByName('UF').AsString;
+      Doc.Destinatario.Endereco.CodigoMunicipio := '';{ TODO : Rever }
+      Doc.Destinatario.Endereco.CEP :=FieldByName('CEP').AsString;
+      Doc.Destinatario.Endereco.NumPais := 1058;     { TODO : Rever }
+      Doc.Destinatario.Endereco.NomePais := 'BRASIL'; { TODO : Rever }
+
+      Free;
+    end;
+  end;
+
+  {$EndRegion}
+
+  {$Region 'Cria Transportadora'}
+  with GetCds(tpERPTransportadora,'IDTRANSPORTADORA = '+TipoCampoChaveToStr(DataSetNota.FieldByName('IDTRANSPORTADORA').AsString)) do
+    begin
+      if NOT IsEmpty then
+      begin
+        Doc.Emitente.Nome_RazaoSocial :=FieldByName('RAZAOSOCIAL').AsString;
+        Doc.Emitente.NomeFantasia :=FieldByName('NOMEFANTASIA').AsString;
+        Doc.Emitente.CPF_CNPJ :=FieldByName('CNPJ').AsString;
+
+
+        Doc.Transportadora.Telefone :='';//FieldByName('TELEFONE').AsString;
+        Doc.Transportadora.IE :=FieldByName('IE').AsString;
+        Doc.Transportadora.IE_ST :='';
+        Doc.Transportadora.SUFRAMA :='';
+        Doc.Transportadora.IdentificacaoSUFRAMA := '';
+        Doc.Transportadora.IM :='';
+        Doc.Transportadora.Email := '';
+        Doc.Transportadora.Endereco.Endereco :=FieldByName('LOGRADOURO').AsString;
+        Doc.Transportadora.Endereco.NumeroEndereco :=FieldByName('NUMERO').AsString;
+        Doc.Transportadora.Endereco.Complemento :=FieldByName('COMPLEMENTO').AsString;
+        Doc.Transportadora.Endereco.Bairro :=FieldByName('BAIRRO').AsString;
+        Doc.Transportadora.Endereco.Cidade :=FieldByName('CIDADE').AsString;
+        Doc.Transportadora.Endereco.Estado :=FieldByName('UF').AsString;
+        Doc.Transportadora.Endereco.CodigoMunicipio := FieldByName('IBGE').AsString;
+        Doc.Transportadora.Endereco.CEP :=FieldByName('CEP').AsString;
+        Doc.Transportadora.Endereco.NumPais := 1058;
+        Doc.Transportadora.Endereco.NomePais := 'BRASIL';
+      end;
+      Free;
+    end;
+
+  {$EndRegion}
+
+  {$Region 'Corpo da nota '}
+  Doc.EnderecoEntrega := Doc.Destinatario.Endereco;
+  Doc.EnderecoCobranca := Doc.Destinatario.Endereco;
+
+
+  Doc.Seguro := DataSetNota.FieldByName('VALORSEGURO').AsCurrency;
+  Doc.Frete := DataSetNota.FieldByName('VALORFRETE').AsCurrency;
+  Doc.OutrasDespesas := DataSetNota.FieldByName('VALOROUTRASDESPESAS').AsCurrency;
+  Doc.TotalDocumento := DataSetNota.FieldByName('VALORTOTALNOTA').AsCurrency;
+
+  case DataSetNota.FieldByName('TIPOTRANSPORTE').AsInteger of
+    1: Doc.TipoTransporte := ttMaritima;
+    2: Doc.TipoTransporte := ttFluvial;
+    3: Doc.TipoTransporte := ttLacustre;
+    4: Doc.TipoTransporte := ttAerea;
+    5: Doc.TipoTransporte := ttPostal;
+    6: Doc.TipoTransporte := ttFerroviaria;
+    7: Doc.TipoTransporte := ttRodoviaria;
+    8: Doc.TipoTransporte := ttConduto_Rede_Transmissao;
+    9: Doc.TipoTransporte := ttMeios_Proprios;
+   10: Doc.TipoTransporte := ttEntrada_Ou_Saida_ficta;
+  end;
+
+  if DataSetNota.FieldByName('FLAGMODALIDADEFRETE').AsString  = 'D' then
+    Doc.TipoFrete := tfDestinatario
+  else
+  if DataSetNota.FieldByName('FLAGMODALIDADEFRETE').AsString  = 'E' then
+    Doc.TipoFrete := tfEmitente
+  else
+    Doc.TipoFrete := tfTerceiros;
+
+  Doc.Placa := DataSetNota.FieldByName('PLACAVEICULO').AsString;
+  Doc.UfPlaca := DataSetNota.FieldByName('UFPLACAVEICULO').AsString;
+  Doc.ANTT := '';
+  Doc.Volume := DataSetNota.FieldByName('VOLUME').AsInteger;
+  Doc.Especie := DataSetNota.FieldByName('ESPECIE').AsString;
+  Doc.Marca := '';
+  Doc.PesoBruto := DataSetNota.FieldByName('PESOBRUTO').AsFloat;
+  Doc.PesoLiquido := DataSetNota.FieldByName('PESOLIQ').AsFloat;
+
+  Doc.DataNota := DataSetNota.FieldByName('DATA').AsDateTime;
+
+  {$EndRegion}
+
+  {$Region 'Itens'}
+  DataSetItens.First;
+  while not DataSetItens.Eof do
+  begin
+    Item := TItemDocumento.Create;
+    Item.Codigo := DataSetItens.FieldByName('CODIGO').AsString;
+    Item.Unidade := DataSetItens.FieldByName('UNIDADE').AsString;
+    Item.Quantidade := DataSetItens.FieldByName('QUANTIDADE').AsCurrency;
+    Item.ValorUnitario := DataSetItens.FieldByName('VALORUNITARIO').AsCurrency;
+    Item.ValorDesconto := DataSetItens.FieldByName('VALORDESCONTO').AsCurrency;
+    Item.ValorAcrescimo := DataSetItens.FieldByName('VALORACRESCIMO').AsCurrency;
+    Item.AliqDesconto := DataSetItens.FieldByName('ALIQDESCONTO').AsCurrency;
+    Item.AliqAcrescimo := DataSetItens.FieldByName('ALIQACRESCIMO').AsCurrency;
+    Item.ValorFrete := DataSetItens.FieldByName('VALORFRETERATEADO').AsCurrency;
+    Item.ValorSeguro := DataSetItens.FieldByName('VALORSEGURORATEADO').AsCurrency;
+    Item.ValorOutrasDespesas := DataSetItens.FieldByName('VALOROUTRASDESPESASRATEADO').AsCurrency;
+    Item.ValorTotalLiquido := DataSetItens.FieldByName('VALORTOTAL').AsCurrency;
+
+    Item.CFOP := DataSetItens.FieldByName('CFOP').AsString;
+    Item.CST := DataSetItens.FieldByName('CST').AsString;
+    Item.CSOSN := DataSetItens.FieldByName('CSOSN').AsString;
+    Item.CRT := DataSetItens.FieldByName('CRT').AsString;
+    if Doc.Emitente.CRT  = '' then
+      Doc.Emitente.CRT  := Item.CRT;
+
+    Item.NumDI := '';
+    Item.DataDI :=0;
+    Item.LocalDesembaraco := '';
+    Item.UFDesenbaraco:= '';
+    Item.DataDesembaraco := 0;
+    Item.TipoTransporte := Doc.TipoTransporte;
+    Item.ValorAFRMM := 0;
+    Item.TipoIntermedio := tiImportacao_por_conta_propria;
+    Item.CNPJ_Adquerente := Doc.Emitente.CPF_CNPJ;
+    Item.UF_Terceiro :='';
+    Item.CodigoExportador := '';
+    Item.NumAdicao := 0;
+    Item.CodigoDoProdutoNoFabricante := '';
+
+    Item.NumeroPedidoCompra:= '';
+    Item.NumeroItemPedidoCompra := 0;
+
+    Item.Impostos.AliqICMS := DataSetItens.FieldByName('ALIQICMS').AsCurrency;
+    Item.Impostos.AliqISS := DataSetItens.FieldByName('ALIQISS').AsCurrency;
+    Item.Impostos.AliqCOFINS := DataSetItens.FieldByName('ALIQCOFINS').AsCurrency;
+    Item.Impostos.AliqPIS := DataSetItens.FieldByName('ALIQPIS').AsCurrency;
+    Item.Impostos.AliqIPI := DataSetItens.FieldByName('ALIQIPI').AsCurrency;
+    Item.Impostos.TipoIPI := iIPIAliq;
+    Item.Impostos.MVA := DataSetItens.FieldByName('MVA').AsCurrency;
+    Item.Impostos.AliqICMSST := DataSetItens.FieldByName('ALIQST').AsCurrency;
+    Item.Impostos.ALiqCSLL := DataSetItens.FieldByName('ALIQCSLL').AsCurrency;
+    if DataSetItens.FieldByName('BASEISS').AsCurrency >0  then
+    begin
+      Item.Impostos.BaseISS := DataSetItens.FieldByName('BASEISS').AsCurrency  ;
+      Item.Impostos.ValorISS := DataSetItens.FieldByName('VALORISS').AsCurrency;
+    end else
+    begin
+      Item.Impostos.BaseICMS := DataSetItens.FieldByName('BASEICMS').AsCurrency;
+      Item.Impostos.ValorICMS := DataSetItens.FieldByName('VALORICMS').AsCurrency;
+    end;
+
+    Item.Impostos.BaseIPI := DataSetItens.FieldByName('BASEIPI').AsCurrency;
+    Item.Impostos.BasePIS_COFINS := DataSetItens.FieldByName('BASEPISCOFINS').AsCurrency;
+    Item.Impostos.BaseICMSST := DataSetItens.FieldByName('BASEICMSST').AsCurrency;
+    Item.Impostos.BaseCSLL := DataSetItens.FieldByName('BASECSLL').AsCurrency;
+
+    Item.Impostos.ValorIPI := DataSetItens.FieldByName('VALORIPI').AsCurrency;
+    Item.Impostos.ValorPIS := DataSetItens.FieldByName('VALORPIS').AsCurrency;
+    Item.Impostos.ValorCOFINS := DataSetItens.FieldByName('VALORCOFINS').AsCurrency;
+    Item.Impostos.ValorICMSST := DataSetItens.FieldByName('VALORST').AsCurrency;
+    Item.Impostos.ValorCSLL := DataSetItens.FieldByName('VALORCSLL').AsCurrency;
+
+    if DataSetItens.FieldByName('TIPO_ITEM').AsString = 'S' then
+    begin
+      Doc.Servicos.Add(Item);
+    end else
+      Doc.Produtos.Add(Item);
+
+    DataSetItens.Next;
+  end;
+  {$EndRegion}
+
+  DataSetCobranca.First;
+  while not DataSetCobranca.Eof do
+  begin
+    Cob := TCobranca.Create;
+    Cob.NumeroDocumento := '';
+    Cob.Vencimento := 0;
+    Cob.ValorDocumento := DataSetCobranca.FieldByName('VALOR').AsCurrency;
+
+    DataSetCobranca.Next;
+  end;
+
+  with (Doc as TDocumentoFiscal).VerificaDados do
+  begin
+    if Count > 0 then
+    begin
+      AvisaErro('Erros encontrados: '+sLineBreak+ Text);
+    end;
+    Free;
+  end;
+
+
+end;
+
+class procedure TRegrasDocumentos.CriaDocumentoFiscal(
+  const IdDocumento: TipoCampoChave; var Doc: IDocumentoFiscal);
+var
+  DataSetNota,
+  DataSetItens, DataSetCobranca: TpFIBClientDataSet;
+  StrSQL: String;
+  Item: IItemDocumento;
+begin
+  Try
+  { TODO : Rever }
+    DataSetNota := TpFIBClientDataSet.Create(nil);
+    DataSetItens := TpFIBClientDataSet.Create(nil);
+
+    StrSQL:=
+      'select * from documento where IdDocumento = '+TipoCampoChaveToStr(IdDocumento);
+    SetCds(DataSetNota,StrSQL);
+    StrSQL:=
+      'select * from ITENSDOCUMENTO where IdDocumento = '+TipoCampoChaveToStr(IdDocumento);
+    SetCds(DataSetItens,StrSQL);
+
+     Doc := TDocumentoFiscal.Create;
+
+  {$Region 'Cria Emitente'}
+    Doc.Emitente.Nome_RazaoSocial := DataSetNota.FieldByName('RAZAOSOCIALEmitente').AsString;
+    Doc.Emitente.NomeFantasia := DataSetNota.FieldByName('FANTASIAEmitente').AsString;
+    Doc.Emitente.CPF_CNPJ := DataSetNota.FieldByName('CNPJEmitente').AsString;
+    Doc.Emitente.Telefone := DataSetNota.FieldByName('TELEFONEEmitente').AsString;
+    Doc.Emitente.IE := DataSetNota.FieldByName('IEEmitente').AsString;
+    Doc.Emitente.IE_ST :='';
+    Doc.Emitente.SUFRAMA :='';
+    Doc.Emitente.IdentificacaoSUFRAMA := '';
+    Doc.Emitente.IM := DataSetNota.FieldByName('IMEmitente').AsString;
+    Doc.Emitente.Email :='';
+    Doc.Emitente.CNAE :=  DataSetNota.FieldByName('CNAEEmitente').AsString;
+//    Doc.Emitente.CRT := TRegrasImpostos.GetCRT(DataSetNota.FieldByName('idempresa').AsString,DataSetNota.FieldByName('data').AsDateTime);
+    Doc.Emitente.Endereco.Endereco := DataSetNota.FieldByName('LOGRADOUROEmitente').AsString;
+    Doc.Emitente.Endereco.NumeroEndereco := DataSetNota.FieldByName('NUMEROEmitente').AsString;
+    Doc.Emitente.Endereco.Complemento := DataSetNota.FieldByName('COMPLEMENTOEmitente').AsString;
+    Doc.Emitente.Endereco.Bairro := DataSetNota.FieldByName('BAIRROEmitente').AsString;
+    Doc.Emitente.Endereco.Cidade := DataSetNota.FieldByName('CIDADEEmitente').AsString;
+    Doc.Emitente.Endereco.Estado := DataSetNota.FieldByName('UFEmitente').AsString;
+    Doc.Emitente.Endereco.CodigoIBGEEstado :=  DataSetNota.FieldByName('CODIGOIBGEESTADOEmitente').AsString;
+    Doc.Emitente.Endereco.CodigoMunicipio :=  DataSetNota.FieldByName('ibgeEmitente').AsString;
+    Doc.Emitente.Endereco.CEP := DataSetNota.FieldByName('CEPEmitente').AsString;
+    Doc.Emitente.Endereco.NumPais := 1058;
+    Doc.Emitente.Endereco.NomePais := 'BRASIL';
+    Doc.Emitente.RegimeTributacao :=  DataSetNota.FieldByName('REGIMEEMPRESAEmitente').AsString;
+
+  {$EndRegion}
+
+  {$Region 'Cria Destinatario'}
+
+      Doc.Destinatario.Nome_RazaoSocial := DataSetNota.FieldByName('NOMECLIENTEDestinatario').AsString;
+      Doc.Destinatario.NomeFantasia := DataSetNota.FieldByName('FANTASIADestinatario').AsString;
+      if DataSetNota.FieldByName('CNPJ').AsString <> '' then
+        Doc.Destinatario.CPF_CNPJ := DataSetNota.FieldByName('CNPJDestinatario').AsString
+      else
+      if DataSetNota.FieldByName('CPF').AsString <> '' then
+        Doc.Destinatario.CPF_CNPJ := DataSetNota.FieldByName('CPFDestinatario').AsString;
+
+
+      Doc.Destinatario.Telefone := DataSetNota.FieldByName('TELEFONEDestinatario').AsString;
+      Doc.Destinatario.IE := DataSetNota.FieldByName('IEDestinatario').AsString;
+      Doc.Destinatario.IE_ST :='';
+      Doc.Destinatario.SUFRAMA :='';
+      Doc.Destinatario.IdentificacaoSUFRAMA := '';
+      Doc.Destinatario.IM := DataSetNota.FieldByName('IMDestinatario').AsString;
+      Doc.Destinatario.Email :=  DataSetNota.FieldByName('emailDestinatario').AsString;
+      Doc.Destinatario.Endereco.Endereco := DataSetNota.FieldByName('LOGRADOURODestinatario').AsString;
+      Doc.Destinatario.Endereco.NumeroEndereco := DataSetNota.FieldByName('NUMERODestinatario').AsString;
+      Doc.Destinatario.Endereco.Complemento := DataSetNota.FieldByName('COMPLEMENTODest').AsString;
+      Doc.Destinatario.Endereco.Bairro := DataSetNota.FieldByName('BAIRRODestinatario').AsString;
+      Doc.Destinatario.Endereco.Cidade := DataSetNota.FieldByName('CIDADEDestinatario').AsString;
+      Doc.Destinatario.Endereco.Estado := DataSetNota.FieldByName('UFDestinatario').AsString;
+      Doc.Destinatario.Endereco.CodigoMunicipio :=  DataSetNota.FieldByName('CODIGOIBGEDest').AsString;
+      Doc.Destinatario.Endereco.CEP := DataSetNota.FieldByName('CEPDestinatario').AsString;
+      Doc.Destinatario.Endereco.NumPais := 1058;     { TODO : Rever }
+      Doc.Destinatario.Endereco.NomePais := 'BRASIL'; { TODO : Rever }
+
+
+
+  {$EndRegion}
+
+  {$Region 'Cria Transportadora'}
+    Doc.Transportadora.Nome_RazaoSocial := DataSetNota.FieldByName('RAZAOSOCIALTRASP').AsString;
+    Doc.Transportadora.NomeFantasia := DataSetNota.FieldByName('NOMEFANTASIATRASP').AsString;
+    Doc.Transportadora.CPF_CNPJ := DataSetNota.FieldByName('CNPJTRASP').AsString;
+
+    Doc.Transportadora.Telefone :='';//FieldByName('TELEFONE').AsString;
+    Doc.Transportadora.IE := DataSetNota.FieldByName('IETRASP').AsString;
+    Doc.Transportadora.IE_ST :='';
+    Doc.Transportadora.SUFRAMA :='';
+    Doc.Transportadora.IdentificacaoSUFRAMA := '';
+    Doc.Transportadora.IM :='';
+    Doc.Transportadora.Email := '';
+    Doc.Transportadora.Endereco.Endereco := DataSetNota.FieldByName('LOGRADOUROTRASP').AsString;
+    Doc.Transportadora.Endereco.NumeroEndereco := DataSetNota.FieldByName('NUMEROTRASP').AsString;
+    Doc.Transportadora.Endereco.Complemento := DataSetNota.FieldByName('COMPLEMENTOTRASP').AsString;
+    Doc.Transportadora.Endereco.Bairro := DataSetNota.FieldByName('BAIRROTRASP').AsString;
+    Doc.Transportadora.Endereco.Cidade := DataSetNota.FieldByName('CIDADETRASP').AsString;
+    Doc.Transportadora.Endereco.Estado := DataSetNota.FieldByName('UFTRASP').AsString;
+    Doc.Transportadora.Endereco.CodigoMunicipio :=  DataSetNota.FieldByName('IBGETRASP').AsString;
+    Doc.Transportadora.Endereco.CEP := DataSetNota.FieldByName('CEPTRASP').AsString;
+    Doc.Transportadora.Endereco.NumPais := 1058;
+    Doc.Transportadora.Endereco.NomePais := 'BRASIL';
+
+
+  {$EndRegion}
+
+  {$Region 'Corpo da nota '}
+  Doc.EnderecoEntrega := Doc.Destinatario.Endereco;
+  Doc.EnderecoCobranca := Doc.Destinatario.Endereco;
+
+
+  Doc.Seguro := DataSetNota.FieldByName('VALORSEGURO').AsCurrency;
+  Doc.Frete := DataSetNota.FieldByName('VALORFRETE').AsCurrency;
+  Doc.OutrasDespesas := DataSetNota.FieldByName('VALOROUTRASDESPESAS').AsCurrency;
+  Doc.TotalDocumento := DataSetNota.FieldByName('VALORTOTALNOTA').AsCurrency;
+
+  case DataSetNota.FieldByName('TIPOTRANSPORTE').AsInteger of
+    1: Doc.TipoTransporte := ttMaritima;
+    2: Doc.TipoTransporte := ttFluvial;
+    3: Doc.TipoTransporte := ttLacustre;
+    4: Doc.TipoTransporte := ttAerea;
+    5: Doc.TipoTransporte := ttPostal;
+    6: Doc.TipoTransporte := ttFerroviaria;
+    7: Doc.TipoTransporte := ttRodoviaria;
+    8: Doc.TipoTransporte := ttConduto_Rede_Transmissao;
+    9: Doc.TipoTransporte := ttMeios_Proprios;
+   10: Doc.TipoTransporte := ttEntrada_Ou_Saida_ficta;
+  end;
+
+  if DataSetNota.FieldByName('FLAGMODALIDADEFRETE').AsString  = 'D' then
+    Doc.TipoFrete := tfDestinatario
+  else
+  if DataSetNota.FieldByName('FLAGMODALIDADEFRETE').AsString  = 'E' then
+    Doc.TipoFrete := tfEmitente
+  else
+    Doc.TipoFrete := tfTerceiros;
+
+  Doc.Placa := DataSetNota.FieldByName('PLACAVEICULO').AsString;
+  Doc.UfPlaca := DataSetNota.FieldByName('UFPLACAVEICULO').AsString;
+  Doc.ANTT := '';
+  Doc.Volume := DataSetNota.FieldByName('VOLUME').AsInteger;
+  Doc.Especie := DataSetNota.FieldByName('ESPECIE').AsString;
+  Doc.Marca := '';
+  Doc.PesoBruto := DataSetNota.FieldByName('PESOBRUTO').AsFloat;
+  Doc.PesoLiquido := DataSetNota.FieldByName('PESOLIQ').AsFloat;
+
+  Doc.DataNota := DataSetNota.FieldByName('DATA').AsDateTime;
+
+  {$EndRegion}
+
+  {$Region 'Itens'}
+  DataSetItens.First;
+  while not DataSetItens.Eof do
+  begin
+    Item := TItemDocumento.Create;
+    Item.Codigo := DataSetItens.FieldByName('CODIGO').AsString;
+    Item.Unidade := DataSetItens.FieldByName('UNIDADE').AsString;
+    Item.Quantidade := DataSetItens.FieldByName('QUANTIDADE').AsCurrency;
+    Item.ValorUnitario := DataSetItens.FieldByName('VALORUNITARIO').AsCurrency;
+    Item.ValorDesconto := DataSetItens.FieldByName('VALORDESCONTO').AsCurrency;
+    Item.ValorAcrescimo := DataSetItens.FieldByName('VALORACRESCIMO').AsCurrency;
+    Item.AliqDesconto := DataSetItens.FieldByName('ALIQDESCONTO').AsCurrency;
+    Item.AliqAcrescimo := DataSetItens.FieldByName('ALIQACRESCIMO').AsCurrency;
+    Item.ValorFrete := DataSetItens.FieldByName('VALORFRETERATEADO').AsCurrency;
+    Item.ValorSeguro := DataSetItens.FieldByName('VALORSEGURORATEADO').AsCurrency;
+    Item.ValorOutrasDespesas := DataSetItens.FieldByName('VALOROUTRASDESPESASRATEADO').AsCurrency;
+    Item.ValorTotalLiquido := DataSetItens.FieldByName('VALORTOTAL').AsCurrency;
+
+    Item.CFOP := DataSetItens.FieldByName('CFOP').AsString;
+    Item.CST := DataSetItens.FieldByName('CST').AsString;
+    Item.CSOSN := DataSetItens.FieldByName('CSOSN').AsString;
+    Item.CRT := DataSetItens.FieldByName('CRT').AsString;
+    if Doc.Emitente.CRT  = '' then
+      Doc.Emitente.CRT  := Item.CRT;
+
+    Item.NumDI := '';
+    Item.DataDI :=0;
+    Item.LocalDesembaraco := '';
+    Item.UFDesenbaraco:= '';
+    Item.DataDesembaraco := 0;
+    Item.TipoTransporte := Doc.TipoTransporte;
+    Item.ValorAFRMM := 0;
+    Item.TipoIntermedio := tiImportacao_por_conta_propria;
+    Item.CNPJ_Adquerente := Doc.Emitente.CPF_CNPJ;
+    Item.UF_Terceiro :='';
+    Item.CodigoExportador := '';
+    Item.NumAdicao := 0;
+    Item.CodigoDoProdutoNoFabricante := '';
+
+    Item.NumeroPedidoCompra:= '';
+    Item.NumeroItemPedidoCompra := 0;
+
+    Item.Impostos.AliqICMS := DataSetItens.FieldByName('ALIQICMS').AsCurrency;
+    Item.Impostos.AliqISS := DataSetItens.FieldByName('ALIQISS').AsCurrency;
+    Item.Impostos.AliqCOFINS := DataSetItens.FieldByName('ALIQCOFINS').AsCurrency;
+    Item.Impostos.AliqPIS := DataSetItens.FieldByName('ALIQPIS').AsCurrency;
+    Item.Impostos.AliqIPI := DataSetItens.FieldByName('ALIQIPI').AsCurrency;
+    Item.Impostos.TipoIPI := iIPIAliq;
+    Item.Impostos.MVA := DataSetItens.FieldByName('MVA').AsCurrency;
+    Item.Impostos.AliqICMSST := DataSetItens.FieldByName('ALIQST').AsCurrency;
+    Item.Impostos.ALiqCSLL := DataSetItens.FieldByName('ALIQCSLL').AsCurrency;
+    if DataSetItens.FieldByName('BASEISS').AsCurrency >0  then
+    begin
+      Item.Impostos.BaseISS := DataSetItens.FieldByName('BASEISS').AsCurrency  ;
+      Item.Impostos.ValorISS := DataSetItens.FieldByName('VALORISS').AsCurrency;
+    end else
+    begin
+      Item.Impostos.BaseICMS := DataSetItens.FieldByName('BASEICMS').AsCurrency;
+      Item.Impostos.ValorICMS := DataSetItens.FieldByName('VALORICMS').AsCurrency;
+    end;
+
+    Item.Impostos.BaseIPI := DataSetItens.FieldByName('BASEIPI').AsCurrency;
+    Item.Impostos.BasePIS_COFINS := DataSetItens.FieldByName('BASEPISCOFINS').AsCurrency;
+    Item.Impostos.BaseICMSST := DataSetItens.FieldByName('BASEICMSST').AsCurrency;
+    Item.Impostos.BaseCSLL := DataSetItens.FieldByName('BASECSLL').AsCurrency;
+
+    Item.Impostos.ValorIPI := DataSetItens.FieldByName('VALORIPI').AsCurrency;
+    Item.Impostos.ValorPIS := DataSetItens.FieldByName('VALORPIS').AsCurrency;
+    Item.Impostos.ValorCOFINS := DataSetItens.FieldByName('VALORCOFINS').AsCurrency;
+    Item.Impostos.ValorICMSST := DataSetItens.FieldByName('VALORST').AsCurrency;
+    Item.Impostos.ValorCSLL := DataSetItens.FieldByName('VALORCSLL').AsCurrency;
+
+    if DataSetItens.FieldByName('TIPO_ITEM').AsString = 'S' then
+    begin
+      Doc.Servicos.Add(Item);
+    end else
+      Doc.Produtos.Add(Item);
+
+    DataSetItens.Next;
+  end;
+  {$EndRegion}
+
+
+  Finally
+    FreeAndNil(DataSetNota);
+    FreeAndNil(DataSetItens);
+  End;
+
+
+end;
+
+class procedure TRegrasDocumentos.CriaDocumentoFiscal(
+  const IdSaida: TipoCampoChave; TipoDocumento: String;
+  var Doc: IDocumentoFiscal);
+var
+  DataSetNota,
+  DataSetItens, DataSetCobranca: TpFIBClientDataSet;
+begin
+  Try
+    DataSetNota := TpFIBClientDataSet.Create(nil);
+    DataSetItens := TpFIBClientDataSet.Create(nil);
+    DataSetCobranca := TpFIBClientDataSet.Create(nil);
+
+
+    SetCds(DataSetNota,tpERPSaida,'idsaida = '+TipoCampoChaveToStr(idsaida));
+    SetCds(DataSetItens,tpERPSaidaProduto,'idsaida = '+TipoCampoChaveToStr(idsaida));
+    SetCds(DataSetCobranca,tpERPSaidaCondicaoPagamento,'idsaida = '+TipoCampoChaveToStr(idsaida));
+
+    TRegrasDocumentos.CriaDocumentoFiscal(DataSetNota, DataSetItens, DataSetCobranca,Doc);
+
+  Finally
+    FreeAndNil(DataSetNota);
+    FreeAndNil(DataSetItens);
+    FreeAndNil(DataSetCobranca);
+  End;
+end;
+
+{ TRegrasCFOP }
+
+class procedure TRegrasCFOP.ObtemCFOP(Const IdOperacao,IdProduto,IdEmpresa,IdPessoa: TipoCampoChave;
+                               Out IdCFOP: TipoCampoChave; out CST,CSOSN: String; const OperacaoParaCliente: Boolean = True);
+var
+  TipoOperacao,TipoCFOP,  UFOrigem, UFDestino,PrefixoCFOP: String;
+  IPI,ST:Boolean;
+  IdNCM: TipoCampoChave;
+begin
+  TipoOperacao :=GetValorCds(tpERPOperacao,'IdOperacao = '+TipoCampoChaveToStr(IdOperacao),'FLAGTIPOOPERACAO');
+  IdNCM := GetValorCds(tpERPProduto,'Idproduto = '+TipoCampoChaveToStr(IdProduto),'IDNCM');
+  {$Region 'Obtem as Ufs e tipo de CFOP'}
+  if (TipoOperacao = OperacaoEntrada)  then
+  begin
+    UFDestino := GetValorCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(IdEmpresa),'UF');
+    if OperacaoParaCliente then
+      UFOrigem := GetValorCds(tpERPCliente,'idcliente = '+TipoCampoChaveToStr(IdPessoa),'UF')
+    else
+      UFOrigem := GetValorCds(tpERPFornecedor,'idfornecedor = '+TipoCampoChaveToStr(IdPessoa),'UF');
+
+    if UFOrigem <> UFDestino then
+    begin
+      PrefixoCFOP := '2';
+      TipoCFOP := CFOPTipoOperacaoEntradaForaEstado;
+    end else
+    begin
+      PrefixoCFOP := '1';
+      TipoCFOP := CFOPTipoOperacaoEntradaDentroEstado;
+    end;
+
+  end;
+  if (TipoOperacao = OperacaoDevolucao) then
+  begin
+    UFDestino := GetValorCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(IdEmpresa),'UF');
+    if OperacaoParaCliente then
+      UFOrigem := GetValorCds(tpERPCliente,'idcliente = '+TipoCampoChaveToStr(IdPessoa),'UF')
+    else
+      UFOrigem := GetValorCds(tpERPFornecedor,'idfornecedor = '+TipoCampoChaveToStr(IdPessoa),'UF');
+
+    if UFOrigem <> UFDestino then
+    begin
+      PrefixoCFOP := '2';
+      TipoCFOP := CFOPTipoOperacaoEntradaForaEstado;
+    end else
+    begin
+      PrefixoCFOP := '1';
+      TipoCFOP := CFOPTipoOperacaoEntradaDentroEstado;
+    end;
+
+  end;
+  if (TipoOperacao = OperacaoImportacao)  then
+  begin
+    UFDestino := GetValorCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(IdEmpresa),'UF');
+    if OperacaoParaCliente then
+      UFOrigem := GetValorCds(tpERPCliente,'idcliente = '+TipoCampoChaveToStr(IdPessoa),'UF')
+    else
+      UFOrigem := GetValorCds(tpERPFornecedor,'idfornecedor = '+TipoCampoChaveToStr(IdPessoa),'UF');
+
+    PrefixoCFOP := '3';
+    TipoCFOP := CFOPTipoOperacaoImportacao;
+
+  end;
+
+  if (TipoOperacao = OperacaoSaida)  then
+  begin
+    UFOrigem := GetValorCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(IdEmpresa),'UF');
+    if OperacaoParaCliente then
+      UFDestino := GetValorCds(tpERPCliente,'idcliente = '+TipoCampoChaveToStr(IdPessoa),'UF')
+    else
+      UFDestino := GetValorCds(tpERPFornecedor,'idfornecedor = '+TipoCampoChaveToStr(IdPessoa),'UF');
+
+    if UFOrigem <> UFDestino then
+    begin
+      PrefixoCFOP := '6';
+      TipoCFOP := CFOPTipoOperacaoSaidaForaEstado;
+    end else
+    begin
+      PrefixoCFOP := '5';
+      TipoCFOP := CFOPTipoOperacaoSaidaDentroEstado;
+    end;
+
+  end;
+
+  if (TipoOperacao = OperacaoExportacao)  then
+  begin
+    UFOrigem := GetValorCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(IdEmpresa),'UF');
+    if OperacaoParaCliente then
+      UFDestino := GetValorCds(tpERPCliente,'idcliente = '+TipoCampoChaveToStr(IdPessoa),'UF')
+    else
+      UFDestino := GetValorCds(tpERPFornecedor,'idfornecedor = '+TipoCampoChaveToStr(IdPessoa),'UF');
+
+    PrefixoCFOP := '7';
+    TipoCFOP := CFOPTipoOperacaoExportacao;
+  end;
+
+
+  if (TipoOperacao = OperacaoTransferencia)  then
+  begin
+    UFOrigem := GetValorCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(IdEmpresa),'UF');
+    UFDestino := GetValorCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(IdEmpresa),'UF');
+
+    if UFOrigem <> UFDestino then           { TODO : melhorar }
+    begin
+      PrefixoCFOP := '2';
+      TipoCFOP := CFOPTipoOperacaoSaidaForaEstado;
+    end else
+    begin
+      PrefixoCFOP := '1';
+      TipoCFOP := CFOPTipoOperacaoSaidaDentroEstado;
+    end;
+
+  end;
+
+
+
+  {$EndRegion}
+
+  with GetCds(tpERPNCMTributacao,'idncm = '+TipoCampoChaveToStr(IdNCM)+' UF = '+QuotedStr(UFDestino)) do
+  begin
+    if FieldByName('ALIQIPI').IsNull or  FieldByName('IPIVALOR').IsNull  then
+      IPI := False
+    else
+      IPI := True;
+
+    if FieldByName('ALIQICMSST').IsNull   then
+      ST := False
+    else
+      ST := True;
+
+    Free;
+  end;
+
+  IdCFOP := GetValorCds(tpERPCFOPVisivel,' FLAGTIPOOPERACAO= '+QuotedStr(TipoCFOP)+
+                                         ' and FLAGTRIBUTAIPI = '+QuotedStr(IfThen(IPI,'Y','N'))+
+                                         ' and FLAGTRIBUTAST = '+QuotedStr(IfThen(IPI,'Y','N') )   );
+
+
 
 end;
 

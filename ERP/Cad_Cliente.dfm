@@ -117,7 +117,6 @@ inherited frmCad_Cliente: TfrmCad_Cliente
             Align = alBottom
             Caption = ' Endere'#231'o '
             TabOrder = 7
-            ExplicitTop = 146
             object edtPesqCEP: TSpeedButton
               Left = 77
               Top = 32

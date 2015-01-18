@@ -17,9 +17,9 @@ File_14=TSourceModule,'D:\Meus Projetos\Global\uListagemPadrao.pas',0,1,151,110,
 
 [Modules]
 Module0=D:\Meus Projetos\componentes\ACBR\Exemplos\ACBrNFSe\Delphi\Frm_Demo_ACBrNFSe.pas
-Module1=default.htm
-Module2=D:\Meus Projetos\componentes\ACBR\Fontes\ACBrNFSe\ACBrNFSeDANFSeFR.pas
-Module3=D:\Meus Projetos\componentes\ACBR\Fontes\ACBrNFSe\ACBrNFSeDANFSeFRDM.pas
+Module1=D:\Meus Projetos\componentes\ACBR\Fontes\ACBrNFSe\ACBrNFSeDANFSeFR.pas
+Module2=D:\Meus Projetos\componentes\ACBR\Fontes\ACBrNFSe\ACBrNFSeDANFSeFRDM.pas
+Module3=default.htm
 Count=4
 EditWindowCount=1
 
@@ -27,9 +27,6 @@ EditWindowCount=1
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
-
-[default.htm]
-ModuleType=TURLModule
 
 [D:\Meus Projetos\componentes\ACBR\Fontes\ACBrNFSe\ACBrNFSeDANFSeFR.pas]
 ModuleType=TSourceModule
@@ -40,6 +37,9 @@ FormOnTop=0
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
+
+[default.htm]
+ModuleType=TURLModule
 
 [EditWindow0]
 ViewCount=4
@@ -82,9 +82,9 @@ WelcomePageURL=bds:/default.htm
 [View1]
 CustomEditViewType=TEditView
 Module=D:\Meus Projetos\componentes\ACBR\Exemplos\ACBrNFSe\Delphi\Frm_Demo_ACBrNFSe.pas
-CursorX=61
-CursorY=729
-TopLine=713
+CursorX=28
+CursorY=22
+TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -444,11 +444,6 @@ LRDockWidth=1896
 Dockable=1
 StayOnTop=0
 SplitPos=111
-
-[PropInspDesignerSelection]
-ArrangeBy=Name
-SelectedItem=Caption,
-ExpandedItems=
 
 [ModelViewTool]
 PercentageSizes=1

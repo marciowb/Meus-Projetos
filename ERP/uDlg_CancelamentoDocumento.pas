@@ -11,6 +11,7 @@ type
     grpMotivoCancelamento: TRadioGroup;
     GroupBox1: TGroupBox;
     mmDealhes: TMemo;
+    procedure btnOkClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -22,6 +23,26 @@ var
 
 implementation
 
+uses Comandos;
+
 {$R *.dfm}
+
+procedure TfrmDlg_CancelamentoDocumento.btnOkClick(Sender: TObject);
+begin
+  if grpMotivoCancelamento.ItemIndex = -1 then
+  begin
+    Avisa('Informe o motivo do cancelamento');
+    Exit;
+  end;
+  if Trim(mmDealhes.Text) = '' then
+  begin
+    Avisa('Informe os detalhes do cancelamento');
+    mmDealhes.SetFocus;
+    Exit;
+  end;
+
+  inherited;
+
+end;
 
 end.

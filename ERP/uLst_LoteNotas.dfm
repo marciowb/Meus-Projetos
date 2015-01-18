@@ -2,7 +2,7 @@ inherited frmLst_LoteNotas: TfrmLst_LoteNotas
   Caption = 'Listagem de Lotes de Nota'
   ClientHeight = 529
   ClientWidth = 877
-  ExplicitTop = -35
+  ExplicitTop = -134
   ExplicitWidth = 893
   ExplicitHeight = 568
   PixelsPerInch = 96

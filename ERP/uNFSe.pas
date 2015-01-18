@@ -48,7 +48,7 @@ interface
        property Protocolo: String read GetProtocolo;
        property CodigoVerificacao: String read GetCodigoVerificacao;
        Function Enviar: TRetorno;
-       procedure Imprimir(Protocolo: String);
+       procedure Imprimir(Protocolo,NumeroNota: String);
        Function CancelarNota(pProtocolo: String; MotivoCancelamento :TTipoCancelamento): TRetorno;
        property CaminhoNFSe: String read GetCaminhoNFSe;
        property CaminhoXml: String read GetCaminhoXml;
@@ -84,7 +84,7 @@ begin
     tcOperacao_Nao_Concluido: Motivo:= '2' ;
 //    tcRPS_Cancelado_na_Emissao: Motivo:= '3' ;
   end;
-//  PopulaNotas;
+
   Nfse.NotasFiscais.Clear;
   Nfse.NotasFiscais.LoadFromFile(FCaminhoRespostasWS+'\Ger\'+pProtocolo+'-lista-nfse.xml');
   Nfse.Configuracoes.Certificados.SelecionarCertificado;
@@ -189,7 +189,15 @@ begin
            for I := 0 to FDocs.Count - 1 do
            begin
              FDocs[i].ChaveAcesso := NFSe.NotasFiscais.Items[I].NFSe.CodigoVerificacao;
-             FDocs[i].XML := NFSe.NotasFiscais.Items[I].NFSe.XML;
+             if FileExists(NFSe.NotasFiscais.Items[I].NomeArq) then
+             begin
+               with TStringList.Create do
+               begin
+                 LoadFromFile(NFSe.NotasFiscais.Items[I].NomeArq);
+                 FDocs[i].XML := Text;
+                 Free;
+               end;
+             end;
            end;
          except
            on e:Exception do
@@ -319,10 +327,12 @@ begin
    Result := FProtocolo;
 end;
 
-procedure TNFSe.Imprimir(Protocolo: String);
+procedure TNFSe.Imprimir(Protocolo,NumeroNota: String);
 var
   Danfe: TACBrNFSeDANFSeFR;
   pNFSe: TACBrNFSe;
+  I: Integer;
+  Num: String;
 begin
   Try
     Danfe := TACBrNFSeDANFSeFR.Create(nil);
@@ -340,8 +350,26 @@ begin
     pNFSe.DANFSe.PathPDF    := FCaminhoPDF;
 
     pNFse.Configuracoes.Arquivos.NomeLongoNFSe := True;
-    pNFse.NotasFiscais.Imprimir;
-    pNFse.NotasFiscais.ImprimirPDF;
+    if NumeroNota <> '' then
+    begin
+      Num := NumeroNota;
+      Num := StringReplace(Num,'0',' ',[rfReplaceAll]);
+      Num := TrimLeft(Num);
+      Num := StringReplace(Num,' ','0',[rfReplaceAll]);
+      for I := 0 to pNFse.NotasFiscais.Count - 1 do
+      begin
+        if pNFse.NotasFiscais.Items[i].NFSe.Numero = Num then
+        begin
+          pNFse.NotasFiscais.Items[i].Imprimir;
+          pNFse.NotasFiscais.Items[i].ImprimirPDF;
+          Break;
+        end;
+      end;
+    end else
+    begin
+      pNFse.NotasFiscais.Imprimir;
+      pNFse.NotasFiscais.ImprimirPDF;
+    end;
 
 
 

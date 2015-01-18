@@ -60,6 +60,17 @@ type
     cxGridDBTableView1Column1: TcxGridDBColumn;
     cxGridDBTableView1Column2: TcxGridDBColumn;
     CdsCFOPSemelhante: TpFIBClientDataSet;
+    cxTabSheet3: TcxTabSheet;
+    Panel5: TPanel;
+    SpeedButton15: TSpeedButton;
+    SpeedButton16: TSpeedButton;
+    cxGrid3: TcxGrid;
+    cxGridDBTableView2: TcxGridDBTableView;
+    cxGridLevel2: TcxGridLevel;
+    DataCSOSN_CFOP: TDataSource;
+    CdsCSOSN_CFOP: TpFIBClientDataSet;
+    cxGridDBTableView2Column1: TcxGridDBColumn;
+    cxGridDBTableView2Column2: TcxGridDBColumn;
     procedure FormCreate(Sender: TObject);
     procedure actGravarExecute(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
@@ -72,6 +83,9 @@ type
     procedure SpeedButton3Click(Sender: TObject);
     procedure SpeedButton5Click(Sender: TObject);
     procedure cxGridDBTableView1DblClick(Sender: TObject);
+    procedure SpeedButton15Click(Sender: TObject);
+    procedure SpeedButton16Click(Sender: TObject);
+    procedure CdsCSOSN_CFOPNewRecord(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -97,6 +111,7 @@ begin
   inherited;
   SetRegistros(cdsCST_CFOP, tpERPCST_CFOP);
   SetRegistros(CdsCFOPSemelhante, tpERPCFOPSemelhante);
+  SetRegistros(cdsCSOSN_CFOP, tpERPCSOSN_CFOP);
 end;
 
 procedure TfrmCad_CFOP.CdsCadastroAfterScroll(DataSet: TDataSet);
@@ -104,6 +119,7 @@ begin
   inherited;
   SetCds(cdsCST_CFOP, tpERPCST_CFOP, 'idcfop = ' + TipoCampoChaveToStr(ValorChave));
   SetCds(CdsCFOPSemelhante, tpERPCFOPSemelhante, 'idcfoppai = ' + TipoCampoChaveToStr(ValorChave));
+  SetCds(cdsCSOSN_CFOP, tpERPCSOSN_CFOP, 'idcfop = ' + TipoCampoChaveToStr(ValorChave));
 end;
 
 procedure TfrmCad_CFOP.CdsCFOPSemelhanteNewRecord(DataSet: TDataSet);
@@ -112,6 +128,14 @@ begin
   CdsCFOPSemelhante.FieldByName('IDCFOPSEMELHANTE').Value := GetCodigo(tpERPCFOPSemelhante);
   CdsCFOPSemelhante.FieldByName('idCFOPPAI').Value := ValorChave;
   CdsCFOPSemelhante.FieldByName('FLAGEDICAO').Value := 'I';
+end;
+
+procedure TfrmCad_CFOP.CdsCSOSN_CFOPNewRecord(DataSet: TDataSet);
+begin
+  inherited;
+  cdsCSOSN_CFOP.FieldByName('IDCFOPCSOSN').Value := GetCodigo(tpERPCST_CFOP);
+  cdsCSOSN_CFOP.FieldByName('idCFOP').Value := ValorChave;
+  cdsCSOSN_CFOP.FieldByName('FLAGEDICAO').Value := 'I';
 end;
 
 procedure TfrmCad_CFOP.cdsCST_CFOPBeforePost(DataSet: TDataSet);
@@ -148,6 +172,25 @@ begin
   inherited;
   TipoPesquisa := tpERPCFOP;
   dsCST_PIS_COFINS.OPen;
+end;
+
+procedure TfrmCad_CFOP.SpeedButton15Click(Sender: TObject);
+begin
+  inherited;
+  MudaEstado;
+  AdicionaListaPesquisa(CdsCSOSN_CFOP, tpERPCSOSN, 'Esse CSOSN já foi adicionado');
+end;
+
+procedure TfrmCad_CFOP.SpeedButton16Click(Sender: TObject);
+begin
+  inherited;
+  if ConfirmaDel then
+  BEGIN
+    MudaEstado;
+    cdsCSOSN_CFOP.Edit;
+    cdsCSOSN_CFOP.FieldByName('flagedicao').AsString := 'D';
+    cdsCSOSN_CFOP.Post;
+  END;
 end;
 
 procedure TfrmCad_CFOP.SpeedButton1Click(Sender: TObject);
