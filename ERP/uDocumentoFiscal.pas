@@ -117,7 +117,9 @@ interface
         procedure SetValorCOFINS(const Value: Currency);
         procedure SetValorIR(const Value: Currency);
         procedure SetAliqReducaoBaseICMS(const Value: Currency);
+        procedure SetTipoTributacaoICMS(const Value: TTipoTributacaoICMS);
 
+        function GetTipoTributacaoICMS: TTipoTributacaoICMS;
         function GetAliqCOFINS: Currency;
         function GetALiqCSLL: Currency;
         function GetAliqICMSST: Currency;
@@ -171,6 +173,7 @@ interface
         property ValorIR: Currency read GetValorIR write SetValorIR;
 
         property AliqReducaoBaseICMS: Currency read GetAliqReducaoBaseICMS write SetAliqReducaoBaseICMS;
+        Property TipoTributacaoICMS :  TTipoTributacaoICMS read GetTipoTributacaoICMS write SetTipoTributacaoICMS;
 
       end;
 
@@ -507,6 +510,7 @@ interface
         FBaseIR: Currency;
         FValorIR: Currency;
         FAliqReducaoBaseICMS: Currency;
+        fTipoTributacaoICMS: TTipoTributacaoICMS;
 
         procedure SetAliqICMS(const Value: Currency);
         procedure SetAliqISS(const Value: Currency);
@@ -560,6 +564,8 @@ interface
         procedure SetBaseIR(const Value: Currency);
         procedure SetValorIR(const Value: Currency);
         Procedure SetAliqReducaoBaseICMS(const Value: Currency);
+        function GetTipoTributacaoICMS: TTipoTributacaoICMS;
+        procedure SetTipoTributacaoICMS(const Value: TTipoTributacaoICMS);
 
       published
         property AliqICMS: Currency read GetAliqICMS write SetAliqICMS;
@@ -591,6 +597,7 @@ interface
         property ValorIR: Currency read GetValorIR write SetValorIR;
 
         property AliqReducaoBaseICMS: Currency read GetAliqReducaoBaseICMS write SetAliqReducaoBaseICMS;
+        Property TipoTributacaoICMS :  TTipoTributacaoICMS read GetTipoTributacaoICMS write SetTipoTributacaoICMS;
 
 
       end;
@@ -1205,6 +1212,11 @@ begin
   Result := FTipoIPI;
 end;
 
+function TImpostos.GetTipoTributacaoICMS: TTipoTributacaoICMS;
+begin
+  Result:= FTipoTributacaoICMS;
+end;
+
 function TImpostos.GetValorCOFINS: Currency;
 begin
   Result := FValorCOFINS;
@@ -1337,6 +1349,11 @@ end;
 procedure TImpostos.SetTipoIPI(const Value: TTIpoIPI);
 begin
   FTipoIPI := Value;
+end;
+
+procedure TImpostos.SetTipoTributacaoICMS(const Value: TTipoTributacaoICMS);
+begin
+  fTipoTributacaoICMS := Value;
 end;
 
 procedure TImpostos.SetValorCOFINS(const Value: Currency);
@@ -2738,6 +2755,9 @@ begin
         end else
         if Self.Emitente.Endereco.Estado = Self.Destinatario.Endereco.Estado then
         begin
+           if Self.Produtos.Items[i].CFOP = '' then
+             Result.Add('CFOP não informado' )
+           else
            if  (Self.Produtos.Items[i].CFOP[1] in ['2','3','6','7']) then
              Result.Add('O CFOP['+Self.Produtos.Items[i].CFOP+'] do item '+FormatFloat('00',I)+' é inválido pra operações no seu estado.' );
         end ;

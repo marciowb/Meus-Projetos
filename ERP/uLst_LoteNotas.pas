@@ -17,28 +17,41 @@ uses
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, DB, cxDBData, DBClient,
   pFIBClientDataSet, ActnList, cxGridLevel, cxClasses, cxGridCustomView,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxPC,
-  StdCtrls, Buttons, dxStatusBar, ExtCtrls, cxSplitter;
+  StdCtrls, Buttons, dxStatusBar, ExtCtrls, cxSplitter, DBCtrls, cxContainer,
+  cxTextEdit, cxMemo, cxDBEdit;
 
 type
   TfrmLst_LoteNotas = class(TfrmListagemPadraoERP)
-    GroupBox1: TGroupBox;
     cxSplitter1: TcxSplitter;
-    TvNotas: TcxGridDBTableView;
-    cxGrid2Level1: TcxGridLevel;
-    cxGrid2: TcxGrid;
     DataItens: TDataSource;
     CdsItensLote: TpFIBClientDataSet;
+    actGerarDocumentos: TAction;
+    actImprimirNFSe: TAction;
+    actCancelarNFSe: TAction;
+    GroupBox1: TGroupBox;
+    cxGrid2: TcxGrid;
+    TvNotas: TcxGridDBTableView;
     vNotasColumn1: TcxGridDBColumn;
     vNotasColumn2: TcxGridDBColumn;
     vNotasColumn3: TcxGridDBColumn;
     vNotasColumn4: TcxGridDBColumn;
-    BitBtn11: TBitBtn;
-    actGerarDocumentos: TAction;
+    cxGrid2Level1: TcxGridLevel;
     Panel1: TPanel;
-    BitBtn12: TBitBtn;
-    actImprimirNFSe: TAction;
+    Panel3: TPanel;
+    cxSplitter2: TcxSplitter;
+    GroupBox2: TGroupBox;
+    mmNFSe: TMemo;
+    GroupBox3: TGroupBox;
+    mmNFe: TMemo;
+    cxSplitter3: TcxSplitter;
+    GroupBox4: TGroupBox;
     BitBtn13: TBitBtn;
-    actCancelarNFSe: TAction;
+    BitBtn12: TBitBtn;
+    GroupBox5: TGroupBox;
+    GroupBox6: TGroupBox;
+    BitBtn11: TBitBtn;
+    BitBtn14: TBitBtn;
+    actAbrirNota: TAction;
     procedure FormCreate(Sender: TObject);
     procedure actGerarDocumentosExecute(Sender: TObject);
     procedure CdsListagemAfterScroll(DataSet: TDataSet);
@@ -50,11 +63,16 @@ type
     procedure actExcluirExecute(Sender: TObject);
     procedure actImprimirNFSeExecute(Sender: TObject);
     procedure actCancelarNFSeExecute(Sender: TObject);
+    procedure actAbrirNotaExecute(Sender: TObject);
+    procedure TvNotasTcxGridDBDataControllerTcxDataSummaryFooterSummaryItems0GetText(
+      Sender: TcxDataSummaryItem; const AValue: Variant; AIsFooter: Boolean;
+      var AText: string);
   private
     { Private declarations }
   public
     { Public declarations }
     Procedure CarregarDados;
+    Procedure GetStatus(var memo: TMemo; Texto: String);
   end;
 
 var
@@ -67,11 +85,20 @@ uses MinhasClasses, Comandos, uLibERP, uRegras, uClassesERP, uForms,
 
 {$R *.dfm}
 
+procedure TfrmLst_LoteNotas.actAbrirNotaExecute(Sender: TObject);
+begin
+  inherited;
+  TrotinasForms.AbreVenda(CdsItensLote.FieldByName('idsaida').AsString);
+end;
+
 procedure TfrmLst_LoteNotas.actCancelarNFSeExecute(Sender: TObject);
 var
   TipoCanc: TTipoCancelamento;
 begin
   inherited;
+  if not Pergunta('Realmente deseja cancelar essa nota na prefeitura?') then
+    Exit;
+
   Try
     frmDlg_CancelamentoDocumento := TfrmDlg_CancelamentoDocumento.Create(nil);
     If frmDlg_CancelamentoDocumento.ShowModal = mrOk Then
@@ -166,6 +193,8 @@ begin
   inherited;
   CdsItensLote.Filter := 'IDLOTEDOCUMENTO = '+TipoCampoChaveToStr(CdsListagem.FieldByName('IDLOTEDOCUMENTO').AsString);
   CdsItensLote.Filtered := True;
+  GetStatus(mmNFSe,CdsListagem.FieldByName('MSGERRONFSE').AsString);
+  GetStatus(mmNFe,CdsListagem.FieldByName('MSGERRONFE').AsString);
 end;
 
 procedure TfrmLst_LoteNotas.FormCreate(Sender: TObject);
@@ -177,17 +206,36 @@ begin
   CriaColuna('HORAGERACAO','Hora',90,tcHora);
   CriaColuna('STATUSNFE','Status NF-e',100,tcString);
   CriaColuna('STATUSNFSE','Status NFS-e',100,tcString);
-  CriaColuna('MSGERRONFE','Msg erro NF-e',300,tcString);
-  CriaColuna('MSGERRONFSE','Msg erro NF-e',300,tcString);
+
+
+//  CriaColuna('MSGERRONFE','Msg erro NF-e',300,tcString);
+//  CriaColuna('MSGERRONFSE','Msg erro NF-e',300,tcString);
   CarregarDados;
 
+
+end;
+
+procedure TfrmLst_LoteNotas.GetStatus(var memo: TMemo; Texto: String);
+var
+  I: Integer;
+begin
+  inherited;
+  Memo.Clear;
+  with TStringList.Create do
+  begin
+    Delimiter := '|';
+    DelimitedText := StringReplace(Texto,' ', '¬',[rfReplaceAll]);
+    for I := 0 to Count - 1 do
+      Memo.Lines.Add( StringReplace(Strings[i],'¬', ' ', [rfReplaceAll]));
+    Free;
+  end;
 
 end;
 
 procedure TfrmLst_LoteNotas.TvNotasDblClick(Sender: TObject);
 begin
   inherited;
-  TrotinasForms.AbreVenda(CdsItensLote.FieldByName('idsaida').AsString);
+  actAbrirNotaExecute(nil);
 end;
 
 procedure TfrmLst_LoteNotas.TvNotasNavigatorButtonsButtonClick(Sender: TObject;
@@ -242,6 +290,14 @@ begin
   end;
 
 
+end;
+
+procedure TfrmLst_LoteNotas.TvNotasTcxGridDBDataControllerTcxDataSummaryFooterSummaryItems0GetText(
+  Sender: TcxDataSummaryItem; const AValue: Variant; AIsFooter: Boolean;
+  var AText: string);
+begin
+  inherited;
+  AText := VarToStr(AValue)+' notas ';
 end;
 
 end.

@@ -1,7 +1,7 @@
 inherited frmLst_Empresa: TfrmLst_Empresa
   Caption = 'Cadastro de empresa'
   ClientHeight = 598
-  ExplicitTop = -81
+  ExplicitTop = -203
   ExplicitHeight = 637
   PixelsPerInch = 96
   TextHeight = 13
@@ -153,7 +153,7 @@ inherited frmLst_Empresa: TfrmLst_Empresa
         Top = 264
         Width = 323
         Height = 244
-        ActivePage = cxTabSheet5
+        ActivePage = cxTabSheet1
         Align = alBottom
         Style = 10
         TabOrder = 9
@@ -636,7 +636,6 @@ inherited frmLst_Empresa: TfrmLst_Empresa
             object cxTabSheet6: TcxTabSheet
               Caption = 'Geral'
               ImageIndex = 0
-              ExplicitLeft = -2
               object DBRadioGroup1: TDBRadioGroup
                 Left = 0
                 Top = 0
@@ -786,6 +785,9 @@ inherited frmLst_Empresa: TfrmLst_Empresa
             object cxTabSheet7: TcxTabSheet
               Caption = ' Limite receita bruta'
               ImageIndex = 1
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object cxGrid1: TcxGrid
                 Left = 0
                 Top = 0

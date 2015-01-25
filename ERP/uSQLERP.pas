@@ -1580,7 +1580,9 @@ begin
           DesconsiderarCampos := '';
           Versao20:= True;
           Select :=
-             'SELECT distinct descricao_ST, ST '+
+             'SELECT distinct CST, ST, ORIGEM, DESCRICAO, DESCRICAO_ORIGEM, '+
+             '       DESCRICAO_ST, TIPO_TRIBUTACAO_ICMS, TRIBUTA_ST, REDUZ_BASE_ICMS, '+
+             '       REDUZ_BASE_ICMS_ST '+
              '  FROM VW_SITUACAO_TRIBUTARIA '+
              ' WHERE 1=1 '+Complemento;
         end;
@@ -1596,7 +1598,7 @@ begin
           DesconsiderarCampos := '';
           Versao20:= True;
           Select :=
-             'SELECT  CSOSN,descricao,DETALHES '+
+             'SELECT  CSOSN,descricao,DETALHES,TIPO_TRIBUTACAO_ICMS,TRIBUTA_ST, REDUZ_BASE_ICMS, REDUZ_BASE_ICMS_ST '+
              '  FROM vw_CSOSN '+
              ' WHERE 1=1 '+Complemento;
         end;

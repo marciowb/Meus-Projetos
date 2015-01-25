@@ -12,12 +12,12 @@ inherited frmDlg_CancelamentoDocumento: TfrmDlg_CancelamentoDocumento
     ExplicitTop = 178
     ExplicitWidth = 351
     inherited btnOk: TBitBtn
-      Left = 97
-      ExplicitLeft = 97
+      Left = 93
+      ExplicitLeft = 93
     end
     inherited btnCancelar: TBitBtn
-      Left = 188
-      ExplicitLeft = 188
+      Left = 184
+      ExplicitLeft = 184
     end
   end
   inherited Panel2: TPanel

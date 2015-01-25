@@ -4,7 +4,7 @@ interface
     uses
        MinhasClasses, Comandos,Classes,SysUtils, Math,DB,pFIBClientDataSet,
        StrUtils,DateUtils, Generics.Collections,uDocumentoFiscal,ACBrNFe,
-       ACBrNFeDANFEClass, uConstantes,pcnConversao,
+       ACBrNFeDANFEClass, uConstantes,pcnConversao,Variants,
        uClassesERP;
    type
      TNFe = class
@@ -23,7 +23,8 @@ interface
        FCaminhoCanceladas: String;
        FCaminhoDPEC: String;
        FCaminhoInutilizadas: String;
-
+       FCaminhoEventos: String;
+       Function VerificaTotalTribIBPT(NCM: String):Currency;
        Function GeraArquivo: TRetorno;
        function GetLote: String;
        Function ConsultaSituacao: Boolean;
@@ -77,6 +78,7 @@ begin
   FCaminhoCanceladas := FCaminhoXml;
   FCaminhoDPEC := FCaminhoNotas+'\DPEC\';
   FCaminhoInutilizadas := FCaminhoXml;
+  FCaminhoEventos := FCaminhoNotas+'\Eventos\';
 
   NFe.Configuracoes.Geral.PathSchemas := FCaminhoNFe+'\Schemas\';
   Nfe.Configuracoes.Geral.AtualizarXMLCancelado := True;
@@ -104,7 +106,7 @@ begin
   Nfe.Configuracoes.Arquivos.PathCan := FCaminhoCanceladas;
   Nfe.Configuracoes.Arquivos.PathInu := FCaminhoInutilizadas;
   Nfe.Configuracoes.Arquivos.PathDPEC := FCaminhoDPEC;
-  Nfe.Configuracoes.Arquivos.PathEvento := FCaminhoXml;
+  Nfe.Configuracoes.Arquivos.PathEvento := FCaminhoEventos;
 
 
 end;
@@ -116,12 +118,16 @@ end;
 
 function TNFe.Enviar: TRetorno;
 begin
+  GeraArquivo;
+
+
 
 end;
 
 function TNFe.GeraArquivo: TRetorno;
 var
-  I,P: Integer;
+  I,P,J,Origem: Integer;
+
 begin
   Result := VerificaStatus;
   if Result.Erro then
@@ -256,49 +262,52 @@ begin
         begin
           with Det.Add do
            begin
-             Prod.nItem    := 1; // Número sequencial, para cada item deve ser incrementado
-             Prod.cProd    := '123456';
-             Prod.cEAN     := '7896523206646';
-             Prod.xProd    := 'TESTE DE PRODUTO';
-             Prod.NCM      := '94051010'; // Tabela NCM disponível em  http://www.receita.fazenda.gov.br/Aliquotas/DownloadArqTIPI.htm
-             Prod.EXTIPI   := '';
-             Prod.CFOP     := '5101';
-             Prod.uCom     := 'UN';
-             Prod.qCom     := 1 ;
-             Prod.vUnCom   := 100;
-             Prod.vProd    := 100 ;
+             Prod.nItem    := p; // Número sequencial, para cada item deve ser incrementado
+             Prod.cProd    := FDocs[i].Produtos[p].Codigo;
+             Prod.cEAN     := FDocs[i].Produtos[p].EAN13;
+             Prod.xProd    := FDocs[i].Produtos[p].Nome;
+             Prod.NCM      := FDocs[i].Produtos[p].NCM;
+             Prod.EXTIPI   := FDocs[i].Produtos[p].EX_TIPI;
+             Prod.CFOP     := FDocs[i].Produtos[p].CFOP;
+             Prod.uCom     := FDocs[i].Produtos[p].Unidade;
+             Prod.qCom     := FDocs[i].Produtos[p].Quantidade;
+             Prod.vUnCom   := FDocs[i].Produtos[p].ValorUnitario;
+             Prod.vProd    := FDocs[i].Produtos[p].ValorTotalLiquido;
 
-             Prod.cEANTrib  := '7896523206646';
-             Prod.uTrib     := 'UN';
-             Prod.qTrib     := 1;
-             Prod.vUnTrib   := 100;
+             Prod.cEANTrib  := FDocs[i].Produtos[p].EAN13;
+             Prod.uTrib     := FDocs[i].Produtos[p].Unidade;
+             Prod.qTrib     := FDocs[i].Produtos[p].Quantidade;
+             Prod.vUnTrib   := FDocs[i].Produtos[p].ValorUnitario;
 
-             Prod.vOutro    := 0;
-             Prod.vFrete    := 0;
-             Prod.vSeg      := 0;
-             Prod.vDesc     := 0;
+             Prod.vOutro    := FDocs[i].Produtos[p].ValorOutrasDespesas;
+             Prod.vFrete    := FDocs[i].Produtos[p].ValorFrete;
+             Prod.vSeg      := FDocs[i].Produtos[p].ValorSeguro;
+             Prod.vDesc     := FDocs[i].Produtos[p].ValorDesconto;
 
-             infAdProd      := 'Informacao Adicional do Produto';
+             infAdProd      := FDocs[i].Produtos[p].Observacao;
 
-    //Declaração de Importação. Pode ser adicionada várias através do comando Prod.DI.Add
-    {         with Prod.DI.Add do
-              begin
-                nDi         := '';
-                dDi         := now;
-                xLocDesemb  := '';
-                UFDesemb    := '';
-                dDesemb     := now;
-                cExportador := '';
+             if FDocs[i].Produtos[p].NumDI <> '' then
+             begin
+              //Declaração de Importação. Pode ser adicionada várias através do comando Prod.DI.Add
+                 with Prod.DI.Add do
+                  begin
+                    nDi         := FDocs[i].Produtos[p].NumDI;
+                    dDi         := FDocs[i].Produtos[p].DataDI;
+                    xLocDesemb  := FDocs[i].Produtos[p].LocalDesembaraco;
+                    UFDesemb    := FDocs[i].Produtos[p].UFDesenbaraco;
+                    dDesemb     := FDocs[i].Produtos[p].DataDesembaraco;
+                    cExportador :=  FDocs[i].Produtos[p].CodigoExportador;
 
-                with adi.Add do
-                 begin
-                   nAdicao     := 1;
-                   nSeqAdi     := 1;
-                   cFabricante := '';
-                   vDescDI     := 0;
-                 end;
-              end;
-    }
+                    with adi.Add do
+                     begin
+                       nAdicao     := FDocs[i].Produtos[p].NumAdicao;
+                       nSeqAdi     := FDocs[i].Produtos[p].NumItemAdicao;
+                       cFabricante := FDocs[i].Produtos[p].CodigoExportador; { TODO : Verificar/Mudar }
+                       vDescDI     := 0;
+                     end;
+                  end;
+
+             end;
     //Campos para venda de veículos novos
     {         with Prod.veicProd do
               begin
@@ -371,41 +380,83 @@ begin
              with Imposto do
               begin
                 // lei da transparencia nos impostos
-                vTotTrib := 0;
+                vTotTrib := VerificaTotalTribIBPT(FDocs[i].Produtos[p].NCM);
 
                 with ICMS do
                  begin
-                   CST          := cst00;
-                   ICMS.orig    := oeNacional;
+                   if FDocs[i].Produtos[p].CSOSN <> '' then
+                   begin
+                     for J := 0 to Integer(High(TpcnCSOSNIcms)) do
+                     begin
+                       if VarToStr(TpcnCSOSNIcms(J)) = 'csosn'+FDocs[i].Produtos[p].CSOSN then
+                         CSOSN := TpcnCSOSNIcms(J);
+                     end;
+
+                     CST   := cstICMSSN;
+                   end else
+                   begin
+                     CSOSN := csosnVazio;
+                     for J := 0 to Integer(High(TpcnCSTIcms)) do
+                     begin
+                       if VarToStr(TpcnCSTIcms(J)) = 'cst'+Copy(FDocs[i].Produtos[p].CST,2,2) then
+                         CST := TpcnCSTIcms(J);
+                     end;
+                   end;
+                   Origem := StrToInt(Copy(FDocs[i].Produtos[p].CST,1,1));
+                   case Origem of
+                     0:
+                      ICMS.orig    := oeNacional;
+                     1:
+                      ICMS.orig    := oeEstrangeiraImportacaoDireta;
+                     2:
+                      ICMS.orig    := oeEstrangeiraAdquiridaBrasil;
+                     3:
+                      ICMS.orig    := oeNacionalConteudoImportacaoSuperior40;
+                     4:
+                      ICMS.orig    := oeNacionalProcessosBasicos;
+                     5:
+                      ICMS.orig    := oeNacionalConteudoImportacaoInferiorIgual40;
+                     6:
+                      ICMS.orig    := oeEstrangeiraImportacaoDiretaSemSimilar;
+                     7:
+                      ICMS.orig    := oeEstrangeiraAdquiridaBrasilSemSimilar;
+                     8:
+                      ICMS.orig    := oeNacionalConteudoImportacaoSuperior70;
+
+                   end;
+
+
                    ICMS.modBC   := dbiValorOperacao;
-                   ICMS.vBC     := 100;
-                   ICMS.pICMS   := 18;
-                   ICMS.vICMS   := 18;
+                   ICMS.vBC     := FDocs[i].Produtos[p].Impostos.BaseICMS;
+                   ICMS.pICMS   := FDocs[i].Produtos[p].Impostos.AliqICMS;
+                   ICMS.vICMS   := FDocs[i].Produtos[p].Impostos.ValorICMS;
                    ICMS.modBCST := dbisMargemValorAgregado;
-                   ICMS.pMVAST  := 0;
-                   ICMS.pRedBCST:= 0;
-                   ICMS.vBCST   := 0;
-                   ICMS.pICMSST := 0;
-                   ICMS.vICMSST := 0;
-                   ICMS.pRedBC  := 0;
+                   ICMS.pMVAST  := FDocs[i].Produtos[p].Impostos.MVA;
+                   ICMS.pRedBCST:= 0;{ TODO : fazer }
+                   ICMS.vBCST   := FDocs[i].Produtos[p].Impostos.BaseICMSST;
+                   ICMS.pICMSST := FDocs[i].Produtos[p].Impostos.AliqICMSST;
+                   ICMS.vICMSST := FDocs[i].Produtos[p].Impostos.ValorICMSST;
+                   ICMS.pRedBC  := FDocs[i].Produtos[p].Impostos.AliqReducaoBaseICMS;
                  end;
+                if FDocs[i].Produtos[p].Impostos.ValorIPI > 0 then
+                begin
+                  with IPI do
+                   begin
+                     CST      := ipi99 ; { TODO : Verificar }
+                     clEnq    := '999';
+                     CNPJProd := '';
+                     cSelo    := '';
+                     qSelo    := 0;
+                     cEnq     := '';
 
-        {        with IPI do
-                 begin
-                   CST      := ipi99 ;
-                   clEnq    := '999';
-                   CNPJProd := '';
-                   cSelo    := '';
-                   qSelo    := 0;
-                   cEnq     := '';
+                     vBC    := FDocs[i].Produtos[p].Impostos.BaseIPI;
+                     qUnid  := FDocs[i].Produtos[p].Quantidade;
+                     vUnid  := FDocs[i].Produtos[p].ValorUnitario;
+                     pIPI   := FDocs[i].Produtos[p].Impostos.AliqIPI;
+                     vIPI   := FDocs[i].Produtos[p].Impostos.ValorIPI;
+                   end;
+                end;
 
-                   vBC    := 100;
-                   qUnid  := 0;
-                   vUnid  := 0;
-                   pIPI   := 5;
-                   vIPI   := 5;
-                 end;    }
-    {
                 with II do
                  begin
                    vBc      := 0;
@@ -454,9 +505,9 @@ begin
                    vAliqProd := 0;
                    vCOFINS   := 0;
                  end;
-    }
+
     //Grupo para serviços
-    {            with ISSQN do
+               with ISSQN do
                  begin
                    vBC       := 0;
                    vAliq     := 0;
@@ -464,11 +515,11 @@ begin
                    cMunFG    := 0;
                    cListServ := 1402; // Preencha este campo usando a tabela disponível
                                    // em http://www.planalto.gov.br/Ccivil_03/LEIS/LCP/Lcp116.htm
-                 end;}
+                 end;
              end;
            end ;
         end;
-   {
+
   //Adicionando Serviços
         with Det.Add do
          begin
@@ -506,7 +557,7 @@ begin
                  cListServ := '1402'; // Preencha este campo usando a tabela disponível
                                  // em http://www.planalto.gov.br/Ccivil_03/LEIS/LCP/Lcp116.htm
                end;
-         end ;       }
+         end ;
 
         Total.ICMSTot.vBC     := 100;
         Total.ICMSTot.vICMS   := 18;
@@ -526,19 +577,19 @@ begin
         // lei da transparencia de impostos
         Total.ICMSTot.vTotTrib := 0;
 
-    {    Total.ISSQNtot.vServ   := 100;
+        Total.ISSQNtot.vServ   := 100;
         Total.ISSQNTot.vBC     := 100;
         Total.ISSQNTot.vISS    := 2;
         Total.ISSQNTot.vPIS    := 0;
         Total.ISSQNTot.vCOFINS := 0;
 
-  {      Total.retTrib.vRetPIS    := 0;
+        Total.retTrib.vRetPIS    := 0;
         Total.retTrib.vRetCOFINS := 0;
         Total.retTrib.vRetCSLL   := 0;
         Total.retTrib.vBCIRRF    := 0;
         Total.retTrib.vIRRF      := 0;
         Total.retTrib.vBCRetPrev := 0;
-        Total.retTrib.vRetPrev   := 0;}
+        Total.retTrib.vRetPrev   := 0;
 
         Transp.modFrete := mfContaEmitente;
         Transp.Transporta.CNPJCPF  := '';
@@ -548,12 +599,12 @@ begin
         Transp.Transporta.xMun     := '';
         Transp.Transporta.UF       := '';
 
-  {      Transp.retTransp.vServ    := 0;
+        Transp.retTransp.vServ    := 0;
         Transp.retTransp.vBCRet   := 0;
         Transp.retTransp.pICMSRet := 0;
         Transp.retTransp.vICMSRet := 0;
         Transp.retTransp.CFOP     := '';
-        Transp.retTransp.cMunFG   := 0;         }
+        Transp.retTransp.cMunFG   := 0;
 
         Transp.veicTransp.placa := '';
         Transp.veicTransp.UF    := '';
@@ -719,6 +770,11 @@ begin
 
   end else
     Result.Mensagem := NFe.WebServices.StatusServico.xMotivo;
+end;
+
+function TNFe.VerificaTotalTribIBPT(NCM: String): Currency;
+begin
+
 end;
 
 end.

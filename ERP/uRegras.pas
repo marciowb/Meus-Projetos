@@ -42,6 +42,7 @@ interface
       class function GravaSaida(const DataSetSaida, DataSetProdutos, DataSetPagamentos, DataSetParcelamento,DataSetSeriais: TpFIBClientDataSet): Boolean;
       class procedure DesbloqueiaProdutosVenda(IdVenda,IdEmpresa:TipoCampoChave);
       class function GetNumeroNota(TipoDocumento: TTipoDocumento; IdEmpresa:TipoCampoChave; Serie: String ): String;
+      class function GetNumeroNotaDocumento(TipoDocumento: TTipoDocumento; IdEmpresa,IdSaida:TipoCampoChave; Serie: String ): String;
     end;
 
     TRegrasOS = class
@@ -88,6 +89,7 @@ interface
      class Procedure CriaDocumentoFiscal(Const DataSetNota, DataSetItens, DataSetCobranca: TDataSet; Var Doc: IDocumentoFiscal );overload;
      class Procedure CriaDocumentoFiscal(Const IdDocumento: TipoCampoChave ; Var Doc: IDocumentoFiscal );overload;
      class Procedure CriaDocumentoFiscal(Const IdSaida: TipoCampoChave ; TipoDocumento: String; Var Doc: IDocumentoFiscal );overload;
+     class procedure GravaDocumento(Doc: IDocumentoFiscal);
    end;
 
    TRegrasLotesDocumentosFiscais = class
@@ -95,7 +97,6 @@ interface
      class procedure AtualizaStatusLote(IdLote: TipoCampoChave; StatusNFE,StatusNFSE: String);
      class procedure GeraDocumentosFiscais(IdLote:TipoCampoChave; NumeroLote: String; Out RespostaNFSe: TRetorno; Out RespostaNFe: TRetorno);
      class Procedure ProcessaLote(IdLote:TipoCampoChave; NumeroLote: String );
-     class procedure GravaDocumento(Doc: IDocumentoFiscal);
      class Procedure ImprimeNFSe(IdSaida: TipoCampoChave);
      class Procedure CancelaNFSe(IdSaida: TipoCampoChave; TipoCancelamento: TTipoCancelamento; Motivo: String);
    end;
@@ -439,6 +440,37 @@ begin
      end;
    end;
 
+end;
+
+
+class function TRegrasSaidaProduto.GetNumeroNotaDocumento(
+  TipoDocumento: TTipoDocumento; IdEmpresa,IdSaida: TipoCampoChave;
+  Serie: String): String;
+var
+  StrSQL, Flag: String;
+begin
+  if TipoDocumento =  tdNFSe  then
+     Flag := NumeracaoNotaSaidaNFSe;
+  if TipoDocumento =  tdNFe  then
+     Flag := NumeracaoNotaSaidaNFe;
+  StrSQL :=
+     'SELECT FIRST 1 NUMERO '+
+     '  FROM DOCUMENTO D '+
+     ' WHERE IDSAIDA = '+TipoCampoChaveToStr(IdSaida)+
+     '   AND TipoDocumento = '+ QuotedStr(Flag)+
+     '   AND SERIE = '+QuotedStr(Serie)+
+     '   AND COALESCE(FLAGCANCELADO,''N'') = ''N''  '+
+     '   AND NOT EXISTS(SELECT 1 '+
+     '                    FROM DOCUMENTO DD' +
+     '                   WHERE DD.IDSAIDA = D.IDSAIDA ' +
+     '                     AND DD.IDSAIDA = '+TipoCampoChaveToStr(IdSaida)+
+     '                     AND DD.TipoDocumento = '+ QuotedStr(Flag)+
+     '                     AND DD.SERIE = '+QuotedStr(Serie)+
+     '                     AND DD.PROTOCOLO IS NOT  NULL )';
+
+  Result := GetValorCds(StrSQL);
+  if Result = '' then
+    Result := TRegrasSaidaProduto.GetNumeroNota(TipoDocumento,IdEmpresa,Serie);
 end;
 
 class function TRegrasSaidaProduto.GravaSaida(const DataSetSaida,
@@ -921,6 +953,8 @@ begin
 
      if TipoProduto <> TipoProdutoServico then
     begin
+      Impostos.TipoTributacaoICMS := FormaTributar.TipoTributacaoICMS;
+
       if FormaTributar.TipoTributacaoICMS <> ttICMSNaoTributado then
       begin
         if (DataSetCFOP.FieldByName('FLAGTIPOOPERACAO').AsString = CFOPTipoOperacaoSaidaDentroEstado) or
@@ -937,7 +971,7 @@ begin
           Impostos.BaseICMS := ValorOperacao+Despesas;
 
           if (DataSetCliente.FieldByName('flagtipopessoa').AsString = 'J') and
-             (Copy(DataSetCFOP.FieldByName('CFOP').AsString,2,1)= '1' )  then //CFOP de industrialização 5101,6101,7101...
+             (FormaTributar.TributaIPI ) then
             Impostos.BaseICMS := Impostos.BaseICMS + Impostos.ValorIPI;
 
           if FormaTributar.ReduzBaseICMS   then
@@ -1322,7 +1356,7 @@ begin
           Doc.TipoCancelamento := TipoCancelamento;
           Doc.MotivoCancelamento := Motivo;
           Doc.Cancecelado := True;
-          TRegrasLotesDocumentosFiscais.GravaDocumento(Doc);
+          TRegrasDocumentos.GravaDocumento(Doc);
         end else
           AvisaErro(Mensagem);
       end;
@@ -1388,13 +1422,14 @@ begin
           Doc.IdEmpresa := DataSetNota.FieldByName('idempresa').AsString  ;
 
           Doc.SerieNota := DataSetNota.FieldByName('SerieNFSE').AsString;
-          Doc.NumeroNota := TRegrasSaidaProduto.GetNumeroNota(tdNFSe,DataSetNota.FieldByName('idempresa').AsString,Doc.SerieNota);
+          Doc.NumeroNota := TRegrasSaidaProduto.GetNumeroNotaDocumento(tdNFSe,DataSetNota.FieldByName('idempresa').AsString,DataSetNota.FieldByName('idsaida').AsString,Doc.SerieNota);
           Doc.TipoDocumento := tdNFSe;
           if GetValorCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(DataSetNota.FieldByName('idempresa').AsString),'ambientenfse')= 'P' then
             Doc.TipoAmbiente := tabProducao
           else
             Doc.TipoAmbiente := tabHomologacao ;
           DocsNFSe.Add(Doc);
+          TRegrasDocumentos.GravaDocumento(Doc);
         end;
 
          if tdNFe in TipoDocumento then
@@ -1404,7 +1439,7 @@ begin
           Doc.IdEmpresa := DataSetNota.FieldByName('idempresa').AsString  ;
 
           Doc.SerieNota := DataSetNota.FieldByName('SerieNFE').AsString;
-          Doc.NumeroNota := TRegrasSaidaProduto.GetNumeroNota(tdNFe,DataSetNota.FieldByName('idempresa').AsString,Doc.SerieNota);
+          Doc.NumeroNota := TRegrasSaidaProduto.GetNumeroNotaDocumento(tdNFe,DataSetNota.FieldByName('idempresa').AsString,DataSetNota.FieldByName('idsaida').AsString, Doc.SerieNota);
           Doc.TipoDocumento := tdNFe;
           if GetValorCds(tpERPEmpresa,'idempresa = '+TipoCampoChaveToStr(DataSetNota.FieldByName('idempresa').AsString),'ambientenfe')= 'P' then
             Doc.TipoAmbiente := tabProducao
@@ -1412,6 +1447,7 @@ begin
             Doc.TipoAmbiente := tabHomologacao ;
 
           DocsNFe.Add(Doc);
+          TRegrasDocumentos.GravaDocumento(Doc);
 
         end;
 
@@ -1436,7 +1472,7 @@ begin
             DocsNFSe.Items[i].Protocolo := Nfse.Protocolo;
             DocsNFSe.Items[i].ChaveAcesso := Nfse.DocumentosProcessados[i].ChaveAcesso;
             DocsNFSe.Items[i].XML := Nfse.DocumentosProcessados[i].XML;
-            GravaDocumento(DocsNFSe.Items[i]);
+            TRegrasDocumentos.GravaDocumento(DocsNFSe.Items[i]);
           end;
 
         end;
@@ -1468,7 +1504,7 @@ begin
   End;
 end;
 
-class procedure TRegrasLotesDocumentosFiscais.GravaDocumento(
+class procedure TRegrasDocumentos.GravaDocumento(
   Doc: IDocumentoFiscal);
 var
   StrSQL, ID: String;
